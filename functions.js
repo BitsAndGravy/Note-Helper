@@ -96,6 +96,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,  
     },  
     {
+        drug: "Jublia",
+        quantity: "4/30",
+        diagnosis: "tinea unguium",
+        formulary: false, 
+    }, 
+    {
         drug: "lamotrigine ER",
         quantity: "30/30",
         altQuantity: "",
@@ -112,6 +118,18 @@ const drugDatabase = [ // for getQuantity()
         quantity: "9/30",
         diagnosis: "T2DM",
     },
+    {
+        drug: "metformin ER 1,000 mg osm-tab", // nasal spray
+        quantity: "60/30",
+        diagnosis: "T2DM",
+        formulary: false,  
+    },  
+    {
+        drug: "metformin ER 1,000 mg gastr-tab", // nasal spray
+        quantity: "60/30",
+        diagnosis: "T2DM",
+        formulary: false,  
+    },  
     {
         drug: "Miebo",
         quantity: "3/30",
@@ -243,6 +261,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "obesity",
         formulary: false, 
     }, 
+    {
+        drug: "Winlevi", 
+        quantity: "60/30",
+        diagnosis: "acne vulgaris",
+        formulary: false, 
+    },
     {
         drug: "Wegovy tablet",
         quantity: "30/30",
