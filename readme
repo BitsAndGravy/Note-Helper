@@ -1,0 +1,101 @@
+Note helper made by Jonathan Bitner 2026
+
+1--Note for adding or changing drugs in drugDatabase --
+2--Note for adding or changing variables
+3--Note for adding animated text (fade-in, pause, fade-out) triggered by a button
+4--Variable name and description
+5--Adding a theme
+
+
+1--Note for adding or changing drugs in drugDatabase --
+    1- Add in alphabetical order, capitalization does not matter.
+    2- Currently brand and generic names are set up individually
+    3- Active elements are 'drug', 'quantity', 'diagnosis', and 'formulary'
+        Only need to add formulary: false for non-formulary products.
+        May possibly use other fields later, such as 'product', 'altQuantity' and 'altDiagnosis', but currently have no use.
+    4- otherwise just copy and paste, add the new drug you want. 
+
+2--Note for adding or changing variables --
+    1- Define variable in the HTML document, such as a new question for member name.
+    2- For checkboxes, decide what you would like it to say when the box is checked/not checked
+        Add respective information to checkboxData[]    
+            For example, if 'type' is not selected, the default response is '75-Standard PA'
+            If 'type' is selected, it will be either '75+76' or '70'
+    3- For inputs whose values change depending on value, i.e. require function/if statements, 
+        Call function within buildNote() with the others.
+        Define function below buildNote().
+        For example, if 'information' is blank, change value to 'No previous authorizations.'
+    3- Add to the list for the respective get___() function.
+    4- Add to answer[].
+    5- Add to buildNote().
+    6- Add to variable list in readme below
+
+3--Note for adding animated text (fade-in, pause, fade-out) --
+    - Add a span where you would like the text to appear/disappear
+        - Add descriptive ID
+        - class='hideStart"
+    - Call animateText('spanID') 
+
+4--Variable name and description --
+    age	        Text        Member's age | 59 years
+    chart	    Checkbox    Are there items in Chart View? | No items in Chart View
+    clinical	Textarea    Clinical review based on chart notes
+    comment     Select      Select which comment to add to tech note | Please approve as, Reviewed as
+    conclusion	Textarea    Recommendation/Rationale
+    diagnosis	Text        Diagnosis provided | T2DM
+    drug	    Text        Drug name | Mounjaro
+    expedited   Checkbox    Expedited in rxcrt channel | Expedited
+    falseQL	    Checkbox    If reject 76, is it a true QL reject? | Not a true QL request
+    gender	    Checkbox    Member's gender | fe/male
+    claims	    Textarea    Claims history per Snapshot and/or COS | Snapshot shows paid claims for...
+    information	Textarea    Details related to approvals
+    member	    Text        Date/range member joined | Member since 1-2026
+    properQuantityText      The quantity the provider intended to submit | Instead of #4/28, should be #2/28.
+    qset	    Checkbox    Result of provider's response to the q-set | Approval, Denial
+    quantity	Text        Quantity and day supply | #2/28 days
+    records	    Checkbox    Did provider submit documents with request? | Records submitted with request
+    reject	    Radio       Reject code | 75, 75+76, 76
+    snapshot	Checkbox    Are there results in Snapshot? | Paid claims, no paid claims
+    source	    Select      Source of PA request | Fax, Phone, Web, Other
+    state	    Select      Member's state | FL
+    type	    Checkbox    Case review type | Initial/primary, Reauthorization, Reopening
+    urgent	    Checkbox    Provider requested expedited review | Urgent
+
+
+5-- Adding a theme
+    1- Add option to theme selector in html document
+    1.a or add to themeBook, hopefully someday I will create a function to automatically add all of the theme as options in the selector.
+    2- Add in themes.css by category by alphabet, description below
+        --main-background:      Webpage background.
+        --header-background:    Top of the note, e.g. Note helper, Saved Note #1
+        --footer-background:    Bottom of the note, where the buttons are
+        --body-primary-color:   Saved notes (not note builder)
+        --body-secondary-color: Bar that crosses middle of note builder, commonly use low-alpha white (#ffffff40)
+        --body-border-color:    Border for notes.
+        --body-gradient:        Add multiple colors for gradient effect, one color for solid.
+
+        /* Text */
+        --heading-text:         Top of the note, e.g. Note helper, Saved Note #1
+        --animated-text:        Animated text, such as appears after button clicked.
+        --body-text:            Note builder top/bottom sections, associated with --body-gradient
+        --body-secondary-text:  Note builder middle section, associated with --body-secondary-color
+        --input-text:           Text in bubbles i.e. text and textarea
+        --input-text-focus:     " when focus.
+        --placeholder-text:     Placeholder text in bubbles i.e. text and textarea
+        --hyperlink-static:     I really ignore these colors, I just have them match the buttons somehow.
+        --hyperlink-hover: 
+        --hyperlink-active: 
+        --hyperling-visited: 
+        
+        /* Buttons */
+        --button-background:    self-explanatory.
+        --button-hover: 
+        --button-active:
+        --button-text:
+
+        /* Input */
+        --input-background:         Background for bubbles, i.e. text and textarea
+        --input-background-focus:   text/area when clicked
+        --input-accent-color:       Checkbox color when checked
+        --input-border:             text/area border
+        --input-border-focus:       text/area border when clicked

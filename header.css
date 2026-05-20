@@ -1,0 +1,188 @@
+/* || General styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--body-text);
+    background-color: var(--main-background);
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 16px; /* to match padding with ul li a */
+    color: var(--heading-text);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+ul li a { /* Color for links defined elsewhere */
+    display: block;
+    padding: 13px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: orange;
+    transition: 200ms;
+}
+
+/* || Inputs */
+input:focus, select:focus, textarea:focus {
+    background-color: var(--input-background-focus);
+    outline-color: var(--input-border-focus);
+}
+
+textarea, input, select {
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid var(--input-border);
+    margin: 2px;
+    vertical-align: middle;
+    accent-color: var(--input-accent-color);
+    background-color: var(--input-background);
+    color: var(--input-text);
+    transition-duration: 1s;
+
+}
+
+::placeholder {
+    color: var(--placeholder-text);
+}
+
+/* ||| Checkboxes */
+input[type=checkbox] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* ||| Buttons */
+button {
+    border-radius: 5px;
+    width: 80px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 5px;
+}
+    button:hover {background-color: var(--button-hover);}
+    button:active {background-color: var(--button-active);}
+
+/* ||| Links */
+a:link {color: var(--heading-text);}
+    a:hover {color: var(--hyperlink-hover);}
+    a:active {color: var(--hyperlink-active);}
+    a:visited {color: var(--hyperling-static);}
+
+
+
+/* || Specific styles */
+.primaryColor {
+    background-color: var(--body-primary-color);
+}
+
+.secondaryColor {
+    background-color: var(--body-secondary-color);
+    color: var(--body-secondary-text);
+}
+
+/* Div paddings */
+.inputDiv {
+    padding: 5px 20px 10px 10px; /* Top, right, bottom, left */
+}
+
+/* Adjust size of the large textarea inputs, i.e. authorizations, claims, clinicals, conclusion. */
+.bigTextarea {
+    width: 450px;
+}
+
+/* Adjust height of textarea in the Saved Notes area */
+.editTextarea {
+    height: 250px;
+}
+
+/* Hide the textarea for saved notes until Edit button clicked */
+.editArea {
+    display: none;
+}
+
+/* Adjust size of age and quantity text inputs */
+.ageTextbox {
+    width: 30px;
+}
+
+.qtyTextbox {
+    width: 50px;
+}
+
+.heading {
+    background-color: var(--header-background);
+    padding-left: 10px;
+    height: 45px;
+    border-radius: 18px 18px 0px 0px; /* Rounded on top to match border, flat on bottom */
+    display: flex;
+    align-items: center;
+    color: var(--heading-text);
+}
+
+.footing {
+    background-color: var(--footer-background);
+    padding: 8px 10px 8px 10px;
+    border-radius: 0px 0px 18px 18px;
+}
+
+.container {/* Used to create a border around Note Helper and Saved Notes */
+    border: 2px solid var(--body-border-color);
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 5px 10px 15px #00000086;
+}
+
+.themeBookBackgroundColor {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--body-text);
+    background-color: var(--main-background);
+}
+
+
+
+/* || Animations */
+/* ||| Text animations */    
+/* Manually add this class to each element you want to animate; this is the starting state. */
+    .hideStart {
+        opacity: 0;
+        transition: 1s;
+        color: var(--animated-text);
+    }
+
+/* Class that gets added to an element in animateText(); fade-in effect. */
+    .revealText {
+        opacity: 1;
+        transition: 1s;
+    }
+
+/* Class added in animateText(); final result is to hide the element */
+    .hideEnd {
+        opacity: 0;
+    }
+
+
+
+/* || Add or remove settings */
+.hideInput {
+    /*display: none;*/
+    transition: 0.5s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.showInput {
+    /*display: block;*/
+    max-height: 500px;
+    opacity: 1;
+    transition: 1s;
+}

@@ -1,0 +1,1017 @@
+/* || Midnight theme */
+.gradientColor {
+    background-image: linear-gradient(to bottom, var(--body-gradient));
+    /*, var(--body-gradient-middle), var(--body-gradient-bottom));*/
+}
+
+:root, [data-theme='midnight-blue'] {
+    /* Main features */
+    --main-background: midnightblue;
+    --header-background: #3427a8;
+    --footer-background: var(--header-background);
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: #3427a8;
+    --body-border-color: slateblue;
+    --body-gradient: var(--main-background);
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: var(--heading-text);
+    --body-secondary-text: var(--heading-text);
+    --animated-text: var(--heading-text);
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: yellow;
+    --hyperlink-hover: gold;
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: lightgoldenrodyellow;
+    --button-hover: yellow;
+    --button-active: aqua;
+    --button-text: black;
+
+    /* Input */
+    --input-background:white;
+    --input-background-focus: lightgoldenrodyellow;
+    --input-accent-color: yellow;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+/* || Generic themes */
+
+[data-theme='dark'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: #232323;
+    --footer-background: var(--header-background);
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: var(--header-background);
+    --body-border-color: #dc9e29;
+    --body-gradient: black;
+    
+    /* Text */
+    --heading-text: #cbc7c0;
+    --body-text: var(--heading-text);
+    --input-text: var(--heading-text);
+    --placeholder-text: #cbc7c0A6;
+    --hyperlink-static: var(--input-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: black;
+    --button-hover: #583b1e;
+    --button-active: #dc9e29;
+    --button-text: var(--heading-text);
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: #1e1c15;
+    --input-accent-color: var(--button-active);
+    --input-border: #5d5d5d;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='pahub'] {
+    /* Main features */
+    --main-background: var(--body-primary-color);
+    --header-background: #21ace5;
+    --footer-background: #b1c0f1;
+    --body-primary-color: #f6f7fd;
+    --body-secondary-color: #dfe6f9;
+    --body-border-color: #0073bf;
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: black;
+    --body-secondary-text: black;
+    --input-text: black;
+    --animated-text: black;
+    --placeholder-text: slategray;
+    --hyperlink-static: #1515ff;
+    --hyperlink-hover: #818181;
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: white;
+    --button-hover: #fff8d4;
+    --button-active: #fefbef;
+    --button-text: black;
+    --button-border: #818181;
+
+    /* Input */
+    --input-background: var(--button-background);
+    --input-background-focus: #fcf7e3;
+    --input-accent-color: #0075ff;
+    --input-border: #7b9ebd;
+    --input-border-focus: #0073bf;
+}
+
+
+[data-theme='scantron'] {
+    /* Main features */
+    --main-background: white;
+    --header-background: var(--input-accent-color);
+    --footer-background: white;
+    --body-primary-color: white;
+    --body-secondary-color: white;
+    --body-border-color: var(--input-accent-color);
+    --body-gradient: white;
+    
+    /* Text */
+    --heading-text: white;
+    --animated-text: var(--input-accent-color);
+    --body-text: black;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--heading-text);
+    --hyperlink-hover: #1c4aff;
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--input-accent-color);
+    --button-hover: #086c4e;
+    --button-active: #18c38f;
+    --button-text: white;
+    --button-border: var(--input-accent-color);
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #f2fcf9;
+    --input-accent-color: #129d74;
+    --input-border: var(--body-text);
+    --input-border-focus: var(--input-accent-color);
+}
+
+
+
+
+/* || Hollow Knight themes */
+
+
+
+[data-theme='abyss'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: var(--main-background);
+    --footer-background: var(--header-background);
+    --body-primary-color: #2c2e2e;
+    --body-secondary-color: #ffffff17;
+    --body-border-color: #4a4846;
+    --body-gradient: #181717, #222120, #4a4846;
+    
+    /* Text */
+    --heading-text: lightgray;
+    --body-text: var(--heading-text);
+    --body-secondary-text: var(--heading-text);
+    --input-text: rgb(243, 243, 243);
+    --placeholder-text: rgba(211, 211, 211, 0.774);
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--input-background-focus);
+    --button-hover: var(--input-background);
+    --button-active: #54b6d2;
+    --button-text: var(--heading-text);
+
+    /* Input */
+    --input-background: #ffffff1A;
+    --input-background-focus: #00000033;
+    --input-accent-color: #75e1ff;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='broken-vessel'] {
+    /* Main features */
+    --main-background: #29241e;
+    --header-background: #e6b478;
+    --footer-background: #eecd91;
+    --body-primary-color: #29241e;
+    --body-secondary-color: #e6b47833;
+    --body-border-color: #764737;
+    --body-gradient: #29241e, #373026, #764737;
+    
+    /* Text */
+    --heading-text: #29241e;
+    --body-text: #eecd91;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--heading-text);
+    --input-text: #f7dfb3;
+    --placeholder-text: #eecd919e;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #fff3db;
+    --button-hover: #e6b478;
+    --button-active: #d77a5f;
+
+    /* Input */
+    --input-background:#29241ed7;
+    --input-background-focus: #2e1e16b3;
+    --input-accent-color: #d77a5f;
+    --input-border: #764737e5;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='crystal-peaks'] {
+    /* Main features */
+    --main-background: #22134c;
+    --header-background: #262a77;
+    --footer-background: var(--header-background);
+    --body-primary-color: #4e4dad;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #e29dee;
+    --body-gradient: #4e4dad, #954ac9, #d399fa;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --placeholder-text: #f9d9ffa9;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #4e4dad;
+    --button-hover: #954ac9;
+    --button-active: #d68e5b;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #22134c80;
+    --input-background-focus: #22134cCC;
+    --input-accent-color: #fba466; /*infection*/
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='fog-canyon'] {
+    /* Main features */
+    --main-background: #12143f;
+    --header-background: #354076;
+    --footer-background: var(--header-background);
+    --body-primary-color: #896fb9;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: var(--button-hover);
+    --body-gradient: #6b65a3, var(--body-primary-color), #ab84cf;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --placeholder-text: #ffffff80;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #defcec;
+    --button-hover: #96ffc5;
+    --button-active: aqua;
+
+    /* Input */
+    --input-background: #12143f80;
+    --input-background-focus: #12143fCC;
+    --input-accent-color: var(--button-hover);
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='fungal-wastes'] {
+    /* Main features */
+    --main-background: #0d2237;
+    --header-background: #1b4b5f;
+    --footer-background: var(--header-background);
+    --body-primary-color: #0b2b47;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #3d988b;
+    --body-gradient: #0b2b47, #3d988b;
+    
+    /* Text */
+    --heading-text: #fffcba;
+    --body-text: var(--heading-text);
+    --input-text: black;
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--input-accent-color);
+    --hyperlink-hover: gold;
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--heading-text);
+    --button-hover: var(--input-accent-color);
+    --button-active: aqua;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #f9f9d6;
+    --input-accent-color: #e1b0fb;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='greenpath'] {
+    /* Main features */
+    --main-background: #0f2031;
+    --header-background: #346778;
+    --footer-background: var(--header-background);
+    --body-primary-color: #134150;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #2ca45a;
+    --body-gradient:  #183064, #1b4d68, #134150;
+    
+    /* Text */
+    --heading-text: #daf0ec;
+    --body-text: var(--heading-text);
+    --input-text: var(--heading-text);
+    --placeholder-text: #daf0ecB3;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #cabcf2;
+    --button-hover: #b59cff;
+    --button-active: #8d72e0;
+
+    /* Input */
+    --input-background: #0f203180;
+    --input-background-focus: var(--main-background);
+    --input-accent-color: #b59cff;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='ismas-grove'] {
+    /* Main features */
+    --main-background: #0b1927;
+    --header-background: #4ea882;
+    --footer-background: var(--header-background);
+    --body-primary-color: #184848;
+    --body-secondary-color: #2366555e;
+    --body-border-color: #79fbc5;
+    --body-gradient: #0b1927, #184848;
+    
+    /* Text */
+    --heading-text: black;
+    --body-text: #d1ffec;
+    --body-secondary-text: var(--body-text);
+    --input-text: #79fbc5;
+    --placeholder-text: #79fbc5ae;
+    --hyperlink-static: var(--input-accent-color);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #184848;
+    --button-text: #d1ffec;
+    --button-hover: #1848488e;
+    --button-active: var(--input-accent-color);
+
+    /* Input */
+    --input-background: #a8ffdb1b;
+    --input-background-focus: rgba(0, 0, 0, 0.723);
+    --input-accent-color: #fbc579;
+    --input-border: #a8ffdbbb;
+    --input-border-focus: var(--main-background);
+}
+
+[data-theme='joni-blessing'] {
+    /* Main features */
+    --main-background: #0a1026;
+    --header-background: #84d4ec;
+    --footer-background: var(--header-background);
+    --body-primary-color: #172754;
+    --body-secondary-color: #2e60a180;
+    --body-border-color: #a6fcfa;
+    --body-gradient: #1c397a, #172754;
+    
+    /* Text */
+    --heading-text: black;
+    --body-text: #d0fefd;
+    --body-secondary-text: #d0fefd;
+    --input-text: #e7fefe;
+    --placeholder-text: #d0fefdab;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #f0fffb;
+    --button-hover: #cbf9f4;
+    --button-active: aqua;
+
+    /* Input */
+    --input-background: #0a102640;
+    --input-background-focus: #0a102680;
+    --input-accent-color: #ff8c8c;
+    --input-border: #2e60a1;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='queens-gardens'] {
+    /* Main features */
+    --main-background: #112837;
+    --header-background: #194858;
+    --footer-background: var(--header-background);
+    --body-primary-color: #43aa8b;
+    --body-secondary-color: #ffffff40;
+    --body-border-color: #ccd4a1;
+    --body-gradient: #3b9d80, #32817a;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--heading-text);
+    --input-text: black;
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e3e4d8;
+    --button-hover: #cbd283;
+    --button-active: var(--input-accent-color);
+    --button-text: black;
+
+    /* Input */
+    --input-background: #e3e4d8E6;
+    --input-background-focus: #fefff2e6;
+    --input-accent-color: #ffad7e; /* Pink on Marmu's head */
+    --input-border: var(--main-background);
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='royal-waterways'] {
+    /* Main features */
+    --main-background: #0e1e3d;
+    --header-background: #255c67;
+    --footer-background: var(--header-background);
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: var(--header-background);
+    --body-border-color: #4bbaa5;
+    --body-gradient: var(--main-background);
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: azure;
+    --input-text: azure;
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--input-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #fbe9f5;
+    --button-hover: #e7b6b2;
+    --button-active: #d68c9a;
+
+    /* Input */
+    --input-background: #00000082;
+    --input-background-focus: #0e2323f3;
+    --input-accent-color: var(--button-hover);
+    --input-border: var(--header-background);
+    --input-border-focus: #4bbaa5;
+}
+
+[data-theme='soul-master'] {
+    /* Main features */
+    --main-background: #1f5788;
+    --header-background: #4f2d46;
+    --footer-background: #653d54;
+    --body-primary-color: #24344c;
+    --body-secondary-color: #653d54;
+    --body-border-color: #81495e;
+    --body-gradient: #3a445c, #24344c;
+    
+    /* Text */
+    --heading-text: #fffeff;
+    --body-text: #fffeff;
+    --body-secondary-text: #fffeff;
+    --input-text: black;
+    --placeholder-text: #000000a2;
+    --hyperlink-static: var(--input-accent-color);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #aaa1ad;
+    --button-hover: var(--input-accent-color);
+    --button-active: #c48648;
+
+    /* Input */
+    --input-background: #e4d3d9;
+    --input-background-focus: #fffeff;
+    --input-accent-color: #ff9d3a;
+    --input-border: #4f2d46;
+    --input-border-focus: #4f2d46;
+}
+
+[data-theme='soul-sanctum'] {
+    /* Main features */
+    --main-background: #0b0f32;
+    --header-background: #475282;
+    --footer-background: #8a6c8d;
+    --body-primary-color: #0b2b47;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #dad1fc;
+    --body-gradient: #142251, #3d487a, #504676;
+    
+    /* Text */
+    --heading-text: #f1eaff;
+    --body-text: var(--heading-text);
+    --input-text: var(--heading-text);
+    --placeholder-text: #f1eaffa4;
+    --hyperlink-static: var(--heading-text);
+    --hyperlink-hover: white;
+    --hyperlink-active: #ffad5b;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--heading-text);
+    --button-hover: var(--input-accent-color);
+    --button-active: aqua;
+
+    /* Input */
+    --input-background: #0b0f32c4;
+    --input-background-focus: #0b0f32e0;
+    --input-accent-color: #ff952c;
+    --input-border: #dad1fc87;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='the-grimm-troupe'] {
+    /* Main features */
+    --main-background: #362e28;
+    --header-background: black;
+    --footer-background: var(--header-background);
+    --body-primary-color: #3a1f3f;
+    --body-secondary-color: #ffffff17;
+    --body-border-color: #c02f39;
+    --body-gradient: #010101, #1e1121, #3a1f3f;
+    
+    /* Text */
+    --heading-text: #ccc5b6;
+    --body-text: var(--heading-text);
+    --body-secondary-text: var(--heading-text);
+    --input-text: #ebe7e0;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ebe7e099;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--main-background);
+    --button-hover: #7d6b5c;
+    --button-active: #c02f39;
+    --button-text: var(--heading-text);
+
+    /* Input */
+    --input-background: #1d0f1fe0;
+    --input-background-focus: #29142b;
+    --input-accent-color: #c02f39;
+    --input-border: #6f227dcb;
+    --input-border-focus: #c02f39;
+}
+
+
+[data-theme='the-hive'] {
+    /* Main features */
+    --main-background: #9f6c59;
+    --header-background: #bb8d5c;
+    --footer-background: var(--header-background);
+    --body-primary-color: #fbd8a2;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: var(--button-hover);
+    --body-gradient: #f0c18d, var(--body-primary-color), #fafec3;
+    
+    /* Text */
+    --heading-text: #fbfae5;
+    --body-text: black;
+    --body-secondary-text: black;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #fbfae5;
+    --button-hover: #fafec3;
+    --button-active: aqua;
+
+    /* Input */
+    --input-background:white;
+    --input-background-focus: var(--button-background);
+    --input-accent-color: #655769;
+    --input-border: black;
+    --input-border-focus: var(--input-accent-color);
+}
+
+[data-theme='the-radiance'] {
+    /* Main features */
+    --main-background: #2d3048;
+    --header-background: #543d43;
+    --footer-background: #90504f;
+    --body-primary-color: var(--body-secondary-color);
+    --body-secondary-color: #f5d398;
+    --body-border-color: #846456;
+    --body-gradient: #b56240, /*#c58154, #e2a76e,*/ #ecba58, #fffdc2;
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: black;
+    --body-secondary-text: black;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --animated-text: white;
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-hover);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #fef6f4;
+    --button-hover: #efd9ca;
+    --button-active: #fef7bd;
+
+    /* Input */
+    --input-background:var(--button-background);
+    --input-background-focus: white;
+    --input-accent-color: #2740ff;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+[data-theme='white-palace'] {
+    /* Based off of final battle in Path of Pain */
+    /* Main features */
+    --main-background: #f1fcfe;
+    --header-background: #8e95a0;
+    --footer-background: #232e40;
+    --body-primary-color: #171b29;
+    --body-secondary-color: #ffffff40;
+    --body-border-color: black;
+    --body-gradient: #171b29, #6e7081;
+
+    /* Text */
+    --heading-text: black;
+    --animated-text: #f1f4f9;
+    --body-text: #f1f4f9;
+    --body-secondary-text: #f1f4f9;
+    --input-text: #f1f4f9;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff80;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e0e0e0;
+    --button-hover: #aaaaaa;
+    --button-active: #8d8d8d;
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: #00000040;
+    --input-accent-color: #3e85ff;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+
+/* || Harry Potter themes */
+
+
+[data-theme='gryffindor'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: #740001;
+    --footer-background: var(--header-background);
+    --body-primary-color: #ae0001;
+    --body-secondary-color: #eeba30;
+    --body-border-color: var(--body-secondary-color);
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: var(--heading-text);
+    --body-secondary-text: black;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--header-background);
+    --button-hover: var(--body-primary-color);
+    --button-active: aqua;
+    --button-text: white;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #ede3da;
+    --input-accent-color: black;
+    --input-border: black;
+    --input-border-focus: var(--main-background);
+}
+
+
+[data-theme='hufflepuff'] {
+    /* Main features */
+    --main-background: #362e28;
+    --header-background: #efb935;
+    --footer-background: var(--header-background);
+    --body-primary-color: #ffd260;
+    --body-secondary-color: var(--main-background);
+    --body-border-color: var(--header-background);
+    --body-gradient: var(--body-primary-color);
+
+    
+    /* Text */
+    --heading-text: black;
+    --body-text: var(--heading-text);
+    --body-secondary-text: var(--input-background-focus);
+    --input-text: var(--heading-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: var(--main-background);
+    --button-hover: #7d6b5c;
+    --button-active: aqua;
+    --button-text: white;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #ede3da;
+    --input-accent-color: black;
+    --input-border: black;
+    --input-border-focus: var(--main-background);
+}
+
+
+
+[data-theme='ravenclaw'] {
+    /* Main features */
+    --main-background: #000000;
+    --header-background: #0d1f4b;
+    --footer-background: var(--header-background);
+    --body-primary-color: #203366;
+    --body-secondary-color: #5d5d5d;
+    --body-border-color: var(--body-secondary-color);
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e0e0e0;
+    --button-hover: #aaaaaa;
+    --button-active: var(--input-accent-color);
+
+    /* Input */
+    --input-background: #e0e0e0;
+    --input-background-focus: white;
+    --input-accent-color: #ffe263;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+
+[data-theme='slytherin'] {
+    /* Main features */
+    --main-background: #626262;
+    --header-background: #1a472a;
+    --footer-background: #1a472a;
+    --body-primary-color: #2a623d;
+    --body-secondary-color: #1a472a;
+    --body-border-color: var(--button-background);
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: white;
+    --body-secondary-text: white;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #eaeaea;
+    --button-hover: #aaaaaa;
+    --button-active: aqua;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #eaeaea;
+    --input-accent-color: #fec607;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+
+
+
+/* ||| Holow Knight: Silksong Themes */
+
+[data-theme='coral-tower'] {
+    /* Main features */
+    --main-background: #164c78;
+    --header-background: #a1124f;
+    --footer-background: #c65579;
+    --body-primary-color: #6fe9fd;
+    --body-secondary-color: #ffffff40;
+    --body-border-color: #d3c0a9;
+    --body-gradient: #4abada, var(--body-primary-color), #31b3bd;
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: #231936;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-hover);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e7ddd9;
+    --button-hover: #d3c0a9;
+    --button-active: #78687a;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #fff3ee;
+    --input-accent-color: #711a55;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='deep-docks'] {
+    /* Main features */
+    --main-background: #6c2d0b;
+    --header-background: #0d131c;
+    --footer-background: #47230c;
+    --body-primary-color: #a10b00;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #fb8e00;
+    --body-gradient: #660700, #e33112, #db5800;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff90;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #0d131c;
+    --button-hover: rgb(156, 39, 18);
+    --button-active: #ea5e00;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #6c2d0b80;
+    --input-background-focus: #0d131cCC;
+    --input-accent-color: #ffea00;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='needle-master'] {
+    /* Main features */
+    --main-background: #282634;
+    --header-background: #996949;
+    --footer-background: #996949;
+    --body-primary-color: #eadac9;
+    --body-secondary-color: #817788;
+    --body-border-color: #ca8a5f;
+    --body-gradient: #eadac9;
+
+    /* Text */
+    --heading-text: white;
+    --body-text: black;
+    --body-secondary-text: white;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-hover);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e7ddd9;
+    --button-hover: #d3c0a9;
+    --button-active: #78687a;
+
+    /* Input */
+    --input-background: white;
+    --input-background-focus: #fff4ef;
+    --input-accent-color: #4d311f;
+    --input-border: black;
+    --input-border-focus: var(--main-background);
+}
+
+[data-theme='shakra'] {
+    /* Main features */
+    --main-background: #6c2d0b;
+    --header-background: #0d131c;
+    --footer-background: #47230c;
+    --body-primary-color: #e33112;
+    --body-secondary-color: #ffffff33;
+    --body-border-color: #fb8e00;
+    --body-gradient: #660700, #e33112, #db5800;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff90;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #0d131c;
+    --button-hover: rgb(156, 39, 18);
+    --button-active: #ea5e00;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #6c2d0b80;
+    --input-background-focus: #0d131cCC;
+    --input-accent-color: #fbfc55;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}

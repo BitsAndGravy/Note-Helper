@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Note helper</title>
+
+    <link rel="shortcut icon" type="x-icon" href="favicon.ico">
+
+    <script src="noteHelperFunctions.js" type="text/javascript"></script>
+    <script src="functions.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="themes.css">
+
+</head>
+<body>
+<!--Input field-->
+    <div class="container">
+        <div class="heading">
+            <H3>Note helper</H3>
+            <ul>
+                <li><a href="PAHelper.html" target="_blank">Note helper</a></li> <!-- added <a> for consistent formatting -->
+                <li><a href="settings.html" target="_blank">Settings</a></li>
+                <li><a href="testThemePreview.html" target="_blank">Themes</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="gradientColor">
+                <div class="inputDiv">   
+                    <select id="themeSelect" onchange="changeTheme(this.value)" style="float: right; opacity: 0;">
+                        <option value="midnight-blue">-Midnight blue (dark)-</option>
+                        <option value="dark">Dark</option>
+                        <option value="pahub">PAHub (light)</option>
+                        <option value="scantron">Scantron (light)</option>
+
+                        <option value="abyss">HK-Abyss (dark)</option>
+                        <option value="broken-vessel">HK-Broken Vessel (dark)</option>
+                        <option value="crystal-peaks">HK-Crystal Peaks (dark)</option>
+                        <option value="fog-canyon">HK-Fog Canyon (dark)</option>
+                        <option value="fungal-wastes">HK-Fungal Wastes (dark)</option>
+                        <option value="greenpath">HK-Greenpath (dark)</option>
+                        <option value="ismas-grove">HK-Isma's Grove (dark)</option>
+                        <option value="joni-blessing">HK-Joni's Blessing (light)</option>
+                        <option value="queens-gardens">HK-Queen's Gardens (light)</option>
+                        <option value="royal-waterways">HK-Royal Waterways (dark)</option>
+                        <option value="soul-master">HK-Soul Master (dark)</option>
+                        <option value="soul-sanctum">HK-Soul Sanctum (dark)</option>
+                        <option value="the-grimm-troupe">HK-The Grimm Troupe (dark)</option>
+                        <option value="the-hive">HK-The Hive (light)</option>
+                        <option value="the-radiance">HK-The Radiance (light)</option>
+                        <option value="white-palace">HK-White Palace</option>
+
+                        <option value="gryffindor">HP-Gryffindor (dark)</option>
+                        <option value="hufflepuff">HP-Huffflepuff (light)</option>
+                        <option value="ravenclaw">HP-Ravenclaw (dark)</option>
+                        <option value="slytherin">HP-Slytherin (dark)</option>
+
+                        <option value="coral-tower">SS-Coral Tower (light)</option>
+                        <option value="deep-docks">SS_Deep Docks (dark)</option>
+                        <option value="needle-master">SS-Needle Master (light)</option>
+                    </select>
+
+                    
+
+                    <form id="form1">
+                        <div id="appealInternalDiv">
+                            <label for="appealInternalQuestion">Internal appeal</label>
+                            <input 
+                                type="text"
+                                id="appealInternalQuestion"
+                                name="appealInternalQuestion"
+                                placeholder="MD specialty">
+                        </div>
+
+
+                    <label for="drug">01.</label>
+                    <input 
+                        type="text" 
+                        id="drug" 
+                        name="drug" 
+                        placeholder="drug name" 
+                        onchange="getQuantity()">
+
+                    <span id="time" style="float: right; opacity: 0.5; display: none;">0:00</span>
+                    <br>
+                    
+                    <label for="source">02.</label>
+                    <select name="source" id="source">
+                        <option value="PAHub (fax)">Fax</option>
+                        <option value="PAHub (phone)">Phone</option>
+                        <option value="ePA (web)" selected>Web</option>
+                        <option value="PAHub (other)">Other</option>
+                    </select>
+                    <br>
+
+                    <label for="urgent">03.</label> 
+                    <input 
+                        type="checkbox" 
+                        id="isUrgent" 
+                        name="urgent" 
+                        value="Urgent " 
+                        >
+                    <label for="isUrgent">Urgent </label>
+
+                    <input 
+                        type="checkbox"
+                        id="isExpedited"
+                        name="expedited"
+                        value="Expedited ">
+                    <label for="isExpedited">Expedited</label>
+                    <br>
+
+                    <label for="diagnosis">04.</label>
+                    <input 
+                        type="text" 
+                        id=diagnosis 
+                        placeholder="diagnosis">
+                    <br>
+
+                    <label for="state">05.</label>
+                    <select name="state" id="state"><!--
+                        <option value="AK">AK</option>--> <!--Alaska-->
+                        <option value="AL">AL</option><!--
+                        <option value="AR">AR</option>-->
+                        <option value="AZ">AZ</option><!--
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+                        <option value="DC">DC</option>
+                        <option value="DE">DE</option>-->
+                        <option value="FL" selected>FL</option>
+                        <option value="GA">GA</option><!--
+                        <option value="HI">HI - Hawaii</option>-->
+                        <option value="IA">IA</option><!--
+                        <option value="ID">ID - Idaho</option>-->
+                        <option value="IL">IL</option><!--
+                        <option value="IN">IN - Indiana</option>-->
+                        <option value="KS">KS</option><!--
+                        <option value="KY">KY - Kentucky</option>
+                        <option value="LA">LA - Louisiana</option>
+                        <option value="MA">MA - Massachusetts</option>
+                        <option value="MD">MD - Maryland</option>
+                        <option value="ME">ME - Maine</option>-->
+                        <option value="MI">MI</option><!--
+                        <option value="MN">MN - Minnesota</option>-->
+                        <option value="MO">MO</option>
+                        <option value="MS">MS</option><!--
+                        <option value="MT">MT - Montana</option>-->
+                        <option value="NC">NC</option><!--
+                        <option value="ND">ND - North Dakota</option>-->
+                        <option value="NE">NE</option><!--
+                        <option value="NH">NH - New Hampshire</option>-->
+                        <option value="NJ">NJ</option><!--
+                        <option value="NM">NM - New Mexico</option>
+                        <option value="NV">NV - Nevada</option>-->
+                        <option value="NY">NY</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option><!--
+                        <option value="OR">OR - Oregon</option>-->
+                        <option value="PA">PA</option><!--
+                        <option value="RI">RI - Rhode Island</option>
+                        <option value="SC">SC - South Carolina</option>
+                        <option value="SD">SD - South Dakota</option>-->
+                        <option value="TN">TN</option>
+                        <option value="TX">TX</option><!--
+                        <option value="UT">UT - Utah</option>
+                        <option value="VA">VA - Virginia</option>
+                        <option value="VT">VT - Vermont</option>
+                        <option value="WA">WA - Washington</option>
+                        <option value="WI">WI - Wisconson</option>
+                        <option value="WV">WV - West Virginia</option>
+                        <option value="WY">WY - Wyoming</option>-->
+                    </select>
+                    <br>
+
+
+                    <label for="qset">06.</label> 
+                    <input type="checkbox" id="approval" name="qset" value="approval" checked>
+                    <label for="approval">Q-set approval</label>
+                    <br>
+
+                    <label for="reject">07.</label>
+                    <input 
+                        type="checkbox" 
+                        id="quantityLimit" 
+                        name="reject" 
+                        value="75 and 76-Standard PA with QL, formulary"
+                        onclick="showQuantity()">
+                    <label for="quantityLimit">76-Quantity limit </label>
+                    <input 
+                        type="checkbox" 
+                        id="nonFormulary" 
+                        name="reject" 
+                        value="70-Non-formulary"
+                        onclick="showQuantity()">
+                    <label for="nonFormulary">70-Non-formulary </label>
+                    <br>
+                    
+                    <div id="quantityDiv">
+                        <label for="quantity">08.</label>
+                        <input 
+                            type="text" 
+                            class="qtyTextbox" 
+                            id="quantity" 
+                            name="quantity" 
+                            placeholder="qty/days"
+                            >
+                        <br>
+
+                        <label for="falseQL">09.</label>
+                        <input 
+                            type="checkbox" 
+                            id="falseQL" 
+                            name="falseQL" 
+                            value="Not a true QL request; "
+                            onclick="showQL();">
+                        <label for="falseQL">False QL</label>
+                        <br>
+                    </div>
+
+                    <div id="properQuantityDiv" style="display: none;"> <!--Hide when falseQL not selected; start hidden-->
+                        <label 
+                            for="properQuantity" 
+                            id="properQuantityLabel">09.a</label>
+
+                        <input 
+                            type="text" 
+                            class="qtyTextbox" 
+                            id="properQuantity" 
+                            name="properQuantity" 
+                            placeholder="true qty"
+                            onchange="showProperQuantity()">
+
+                        <br id="properQuantityBreak">
+                    </div>
+
+                    <label for="type">10.</label> 
+                    <input 
+                        type="checkbox" 
+                        id="reauthorization" 
+                        name="type" 
+                        value="Reauthorization">
+                    <label for="reauthorization">Reauthorizaiton </label>
+                    
+                    <input
+                        type="checkbox"
+                        id="reopening"
+                        name="type"
+                        value="Reopening">
+                    <label for="reopening">Reopening</label>
+                    <br>
+
+                    <label for="information">11.</label>
+                    <textarea 
+                        id="information" 
+                        name="information" 
+                        rows="2" 
+                        class="bigTextarea"
+                        placeholder="previous authorizations"></textarea>
+                    <br>
+                    </form>
+                </div>
+
+                <div class="secondaryColor inputDiv">
+                    <form id="form2">
+                    <label for="gender">12.</label> 
+                    <input type="checkbox" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <br>
+
+                    <label for="age">13.</label>
+                    <input type="text" class="ageTextbox" id="age" name="age" placeholder="age" required>
+                    <br>
+
+                    <label for="member">14.</label>
+                    <input 
+                        type="text" 
+                        id="member" 
+                        name="member" 
+                        placeholder="member since" 
+                        value="1-2026"
+                        class="bigTextarea">
+                    <br>
+                    </form>
+                </div>
+
+                <div class="inputDiv">
+                    <form id="form3">
+                    <label for="chart">15.</label>
+                    <input type="checkbox" id="noCharts" name="chart" value="No relevant documents in Chart View. ">
+                    <label for="noCharts">No items in Chart View</label>
+                    <br>     
+
+                    <label for="snapshot">16.</label>
+                    <input type="checkbox" id="noClaims" name="snapshot" value="No relevant paid claims. " onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
+                    <label for="noClaims">No drug claims </label>
+                
+
+                    <label for="claims" id="claimsLabel"><br>17.</label>
+                    <textarea 
+                        id="claims" 
+                        name="claims" 
+                        rows="4"
+                        class="bigTextarea"
+                        placeholder="claims history">Paid claims in Snapshot for </textarea>
+                    <br>
+
+                    <label for="records">18.</label>
+                    <input type="checkbox" id="noRecords" name="records" value="Records not submitted with request. " onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
+                    <label for="noRecords">Records not sent</label>
+                    <br>
+
+                    <label for="clinical">19.</label>
+                    <textarea
+                        id="clinical" 
+                        name="clinical" 
+                        rows="4" 
+                        class="bigTextarea"
+                        placeholder="clinicals">Chart note dated </textarea>
+                    <br>
+
+                    <label for="conclusion">20.</label>
+                    <textarea
+                        id="conclusion" 
+                        name="conclusion" 
+                        rows="4" 
+                        class="bigTextarea"
+                        placeholder="conclusion"></textarea>
+                    <br>
+
+                    <div id="commentDiv" style="display: none;"> <!--Hide when falseQL not selected; start hidden-->
+                        <label 
+                            for="comment" 
+                            id="commentLabel" 
+                            >21. Not a true QL; </label>
+                            
+                        <select
+                            id="comment" 
+                            name="comment">
+
+                            <option value="reviewed as #">reviewed as</option>
+                            <option value="please approve as #">please approve as</option>
+                        </select>
+                        <span id="showProperQuantity"></span></span>
+                    </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footing">
+            <!--left-aligned options-->
+                <button type="button" onclick="saveButton()">Save</button>
+                <span id="textCopied" class="hideStart">Copied to clipboard</span>
+
+            <!--right-aligned options-->
+                <button type="button" onclick="resetForm()" style="float: right;">Reset</button>
+                <span id="resetForm" style="float: right; transform: translate(-10%) translateY(25%);" class="hideStart">Form reset</span>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+
+<!--Preview - save for later -->
+<!--
+    <div class="container">
+        <div class="heading">
+            <H3>Preview</H3>
+        </div>
+
+        <div id="preview">
+            <div class="primaryColor inputDiv">
+                <p>
+                Conspectus
+                <br>
+                [3. Urgent] [5. state] [2. source].
+                [12. Gender] age [13. age].
+                [10. Case type] for [1. drug name] #[8. qty/days] for [4. diagnosis].
+                [7. Reject code].
+                Provider response led to [6. q-set].
+                [11. Information]
+                <br>
+                <br>
+                Claims
+                <br>
+                Member since [14. member dates].<br>
+                [16. Snapshot] [17. Claims history].
+                <br>
+                <br>
+                Clinical
+                <br>
+                [18. Records] [15. Chart View]
+                <br>
+                [19. Clinical]
+                <br>
+                <br>
+                Conclusion
+                <br>
+                [20. Conclusion]
+                <br>
+                <br>
+                <em>If False QL checked: </em>[9. False QL] [21. Comment] [9.a Proper quantity].
+                </p>
+            </div>
+
+            <div class="footing">
+            </div>
+
+        </div>
+    </div>
+
+<br>
+-->
+
+<!--Note 1-->
+<section>
+    <div class="container note">
+        <div id="noteOneBody">
+            <div class="heading">
+                <H3>Saved note #1</H3>
+            </div>
+            <div id="noteOneText">
+                <div class="primaryColor inputDiv">
+                    <span id="noteOne">
+                        Note will appear here once saved.
+                        <br>
+                        <br>
+                    </span>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="editButton('noteOne')">Edit</button>
+                    <span id="noteOneSaved" class="hideStart">Copied to clipboard</span>
+                </div>
+            </div>
+
+            <div id="noteOneEdit" class="editArea">
+                <div class="primaryColor inputDiv">
+                    <textarea 
+                        id="editnoteOne"
+                        class="bigTextarea editTextarea"
+                        placeholder="nothing to edit"></textarea>
+                    <br>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="savedNoteButton('noteOne')">Save</button>
+                    <button type="button" onclick="cancelButton('noteOne')">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+</section>
+
+<!--Note 2-->
+    <div class="container note">
+        <div id="noteTwoBody">
+            <div class="heading">
+                <H3>Saved note #2</H3>
+            </div>
+            <div id="noteTwoText">
+                <div class="primaryColor inputDiv">
+                    <span id="noteTwo">
+                        Note will appear here once saved.
+                        <br>
+                        <br>
+                    </span>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="editButton('noteTwo')">Edit</button>
+                    <span id="noteTwoSaved" class="hideStart">Copied to clipboard</span>
+                </div>
+            </div>
+
+            <div id="noteTwoEdit" class="editArea">
+                <div class="primaryColor inputDiv">
+                    <textarea 
+                        id="editnoteTwo"
+                        class="bigTextarea editTextarea"
+                        placeholder="nothing to edit"></textarea>
+                    <br>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="savedNoteButton('noteTwo')">Save</button>
+                    <button type="button" onclick="cancelButton('noteTwo')">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+<!--Note 3-->
+    <div class="container note">
+        <div id="noteThreeBody">
+            <div class="heading">
+                <H3>Saved note #3</H3>
+            </div>
+            <div id="noteThreeText">
+                <div class="primaryColor inputDiv">
+                    <span id="noteThree">
+                        Note will appear here once saved.
+                        <br>
+                        <br>
+                    </span>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="editButton('noteThree')">Edit</button>
+                    <span id="noteThreeSaved" class="hideStart">Copied to clipboard</span>
+                </div>
+            </div>
+
+            <div id="noteThreeEdit" class="editArea">
+                <div class="primaryColor inputDiv">
+                    <textarea 
+                        id="editnoteThree"
+                        class="bigTextarea editTextarea"
+                        placeholder="nothing to edit"></textarea>
+                    <br>
+                </div>
+
+                <div class="footing">
+                    <button type="button" onclick="savedNoteButton('noteThree')">Save</button>
+                    <button type="button" onclick="cancelButton('noteThree')">Cancel</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+
+<a href="#">Go to top</a>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+
+    <link rel="shortcut icon" type="x-icon" href="favicon.ico">
+
+    <script src="functions.js" type="text/javascript"></script>
+    <script src="settingsFunctions.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="themes.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <H3>Settings</H3>
+            <ul>
+                <li><a href="PAHelper.html" target="_blank">Note helper</a></li>
+                <li><a href="settings.html" target="_blank">Settings</a></li>
+                <li><a href="testThemePreview.html" target="_blank">Themes</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="gradientColor">
+                <div class="inputDiv">  
+                    <H2>Settings</H2>
+                    <div>
+                        <H3>Appeals</H3>
+                        <label for="appealInternal">Appeal, internal</label>
+                        <input 
+                            type="checkbox"
+                            id="appealInternal"
+                            name="appealInternal"
+                            onclick="changeSettings(this.id)">
+                    </div>
+                    <div>
+                        <H3>Quantity</H3>
+                        <label for="prefillQuantity">Pre-fill quantity</label>
+                        <input
+                            type="checkbox"
+                            id="prefillQuantity"
+                            name="prefillQuantity"
+                            onclick="prefill(this.id)">
+                        <span>Based on the drug name, Note helper will predict the quantity and day supply.</span>
+                        
+                        <br>
+
+                        <label for="alwaysShowQuantity">Always show quantity</label>
+                        <input 
+                            type="checkbox"
+                            id="alwaysShowQuantity"
+                            name="alwaysShowQuantity"
+                            onclick="changeSettings(this.id)">
+                        <span>If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
+                    
+                    </div>
+                    
+                </div>
+
+                <div id="showSettings"></div>
+
+            </div>
+
+
+            <div class="footing">
+                <!--left-aligned options-->
+                    <button type="button" onclick="saveButton()">Save</button>
+                    <span id="textCopied" class="hideStart">This button does nothing</span>
+
+                <!--right-aligned options-->
+                    <button type="button" onclick="resetForm()" style="float: right;">Reset</button>
+                    <span id="resetForm" style="float: right; transform: translate(-10%) translateY(25%);" class="hideStart">Form reset</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
