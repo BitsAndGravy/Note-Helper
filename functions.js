@@ -109,6 +109,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "bipolar disorder", 
     }, 
     {
+        drug: "Lantus pen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        formulary: false, 
+    },  
+    {
         drug: "lidocaine", // 5% topical patch
         quantity: "30/30", // suggested
         diagnosis: "neuropathic pain",
