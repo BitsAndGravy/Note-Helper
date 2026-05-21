@@ -823,6 +823,13 @@ function showQuantity() {
     }
 }
 
+function addNewMember() {
+    let conc = document.getElementById('conclusion');
+    if(conc.value == "") {
+        conc.innerText = "New member. "
+    }
+}
+
 /* ||| Theme changer */
 
 function changeTheme(theme) { 

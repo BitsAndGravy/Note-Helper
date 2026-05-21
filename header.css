@@ -118,6 +118,10 @@ a:link {color: var(--heading-text);}
     width: 50px;
 }
 
+.memberWidth {
+    width: 300px;
+}
+
 .heading {
     background-color: var(--header-background);
     padding-left: 10px;
