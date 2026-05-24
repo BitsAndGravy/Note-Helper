@@ -166,7 +166,7 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Omega-3",
         quantity: "120/30",
-        diagnosis: "hyperlipidemia", 
+        diagnosis: "pure hypertriglyceridemia", 
     },   
     {
         drug: "Omnipod 5 pods",
@@ -666,6 +666,10 @@ function resetForm() { // After clicking the Reset button
 
         quantity.style.display = 'none';
         comment.style.display = 'none';
+
+        document.getElementById('quantity').tabIndex = -1;
+        document.getElementById('falseQL').tabIndex = -1;
+
         showProperQuantity();
     }
 
