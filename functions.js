@@ -23,6 +23,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     },  
     {
+        drug: "Creon",
+        quantity: "300/90",
+        diagnosis: "exocrine pancreatic insufficiency", 
+    },  
+    {
         drug: "Dexcom G6 sensor",
         quantity: "3/30",
         altQuantity: "",
