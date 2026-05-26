@@ -855,17 +855,52 @@
     --placeholder-text: slategray;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: aqua;
+    --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
     --button-background: #eaeaea;
     --button-hover: #aaaaaa;
-    --button-active: aqua;
+    --button-active: 2a623d;
 
     /* Input */
     --input-background: white;
     --input-background-focus: #eaeaea;
+    --input-accent-color: #fec607;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='knight-bus'] {
+    /* Main features */
+    --main-background: #392347;
+    --header-background: black;
+    --footer-background: black;
+    --body-primary-color:#60357c;
+    --body-secondary-color: #502c69;
+    --body-border-color: gray;
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: lightgray;
+    --body-text: lightgray;
+    --body-secondary-text: lightgray;
+    --input-text: lightgray;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #d3d3d39e;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: black;
+    --button-hover: var(--main-background);
+    --button-active: var(--body-primary-color);
+
+    /* Input */
+    --input-background: var(--main-background);
+    --input-background-focus: black;
     --input-accent-color: #fec607;
     --input-border: black;
     --input-border-focus: var(--header-background);
