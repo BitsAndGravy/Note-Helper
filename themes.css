@@ -877,9 +877,9 @@
     --header-background: black;
     --footer-background: black;
     --body-primary-color:#60357c;
-    --body-secondary-color: #502c69;
+    --body-secondary-color: #4a2962;
     --body-border-color: gray;
-    --body-gradient: var(--body-primary-color);
+    --body-gradient: #533279, #60357c, #6b3780;
     
     /* Text */
     --heading-text: lightgray;
@@ -894,14 +894,14 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: black;
-    --button-hover: var(--main-background);
-    --button-active: var(--body-primary-color);
+    --button-background: lightgray;
+    --button-hover: darkgray;
+    --button-active: gray;
 
     /* Input */
-    --input-background: var(--main-background);
+    --input-background: #392347e3;
     --input-background-focus: black;
-    --input-accent-color: #fec607;
+    --input-accent-color: #ffae34;
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
