@@ -681,7 +681,7 @@ function resetForm() { // After clicking the Reset button
 
     function hideExtras() {
         let showQuantity = document.getElementById('quantityDiv');
-        let showQuantitySettingChecked = document.localStorage.getItem('alwaysShowQuantity');
+        let showQuantitySettingChecked = localStorage.getItem('alwaysShowQuantity');
         let quantity = document.getElementById('properQuantityDiv');
         let comment = document.getElementById('commentDiv');
         
