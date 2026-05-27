@@ -672,6 +672,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
+
     hideExtras();
     animateText('resetForm');
     gotoFirstField();
@@ -680,11 +681,14 @@ function resetForm() { // After clicking the Reset button
 
     function hideExtras() {
         let showQuantity = document.getElementById('quantityDiv');
+        let showQuantitySettingChecked = document.localStorage.getItem('alwaysShowQuantity');
         let quantity = document.getElementById('properQuantityDiv');
         let comment = document.getElementById('commentDiv');
-
-        showQuantity.classList.add('hideInput');
-        showQuantity.classList.remove('showInput');
+        
+        if(showQuantitySettingChecked === 'no') {
+            showQuantity.classList.add('hideInput');
+            showQuantity.classList.remove('showInput');
+        }
 
         quantity.style.display = 'none';
         comment.style.display = 'none';

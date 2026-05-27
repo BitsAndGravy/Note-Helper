@@ -14,19 +14,19 @@ window.onload = function() {
     }
     
     // Always show quantity
-    let result2 = localStorage.getItem('alwaysShowQuantity');
-    let element2 = document.getElementById('alwaysShowQuantity');
+        let result2 = localStorage.getItem('alwaysShowQuantity');
+        let element2 = document.getElementById('alwaysShowQuantity');
 
-    if (result2 == 'yes') {
-        element2.checked = true;
-    } else {
-        element2.checked = false;
-    }
-    // For functions affecting...
-    //      loadup, see window.onload in noteHelperFunctions.js
-    //      manually clicking 76/70, see showQuantity() in functions.js
-    //      auto-selecting 70/76, see getQuantity() in functions.js
-    //      reset button, see resetForm() and hideExtras() in functions.js
+        if (result2 == 'yes') {
+            element2.checked = true;
+        } else {
+            element2.checked = false;
+        }
+        // For functions affecting...
+        //      loadup, see window.onload in noteHelperFunctions.js
+        //      manually clicking 76/70, see showQuantity() in functions.js
+        //      auto-selecting 70/76, see getQuantity() in functions.js
+        //      reset button, see resetForm() and hideExtras() in functions.js
 };
 
 function changeSettings(element) {
