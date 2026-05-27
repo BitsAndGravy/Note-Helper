@@ -77,6 +77,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
+        drug: "fluticasone nasal spray",
+        quantity: "16/30",
+        diagnosis: "allergies", 
+        formulary: false, 
+    },  
+    {
         drug: "FreeStyle Libre 3+ sensor",
         quantity: "2/30",
         altQuantity: "3/30",
@@ -686,15 +692,19 @@ function resetForm() { // After clicking the Reset button
         let comment = document.getElementById('commentDiv');
         
         if(showQuantitySettingChecked === 'no') {
-            showQuantity.classList.add('hideInput');
-            showQuantity.classList.remove('showInput');
+            // Hide the quantity input    
+                showQuantity.classList.add('hideInput');
+                showQuantity.classList.remove('showInput');
+
+            // Skip when tabbing through
+                document.getElementById('quantity').tabIndex = -1;
+                document.getElementById('falseQL').tabIndex = -1;
         }
 
         quantity.style.display = 'none';
         comment.style.display = 'none';
 
-        document.getElementById('quantity').tabIndex = -1;
-        document.getElementById('falseQL').tabIndex = -1;
+
 
         showProperQuantity();
     }
