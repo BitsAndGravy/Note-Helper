@@ -422,36 +422,53 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     function processResults() { // takes all of the inputs and places them into the finished note.
         getChecked();       // Used for input type="checkbox"
+        getReject();        // Used to interpret the three checkboxes from 7-reject code    
         getOption();        // Used for input type="select", "text"
         getText();          // Used for textarea, could also be used for input type='text'
         checkQL();          // Checks if the 'false QL' box was selected
     }
 
         function getChecked() { // Used for input type="checkbox"
-            const checks = [
+            const checkboxList = [
                 "chart", 
                 "expedited", 
                 "falseQL", 
                 "gender", 
                 "qset",
                 "records",
-                "reject", 
                 "snapshot", 
                 "type", 
                 "urgent", 
             ];
             
-            for (k = 0; k < checks.length; k++) {
-                let item = checks[k]
+            for (k = 0; k < checkboxList.length; k++) {
+                let item = checkboxList[k]
                 let ele = document.getElementsByName(item);
                 for (i = 0; i < ele.length; i++) {
                     if (ele[i].checked) {
-                        answer[checks[k]] = ele[i].value;
+                        answer[checkboxList[k]] = ele[i].value;
                         break;
                     } else { // What to do if the checkbox is not selected - helpful for 'resetting' inputs.
                         answer[item] = checkboxData[k].notChecked;
                     }
                 }
+            }
+        }
+
+        function getReject() {
+            let checks = document.getElementsByName('reject');
+            if(checks[0].checked) {
+                answer.reject = "75-Standard PA";
+            }
+            if (checks[0].checked && checks[1].checked) {
+                answer.reject = "75 and 76-Standard PA with QL";
+            } else if (checks[1].checked) {
+                answer.reject = "76-Quantity Limit";
+            }
+            if (checks[1].checked && checks[2].checked) {
+                answer.reject = "70 and 76-Non-formulary with QL";
+            } else if (checks[2].checked) {
+                answer.reject = "70-Non-formulary";
             }
         }
 
