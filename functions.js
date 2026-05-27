@@ -79,7 +79,13 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "fluticasone nasal spray",
         quantity: "16/30",
-        diagnosis: "allergies", 
+        diagnosis: "allergic rhinitis", 
+        formulary: false, 
+    },  
+    {
+        drug: "Foundayo",
+        quantity: "30/30",
+        diagnosis: "obesity", 
         formulary: false, 
     },  
     {
