@@ -398,7 +398,7 @@
     --input-background: #a8ffdb1b;
     --input-background-focus: rgba(0, 0, 0, 0.723);
     --input-accent-color: #fbc579;
-    --input-border: #a8ffdbbb;
+    --input-border: #a8ffdb7b;
     --input-border-focus: var(--main-background);
 }
 
@@ -424,9 +424,10 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #f0fffb;
-    --button-hover: #cbf9f4;
-    --button-active: aqua;
+    --button-background: #172754;
+    --button-hover: #1c397a;
+    --button-active: #2e60a180;
+    --button-text: #d0fefd;
 
     /* Input */
     --input-background: #0a102640;
