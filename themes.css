@@ -508,7 +508,7 @@
 
 [data-theme='soul-master'] {
     /* Main features */
-    --main-background: #1f5788;
+    --main-background: #0d264e;
     --header-background: #4f2d46;
     --footer-background: #653d54;
     --body-primary-color: #24344c;
@@ -517,27 +517,28 @@
     --body-gradient: #3a445c, #24344c;
     
     /* Text */
-    --heading-text: #fffeff;
-    --body-text: #fffeff;
-    --body-secondary-text: #fffeff;
-    --input-text: black;
-    --placeholder-text: #000000a2;
+    --heading-text: #e4d3d9;
+    --body-text: #e4d3d9;
+    --body-secondary-text: #e4d3d9;
+    --input-text: #fffeff;
+    --placeholder-text: gray;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #aaa1ad;
+    --button-background: #e4d3d9;
     --button-hover: var(--input-accent-color);
     --button-active: #c48648;
+    --button-text: black;
 
     /* Input */
-    --input-background: #e4d3d9;
-    --input-background-focus: #fffeff;
+    --input-background: #1d293b;
+    --input-background-focus: #141e2d;
     --input-accent-color: #ff9d3a;
-    --input-border: #4f2d46;
-    --input-border-focus: #4f2d46;
+    --input-border: #5b5f70;
+    --input-border-focus: #81495e;
 }
 
 [data-theme='soul-sanctum'] {
