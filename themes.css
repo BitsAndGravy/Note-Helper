@@ -372,16 +372,16 @@
     --main-background: #0b1927;
     --header-background: #4ea882;
     --footer-background: var(--header-background);
-    --body-primary-color: #184848;
+    --body-primary-color: #0f2630;
     --body-secondary-color: #2366555e;
     --body-border-color: #79fbc5;
     --body-gradient: #0b1927, #184848;
     
     /* Text */
     --heading-text: black;
-    --body-text: #d1ffec;
+    --body-text: #79fbc5;
     --body-secondary-text: var(--body-text);
-    --input-text: #79fbc5;
+    --input-text: #d1ffec;
     --placeholder-text: #79fbc5ae;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
@@ -395,7 +395,7 @@
     --button-active: var(--input-accent-color);
 
     /* Input */
-    --input-background: #a8ffdb1b;
+    --input-background: #08131f;
     --input-background-focus: rgba(0, 0, 0, 0.723);
     --input-accent-color: #fbc579;
     --input-border: #a8ffdb7b;
