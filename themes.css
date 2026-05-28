@@ -424,8 +424,8 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #172754;
-    --button-hover: #1c397a;
+    --button-background: #1c397a;
+    --button-hover: #172754;
     --button-active: #2e60a180;
     --button-text: #d0fefd;
 
