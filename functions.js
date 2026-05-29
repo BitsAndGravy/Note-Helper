@@ -279,6 +279,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
     },
     {
+        drug: "Vraylar",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder",
+        formulary: false, 
+    }, 
+    {
         drug: "Wegovy pen",
         quantity: "2/28",
         diagnosis: "obesity",
