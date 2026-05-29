@@ -331,7 +331,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
 ]
-
+/* in favor of checkboxBook
 const checkboxData = [ //Used for getChecked() for when the checkbox is not selected.
     {
         input:'chart',
@@ -384,7 +384,50 @@ const checkboxData = [ //Used for getChecked() for when the checkbox is not sele
         isChecked: 'Urgent ',
         notChecked:''
     },
-]
+]*/
+
+const checkboxBook = {
+    chart: {
+        isChecked: 'No relevant documents in Chart View. ', 
+        notChecked: ''
+    },
+    expedited: {
+        isChecked: 'Expedited ',
+        notChecked: ''
+    },
+    falseQL: {
+        isChecked: 'Not a true QL request; ', 
+        notChecked:''
+    },
+    gender: {
+        isChecked: 'Female', 
+        notChecked:'Male'
+    },
+    qset: {
+        isChecked: 'approval', 
+        notChecked:'denial'
+    },
+    records: {
+        isChecked: 'Records were not submitted with request',
+        notChecked: '',
+    },
+    reject: {
+        isChecked: '',
+        notChecked:'75-Standard PA, formulary'
+    },
+    snapshot: {
+        isChecked: 'No relevant paid claims. ',
+        notChecked:''
+    },
+    type: {
+        isChecked: 'Reauthorization',
+        notChecked:'Initial'
+    },
+    urgent: {
+        isChecked: 'Urgent ',
+        notChecked:''
+    },
+}
 
 const answer = {
     age: "[age]",
@@ -467,7 +510,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                         answer[checkboxList[k]] = ele[i].value;
                         break;
                     } else { // What to do if the checkbox is not selected - helpful for 'resetting' inputs.
-                        answer[item] = checkboxData[k].notChecked;
+                        answer[item] = checkboxBook[item].notChecked;
                     }
                 }
             }
@@ -793,10 +836,6 @@ function getQuantity() {
                     document.getElementById('quantityDiv').classList.remove('hideInput');
                     document.getElementById('quantity').tabIndex = 0;
                     document.getElementById('falseQL').tabIndex = 0;
-
-
-
-                    
                 }
             }
             break;
@@ -849,9 +888,6 @@ function showQuantity() {
         let quantity = document.getElementById('quantityDiv');
 
         if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) {
-            
-            //quantity.style.display = 'inline';
-
             quantity.classList.add('showInput');
             quantity.classList.remove('hideInput');
 
@@ -859,8 +895,6 @@ function showQuantity() {
             document.getElementById('falseQL').tabIndex = 0;
         } 
         else {
-            //quantity.style.display = 'none';
-
             quantity.classList.add('hideInput');
             quantity.classList.remove('showInput');
 
