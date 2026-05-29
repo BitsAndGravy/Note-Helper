@@ -743,21 +743,31 @@ function resetForm() { // After clicking the Reset button
     function hideExtras() {
         let showQuantity = document.getElementById('quantityDiv');
         let showQuantitySettingChecked = localStorage.getItem('alwaysShowQuantity');
-        let quantity = document.getElementById('properQuantityDiv');
-        let comment = document.getElementById('commentDiv');
+        let quantity = document.getElementById('properQuantity');
+        let quantityDiv = document.getElementById('properQuantityDiv');
+        let comment = document.getElementById('comment');
+        let commentDiv = document.getElementById('commentDiv');
         
         if(showQuantitySettingChecked === 'no') {
-            // Hide the quantity input    
+            // Hide the quantity, falseQL, and comment input    
                 showQuantity.classList.add('hideInput');
                 showQuantity.classList.remove('showInput');
+
+                quantityDiv.classList.add('hideInput');
+                quantityDiv.classList.remove('showInput');
+
+                commentDiv.classList.add('hideInput');
+                commentDiv.classList.remove('showInput');
 
             // Skip when tabbing through
                 document.getElementById('quantity').tabIndex = -1;
                 document.getElementById('falseQL').tabIndex = -1;
+                quantity.tabIndex = -1;
+                comment.tabIndex = -1;
         }
 
-        quantity.style.display = 'none';
-        comment.style.display = 'none';
+        /*quantityDiv.style.display = 'none';
+        commentDiv.style.display = 'none';*/
 
 
 
@@ -866,16 +876,28 @@ function clearTextarea(
 // Triggers when 'falseQL' is checked. Shows inputs for proper quantity and comment.
 function showQL() {
     let check = document.getElementById('falseQL');
-    let quantity = document.getElementById('properQuantityDiv');
-    let comment = document.getElementById('commentDiv');
+    let quantity = document.getElementById('properQuantity');
+    let quantityDiv = document.getElementById('properQuantityDiv');
+    let comment = document.getElementById('comment');
+    let commentDiv = document.getElementById('commentDiv');
 
     if (check.checked) {
-        quantity.style.display = 'inline';
-        comment.style.display = 'inline';
+        quantityDiv.classList.add('showInput');
+        quantityDiv.classList.remove('hideInput');
+        quantity.tabIndex = 0;
+
+        commentDiv.classList.add('showInput');
+        commentDiv.classList.remove('hideInput');
+        comment.tabIndex = 0;
     } 
     else {
-        quantity.style.display = 'none';
-        comment.style.display = 'none';
+        quantityDiv.classList.add('hideInput');
+        quantityDiv.classList.remove('showInput');
+        quantity.tabIndex = -1;
+
+        commentDiv.classList.add('hideInput');
+        commentDiv.classList.remove('showInput');
+        comment.tabIndex = -1;
     }
 }
 
