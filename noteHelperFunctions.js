@@ -1,24 +1,35 @@
 window.onload = function() {
-    let result = localStorage.getItem('appealInternal');
-    let element = document.getElementById('appealInternal');
-    let elementDiv = document.getElementById('appealInternalDiv');
+    // Check setting for internal appeal
+        let appealInternal = localStorage.getItem('appealInternal');
+        let appealInternalDiv = document.getElementById('appealInternalDiv');
 
-    if (result == 'yes') {
-        elementDiv.classList.add("showInput");
-    } else {
-        elementDiv.classList.add("hideInput");
-    }
-    
-    let result2 = localStorage.getItem('alwaysShowQuantity');
-    let element2 = document.getElementById('alwaysShowQuantity');
-    let elementDiv2 = document.getElementById('quantityDiv');
+        if (appealInternal == 'yes') {
+            appealInternalDiv.classList.add("showInput");
+        } else {
+            appealInternalDiv.classList.add("hideInput");
+        }
 
-    if (result2 == 'yes') {
-        elementDiv2.classList.add("showInput");
-    } else {
-        elementDiv2.classList.add("hideInput");
-        document.getElementById('quantity').tabIndex = -1;
-        document.getElementById('falseQL').tabIndex = -1;
-    }
+    // Check setting for always show quantity
+        let showQuantity = localStorage.getItem('alwaysShowQuantity');
+        let showQuantityDiv = document.getElementById('quantityDiv');
+
+        if (showQuantity == 'yes') {
+            showQuantityDiv.classList.add("showInput");
+        } else {
+            showQuantityDiv.classList.add("hideInput");
+            document.getElementById('quantity').tabIndex = -1;
+            document.getElementById('falseQL').tabIndex = -1;
+        }
+
+    // Check setting for show timer
+        let showTimer  = localStorage.getItem('showTimer');
+        let showTimerSpan = document.getElementById('time');
+
+        if (showTimer == 'yes') {
+            showTimerSpan.classList.add('showTimer');
+        } else {
+            showTimerSpan.classList.add('hideInput');
+        }
+        
 };
 

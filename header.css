@@ -190,3 +190,7 @@ a:link {color: var(--heading-text);}
     opacity: 1;
     transition: 1s;
 }
+
+.showTimer {
+    opacity: 0.5;
+}

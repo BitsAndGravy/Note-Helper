@@ -1,32 +1,22 @@
 const settingsList = [
-    ['appealInternal', 'appealInternalDiv'], 
-    ['alwaysShowQuantity', 'quantityDiv']
+    'appealInternal', 
+    'showTimer', 
+    'prefillQuantity', 
+    'alwaysShowQuantity', 
 ]
 
 window.onload = function() {
-    let result = localStorage.getItem('appealInternal');
-    let element = document.getElementById('appealInternal');
+    for(p = 0; p < settingsList.length; p++) {
+        let setting = settingsList[p];
+        let check = localStorage.getItem(setting);
+        let checkBox = document.getElementById(setting);
 
-    if (result == 'yes') {
-        element.checked = true;
-    } else {
-        element.checked = false;
-    }
-    
-    // Always show quantity
-        let result2 = localStorage.getItem('alwaysShowQuantity');
-        let element2 = document.getElementById('alwaysShowQuantity');
-
-        if (result2 == 'yes') {
-            element2.checked = true;
+        if (check == 'yes') {
+            checkBox.checked = true;
         } else {
-            element2.checked = false;
+            checkBox.checked = false;
         }
-        // For functions affecting...
-        //      loadup, see window.onload in noteHelperFunctions.js
-        //      manually clicking 76/70, see showQuantity() in functions.js
-        //      auto-selecting 70/76, see getQuantity() in functions.js
-        //      reset button, see resetForm() and hideExtras() in functions.js
+    }
 };
 
 function changeSettings(element) {
@@ -36,15 +26,5 @@ function changeSettings(element) {
         localStorage.setItem(element, 'yes');
     } else {
         localStorage.setItem(element, 'no');
-    }
-}
-
-function prefill(element) {
-    let check = document.getElementById(element);
-
-    if (check.checked) {
-        localStorage.setItem('prefillQuantity', 'yes');
-    } else {
-        localStorage.setItem('prefillQuantity', 'no');
     }
 }
