@@ -688,7 +688,7 @@
     /* Based off of final battle in Path of Pain */
     /* Main features */
     --main-background: white;
-    --header-background: #959ca2;
+    --header-background: #dfdddb;
     --footer-background: #191a29;
     --body-primary-color: #f1fdfd;
     --body-secondary-color: #ffffff5c;
@@ -697,7 +697,7 @@
 
     /* Text */
     --heading-text: black;
-    --animated-text: black;
+    --animated-text: white;
     --body-text: black;
     --body-secondary-text: black;
     --input-text: black;
