@@ -191,6 +191,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T1DM",
     }, 
     {
+        drug: "Opzelura", // cream
+        quantity: "60/30",
+        diagnosis: "atopic dermatitis",
+        altDiagnosis: "psoriasis",  
+        formulary: false, 
+    },  
+    {
         drug: "Ozempic", 
         quantity: "3/28",
         diagnosis: "T2DM",
@@ -901,36 +908,58 @@ function showQL() {
     }
 }
 
+// When 70 or 76 is checked/unchecked.
 function showQuantity() {
-    let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
+    let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity'); // Check settings
 
-    if(alwaysShowQuantity == 'no') {    
+    if(alwaysShowQuantity == 'no') {    // If always show quantity is not selected:
         let quantityLimit = document.getElementById('quantityLimit');
         let nonFormulary = document.getElementById('nonFormulary');
         let quantity = document.getElementById('quantityDiv');
 
-        if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) {
+        if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) { //If 70 and/or 76 is checked:
+            // Add class to make it visible, remove class that hides it
             quantity.classList.add('showInput');
             quantity.classList.remove('hideInput');
 
+            // Adjust tabIndex so you can tab to the input
             document.getElementById('quantity').tabIndex = 0;
             document.getElementById('falseQL').tabIndex = 0;
         } 
-        else {
+        else { // If neither 70 nor 76 are selected:
             quantity.classList.add('hideInput');
             quantity.classList.remove('showInput');
 
+            // Skip the input when tabbing because it's hidden now
             document.getElementById('quantity').tabIndex = -1;
             document.getElementById('falseQL').tabIndex = -1;
             
+            // Since qty and falseQL are hidden, uncheck the box
             document.getElementById('falseQL').checked = false;
 
+            // Run function that hides falseQL stuff (will hide it because we just unchecked the box to show it)
             showQL();
 
         }
-    }
+    } // If setting is 'yes' to always show quantity, do nothing 
 }
 
+function reopeningChecked() {
+    let info = document.getElementById('information');
+    let drugName = document.getElementById('drug').value;
+    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+    let conc = document.getElementById('conclusion');
+
+    if(info.innerText == '') {
+        info.value = drug + ' denied ';
+    };
+
+    if(conc.value = '') {
+        conc.value = 'Previously ';
+    };
+}
+
+// When New Member checked. Uncertain if I want this left as adding to textbox (serves as good reminder) vs adding to buildNote() (takes up less space, works more consistently with less coding)
 function addNewMember() {
     let conc = document.getElementById('conclusion');
     if(conc.value == "") {
