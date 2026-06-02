@@ -47,7 +47,11 @@ textarea, input, select {
     background-color: var(--input-background);
     color: var(--input-text);
     transition-duration: 1s;
+}
 
+textarea {
+    field-sizing: content; /* height of the textarea will automatically increase based on the number of lines entered. */
+    min-height: 2rem; /* default number of lines to start with */
 }
 
 ::placeholder {
@@ -97,11 +101,6 @@ a:link {color: var(--heading-text);}
 /* Adjust size of the large textarea inputs, i.e. authorizations, claims, clinicals, conclusion. */
 .bigTextarea {
     width: 450px;
-}
-
-/* Adjust height of textarea in the Saved Notes area */
-.editTextarea {
-    height: 250px;
 }
 
 /* Hide the textarea for saved notes until Edit button clicked */
