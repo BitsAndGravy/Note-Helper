@@ -29,43 +29,57 @@
                     <H2>Settings</H2>
                     <div>
                         <H3>Appeals</H3>
-                        <label for="appealInternal">Appeal, internal</label>
+                        
+                        <input 
+                            type="checkbox"
+                            id="appealExternal"
+                            name="appealExternal"
+                            onclick="changeSettings(this.id)">
+                        <label for="appealExternal">Appeal, external (IRO)</label>
+
+                        <br>
+
+                        
                         <input 
                             type="checkbox"
                             id="appealInternal"
                             name="appealInternal"
                             onclick="changeSettings(this.id)">
+                        <label for="appealInternal">Appeal, internal</label>
                     </div>
 
                     <div>
                         <H3>Misc</H3>
-                        <label for="showTimer">Show timer</label>
+                        
                         <input
                             type="checkbox"
                             id="showTimer"
                             name="showTimer"
                             onclick="changeSettings(this.id)">
-                        <span>Timer starts/restarts after entering the drug name. Resets when the reset button clicked.</span>
+                        <label for="showTimer">Show timer</label>
+                        <span> - Timer starts/restarts after entering the drug name. Resets when the reset button clicked.</span>
                     </div>
                     <div>
                         <H3>Quantity</H3>
-                        <label for="prefillQuantity">Pre-fill quantity</label>
+                        
                         <input
                             type="checkbox"
                             id="prefillQuantity"
                             name="prefillQuantity"
                             onclick="changeSettings(this.id)">
-                        <span>Based on the drug name, Note helper will predict the quantity and day supply.</span>
+                        <label for="prefillQuantity">Pre-fill quantity</label>
+                        <span> - Based on the drug name, Note helper will predict the quantity and day supply.</span>
                         
                         <br>
 
-                        <label for="alwaysShowQuantity">Always show quantity</label>
+                        
                         <input 
                             type="checkbox"
                             id="alwaysShowQuantity"
                             name="alwaysShowQuantity"
                             onclick="changeSettings(this.id)">
-                        <span>If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
+                        <label for="alwaysShowQuantity">Always show quantity</label>
+                        <span> - If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
                     
                     </div>
                     

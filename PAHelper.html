@@ -64,303 +64,313 @@
                     
 
                     <form id="form1">
+                        <div id="appealExternalDiv">
+                            <label for="appealExternalQuestion">A1.</label>
+                            <input
+                                type="checkbox"
+                                id="appealExternalQuestion"
+                                name="appealExternalQuestion"
+                                value="-- SEND TO IRO --">
+                            <label for="appealExternalQuestion">External appeal (IRO)</label>
+                        </div>
+
                         <div id="appealInternalDiv">
-                            <label for="appealInternalQuestion">Internal appeal</label>
+                            <label for="appealInternalQuestion">A2.</label>
                             <input 
                                 type="text"
                                 id="appealInternalQuestion"
                                 name="appealInternalQuestion"
                                 placeholder="MD specialty">
+                                <label for="appealInternalQuestion">(Internal appeal)</label>
                         </div>
 
-
-                    <label for="drug">01.</label>
-                    <input 
-                        type="text" 
-                        id="drug" 
-                        name="drug" 
-                        placeholder="drug name" 
-                        onchange="getQuantity()">
-
-                    <span id="time" style="float: right;">0:00</span>
-                    <br>
-                    
-                    <label for="source">02.</label>
-                    <select name="source" id="source">
-                        <option value="PAHub (fax)">Fax</option>
-                        <option value="PAHub (phone)">Phone</option>
-                        <option value="ePA (web)" selected>Web</option>
-                        <option value="PAHub (other)">Other</option>
-                    </select>
-                    <br>
-
-                    <label for="urgent">03.</label> 
-                    <input 
-                        type="checkbox" 
-                        id="isUrgent" 
-                        name="urgent" 
-                        value="Urgent " 
-                        >
-                    <label for="isUrgent">Urgent </label>
-
-                    <input 
-                        type="checkbox"
-                        id="isExpedited"
-                        name="expedited"
-                        value="Expedited ">
-                    <label for="isExpedited">Expedited</label>
-                    <br>
-
-                    <label for="diagnosis">04.</label>
-                    <input 
-                        type="text" 
-                        id=diagnosis 
-                        placeholder="diagnosis">
-                    <br>
-
-                    <label for="state">05.</label>
-                    <select name="state" id="state"><!--
-                        <option value="AK">AK</option>--> <!--Alaska-->
-                        <option value="AL">AL</option><!--
-                        <option value="AR">AR</option>-->
-                        <option value="AZ">AZ</option><!--
-                        <option value="CA">CA</option>
-                        <option value="CO">CO</option>
-                        <option value="CT">CT</option>
-                        <option value="DC">DC</option>
-                        <option value="DE">DE</option>-->
-                        <option value="FL" selected>FL</option>
-                        <option value="GA">GA</option><!--
-                        <option value="HI">HI - Hawaii</option>-->
-                        <option value="IA">IA</option><!--
-                        <option value="ID">ID - Idaho</option>-->
-                        <option value="IL">IL</option><!--
-                        <option value="IN">IN - Indiana</option>-->
-                        <option value="KS">KS</option><!--
-                        <option value="KY">KY - Kentucky</option>
-                        <option value="LA">LA - Louisiana</option>
-                        <option value="MA">MA - Massachusetts</option>
-                        <option value="MD">MD - Maryland</option>
-                        <option value="ME">ME - Maine</option>-->
-                        <option value="MI">MI</option><!--
-                        <option value="MN">MN - Minnesota</option>-->
-                        <option value="MO">MO</option>
-                        <option value="MS">MS</option><!--
-                        <option value="MT">MT - Montana</option>-->
-                        <option value="NC">NC</option><!--
-                        <option value="ND">ND - North Dakota</option>-->
-                        <option value="NE">NE</option><!--
-                        <option value="NH">NH - New Hampshire</option>-->
-                        <option value="NJ">NJ</option><!--
-                        <option value="NM">NM - New Mexico</option>
-                        <option value="NV">NV - Nevada</option>-->
-                        <option value="NY">NY</option>
-                        <option value="OH">OH</option>
-                        <option value="OK">OK</option><!--
-                        <option value="OR">OR - Oregon</option>-->
-                        <option value="PA">PA</option><!--
-                        <option value="RI">RI - Rhode Island</option>
-                        <option value="SC">SC - South Carolina</option>
-                        <option value="SD">SD - South Dakota</option>-->
-                        <option value="TN">TN</option>
-                        <option value="TX">TX</option><!--
-                        <option value="UT">UT - Utah</option>
-                        <option value="VA">VA - Virginia</option>
-                        <option value="VT">VT - Vermont</option>
-                        <option value="WA">WA - Washington</option>
-                        <option value="WI">WI - Wisconson</option>
-                        <option value="WV">WV - West Virginia</option>
-                        <option value="WY">WY - Wyoming</option>-->
-                    </select>
-                    <br>
-
-
-                    <label for="qset">06.</label> 
-                    <input type="checkbox" id="approval" name="qset" value="approval" checked>
-                    <label for="approval">Q-set approval</label>
-                    <br>
-
-                    <label for="reject">07.</label>
-                    <input
-                        type="checkbox"
-                        id="standardPA"
-                        name="reject"
-                        value="75-Standard PA"
-                        checked
-                        tabindex="-1">
-                    <label for="standardPA">75 </label>
-                    <input 
-                        type="checkbox" 
-                        id="quantityLimit" 
-                        name="reject" 
-                        value="75 and 76-Standard PA with QL, formulary"
-                        onclick="showQuantity()">
-                    <label for="quantityLimit">76 </label>
-                    <input 
-                        type="checkbox" 
-                        id="nonFormulary" 
-                        name="reject" 
-                        value="70-Non-formulary"
-                        onclick="showQuantity()">
-                    <label for="nonFormulary">70 </label>
-                    <br>
-                    
-                    <div id="quantityDiv">
-                        <label for="quantity">08.</label>
+                        <label for="drug">01.</label>
                         <input 
                             type="text" 
-                            class="qtyTextbox" 
-                            id="quantity" 
-                            name="quantity" 
-                            placeholder="qty/days"
-                            >
+                            id="drug" 
+                            name="drug" 
+                            placeholder="drug name" 
+                            onchange="getQuantity()">
+
+                        <span id="time" style="float: right;">0:00</span>
+                        <br>
+                        
+                        <label for="source">02.</label>
+                        <select name="source" id="source">
+                            <option value="PAHub (fax)">Fax</option>
+                            <option value="PAHub (phone)">Phone</option>
+                            <option value="ePA (web)" selected>Web</option>
+                            <option value="PAHub (other)">Other</option>
+                        </select>
                         <br>
 
-                        <label for="falseQL">09.</label>
+                        <label for="urgent">03.</label> 
                         <input 
                             type="checkbox" 
-                            id="falseQL" 
-                            name="falseQL" 
-                            value="Not a true QL request; "
-                            onclick="showQL();">
-                        <label for="falseQL">False QL</label>
-                        <br>
-                    </div>
-
-                    <div id="properQuantityDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
-                        <label 
-                            for="properQuantity" 
-                            id="properQuantityLabel">09.a</label>
+                            id="isUrgent" 
+                            name="urgent" 
+                            value="Urgent " 
+                            >
+                        <label for="isUrgent">Urgent </label>
 
                         <input 
+                            type="checkbox"
+                            id="isExpedited"
+                            name="expedited"
+                            value="Expedited ">
+                        <label for="isExpedited">Expedited</label>
+                        <br>
+
+                        <label for="diagnosis">04.</label>
+                        <input 
                             type="text" 
-                            class="qtyTextbox" 
-                            id="properQuantity" 
-                            name="properQuantity" 
-                            placeholder="true qty"
-                            onchange="showProperQuantity()"
+                            id=diagnosis 
+                            placeholder="diagnosis">
+                        <br>
+
+                        <label for="state">05.</label>
+                        <select name="state" id="state"><!--
+                            <option value="AK">AK</option>--> <!--Alaska-->
+                            <option value="AL">AL</option><!--
+                            <option value="AR">AR</option>-->
+                            <option value="AZ">AZ</option><!--
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DC">DC</option>
+                            <option value="DE">DE</option>-->
+                            <option value="FL" selected>FL</option>
+                            <option value="GA">GA</option><!--
+                            <option value="HI">HI - Hawaii</option>-->
+                            <option value="IA">IA</option><!--
+                            <option value="ID">ID - Idaho</option>-->
+                            <option value="IL">IL</option><!--
+                            <option value="IN">IN - Indiana</option>-->
+                            <option value="KS">KS</option><!--
+                            <option value="KY">KY - Kentucky</option>
+                            <option value="LA">LA - Louisiana</option>
+                            <option value="MA">MA - Massachusetts</option>
+                            <option value="MD">MD - Maryland</option>
+                            <option value="ME">ME - Maine</option>-->
+                            <option value="MI">MI</option><!--
+                            <option value="MN">MN - Minnesota</option>-->
+                            <option value="MO">MO</option>
+                            <option value="MS">MS</option><!--
+                            <option value="MT">MT - Montana</option>-->
+                            <option value="NC">NC</option><!--
+                            <option value="ND">ND - North Dakota</option>-->
+                            <option value="NE">NE</option><!--
+                            <option value="NH">NH - New Hampshire</option>-->
+                            <option value="NJ">NJ</option><!--
+                            <option value="NM">NM - New Mexico</option>
+                            <option value="NV">NV - Nevada</option>-->
+                            <option value="NY">NY</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option><!--
+                            <option value="OR">OR - Oregon</option>-->
+                            <option value="PA">PA</option><!--
+                            <option value="RI">RI - Rhode Island</option>
+                            <option value="SC">SC - South Carolina</option>
+                            <option value="SD">SD - South Dakota</option>-->
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option><!--
+                            <option value="UT">UT - Utah</option>
+                            <option value="VA">VA - Virginia</option>
+                            <option value="VT">VT - Vermont</option>
+                            <option value="WA">WA - Washington</option>
+                            <option value="WI">WI - Wisconson</option>
+                            <option value="WV">WV - West Virginia</option>
+                            <option value="WY">WY - Wyoming</option>-->
+                        </select>
+                        <br>
+
+
+                        <label for="qset">06.</label> 
+                        <input type="checkbox" id="approval" name="qset" value="approval" checked>
+                        <label for="approval">Q-set approval</label>
+                        <br>
+
+                        <label for="reject">07.</label>
+                        <input
+                            type="checkbox"
+                            id="standardPA"
+                            name="reject"
+                            value="75-Standard PA"
+                            checked
                             tabindex="-1">
+                        <label for="standardPA">75 </label>
+                        <input 
+                            type="checkbox" 
+                            id="quantityLimit" 
+                            name="reject" 
+                            value="75 and 76-Standard PA with QL, formulary"
+                            onclick="showQuantity()">
+                        <label for="quantityLimit">76 </label>
+                        <input 
+                            type="checkbox" 
+                            id="nonFormulary" 
+                            name="reject" 
+                            value="70-Non-formulary"
+                            onclick="showQuantity()">
+                        <label for="nonFormulary">70 </label>
+                        <br>
+                        
+                        <div id="quantityDiv">
+                            <label for="quantity">08.</label>
+                            <input 
+                                type="text" 
+                                class="qtyTextbox" 
+                                id="quantity" 
+                                name="quantity" 
+                                placeholder="qty/days"
+                                >
+                            <br>
 
-                        <br id="properQuantityBreak">
-                    </div>
+                            <label for="falseQL">09.</label>
+                            <input 
+                                type="checkbox" 
+                                id="falseQL" 
+                                name="falseQL" 
+                                value="Not a true QL request; "
+                                onclick="showQL();">
+                            <label for="falseQL">False QL</label>
+                            <br>
+                        </div>
 
-                    <label for="type">10.</label> 
-                    <input 
-                        type="checkbox" 
-                        id="reauthorization" 
-                        name="type" 
-                        value="Reauthorization">
-                    <label for="reauthorization">Reauthorizaiton </label>
-                    
-                    <input
-                        type="checkbox"
-                        id="reopening"
-                        name="type"
-                        value="Reopening"
-                        onclick="reopeningChecked()">
-                    <label for="reopening">Reopening</label>
-                    <br>
+                        <div id="properQuantityDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
+                            <label 
+                                for="properQuantity" 
+                                id="properQuantityLabel">09.a</label>
 
-                    <label for="information">11.</label>
-                    <textarea 
-                        id="information" 
-                        name="information" 
-                        rows="2" 
-                        class="bigTextarea"
-                        placeholder="previous authorizations"></textarea>
-                    <br>
+                            <input 
+                                type="text" 
+                                class="qtyTextbox" 
+                                id="properQuantity" 
+                                name="properQuantity" 
+                                placeholder="true qty"
+                                onchange="showProperQuantity()"
+                                tabindex="-1">
+
+                            <br id="properQuantityBreak">
+                        </div>
+
+                        <label for="type">10.</label> 
+                        <input 
+                            type="checkbox" 
+                            id="reauthorization" 
+                            name="type" 
+                            value="Reauthorization">
+                        <label for="reauthorization">Reauthorizaiton </label>
+                        
+                        <input
+                            type="checkbox"
+                            id="reopening"
+                            name="type"
+                            value="Reopening"
+                            onclick="reopeningChecked()">
+                        <label for="reopening">Reopening</label>
+                        <br>
+
+                        <label for="information">11.</label>
+                        <textarea 
+                            id="information" 
+                            name="information" 
+                            rows="2" 
+                            class="bigTextarea"
+                            placeholder="previous authorizations"></textarea>
+                        <br>
                     </form>
                 </div>
 
                 <div class="secondaryColor inputDiv">
                     <form id="form2">
-                    <label for="gender">12.</label> 
-                    <input type="checkbox" id="female" name="gender" value="Female">
-                    <label for="female">Female</label>
-                    <br>
+                        <label for="gender">12.</label> 
+                        <input type="checkbox" id="female" name="gender" value="Female">
+                        <label for="female">Female</label>
+                        <br>
 
-                    <label for="age">13.</label>
-                    <input type="text" class="ageTextbox" id="age" name="age" placeholder="age" required>
-                    <br>
+                        <label for="age">13.</label>
+                        <input type="text" class="ageTextbox" id="age" name="age" placeholder="age" required>
+                        <br>
 
-                    <label for="member">14.</label>
-                    <input 
-                        type="text" 
-                        id="member" 
-                        name="member" 
-                        placeholder="member since" 
-                        value="1-2026"
-                        class="memberWidth">
+                        <label for="member">14.</label>
+                        <input 
+                            type="text" 
+                            id="member" 
+                            name="member" 
+                            placeholder="member since" 
+                            value="1-2026"
+                            class="memberWidth">
 
-                    <input 
-                        type="checkbox"
-                        id="newMember"
-                        onclick="addNewMember()">
-                    <label for="newMember">New member</label>
-                    <br>
+                        <input 
+                            type="checkbox"
+                            id="newMember"
+                            onclick="addNewMember()">
+                        <label for="newMember">New member</label>
+                        <br>
                     </form>
                 </div>
 
                 <div class="inputDiv">
                     <form id="form3">
-                    <label for="chart">15.</label>
-                    <input type="checkbox" id="noCharts" name="chart" value="No relevant documents in Chart View. ">
-                    <label for="noCharts">No items in Chart View</label>
-                    <br>     
+                        <label for="chart">15.</label>
+                        <input type="checkbox" id="noCharts" name="chart" value="No relevant documents in Chart View. ">
+                        <label for="noCharts">No items in Chart View</label>
+                        <br>     
 
-                    <label for="snapshot">16.</label>
-                    <input type="checkbox" id="noClaims" name="snapshot" value="No relevant paid claims. " onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
-                    <label for="noClaims">No drug claims </label>
-                
+                        <label for="snapshot">16.</label>
+                        <input type="checkbox" id="noClaims" name="snapshot" value="No relevant paid claims. " onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
+                        <label for="noClaims">No drug claims </label>
+                    
 
-                    <label for="claims" id="claimsLabel"><br>17.</label>
-                    <textarea 
-                        id="claims" 
-                        name="claims" 
-                        rows="4"
-                        class="bigTextarea"
-                        placeholder="claims history">Paid claims in Snapshot for </textarea>
-                    <br>
+                        <label for="claims" id="claimsLabel"><br>17.</label>
+                        <textarea 
+                            id="claims" 
+                            name="claims" 
+                            rows="4"
+                            class="bigTextarea"
+                            placeholder="claims history">Paid claims in Snapshot for </textarea>
+                        <br>
 
-                    <label for="records">18.</label>
-                    <input type="checkbox" id="noRecords" name="records" value="Records not submitted with request. " onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
-                    <label for="noRecords">Records not sent</label>
-                    <br>
+                        <label for="records">18.</label>
+                        <input type="checkbox" id="noRecords" name="records" value="Records not submitted with request. " onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
+                        <label for="noRecords">Records not sent</label>
+                        <br>
 
-                    <label for="clinical">19.</label>
-                    <textarea
-                        id="clinical" 
-                        name="clinical" 
-                        rows="4" 
-                        class="bigTextarea"
-                        placeholder="clinicals">Chart note dated </textarea>
-                    <br>
+                        <label for="clinical">19.</label>
+                        <textarea
+                            id="clinical" 
+                            name="clinical" 
+                            rows="4" 
+                            class="bigTextarea"
+                            placeholder="clinicals">Chart note dated </textarea>
+                        <br>
 
-                    <label for="conclusion">20.</label>
-                    <textarea
-                        id="conclusion" 
-                        name="conclusion" 
-                        rows="4" 
-                        class="bigTextarea"
-                        placeholder="conclusion"></textarea>
-                    <br>
+                        <label for="conclusion">20.</label>
+                        <textarea
+                            id="conclusion" 
+                            name="conclusion" 
+                            rows="4" 
+                            class="bigTextarea"
+                            placeholder="conclusion"></textarea>
+                        <br>
 
-                    <div id="commentDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
-                        <label 
-                            for="comment" 
-                            id="commentLabel" 
-                            >21. Not a true QL; </label>
-                            
-                        <select
-                            id="comment" 
-                            name="comment"
-                            tabindex="-1">
+                        <div id="commentDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
+                            <label 
+                                for="comment" 
+                                id="commentLabel" 
+                                >21. Not a true QL; </label>
+                                
+                            <select
+                                id="comment" 
+                                name="comment"
+                                tabindex="-1">
 
-                            <option value="reviewed as #">reviewed as</option>
-                            <option value="please approve as #">please approve as</option>
-                        </select>
-                        <span id="showProperQuantity"></span></span>
-                    </div>
+                                <option value="reviewed as #">reviewed as</option>
+                                <option value="please approve as #">please approve as</option>
+                            </select>
+                            <span id="showProperQuantity"></span></span>
+                        </div>
                     </form>
                 </div>
             </div>

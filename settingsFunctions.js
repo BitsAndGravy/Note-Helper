@@ -1,4 +1,5 @@
 const settingsList = [
+    'appealExternal',
     'appealInternal', 
     'showTimer', 
     'prefillQuantity', 

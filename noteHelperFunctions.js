@@ -1,5 +1,5 @@
 window.onload = function() {
-    // Check setting for internal appeal
+    // Check setting for INternal appeal
         let appealInternal = localStorage.getItem('appealInternal');
         let appealInternalDiv = document.getElementById('appealInternalDiv');
 
@@ -7,6 +7,16 @@ window.onload = function() {
             appealInternalDiv.classList.add("showInput");
         } else {
             appealInternalDiv.classList.add("hideInput");
+        }
+
+    // Check setting for EXternal appeal
+        let appealExternal = localStorage.getItem('appealExternal');
+        let appealExternalDiv = document.getElementById('appealExternalDiv');
+
+        if (appealExternal == 'yes') {
+            appealExternalDiv.classList.add("showInput");
+        } else {
+            appealExternalDiv.classList.add("hideInput");
         }
 
     // Check setting for always show quantity

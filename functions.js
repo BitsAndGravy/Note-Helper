@@ -338,62 +338,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
 ]
-/* in favor of checkboxBook
-const checkboxData = [ //Used for getChecked() for when the checkbox is not selected.
-    {
-        input:'chart',
-        isChecked: 'No relevant documents in Chart View. ', 
-        notChecked:''
-    },
-    {
-        input:'expedited',
-        isChecked: 'Expedited ',
-        notChecked:''
-    },
-    {
-        input:'falseQL',
-        isChecked: 'Not a true QL request; ', 
-        notChecked:''
-    },
-    {
-        input:'gender',
-        isChecked: 'Female', 
-        notChecked:'Male'
-    },
-    {
-        input:'qset',
-        isChecked: 'approval', 
-        notChecked:'denial'
-    },
-    {
-        input:'records',
-        isChecked: 'Records were not submitted with request',
-        //notChecked:'Records were submitted with request. '
-        notChecked: '',
-    },
-    {
-        input:'reject',
-        isChecked: '',
-        notChecked:'75-Standard PA, formulary'
-    },
-    {
-        input:'snapshot',
-        isChecked: 'No relevant paid claims. ',
-        notChecked:''
-    },
-    {
-        input:'type',
-        isChecked: 'Reauthorization',
-        notChecked:'Initial'
-    },
-    {
-        input:'urgent',
-        isChecked: 'Urgent ',
-        notChecked:''
-    },
-]*/
 
 const checkboxBook = {
+    appealExternal: {
+        isChecked: '-- SEND TO IRO --',
+        notChecked: '',
+    },
+    
     chart: {
         isChecked: 'No relevant documents in Chart View. ', 
         notChecked: ''
@@ -418,10 +369,6 @@ const checkboxBook = {
         isChecked: 'Records were not submitted with request',
         notChecked: '',
     },
-    reject: {
-        isChecked: '',
-        notChecked:'75-Standard PA, formulary'
-    },
     snapshot: {
         isChecked: 'No relevant paid claims. ',
         notChecked:''
@@ -438,6 +385,7 @@ const checkboxBook = {
 
 const answer = {
     age: "[age]",
+    appealExternal: "[appealExternal]",
     appealInternal: "[appealInternal]", 
     chart: "[chart]", 
     claims: "[claims]", 
@@ -498,6 +446,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         function getChecked() { // Used for input type="checkbox"
             const checkboxList = [
+                "appealExternal",
                 "chart", 
                 "expedited", 
                 "falseQL", 
