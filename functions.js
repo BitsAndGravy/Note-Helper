@@ -702,11 +702,27 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
+    resetTextareaSize();
     hideExtras();
     animateText('resetForm');
     gotoFirstField();
     resetTimer();
 }
+
+    function resetTextareaSize() {
+        let txtarea = [
+            'information',
+            'claims',
+            'clinical',
+            'conclusion'
+        ]
+
+        for(i = 0; i < txtarea.length; i++) {
+            let adjust = document.getElementById(txtarea[i]).style;
+            adjust.height = 'unset';
+            adjust.width = '';
+        }
+    }
 
     function hideExtras() {
         let showQuantity = document.getElementById('quantityDiv');

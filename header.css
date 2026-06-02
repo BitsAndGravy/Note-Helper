@@ -58,7 +58,12 @@ textarea {
     color: var(--placeholder-text);
 }
 
-/* ||| Checkboxes */
+input[type=text] {
+    min-width: 200px;
+    max-width: 450px;
+    field-sizing: content;
+}
+
 input[type=checkbox] {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -109,17 +114,17 @@ a:link {color: var(--heading-text);}
 }
 
 /* Adjust size of age and quantity text inputs */
-.ageTextbox {
-    width: 30px;
+/*.ageTextbox {
+    max-width: 30px;
 }
 
 .qtyTextbox {
-    width: 50px;
+    min-width: 50px;
 }
 
 .memberWidth {
-    width: 300px;
-}
+    max-width: 300px;
+}*/
 
 .heading {
     background-color: var(--header-background);
