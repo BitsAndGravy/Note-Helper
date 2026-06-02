@@ -59,7 +59,7 @@ textarea {
 }
 
 input[type=text] {
-    min-width: 200px;
+    min-width: 150px;
     max-width: 450px;
     field-sizing: content;
 }
