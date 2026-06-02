@@ -1,6 +1,18 @@
 /* || Dictionaries and constants */
 const drugDatabase = [ // for getQuantity()
     {
+        drug: "Adderall tablet",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+        formulary: false, 
+    },  
+    {
+        drug: "Adderall XR",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+        formulary: false, 
+    },  
+    {
         drug: "Aimovig",
         quantity: "1/25",
         diagnosis: "migraine prophylaxis", 
@@ -183,7 +195,7 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Omega-3",
         quantity: "120/30",
-        diagnosis: "pure hypertriglyceridemia", 
+        diagnosis: "hyperlipidemia", 
     },   
     {
         drug: "Omnipod 5 pods",
