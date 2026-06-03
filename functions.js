@@ -762,11 +762,6 @@ function resetForm() { // After clicking the Reset button
                 comment.tabIndex = -1;
         }
 
-        /*quantityDiv.style.display = 'none';
-        commentDiv.style.display = 'none';*/
-
-
-
         showProperQuantity();
     }
 
@@ -837,6 +832,7 @@ function getQuantity() {
             document.getElementById('diagnosis').value = drugDatabase[i].diagnosis; // Prefill diagnosis field
             if(drugDatabase[i].formulary == false) { // Checks if non-formulary, checks the checkbox and shows 8-quantity and 9-falseQL
                 document.getElementById('nonFormulary').checked = true;
+                document.getElementById('standardPA').checked = false;
                 if(alwaysShowQuantity == 'no') {
                     document.getElementById('quantityDiv').classList.add('showInput');
                     document.getElementById('quantityDiv').classList.remove('hideInput');
@@ -901,7 +897,7 @@ function showQL() {
 function showQuantity() {
     let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity'); // Check settings
 
-    if(alwaysShowQuantity == 'no') {    // If always show quantity is not selected:
+    if(alwaysShowQuantity == 'no') {    // If 'always show quantity' is not selected in settings:
         let quantityLimit = document.getElementById('quantityLimit');
         let nonFormulary = document.getElementById('nonFormulary');
         let quantity = document.getElementById('quantityDiv');
@@ -914,6 +910,10 @@ function showQuantity() {
             // Adjust tabIndex so you can tab to the input
             document.getElementById('quantity').tabIndex = 0;
             document.getElementById('falseQL').tabIndex = 0;
+
+            if(nonFormulary.checked) { // If 70 is selected, unselect 75.
+                document.getElementById('standardPA').checked = false;
+            }
         } 
         else { // If neither 70 nor 76 are selected:
             quantity.classList.add('hideInput');
