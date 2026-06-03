@@ -155,9 +155,16 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "neuropathic pain",
     }, 
     {
-        drug: "liraglutide",
+        drug: "liraglutide (Victoza)",
         quantity: "9/30",
         diagnosis: "T2DM",
+    },
+    {
+        drug: "liraglutide (Saxenda)",
+        quantity: "9/30",
+        diagnosis: "obesity",
+        formulary: false,
+
     },
     {
         drug: "metformin ER 1,000 mg osm-tab", // nasal spray
@@ -307,6 +314,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Vraylar",
         quantity: "30/30",
         diagnosis: "bipolar disorder",
+        formulary: false, 
+    }, 
+    {
+        drug: "Wegovy HD pen",
+        quantity: "3/28",
+        diagnosis: "obesity",
         formulary: false, 
     }, 
     {
