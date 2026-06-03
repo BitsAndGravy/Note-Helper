@@ -318,8 +318,21 @@
                         <br>     
 
                         <label for="snapshot">16.</label>
-                        <input type="checkbox" id="noClaims" name="snapshot" value="No relevant paid claims. " onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
+                        <input 
+                            type="checkbox" 
+                            id="noClaims" 
+                            name="snapshot" 
+                            value="No relevant paid claims. " 
+                            onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
                         <label for="noClaims">No drug claims </label>
+
+                        <input 
+                            type="checkbox"
+                            id="noMedicalAuthorizations"
+                            name="medicalAuthorizations"
+                            value="No medical authorizations. "
+                            onclick="clearTextarea('noMedicalAuthorizations', 'claims', 'Paid claims in Snapshot for ')">
+                        <label for="noMedicalAuthorizations">No medical authorizations </label>
                     
 
                         <label for="claims" id="claimsLabel"><br>17.</label>
@@ -331,7 +344,12 @@
                         <br>
 
                         <label for="records">18.</label>
-                        <input type="checkbox" id="noRecords" name="records" value="Records not submitted with request. " onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
+                        <input 
+                            type="checkbox" 
+                            id="noRecords" 
+                            name="records" 
+                            value="Records not submitted with request. " 
+                            onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
                         <label for="noRecords">Records not sent</label>
                         <br>
 

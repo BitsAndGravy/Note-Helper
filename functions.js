@@ -373,6 +373,10 @@ const checkboxBook = {
         isChecked: 'Female', 
         notChecked:'Male'
     },
+    medicalAuthorizations: {
+        isChecked: 'No relevant medical authorizations.',
+        notChecked: '',
+    },
     qset: {
         isChecked: 'approval', 
         notChecked:'denial'
@@ -410,6 +414,7 @@ const answer = {
     falseQL: "[falseQL]", 
     gender: "[gender]", 
     information: "[information]", 
+    medicalAuthorizations: "[medicalAuthorizations]",
     member: "[member]", 
     properQuantity: "[properQuantity]", 
     qset: "[qset]", 
@@ -463,6 +468,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 "expedited", 
                 "falseQL", 
                 "gender", 
+                "medicalAuthorizations",
                 "qset",
                 "records",
                 "snapshot", 
@@ -564,7 +570,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let historyBody = 
             "Member since " + answer.member + ". \n" + 
             answer.information + snapNewLine +
-            answer.snapshot + claimsNewLine + answer.claims;
+            answer.snapshot + claimsNewLine + answer.claims + answer.medicalAuthorizations;
 
 
         let clinicalHeader = "\n\n" + "CLINICAL " + "\n";
@@ -627,9 +633,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
             function checkBoxes() {
                 
-
+                // If both snapshot (claims) and medicalAuthorizations are unselected, do not add a new line.
                 let snap = answer.snapshot;
-                if (snap == "") {
+                let med = answer.medicalAuthorizations;
+                if (snap == "" && med == "") {
                     snapNewLine = "";
                 } else {
                     snapNewLine = "\n";
