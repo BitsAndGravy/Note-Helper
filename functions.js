@@ -374,6 +374,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "OSA",
         formulary: false,
     }, 
+    {
+        drug: "Zenpep",
+        quantity: "300/30",
+        diagnosis: "exocrine pancreatic insufficiency",
+    }, 
 ]
 
 const checkboxBook = {
