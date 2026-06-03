@@ -35,6 +35,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     },  
     {
+        drug: "Caplyta",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder", 
+        altDiagnosis: "schizophrenia",
+    },  
+    {
         drug: "Creon",
         quantity: "300/90",
         diagnosis: "exocrine pancreatic insufficiency", 
