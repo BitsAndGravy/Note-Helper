@@ -109,6 +109,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Gemtesa", // tablet
+        quantity: "30/30",
+        diagnosis: "overactive bladder", 
+        formulary: false, 
+    },  
+    {
         drug: "icosapent ethyl",
         quantity: "120/30",
         diagnosis: "hyperlipidemia",
