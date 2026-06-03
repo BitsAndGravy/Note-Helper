@@ -920,9 +920,9 @@
     --header-background: #a1124f;
     --footer-background: #c65579;
     --body-primary-color: #6fe9fd;
-    --body-secondary-color: #ffffff40;
+    --body-secondary-color: #ffffff41;
     --body-border-color: #d3c0a9;
-    --body-gradient: #4abada, var(--body-primary-color), #31b3bd;
+    --body-gradient: #4abada, #6ee3f5, #6fe9fd, #31b3bd;
     
     /* Text */
     --heading-text: white;
@@ -930,7 +930,7 @@
     --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --placeholder-text: rgb(95, 110, 126);
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-hover);
@@ -942,10 +942,10 @@
     --button-active: #78687a;
 
     /* Input */
-    --input-background: white;
-    --input-background-focus: #fff3ee;
+    --input-background: rgba(255, 255, 255, 0.555);
+    --input-background-focus: #ffffffc4;
     --input-accent-color: #711a55;
-    --input-border: black;
+    --input-border: #186276;
     --input-border-focus: var(--header-background);
 }
 
