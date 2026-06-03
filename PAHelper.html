@@ -184,11 +184,13 @@
                         </select>
                         <br>
 
-
-                        <label for="qset">06.</label> 
-                        <input type="checkbox" id="approval" name="qset" value="approval" checked>
-                        <label for="approval">Q-set approval</label>
-                        <br>
+                        <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
+                        <div id="qsetDiv" style="display: none;"> 
+                            <label for="qset">06.</label> 
+                            <input type="checkbox" id="approval" name="qset" value="approval" checked>
+                            <label for="approval">Q-set approval</label>
+                            <br>
+                        </div>
 
                         <label for="reject">07.</label>
                         <input
