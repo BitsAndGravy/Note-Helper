@@ -993,14 +993,14 @@ function reopeningChecked() {
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let cc = document.getElementById('conclusion');
+    let conc = document.getElementById('conclusion');
 
     if(info.innerText == '') {
         info.value = drug + ' denied ';
     };
 
-    if(cc.value = '') {
-        cc.value = 'Previously ';
+    if(conc.innerText == '') {
+        conc.value = 'Previously ';
     };
 }
 
