@@ -67,6 +67,8 @@ input[type=text] {
 input[type=checkbox] {
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 15px;
+    height: 15px;
 }
 
 /* ||| Buttons */

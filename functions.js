@@ -35,6 +35,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     },  
     {
+        drug: "Belsomra",
+        quantity: "30/30",
+        diagnosis: "insomnia", 
+    },  
+    {
         drug: "Caplyta",
         quantity: "30/30",
         diagnosis: "bipolar disorder", 
@@ -126,9 +131,21 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "hyperlipidemia",
     }, 
     {
+        drug: "Ingrezza", // capsule
+        quantity: "30/30",
+        diagnosis: "Huntington's disease", 
+        altDiagnosis: "tardive dyskinesia",
+        formulary: false, 
+    },  
+    {
         drug: "ivermectin", // 1% topical cream
         quantity: "45/30",
         diagnosis: "rosacea",
+    }, 
+    {
+        drug: "Lokelma", // powder packet
+        quantity: "30/30",
+        diagnosis: "hyperkalemia",
     }, 
     {
         drug: "Jatenzo", // capsule
@@ -170,8 +187,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "9/30",
         diagnosis: "obesity",
         formulary: false,
-
     },
+    {
+        drug: "lurasidone", // tablet
+        quantity: "30/30",
+        diagnosis: "bipolar disorder",
+    }, 
     {
         drug: "metformin ER 1,000 mg osm-tab", // nasal spray
         quantity: "60/30",
@@ -184,6 +205,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
         formulary: false,  
     },  
+    {
+        drug: "mirabegron", // ER tablet
+        quantity: "30/30",
+        diagnosis: "overactive bladder",
+    }, 
     {
         drug: "Miebo",
         quantity: "3/30",
@@ -316,6 +342,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "9/30",
         diagnosis: "T2DM",
     },
+    {
+        drug: "Voquezna",
+        quantity: "30/30",
+        diagnosis: "GERD",
+        formulary: false, 
+    }, 
     {
         drug: "Vraylar",
         quantity: "30/30",
@@ -961,14 +993,14 @@ function reopeningChecked() {
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let conc = document.getElementById('conclusion');
+    let cc = document.getElementById('conclusion');
 
     if(info.innerText == '') {
         info.value = drug + ' denied ';
     };
 
-    if(conc.value = '') {
-        conc.value = 'Previously ';
+    if(cc.value = '') {
+        cc.value = 'Previously ';
     };
 }
 
