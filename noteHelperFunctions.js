@@ -41,5 +41,21 @@ window.onload = function() {
             showTimerSpan.classList.add('hideInput');
         }
         
+    createThemeOptions();
 };
+
+function createThemeOptions () {
+    for(theme in themeBook) {
+        let name = themeBook[theme].name;
+        let title = themeBook[theme].title;
+        //let group = themeBook[theme].group;
+        //let style = themeBook[theme].style;
+        let option = document.createElement('option');
+        let select = document.getElementById('themeSelect');
+        
+        option.value = name;
+        option.innerHTML = title;
+        select.appendChild(option);
+    };
+}
 

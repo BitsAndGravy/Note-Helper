@@ -7,6 +7,8 @@
 
     <script src="noteHelperFunctions.js" type="text/javascript"></script>
     <script src="functions.js" type="text/javascript"></script>
+    <script src="themeBook.js" type="text/javascript"></script>
+
 
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="themes.css">
@@ -27,40 +29,11 @@
         <div>
             <div class="gradientColor">
                 <div class="inputDiv">   
-                    <select id="themeSelect" onchange="changeTheme(this.value)" style="float: right; opacity: 0;">
-                        <option value="midnight-blue">-Midnight blue (dark)-</option>
-                        <option value="dark">Dark</option>
-                        <option value="pahub">PAHub (light)</option>
-                        <option value="scantron">Scantron (light)</option>
-
-                        <option value="abyss">HK-Abyss (dark)</option>
-                        <option value="broken-vessel">HK-Broken Vessel (dark)</option>
-                        <option value="crystal-peaks">HK-Crystal Peaks (dark)</option>
-                        <option value="fog-canyon">HK-Fog Canyon (dark)</option>
-                        <option value="fungal-wastes">HK-Fungal Wastes (dark)</option>
-                        <option value="greenpath-I">HK-Greenpath I (dark)</option>
-                        <option value="greenpath-II">HK-Greenpath II (dark)</option>
-
-                        <option value="ismas-grove">HK-Isma's Grove (dark)</option>
-                        <option value="joni-blessing">HK-Joni's Blessing (light)</option>
-                        <option value="queens-gardens">HK-Queen's Gardens (light)</option>
-                        <option value="royal-waterways">HK-Royal Waterways (dark)</option>
-                        <option value="soul-master">HK-Soul Master (dark)</option>
-                        <option value="soul-sanctum">HK-Soul Sanctum (dark)</option>
-                        <option value="the-grimm-troupe">HK-The Grimm Troupe (dark)</option>
-                        <option value="the-hive">HK-The Hive (light)</option>
-                        <option value="the-radiance">HK-The Radiance (light)</option>
-                        <option value="white-palace">HK-White Palace</option>
-
-                        <option value="gryffindor">HP-Gryffindor (dark)</option>
-                        <option value="hufflepuff">HP-Huffflepuff (light)</option>
-                        <option value="ravenclaw">HP-Ravenclaw (dark)</option>
-                        <option value="slytherin">HP-Slytherin (dark)</option>
-                        <option value="knight-bus">HP-Knight Bus (dark)</option>
-
-                        <option value="coral-tower">SS-Coral Tower (light)</option>
-                        <option value="deep-docks">SS-Deep Docks (dark)</option>
-                        <option value="needle-master">SS-Needle Master (light)</option>
+                    <!-- For select options, see createThemeOptions() -->
+                    <select
+                        id="themeSelect" 
+                        onchange="changeTheme(this.value)" 
+                        style="float: right; opacity: 0;">
                     </select>
 
                     
@@ -96,6 +69,8 @@
 
                         <span id="time" style="float: right;">0:00</span>
                         <br>
+
+                        <select id="selectTest"></select><br>
                         
                         <label for="source">02.</label>
                         <select name="source" id="source">
