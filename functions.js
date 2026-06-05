@@ -270,6 +270,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis",
     },
     {
+        drug: "Qelbree",
+        quantity: "30/30",
+        diagnosis: "ADHD",
+        formulary: false,
+    },
+    {
         drug: "Restasis",
         quantity: "60/30",
         diagnosis: "keratoconjunctivitis",
@@ -290,11 +296,6 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "male erectile dysfunction", 
         formulary: false, 
     }, 
-    /* Generic drug name not specific enough - could be Zepbound or Mounjaro. {
-        drug: "tirzepatide",
-        quantity: "2/28",
-        diagnosis: "T2DM",
-    }, */
     {
         drug: "testosterone 1% gel packet",
         quantity: "60/30",
