@@ -334,7 +334,7 @@
 }
 
 
-[data-theme='greenpath'] {
+[data-theme='greenpath-I'] {
     /* Main features */
     --main-background: #0f2031;
     --header-background: #346778;
@@ -348,7 +348,7 @@
     --heading-text: #daf0ec;
     --body-text: var(--heading-text);
     --input-text: var(--heading-text);
-    --placeholder-text: #daf0ecB3;
+    --placeholder-text: #daf0eca8;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
@@ -363,6 +363,40 @@
     --input-background: #0f203180;
     --input-background-focus: var(--main-background);
     --input-accent-color: #b59cff;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
+[data-theme='greenpath-II'] {
+    /* Main features */
+    --main-background: #132641;
+    --header-background: #212242;
+    --footer-background: #212242;
+    --body-primary-color: #123542;
+    --body-secondary-color: #352c4e;
+    --body-border-color: #398d57;
+    --body-gradient: #2f7c5b, #235c52, #123542;
+    
+    /* Text */
+    --heading-text: #e7f0cc;
+    --body-text: var(--heading-text);
+    --input-text: var(--heading-text);
+    --placeholder-text: #e7f0ccb5;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: aqua;
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #524a68;
+    --button-hover: #b59cff;
+    --button-active: #8d72e0;
+    --button-text: #e7f0cc;
+
+    /* Input */
+    --input-background: #0f203180;
+    --input-background-focus: var(--main-background);
+    --input-accent-color: #a2c9ff;
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
