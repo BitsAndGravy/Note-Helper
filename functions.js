@@ -255,12 +255,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Ozempic", 
+        drug: "Ozempic pen", 
         quantity: "3/28",
         diagnosis: "T2DM",
     },
     {
-        drug: "Ozempic pill",
+        drug: "Ozempic tablet",
         quantity: "30/30",
         diagnosis: "T2DM",
     }, 
