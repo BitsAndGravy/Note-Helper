@@ -983,6 +983,7 @@
     --input-border-focus: var(--header-background);
 }
 
+
 [data-theme='deep-docks'] {
     /* Main features */
     --main-background: #6c2d0b;
@@ -1034,7 +1035,7 @@
     --body-secondary-text: white;
     --input-text: black;
     --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --placeholder-text: #00000099;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-hover);
@@ -1046,8 +1047,8 @@
     --button-active: #78687a;
 
     /* Input */
-    --input-background: white;
-    --input-background-focus: #fff4ef;
+    --input-background: #ffffff60;
+    --input-background-focus: #ffffff99;
     --input-accent-color: #4d311f;
     --input-border: black;
     --input-border-focus: var(--main-background);
