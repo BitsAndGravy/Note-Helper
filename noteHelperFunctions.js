@@ -1,4 +1,5 @@
 window.onload = function() {
+    createThemeOptions();
     // Check setting for INternal appeal
         let appealInternal = localStorage.getItem('appealInternal');
         let appealInternalDiv = document.getElementById('appealInternalDiv');
@@ -40,8 +41,6 @@ window.onload = function() {
         } else {
             showTimerSpan.classList.add('hideInput');
         }
-        
-    createThemeOptions();
 };
 
 function createThemeOptions () {
