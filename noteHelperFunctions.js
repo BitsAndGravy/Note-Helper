@@ -45,21 +45,23 @@ window.onload = function() {
 };
 
 function createThemeOptions () {
-    for(theme in themeBook) {
-        let name = themeBook[theme].name;
-        let title = themeBook[theme].title;
-        let group = themeBook[theme].group;
-        //let style = themeBook[theme].style;
-        let optGroup = themeBook[theme].optGroup;
+    for(i = 0; i < themeBook.length; i++) {
+        let optGroup = document.createElement('optgroup');
+        optGroup.label = groups[i];
 
-        let option = document.createElement('option');
-        let destination = document.getElementById(optGroup);
-        
+        for(j = 0; j < themeBook[i].length; j++) {
+            let name = themeBook[i][j].name;
+            let title = themeBook[i][j].title;
 
-        option.value = name;
-        option.innerHTML = title;
+            let option = document.createElement('option');
+            option.value = name;
+            option.text = title; 
 
-        destination.appendChild(option);
-    };
+            optGroup.appendChild(option);
+        }
+
+        let themeSelect = document.getElementById('themeSelect');
+        themeSelect.appendChild(optGroup);
+    }
 }
 
