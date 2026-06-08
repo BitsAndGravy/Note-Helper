@@ -1,5 +1,7 @@
 window.onload = function() {
     createThemeOptions();
+    document.getElementById('themeSelect').value = localStorage.getItem('theme');
+
     // Check setting for INternal appeal
         let appealInternal = localStorage.getItem('appealInternal');
         let appealInternalDiv = document.getElementById('appealInternalDiv');

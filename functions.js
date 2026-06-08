@@ -776,6 +776,7 @@ function resetForm() { // After clicking the Reset button
     animateText('resetForm');
     gotoFirstField();
     resetTimer();
+
 }
 
     function resetTextareaSize() {
