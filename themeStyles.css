@@ -718,43 +718,7 @@
 }
 
 
-[data-theme='grandmother-silk'] {
-    /* Based off of final battle in Path of Pain */
-    /* Main features */
-    --main-background: #364c50;
-    --header-background: #b59484;
-    --footer-background: #b59484;
-    --body-primary-color: #f1fdfd;
-    --body-secondary-color: #edd1c4;
-    --body-border-color: #e0b9a2;
-    --body-gradient: white;
 
-    /* Text */
-    --heading-text: white;
-    --animated-text: white;
-    --body-text: black;
-    --body-secondary-text: black;
-    --input-text: black;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: #ffffff80;
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #0f1b1f;
-    --button-hover: #182c32;
-    --button-active: #335965;
-    --button-text: white;
-
-    /* Input */
-    --input-background: #ffffffca;
-    --input-background-focus: white;
-    --input-accent-color: #80c3e2;
-    --input-border: #b59484;
-    --input-border-focus: #364c50;
-}
 
 
 
@@ -870,6 +834,45 @@
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
+
+
+
+
+[data-theme='shakra'] {
+    /* Main features */
+    --main-background: #735333;
+    --header-background: #000000;
+    --footer-background: #000000;
+    --body-primary-color: #bf8540;
+    --body-secondary-color: #82434c;
+    --body-border-color: #000000;
+    --body-gradient: #bf8540;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff90;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #82434c;
+    --button-hover: #9c4f5a;
+    --button-active: #b0767f;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #38211c3d;
+    --input-background-focus: #331d1d84;
+    --input-accent-color: #b8001c;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
 
 
 
@@ -1019,6 +1022,44 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='grandmother-silk'] {
+    /* Based off of final battle in Path of Pain */
+    /* Main features */
+    --main-background: #364c50;
+    --header-background: #b59484;
+    --footer-background: #b59484;
+    --body-primary-color: #f1fdfd;
+    --body-secondary-color: #edd1c4;
+    --body-border-color: #e0b9a2;
+    --body-gradient: white;
+
+    /* Text */
+    --heading-text: white;
+    --animated-text: white;
+    --body-text: black;
+    --body-secondary-text: black;
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff80;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #0f1b1f;
+    --button-hover: #182c32;
+    --button-active: #335965;
+    --button-text: white;
+
+    /* Input */
+    --input-background: #ffffffca;
+    --input-background-focus: white;
+    --input-accent-color: #80c3e2;
+    --input-border: #b59484;
+    --input-border-focus: #364c50;
+}
+
 [data-theme='needle-master'] {
     /* Main features */
     --main-background: #282634;
@@ -1054,37 +1095,3 @@
     --input-border-focus: var(--main-background);
 }
 
-[data-theme='shakra'] {
-    /* Main features */
-    --main-background: #6c2d0b;
-    --header-background: #0d131c;
-    --footer-background: #47230c;
-    --body-primary-color: #e33112;
-    --body-secondary-color: #ffffff33;
-    --body-border-color: #fb8e00;
-    --body-gradient: #660700, #e33112, #db5800;
-    
-    /* Text */
-    --heading-text: azure;
-    --body-text: azure;
-    --input-text: azure;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: #ffffff90;
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #0d131c;
-    --button-hover: rgb(156, 39, 18);
-    --button-active: #ea5e00;
-    --button-text: azure;
-
-    /* Input */
-    --input-background: #6c2d0b80;
-    --input-background-focus: #0d131cCC;
-    --input-accent-color: #fbfc55;
-    --input-border: black;
-    --input-border-focus: var(--header-background);
-}

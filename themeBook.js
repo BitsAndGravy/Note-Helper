@@ -382,6 +382,13 @@ const themeBook = {
         group: 'Silksong',
         optGroup: 'silksong'
     }, 
+    shakra: {
+        name: 'shakra', 
+        title: 'Shakra', 
+        style: 'light',
+        group: 'Silksong',
+        optGroup: 'silksong'
+    }, 
 }
 
 /*
