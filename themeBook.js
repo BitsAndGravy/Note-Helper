@@ -306,13 +306,7 @@ const themeBook = {
         group: 'Hollow Knight',
         optGroup: 'hollow-knight'
     }, 
-    whitePalace: {
-        name: 'white-palace', 
-        title: 'White Palace', 
-        style: 'dark',
-        group: 'Hollow Knight',
-        optGroup: 'hollow-knight'
-    }, 
+    
 
 
 
@@ -370,6 +364,13 @@ const themeBook = {
         name: 'deep-docks', 
         title: 'Deep Docks', 
         style: 'dark',
+        group: 'Silksong',
+        optGroup: 'silksong'
+    }, 
+    grandmotherSilk: {
+        name: 'grandmother-silk', 
+        title: 'Grandmother Silk', 
+        style: 'light',
         group: 'Silksong',
         optGroup: 'silksong'
     }, 
