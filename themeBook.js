@@ -178,14 +178,14 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
-    PAHub = {
+    PAHub: {
         name: 'pahub', 
         title: 'PAHub', 
         style: 'light',
         group: 'Generic',
         optGroup: 'generic'
     }, 
-    scantron = {
+    scantron: {
         name: 'scantron', 
         title: 'Scantron', 
         style: 'light',
@@ -199,119 +199,119 @@ const themeBook = {
         title: 'Abyss', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     brokenVessel: {
         name: 'broken-vessel', 
         title: 'Broken Vessel', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     crystalPeaks: {
         name: 'crystal-peaks', 
         title: 'Crystal Peaks', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     fogCanyon: {
         name: 'fog-canyon', 
         title: 'Fog Canyon', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     fungalWastes: {
         name: 'fungal-wastes', 
         title: 'Fungal Wastes', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     greenpathI: {
         name: 'greenpath-I', 
         title: 'Greenpath I', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     greenpathII: {
         name: 'greenpath-II', 
         title: 'Greenpath II', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     ismasGrove: {
         name: 'ismas-grove', 
         title: "Isma's Grove", 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     joniBlessing: {
         name: 'joni-blessing', 
         title: "Joni's Blessing", 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     queensGardens: {
         name: 'queens-gardens', 
         title: "Queen's Gardens", 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     royalWaterways: {
         name: 'royal-waterways', 
         title: 'Royal Waterways', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     soulMaster: {
         name: 'soul-master', 
         title: 'Soul Master', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     soulSanctum: {
         name: 'soul-sanctum', 
         title: 'Soul Sanctum', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     theGrimmTroupe: {
         name: 'the-grimm-troupe', 
         title: 'The Grimm Troupe', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     theHive: {
         name: 'the-hive', 
         title: 'The Hive', 
         style: 'light',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     theRadiance: {
         name: 'the-radiance', 
         title: 'The Radiance', 
         style: 'light',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
     whitePalace: {
         name: 'white-palace', 
         title: 'White Palace', 
         style: 'dark',
         group: 'Hollow Knight',
-        optGroup: 'hollowKnight'
+        optGroup: 'hollow-knight'
     }, 
 
 
@@ -321,7 +321,7 @@ const themeBook = {
         title: 'Gryffindor', 
         style: 'dark',
         group: 'Harry Potter',
-        optGroup: 'harryPotter'
+        optGroup: 'harry-potter'
     }, 
 
     hufflepuff: {
@@ -329,7 +329,7 @@ const themeBook = {
         title: 'Hufflepuff', 
         style: 'light',
         group: 'Harry Potter',
-        optGroup: 'harryPotter'
+        optGroup: 'harry-potter'
     }, 
     
     ravenclaw: {
@@ -337,7 +337,7 @@ const themeBook = {
         title: 'Ravenclaw', 
         style: 'dark',
         group: 'Harry Potter',
-        optGroup: 'harryPotter'
+        optGroup: 'harry-potter'
     }, 
 
     slytherin: {
@@ -345,7 +345,7 @@ const themeBook = {
         title: 'Slytherin', 
         style: 'dark',
         group: 'Harry Potter',
-        optGroup: 'harryPotter'
+        optGroup: 'harry-potter'
     }, 
 
     knightBus: {
@@ -353,7 +353,7 @@ const themeBook = {
         title: 'Knight Bus', 
         style: 'dark',
         group: 'Harry Potter',
-        optGroup: 'harryPotter'
+        optGroup: 'harry-potter'
     }, 
 
 
@@ -374,7 +374,7 @@ const themeBook = {
         optGroup: 'silksong'
     }, 
 
-    needleMaste: {
+    needleMaster: {
         name: 'needle-master', 
         title: 'Needle Master', 
         style: 'light',
