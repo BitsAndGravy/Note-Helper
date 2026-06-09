@@ -24,6 +24,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Austedo",
+        quantity: "30/30",
+        diagnosis: "tardive dyskinesia", 
+    }, 
+    {
         drug: "Auvelity",
         quantity: "60/30",
         diagnosis: "major depressive disorder", 
