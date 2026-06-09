@@ -46,7 +46,7 @@ window.onload = function() {
 };
 
 function createThemeOptions () {
-    for(i = 0; i < themeBook.length; i++) {
+    /*for(i = 0; i < themeBook.length; i++) {
         let optGroup = document.createElement('optgroup');
         optGroup.label = groups[i];
 
@@ -63,6 +63,22 @@ function createThemeOptions () {
 
         let themeSelect = document.getElementById('themeSelect');
         themeSelect.appendChild(optGroup);
-    }
+    }*/
+
+
+    for(theme in themeBook) {
+            let name = themeBook[theme].name;
+            let title = themeBook[theme].title;
+            let group = themeBook[theme].group;
+            //let style = themeBook[theme].style;
+            let optGroup = themeBook[theme].optGroup;
+
+            let option = document.createElement('option');
+            option.value = name;
+            option.innerHTML = title;
+
+            let destination = document.getElementById(optGroup);
+            destination.appendChild(option);
+    };
 }
 
