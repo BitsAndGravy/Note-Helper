@@ -835,47 +835,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
-
-
-[data-theme='shakra'] {
-    /* Main features */
-    --main-background: #000000;
-    --header-background: #82434c;
-    --footer-background: #735333;
-    --body-primary-color: #bf8540;
-    --body-secondary-color: #9d6934;
-    --body-border-color: #c3aa8c;
-    --body-gradient: #bf8540;
-    
-    /* Text */
-    --heading-text: azure;
-    --body-text: azure;
-    --input-text: azure;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: #ffffff90;
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #000000;
-    --button-hover: #9c4f5a;
-    --button-active: #b0767f;
-    --button-text: azure;
-
-    /* Input */
-    --input-background: #38211c3d;
-    --input-background-focus: #331d1d84;
-    --input-accent-color: #b8001c;
-    --input-border: black;
-    --input-border-focus: var(--header-background);
-}
-
-
-
-
 [data-theme='slytherin'] {
     /* Main features */
     --main-background: #626262;
@@ -1095,3 +1054,37 @@
     --input-border-focus: var(--main-background);
 }
 
+[data-theme='shakra'] {
+    /* Main features */
+    --main-background: #000000;
+    --header-background: #82434c;
+    --footer-background: #735333;
+    --body-primary-color: #bf8540;
+    --body-secondary-color: #9d6934;
+    --body-border-color: #c3aa8c;
+    --body-gradient: #bf8540;
+    
+    /* Text */
+    --heading-text: azure;
+    --body-text: azure;
+    --input-text: azure;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #ffffff90;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #000000;
+    --button-hover: #9c4f5a;
+    --button-active: #b0767f;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #38211c3d;
+    --input-background-focus: #331d1d84;
+    --input-accent-color: #b8001c;
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
