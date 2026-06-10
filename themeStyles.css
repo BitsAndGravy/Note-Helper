@@ -840,12 +840,12 @@
 
 [data-theme='shakra'] {
     /* Main features */
-    --main-background: #735333;
-    --header-background: #000000;
-    --footer-background: #000000;
+    --main-background: #000000;
+    --header-background: #82434c;
+    --footer-background: #735333;
     --body-primary-color: #bf8540;
-    --body-secondary-color: #82434c;
-    --body-border-color: #000000;
+    --body-secondary-color: #9d6934;
+    --body-border-color: #c3aa8c;
     --body-gradient: #bf8540;
     
     /* Text */
@@ -860,7 +860,7 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #82434c;
+    --button-background: #000000;
     --button-hover: #9c4f5a;
     --button-active: #b0767f;
     --button-text: azure;
