@@ -648,13 +648,13 @@
 
 [data-theme='the-hive'] {
     /* Main features */
-    --main-background: #9f6c59;
-    --header-background: #bb8d5c;
+    --main-background: #655769;
+    --header-background: #9b5b42;
     --footer-background: var(--header-background);
     --body-primary-color: #fbd8a2;
-    --body-secondary-color: #ffffff33;
+    --body-secondary-color: #ffffff78;
     --body-border-color: var(--button-hover);
-    --body-gradient: #f0c18d, var(--body-primary-color), #fafec3;
+    --body-gradient: #f0c18d, #fafec3;
     
     /* Text */
     --heading-text: #fbfae5;
@@ -662,7 +662,7 @@
     --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --placeholder-text: #00000086;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
@@ -674,11 +674,11 @@
     --button-active: aqua;
 
     /* Input */
-    --input-background:white;
-    --input-background-focus: var(--button-background);
-    --input-accent-color: #655769;
-    --input-border: black;
-    --input-border-focus: var(--input-accent-color);
+    --input-background:#ffffff35;
+    --input-background-focus: #fbfae59c;
+    --input-accent-color: #494f6c;
+    --input-border: var(--input-accent-color);
+    --input-border-focus: var(--main-background);
 }
 
 [data-theme='the-radiance'] {
