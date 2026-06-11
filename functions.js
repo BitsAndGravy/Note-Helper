@@ -131,6 +131,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Ibsrela",
+        quantity: "60/30",
+        diagnosis: "IBS-C", 
+        formulary: false, 
+    },  
+    {
         drug: "icosapent ethyl",
         quantity: "120/30",
         diagnosis: "hyperlipidemia",
