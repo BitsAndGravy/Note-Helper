@@ -34,6 +34,14 @@ window.onload = function() {
             document.getElementById('falseQL').tabIndex = -1;
         }
 
+    // Chech setting for show theme
+        let showTheme = localStorage.getItem('showTheme');
+        let themeElement = document.getElementById('themeSelect');
+
+        if(showTheme == 'no') {
+            themeElement.classList.add("hideEnd");
+        }
+
     // Check setting for show timer
         let showTimer  = localStorage.getItem('showTimer');
         let showTimerSpan = document.getElementById('time');
