@@ -1043,9 +1043,11 @@ function reopeningChecked() {
 // When New Member checked. Uncertain if I want this left as adding to textbox (serves as good reminder) vs adding to buildNote() (takes up less space, works more consistently with less coding)
 function addNewMember() {
     let conc = document.getElementById('conclusion');
-    if(conc.value == "") {
-        conc.value = "New member. "
-    }
+    if(conc.value.slice(0,10) !== 'New member') {
+        conc.value = 'New member. \n' + conc.value;
+    } else {
+        conc.value = 'dog';
+    };    
 }
 
 /* ||| Theme changer */
