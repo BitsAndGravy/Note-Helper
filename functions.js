@@ -924,6 +924,129 @@ function getQuantity() {
     }
 }
 
+
+function checkState() {
+    checkRegulations();
+    checkNFStates();
+}
+
+    // Check for state regulations.
+    const stateRegulations = [
+        IL = {
+            name: 'IL',
+            fullName: 'Illinois',
+            durationException: true,
+            stepTherapyException: true,
+            cocTemporaryApproval: '3 months',
+        }, 
+        MS = {
+            name: 'MS',
+            fullName: 'Mississippi',
+            durationException: false,
+            stepTherapyException: true,
+            cocTemporaryApproval: '3 months',
+        }, 
+        NE = {
+            name: 'NE',
+            fullName: 'Nebraska',
+            durationException: false,
+            stepTherapyException: false,
+            cocTemporaryApproval: '60 days',
+        }, 
+        NJ = {
+            name: 'NJ',
+            fullName: 'New Jersey',
+            durationException: true,
+            stepTherapyException: false,
+            cocTemporaryApproval: '60 days',
+        }, 
+        NY = {
+            name: 'NY',
+            fullName: 'New York',
+            durationException: false,
+            stepTherapyException: true,
+            cocTemporaryApproval: false,
+        }, 
+        OK = {
+            name: 'OK',
+            fullName: 'Oklahoma',
+            durationException: true,
+            stepTherapyException: false,
+            cocTemporaryApproval: '60 days',
+        }, 
+        TN = {
+            name: 'TN',
+            fullName: 'Tennessee',
+            durationException: false,
+            stepTherapyException: false,
+            cocTemporaryApproval: '3 months',
+        }, 
+        TX = {
+            name: 'TX',
+            fullName: 'Texas',
+            durationException: true,
+            stepTherapyException: false,
+            cocTemporaryApproval: false,
+        }, 
+        VA = {
+            name: 'VA',
+            fullName: 'Virginia',
+            durationException: false,
+            stepTherapyException: false,
+            cocTemporaryApproval: '90 days',
+        }, 
+
+    ]
+
+    
+    function checkRegulations() {
+        let state = document.getElementById('state');
+        let note = document.getElementById('stateNote');
+        let durExComment = '';
+        let stepComment = '';
+        let cocComment = '';
+        let regNote = '';
+
+        for(i = 0; i < stateRegulations.length; i++) {
+            let stateReg = stateRegulations[i];
+            if(stateReg.name == state.value) {
+                let stateName = stateReg.fullName;
+
+                if(stateReg.durationException) {
+                    durExComment = '\nDuration exception may apply.';
+                };
+                
+                if(stateReg.stepTherapyException) {
+                    stepComment = '\nStep therapy exception may apply.';
+                };
+                
+                if(stateReg.cocTemporaryApproval) {
+                    cocComment = '\nContinuation of therapy temporary approval for ' + stateReg.cocTemporaryApproval + '. ';
+                };
+
+                regNote = "Note that for " + stateName + ' (' + state.value + '):' + durExComment + stepComment + cocComment;
+                note.innerText = regNote;
+            }
+        }
+    }
+        
+
+    // If 70 and IL or NY selected, add note to conclusion.
+    function checkNFStates() { 
+        let nfCheck = document.getElementById('nonFormulary');
+        let state = document.getElementById('state');
+        let conc = document.getElementById('conclusion');
+        
+        if(nfCheck.checked) {
+            if(state.value == 'NY') {
+                conc.value = 'NY - require T/F with no more than two alternatives. ' + conc.value;
+            }
+            if(state.value == 'IL') {
+                conc.value = 'IL - require T/F with no more than one alternative. ' + conc.value;
+            }    
+        }
+    }
+
 // Triggers when either 'No drug claims' or 'Records not sent' are checked.
 function clearTextarea(
     checkID, // The checkbox in question
@@ -1009,22 +1132,8 @@ function showQuantity() {
     checkNFStates();
 }
 
-    // If 70 and IL or NY selected, add note to conclusion.
-    function checkNFStates() { 
-        let nfCheck = document.getElementById('nonFormulary');
-        let state = document.getElementById('state');
-        let conc = document.getElementById('conclusion');
-        
-        if(nfCheck.checked) {
-            if(state.value == 'NY') {
-                conc.value = 'NY - require T/F with no more than two alternatives. ' + conc.value;
-            }
-            if(state.value == 'IL') {
-                conc.value = 'IL - require T/F with no more than one alternative. ' + conc.value;
-            }    
-        }
-    }
 
+// When reopening is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reopeningChecked() {
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
