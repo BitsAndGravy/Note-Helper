@@ -998,7 +998,8 @@ function checkState() {
 
         for(i = 0; i < stateRegulations.length; i++) {
             let stateReg = stateRegulations[i];
-            if(stateReg.name == state.value) { // If state is in the list: Build comment, show on page.
+            // If state is in the list: Build comment, show on page.
+            if(stateReg.name == state.value) { 
                 let stateName = stateReg.fullName; 
 
                 if(stateReg.durationException) {
