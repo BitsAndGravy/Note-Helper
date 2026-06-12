@@ -846,12 +846,12 @@
     --body-gradient: var(--body-primary-color);
     
     /* Text */
-    --heading-text: white;
-    --body-text: white;
-    --body-secondary-text: white;
-    --input-text: black;
+    --heading-text: #eaeaea;
+    --body-text: #eaeaea;
+    --body-secondary-text: #eaeaea;
+    --input-text: white;
     --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --placeholder-text: #ffffff98;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -863,8 +863,8 @@
     --button-active: 2a623d;
 
     /* Input */
-    --input-background: white;
-    --input-background-focus: #eaeaea;
+    --input-background: rgba(255, 255, 255, 0);
+    --input-background-focus: #0000003c;
     --input-accent-color: #fec607;
     --input-border: black;
     --input-border-focus: var(--header-background);
