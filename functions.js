@@ -345,6 +345,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
     }, 
     {
+        drug: "Tryptyr", 
+        quantity: "60/30", 
+        diagnosis: "keratoconjunctivitis sicca", 
+        formulary: false, 
+    }, 
+    {
         drug: "Ubrelvy",
         quantity: "16/30",
         diagnosis: "acute migraine treatment",
