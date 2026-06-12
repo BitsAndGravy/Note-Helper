@@ -790,6 +790,7 @@ function resetForm() { // After clicking the Reset button
 
     resetTextareaSize();
     hideExtras();
+    resetStateNote();
     animateText('resetForm');
     gotoFirstField();
     resetTimer();
@@ -836,7 +837,6 @@ function resetForm() { // After clicking the Reset button
                 quantity.tabIndex = -1;
                 comment.tabIndex = -1;
         }
-
         showProperQuantity();
     }
 
@@ -845,6 +845,12 @@ function resetForm() { // After clicking the Reset button
             let source = document.getElementById('properQuantity');
             destination.innerText = "#" + source.value + ".";
         }
+
+    function resetStateNote() { // Hide the div.
+        let note = document.getElementById('stateNote');
+        note.classList.add('hideInput');
+        note.classList.remove('showInput');
+    }
 
     function gotoFirstField() {
         document.getElementById('drug').focus();
@@ -867,23 +873,6 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
     });
 }
 
-/* ||| Expansion animation, e.g. to show quantity */
-function expansionAnimation() {
-    let div = document.getElementById('quantityDiv');
-    let currentClass = div.className;
-
-    if(currentClass === 'showInput') {
-        div.className = 'hideInput';
-        setTimeout(function() {
-            div.style.display = 'none';
-        }, 2000);
-    } else {
-        div.className = 'showInput';
-        setTimeout(function() {
-            div.style.display = 'block';
-        }, 2000)
-    }
-}
 
 
 
@@ -924,13 +913,12 @@ function getQuantity() {
     }
 }
 
-
+// Triggered when state is changed.
 function checkState() {
     checkRegulations();
     checkNFStates();
 }
 
-    // Check for state regulations.
     const stateRegulations = [
         IL = {
             name: 'IL',
@@ -998,19 +986,20 @@ function checkState() {
 
     ]
 
-    
+    // Check for state regulations, add a reminder note at bottom of page.
     function checkRegulations() {
         let state = document.getElementById('state');
         let note = document.getElementById('stateNote');
-        let durExComment = '';
-        let stepComment = '';
-        let cocComment = '';
-        let regNote = '';
+        // Reset all variabeles
+            let durExComment = '';
+            let stepComment = '';
+            let cocComment = '';
+            let regNote = '';
 
         for(i = 0; i < stateRegulations.length; i++) {
             let stateReg = stateRegulations[i];
-            if(stateReg.name == state.value) {
-                let stateName = stateReg.fullName;
+            if(stateReg.name == state.value) { // If state is in the list: Build comment, show on page.
+                let stateName = stateReg.fullName; 
 
                 if(stateReg.durationException) {
                     durExComment = '\nDuration exception may apply.';
@@ -1024,12 +1013,23 @@ function checkState() {
                     cocComment = '\nContinuation of therapy temporary approval for ' + stateReg.cocTemporaryApproval + '. ';
                 };
 
+                // Combine it all into one variable
                 regNote = "Note that for " + stateName + ' (' + state.value + '):' + durExComment + stepComment + cocComment;
                 note.innerText = regNote;
+
+                // Add class so it expands/animates
+                note.classList.add('showInput');
+                note.classList.remove('hideInput');
+
+                // Stop for loop, otherwise it will continue and use the else statement below.
+                break; 
+            } else { // If state is not in the list, keep the div hidden.
+                note.classList.add('hideInput');
+                note.classList.remove('showInput');
+                
             }
         }
     }
-        
 
     // If 70 and IL or NY selected, add note to conclusion.
     function checkNFStates() { 
