@@ -1000,7 +1000,24 @@ function showQuantity() {
 
         }
     } // If setting is 'yes' to always show quantity, do nothing 
+    checkNFStates();
 }
+
+    // If 70 and IL or NY selected, add note to conclusion.
+    function checkNFStates() { 
+        let nfCheck = document.getElementById('nonFormulary');
+        let state = document.getElementById('state');
+        let conc = document.getElementById('conclusion');
+        
+        if(nfCheck.checked) {
+            if(state.value == 'NY') {
+                conc.value = 'NY - require T/F with no more than two alternatives. ' + conc.value;
+            }
+            if(state.value == 'IL') {
+                conc.value = 'IL - require T/F with no more than one alternative. ' + conc.value;
+            }    
+        }
+    }
 
 function reopeningChecked() {
     let info = document.getElementById('information');
