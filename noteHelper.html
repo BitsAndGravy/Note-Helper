@@ -49,7 +49,7 @@
                                 type="checkbox"
                                 id="appealExternalQuestion"
                                 name="appealExternalQuestion"
-                                value="-- SEND TO IRO --">
+                                >
                             <label for="appealExternalQuestion">External appeal (IRO)</label>
                         </div>
 
@@ -88,7 +88,6 @@
                             type="checkbox" 
                             id="isUrgent" 
                             name="urgent" 
-                            value="Urgent " 
                             >
                         <label for="isUrgent">Urgent </label>
 
@@ -96,7 +95,7 @@
                             type="checkbox"
                             id="isExpedited"
                             name="expedited"
-                            value="Expedited ">
+                            >
                         <label for="isExpedited">Expedited</label>
                         <br>
 
@@ -154,8 +153,8 @@
                             <option value="SD">SD - South Dakota</option>-->
                             <option value="TN">TN</option>
                             <option value="TX">TX</option><!--
-                            <option value="UT">UT - Utah</option>
-                            <option value="VA">VA - Virginia</option>
+                            <option value="UT">UT - Utah</option>-->
+                            <option value="VA">VA - Virginia</option><!--
                             <option value="VT">VT - Vermont</option>
                             <option value="WA">WA - Washington</option>
                             <option value="WI">WI - Wisconson</option>
@@ -168,7 +167,11 @@
                         <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
                         <div id="qsetDiv" style="display: none;"> 
                             <label for="qset">06.</label> 
-                            <input type="checkbox" id="approval" name="qset" value="approval" checked>
+                            <input 
+                                type="checkbox" 
+                                id="approval" 
+                                name="qset"
+                                checked>
                             <label for="approval">Q-set approval</label>
                             <br>
                         </div>
@@ -178,7 +181,6 @@
                             type="checkbox"
                             id="standardPA"
                             name="reject"
-                            value="75-Standard PA"
                             checked
                             tabindex="-1">
                         <label for="standardPA">75 </label>
@@ -186,14 +188,12 @@
                             type="checkbox" 
                             id="quantityLimit" 
                             name="reject" 
-                            value="75 and 76-Standard PA with QL, formulary"
                             onclick="showQuantity()">
                         <label for="quantityLimit">76 </label>
                         <input 
                             type="checkbox" 
                             id="nonFormulary" 
                             name="reject" 
-                            value="70-Non-formulary"
                             onclick="showQuantity()">
                         <label for="nonFormulary">70 </label>
                         <br>
@@ -214,7 +214,6 @@
                                 type="checkbox" 
                                 id="falseQL" 
                                 name="falseQL" 
-                                value="Not a true QL request; "
                                 onclick="showQL();">
                             <label for="falseQL">False QL</label>
                             <br>
@@ -242,14 +241,13 @@
                             type="checkbox" 
                             id="reauthorization" 
                             name="type" 
-                            value="Reauthorization">
+                            >
                         <label for="reauthorization">Reauthorizaiton </label>
                         
                         <input
                             type="checkbox"
                             id="reopening"
                             name="type"
-                            value="Reopening"
                             onclick="reopeningChecked()">
                         <label for="reopening">Reopening</label>
                         <br>
@@ -267,7 +265,10 @@
                 <div class="secondaryColor inputDiv">
                     <form id="form2">
                         <label for="gender">12.</label> 
-                        <input type="checkbox" id="female" name="gender" value="Female">
+                        <input 
+                            type="checkbox" 
+                            id="female" 
+                            name="gender">
                         <label for="female">Female</label>
                         <br>
 
@@ -296,7 +297,10 @@
                 <div class="inputDiv">
                     <form id="form3">
                         <label for="chart">15.</label>
-                        <input type="checkbox" id="noCharts" name="chart" value="No relevant documents in Chart View. ">
+                        <input 
+                            type="checkbox" 
+                            id="noCharts" 
+                            name="chart">
                         <label for="noCharts">No items in Chart View</label>
                         <br>     
 
@@ -305,7 +309,6 @@
                             type="checkbox" 
                             id="noClaims" 
                             name="snapshot" 
-                            value="No relevant paid claims. " 
                             onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
                         <label for="noClaims">No drug claims </label>
 
@@ -313,7 +316,6 @@
                             type="checkbox"
                             id="noMedicalAuthorizations"
                             name="medicalAuthorizations"
-                            value="No medical authorizations. "
                             onclick="clearTextarea('noMedicalAuthorizations', 'claims', 'Paid claims in Snapshot for ')">
                         <label for="noMedicalAuthorizations">No medical authorizations </label>
                     

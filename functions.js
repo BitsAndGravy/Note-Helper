@@ -462,7 +462,7 @@ const checkboxBook = {
         notChecked:'denial'
     },
     records: {
-        isChecked: 'Records were not submitted with request',
+        isChecked: 'Records were not submitted with request. ',
         notChecked: '',
     },
     snapshot: {
@@ -561,7 +561,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 let ele = document.getElementsByName(item);
                 for (i = 0; i < ele.length; i++) {
                     if (ele[i].checked) {
-                        answer[checkboxList[k]] = ele[i].value;
+                        //answer[checkboxList[k]] = ele[i].value;
+                        answer[checkboxList[k]] = checkboxBook[item].isChecked;
                         break;
                     } else { // What to do if the checkbox is not selected - helpful for 'resetting' inputs.
                         answer[item] = checkboxBook[item].notChecked;
