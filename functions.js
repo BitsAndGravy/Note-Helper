@@ -18,6 +18,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
+        drug: "Airsupra",
+        quantity: "10.7/30 (120 inhalations per inhaler)",
+        diagnosis: "bronchospasm", 
+        formulary: false, 
+    },  
+    {
         drug: "Ajovy",
         quantity: "1.5/30",
         diagnosis: "migraine prophylaxis", 
@@ -27,6 +33,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Austedo",
         quantity: "30/30",
         diagnosis: "tardive dyskinesia", 
+        specialty: true,
     }, 
     {
         drug: "Auvelity",
@@ -147,6 +154,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "Huntington's disease", 
         altDiagnosis: "tardive dyskinesia",
         formulary: false, 
+        specialty: true,
     },  
     {
         drug: "ivermectin", // 1% topical cream
@@ -882,6 +890,7 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
 // Triggers when drug name changed. Checks if the drug name is in the database, returns diagnosis and qty/days.
 function getQuantity() { 
     startTimer();
+    document.getElementById('drug').style.backgroundColor = ''; // Erase color if previously a specialty drug.
 
     let drugName = document.getElementById('drug').value;
     let prefillQuantity = localStorage.getItem('prefillQuantity');
@@ -889,26 +898,42 @@ function getQuantity() {
 
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
         if(drugDatabase[i].drug.toLowerCase() == drugName.toLowerCase()) { // If drug found in database, then:
+            
+            // If a specialty drug, highlight in red.
+            if(drugDatabase[i].specialty) { 
+                document.getElementById('drug').style.backgroundColor = 'red';
+            } 
+
+            // Check settings for prefill quantity. Fill in if selected.
             if(prefillQuantity == 'yes') {
-                document.getElementById('quantity').value = drugDatabase[i].quantity; // Prefill quantity field
+                document.getElementById('quantity').value = drugDatabase[i].quantity; // Yes - refill the quantity field.
             } else {
-                document.getElementById('quantity').value = ""; // Leave quantity field blank
+                document.getElementById('quantity').value = ""; // No - leave the quantity field blank.
             }
-            document.getElementById('diagnosis').value = drugDatabase[i].diagnosis; // Prefill diagnosis field
-            if(drugDatabase[i].formulary == false) { // Checks if non-formulary, checks the checkbox and shows 8-quantity and 9-falseQL
-                document.getElementById('nonFormulary').checked = true;
+
+            // Prefill the diagnosis field. 
+            document.getElementById('diagnosis').value = drugDatabase[i].diagnosis;
+
+            // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75, 3-check setting for show quantity 
+            if(drugDatabase[i].formulary == false) {
+                document.getElementById('nonFormulary').checked = true; 
                 document.getElementById('standardPA').checked = false;
+
+                // alwaysShowQuantity = no means quantity fields are hidden.
                 if(alwaysShowQuantity == 'no') {
                     document.getElementById('quantityDiv').classList.add('showInput');
                     document.getElementById('quantityDiv').classList.remove('hideInput');
-                    document.getElementById('quantity').tabIndex = 0;
+                    
+                    // Input index was -1 (skip), now as 0 let computer handle (should act normal).
+                    document.getElementById('quantity').tabIndex = 0; 
                     document.getElementById('falseQL').tabIndex = 0;
                 }
             }
             break;
         } else {
-            document.getElementById('quantity').value = "";
-            document.getElementById('diagnosis').value = "";
+            // Erase everything - this section subject to change
+            // document.getElementById('quantity').value = "";
+            // document.getElementById('diagnosis').value = "";
             document.getElementById('nonFormulary').checked = false;
         }
     }
@@ -1047,6 +1072,7 @@ function checkState() {
                 conc.value = 'IL - require T/F with no more than one alternative. \n' + conc.value;
             }    
         } else {
+            // Delete the sentence if it's the first thing in the textarea, since it's no longer applicable.
             if(conc.value.slice(0,12) == 'NY - require') {
                 conc.value = conc.value.slice(54);
             }
