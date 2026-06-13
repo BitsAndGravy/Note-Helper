@@ -1039,13 +1039,20 @@ function checkState() {
         let state = document.getElementById('state');
         let conc = document.getElementById('conclusion');
         
-        if(nfCheck.checked) {
+        if(nfCheck.checked && (state.value == 'NY' || state.value == 'IL')) {
             if(state.value == 'NY') {
-                conc.value = 'NY - require T/F with no more than two alternatives. ' + conc.value;
+                conc.value = 'NY - require T/F with no more than two alternatives. \n' + conc.value;
             }
             if(state.value == 'IL') {
-                conc.value = 'IL - require T/F with no more than one alternative. ' + conc.value;
+                conc.value = 'IL - require T/F with no more than one alternative. \n' + conc.value;
             }    
+        } else {
+            if(conc.value.slice(0,12) == 'NY - require') {
+                conc.value = conc.value.slice(54);
+            }
+            if(conc.value.slice(0,12) == 'IL - require') {
+                conc.value = conc.value.slice(53);
+            } 
         }
     }
 
@@ -1157,7 +1164,7 @@ function addNewMember() {
     if(conc.value.slice(0,10) !== 'New member') {
         conc.value = 'New member. \n' + conc.value;
     } else {
-        conc.value = 'dog';
+        conc.value = conc.value.slice(13);
     };    
 }
 
