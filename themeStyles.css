@@ -999,7 +999,7 @@
     --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
-    --placeholder-text: #ffffff80;
+    --placeholder-text: #00000080;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
