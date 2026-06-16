@@ -1029,7 +1029,7 @@ function checkState() {
                 let stateName = stateReg.fullName; 
 
                 if(stateReg.durationException) {
-                    durExComment = '\nDuration exception may apply.';
+                    durExComment = '\nAuthorization duration exception may apply.';
                 };
                 
                 if(stateReg.stepTherapyException) {
