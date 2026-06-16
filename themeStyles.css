@@ -231,6 +231,40 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='city-of-tears'] {
+    /* Main features */
+    --main-background: #132b51;
+    --header-background: #0c1c3d;
+    --footer-background: #152d59;
+    --body-primary-color: #265286;
+    --body-secondary-color: #3c78b985;
+    --body-border-color: #4087d6;
+    --body-gradient: #265286, #336aa4;
+    
+    /* Text */
+    --heading-text: #e2e3f6;
+    --body-text: #e2e3f6;
+    --input-text: azure;
+    --placeholder-text: rgba(240, 255, 255, 0.483);
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #2b5678;
+    --button-hover: #6184a3;
+    --button-active: #769dbe;
+    --button-text: azure;
+
+    /* Input */
+    --input-background: #1e3c6d8a;
+    --input-background-focus: #132b51cc;
+    --input-accent-color: #fba466; /*infection*/
+    --input-border: black;
+    --input-border-focus: var(--header-background);
+}
+
 
 [data-theme='crystal-peaks'] {
     /* Main features */
