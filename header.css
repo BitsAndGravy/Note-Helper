@@ -183,8 +183,7 @@ a:link {color: var(--heading-text);}
 
 /* || Add or remove settings */
 .hideInput {
-    /*display: none;*/
-    transition: 0.5s;
+    transition: .75s;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -194,7 +193,7 @@ a:link {color: var(--heading-text);}
     /*display: block;*/
     max-height: 500px;
     opacity: 1;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 .showTimer {
