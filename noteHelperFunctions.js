@@ -54,17 +54,19 @@ window.onload = function() {
 
     const drugInput = document.getElementById('drug');
     const suggestionSpan = document.getElementById('suggestion');
-    // Hit Enter to accept suggestion.
-        drugInput.addEventListener('keydown', function(e) {
+    
+    // Hit Enter or Tab to accept suggestion.
+    drugInput.addEventListener('keydown', function(e) {
         
-        // 3. Check if the pressed key is "Enter"
-        if ((e.key === 'Enter') || (e.key === 'Tab')) {
-            drugInput.value = suggestionSpan.innerText;
-            suggestionSpan.innerText = '';
-            //document.getElementById('source').focus();
-            getQuantity();
+        // Check if the pressed key is "Enter"
+        if (((e.key === 'Enter') || (e.key === 'Tab')) && suggestionSpan.innerText != '') {
+            
+                drugInput.value = suggestionSpan.innerText;
+                suggestionSpan.innerText = '';
+                getQuantity();
+            
         }
-        });
+    });
 };
 
 function createThemeOptions () {
