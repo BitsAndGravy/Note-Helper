@@ -58,11 +58,11 @@ window.onload = function() {
         drugInput.addEventListener('keydown', function(e) {
         
         // 3. Check if the pressed key is "Enter"
-        if (e.key === 'Enter') {
+        if ((e.key === 'Enter') || (e.key === 'Tab')) {
             drugInput.value = suggestionSpan.innerText;
             suggestionSpan.innerText = '';
-            document.getElementById('source').focus();
-            // Add your custom logic or function call here
+            //document.getElementById('source').focus();
+            getQuantity();
         }
         });
 };

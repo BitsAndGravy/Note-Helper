@@ -1342,7 +1342,6 @@ function predictWords(inputLetters) {
         
     // Filter the array and return top 5 matches
         suggest = wordList.filter(word => regex.test(word)).slice(0, 1);
-        suggestion.innerText = suggest;
-    
+        suggestion.innerText = suggest;    
 }
 
