@@ -197,16 +197,17 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "neuropathic pain",
     }, 
     {
-        drug: "liraglutide (Victoza)",
-        quantity: "9/30",
-        diagnosis: "T2DM",
-    },
-    {
         drug: "liraglutide (Saxenda)",
         quantity: "9/30",
         diagnosis: "obesity",
         formulary: false,
     },
+    {
+        drug: "liraglutide",
+        quantity: "9/30",
+        diagnosis: "T2DM",
+    },
+    
     {
         drug: "lurasidone", // tablet
         quantity: "30/30",
