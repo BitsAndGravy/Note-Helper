@@ -69,7 +69,10 @@
                             id="drug" 
                             name="drug" 
                             placeholder="drug name" 
-                            onchange="getQuantity()">
+                            onchange="getQuantity()"
+                            oninput="predictWords(this.value)">
+
+                        <span id="suggestion">test</span>
                             
                         <span id="time" style="float: right;">0:00</span>
                         <br>

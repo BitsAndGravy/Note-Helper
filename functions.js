@@ -1324,3 +1324,25 @@ function resetTimer() {
     clearInterval(myTimer);
     document.getElementById('time').innerText = "0:00";
 }
+
+
+const wordList = [];
+
+for(i = 0; i < drugDatabase.length; i++) {
+    wordList.push(drugDatabase[i].drug);
+}
+wordList.sort();
+
+function predictWords(inputLetters) {
+    // Add event listenter is on window.onload function 
+    let suggestion = document.getElementById('suggestion')
+        
+    // Case-insensitive regex that anchors to the beginning of the word
+        let regex = new RegExp("^" + inputLetters, "i");
+        
+    // Filter the array and return top 5 matches
+        suggest = wordList.filter(word => regex.test(word)).slice(0, 1);
+        suggestion.innerText = suggest;
+    
+}
+
