@@ -157,6 +157,13 @@ const drugDatabase = [ // for getQuantity()
         specialty: true,
     },  
     {
+        drug: "insulin glargine-yfgn pen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        altDiagnosis: 'T1DM',
+        formulary: false, 
+    },  
+    {
         drug: "ivermectin", // 1% topical cream
         quantity: "45/30",
         diagnosis: "rosacea",
@@ -1337,7 +1344,8 @@ wordList.sort();
 function predictWords(inputLetters) {
     // Add event listenter is on window.onload function 
     let suggestion = document.getElementById('suggestion')
-        
+    
+    
     // Case-insensitive regex that anchors to the beginning of the word
         let regex = new RegExp("^" + inputLetters, "i");
         

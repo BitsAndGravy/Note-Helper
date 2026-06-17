@@ -62,6 +62,7 @@ input[type=text] {
     min-width: 150px;
     max-width: 450px;
     field-sizing: content;
+    font-size: 13px;
 }
 
 input[type=checkbox] {
@@ -100,6 +101,19 @@ a:link {color: var(--heading-text);}
     color: var(--body-secondary-text);
 }
 
+/* Suggestion span style */
+.suggestContainer {
+    position: relative;
+}
+
+.suggest {
+    font-size: 13px;
+    color: var(--placeholder-text);
+    position: absolute;
+    left: 45px;
+    top: 13px;
+}
+
 /* Div paddings */
 .inputDiv {
     padding: 5px 20px 10px 10px; /* Top, right, bottom, left */
@@ -114,19 +128,6 @@ a:link {color: var(--heading-text);}
 .editArea {
     display: none;
 }
-
-/* Adjust size of age and quantity text inputs */
-/*.ageTextbox {
-    max-width: 30px;
-}
-
-.qtyTextbox {
-    min-width: 50px;
-}
-
-.memberWidth {
-    max-width: 300px;
-}*/
 
 .heading {
     background-color: var(--header-background);
