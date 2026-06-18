@@ -7,13 +7,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Adderall XR",
+        drug: "Adderall XR capsule",
         quantity: "30/30",
         diagnosis: "ADHD", 
         formulary: false, 
     },  
     {
-        drug: "Aimovig",
+        drug: "Aimovig pen",
         quantity: "1/25",
         diagnosis: "migraine prophylaxis", 
     },  
@@ -24,41 +24,41 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Ajovy",
+        drug: "Ajovy pen",
         quantity: "1.5/30",
         diagnosis: "migraine prophylaxis", 
         formulary: false, 
     },  
     {
-        drug: "Austedo",
+        drug: "Austedo capsule",
         quantity: "30/30",
         diagnosis: "tardive dyskinesia", 
         specialty: true,
     }, 
     {
-        drug: "Auvelity",
+        drug: "Auvelity tablet",
         quantity: "60/30",
         diagnosis: "major depressive disorder", 
     },  
     {
-        drug: "azelaic acid",
+        drug: "azelaic acid gel",
         quantity: "50/30",
         diagnosis: "rosacea", 
         altDiagnosis: "acne vulgaris",
     },  
     {
-        drug: "Belsomra",
+        drug: "Belsomra tablet",
         quantity: "30/30",
         diagnosis: "insomnia", 
     },  
     {
-        drug: "Caplyta",
+        drug: "Caplyta capsule",
         quantity: "30/30",
         diagnosis: "bipolar disorder", 
         altDiagnosis: "schizophrenia",
     },  
     {
-        drug: "Creon",
+        drug: "Creon XR capsule",
         quantity: "300/90",
         diagnosis: "exocrine pancreatic insufficiency", 
     },  
@@ -97,17 +97,17 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "T1DM", 
     },   
     {
-        drug: "dulaglutide",
+        drug: "dulaglutide pen",
         quantity: "2/28",
         diagnosis: "T2DM", 
     },     
     {
-        drug: "Emgality 100 mg",
+        drug: "Emgality 100 mg pen",
         quantity: "3/28",
         diagnosis: "migraine prophylaxis", 
     },  
     {
-        drug: "Emgality 120 mg",
+        drug: "Emgality 120 mg pen",
         quantity: "2/28",
         diagnosis: "migraine prophylaxis", 
     },  
@@ -132,7 +132,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Gemtesa", // tablet
+        drug: "Gemtesa tablet", 
         quantity: "30/30",
         diagnosis: "overactive bladder", 
         formulary: false, 
@@ -144,12 +144,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "icosapent ethyl",
+        drug: "icosapent ethyl capsule",
         quantity: "120/30",
         diagnosis: "hyperlipidemia",
     }, 
     {
-        drug: "Ingrezza", // capsule
+        drug: "Ingrezza capsule",
         quantity: "30/30",
         diagnosis: "Huntington's disease", 
         altDiagnosis: "tardive dyskinesia",
@@ -164,17 +164,17 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "ivermectin", // 1% topical cream
+        drug: "ivermectin 1% cream",
         quantity: "45/30",
         diagnosis: "rosacea",
     }, 
     {
-        drug: "Lokelma", // powder packet
+        drug: "Lokelma powder packet",
         quantity: "30/30",
         diagnosis: "hyperkalemia",
     }, 
     {
-        drug: "Jatenzo", // capsule
+        drug: "Jatenzo capsule",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
         formulary: false,  
@@ -186,20 +186,21 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
-        drug: "lamotrigine ER",
+        drug: "lamotrigine ER tablet",
         quantity: "30/30",
         altQuantity: "",
         diagnosis: "seizures", 
         altDiagnosis: "bipolar disorder", 
     }, 
     {
-        drug: "Lantus pen",
+        drug: "Lantus Solostar",
+        dosageForm: "pen", 
         quantity: "15/30",
         diagnosis: "T2DM", 
         formulary: false, 
     },  
     {
-        drug: "lidocaine", // 5% topical patch
+        drug: "lidocaine 5% patch",
         quantity: "30/30", // suggested
         diagnosis: "neuropathic pain",
     }, 
@@ -210,62 +211,61 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
-        drug: "liraglutide",
+        drug: "liraglutide pen",
         quantity: "9/30",
         diagnosis: "T2DM",
     },
-    
     {
-        drug: "lurasidone", // tablet
+        drug: "lurasidone tablet",
         quantity: "30/30",
         diagnosis: "bipolar disorder",
     }, 
     {
-        drug: "metformin ER 1,000 mg osm-tab", // nasal spray
+        drug: "metformin ER 1,000 mg osm-tab", 
         quantity: "60/30",
         diagnosis: "T2DM",
         formulary: false,  
     },  
     {
-        drug: "metformin ER 1,000 mg gastr-tab", // nasal spray
+        drug: "metformin ER 1,000 mg gastr-tab",
         quantity: "60/30",
         diagnosis: "T2DM",
         formulary: false,  
     },  
     {
-        drug: "mirabegron", // ER tablet
+        drug: "mirabegron ER tablet",
         quantity: "30/30",
         diagnosis: "overactive bladder",
     }, 
     {
-        drug: "Miebo",
+        drug: "Miebo eye drops",
         quantity: "3/30",
         diagnosis: "dry eye syndrome",
     }, 
     {
-        drug: "Mounjaro",
+        drug: "Mounjaro pen",
         quantity: "2/28",
         diagnosis: "T2DM",
     }, 
     {
-        drug: "Natesto", // nasal spray
+        drug: "Natesto nasal spray", 
         quantity: "7.320/30",
         diagnosis: "testicular hypofunction",
         formulary: false,  
     },  
     {
-        drug: "Neffy",
+        drug: "Neffy nasal spray",
         quantity: "2/30",
         diagnosis: "anaphylaxis",
     }, 
     {
-        drug: "Nurtec",
+        drug: "Nurtec ODT",
         quantity: "16/30",
         diagnosis: "migraines",
         formulary: false, 
     }, 
     {
-        drug: "Omega-3",
+        drug: "omega-3 ethyl esters capsule",
         quantity: "120/30",
         diagnosis: "hyperlipidemia", 
     },   
@@ -275,7 +275,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T1DM",
     }, 
     {
-        drug: "Opzelura", // cream
+        drug: "Opzelura cream", 
         quantity: "60/30",
         diagnosis: "atopic dermatitis",
         altDiagnosis: "psoriasis",  
@@ -292,7 +292,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
     }, 
     {
-        drug: "Qulipta",
+        drug: "Qulipta tablet",
         quantity: "30/30",
         diagnosis: "migraine prophylaxis",
     },
@@ -303,22 +303,22 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
-        drug: "Restasis",
+        drug: "Restasis eye drops",
         quantity: "60/30",
         diagnosis: "keratoconjunctivitis",
     },
     {
-        drug: "Rybelsus", 
+        drug: "Rybelsus tablet", 
         quantity: "30/30",
         diagnosis: "T2DM",
     }, 
     {
-        drug: "tadalafil", 
+        drug: "tadalafil tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
     }, 
     {
-        drug: "tadalafil 10 mg", 
+        drug: "tadalafil 10 mg tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
         formulary: false, 
@@ -350,40 +350,41 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "gender identity disorder", 
     },  
     {
-        drug: "testosterone", // Shorthand for cypionate vials, since it is the most common.
+        drug: "testosterone cypionate vial", 
         quantity: "6/84",
         diagnosis: "testicular hypofunction",
         altDiagnosis: "gender identity disorder", 
     },   
     {
-        drug: "Trulicity",
+        drug: "Trulicity pen",
         quantity: "2/28",
         diagnosis: "T2DM",
     }, 
     {
-        drug: "Tryptyr", 
+        drug: "Tryptyr eye drops", 
         quantity: "60/30", 
         diagnosis: "keratoconjunctivitis sicca", 
         formulary: false, 
     }, 
     {
-        drug: "Ubrelvy",
+        drug: "Ubrelvy tablet",
         quantity: "16/30",
         diagnosis: "acute migraine treatment",
     },
     {
-        drug: "Victoza", 
+        drug: "Victoza pen", 
         quantity: "9/30",
         diagnosis: "T2DM",
+        formulary: false,
     },
     {
-        drug: "Voquezna",
+        drug: "Voquezna capsule",
         quantity: "30/30",
         diagnosis: "GERD",
         formulary: false, 
     }, 
     {
-        drug: "Vraylar",
+        drug: "Vraylar capsule",
         quantity: "30/30",
         diagnosis: "bipolar disorder",
         formulary: false, 
@@ -401,7 +402,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
-        drug: "Winlevi", 
+        drug: "Winlevi cream", 
         quantity: "60/30",
         diagnosis: "acne vulgaris",
         formulary: false, 
@@ -413,17 +414,23 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
-        drug: "Xdemvy",
+        drug: "Xcopri tablet",
+        quantity: "30/30",
+        diagnosis: "partial seizures",
+        formulary: false, 
+    }, 
+    {
+        drug: "Xdemvy eye drops",
         quantity: "10/42",
         diagnosis: "infestation by Demodex mites",
     }, 
     {
-        drug: "Xifaxan",
+        drug: "Xifaxan tablet",
         quantity: "42/14",
         diagnosis: "irritable bowel syndrome-diarrhea",
     }, 
     {
-        drug: "Xyosted",
+        drug: "Xyosted inj",
         quantity: "2/28",
         diagnosis: "testicular hypofunction",
         formulary: false, 
@@ -435,7 +442,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
-        drug: "Zepbound",
+        drug: "Zepbound pen",
         quantity: "2/28",
         diagnosis: "OSA",
         formulary: false,
