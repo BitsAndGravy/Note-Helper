@@ -180,6 +180,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,  
     },  
     {
+        drug: "Jornay PM capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD",
+        formulary: false, 
+    }, 
+    {
         drug: "Jublia",
         quantity: "4/30",
         diagnosis: "tinea unguium",
