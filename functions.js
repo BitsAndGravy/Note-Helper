@@ -434,6 +434,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Xifaxan tablet",
         quantity: "42/14",
         diagnosis: "irritable bowel syndrome-diarrhea",
+        altDiagnosis: "SIBO"
     }, 
     {
         drug: "Xyosted inj",
@@ -911,7 +912,9 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
 // Triggers when drug name changed. Checks if the drug name is in the database, returns diagnosis and qty/days.
 function getQuantity() { 
     startTimer();
-    document.getElementById('drug').style.backgroundColor = ''; // Erase color if previously a specialty drug.
+
+    // Erase color if previously a specialty drug.
+    document.getElementById('drug').style.backgroundColor = ''; 
 
     let drugName = document.getElementById('drug').value;
     let prefillQuantity = localStorage.getItem('prefillQuantity');
@@ -934,6 +937,13 @@ function getQuantity() {
 
             // Prefill the diagnosis field. 
             document.getElementById('diagnosis').value = drugDatabase[i].diagnosis;
+            
+            // Suggest alternative diagnosis
+            if(drugDatabase[i].altDiagnosis) {
+                let altDiag = drugDatabase[i].altDiagnosis;
+                let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
+                altDiagSpan.innerText = altDiag;
+            };
 
             // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75, 3-check setting for show quantity 
             if(drugDatabase[i].formulary == false) {
@@ -952,9 +962,7 @@ function getQuantity() {
             }
             break;
         } else {
-            // Erase everything - this section subject to change
-            // document.getElementById('quantity').value = "";
-            // document.getElementById('diagnosis').value = "";
+            // Uncheck box for 70-non-formulary
             document.getElementById('nonFormulary').checked = false;
         }
     }
@@ -1214,6 +1222,15 @@ function addNewMember() {
         conc.value = conc.value.slice(13);
     };    
 }
+
+// When alternative diagnosis is clicked:
+function changeDiagnosis() {
+    let input = document.getElementById('diagnosis');
+    let diagnosis = document.getElementById('alternativeDiagnosisSpan');
+    input.value = diagnosis.innerText;
+}
+
+
 
 /* ||| Theme changer */
 
