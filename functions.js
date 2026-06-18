@@ -303,7 +303,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis",
     },
     {
-        drug: "Qelbree",
+        drug: "Qelbree capsule",
         quantity: "30/30",
         diagnosis: "ADHD",
         formulary: false,
@@ -319,7 +319,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
     }, 
     {
-        drug: "tadalafil tablet", 
+        drug: "tadalafil 5 mg tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
     }, 
