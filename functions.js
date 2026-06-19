@@ -356,8 +356,8 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
-    document.getElementById('alternativeDiagnosisSpan').innerText = '';
 
+    resetAlts();
     resetTextareaSize();
     hideExtras();
     resetStateNote();
@@ -367,6 +367,14 @@ function resetForm() { // After clicking the Reset button
 
 }
 
+    // Hide alternative fields i.e. for now just diagnosis.
+    function resetAlts() {
+        let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
+        altDiagSpan.classList.add('hideInput');
+        altDiagSpan.classList.remove('showInput');
+    }
+
+    // If textarea was manually adjusted, return it to default size.
     function resetTextareaSize() {
         let txtarea = [
             'information',
@@ -382,6 +390,7 @@ function resetForm() { // After clicking the Reset button
         }
     }
 
+    // Hide features that are hidden by default or by settings.
     function hideExtras() {
         let showQuantity = document.getElementById('quantityDiv');
         let showQuantitySettingChecked = localStorage.getItem('alwaysShowQuantity');
@@ -410,12 +419,14 @@ function resetForm() { // After clicking the Reset button
         showProperQuantity();
     }
 
+        // Shows if falseQL selected, default hidden.
         function showProperQuantity() { // Also triggered by changing properQuantity
             let destination = document.getElementById('showProperQuantity');
             let source = document.getElementById('properQuantity');
             destination.innerText = "#" + source.value + ".";
         }
 
+    // Hide the div that contains notes on state regulations (authorization duration exceptions, continuation of care, step therapy)
     function resetStateNote() { // Hide the div.
         let note = document.getElementById('stateNote');
         note.classList.add('hideInput');
@@ -551,11 +562,18 @@ function getQuantity() {
             let altDiag = drugDatabase[i].altDiagnosis;
             let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
             
-            if(drugDatabase[i].altDiagnosis) {
-                altDiagSpan.innerText = altDiag;
-            } else {
-                altDiagSpan.innerText = '';
-            }
+                // If there is an alt diagnosis, show button with diagnosis.
+                if(drugDatabase[i].altDiagnosis) {
+                    altDiagSpan.innerText = altDiag;
+                    altDiagSpan.classList.add('showInput');
+                    altDiagSpan.classList.remove('hideInput');
+
+                // If no alt diagnosis, hide button and delete text.
+                } else {
+                    //altDiagSpan.innerText = '';
+                    altDiagSpan.classList.add('hideInput');
+                    altDiagSpan.classList.remove('showInput');
+                }
 
             // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
             if(drugDatabase[i].quantityLimitCriteria) {    
