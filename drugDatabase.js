@@ -279,7 +279,8 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Nurtec ODT",
         quantity: "16/30",
-        diagnosis: "migraines",
+        diagnosis: "acute treatment of migraines",
+        altDiagnosis: "migraine prophylaxis",
         formulary: false, 
     }, 
     {
