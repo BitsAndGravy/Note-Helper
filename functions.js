@@ -426,18 +426,11 @@ function resetForm() { // After clicking the Reset button
         document.getElementById('drug').focus();
     }
 
-
-
 /* || Saved notes */
 
 // In the functions below, consider the Note to be the <div>, and the Edit to be the <textarea>.
 
 /* ||| Edit button */
-
-/*const temporarySavedNote = {
-    previous: "", 
-    new: ""
-}*/
 
 function editButton(noteID) { // Used with Edit button.
     showThis(noteID, 'Edit');
@@ -453,7 +446,7 @@ function editButton(noteID) { // Used with Edit button.
     function editNote(note) { // Edits saved notes; take text in the span and paste it into a textarea, used with editButton();
         let temporarySavedNote = document.getElementById(note).innerText;
         let paste = 'edit' + note;
-        document.getElementById(paste).value = temporarySavedNote.old;
+        document.getElementById(paste).value = temporarySavedNote;
     }
 
     function hideThis(note, suffix) {
