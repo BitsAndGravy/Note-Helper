@@ -468,13 +468,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
         formulary: false,
     }, 
-    {
-        drug: "Zepbound syringe",
+    /*{
+        drug: "Zepbound KwikPen",
         quantity: "2.4/28",
         diagnosis: "OSA",
         altDiagnosis: "obesity",
         formulary: false,
-    }, 
+    }, */
     {
         drug: "Zenpep",
         quantity: "300/30",
