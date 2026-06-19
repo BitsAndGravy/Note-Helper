@@ -330,6 +330,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "temazepam capsule",
+        quantity: "30/30",
+        altQuantity: "60/30",
+        diagnosis: "insomnia",
+        quantityLimitCriteria: true, 
+    }, 
+    {
         drug: "testosterone 1% gel packet",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
@@ -919,6 +926,11 @@ function getQuantity() {
     let drugName = document.getElementById('drug').value;
     let prefillQuantity = localStorage.getItem('prefillQuantity');
     let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
+    
+    let standardPA = document.getElementById('standardPA');
+    let quantityLimit = document.getElementById('quantityLimit');
+    let nonFormulary = document.getElementById('nonFormulary');
+
 
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
         if(drugDatabase[i].drug.toLowerCase() == drugName.toLowerCase()) { // If drug found in database, then:
@@ -945,12 +957,22 @@ function getQuantity() {
                 altDiagSpan.innerText = altDiag;
             };
 
-            // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75, 3-check setting for show quantity 
-            if(drugDatabase[i].formulary == false) {
-                document.getElementById('nonFormulary').checked = true; 
-                document.getElementById('standardPA').checked = false;
+            // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
+            if(drugDatabase[i].quantityLimitCriteria) {    
+                standardPA.checked = false;
+                quantityLimit.checked = true;
+                checkAlwaysShowQuantitySetting();
+            }
 
-                // alwaysShowQuantity = no means quantity fields are hidden.
+            // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75.
+            if(drugDatabase[i].formulary == false) {
+                nonFormulary.checked = true; 
+                standardPA.checked = false;
+                checkAlwaysShowQuantitySetting();
+            }
+
+            // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
+            function checkAlwaysShowQuantitySetting() {
                 if(alwaysShowQuantity == 'no') {
                     document.getElementById('quantityDiv').classList.add('showInput');
                     document.getElementById('quantityDiv').classList.remove('hideInput');
