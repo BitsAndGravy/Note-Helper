@@ -58,6 +58,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "schizophrenia",
     },  
     {
+        drug: "clomiphene tablet",
+        quantity: "30/30",
+        diagnosis: "testicular hypofunction",
+        altDiagnosis: "infertility",  
+        formulary: false, 
+    },  
+    {
         drug: "Creon XR capsule",
         quantity: "300/90",
         diagnosis: "exocrine pancreatic insufficiency", 
