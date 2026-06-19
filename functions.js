@@ -1,494 +1,4 @@
 /* || Dictionaries and constants */
-const drugDatabase = [ // for getQuantity()
-    {
-        drug: "Adderall tablet",
-        quantity: "30/30",
-        diagnosis: "ADHD", 
-        formulary: false, 
-    },  
-    {
-        drug: "Adderall XR capsule",
-        quantity: "30/30",
-        diagnosis: "ADHD", 
-        formulary: false, 
-    },  
-    {
-        drug: "Aimovig pen",
-        quantity: "1/25",
-        diagnosis: "migraine prophylaxis", 
-    },  
-    {
-        drug: "Airsupra",
-        quantity: "10.7/30 (120 inhalations per inhaler)",
-        diagnosis: "bronchospasm", 
-        formulary: false, 
-    },  
-    {
-        drug: "Ajovy pen",
-        quantity: "1.5/30",
-        diagnosis: "migraine prophylaxis", 
-        formulary: false, 
-    },  
-    {
-        drug: "Austedo capsule",
-        quantity: "30/30",
-        diagnosis: "tardive dyskinesia", 
-        specialty: true,
-    }, 
-    {
-        drug: "Auvelity tablet",
-        quantity: "60/30",
-        diagnosis: "major depressive disorder", 
-    },  
-    {
-        drug: "azelaic acid gel",
-        quantity: "50/30",
-        diagnosis: "rosacea", 
-        altDiagnosis: "acne vulgaris",
-    },  
-    {
-        drug: "Belsomra tablet",
-        quantity: "30/30",
-        diagnosis: "insomnia", 
-    },  
-    {
-        drug: "Caplyta capsule",
-        quantity: "30/30",
-        diagnosis: "bipolar disorder", 
-        altDiagnosis: "schizophrenia",
-    },  
-    {
-        drug: "clomiphene tablet",
-        quantity: "30/30",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "infertility",  
-        formulary: false, 
-    },  
-    {
-        drug: "Creon XR capsule",
-        quantity: "300/90",
-        diagnosis: "exocrine pancreatic insufficiency", 
-    },  
-    {
-        drug: "Dexcom G6 sensor",
-        quantity: "3/30",
-        altQuantity: "",
-        diagnosis: "T2DM", 
-        altDiagnosis: "T1DM", 
-    },  
-    {
-        drug: "Dexcom G6 receiver",
-        quantity: "1/30",
-        altQuantity: "",
-        diagnosis: "T2DM", 
-        altDiagnosis: "T1DM", 
-    },   
-    {
-        drug: "Dexcom G6 transmitter",
-        quantity: "1/90",
-        altQuantity: "",
-        diagnosis: "T2DM", 
-        altDiagnosis: "T1DM", 
-    },   
-    {
-        drug: "Dexcom G7 receiver",
-        quantity: "1/30",
-        diagnosis: "T2DM",
-        altDiagnosis: "T1DM", 
-    }, 
-    {
-        drug: "Dexcom G7 sensor",
-        quantity: "2/30",
-        altQuantity: "3/30",
-        diagnosis: "T2DM", 
-        altDiagnosis: "T1DM", 
-    },   
-    {
-        drug: "dulaglutide pen",
-        quantity: "2/28",
-        diagnosis: "T2DM", 
-    },     
-    {
-        drug: "Durysta implant",
-        quantity: "2/30",
-        diagnosis: "primary open-angle glaucoma", 
-        formulary: false, 
-    },  
-    {
-        drug: "Emgality 100 mg pen",
-        quantity: "3/28",
-        diagnosis: "migraine prophylaxis", 
-    },  
-    {
-        drug: "Emgality 120 mg pen",
-        quantity: "2/28",
-        diagnosis: "migraine prophylaxis", 
-    },  
-    {
-        drug: "fluticasone nasal spray",
-        quantity: "16/30",
-        diagnosis: "allergic rhinitis", 
-        formulary: false, 
-    },  
-    {
-        drug: "Foundayo",
-        quantity: "30/30",
-        diagnosis: "obesity", 
-        formulary: false, 
-    },  
-    {
-        drug: "FreeStyle Libre 3+ sensor",
-        quantity: "2/30",
-        altQuantity: "3/30",
-        diagnosis: "T2DM", 
-        altDiagnosis: "T1DM", 
-        formulary: false, 
-    },  
-    {
-        drug: "Gemtesa tablet", 
-        quantity: "30/30",
-        diagnosis: "overactive bladder", 
-        formulary: false, 
-    },  
-    {
-        drug: "Ibsrela",
-        quantity: "60/30",
-        diagnosis: "IBS-C", 
-        formulary: false, 
-    },  
-    {
-        drug: "icosapent ethyl capsule",
-        quantity: "120/30",
-        diagnosis: "hyperlipidemia",
-    }, 
-    {
-        drug: "Ingrezza capsule",
-        quantity: "30/30",
-        diagnosis: "Huntington's disease", 
-        altDiagnosis: "tardive dyskinesia",
-        formulary: false, 
-        specialty: true,
-    },  
-    {
-        drug: "insulin glargine-yfgn pen",
-        quantity: "15/30",
-        diagnosis: "T2DM", 
-        altDiagnosis: 'T1DM',
-        formulary: false, 
-    },  
-    {
-        drug: "ivermectin 1% cream",
-        quantity: "45/30",
-        diagnosis: "rosacea",
-    }, 
-    {
-        drug: "Lokelma powder packet",
-        quantity: "30/30",
-        diagnosis: "hyperkalemia",
-    }, 
-    {
-        drug: "Jatenzo capsule",
-        quantity: "60/30",
-        diagnosis: "testicular hypofunction",
-        formulary: false,  
-    },  
-    {
-        drug: "Jornay PM capsule",
-        quantity: "30/30",
-        diagnosis: "ADHD",
-        formulary: false, 
-    }, 
-    {
-        drug: "Jublia",
-        quantity: "4/30",
-        diagnosis: "tinea unguium",
-        formulary: false, 
-    }, 
-    {
-        drug: "lamotrigine ER tablet",
-        quantity: "30/30",
-        altQuantity: "",
-        diagnosis: "seizures", 
-        altDiagnosis: "bipolar disorder", 
-    }, 
-    {
-        drug: "Lantus Solostar",
-        dosageForm: "pen", 
-        quantity: "15/30",
-        diagnosis: "T2DM", 
-        formulary: false, 
-    },  
-    {
-        drug: "lidocaine 5% patch",
-        quantity: "30/30", // suggested
-        diagnosis: "neuropathic pain",
-    }, 
-    {
-        drug: "liraglutide (Saxenda)",
-        quantity: "9/30",
-        diagnosis: "obesity",
-        formulary: false,
-    },
-    {
-        drug: "liraglutide pen",
-        quantity: "9/30",
-        diagnosis: "T2DM",
-    },
-    {
-        drug: "lurasidone tablet",
-        quantity: "30/30",
-        diagnosis: "bipolar disorder",
-    }, 
-    {
-        drug: "metformin ER 1,000 mg osm-tab", 
-        quantity: "60/30",
-        diagnosis: "T2DM",
-        formulary: false,  
-    },  
-    {
-        drug: "metformin ER 1,000 mg gastr-tab",
-        quantity: "60/30",
-        diagnosis: "T2DM",
-        formulary: false,  
-    },  
-    {
-        drug: "mirabegron ER tablet",
-        quantity: "30/30",
-        diagnosis: "overactive bladder",
-    }, 
-    {
-        drug: "Miebo eye drops",
-        quantity: "3/30",
-        diagnosis: "dry eye syndrome",
-    }, 
-    {
-        drug: "Mounjaro pen",
-        quantity: "2/28",
-        diagnosis: "T2DM",
-    }, 
-    {
-        drug: "Natesto nasal spray", 
-        quantity: "7.320/30",
-        diagnosis: "testicular hypofunction",
-        formulary: false,  
-    },  
-    {
-        drug: "Neffy nasal spray",
-        quantity: "2/30",
-        diagnosis: "anaphylaxis",
-    }, 
-    {
-        drug: "Nurtec ODT",
-        quantity: "16/30",
-        diagnosis: "migraines",
-        formulary: false, 
-    }, 
-    {
-        drug: "omega-3 ethyl esters capsule",
-        quantity: "120/30",
-        diagnosis: "hyperlipidemia", 
-    },   
-    {
-        drug: "Omnipod 5 pods",
-        quantity: "10/30",
-        diagnosis: "T1DM",
-    }, 
-    {
-        drug: "Opzelura cream", 
-        quantity: "60/30",
-        diagnosis: "atopic dermatitis",
-        altDiagnosis: "psoriasis",  
-        formulary: false, 
-    },  
-    {
-        drug: "Ozempic pen", 
-        quantity: "3/28",
-        diagnosis: "T2DM",
-    },
-    {
-        drug: "Ozempic tablet",
-        quantity: "30/30",
-        diagnosis: "T2DM",
-    }, 
-    {
-        drug: "Qulipta tablet",
-        quantity: "30/30",
-        diagnosis: "migraine prophylaxis",
-    },
-    {
-        drug: "Qelbree capsule",
-        quantity: "30/30",
-        diagnosis: "ADHD",
-        formulary: false,
-    },
-    {
-        drug: "Restasis eye drops",
-        quantity: "60/30",
-        diagnosis: "keratoconjunctivitis",
-    },
-    {
-        drug: "Rybelsus tablet", 
-        quantity: "30/30",
-        diagnosis: "T2DM",
-    }, 
-    {
-        drug: "tadalafil 5 mg tablet", 
-        quantity: "30/30", 
-        diagnosis: "male erectile dysfunction", 
-    }, 
-    {
-        drug: "tadalafil 10 mg tablet", 
-        quantity: "30/30", 
-        diagnosis: "male erectile dysfunction", 
-        formulary: false, 
-    }, 
-    {
-        drug: "temazepam capsule",
-        quantity: "30/30",
-        altQuantity: "60/30",
-        diagnosis: "insomnia",
-        quantityLimitCriteria: true, 
-    }, 
-    {
-        drug: "testosterone 1% gel packet",
-        quantity: "60/30",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
-    },   
-    {
-        drug: "testosterone 1.62% gel pump",
-        quantity: "75/30",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder",
-        formulary: false, 
-    },   
-    {
-        drug: "testosterone 1.62% gel packet",
-        quantity: "75/30",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder",
-        formulary: false, 
-    },  
-    {
-        drug: "testosterone 10 mg gel pump",
-        quantity: "60/30",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
-    },  
-    {
-        drug: "testosterone cypionate vial", 
-        quantity: "6/84",
-        diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
-    },   
-    {
-        drug: "Trulicity pen",
-        quantity: "2/28",
-        diagnosis: "T2DM",
-    }, 
-    {
-        drug: "Tryptyr eye drops", 
-        quantity: "60/30", 
-        diagnosis: "keratoconjunctivitis sicca", 
-        formulary: false, 
-    }, 
-    {
-        drug: "Ubrelvy tablet",
-        quantity: "16/30",
-        diagnosis: "acute migraine treatment",
-    },
-    {
-        drug: "Victoza pen", 
-        quantity: "9/30",
-        diagnosis: "T2DM",
-        formulary: false,
-    },
-    {
-        drug: "Voquezna capsule",
-        quantity: "30/30",
-        diagnosis: "GERD",
-        formulary: false, 
-    }, 
-    {
-        drug: "Vraylar capsule",
-        quantity: "30/30",
-        diagnosis: "bipolar disorder",
-        formulary: false, 
-    }, 
-    /*{
-        drug: "Wegovy HD pen",
-        quantity: "3/28",
-        diagnosis: "obesity",
-        formulary: false, 
-    }, */
-    {
-        drug: "Wegovy pen",
-        quantity: "2/28",
-        diagnosis: "obesity",
-        formulary: false, 
-    }, 
-    {
-        drug: "Winlevi cream", 
-        quantity: "60/30",
-        diagnosis: "acne vulgaris",
-        formulary: false, 
-    },
-    {
-        drug: "Wegovy tablet",
-        quantity: "30/30",
-        diagnosis: "obesity",
-        formulary: false,
-    }, 
-    {
-        drug: "Xcopri tablet",
-        quantity: "30/30",
-        diagnosis: "partial seizures",
-        formulary: false, 
-    }, 
-    {
-        drug: "Xdemvy eye drops",
-        quantity: "10/42",
-        diagnosis: "infestation by Demodex mites",
-    }, 
-    {
-        drug: "Xifaxan tablet",
-        quantity: "42/14",
-        diagnosis: "irritable bowel syndrome-diarrhea",
-        altDiagnosis: "SIBO"
-    }, 
-    {
-        drug: "Xyosted inj",
-        quantity: "2/28",
-        diagnosis: "testicular hypofunction",
-        formulary: false, 
-    }, 
-    {
-        drug: "Zavzpret",
-        quantity: "6/30",
-        diagnosis: "acute migraine treatment",
-        formulary: false, 
-    }, 
-    {
-        drug: "Zepbound pen",
-        quantity: "2/28",
-        diagnosis: "OSA",
-        altDiagnosis: "obesity",
-        formulary: false,
-    }, 
-    /*{
-        drug: "Zepbound KwikPen",
-        quantity: "2.4/28",
-        diagnosis: "OSA",
-        altDiagnosis: "obesity",
-        formulary: false,
-    }, */
-    {
-        drug: "Zenpep",
-        quantity: "300/30",
-        diagnosis: "exocrine pancreatic insufficiency",
-    }, 
-]
-
 const checkboxBook = {
     appealExternal: {
         isChecked: '-- SEND TO IRO --',
@@ -917,6 +427,79 @@ function resetForm() { // After clicking the Reset button
     }
 
 
+
+/* || Saved notes */
+
+// In the functions below, consider the Note to be the <div>, and the Edit to be the <textarea>.
+
+/* ||| Edit button */
+
+/*const temporarySavedNote = {
+    previous: "", 
+    new: ""
+}*/
+
+function editButton(noteID) { // Used with Edit button.
+    showThis(noteID, 'Edit');
+    editNote(noteID);
+    hideThis(noteID, 'Text');
+}
+
+    function showThis(note, suffix) {
+        noteToShow = note + suffix;
+        document.getElementById(noteToShow).style.display = 'block';
+    }
+
+    function editNote(note) { // Edits saved notes; take text in the span and paste it into a textarea, used with editButton();
+        let temporarySavedNote = document.getElementById(note).innerText;
+        let paste = 'edit' + note;
+        document.getElementById(paste).value = temporarySavedNote.old;
+    }
+
+    function hideThis(note, suffix) {
+        editToHide = note + suffix;
+        document.getElementById(editToHide).style.display = 'none';
+    }
+
+/* ||| Save button */
+function savedNoteButton (noteID) { // Used with the 'Save' button on each of the saved notes.
+    showThis(noteID, 'Text'); // Defined above
+    resaveNote(noteID);
+    hideThis(noteID, 'Edit'); // Defined above
+    copyTextDuplicate(noteID);
+}
+
+    function resaveNote(note) { // Copies textarea contents into the saved note.
+        let editedNote = 'edit' + note;
+        let textToSave = document.getElementById(editedNote);
+        let saveID = document.getElementById(note);
+        saveID.innerText = textToSave.value;
+    }
+
+    function copyTextDuplicate(noteID) { // Copies text to clipboard.
+        let textToCopy = document.getElementById(noteID).innerText; 
+        navigator.clipboard.writeText(textToCopy);
+        let textToAnimate = noteID + 'Saved';
+        animateText(textToAnimate);
+    }
+
+/* ||| Cancel button */
+function cancelButton (noteID) {
+    showThis(noteID, 'Text');
+    cancelEdit(noteID);
+    hideThis(noteID, 'Edit');
+}
+
+    function cancelEdit(note) {
+        let cancelThis = 'edit' + note;
+        let textToCancel = document.getElementById(cancelThis);
+        let originalText = document.getElementById(note);
+        textToCancel.value = originalText.innerText;
+    }
+
+
+
+
 /* || Animations */
 /* ||| Animate text when button clicked */
 function animateText(spanToAnimate) { // Text briefly displays message in the <span>. Activates after clicking a button.
@@ -1296,80 +879,6 @@ document.getElementsByTagName("html")[0].setAttribute("data-theme", savedTheme);
 
 // Triggers when properQuantity field is changed.
 // see showProperQuantity() defined above
-
-
-
-/* || Saved notes */
-
-// In the functions below, consider the Note to be the <div>, and the Edit to be the <textarea>.
-
-/* ||| Edit button */
-const temporarySavedNote = {
-    previous: "", 
-    new: ""
-}
-
-function editButton(noteID) { // Used with Edit button.
-    showThis(noteID, 'Edit');
-    editNote(noteID);
-    hideThis(noteID, 'Text');
-}
-
-    function showThis(note, suffix) {
-        noteToShow = note + suffix;
-        document.getElementById(noteToShow).style.display = 'block';
-    }
-
-    function editNote(note) { // Edits saved notes; take text in the span and paste it into a textarea, used with editButton();
-        temporarySavedNote.old = document.getElementById(note).innerText;
-        let paste = 'edit' + note;
-        document.getElementById(paste).value = temporarySavedNote.old;
-    }
-
-    function hideThis(note, suffix) {
-        editToHide = note + suffix;
-        document.getElementById(editToHide).style.display = 'none';
-    }
-
-
-    
-/* ||| Save button */
-function savedNoteButton (noteID) { // Used with the 'Save' button on each of the saved notes.
-    showThis(noteID, 'Text'); // Defined above
-    resaveNote(noteID);
-    hideThis(noteID, 'Edit'); // Defined above
-    copyTextDuplicate(noteID);
-}
-
-    function resaveNote(note) { // Copies textarea contents into the saved note.
-        let editedNote = 'edit' + note;
-        let textToSave = document.getElementById(editedNote);
-        let saveID = document.getElementById(note);
-        saveID.innerText = textToSave.value;
-    }
-
-    function copyTextDuplicate(noteID) { // Copies text to clipboard.
-        let textToCopy = document.getElementById(noteID).innerText; 
-        navigator.clipboard.writeText(textToCopy);
-        let textToAnimate = noteID + 'Saved';
-        animateText(textToAnimate);
-    }
-
-
-
-/* ||| Cancel button */
-function cancelButton (noteID) {
-    showThis(noteID, 'Text');
-    cancelEdit(noteID);
-    hideThis(noteID, 'Edit');
-}
-
-    function cancelEdit(note) {
-        let cancelThis = 'edit' + note;
-        let textToCancel = document.getElementById(cancelThis);
-        let originalText = document.getElementById(note);
-        textToCancel.value = originalText.innerText;
-    }
 
 
 
