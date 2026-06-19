@@ -102,6 +102,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM", 
     },     
     {
+        drug: "Durysta implant",
+        quantity: "2/30",
+        diagnosis: "primary open-angle glaucoma", 
+        formulary: false, 
+    },  
+    {
         drug: "Emgality 100 mg pen",
         quantity: "3/28",
         diagnosis: "migraine prophylaxis", 
