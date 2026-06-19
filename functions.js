@@ -408,12 +408,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "bipolar disorder",
         formulary: false, 
     }, 
-    {
+    /*{
         drug: "Wegovy HD pen",
         quantity: "3/28",
         diagnosis: "obesity",
         formulary: false, 
-    }, 
+    }, */
     {
         drug: "Wegovy pen",
         quantity: "2/28",
