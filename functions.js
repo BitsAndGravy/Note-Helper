@@ -846,6 +846,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
+    document.getElementById('alternativeDiagnosisSpan').innerText = '';
 
     resetTextareaSize();
     hideExtras();
@@ -952,7 +953,6 @@ function getQuantity() {
     let quantityLimit = document.getElementById('quantityLimit');
     let nonFormulary = document.getElementById('nonFormulary');
 
-
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
         if(drugDatabase[i].drug.toLowerCase() == drugName.toLowerCase()) { // If drug found in database, then:
             
@@ -972,11 +972,14 @@ function getQuantity() {
             document.getElementById('diagnosis').value = drugDatabase[i].diagnosis;
             
             // Suggest alternative diagnosis
+            let altDiag = drugDatabase[i].altDiagnosis;
+            let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
+            
             if(drugDatabase[i].altDiagnosis) {
-                let altDiag = drugDatabase[i].altDiagnosis;
-                let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
                 altDiagSpan.innerText = altDiag;
-            };
+            } else {
+                altDiagSpan.innerText = '';
+            }
 
             // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
             if(drugDatabase[i].quantityLimitCriteria) {    
