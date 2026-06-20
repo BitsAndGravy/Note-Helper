@@ -266,6 +266,42 @@
 }
 
 
+[data-theme='confessor-jiji'] {
+    /* Main features */
+    --main-background: #11112c;
+    --header-background: #29435c;
+    --footer-background: var(--header-background);
+    --body-primary-color: #212048;
+    --body-secondary-color: #b483b52f;
+    --body-border-color: #be9582;
+    --body-gradient: #212048, #34325a, #34325a, #a47889;
+    
+    /* Text */
+    --heading-text: #f9e1a1;
+    --body-text: #f1cd9c;
+    --body-secondary-text: var(--body-text);
+    --input-text: #f9e1a1;
+    --placeholder-text: #f1ce9cae;
+    --hyperlink-static: var(--input-accent-color);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #f9e1a1;
+    --button-text: #212048;
+    --button-hover: #f1cd9c;
+    --button-active: #be9582;
+
+    /* Input */
+    --input-background: #192244ad;
+    --input-background-focus: #131a33e0;
+    --input-accent-color: #cd94da;
+    --input-border: #f8ffd276;
+    --input-border-focus: var(--main-background);
+}
+
+
 [data-theme='crystal-peaks'] {
     /* Main features */
     --main-background: #22134c;

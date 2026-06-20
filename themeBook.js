@@ -1,4 +1,6 @@
 const themeBook = {
+
+// Generic themes
     midnightBlue: {
         name: 'midnight-blue', 
         title: 'Midnight Blue (Default)', 
@@ -28,7 +30,7 @@ const themeBook = {
         optGroup: 'generic'
     }, 
 
-
+// Hollow Knight themes
     abyss: {
         name: 'abyss', 
         title: 'Abyss', 
@@ -46,6 +48,13 @@ const themeBook = {
     cityOfTears: {
         name: 'city-of-tears', 
         title: 'City of Tears', 
+        style: 'dark',
+        group: 'Hollow Knight',
+        optGroup: 'hollow-knight'
+    }, 
+    confessorJiji: {
+        name: 'confessor-jiji', 
+        title: "Confessor Jiji", 
         style: 'dark',
         group: 'Hollow Knight',
         optGroup: 'hollow-knight'
@@ -99,6 +108,7 @@ const themeBook = {
         group: 'Hollow Knight',
         optGroup: 'hollow-knight'
     }, 
+    
     queensGardens: {
         name: 'queens-gardens', 
         title: "Queen's Gardens", 
