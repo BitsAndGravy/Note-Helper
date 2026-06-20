@@ -421,6 +421,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Vraylar capsule",
         quantity: "30/30",
         diagnosis: "bipolar disorder",
+        altDiagnosis: "major depressive disorder", 
         formulary: false, 
     }, 
     /*{
@@ -496,5 +497,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Zenpep",
         quantity: "300/30",
         diagnosis: "exocrine pancreatic insufficiency",
+    }, 
+    {
+        drug: "Zoryve cream",
+        quantity: "30/30",
+        diagnosis: "atopic dermatitis",
+        altDiagnosis: "psoriasis",
+        formulary: false,
     }, 
 ]
