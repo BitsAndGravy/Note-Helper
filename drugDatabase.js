@@ -179,6 +179,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "ivermectin 1% cream",
         quantity: "45/30",
         diagnosis: "rosacea",
+        altDiagnosis: "acne vulgaris",
     }, 
     {
         drug: "Lokelma powder packet",
@@ -335,6 +336,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "tadalafil 5 mg tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
+        altDiagnosis: "benign prostatic hyperplasia",
     }, 
     {
         drug: "tadalafil 10 mg tablet", 
@@ -425,6 +427,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Wegovy pen",
         quantity: "2/28",
         diagnosis: "obesity",
+        altDiagnosis: "NASH",
         formulary: false, 
     }, 
     {
@@ -437,6 +440,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Wegovy tablet",
         quantity: "30/30",
         diagnosis: "obesity",
+        altDiagnosis: "ASCVD", 
         formulary: false,
     }, 
     {
