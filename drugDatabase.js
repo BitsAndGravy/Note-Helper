@@ -224,15 +224,16 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "neuropathic pain",
     }, 
     {
-        drug: "liraglutide (Saxenda)",
+        drug: "liraglutide pen, Saxenda generic",
         quantity: "9/30",
         diagnosis: "obesity",
         formulary: false,
     },
     {
-        drug: "liraglutide pen",
+        drug: "liraglutide pen (Victoza)",
         quantity: "9/30",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     },
     {
         drug: "lurasidone tablet",
@@ -265,6 +266,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Mounjaro pen",
         quantity: "2/28",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     }, 
     {
         drug: "Natesto nasal spray", 
@@ -305,11 +307,13 @@ const drugDatabase = [ // for getQuantity()
         drug: "Ozempic pen", 
         quantity: "3/28",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     },
     {
         drug: "Ozempic tablet",
         quantity: "30/30",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     }, 
     {
         drug: "Qulipta tablet",
@@ -331,6 +335,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Rybelsus tablet", 
         quantity: "30/30",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     }, 
     {
         drug: "tadalafil 5 mg tablet", 
@@ -387,6 +392,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Trulicity pen",
         quantity: "2/28",
         diagnosis: "T2DM",
+        altDiagnosis: "obesity",
     }, 
     {
         drug: "Tryptyr eye drops", 
