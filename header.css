@@ -158,6 +158,7 @@ a:link {color: var(--heading-text);}
     background-color: var(--main-background);
 }
 
+/* Alternative diagnosis suggestion button */
 .altButton {
     width: auto;
 }

@@ -443,6 +443,18 @@ function resetForm() { // After clicking the Reset button
 
 /* ||| Edit button */
 
+function newEdit(noteID) {
+    
+}
+
+
+
+
+
+
+
+
+
 function editButton(noteID) { // Used with Edit button.
     showThis(noteID, 'Edit');
     editNote(noteID);
@@ -870,10 +882,12 @@ function changeDiagnosis() {
     input.value = diagnosis.innerText;
 }
 
+// Triggers when properQuantity field is changed.
+// see showProperQuantity() defined above
+
 
 
 /* ||| Theme changer */
-
 function changeTheme(theme) { 
     let htmlTag = document.getElementsByTagName("html")[0];
     
@@ -886,12 +900,6 @@ function changeTheme(theme) {
 
 const savedTheme = localStorage.getItem('theme');
 document.getElementsByTagName("html")[0].setAttribute("data-theme", savedTheme); // Add previously saved theme
-
-
-// Triggers when properQuantity field is changed.
-// see showProperQuantity() defined above
-
-
 
 
 /* || Timer */
@@ -929,29 +937,29 @@ function resetTimer() {
     document.getElementById('time').innerText = "0:00";
 }
 
-
+/* || Word prediction */
 const wordList = [];
-
-for(i = 0; i < drugDatabase.length; i++) {
-    wordList.push(drugDatabase[i].drug);
-}
-wordList.sort();
+// Get list of drug names from each entry in drugDatabase
+    for(i = 0; i < drugDatabase.length; i++) {
+        wordList.push(drugDatabase[i].drug);
+    }
+    wordList.sort();
 
 function predictWords(inputLetters) {
     // Add event listenter is on window.onload function 
     let suggestion = document.getElementById('suggestion')
     let drug = document.getElementById('drug');
     
+    // If there is no text in the input, do not make a suggestion
     if(drug.value == '') {
         suggestion.innerText = '';
         
     } else {
-
         // Case-insensitive regex that anchors to the beginning of the word
             let regex = new RegExp("^" + inputLetters, "i");
             
-        // Filter the array and return top 5 matches
-            suggest = wordList.filter(word => regex.test(word)).slice(0, 1);
+        // Filter the array and return top match. Change slice second number to include additional results.
+            suggest = wordList.filter(word => regex.test(word)).slice(0, 1); 
             suggestion.innerText = suggest;    
     }
 }
