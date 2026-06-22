@@ -124,11 +124,6 @@ a:link {color: var(--heading-text);}
     width: 450px;
 }
 
-/* Hide the textarea for saved notes until Edit button clicked */
-.editArea {
-    display: none;
-}
-
 .heading {
     background-color: var(--header-background);
     padding-left: 10px;
@@ -202,4 +197,18 @@ a:link {color: var(--heading-text);}
 
 .showTimer {
     opacity: 0.5;
+}
+
+/* show and hide saved notes */
+.showElement {
+    display: block;
+}
+
+.hideElement {
+    display: none;
+}
+
+/* Hide the textarea for saved notes until Edit button clicked */
+.editArea {
+    display: none;
 }
