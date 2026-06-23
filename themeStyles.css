@@ -756,7 +756,7 @@
     --main-background: #2d3048;
     --header-background: #543d43;
     --footer-background: #90504f;
-    --body-primary-color: var(--body-secondary-color);
+    --body-primary-color: #fffdc2;
     --body-secondary-color: #f5d398;
     --body-border-color: #846456;
     --body-gradient: #b56240, /*#c58154, #e2a76e,*/ #ecba58, #fffdc2;
