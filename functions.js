@@ -443,25 +443,18 @@ function resetForm() { // After clicking the Reset button
 
 /* ||| Edit button */
 
-function newEdit(noteID) {
-    
+
+
+
+
+
+function editButton(noteID) { // Used with Edit button to show the textarea and hide the span.
+    showThis(noteID, 'Edit'); // Show textarea
+    editNote(noteID); // Fill textarea with saved note
+    hideThis(noteID, 'Text'); // Hide span
 }
 
-
-
-
-
-
-
-
-
-function editButton(noteID) { // Used with Edit button.
-    showThis(noteID, 'Edit');
-    editNote(noteID);
-    hideThis(noteID, 'Text');
-}
-
-    function showThis(note, suffix) {
+    function showThis(note, suffix) { // Shows the textarea. Suffix is either 'note' or 'edit'. With edit button, suffix = 'edit'.
         noteToShow = note + suffix;
         document.getElementById(noteToShow).style.display = 'block';
     }
@@ -472,7 +465,7 @@ function editButton(noteID) { // Used with Edit button.
         document.getElementById(paste).value = temporarySavedNote;
     }
 
-    function hideThis(note, suffix) {
+    function hideThis(note, suffix) { // Hides the span.
         editToHide = note + suffix;
         document.getElementById(editToHide).style.display = 'none';
     }
