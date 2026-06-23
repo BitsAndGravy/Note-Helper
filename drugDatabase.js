@@ -69,6 +69,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "exocrine pancreatic insufficiency", 
     },  
     {
+        drug: "Cresemba capsule",
+        quantity: "30/30",
+        diagnosis: "aspergillosis",
+        altDiagnosis: "fungal infection prevention during chemotherapy",  
+        formulary: false, 
+    },  
+    {
         drug: "Dexcom G6 sensor",
         quantity: "3/30",
         altQuantity: "",
