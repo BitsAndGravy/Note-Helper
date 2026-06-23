@@ -71,9 +71,9 @@
                             name="drug" 
                             placeholder="drug name" 
                             onchange="getQuantity()"
-                            oninput="predictWords(this.value)">
+                            oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
 
-                        <span id="suggestion" class="suggest"></span>
+                        <span id="drugSuggestion" class="drugSuggestionClass"></span>
                             
                         <span id="time" style="float: right;">0:00</span>
                         <br>
@@ -108,7 +108,11 @@
                         <input 
                             type="text" 
                             id='diagnosis' 
-                            placeholder="diagnosis">
+                            placeholder="diagnosis"
+                            oninput="predictWords(this.value, diagnosisNameList, 'diagnosis', 'diagnosisSuggestion')">
+
+                            <span id="diagnosisSuggestion" class="diagnosisSuggestionClass">diagnosis</span>
+
 
                         <!--<span id="alternativeDiagnosisSpan" onclick="changeDiagnosis()"></span>-->
                         

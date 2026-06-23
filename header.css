@@ -106,12 +106,20 @@ a:link {color: var(--heading-text);}
     position: relative;
 }
 
-.suggest {
+.drugSuggestionClass {
     font-size: 13px;
     color: var(--placeholder-text);
     position: absolute;
     left: 45px;
     top: 13px;
+}
+
+.diagnosisSuggestionClass {
+    font-size: 13px;
+    color: var(--placeholder-text);
+    position: absolute;
+    left: 45px;
+    top: 102px;
 }
 
 /* Div paddings */

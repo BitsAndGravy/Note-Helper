@@ -961,20 +961,30 @@ function resetTimer() {
 }
 
 /* || Word prediction */
-const wordList = [];
+const drugNameList = [];
 // Get list of drug names from each entry in drugDatabase
     for(i = 0; i < drugDatabase.length; i++) {
-        wordList.push(drugDatabase[i].drug);
+        drugNameList.push(drugDatabase[i].drug);
     }
-    wordList.sort();
+    drugNameList.sort();
 
-function predictWords(inputLetters) {
+const diagnosisNameList = [];
+
+    for(i = 0; i < drugDatabase.length; i++) {
+            diagnosisNameList.push(drugDatabase[i].diagnosis);
+            diagnosisNameList.push(drugDatabase[i].altDiagnosis);
+        }
+        diagnosisNameList.sort();
+
+
+
+function predictWords(inputLetters, wordList, source, destination) {
     // Add event listenter is on window.onload function 
-    let suggestion = document.getElementById('suggestion')
-    let drug = document.getElementById('drug');
+    let suggestion = document.getElementById(destination);
+    let wordName = document.getElementById(source);
     
     // If there is no text in the input, do not make a suggestion
-    if(drug.value == '') {
+    if(wordName.value == '') {
         suggestion.innerText = '';
         
     } else {
