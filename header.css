@@ -199,16 +199,12 @@ a:link {color: var(--heading-text);}
     opacity: 0.5;
 }
 
-/* show and hide saved notes */
-.showElement {
-    display: block;
-}
-
+/* show and hide saved notes, toggled on/off */
 .hideElement {
     display: none;
 }
 
-/* Hide the textarea for saved notes until Edit button clicked */
+/* Hide the textarea for saved notes until Edit button clicked 
 .editArea {
     display: none;
-}
+}*/

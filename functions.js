@@ -437,21 +437,24 @@ function resetForm() { // After clicking the Reset button
         document.getElementById('drug').focus();
     }
 
+
+
+
+
+
 /* || Saved notes */
 
 // In the functions below, consider the Note to be the <div>, and the Edit to be the <textarea>.
 
+var detectNoteOrEdit = 'Note';
+
 /* ||| Edit button */
-
-
-
-
-
-
 function editButton(noteID) { // Used with Edit button to show the textarea and hide the span.
     showThis(noteID, 'Edit'); // Show textarea
     editNote(noteID); // Fill textarea with saved note
     hideThis(noteID, 'Text'); // Hide span
+    detectNoteOrEdit = 'Edit';
+    showButtons();
 }
 
     function showThis(note, suffix) { // Shows the textarea. Suffix is either 'note' or 'edit'. With edit button, suffix = 'edit'.
@@ -492,11 +495,34 @@ function savedNoteButton (noteID) { // Used with the 'Save' button on each of th
         animateText(textToAnimate);
     }
 
+
+/* ||| Note 2 save button */
+function saveThis(noteID) {
+    if(detectNoteOrEdit === 'Note') {
+        copyTextDuplicate(noteID);
+
+    } else if(detectNoteOrEdit === 'Edit') {
+        showThis(noteID, 'Text');
+        resaveNote(noteID);
+        hideThis(noteID, 'Edit');
+        copyTextDuplicate(noteID);
+        showButtons();
+    }
+}
+
+    function showButtons() {
+        document.getElementById('noteTwoEditButton').classList.toggle('hideElement');
+        document.getElementById('noteTwoCancelButton').classList.toggle('hideElement');
+    }
+
+
 /* ||| Cancel button */
 function cancelButton (noteID) {
     showThis(noteID, 'Text');
     cancelEdit(noteID);
     hideThis(noteID, 'Edit');
+    detectNoteOrEdit = 'Note';
+    showButtons();
 }
 
     function cancelEdit(note) {
@@ -849,11 +875,11 @@ function reopeningChecked() {
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let conc = document.getElementById('conclusion');
 
-    if(info.innerText == '') {
+    if(info.value === '') {
         info.value = drug + ' denied ';
     };
 
-    if(conc.innerText == '') {
+    if(conc.value == '') {
         conc.value = 'Previously ';
     };
 }

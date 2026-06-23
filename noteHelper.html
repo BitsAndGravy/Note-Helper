@@ -531,10 +531,29 @@
         </div>
 
         <div class="footing">
-            <button type="button" id="noteTwoSave" onclick="savedNoteButton('noteTwo')">Save</button> <!--Always shown-->
-            <button type="button" onclick="editButton('noteTwo')">Edit</button>        
-            <button type="button" class="hideElement" onclick="cancelButton('noteTwo')">Cancel</button>
-            <span id="noteTwoSaved" class="hideStart">Copied to clipboard</span> <!--Text shows when save clicked-->
+            <button 
+                type="button" 
+                id="noteTwoSaveButton" 
+                onclick="saveThis('noteTwo')"
+                >Save</button> <!--Always shown-->
+
+            <button 
+                type="button" 
+                id="noteTwoEditButton"
+                onclick="editButton('noteTwo')"
+                >Edit</button>    
+
+            <button 
+                type="button" 
+                id="noteTwoCancelButton"
+                class="hideElement" 
+                onclick="cancelButton('noteTwo')"
+                >Cancel</button>
+
+            <span 
+                id="noteTwoSaved" 
+                class="hideStart"
+                >Copied to clipboard</span> <!--Text shows when save clicked-->
         </div>
 
         </div>
