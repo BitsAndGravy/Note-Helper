@@ -870,23 +870,27 @@ function showQuantity() {
 
 // When reopening is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reopeningChecked() {
+    let check = document.getElementById('reopening');
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let conc = document.getElementById('conclusion');
 
-    if(info.value === '') {
-        info.value = drug + ' denied ';
-    };
+    if (check.checked) {
+        if(info.value === '') {
+            info.value = drug + ' denied ';
+        };
 
-    if(conc.value == '') {
-        conc.value = 'Previously ';
-    };
+        if(conc.value == '') {
+            conc.value = 'Previously ';
+        };
+    }
 }
 
 // When New Member checked. Uncertain if I want this left as adding to textbox (serves as good reminder) vs adding to buildNote() (takes up less space, works more consistently with less coding)
 function addNewMember() {
     let conc = document.getElementById('conclusion');
+    
     if(conc.value.slice(0,10) !== 'New member') {
         conc.value = 'New member. \n' + conc.value;
     } else {
