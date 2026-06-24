@@ -120,9 +120,9 @@
     /* Main features */
     --main-background: white;
     --header-background: var(--input-accent-color);
-    --footer-background: white;
+    --footer-background: #daece7;
     --body-primary-color: white;
-    --body-secondary-color: white;
+    --body-secondary-color: #daece7;
     --body-border-color: var(--input-accent-color);
     --body-gradient: white;
     
