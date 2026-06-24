@@ -435,6 +435,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Voquezna Triple Pak",
+        quantity: "112/14",
+        diagnosis: "H. pylori infection",
+        altDiagnosis: "GERD", 
+        formulary: false, 
+    }, 
+    {
         drug: "Vraylar capsule",
         quantity: "30/30",
         diagnosis: "bipolar disorder",

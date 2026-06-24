@@ -978,7 +978,7 @@ const drugNameList = [];
     for(i = 0; i < drugDatabase.length; i++) {
         drugNameList.push(drugDatabase[i].drug);
     }
-    drugNameList.sort();
+    drugNameList.toLowerCase.sort();
 
 const diagnosisNameList = [];
 
