@@ -350,6 +350,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
     }, 
     {
+        drug: "Sunosi tablet", 
+        quantity: "30/30",
+        diagnosis: "narolepsy",
+        altDiagnosis: "OSA",
+    }, 
+    {
         drug: "tadalafil 5 mg tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
