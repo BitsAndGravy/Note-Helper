@@ -321,6 +321,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
     }, 
     {
+        drug: "pimecrolimus cream",
+        quantity: "30/30",
+        diagnosis: "atopic dermatitis",
+        altDiagnosis: "perioral dermatitis", 
+        formulary: false,
+    },
+    {
         drug: "Qulipta tablet",
         quantity: "30/30",
         diagnosis: "migraine prophylaxis",
