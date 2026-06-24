@@ -352,7 +352,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         }
 
 /* ||| Reset button */
-function resetForm() { // After clicking the Reset button
+function resetForm() { // After clicking the Reset button        
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
