@@ -592,18 +592,28 @@ function getQuantity() {
             // Suggest alternative diagnosis
             let altDiag = drugDatabase[i].altDiagnosis;
             let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
+            let diagnosisButton = document.getElementById('alternativeDiagnosisSpan');
             
                 // If there is an alt diagnosis, show button with diagnosis.
                 if(drugDatabase[i].altDiagnosis) {
                     altDiagSpan.innerText = altDiag;
                     altDiagSpan.classList.add('showInput');
                     altDiagSpan.classList.remove('hideInput');
+                    diagnosisButton.tabIndex = 0;
+
 
                 // If no alt diagnosis, hide button and delete text.
                 } else {
-                    //altDiagSpan.innerText = '';
+
+                    setTimeout(function() {
+                        altDiagSpan.innerText = '';
+                    }, 1100)
+
+
+
                     altDiagSpan.classList.add('hideInput');
                     altDiagSpan.classList.remove('showInput');
+                    diagnosisButton.tabIndex = -1;
                 }
 
             // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
@@ -960,6 +970,8 @@ function resetTimer() {
     document.getElementById('time').innerText = "0:00";
 }
 
+
+
 /* || Word prediction */
 const drugNameList = [];
 // Get list of drug names from each entry in drugDatabase
@@ -974,9 +986,7 @@ const diagnosisNameList = [];
             diagnosisNameList.push(drugDatabase[i].diagnosis);
             diagnosisNameList.push(drugDatabase[i].altDiagnosis);
         }
-        diagnosisNameList.sort();
-
-
+        diagnosisNameList.toLowerCase.sort();
 
 function predictWords(inputLetters, wordList, source, destination) {
     // Add event listenter is on window.onload function 

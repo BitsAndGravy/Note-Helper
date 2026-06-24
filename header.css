@@ -211,8 +211,3 @@ a:link {color: var(--heading-text);}
 .hideElement {
     display: none;
 }
-
-/* Hide the textarea for saved notes until Edit button clicked 
-.editArea {
-    display: none;
-}*/

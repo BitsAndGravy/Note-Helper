@@ -111,16 +111,14 @@
                             placeholder="diagnosis"
                             oninput="predictWords(this.value, diagnosisNameList, 'diagnosis', 'diagnosisSuggestion')">
 
-                            <span id="diagnosisSuggestion" class="diagnosisSuggestionClass">diagnosis</span>
-
-
-                        <!--<span id="alternativeDiagnosisSpan" onclick="changeDiagnosis()"></span>-->
+                            <span id="diagnosisSuggestion" class="diagnosisSuggestionClass"></span>
                         
                         <button 
                             type="button"
                             id="alternativeDiagnosisSpan"
                             class="altButton hideInput"
-                            onclick="changeDiagnosis()"></button>
+                            onclick="changeDiagnosis()"
+                            tabindex="-1"></button>
 
                         <br>
 

@@ -51,20 +51,39 @@ window.onload = function() {
         } else {
             showTimerSpan.classList.add('hideInput');
         }
-
-    const drugInput = document.getElementById('drug');
-    const suggestionSpan = document.getElementById('suggestion');
     
-    // Hit Enter or Tab to accept suggestion.
+        
+
+    /* || Word prediction, see predictWords() in functions */
+    
+    // Start typing in the drug name field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
+    const drugInput = document.getElementById('drug');
+    const drugSuggestion = document.getElementById('drugSuggestion');
+
     drugInput.addEventListener('keydown', function(e) {
         
         // Check if the pressed key is "Enter"
-        if (((e.key === 'Enter') || (e.key === 'Tab')) && suggestionSpan.innerText != '') {
+        if (((e.key === 'Enter') || (e.key === 'Tab')) && drugSuggestion.innerText != '') {
             
-                drugInput.value = suggestionSpan.innerText;
-                suggestionSpan.innerText = '';
+
+                drugInput.value = drugSuggestion.innerText;
+                drugSuggestion.innerText = '';
                 getQuantity();
+        }
+    });
+
+    // Start typing in diagnosis field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
+    const diagnosisInput = document.getElementById('diagnosis');
+    const diagnosisSuggestion = document.getElementById('diagnosisSuggestion');
+
+    diagnosisInput.addEventListener('keydown', function(e) {
+        
+        // Check if the pressed key is "Enter"
+        if (((e.key === 'Enter') || (e.key === 'Tab')) && diagnosisSuggestion.innerText != '') {
+
             
+                diagnosisInput.value = diagnosisSuggestion.innerText;
+                diagnosisSuggestion.innerText = '';            
         }
     });
 };

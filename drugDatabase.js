@@ -60,7 +60,6 @@ const drugDatabase = [ // for getQuantity()
         drug: "clomiphene tablet",
         quantity: "30/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "infertility",  
         formulary: false, 
     },  
     {
@@ -227,8 +226,8 @@ const drugDatabase = [ // for getQuantity()
     },  
     {
         drug: "lidocaine 5% patch",
-        quantity: "30/30", // suggested
-        diagnosis: "neuropathic pain",
+        quantity: "30/30", 
+        diagnosis: "radiculopathy",
     }, 
     {
         drug: "liraglutide pen, Saxenda generic",
@@ -240,7 +239,6 @@ const drugDatabase = [ // for getQuantity()
         drug: "liraglutide pen (Victoza)",
         quantity: "9/30",
         diagnosis: "T2DM",
-        altDiagnosis: "obesity",
     },
     {
         drug: "lurasidone tablet",
@@ -273,7 +271,6 @@ const drugDatabase = [ // for getQuantity()
         drug: "Mounjaro pen",
         quantity: "2/28",
         diagnosis: "T2DM",
-        altDiagnosis: "obesity",
     }, 
     {
         drug: "Natesto nasal spray", 
@@ -399,7 +396,6 @@ const drugDatabase = [ // for getQuantity()
         drug: "Trulicity pen",
         quantity: "2/28",
         diagnosis: "T2DM",
-        altDiagnosis: "obesity",
     }, 
     {
         drug: "Tryptyr eye drops", 
@@ -431,12 +427,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "major depressive disorder", 
         formulary: false, 
     }, 
-    /*{
-        drug: "Wegovy HD pen",
+    {
+        drug: "Wegovy pen HD",
         quantity: "3/28",
         diagnosis: "obesity",
         formulary: false, 
-    }, */
+    }, 
     {
         drug: "Wegovy pen",
         quantity: "2/28",
