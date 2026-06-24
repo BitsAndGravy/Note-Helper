@@ -205,7 +205,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
-        drug: "Jublia",
+        drug: "Jublia topical solution",
         quantity: "4/30",
         diagnosis: "tinea unguium",
         formulary: false, 
