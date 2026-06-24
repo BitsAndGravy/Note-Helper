@@ -188,6 +188,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     }, 
     {
+        drug: "lisdexamfetamine capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+    },  
+    {
         drug: "Lokelma powder packet",
         quantity: "30/30",
         diagnosis: "hyperkalemia",
@@ -429,7 +434,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
-        drug: "Voquezna capsule",
+        drug: "Voquezna tablet",
         quantity: "30/30",
         diagnosis: "GERD",
         formulary: false, 
