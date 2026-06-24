@@ -449,16 +449,16 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
-        drug: "Wegovy pen HD",
-        quantity: "3/28",
-        diagnosis: "obesity",
-        formulary: false, 
-    }, 
-    {
         drug: "Wegovy pen",
         quantity: "2/28",
         diagnosis: "obesity",
         altDiagnosis: "NASH",
+        formulary: false, 
+    }, 
+    {
+        drug: "Wegovy pen HD",
+        quantity: "3/28",
+        diagnosis: "obesity",
         formulary: false, 
     }, 
     {
