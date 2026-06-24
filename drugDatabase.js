@@ -261,6 +261,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "mirabegron ER tablet",
         quantity: "30/30",
         diagnosis: "overactive bladder",
+        altDiagnosis: 'frequency of micturition',
     }, 
     {
         drug: "Miebo eye drops",
