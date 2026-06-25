@@ -194,6 +194,30 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "itraconazole capsule",
+        quantity: "20/10",
+        diagnosis: "aspergilliosis",
+        altDiagnosis: "histoplasmosis",
+        diagnosisArray: [
+            'aspergilliosis', 
+            'blastomycosis', 
+            'coccidioidomycosis',
+            'histoplasmosis',
+            'onychomycosis',
+            'tinea unguium',
+        ]
+    }, 
+    {
+        drug: "itraconazole solution",
+        quantity: "?",
+        diagnosis: "esophageal candidiasis",
+        altDiagnosis: "oropharyngeal candidiasis",
+        diagnosisArray: [
+            'esophageal candidiasis', 
+            'oropharyngeal candidiasis', 
+        ]
+    }, 
+    {
         drug: "ivermectin 1% cream",
         quantity: "45/30",
         diagnosis: "rosacea",
@@ -373,6 +397,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "60/30",
         diagnosis: "keratoconjunctivitis",
     },
+    {
+        drug: "rivastigmine capsule", 
+        quantity: "60/30",
+        diagnosis: "dementia",
+        altDiagnosis: "memory loss",
+    }, 
     {
         drug: "Rybelsus tablet", 
         quantity: "30/30",
