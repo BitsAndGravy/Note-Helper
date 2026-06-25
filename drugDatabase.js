@@ -51,6 +51,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "insomnia", 
     },  
     {
+        drug: "bismuth-metronidazole-tetracycline capsule",
+        quantity: "120/10",
+        diagnosis: "H. pylori infection",
+        altDiagnosis: "GERD", 
+    },  
+    {
         drug: "Caplyta capsule",
         quantity: "30/30",
         diagnosis: "bipolar disorder", 
