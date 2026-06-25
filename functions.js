@@ -372,6 +372,7 @@ function resetForm() { // After clicking the Reset button
         let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
         altDiagSpan.classList.add('hideInput');
         altDiagSpan.classList.remove('showInput');
+        altDiagSpan.tabIndex = -1;
     }
 
     // If textarea was manually adjusted, return it to default size.
