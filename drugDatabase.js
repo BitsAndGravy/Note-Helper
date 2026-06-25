@@ -291,6 +291,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
     }, 
     {
+        drug: "Myfembree tablet",
+        quantity: "30/30",
+        diagnosis: "endometriosis",
+        altDiagnosis: "uterine fibroids",
+        formulary: false,
+    }, 
+    {
         drug: "Natesto nasal spray", 
         quantity: "7.320/30",
         diagnosis: "testicular hypofunction",
