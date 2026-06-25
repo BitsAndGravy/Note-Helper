@@ -979,7 +979,10 @@ const drugNameList = [];
     for(i = 0; i < drugDatabase.length; i++) {
         drugNameList.push(drugDatabase[i].drug);
     }
-    drugNameList.toLowerCase.sort();
+    //drugNameList.toLowerCase();
+    drugNameList.sort(function (a, b) {
+        return a.localeCompare(b);
+    });
 
 const diagnosisNameList = [];
 
@@ -987,7 +990,9 @@ const diagnosisNameList = [];
             diagnosisNameList.push(drugDatabase[i].diagnosis);
             diagnosisNameList.push(drugDatabase[i].altDiagnosis);
         }
-        diagnosisNameList.toLowerCase.sort();
+        diagnosisNameList.sort(function (a, b) {
+        return a.localeCompare(b);
+    });
 
 function predictWords(inputLetters, wordList, source, destination) {
     // Add event listenter is on window.onload function 

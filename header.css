@@ -114,6 +114,7 @@ a:link {color: var(--heading-text);}
     position: absolute;
     left: 45px;
     top: 13px;
+    pointer-events: none;
 }
 
 .diagnosisSuggestionClass {
