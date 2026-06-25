@@ -136,6 +136,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
+        drug: "Eohilia suspension packet",
+        quantity: "10/30",
+        diagnosis: "eosinophilic esophagitis", 
+        formulary: false, 
+    },  
+    {
         drug: "fluticasone nasal spray",
         quantity: "16/30",
         diagnosis: "allergic rhinitis", 
