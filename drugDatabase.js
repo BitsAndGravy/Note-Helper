@@ -373,6 +373,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Talicia DR capsule", 
+        quantity: "168/14", 
+        diagnosis: "H. pylori infection",
+        altDiagnosis: "GERD",  
+        formulary: false, 
+    }, 
+    {
         drug: "temazepam capsule",
         quantity: "30/30",
         altQuantity: "60/30",
@@ -411,6 +418,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "testicular hypofunction",
         altDiagnosis: "gender identity disorder", 
     },   
+    {
+        drug: "Trulance tablet", 
+        quantity: "30/30", 
+        diagnosis: "IBS-C", 
+        formulary: false, 
+    }, 
     {
         drug: "Trulicity pen",
         quantity: "2/28",
