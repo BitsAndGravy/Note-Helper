@@ -170,7 +170,7 @@
                             <option value="TN">TN</option>
                             <option value="TX">TX</option><!--
                             <option value="UT">UT - Utah</option>-->
-                            <option value="VA">VA - Virginia</option><!--
+                            <option value="VA">VA</option><!--
                             <option value="VT">VT - Vermont</option>
                             <option value="WA">WA - Washington</option>
                             <option value="WI">WI - Wisconson</option>
@@ -194,41 +194,40 @@
 
                         <label for="reject">07.</label>
 
-                        <input
-                            type="checkbox"
-                            id="standardPA"
-                            name="reject"
-                            checked
-                            tabindex="-1">
-                            <label for="standardPA">75 </label>
+                            <input
+                                type="checkbox"
+                                id="standardPA"
+                                name="reject"
+                                checked>
+                                <label for="standardPA">75 </label>
 
-                        <input 
-                            type="checkbox" 
-                            id="quantityLimit" 
-                            name="reject" 
-                            onclick="showQuantity()">
-                            <label for="quantityLimit">76 </label>
-
-                        <input 
-                            type="checkbox" 
-                            id="nonFormulary" 
-                            name="reject" 
-                            onclick="showQuantity()">
-                            <label for="nonFormulary">70 </label>
-                        <br>
-                        
-                        <div id="quantityDiv">
-                            <label for="quantity">08.</label>
                             <input 
-                                type="text" 
-                                class="qtyTextbox" 
-                                id="quantity" 
-                                name="quantity" 
-                                placeholder="qty/days"
-                                >
-                            <br>
+                                type="checkbox" 
+                                id="quantityLimit" 
+                                name="reject" 
+                                onclick="showQuantity()">
+                                <label for="quantityLimit">76 </label>
 
-                            <label for="falseQL">09.</label>
+                            <input 
+                                type="checkbox" 
+                                id="nonFormulary" 
+                                name="reject" 
+                                onclick="showQuantity()">
+                                <label for="nonFormulary">70 </label>
+                            <br>
+                            
+                            <div id="quantityDiv">
+                                <label for="quantity">08.</label>
+                                <input 
+                                    type="text" 
+                                    class="qtyTextbox" 
+                                    id="quantity" 
+                                    name="quantity" 
+                                    placeholder="qty/days"
+                                    >
+                        <br>
+
+                        <label for="falseQL">09.</label>
                             <input 
                                 type="checkbox" 
                                 id="falseQL" 
@@ -256,19 +255,19 @@
                         </div>
 
                         <label for="type">10.</label> 
-                        <input 
-                            type="checkbox" 
-                            id="reauthorization" 
-                            name="type" 
-                            >
-                        <label for="reauthorization">Reauthorizaiton </label>
-                        
-                        <input
-                            type="checkbox"
-                            id="reopening"
-                            name="type"
-                            onclick="reopeningChecked()">
-                        <label for="reopening">Reopening</label>
+
+                            <input 
+                                type="checkbox" 
+                                id="reauthorization" 
+                                name="type">
+                                <label for="reauthorization">Reauthorizaiton </label>
+                            
+                            <input
+                                type="checkbox"
+                                id="reopening"
+                                name="type"
+                                onclick="reopeningChecked()">
+                                <label for="reopening">Reopening</label>
                         <br>
 
                         <label for="information">11.</label>
