@@ -123,6 +123,7 @@ a:link {color: var(--heading-text);}
     position: absolute;
     left: 45px;
     top: 102px;
+    pointer-events: none;
 }
 
 /* Div paddings */
