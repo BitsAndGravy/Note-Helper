@@ -222,6 +222,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Journavx tablet",
+        quantity: "30/14",
+        diagnosis: "acute pain",
+        formulary: false, 
+    }, 
+    {
         drug: "Jublia topical solution",
         quantity: "4/30",
         diagnosis: "tinea unguium",
