@@ -17,7 +17,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
-        drug: "Airsupra",
+        drug: "Airsupra inhaler",
         quantity: "10.7/30 (120 inhalations per inhaler)",
         diagnosis: "bronchospasm", 
         formulary: false, 
