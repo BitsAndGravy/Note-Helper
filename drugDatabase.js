@@ -293,6 +293,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "bipolar disorder",
     }, 
     {
+        drug: "Lynkuet capsule",
+        quantity: "60/30",
+        diagnosis: "vasomotor symptoms",
+        altDiagnosis: "flushing",  
+        formulary: false, 
+    },  
+    {
         drug: "metformin ER 1,000 mg osm-tab", 
         quantity: "60/30",
         diagnosis: "T2DM",
@@ -337,6 +344,13 @@ const drugDatabase = [ // for getQuantity()
         drug: "Neffy nasal spray",
         quantity: "2/30",
         diagnosis: "anaphylaxis",
+    }, 
+    {
+        drug: "Nexletol tablet",
+        quantity: "30/30",
+        diagnosis: "hyperlipidemia",
+        altDiagnosis: "hypercholesterolemia", 
+        formulary: false, 
     }, 
     {
         drug: "Nurtec ODT",
@@ -387,7 +401,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis",
     },
     {
-        drug: "Qelbree capsule",
+        drug: "Qelbree ER capsule",
         quantity: "30/30",
         diagnosis: "ADHD",
         formulary: false,
