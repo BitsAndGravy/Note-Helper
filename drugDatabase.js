@@ -65,8 +65,8 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "cinacalcet tablet",
         quantity: "30/30",
-        diagnosis: "bipolar disorder", 
-        altDiagnosis: "schizophrenia",
+        diagnosis: "hyperparathyroidism", 
+        altDiagnosis: "hypercalcemia",
     },  
     {
         drug: "clomiphene tablet",
