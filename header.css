@@ -47,7 +47,7 @@ textarea, input, select {
     background-color: var(--input-background);
     color: var(--input-text);
     transition-duration: 1s;
-    box-shadow: 1px 1px 2px #00000086 inset;
+    box-shadow: 1px 1px 3px #00000062 inset;
 }
 
 textarea {
