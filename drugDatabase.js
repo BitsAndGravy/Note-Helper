@@ -63,6 +63,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "schizophrenia",
     },  
     {
+        drug: "cinacalcet tablet",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder", 
+        altDiagnosis: "schizophrenia",
+    },  
+    {
         drug: "clomiphene tablet",
         quantity: "30/30",
         diagnosis: "testicular hypofunction",
@@ -148,7 +154,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Foundayo",
+        drug: "Foundayo tablet",
         quantity: "30/30",
         diagnosis: "obesity", 
         formulary: false, 
@@ -295,7 +301,7 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Lynkuet capsule",
         quantity: "60/30",
-        diagnosis: "vasomotor symptoms",
+        diagnosis: "menopausal and female climacteric states",
         altDiagnosis: "flushing",  
         formulary: false, 
     },  
@@ -363,6 +369,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "omega-3 ethyl esters capsule",
         quantity: "120/30",
         diagnosis: "hyperlipidemia", 
+        altDiagnosis: "pure hyperglyceridemia",
     },   
     {
         drug: "Omnipod 5 pods",
@@ -424,9 +431,15 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
     }, 
     {
+        drug: "Santyl ointment", 
+        quantity: "30/30",
+        diagnosis: "ulcer",
+        altDiagnosis: "burn",
+    }, 
+    {
         drug: "Sunosi tablet", 
         quantity: "30/30",
-        diagnosis: "narolepsy",
+        diagnosis: "narcolepsy",
         altDiagnosis: "OSA",
     }, 
     {
@@ -597,6 +610,7 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
         formulary: false,
     }, 
+
     /*{
         drug: "Zepbound KwikPen",
         quantity: "2.4/28",
@@ -604,6 +618,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "obesity",
         formulary: false,
     }, */
+    {
+        drug: "Zelsuvmi 10.3% gel",
+        quantity: "31/30",
+        diagnosis: "molloscum contagiosum",
+        formulary: false,
+    }, 
     {
         drug: "Zenpep",
         quantity: "300/30",
