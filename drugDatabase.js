@@ -527,7 +527,8 @@ const drugDatabase = [ // for getQuantity()
         drug: "Tymlos pen",
         quantity: "1.56/30",
         diagnosis: "post-menopausal osteoporosis",
-        altDiagnosis: "ostoporosis in men"
+        altDiagnosis: "ostoporosis in men",
+        specialty: true,
     }, 
     {
         drug: "Ubrelvy tablet",
