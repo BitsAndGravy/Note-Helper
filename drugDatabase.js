@@ -230,16 +230,6 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     }, 
     {
-        drug: "lisdexamfetamine capsule",
-        quantity: "30/30",
-        diagnosis: "ADHD", 
-    },  
-    {
-        drug: "Lokelma powder packet",
-        quantity: "30/30",
-        diagnosis: "hyperkalemia",
-    }, 
-    {
         drug: "Jatenzo capsule",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
@@ -263,6 +253,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "tinea unguium",
         formulary: false, 
     }, 
+    {
+        drug: "Kerendia tablet",
+        quantity: "30/30",
+        diagnosis: "chronic kidney disease",
+        altDiagnosis: "heart failure" 
+    },  
     {
         drug: "lamotrigine ER tablet",
         quantity: "30/30",
@@ -293,6 +289,16 @@ const drugDatabase = [ // for getQuantity()
         quantity: "9/30",
         diagnosis: "T2DM",
     },
+    {
+        drug: "lisdexamfetamine capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+    },  
+    {
+        drug: "Lokelma powder packet",
+        quantity: "30/30",
+        diagnosis: "hyperkalemia",
+    }, 
     {
         drug: "lurasidone tablet",
         quantity: "30/30",
@@ -478,14 +484,14 @@ const drugDatabase = [ // for getQuantity()
         drug: "testosterone 1.62% gel pump",
         quantity: "75/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder",
+        altDiagnosis: "male hypogonadism",
         formulary: false, 
     },   
     {
         drug: "testosterone 1.62% gel packet",
         quantity: "75/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder",
+        altDiagnosis: "abnormal blood chemistry",
         formulary: false, 
     },  
     {
@@ -516,6 +522,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "60/30", 
         diagnosis: "keratoconjunctivitis sicca", 
         formulary: false, 
+    }, 
+    {
+        drug: "Tymlos pen",
+        quantity: "1.56/30",
+        diagnosis: "post-menopausal osteoporosis",
+        altDiagnosis: "ostoporosis in men"
     }, 
     {
         drug: "Ubrelvy tablet",
@@ -576,6 +588,12 @@ const drugDatabase = [ // for getQuantity()
     }, 
     {
         drug: "Xcopri tablet",
+        quantity: "30/30",
+        diagnosis: "partial seizures",
+        formulary: false, 
+    }, 
+    {
+        drug: "Xcopri titration pack",
         quantity: "30/30",
         diagnosis: "partial seizures",
         formulary: false, 
