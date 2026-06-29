@@ -202,10 +202,10 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "itraconazole capsule",
         quantity: "20/10",
-        diagnosis: "aspergilliosis",
+        diagnosis: "aspergillosis",
         altDiagnosis: "histoplasmosis",
         diagnosisArray: [
-            'aspergilliosis', 
+            'aspergillosis', 
             'blastomycosis', 
             'coccidioidomycosis',
             'histoplasmosis',
@@ -425,6 +425,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "keratoconjunctivitis",
     },
     {
+        drug: "Rexulti tablet",
+        quantity: "60/30",
+        diagnosis: "major depressive disorder",
+        altDiagnosis: "schizophrenia",
+    },
+    {
         drug: "rivastigmine capsule", 
         quantity: "60/30",
         diagnosis: "dementia",
@@ -534,6 +540,11 @@ const drugDatabase = [ // for getQuantity()
         drug: "Ubrelvy tablet",
         quantity: "16/30",
         diagnosis: "acute migraine treatment",
+    },
+    {
+        drug: "Valtoco nasal spray", 
+        quantity: "10/30",
+        diagnosis: "seizures",
     },
     {
         drug: "Victoza pen", 
