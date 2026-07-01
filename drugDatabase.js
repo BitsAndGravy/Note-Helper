@@ -237,6 +237,10 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "acne vulgaris",
     }, 
     {
+        drug: "Jakafi XR tablet",
+        specialty: true,  
+    },  
+    {
         drug: "Jatenzo capsule",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
@@ -468,6 +472,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "burn",
     }, 
     {
+        drug: "sucralfate oral suspension", 
+        quantity: "300/30",
+        diagnosis: "GERD",
+        altDiagnosis: "canker sore",
+        formulary: false,
+    }, 
+    {
         drug: "Sunosi tablet", 
         quantity: "30/30",
         diagnosis: "narcolepsy",
@@ -584,6 +595,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "GERD", 
         formulary: false, 
     }, 
+    {
+        drug: "voriconazole tablet", 
+        quantity: "10/30",
+        diagnosis: "aspergillosis",
+        altDiagnosis: "febrile neutropenia",
+    },
     {
         drug: "Vraylar capsule",
         quantity: "30/30",
