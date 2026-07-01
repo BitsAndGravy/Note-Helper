@@ -78,6 +78,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Creon XR capsule",
         quantity: "300/90",
         diagnosis: "exocrine pancreatic insufficiency", 
+        altDiagnosis: "cystic fibrosis",
     },  
     {
         drug: "Cresemba capsule",
@@ -140,6 +141,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Emgality 120 mg pen",
         quantity: "2/28",
         diagnosis: "migraine prophylaxis", 
+    },  
+    {
+        drug: "Emverm chewable tablet",
+        quantity: "12/30",
+        diagnosis: "roundworm",
+        altDiagnosis: "whipworm", 
     },  
     {
         drug: "Eohilia suspension packet",
@@ -252,6 +259,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "4/30",
         diagnosis: "tinea unguium",
         formulary: false, 
+    }, 
+    {
+        drug: "Jynarque tablet",
+        quantity: "30/30",
+        diagnosis: "CKD",
+        formulary: false,
+        specialty: true, 
     }, 
     {
         drug: "Kerendia tablet",
@@ -389,6 +403,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "psoriasis",  
         formulary: false, 
     },  
+    {
+        drug: "Orilissa tablet", 
+        quantity: "60/30",
+        diagnosis: "endometriosis",
+    },
     {
         drug: "Ozempic pen", 
         quantity: "3/28",
