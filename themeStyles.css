@@ -667,8 +667,8 @@
     
     /* Buttons */
     --button-background: var(--heading-text);
-    --button-hover: var(--input-accent-color);
-    --button-active: aqua;
+    --button-hover: #f1eaffc5;
+    --button-active: #d0cbdba2;
 
     /* Input */
     --input-background: #0b0f32c4;
