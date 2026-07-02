@@ -256,7 +256,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Journavx tablet",
         quantity: "30/14",
         diagnosis: "acute pain",
-        formulary: false, 
+        quantityLimitCriteria: true,     
     }, 
     {
         drug: "Jublia topical solution",
@@ -580,6 +580,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Valtoco nasal spray", 
         quantity: "10/30",
         diagnosis: "seizures",
+    },
+    {
+        drug: "Veozah tablet", 
+        quantity: "30/30",
+        diagnosis: "menopausal and female climacteric states",
+        formulary: false,
     },
     {
         drug: "Victoza pen", 
