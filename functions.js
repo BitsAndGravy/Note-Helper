@@ -382,7 +382,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         // Styles based on count length.
         if(text.length < 1700) {
             char.style.color = 'var(--body-text)';
-            char.style.fontSize = '14px';
+            char.style.fontSize = '13px';
             char.style.backgroundColor = '';
             char.style.opacity = '0.5';
 
@@ -812,15 +812,15 @@ function checkState() {
                 let stateName = stateReg.fullName; 
 
                 if(stateReg.durationException) {
-                    durExComment = '\nAuthorization duration exception may apply.';
+                    durExComment = '\n - Authorization duration exception may apply.';
                 };
                 
                 if(stateReg.stepTherapyException) {
-                    stepComment = '\nStep therapy exception may apply.';
+                    stepComment = '\n - Step therapy exception may apply.';
                 };
                 
                 if(stateReg.cocTemporaryApproval) {
-                    cocComment = '\nContinuation of therapy temporary approval for ' + stateReg.cocTemporaryApproval + '. ';
+                    cocComment = '\n - Continuation of therapy temporary approval for ' + stateReg.cocTemporaryApproval + '. ';
                 };
 
                 // Combine it all into one variable
