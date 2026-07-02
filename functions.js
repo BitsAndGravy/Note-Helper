@@ -343,15 +343,24 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 }
             }
 
-    function saveNote() { // Copies note to clipboard and outputs preview at the bottom of the page.
+    // Copies note to clipboard and outputs preview at the bottom of the page.
+    function saveNote() { 
         saveText();
         copyText();
     }
 
         // Saves the note to the bottom of the page for reference.
         function saveText() { 
+            // Add note to save list
             saveList.unshift(notePreviewText);
-            for(i in saveList) // Display the saved notes.
+            
+            // Delete any old notes (keep only 3 notes).
+            if (saveList.length > 3) {
+                saveList.splice(3); 
+            };
+
+            // Display the saved notes.
+            for(i in saveList) 
             document.getElementById(saveNames[i]).innerText = saveList[i];
         }
 
