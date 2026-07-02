@@ -64,11 +64,9 @@ window.onload = function() {
         
         // Check if the pressed key is "Enter"
         if (((e.key === 'Enter') || (e.key === 'Tab')) && drugSuggestion.innerText != '') {
-            
-
-                drugInput.value = drugSuggestion.innerText;
-                drugSuggestion.innerText = '';
-                getQuantity();
+            drugInput.value = drugSuggestion.innerText;
+            drugSuggestion.innerText = '';
+            getQuantity();
         }
     });
 
@@ -80,34 +78,14 @@ window.onload = function() {
         
         // Check if the pressed key is "Enter"
         if (((e.key === 'Enter') || (e.key === 'Tab')) && diagnosisSuggestion.innerText != '') {
-
-            
-                diagnosisInput.value = diagnosisSuggestion.innerText;
-                diagnosisSuggestion.innerText = '';            
+            diagnosisInput.value = diagnosisSuggestion.innerText;
+            diagnosisSuggestion.innerText = '';     
+            preSaveFunctions();       
         }
     });
 };
 
 function createThemeOptions () {
-    /*for(i = 0; i < themeBook.length; i++) {
-        let optGroup = document.createElement('optgroup');
-        optGroup.label = groups[i];
-
-        for(j = 0; j < themeBook[i].length; j++) {
-            let name = themeBook[i][j].name;
-            let title = themeBook[i][j].title;
-
-            let option = document.createElement('option');
-            option.value = name;
-            option.text = title; 
-
-            optGroup.appendChild(option);
-        }
-
-        let themeSelect = document.getElementById('themeSelect');
-        themeSelect.appendChild(optGroup);
-    }*/
-
 
     for(theme in themeBook) {
             let name = themeBook[theme].name;

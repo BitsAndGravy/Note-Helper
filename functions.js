@@ -100,12 +100,18 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     }
 }
 
+    // Activates on input from certain fields, shows preview but does not save to clipboard.
     function preSaveFunctions() {
         processResults();
         buildNote();     
-        saveText();
+        showNotePreview(); // Unique to this function
         characterCount();
     }
+
+        function showNotePreview() {
+            let notePreview = document.getElementById('notePreview');
+            notePreview.innerText = saveList[0];
+        }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
         getChecked();       // Used for input type="checkbox"
@@ -204,7 +210,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             if(check.checked) {
                 answer.properQuantity = quantity.value;
             } else {
-                answer.properQuantity = "";
+                answer.properQuantity = '';
             }
         }
 
@@ -356,39 +362,50 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             animateText("textCopied");
         }
 
+    // Shows character count. Changes color and opacity as max limit approached.
     function characterCount() {
         showCharacterCount();
         checkCharacterLimit();
     }
 
+        // Shows character count.
         function showCharacterCount() {
             let text = saveList[0];
             let preview = document.getElementById('characterCount');
             preview.innerText = text.length + "/2000";
         }
 
+        // Styles based on count length.
         function checkCharacterLimit() {
             let text = saveList[0];
-            let preview = document.getElementById('characterCount');
+            let char = document.getElementById('characterCount');
 
-            if(text.length < 1500) {
-                preview.style.color = 'var(--body-text)';
-                preview.style.fontSize = '14px';
-                preview.style.backgroundColor = '';
-            } else if (text.length < 1750) {
-                preview.style.color = 'yellow';
-                preview.style.fontSize = '14px';
-                preview.style.backgroundColor = 'black';
+            // Default style
+            if(text.length < 1700) {
+                char.style.color = 'var(--body-text)';
+                char.style.fontSize = '14px';
+                char.style.backgroundColor = '';
+                char.style.opacity = '0.5';
+
+            } else if (text.length < 1850) {
+                char.style.color = 'yellow';
+                char.style.fontSize = '14px';
+                char.style.backgroundColor = 'black';
+                char.style.opacity = '0.5';
+
             } else if (text.length < 2001) {
-                preview.style.color = 'orange';
-                preview.style.fontSize = '17px';
-                preview.style.backgroundColor = 'black';
-            } else if (text.length >= 2001) {
-                preview.style.color = 'red';
-                preview.style.fontSize = '20px';
-                preview.style.backgroundColor = 'black';
-            }
+                char.style.color = 'orange';
+                char.style.fontSize = '17px';
+                char.style.backgroundColor = 'black';
+                char.style.opacity = '0.5';
 
+            // Opacity = 1 for best visibility
+            } else if (text.length >= 2001) {
+                char.style.color = 'red';
+                char.style.fontSize = '20px';
+                char.style.backgroundColor = 'black';
+                char.style.opacity = '1';
+            }
         }
 
 /* ||| Reset button */
@@ -397,6 +414,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
+    resetPreview();
     resetCharacterCount();
     resetAlts();
     resetTextareaSize();
@@ -408,11 +426,17 @@ function resetForm() { // After clicking the Reset button
 
 }
 
+    function resetPreview() {
+        document.getElementById('notePreview').innerText = 'Start note to see preview.\n\n';
+    }
+
     function resetCharacterCount() {
-        let preview = document.getElementById('characterCount');
-        preview.innerText = "-/2000";
-        preview.style.color = 'var(--body-text)';
-        preview.style.fontSize = '13px';
+        let char = document.getElementById('characterCount');
+        char.innerText = "-/2000";
+        char.style.color = 'var(--body-text)';
+        char.style.fontSize = '13px';
+        char.style.backgroundColor = '';
+        char.style.opacity = '0.5';
     }
 
     // Hide alternative fields i.e. for now just diagnosis.
@@ -696,6 +720,7 @@ function getQuantity() {
             document.getElementById('nonFormulary').checked = false;
         }
     }
+    preSaveFunctions();
 }
 
 // Triggered when state is changed.
@@ -962,6 +987,7 @@ function changeDiagnosis() {
     let input = document.getElementById('diagnosis');
     let diagnosis = document.getElementById('alternativeDiagnosisSpan');
     input.value = diagnosis.innerText;
+    preSaveFunctions();
 }
 
 // Triggers when properQuantity field is changed.

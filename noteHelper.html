@@ -28,7 +28,7 @@
         </div>
 
         <div>
-            <div class="gradientColor">
+            <div class="gradientColor" oninput="preSaveFunctions()">
                 <div class="inputDiv suggestContainer">   
                     <!-- For select options, see createThemeOptions() -->
                     <select
@@ -291,7 +291,12 @@
                         <br>
 
                         <label for="age">13.</label>
-                        <input type="text" class="ageTextbox" id="age" name="age" placeholder="age" required>
+                        <input 
+                            type="text" 
+                            class="ageTextbox" 
+                            id="age" 
+                            name="age" 
+                            placeholder="age">
                         <br>
 
                         <label for="member">14.</label>
@@ -361,8 +366,7 @@
                             id="clinical" 
                             name="clinical" 
                             class="bigTextarea"
-                            placeholder="clinicals"
-                            onchange="preSaveFunctions()" >Chart note dated </textarea>
+                            placeholder="clinicals">Chart note dated </textarea>
                         <br>
 
                         <label for="conclusion">20.</label>
@@ -370,8 +374,7 @@
                             id="conclusion" 
                             name="conclusion" 
                             class="bigTextarea"
-                            placeholder="conclusion"
-                            oninput="preSaveFunctions()"></textarea>
+                            placeholder="conclusion"></textarea>
                         <br>
 
                         <div id="commentDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
@@ -420,56 +423,23 @@
 
     <br>
 
-<!--Preview - save for later -->
-<!--
+
+
+
+<!--Preview -->
     <div class="container">
         <div class="heading">
             <H3>Preview</H3>
         </div>
 
-        <div id="preview">
-            <div class="primaryColor inputDiv">
-                <p>
-                Conspectus
-                <br>
-                [3. Urgent] [5. state] [2. source].
-                [12. Gender] age [13. age].
-                [10. Case type] for [1. drug name] #[8. qty/days] for [4. diagnosis].
-                [7. Reject code].
-                Provider response led to [6. q-set].
-                [11. Information]
-                <br>
-                <br>
-                Claims
-                <br>
-                Member since [14. member dates].<br>
-                [16. Snapshot] [17. Claims history].
-                <br>
-                <br>
-                Clinical
-                <br>
-                [18. Records] [15. Chart View]
-                <br>
-                [19. Clinical]
-                <br>
-                <br>
-                Conclusion
-                <br>
-                [20. Conclusion]
-                <br>
-                <br>
-                <em>If False QL checked: </em>[9. False QL] [21. Comment] [9.a Proper quantity].
-                </p>
-            </div>
-
-            <div class="footing">
-            </div>
-
+        <div class="primaryColor inputDiv">
+            <div id="notePreview">Start note to see preview.<br><br></div>
         </div>
+        <div class="footing"></div>
     </div>
 
 <br>
--->
+
 
 <!--Note 1-->
 <section>
