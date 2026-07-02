@@ -350,17 +350,14 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Saves the note to the bottom of the page for reference.
         function saveText() { 
-            /*if (saveList.length > 3) {
-                saveList.pop(); // Keep saveList to length of 3.
-            };*/
             saveList.unshift(notePreviewText);
             for(i in saveList) // Display the saved notes.
-                document.getElementById(saveNames[i]).innerText = saveList[i];
+            document.getElementById(saveNames[i]).innerText = saveList[i];
         }
 
         // Copies text to clipboard.
         function copyText() { 
-            let textToCopy = saveList[0];
+            let textToCopy = notePreviewText;
             navigator.clipboard.writeText(textToCopy);
             animateText("textCopied");
         }
