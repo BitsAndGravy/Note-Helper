@@ -361,7 +361,8 @@
                             id="clinical" 
                             name="clinical" 
                             class="bigTextarea"
-                            placeholder="clinicals">Chart note dated </textarea>
+                            placeholder="clinicals"
+                            onchange="preSaveFunctions()" >Chart note dated </textarea>
                         <br>
 
                         <label for="conclusion">20.</label>
@@ -369,7 +370,8 @@
                             id="conclusion" 
                             name="conclusion" 
                             class="bigTextarea"
-                            placeholder="conclusion"></textarea>
+                            placeholder="conclusion"
+                            oninput="preSaveFunctions()"></textarea>
                         <br>
 
                         <div id="commentDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
@@ -389,6 +391,10 @@
                             <span id="showProperQuantity"></span></span>
                         </div>
                     </form>
+
+                    <div>
+                        <span id="characterCount" class="characterCount">-/2000</span>
+                    </div>
 
                     <div 
                         id="stateNote" 

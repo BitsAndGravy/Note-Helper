@@ -95,11 +95,17 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     if (requirement.value == '') {
         alert("Please enter the member's age");
     } else {
-        processResults();
-        buildNote();
+        preSaveFunctions();
         saveNote();
     }
 }
+
+    function preSaveFunctions() {
+        processResults();
+        buildNote();     
+        saveText();
+        characterCount();
+    }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
         getChecked();       // Used for input type="checkbox"
@@ -129,7 +135,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 let ele = document.getElementsByName(item);
                 for (i = 0; i < ele.length; i++) {
                     if (ele[i].checked) {
-                        //answer[checkboxList[k]] = ele[i].value;
                         answer[checkboxList[k]] = checkboxBook[item].isChecked;
                         break;
                     } else { // What to do if the checkbox is not selected - helpful for 'resetting' inputs.
@@ -351,12 +356,42 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             animateText("textCopied");
         }
 
+    function characterCount() {
+        showCharacterCount();
+        checkCharacterLimit();
+    }
+
+        function showCharacterCount() {
+            let text = saveList[0];
+            let preview = document.getElementById('characterCount');
+            preview.innerText = text.length + "/2000";
+        }
+
+        function checkCharacterLimit() {
+            let text = saveList[0];
+            let preview = document.getElementById('characterCount');
+
+            if(text.length < 1500) {
+                preview.style.color = 'green';
+            } else if (text.length < 1750) {
+                preview.style.color = 'yellow';
+                preview.style.fontSize = '14px';
+            } else if (text.length < 2001) {
+                preview.style.color = 'orange';
+                preview.style.fontSize = '17px';
+            } else if (text.length >= 2001) {
+                preview.style.color = 'red';
+                preview.style.fontSize = '20px';
+            }
+        }
+
 /* ||| Reset button */
 function resetForm() { // After clicking the Reset button        
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
+    resetCharacterCount();
     resetAlts();
     resetTextareaSize();
     hideExtras();
@@ -366,6 +401,13 @@ function resetForm() { // After clicking the Reset button
     resetTimer();
 
 }
+
+    function resetCharacterCount() {
+        let preview = document.getElementById('characterCount');
+        preview.innerText = "-/2000";
+        preview.style.color = 'var(--body-text)';
+        preview.style.fontSize = '13px';
+    }
 
     // Hide alternative fields i.e. for now just diagnosis.
     function resetAlts() {
