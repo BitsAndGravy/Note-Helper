@@ -342,6 +342,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,  
     },  
     {
+        drug: "methotrexate vial",
+        quantity: "4/30",
+        diagnosis: "rheumatoid arthritis",
+    }, 
+    {
         drug: "mirabegron ER tablet",
         quantity: "30/30",
         diagnosis: "overactive bladder",
@@ -582,6 +587,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM",
         formulary: false,
     },
+    {
+        drug: "Voquezna Dual Pak",
+        quantity: "112/14",
+        diagnosis: "H. pylori infection",
+        altDiagnosis: "GERD", 
+        formulary: false, 
+    }, 
     {
         drug: "Voquezna tablet",
         quantity: "30/30",
