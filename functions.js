@@ -372,17 +372,23 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             let preview = document.getElementById('characterCount');
 
             if(text.length < 1500) {
-                preview.style.color = 'green';
+                preview.style.color = 'var(--body-text)';
+                preview.style.fontSize = '14px';
+                preview.style.backgroundColor = '';
             } else if (text.length < 1750) {
                 preview.style.color = 'yellow';
                 preview.style.fontSize = '14px';
+                preview.style.backgroundColor = 'black';
             } else if (text.length < 2001) {
                 preview.style.color = 'orange';
                 preview.style.fontSize = '17px';
+                preview.style.backgroundColor = 'black';
             } else if (text.length >= 2001) {
                 preview.style.color = 'red';
                 preview.style.fontSize = '20px';
+                preview.style.backgroundColor = 'black';
             }
+
         }
 
 /* ||| Reset button */
