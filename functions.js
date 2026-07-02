@@ -84,6 +84,8 @@ const saveNames = [ // Used for saveText()
 
 const saveList = [] // Notes will be saved here with saveText()
 
+var notePreviewText = '';
+
 /* || Buttons */
 /* ||| Save button */
 function saveButton() { // After clicking the Save button
@@ -110,7 +112,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         function showNotePreview() {
             let notePreview = document.getElementById('notePreview');
-            notePreview.innerText = saveList[0];
+            notePreview.innerText = notePreviewText;
         }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
@@ -249,7 +251,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         let fullNote = appealInternalText + conspectus + history + clinical + conclusion;
 
-        saveList.unshift(fullNote);
+        notePreviewText = fullNote;
     }
 
         function checkModifiers() {
@@ -348,9 +350,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Saves the note to the bottom of the page for reference.
         function saveText() { 
-            if (saveList.length > 3) {
+            /*if (saveList.length > 3) {
                 saveList.pop(); // Keep saveList to length of 3.
-            };
+            };*/
+            saveList.unshift(notePreviewText);
             for(i in saveList) // Display the saved notes.
                 document.getElementById(saveNames[i]).innerText = saveList[i];
         }
@@ -364,49 +367,39 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     // Shows character count. Changes color and opacity as max limit approached.
     function characterCount() {
-        showCharacterCount();
-        checkCharacterLimit();
-    }
+        let text = notePreviewText;
+        let char = document.getElementById('characterCount');
 
-        // Shows character count.
-        function showCharacterCount() {
-            let text = saveList[0];
-            let preview = document.getElementById('characterCount');
-            preview.innerText = text.length + "/2000";
-        }
+        // Shows character count
+        char.innerText = notePreviewText.length + "/2000";
 
         // Styles based on count length.
-        function checkCharacterLimit() {
-            let text = saveList[0];
-            let char = document.getElementById('characterCount');
+        if(text.length < 1700) {
+            char.style.color = 'var(--body-text)';
+            char.style.fontSize = '14px';
+            char.style.backgroundColor = '';
+            char.style.opacity = '0.5';
 
-            // Default style
-            if(text.length < 1700) {
-                char.style.color = 'var(--body-text)';
-                char.style.fontSize = '14px';
-                char.style.backgroundColor = '';
-                char.style.opacity = '0.5';
+        } else if (text.length < 1850) {
+            char.style.color = 'yellow';
+            char.style.fontSize = '14px';
+            char.style.backgroundColor = 'black';
+            char.style.opacity = '0.5';
 
-            } else if (text.length < 1850) {
-                char.style.color = 'yellow';
-                char.style.fontSize = '14px';
-                char.style.backgroundColor = 'black';
-                char.style.opacity = '0.5';
+        } else if (text.length < 2001) {
+            char.style.color = 'orange';
+            char.style.fontSize = '17px';
+            char.style.backgroundColor = 'black';
+            char.style.opacity = '0.5';
 
-            } else if (text.length < 2001) {
-                char.style.color = 'orange';
-                char.style.fontSize = '17px';
-                char.style.backgroundColor = 'black';
-                char.style.opacity = '0.5';
-
-            // Opacity = 1 for best visibility
-            } else if (text.length >= 2001) {
-                char.style.color = 'red';
-                char.style.fontSize = '20px';
-                char.style.backgroundColor = 'black';
-                char.style.opacity = '1';
-            }
+        // Opacity = 1 for best visibility
+        } else if (text.length >= 2001) {
+            char.style.color = 'red';
+            char.style.fontSize = '20px';
+            char.style.backgroundColor = 'black';
+            char.style.opacity = '1';
         }
+    }
 
 /* ||| Reset button */
 function resetForm() { // After clicking the Reset button        
