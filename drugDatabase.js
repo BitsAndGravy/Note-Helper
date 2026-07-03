@@ -1,5 +1,11 @@
 const drugDatabase = [ // for getQuantity()
     {
+        drug: "Accrufer capsule",
+        quantity: "30/30",
+        diagnosis: "iron deficiency anemia", 
+        formulary: false, 
+    },  
+    {
         drug: "Adderall tablet",
         quantity: "30/30",
         diagnosis: "ADHD", 
@@ -152,6 +158,13 @@ const drugDatabase = [ // for getQuantity()
         drug: "Eohilia suspension packet",
         quantity: "10/30",
         diagnosis: "eosinophilic esophagitis", 
+        formulary: false, 
+    },  
+    {
+        drug: "fluorometholone eye drops",
+        quantity: "5/30",
+        diagnosis: "dry eye disease", 
+        altDiagnosis: 'keratoconjunctivitis sicca',
         formulary: false, 
     },  
     {
