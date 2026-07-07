@@ -526,7 +526,7 @@ function editButton(noteID) { // Used with Edit button to show the textarea and 
     editNote(noteID); // Fill textarea with saved note
     hideThis(noteID, 'Text'); // Hide span
     detectNoteOrEdit = 'Edit';
-    showButtons();
+    showButtons(noteID);
 }
 
     function showThis(note, suffix) { // Shows the textarea. Suffix is either 'note' or 'edit'. With edit button, suffix = 'edit'.
@@ -578,13 +578,15 @@ function saveThis(noteID) {
         resaveNote(noteID);
         hideThis(noteID, 'Edit');
         copyTextDuplicate(noteID);
-        showButtons();
+        showButtons(noteID);
     }
 }
 
-    function showButtons() {
-        document.getElementById('noteTwoEditButton').classList.toggle('hideElement');
-        document.getElementById('noteTwoCancelButton').classList.toggle('hideElement');
+    function showButtons(noteID) {
+        let edit = noteID + 'EditButton';
+        let cancel = noteID + 'CancelButton';
+        document.getElementById(edit).classList.toggle('hideElement');
+        document.getElementById(cancel).classList.toggle('hideElement');
     }
 
 
@@ -594,7 +596,7 @@ function cancelButton (noteID) {
     cancelEdit(noteID);
     hideThis(noteID, 'Edit');
     detectNoteOrEdit = 'Note';
-    showButtons();
+    showButtons(noteID);
 }
 
     function cancelEdit(note) {

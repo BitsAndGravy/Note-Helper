@@ -722,9 +722,10 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
-        drug: "Zenpep",
+        drug: "Zenpep DR capsule",
         quantity: "300/30",
         diagnosis: "exocrine pancreatic insufficiency",
+        altDiagnosis: "chronic pancreatitis",
     }, 
     {
         drug: "Zoryve cream",

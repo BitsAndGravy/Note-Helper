@@ -439,47 +439,66 @@
 <br>
 
 
-<!--Note 1-->
-<section>
-    <div class="container note">
-        <div id="noteOneBody">
-            <div class="heading">
-                <H3>Saved note #1</H3>
-            </div>
-            <div id="noteOneText">
-                <div class="primaryColor inputDiv">
-                    <span id="noteOne">
-                        Note will appear here once saved.
-                        <br>
-                        <br>
-                    </span>
-                </div>
 
-                <div class="footing">
-                    <button type="button" onclick="editButton('noteOne')">Edit</button>
-                    <span id="noteOneSaved" class="hideStart">Copied to clipboard</span>
-                </div>
-            </div>
 
-            <div id="noteOneEdit" class="hideElement">
-                <div class="primaryColor inputDiv">
-                    <textarea 
-                        id="editnoteOne"
-                        class="bigTextarea editTextarea"
-                        placeholder="nothing to edit"></textarea>
-                    <br>
-                </div>
 
-                <div class="footing">
-                    <button type="button" onclick="savedNoteButton('noteOne')">Save</button>
-                    <button type="button" onclick="cancelButton('noteOne')">Cancel</button>
-                </div>
 
-            </div>
+
+
+
+
+<!-- Note 1 -->
+    <div class="container" id="noteOneBody">
+        <div class="heading">
+            <H3>Saved note #1</H3>
+        </div>
+
+        <!--un-editable span shown by default. Hides when Edit button clicked. Reappears with Cancel or Save button. -->
+        <div id="noteOneText" class="primaryColor inputDiv">
+            <span id="noteOne">
+                Note will appear here once saved.
+                <br>
+                <br>
+            </span>
+        </div>
+
+        <!--Textarea hidden initially. Shon when Edit clicked.-->
+        <div id="noteOneEdit" class="primaryColor inputDiv hideElement">
+            <textarea 
+                id="editnoteOne"
+                class="bigTextarea editTextarea"
+                placeholder="nothing to edit"></textarea>
+            <br>
+        </div>
+
+        <div class="footing">
+            <button 
+                type="button" 
+                id="noteOneSaveButton" 
+                onclick="saveThis('noteOne')"
+                >Save</button> <!--Always shown-->
+
+            <button 
+                type="button" 
+                id="noteOneEditButton"
+                onclick="editButton('noteOne')"
+                >Edit</button>    
+
+            <button 
+                type="button" 
+                id="noteOneCancelButton"
+                class="hideElement" 
+                onclick="cancelButton('noteOne')"
+                >Cancel</button>
+
+            <span 
+                id="noteOneSaved" 
+                class="hideStart"
+                >Copied to clipboard</span> <!--Text shows when save clicked-->
+        </div>
+
         </div>
     </div>
-    <br>
-</section>
 
 <!--Note 2-->
     <div class="container" id="noteTwoBody">
@@ -535,7 +554,7 @@
     </div>
     <br>
 
-<!--Note 3-->
+<!--Note 3 old, saved for reference
     <div class="container note">
         <div id="noteThreeBody">
             <div class="heading">
@@ -571,6 +590,61 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+-->
+
+
+<!--Note 3 new-->
+    <div class="container" id="noteThreeBody">
+        <div class="heading">
+            <H3>Saved note #3</H3>
+        </div>
+
+        <!--un-editable span shown by default. Hides when Edit button clicked. Reappears with Cancel or Save button. -->
+        <div id="noteThreeText" class="primaryColor inputDiv">
+            <span id="noteThree">
+                Note will appear here once saved.
+                <br>
+                <br>
+            </span>
+        </div>
+
+        <!--Textarea hidden initially. Shon when Edit clicked.-->
+        <div id="noteThreeEdit" class="primaryColor inputDiv hideElement">
+            <textarea 
+                id="editnoteThree"
+                class="bigTextarea editTextarea"
+                placeholder="nothing to edit"></textarea>
+            <br>
+        </div>
+
+        <div class="footing">
+            <button 
+                type="button" 
+                id="noteThreeSaveButton" 
+                onclick="saveThis('noteThree')"
+                >Save</button> <!--Always shown-->
+
+            <button 
+                type="button" 
+                id="noteThreeEditButton"
+                onclick="editButton('noteThree')"
+                >Edit</button>    
+
+            <button 
+                type="button" 
+                id="noteThreeCancelButton"
+                class="hideElement" 
+                onclick="cancelButton('noteThree')"
+                >Cancel</button>
+
+            <span 
+                id="noteThreeSaved" 
+                class="hideStart"
+                >Copied to clipboard</span> <!--Text shows when save clicked-->
+        </div>
+
         </div>
     </div>
     <br>
