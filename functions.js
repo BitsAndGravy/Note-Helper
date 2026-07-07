@@ -413,11 +413,11 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
-    resetPreview();
-    resetCharacterCount();
-    resetAlts();
-    resetTextareaSize();
-    hideExtras();
+    preSaveFunctions();
+    //resetPreview(); saving because I hid the preview and don't know if preSaveFunction works sufficiently.
+    resetAlts(); // Hides alternative diagnosis box
+    resetTextareaSize(); // Resets textarea if manually adjusted
+    hideExtras(); // Hides quantity (per settings), false QL, etc.
     resetStateNote();
     animateText('resetForm');
     gotoFirstField();
