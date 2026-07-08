@@ -595,6 +595,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "seizures",
     },
     {
+        drug: "Velphoro chewable tablet",
+        quantity: "150/30",
+        diagnosis: "phosphorus metabolism",
+        altDiagnosis: "hyperphosphatemia", 
+    }, 
+    {
         drug: "Veozah tablet", 
         quantity: "30/30",
         diagnosis: "menopausal and female climacteric states",
