@@ -953,6 +953,22 @@ function showQuantity() {
 }
 
 
+// When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
+function reauthorizationChecked() {
+    let check = document.getElementById('reauthorization');
+    let info = document.getElementById('information');
+    let drugName = document.getElementById('drug').value;
+    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+    let conc = document.getElementById('conclusion');
+
+    if (check.checked) {
+        if(info.value === '') {
+            info.value = drug + ' approved ';
+        };
+    }
+}
+
+
 // When reopening is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reopeningChecked() {
     let check = document.getElementById('reopening');
