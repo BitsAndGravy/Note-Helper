@@ -80,6 +80,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "hypercalcemia",
     },  
     {
+        drug: "clobazam tablet",
+        quantity: "30/30",
+        diagnosis: "Lennox-Gastaut Syndrome", 
+        altDiagnosis: "epilepsy",
+    },  
+    {
         drug: "clomiphene tablet",
         quantity: "30/30",
         diagnosis: "testicular hypofunction",
