@@ -389,6 +389,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,  
     },  
     {
+        drug: "Nayzilam nasal spray",
+        quantity: "2/30",
+        diagnosis: "convulsions",
+        altDiagnosis: "seizures",
+    }, 
+    {
         drug: "Neffy nasal spray",
         quantity: "2/30",
         diagnosis: "anaphylaxis",
