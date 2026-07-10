@@ -35,6 +35,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "albendazole tablet",
+        quantity: "",
+        diagnosis: "migraine prophylaxis", 
+    },  
+    {
         drug: "Austedo capsule",
         quantity: "30/30",
         diagnosis: "tardive dyskinesia", 
