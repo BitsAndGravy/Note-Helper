@@ -84,6 +84,16 @@ const saveNames = [ // Used for saveText()
 
 const saveList = [] // Notes will be saved here with saveText()
 
+const fullDiagnosisList = [
+    'fatigue',
+    'fatigue related to multiple sclerosis',
+    'hypersomnia',
+    'idiopathic hypersomnia',
+    'narcolepsy',
+    'obstructive sleep apnea',
+    'shift work sleep disorder',
+]
+
 var notePreviewText = '';
 
 /* || Buttons */
@@ -683,8 +693,6 @@ function getQuantity() {
                         altDiagSpan.innerText = '';
                     }, 1100)
 
-
-
                     altDiagSpan.classList.add('hideInput');
                     altDiagSpan.classList.remove('showInput');
                     diagnosisButton.tabIndex = -1;
@@ -1077,16 +1085,24 @@ const drugNameList = [];
 
 const diagnosisNameList = [];
 
+// Build list of diagnoses
+    // Pull from drug database
     for(i = 0; i < drugDatabase.length; i++) {
-            diagnosisNameList.push(drugDatabase[i].diagnosis);
-            diagnosisNameList.push(drugDatabase[i].altDiagnosis);
-        }
-        diagnosisNameList.sort(function (a, b) {
+        diagnosisNameList.push(drugDatabase[i].diagnosis);
+        diagnosisNameList.push(drugDatabase[i].altDiagnosis);
+    }
+
+    // Add manually created list
+    combinedDiagnosisList = [...fullDiagnosisList, ...diagnosisNameList];
+
+    // Sort without regard to capitalization
+    combinedDiagnosisList.sort(function (a, b) {
         return a.localeCompare(b);
     });
 
+// Text prediction, currently used for drug name and diagnosis.
 function predictWords(inputLetters, wordList, source, destination) {
-    // Add event listenter is on window.onload function 
+    // Add event listenter is on window.onload function for when suggestion is accepted (i.e. press enter or tab)
     let suggestion = document.getElementById(destination);
     let wordName = document.getElementById(source);
     

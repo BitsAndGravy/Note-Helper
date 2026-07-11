@@ -40,6 +40,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
+        drug: "armodafinil tablet",
+        quantity: "30/30",
+        diagnosis: "narcolepsy", 
+        altDiagnosis: "hypersomnia",
+    },  
+    {
         drug: "Austedo capsule",
         quantity: "30/30",
         diagnosis: "tardive dyskinesia", 
