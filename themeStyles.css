@@ -86,7 +86,7 @@
     --body-primary-color: var(--main-background);
     --body-secondary-color: #ffffff18;
     --body-border-color: #f0393e;
-    --body-gradient: #cc1422, #660b27, #120b2c 15%, #140c31 85%, #11234b, #4a5daa;
+    --body-gradient: #c41821, #660b27, #120b2c 15%, #140c31 85%, #11234b, #4a5daa;
     
     /* Text */
     --heading-text: #fefbf8;
@@ -120,7 +120,7 @@
     --body-primary-color: #f6f7fd;
     --body-secondary-color: #dfe6f9;
     --body-border-color: #0073bf;
-    --body-gradient: var(--body-primary-color);
+    --body-gradient: #fdf4d2, #f6f7fd 15%;
     
     /* Text */
     --heading-text: white;

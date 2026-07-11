@@ -90,9 +90,11 @@ const fullDiagnosisList = [
     'fatigue',
     'fatigue related to multiple sclerosis',
     'hypersomnia',
+    'hypoglycemia',
     'idiopathic hypersomnia',
     'narcolepsy',
     'obstructive sleep apnea',
+    'prediabetes',
     'shift work sleep disorder',
 ]
 
