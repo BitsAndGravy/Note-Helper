@@ -105,6 +105,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Dapsone 7.5% gel",
+        quantity: "90/90",
+        diagnosis: "acne vulgaris", 
+    },  
+    {
         drug: "Dexcom G6 sensor",
         quantity: "3/30",
         altQuantity: "",
@@ -755,6 +760,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "atopic dermatitis",
         altDiagnosis: "psoriasis",
+        formulary: false,
+    }, 
+    {
+        drug: "Zoryve foam",
+        quantity: "30/30",
+        diagnosis: "atopic dermatitis",
+        altDiagnosis: "seborrheic dermatitis",
         formulary: false,
     }, 
 ]
