@@ -85,6 +85,8 @@ const saveNames = [ // Used for saveText()
 const saveList = [] // Notes will be saved here with saveText()
 
 const fullDiagnosisList = [
+    'dysphagia',
+    'erosive esophagitis',
     'fatigue',
     'fatigue related to multiple sclerosis',
     'hypersomnia',
