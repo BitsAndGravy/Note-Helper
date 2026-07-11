@@ -81,7 +81,7 @@
 [data-theme='beat-saber'] {
     /* Main features */
     --main-background: #120b2c;
-    --header-background: #e90204;
+    --header-background: #e8181c;
     --footer-background: #1584d8;
     --body-primary-color: var(--main-background);
     --body-secondary-color: #ffffff18;
@@ -92,14 +92,14 @@
     --heading-text: #fefbf8;
     --body-text: var(--heading-text);
     --input-text: var(--heading-text);
-    --placeholder-text: #cbc7c0A6;
+    --placeholder-text: #c1d4ff89;
     --hyperlink-static: var(--input-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #120b2c;
+    --button-background: #120b2ccd;
     --button-hover: #120b2c67;
     --button-active: #fefbf8;
     --button-text: var(--heading-text);
