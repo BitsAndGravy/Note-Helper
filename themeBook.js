@@ -1,6 +1,13 @@
 const themeBook = {
 
 // Generic themes
+    beatSaber: {
+        name: 'beat-saber', 
+        title: 'Beat Saber', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     midnightBlue: {
         name: 'midnight-blue', 
         title: 'Midnight Blue (Default)', 
@@ -242,12 +249,3 @@ const themeBook = {
         optGroup: 'silksong'
     }, 
 }
-
-/*
-const groups = [
-    "Generic",
-    "Hollow Knight",
-    "Harry Potter",
-    "Silksong",
-];
-*/

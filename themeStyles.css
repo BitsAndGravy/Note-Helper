@@ -78,6 +78,40 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='beat-saber'] {
+    /* Main features */
+    --main-background: #120b2c;
+    --header-background: #e90204;
+    --footer-background: #1584d8;
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: #ffffff18;
+    --body-border-color: #f0393e;
+    --body-gradient: #cc1422, #660b27, #120b2c 15%, #140c31 85%, #11234b, #4a5daa;
+    
+    /* Text */
+    --heading-text: #fefbf8;
+    --body-text: var(--heading-text);
+    --input-text: var(--heading-text);
+    --placeholder-text: #cbc7c0A6;
+    --hyperlink-static: var(--input-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #120b2c;
+    --button-hover: #120b2c67;
+    --button-active: #fefbf8;
+    --button-text: var(--heading-text);
+
+    /* Input */
+    --input-background: #120b2c7e;
+    --input-background-focus: #120b2ccc;
+    --input-accent-color: #f0393e;
+    --input-border: #1584d8;
+    --input-border-focus: var(--header-background);
+}
+
 [data-theme='pahub'] {
     /* Main features */
     --main-background: var(--body-primary-color);
