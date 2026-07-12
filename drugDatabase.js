@@ -183,6 +183,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "febuxostat tablet",
+        quantity: "30/30",
+        diagnosis: "gout", 
+        altDiagnosis: "tumor lysis syndrome",
+    },  
+    {
         drug: "fluorometholone eye drops",
         quantity: "5/30",
         diagnosis: "dry eye disease", 
@@ -208,6 +214,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T2DM", 
         altDiagnosis: "T1DM", 
         formulary: false, 
+    },  
+    {
+        drug: "Fycompa tablet",
+        quantity: "30/30",
+        diagnosis: "partial (focal) seizures", 
+        altDiagnosis: "generalized tonic-clonic seizures",
     },  
     {
         drug: "Gemtesa tablet", 
@@ -246,24 +258,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "20/10",
         diagnosis: "aspergillosis",
         altDiagnosis: "histoplasmosis",
-        diagnosisArray: [
-            'aspergillosis', 
-            'blastomycosis', 
-            'coccidioidomycosis',
-            'histoplasmosis',
-            'onychomycosis',
-            'tinea unguium',
-        ]
     }, 
     {
         drug: "itraconazole solution",
         quantity: "?",
         diagnosis: "esophageal candidiasis",
         altDiagnosis: "oropharyngeal candidiasis",
-        diagnosisArray: [
-            'esophageal candidiasis', 
-            'oropharyngeal candidiasis', 
-        ]
+
     }, 
     {
         drug: "ivermectin 1% cream",
@@ -588,6 +589,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "testicular hypofunction",
         altDiagnosis: "gender identity disorder", 
     },   
+    {
+        drug: "tretinoin cream",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris",
+        quantityLimitCriteria: true,     
+    }, 
     {
         drug: "Trulance tablet", 
         quantity: "30/30", 

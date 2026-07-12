@@ -85,17 +85,27 @@ const saveNames = [ // Used for saveText()
 const saveList = [] // Notes will be saved here with saveText()
 
 const fullDiagnosisList = [
+    'aspergillosis', 
+    'blastomycosis', 
+    'coccidioidomycosis',
     'dysphagia',
     'erosive esophagitis',
+    'esphageal candidiasis',
     'fatigue',
     'fatigue related to multiple sclerosis',
+    'histoplasmosis',
     'hypersomnia',
     'hypoglycemia',
     'idiopathic hypersomnia',
     'narcolepsy',
     'obstructive sleep apnea',
+    'onychomycosis',
+    'oropharyngeal candidiasis',
     'prediabetes',
     'shift work sleep disorder',
+    'tinea capitis',
+    'tinea pedis',
+    'tinea unguium',
 ]
 
 var notePreviewText = '';
