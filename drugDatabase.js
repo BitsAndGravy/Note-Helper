@@ -117,6 +117,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "cromolyn oral concentrate",
+        quantity: "270/30",
+        diagnosis: "mastocystitis",
+    },  
+    {
         drug: "Dapsone 7.5% gel",
         quantity: "90/90",
         diagnosis: "acne vulgaris", 
