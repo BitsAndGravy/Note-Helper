@@ -74,8 +74,14 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "GERD", 
     },  
     {
+        drug: "budesonide EC 3 mg capsule",
+        quantity: "120/10",
+        diagnosis: "Crohn's disease",
+        altDiagnosis: "colitis", 
+    },  
+    {
         drug: "Caplyta capsule",
-        quantity: "30/30",
+        quantity: "270/30",
         diagnosis: "bipolar disorder", 
         altDiagnosis: "schizophrenia",
     },  
@@ -228,7 +234,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Ibsrela",
+        drug: "Ibsrela tablet",
         quantity: "60/30",
         diagnosis: "IBS-C", 
         formulary: false, 
@@ -517,6 +523,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "ulcer",
         altDiagnosis: "burn",
+    }, 
+    {
+        drug: "sitagliptin tablet", 
+        quantity: "30/30",
+        diagnosis: "T2DM",
+        formulary: false,
     }, 
     {
         drug: "sucralfate oral suspension", 
