@@ -84,7 +84,7 @@ const saveNames = [ // Used for saveText()
 
 const saveList = [] // Notes will be saved here with saveText()
 
-const stateClientList = [
+const stateClientList = [ // for use with createStateSelectOptions()
     //'AK',   // Alaska
     'AL',   // Alabama
     //'AR',   // Arkansas
@@ -139,13 +139,16 @@ const stateClientList = [
 
 function createStateSelectOptions () {
 
+    // Create list of states
     for(i = 0; i < stateClientList.length; i++) {
-
+            
+        // Create option, assign attributes.
             let option = document.createElement('option');
             option.value = stateClientList[i];
             option.innerHTML = stateClientList[i];
             option.id = stateClientList[i];
             
+        // Add option to state select element.
             let destination = document.getElementById('state');
             destination.appendChild(option);
     };
@@ -153,6 +156,7 @@ function createStateSelectOptions () {
     let selectedState = localStorage.getItem('selectedState');
     let stateSelect = document.getElementById('state');
 
+    // Use state selected in settings, otherwise use FL as default.
     if (selectedState) {
         stateSelect.options[selectedState].selected = true;
     } else {
@@ -513,6 +517,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
+    resetStateOptionSelected();
     preSaveFunctions();
     //resetPreview(); saving because I hid the preview and don't know if preSaveFunction works sufficiently.
     resetAlts(); // Hides alternative diagnosis box
@@ -524,6 +529,18 @@ function resetForm() { // After clicking the Reset button
     resetTimer();
 
 }
+
+    // Use state selected in settings, otherwise reset to FL as default.
+    function resetStateOptionSelected() {
+        let selectedState = localStorage.getItem('selectedState');
+        let stateSelect = document.getElementById('state');
+
+        if (selectedState) {
+            stateSelect.options[selectedState].selected = true;
+        } else {
+            stateSelect.options['FL'].selected = true;
+    }
+    }
 
     function resetPreview() {
         document.getElementById('notePreview').innerText = 'Start note to see preview.\n\n';
