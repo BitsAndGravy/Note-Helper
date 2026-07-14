@@ -68,6 +68,13 @@
                         <span> - Theme select is always in the top right, even if you can't see it.</span>
                         <br>
 
+                        <select name="state" id="state" onchange="updateSelectedState(this.value);">
+                            <!-- for list see stateClientList -->
+                            <!-- for function that builds select options see createStateSelectOptions() -->
+                        </select>
+                        <label for="state">Choose default state</label>
+                        <br>
+
                     </div>
                     <div>
                         <H3>Quantity</H3>

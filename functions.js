@@ -153,8 +153,6 @@ function createStateSelectOptions () {
     let selectedState = localStorage.getItem('selectedState');
     let stateSelect = document.getElementById('state');
 
-    document.getElementById('clinical').innerText = selectedState;
-
     if (selectedState) {
         stateSelect.options[selectedState].selected = true;
     } else {

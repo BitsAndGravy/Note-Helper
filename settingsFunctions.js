@@ -18,6 +18,8 @@ window.onload = function() {
             checkBox.checked = false;
         }
     }
+
+    createStateSelectOptions();
 };
 
 function changeSettings(element) {
@@ -28,4 +30,8 @@ function changeSettings(element) {
     } else {
         localStorage.setItem(element, 'no');
     }
+}
+
+function updateSelectedState(update) {
+    localStorage.setItem('selectedState', update);
 }
