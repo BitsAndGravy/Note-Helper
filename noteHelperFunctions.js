@@ -1,5 +1,6 @@
 window.onload = function() {
     createThemeOptions();
+    createStateSelectOptions();
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
 
     // Check setting for INternal appeal

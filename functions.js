@@ -84,6 +84,84 @@ const saveNames = [ // Used for saveText()
 
 const saveList = [] // Notes will be saved here with saveText()
 
+const stateClientList = [
+    //'AK',   // Alaska
+    'AL',   // Alabama
+    //'AR',   // Arkansas
+    'AZ',   // Arizona
+    //'CA',   // California
+    //'CO',   // Colorado
+    //'CT',   // Connecticut
+    //'DC',   // Washington, DC
+    //'DE',   // Delaware
+    'FL',   // Florida
+    'GA',   // Georgia
+    //'HI',   // Hawaii
+    'IA',   // Iowa
+    //'ID',   // Idaho
+    'IL',   // Illinois
+    //'IN',   // Indiana
+    'KS',   // Kansas
+    //'KY',   // Kentucky
+    //'LA',   // Louisiana
+    //'MA',   // Massachusetts
+    //'MD',   // Maryland
+    //'ME',   // Maine
+    'MI',   // Michigan
+    //'MN',   // Minnesota
+    'MO',   // Missouri
+    'MS',   // Mississippi
+    //'MT',   // Montana
+    'NC',   // North Carolina
+    //'ND',   // North Dakota
+    'NE',   // Nebraska
+    //'NH',   // New Hampshire
+    'NJ',   // New Jersey
+    //'NM',   // New Mexico
+    //'NV',   // Nevada
+    'NY',   // New York
+    'OH',   // Ohio
+    'OK',   // Oklahoma
+    //'OR',   // Oregon
+    'PA',   // Pennsylvania
+    //'RI',   // Rhode Island
+    //'SC',   // South Carolina
+    //'SD',   // South Dakota
+    'TN',   // Tennessee
+    'TX',   // Texas
+    //'UT',   // Utah
+    'VA',   // Virginia
+    //'WA',   // Washington
+    //'WI',   // Wisconson
+    //'WV',   // West Virginia
+    //'WY',   // Wyoming
+]
+
+function createStateSelectOptions () {
+
+    for(i = 0; i < stateClientList.length; i++) {
+
+            let option = document.createElement('option');
+            option.value = stateClientList[i];
+            option.innerHTML = stateClientList[i];
+            option.id = stateClientList[i];
+            
+            let destination = document.getElementById('state');
+            destination.appendChild(option);
+    };
+
+    let selectedState = localStorage.getItem('selectedState');
+    let stateSelect = document.getElementById('state');
+
+    document.getElementById('clinical').innerText = selectedState;
+
+    if (selectedState) {
+        stateSelect.options[selectedState].selected = true;
+    } else {
+        stateSelect.options['FL'].selected = true;
+    }
+}
+
 const fullDiagnosisList = [
     'aspergillosis', 
     'blastomycosis', 
