@@ -536,6 +536,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Spravato dose pack", 
+        quantity: "8/14",
+        diagnosis: "major depressive disorder",
+        formulary: false,
+    }, 
+    {
         drug: "sucralfate oral suspension", 
         quantity: "300/30",
         diagnosis: "GERD",
