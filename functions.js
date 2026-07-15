@@ -174,6 +174,7 @@ const fullDiagnosisList = [
     'esphageal candidiasis',
     'fatigue',
     'fatigue related to multiple sclerosis',
+    'gastritis',
     'hepatic encephalopathy',
     'histoplasmosis',
     'hypersomnia',
