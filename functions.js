@@ -1207,7 +1207,7 @@ const diagnosisNameList = [];
     combinedDiagnosisList = [...fullDiagnosisList, ...diagnosisNameList];
 
     // Remove duplicates
-    noDuplicatesCombinedDiagnosisList = [...new Set(array)];
+    noDuplicatesCombinedDiagnosisList = [...new Set(combinedDiagnosisList)];
 
     // Sort without regard to capitalization
     noDuplicatesCombinedDiagnosisList.sort(function (a, b) {
@@ -1232,5 +1232,7 @@ function predictWords(inputLetters, wordList, source, destination) {
             suggest = wordList.filter(word => regex.test(word)).slice(0, 1); 
             suggestion.innerText = suggest;    
     }
+        document.getElementById('clinical').innerText = noDuplicatesCombinedDiagnosisList;
+
 }
 
