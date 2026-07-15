@@ -26,9 +26,9 @@
         <div>
             <div class="gradientColor">
                 <div class="inputDiv">  
-                    <H2>Settings</H2>
+                    <h1>Settings</h1>
                     <div>
-                        <H3>Appeals</H3>
+                        <h2>Appeals</h2>
                         
                         <input 
                             type="checkbox"
@@ -36,6 +36,7 @@
                             name="appealExternal"
                             onclick="changeSettings(this.id)">
                         <label for="appealExternal">Appeal, external (IRO)</label>
+                        <span> - Show/hide checkbox.</span>
 
                         <br>
 
@@ -46,10 +47,11 @@
                             name="appealInternal"
                             onclick="changeSettings(this.id)">
                         <label for="appealInternal">Appeal, internal</label>
+                        <span> - Show/hide checkbox.</span>
                     </div>
 
                     <div>
-                        <H3>Misc</H3>
+                        <H2>Misc</H2>
                         
                         <input
                             type="checkbox"
@@ -75,9 +77,17 @@
                         <label for="state">Choose default state</label>
                         <br>
 
+                        <input
+                            type="checkbox"
+                            id="showPreview"
+                            onclick="changeSettings(this.id)">
+                        <label for="showPreview">Show note preview</label>
+                        <span> - Preview updates as you go, so no guessing how your responses will affect the note.</span>
+                        <br>
+
                     </div>
                     <div>
-                        <H3>Quantity</H3>
+                        <H2>Quantity</H2>
                         
                         <input
                             type="checkbox"

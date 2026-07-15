@@ -166,6 +166,7 @@ function createStateSelectOptions () {
 
 const fullDiagnosisList = [
     'aspergillosis', 
+    'bacterial intestinal infection',
     'blastomycosis', 
     'coccidioidomycosis',
     'dysphagia',
@@ -185,11 +186,13 @@ const fullDiagnosisList = [
     'OSA and obesity',
     'prediabetes',
     'psoriasis vulgaris',
+    'seborrheic dermatitis',
     'shift work sleep disorder',
     'T2DM and obesity',
     'tinea capitis',
     'tinea pedis',
     'tinea unguium',
+    'unspecified dermatitis',
 ]
 
 var notePreviewText = '';
@@ -1232,7 +1235,5 @@ function predictWords(inputLetters, wordList, source, destination) {
             suggest = wordList.filter(word => regex.test(word)).slice(0, 1); 
             suggestion.innerText = suggest;    
     }
-        document.getElementById('clinical').innerText = noDuplicatesCombinedDiagnosisList;
-
 }
 

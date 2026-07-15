@@ -72,6 +72,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "120/10",
         diagnosis: "H. pylori infection",
         altDiagnosis: "GERD", 
+        formulary: false,
+    },  
+    {
+        drug: "brivaracetam tablet",
+        quantity: "60/30",
+        diagnosis: "epilepsy",
+        altDiagnosis: "seizures", 
     },  
     {
         drug: "budesonide EC 3 mg capsule",
@@ -323,7 +330,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "chronic kidney disease",
         altDiagnosis: "heart failure" 
-    },  
+    },
+    {
+        drug: "lacosamide tablet",
+        quantity: "30/30",
+        diagnosis: "partial (focal) seizures", 
+        altDiagnosis: "generalized tonic-clonic seizures", 
+    },   
     {
         drug: "lamotrigine ER tablet",
         quantity: "30/30",
@@ -701,6 +714,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "bipolar disorder",
         altDiagnosis: "major depressive disorder", 
+        formulary: false, 
+    }, 
+    {
+        drug: "Vtama cream",
+        quantity: "60/30",
+        diagnosis: "atopic dermatitis",
+        altDiagnosis: "psoriasis", 
         formulary: false, 
     }, 
     {

@@ -54,6 +54,15 @@ window.onload = function() {
             showTimerSpan.classList.add('hideInput');
         }
     
+    // Check setting for show preview
+        let showPreview = localStorage.getItem('showPreview');
+        let showPreviewDiv = document.getElementById('showPreviewDiv');
+
+        if (showPreview == 'yes') {
+            showPreviewDiv.classList.add("showInput");
+        } else {
+            showPreviewDiv.classList.add("hideInput");
+        }
         
 
     /* || Word prediction, see predictWords() in functions */
