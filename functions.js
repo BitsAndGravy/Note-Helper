@@ -1206,8 +1206,11 @@ const diagnosisNameList = [];
     // Add manually created list
     combinedDiagnosisList = [...fullDiagnosisList, ...diagnosisNameList];
 
+    // Remove duplicates
+    noDuplicatesCombinedDiagnosisList = [...new Set(array)];
+
     // Sort without regard to capitalization
-    combinedDiagnosisList.sort(function (a, b) {
+    noDuplicatesCombinedDiagnosisList.sort(function (a, b) {
         return a.localeCompare(b);
     });
 
