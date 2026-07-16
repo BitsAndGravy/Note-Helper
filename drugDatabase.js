@@ -724,6 +724,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Vyvanse capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD",
+        formulary: false,
+    },  
+    {
         drug: "Wegovy pen",
         quantity: "2/28",
         diagnosis: "obesity",
