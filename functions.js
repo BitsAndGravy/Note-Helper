@@ -167,36 +167,53 @@ function createStateSelectOptions () {
 
 const fullDiagnosisList = [
     'aspergillosis', 
+
     'bacterial intestinal infection',
     'blastomycosis', 
+
     'coccidioidomycosis',
     'colonoscopy',
+
     'dysphagia',
+
     'erosive esophagitis',
     'esphageal candidiasis',
+
     'fatigue',
     'fatigue related to multiple sclerosis',
     'fatty liver',
+
     'gastritis',
+
     'hepatic encephalopathy',
     'histoplasmosis',
     'hypersomnia',
     'hypoglycemia',
+
     'idiopathic hypersomnia',
+
     'narcolepsy',
+
     'obstructive sleep apnea',
     'onychomycosis',
     'oropharyngeal candidiasis',
     'OSA and obesity',
+
+    'post-inflammatory hyperpigmentation',
     'prediabetes',
     'psoriasis vulgaris',
+
     'seborrheic dermatitis',
     'shift work sleep disorder',
+
     'T2DM and obesity',
     'tinea capitis',
     'tinea pedis',
     'tinea unguium',
+
     'unspecified dermatitis',
+    
+    'vitiligo',
 ]
 
 var notePreviewText = '';

@@ -354,7 +354,8 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "lidocaine 5% patch",
         quantity: "30/30", 
-        diagnosis: "radiculopathy",
+        diagnosis: "low back pain",
+        altDiagnosis: "chronic pain",
     }, 
     {
         drug: "liraglutide pen, Saxenda generic",
@@ -494,6 +495,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "T2DM",
         altDiagnosis: "obesity",
+    }, 
+    {
+        drug: "PEG-3350 and electrolytes solution",
+        quantity: "4000/1",
+        diagnosis: "colonoscopy",
+        formulary: false,
     }, 
     {
         drug: "pimecrolimus cream",
@@ -665,11 +672,18 @@ const drugDatabase = [ // for getQuantity()
         quantity: "10/30",
         diagnosis: "seizures",
     },
+
     {
         drug: "Velphoro chewable tablet",
         quantity: "150/30",
         diagnosis: "phosphorus metabolism",
         altDiagnosis: "hyperphosphatemia", 
+    }, 
+    {
+        drug: "Vemlidy tablet",
+        quantity: "30/30",
+        diagnosis: "hepatitis B",
+        altDiagnosis: "HIV", 
     }, 
     {
         drug: "Veozah tablet", 
