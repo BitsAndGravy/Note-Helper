@@ -85,6 +85,7 @@ const saveNames = [ // Used for saveText()
 const saveList = [] // Notes will be saved here with saveText()
 
 const stateClientList = [ // for use with createStateSelectOptions()
+    '', // Blank in case someone does not want state pre-filled
     //'AK',   // Alaska
     'AL',   // Alabama
     //'AR',   // Arkansas
