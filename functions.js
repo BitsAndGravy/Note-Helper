@@ -176,6 +176,7 @@ const fullDiagnosisList = [
 
     'dysphagia',
 
+    'enterobiasis',
     'erosive esophagitis',
     'esphageal candidiasis',
 
@@ -192,6 +193,8 @@ const fullDiagnosisList = [
 
     'idiopathic hypersomnia',
 
+    'mild persistent asthma',
+
     'narcolepsy',
 
     'obstructive sleep apnea',
@@ -202,6 +205,7 @@ const fullDiagnosisList = [
     'post-inflammatory hyperpigmentation',
     'prediabetes',
     'psoriasis vulgaris',
+    'pulmonary embolism',
 
     'seborrheic dermatitis',
     'shift work sleep disorder',

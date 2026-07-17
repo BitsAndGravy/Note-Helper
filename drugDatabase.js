@@ -93,6 +93,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "schizophrenia",
     },  
     {
+        drug: "calcipotriene ointment",
+        quantity: "60/30",
+        diagnosis: "psoriasis vulgaris", 
+        altDiagnosis: "acne vulgaris",
+        formulary: false,
+    },  
+    {
         drug: "cinacalcet tablet",
         quantity: "30/30",
         diagnosis: "hyperparathyroidism", 
@@ -127,6 +134,13 @@ const drugDatabase = [ // for getQuantity()
         drug: "cromolyn oral concentrate",
         quantity: "270/30",
         diagnosis: "mastocystitis",
+    },  
+    {
+        drug: "dabigatran capsule",
+        quantity: "60/90",
+        diagnosis: "atrial fibrillation",
+        altDiagnosis: 'deep vein thrombosis',
+        formulary: false, 
     },  
     {
         drug: "Dapsone 7.5% gel",
@@ -172,6 +186,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "2/28",
         diagnosis: "T2DM", 
     },     
+    {
+        drug: "duloxetine 40 mg capsule",
+        quantity: "30/30",
+        diagnosis: "major depressive disorder", 
+        formulary: false, 
+    },  
     {
         drug: "Durysta implant",
         quantity: "2/30",
@@ -507,6 +527,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "atopic dermatitis",
         altDiagnosis: "perioral dermatitis", 
+        formulary: false,
+    },
+    {
+        drug: "posaconazole tablet",
+        quantity: "30/30",
+        diagnosis: "aspergillosis",
+        altDiagnosis: "transplant", 
         formulary: false,
     },
     {
