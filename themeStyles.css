@@ -11,15 +11,15 @@
     --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
     --body-secondary-color: #edf4f6;
-    --body-border-color: #07003b;
+    --body-border-color: #0b0062;
     --body-gradient: var(--main-background);
     
     /* Text */
-    --heading-text: black;
+    --heading-text: #07003b;
     --body-text: var(--heading-text);
     --body-secondary-text: var(--heading-text);
     --animated-text: var(--heading-text);
-    --input-text: black;
+    --input-text: #07003b;
     --input-text-focus: var(--input-text);
     --placeholder-text: slategray;
     --hyperlink-static: yellow;
@@ -35,10 +35,10 @@
 
     /* Input */
     --input-background:white;
-    --input-background-focus: lightgoldenrodyellow;
+    --input-background-focus: #fff7f0;
     --input-accent-color: #dc6300;
     --input-border: var(--body-border-color);
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #4d2400;
 }
 
 [data-theme='midnight-blue'] {
