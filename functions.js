@@ -189,6 +189,7 @@ const fullDiagnosisList = [
     'hepatic encephalopathy',
     'histoplasmosis',
     'hypersomnia',
+    'hypoactive sexual desire disorder',
     'hypoglycemia',
 
     'idiopathic hypersomnia',
@@ -206,6 +207,8 @@ const fullDiagnosisList = [
     'prediabetes',
     'psoriasis vulgaris',
     'pulmonary embolism',
+
+    'radiculopathy',
 
     'seborrheic dermatitis',
     'shift work sleep disorder',

@@ -537,6 +537,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "Qbrexza cloth",
+        quantity: "30/30",
+        diagnosis: "primary hyperhidrosis",
+        formulary: false,
+    },
+    {
         drug: "Qulipta tablet",
         quantity: "30/30",
         diagnosis: "migraine prophylaxis",
@@ -548,6 +554,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "Relistor tablet", 
+        quantity: "30/30",
+        diagnosis: "drug-induced constipation",
+        altDiagnosis: "opioid-induced constipation",
+    }, 
+    {
         drug: "Restasis eye drops",
         quantity: "60/30",
         diagnosis: "keratoconjunctivitis",
@@ -558,6 +570,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "major depressive disorder",
         altDiagnosis: "schizophrenia",
     },
+    {
+        drug: "Rhofade cream", 
+        quantity: "30/30",
+        diagnosis: "rosacea",
+        formulary: false,
+    }, 
     {
         drug: "rivastigmine capsule", 
         quantity: "60/30",
@@ -699,7 +717,6 @@ const drugDatabase = [ // for getQuantity()
         quantity: "10/30",
         diagnosis: "seizures",
     },
-
     {
         drug: "Velphoro chewable tablet",
         quantity: "150/30",
