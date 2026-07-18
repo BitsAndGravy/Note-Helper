@@ -81,7 +81,7 @@ button {
     color: var(--button-text);
     padding: 5px;
     box-shadow: -2px -2px 2px #00000086 inset;
-    transition: 200ms;
+    transition: 100ms;
 }
     button:hover {background-color: var(--button-hover);}
     button:active {

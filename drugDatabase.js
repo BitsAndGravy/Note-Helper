@@ -118,7 +118,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Creon XR capsule",
+        drug: "Creon DR capsule",
         quantity: "300/90",
         diagnosis: "exocrine pancreatic insufficiency", 
         altDiagnosis: "cystic fibrosis",

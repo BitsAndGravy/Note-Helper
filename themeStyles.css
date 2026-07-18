@@ -15,28 +15,27 @@
     --body-gradient: var(--main-background);
     
     /* Text */
-    --heading-text: #07003b;
+    --heading-text: #050410;
     --body-text: var(--heading-text);
     --body-secondary-text: var(--heading-text);
     --animated-text: var(--heading-text);
     --input-text: #07003b;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
-    --hyperlink-static: yellow;
-    --hyperlink-hover: gold;
-    --hyperlink-active: aqua;
+    --placeholder-text: #07003b8d;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #eeded2;
+    --button-background: #fff7f0;
     --button-hover: #eee2da;
     --button-active: #e4cab5;
     --button-text: black;
 
     /* Input */
     --input-background:white;
-    --input-background-focus: #fff7f0;
-    --input-accent-color: #dc6300;
+    --input-background-focus: #fff7f0a9;
+    --input-accent-color: #ca6a1c;
     --input-border: var(--body-border-color);
     --input-border-focus: #4d2400;
 }
