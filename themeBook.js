@@ -10,7 +10,7 @@ const themeBook = {
     },
     midnightBlue: {
         name: 'midnight-blue', 
-        title: 'Midnight Blue (Default)', 
+        title: 'Midnight Blue', 
         style: 'dark',
         group: 'Generic',
         optGroup: 'generic'
@@ -22,6 +22,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+    light: {
+        name: 'light', 
+        title: 'Light', 
+        style: 'light',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     PAHub: {
         name: 'pahub', 
         title: 'PAHub', 
@@ -36,6 +43,7 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+
 
 // Hollow Knight themes
     abyss: {
