@@ -43,6 +43,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+    superMetroid: {
+        name: 'super-metroid-title',
+        title: 'Super Metroid (title screen)',
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic',
+    },
 
 
 // Hollow Knight themes

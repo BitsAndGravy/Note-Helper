@@ -78,6 +78,43 @@
 }
 
 
+[data-theme='super-metroid-title'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: #171388;
+    --footer-background: var(--header-background);
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: rgba(52, 39, 168, 0.356);
+    --body-border-color: #3d7ebe;
+    --body-gradient: black, #010102 75%, #0c595b;
+    
+    /* Text */
+    --heading-text: #f7f62c;
+    --body-text: #e6feff;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--heading-text);
+    --input-text: var(--body-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #e6feff9a;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #34c2ff;
+    --button-hover: #3078ef;
+    --button-active: #1a5396;
+    --button-text: black;
+
+    /* Input */
+    --input-background:#275d2087;
+    --input-background-focus: #275d20e8;
+    --input-accent-color: #f88401;
+    --input-border: #1c409c;
+    --input-border-focus: var(--header-background);
+}
+
 /* || Generic themes */
 
 [data-theme='dark'] {
