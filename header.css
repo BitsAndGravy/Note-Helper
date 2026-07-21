@@ -103,38 +103,70 @@ a:link {color: var(--heading-text);}
 
 
 /* || Specific styles */
-.primaryColor {
-    background-color: var(--body-primary-color);
-}
+    .primaryColor {
+        background-color: var(--body-primary-color);
+    }
 
-.secondaryColor {
-    background-color: var(--body-secondary-color);
-    color: var(--body-secondary-text);
-}
+    .secondaryColor {
+        background-color: var(--body-secondary-color);
+        color: var(--body-secondary-text);
+    }
 
-/* Suggestion span style */
-.suggestContainer {
-    position: relative;
-}
+/* Suggestion styles */
+    .suggestContainer {
+        position: relative;
+    }
 
+    .drugSuggestionClass {
+        font-size: 13px;
+        color: var(--placeholder-text);
+        position: absolute;
+        left: 45px;
+        top: 13px;
+        pointer-events: none;
+    }
 
-.drugSuggestionClass {
-    font-size: 13px;
-    color: var(--placeholder-text);
-    position: absolute;
-    left: 45px;
-    top: 13px;
-    pointer-events: none;
-}
+    .diagnosisSuggestionClass {
+        font-size: 13px;
+        color: var(--placeholder-text);
+        position: absolute;
+        left: 45px;
+        top: 102px;
+        pointer-events: none;
+    }
 
-.diagnosisSuggestionClass {
-    font-size: 13px;
-    color: var(--placeholder-text);
-    position: absolute;
-    left: 45px;
-    top: 102px;
-    pointer-events: none;
-}
+/* Character count styles */
+    .characterLimitGreen {
+        color: var(--body-text);
+        background-color: transparent;
+        font-size: 13px;
+        opacity: 0.5;
+        padding: 5px;
+    }
+
+    .characterLimitYellow {
+        color: yellow;
+        background-color: black;
+        font-size: 14px;
+        opacity: 0.6;
+        padding: 5px;
+    }
+
+    .characterLimitOrange {
+        color: orange;
+        background-color: black;
+        font-size: 17px;
+        opacity: 0.7;
+        padding: 6px;
+    }
+
+    .characterLimitRed {
+        color: red;
+        background-color: black;
+        font-size: 20px;
+        opacity: 1;
+        padding: 8px;
+    }
 
 /* Div paddings */
 .inputDiv {
@@ -189,45 +221,43 @@ a:link {color: var(--heading-text);}
 
 /* || Animations */
 /* ||| Text animations */    
-/* Manually add this class to each element you want to animate; this is the starting state. */
-    .hideStart {
-        opacity: 0;
-        transition: 1s;
-        color: var(--animated-text);
-    }
+    /* Manually add this class to each element you want to animate; this is the starting state. */
+        .hideStart {
+            opacity: 0;
+            transition: 1s;
+            color: var(--animated-text);
+        }
 
-/* Class that gets added to an element in animateText(); fade-in effect. */
-    .revealText {
-        opacity: 1;
-        transition: 1s;
-    }
+    /* Class that gets added to an element in animateText(); fade-in effect. */
+        .revealText {
+            opacity: 1;
+            transition: 1s;
+        }
 
-/* Class added in animateText(); final result is to hide the element */
-    .hideEnd {
-        opacity: 0;
-    }
-
-
+    /* Class added in animateText(); final result is to hide the element */
+        .hideEnd {
+            opacity: 0;
+        }
 
 /* || Add or remove settings */
-.hideInput {
-    transition: .75s;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
+    .hideInput {
+        transition: .75s;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+    }
 
-.showInput {
-    max-height: 500px;
-    opacity: 1;
-    transition: opacity 1.5s, max-height 1.5s;
-}
+    .showInput {
+        max-height: 500px;
+        opacity: 1;
+        transition: opacity 1.5s, max-height 1.5s;
+    }
 
-.showTimer {
-    opacity: 0.5;
-}
+    .showTimer {
+        opacity: 0.5;
+    }
 
-/* show and hide saved notes, toggled on/off */
-.hideElement {
-    display: none;
-}
+    /* show and hide saved notes, toggled on/off */
+    .hideElement {
+        display: none;
+    }

@@ -521,29 +521,17 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Styles based on count length.
         if(text.length < 1700) {
-            char.style.color = 'var(--body-text)';
-            char.style.fontSize = '13px';
-            char.style.backgroundColor = '';
-            char.style.opacity = '0.5';
+            char.className = 'characterLimitGreen';
 
         } else if (text.length < 1850) {
-            char.style.color = 'yellow';
-            char.style.fontSize = '14px';
-            char.style.backgroundColor = 'black';
-            char.style.opacity = '0.5';
+            char.className = 'characterLimitYellow';
 
         } else if (text.length < 2001) {
-            char.style.color = 'orange';
-            char.style.fontSize = '17px';
-            char.style.backgroundColor = 'black';
-            char.style.opacity = '0.5';
+            char.className = 'characterLimitOrange';
 
         // Opacity = 1 for best visibility
         } else if (text.length >= 2001) {
-            char.style.color = 'red';
-            char.style.fontSize = '20px';
-            char.style.backgroundColor = 'black';
-            char.style.opacity = '1';
+            char.className = 'characterLimitRed';
         }
     }
 
@@ -555,7 +543,6 @@ function resetForm() { // After clicking the Reset button
 
     resetStateOptionSelected();
     preSaveFunctions();
-    //resetPreview(); saving because I hid the preview and don't know if preSaveFunction works sufficiently.
     resetAlts(); // Hides alternative diagnosis box
     resetTextareaSize(); // Resets textarea if manually adjusted
     hideExtras(); // Hides quantity (per settings), false QL, etc.
@@ -563,7 +550,6 @@ function resetForm() { // After clicking the Reset button
     animateText('resetForm');
     gotoFirstField();
     resetTimer();
-
 }
 
     // Use state selected in settings, otherwise reset to FL as default.
@@ -575,7 +561,7 @@ function resetForm() { // After clicking the Reset button
             stateSelect.options[selectedState].selected = true;
         } else {
             stateSelect.options['FL'].selected = true;
-    }
+        }
     }
 
     function resetPreview() {
