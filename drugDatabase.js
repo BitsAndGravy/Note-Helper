@@ -387,15 +387,20 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "lamotrigine ER tablet",
         quantity: "30/30",
-        altQuantity: "",
         diagnosis: "seizures", 
         altDiagnosis: "bipolar disorder", 
     }, 
     {
-        drug: "Lantus Solostar",
+        drug: "Lantus Solostar pen",
         dosageForm: "pen", 
         quantity: "15/30",
         diagnosis: "T2DM", 
+        formulary: false, 
+    },  
+    {
+        drug: "levothyroxine capsule",
+        quantity: "30/30",
+        diagnosis: "hypothyroidism", 
         formulary: false, 
     },  
     {
