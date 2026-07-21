@@ -425,6 +425,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "bipolar disorder",
     }, 
     {
+        drug: "Lybalvi tablet",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder",
+        altDiagnosis: "schizophrenia",  
+        formulary: false, 
+    },  
+    {
         drug: "Lynkuet capsule",
         quantity: "60/30",
         diagnosis: "menopausal and female climacteric states",
