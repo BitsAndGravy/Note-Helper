@@ -113,4 +113,3 @@ function createThemeOptions () {
             destination.appendChild(option);
     };
 }
-

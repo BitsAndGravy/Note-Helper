@@ -248,11 +248,24 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         buildNote();     
         showNotePreview(); // Unique to this function
         characterCount();
+        characterLimitWarning(); // Unique to this function
     }
 
         function showNotePreview() {
             let notePreview = document.getElementById('notePreview');
             notePreview.innerText = notePreviewText;
+        }
+
+        function characterLimitWarning() {
+            let char = document.getElementById('characterCount');
+            let focus = document.activeElement;
+            if(char.classList.contains('characterLimitRed')) {
+                focus.style.backgroundColor = 'red';
+                focus.style.color = 'black';
+            } else {
+                focus.style.backgroundColor = '';
+                focus.style.color = '';
+            }
         }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
@@ -1176,15 +1189,10 @@ function startTimer() {
     myTimer = setInterval(
         function() {
             timeElapsed += 1;
-
             ss = timeElapsed % 60;
             mm = Math.floor(timeElapsed/60);
-
-
             seconds = ss.toString().padStart(2, '0');
-
             timeShown = mm + ":" + seconds;
-
             time.innerText = timeShown;
         }, 1000
     );
