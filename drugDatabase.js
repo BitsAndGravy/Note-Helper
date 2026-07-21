@@ -285,7 +285,28 @@ const drugDatabase = [ // for getQuantity()
         specialty: true,
     },  
     {
+        drug: "insulin aspart pen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        altDiagnosis: 'T1DM',
+        formulary: false, 
+    },  
+    {
+        drug: "insulin glargine pen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        altDiagnosis: 'T1DM',
+        formulary: false, 
+    },  
+    {
         drug: "insulin glargine-yfgn pen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        altDiagnosis: 'T1DM',
+        formulary: false, 
+    },  
+    {
+        drug: "insulin lispro pen",
         quantity: "15/30",
         diagnosis: "T2DM", 
         altDiagnosis: 'T1DM',

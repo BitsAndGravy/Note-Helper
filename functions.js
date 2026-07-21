@@ -166,6 +166,7 @@ function createStateSelectOptions () {
 }
 
 const fullDiagnosisList = [
+    'actinic keratosis',
     'aspergillosis', 
 
     'bacterial intestinal infection',
