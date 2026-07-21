@@ -221,6 +221,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "exemestane tablet",
+        quantity: "30/30",
+        diagnosis: "breast cancer", 
+        formulary: false, 
+    },  
+    {
         drug: "febuxostat tablet",
         quantity: "30/30",
         diagnosis: "gout", 
@@ -571,16 +577,23 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
-        drug: "Qulipta tablet",
-        quantity: "30/30",
-        diagnosis: "migraine prophylaxis",
-    },
-    {
         drug: "Qelbree ER capsule",
         quantity: "30/30",
         diagnosis: "ADHD",
         formulary: false,
     },
+    {
+        drug: "Qulipta tablet",
+        quantity: "30/30",
+        diagnosis: "migraine prophylaxis",
+    },
+    {
+        drug: "Quviviq tablet",
+        quantity: "30/30",
+        diagnosis: "insomnia",
+        formulary: false,
+    },
+
     {
         drug: "Relistor tablet", 
         quantity: "30/30",

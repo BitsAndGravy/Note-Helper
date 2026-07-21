@@ -189,6 +189,7 @@ const fullDiagnosisList = [
 
     'hepatic encephalopathy',
     'histoplasmosis',
+    'hyperglyceridemia',
     'hypersomnia',
     'hypoactive sexual desire disorder',
     'hypoglycemia',
