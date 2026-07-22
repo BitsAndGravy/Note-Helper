@@ -666,6 +666,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "OSA",
     }, 
     {
+        drug: "Synjardy XR tablet", 
+        quantity: "180/90",
+        diagnosis: "T2DM",
+        quantityLimitCriteria: true,
+    }, 
+    {
         drug: "tadalafil 5 mg tablet", 
         quantity: "30/30", 
         diagnosis: "male erectile dysfunction", 
