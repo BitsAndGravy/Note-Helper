@@ -685,6 +685,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "tazarotene cream",
+        quantity: "60/30",
+        altQuantity: "60/30",
+        diagnosis: "acne vulgaris",
+        altDiagnosis: "plaque psoriasis",
+    }, 
+    {
         drug: "temazepam capsule",
         quantity: "30/30",
         altQuantity: "60/30",
@@ -886,6 +893,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Xyosted inj",
         quantity: "2/28",
         diagnosis: "testicular hypofunction",
+        formulary: false, 
+    }, 
+    {
+        drug: "Ycanth solution",
+        quantity: "2/21",
+        diagnosis: "molluscum contagiosum",
         formulary: false, 
     }, 
     {

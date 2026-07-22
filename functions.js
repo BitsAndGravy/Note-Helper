@@ -196,6 +196,7 @@ const fullDiagnosisList = [
 
     'idiopathic hypersomnia',
 
+    'melanin hyperpigmentation',
     'mild persistent asthma',
 
     'narcolepsy',
@@ -220,6 +221,7 @@ const fullDiagnosisList = [
     'tinea pedis',
     'tinea unguium',
 
+    'ulcerative colitis',
     'unspecified dermatitis',
     
     'vitiligo',
