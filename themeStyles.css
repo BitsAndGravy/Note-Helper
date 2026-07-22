@@ -7,10 +7,10 @@
 :root, [data-theme='light'] {
     /* Main features */
     --main-background: white;
-    --header-background: #cce4e1;
+    --header-background: #81beb6;
     --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
-    --body-secondary-color: #edf4f6;
+    --body-secondary-color: #cae2df;
     --body-border-color: #0b0062;
     --body-gradient: var(--main-background);
     
