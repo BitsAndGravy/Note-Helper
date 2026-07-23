@@ -6,6 +6,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "adapalene-benzoyl peroxide gel",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris", 
+        formulary: false, 
+    },  
+    {
         drug: "Adderall tablet",
         quantity: "30/30",
         diagnosis: "ADHD", 
@@ -106,6 +112,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "hypercalcemia",
     },  
     {
+        drug: "clindamycin-benzoyl peroxide gel",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris", 
+        formulary: false,
+    },  
+    {
         drug: "clobazam tablet",
         quantity: "30/30",
         diagnosis: "Lennox-Gastaut Syndrome", 
@@ -115,6 +127,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "clomiphene tablet",
         quantity: "30/30",
         diagnosis: "testicular hypofunction",
+        formulary: false, 
+    },  
+    {
+        drug: "Combipatch patch",
+        quantity: "8/28",
+        diagnosis: "menopausal and female climacteric states",
         formulary: false, 
     },  
     {
@@ -272,6 +290,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Gvoke HypoPen", 
+        quantity: "0.2/30",
+        diagnosis: "T2DM",
+        altDiagnosis: "T1DM", 
+        formulary: false, 
+    },  
+    {
         drug: "Ibsrela tablet",
         quantity: "60/30",
         diagnosis: "IBS-C", 
@@ -282,6 +307,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "120/30",
         diagnosis: "hyperlipidemia",
     }, 
+    {
+        drug: "Icotyde tablet", 
+        quantity: "30/30",
+        diagnosis: "psoriasis vulgaris", 
+        formulary: false, 
+        specialty: true,
+    },  
     {
         drug: "Ingrezza capsule",
         quantity: "30/30",
@@ -792,6 +824,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Veozah tablet", 
         quantity: "30/30",
         diagnosis: "menopausal and female climacteric states",
+        formulary: false,
+    },
+    {
+        drug: "Vevye eye drops", 
+        quantity: "2/30",
+        diagnosis: "dry eye syndrome",
         formulary: false,
     },
     {

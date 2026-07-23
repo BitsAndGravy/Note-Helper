@@ -175,6 +175,7 @@ const fullDiagnosisList = [
     'coccidioidomycosis',
     'colonoscopy',
 
+    'dermatophytosis',
     'dysphagia',
 
     'enterobiasis',
