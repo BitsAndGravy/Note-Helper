@@ -40,82 +40,42 @@
     --input-border-focus: #4d2400;
 }
 
-[data-theme='midnight-blue'] {
+/* || Generic themes */
+
+
+[data-theme='beat-saber'] {
     /* Main features */
-    --main-background: midnightblue;
-    --header-background: #3427a8;
-    --footer-background: var(--header-background);
+    --main-background: #120b2c;
+    --header-background: #e8181c;
+    --footer-background: #1584d8;
     --body-primary-color: var(--main-background);
-    --body-secondary-color: #3427a8;
-    --body-border-color: slateblue;
-    --body-gradient: var(--main-background);
+    --body-secondary-color: #ffffff18;
+    --body-border-color: #f0393e;
+    --body-gradient: #c41821, #660b27, #120b2c 15%, #140c31 85%, #11234b, #4a5daa;
     
     /* Text */
-    --heading-text: azure;
+    --heading-text: #fefbf8;
     --body-text: var(--heading-text);
-    --body-secondary-text: var(--heading-text);
-    --animated-text: var(--heading-text);
-    --input-text: black;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
-    --hyperlink-static: yellow;
-    --hyperlink-hover: gold;
-    --hyperlink-active: aqua;
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: lightgoldenrodyellow;
-    --button-hover: yellow;
-    --button-active: aqua;
-    --button-text: black;
-
-    /* Input */
-    --input-background:white;
-    --input-background-focus: lightgoldenrodyellow;
-    --input-accent-color: yellow;
-    --input-border: black;
-    --input-border-focus: var(--header-background);
-}
-
-
-[data-theme='super-metroid-title'] {
-    /* Main features */
-    --main-background: black;
-    --header-background: #171388;
-    --footer-background: var(--header-background);
-    --body-primary-color: var(--main-background);
-    --body-secondary-color: rgba(52, 39, 168, 0.356);
-    --body-border-color: #3d7ebe;
-    --body-gradient: black, #010102 75%, #0c595b;
-    
-    /* Text */
-    --heading-text: #f7f62c;
-    --body-text: #e6feff;
-    --body-secondary-text: var(--body-text);
-    --animated-text: var(--heading-text);
-    --input-text: var(--body-text);
-    --input-text-focus: var(--input-text);
-    --placeholder-text: #e6feff9a;
-    --hyperlink-static: var(--button-background);
+    --input-text: var(--heading-text);
+    --placeholder-text: #c1d4ff89;
+    --hyperlink-static: var(--input-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #34c2ff;
-    --button-hover: #3078ef;
-    --button-active: #1a5396;
-    --button-text: black;
+    --button-background: #120b2ccd;
+    --button-hover: #120b2c67;
+    --button-active: #fefbf8;
+    --button-text: var(--heading-text);
 
     /* Input */
-    --input-background:#275d2087;
-    --input-background-focus: #275d20e8;
-    --input-accent-color: #f88401;
-    --input-border: #1c409c;
+    --input-background: #120b2c7e;
+    --input-background-focus: #120b2ccc;
+    --input-accent-color: #f0393e;
+    --input-border: #1584d8;
     --input-border-focus: var(--header-background);
 }
-
-/* || Generic themes */
 
 [data-theme='dark'] {
     /* Main features */
@@ -151,37 +111,40 @@
     --input-border-focus: var(--header-background);
 }
 
-[data-theme='beat-saber'] {
+[data-theme='midnight-blue'] {
     /* Main features */
-    --main-background: #120b2c;
-    --header-background: #e8181c;
-    --footer-background: #1584d8;
+    --main-background: midnightblue;
+    --header-background: #3427a8;
+    --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
-    --body-secondary-color: #ffffff18;
-    --body-border-color: #f0393e;
-    --body-gradient: #c41821, #660b27, #120b2c 15%, #140c31 85%, #11234b, #4a5daa;
+    --body-secondary-color: #3427a8;
+    --body-border-color: slateblue;
+    --body-gradient: var(--main-background);
     
     /* Text */
-    --heading-text: #fefbf8;
+    --heading-text: azure;
     --body-text: var(--heading-text);
-    --input-text: var(--heading-text);
-    --placeholder-text: #c1d4ff89;
-    --hyperlink-static: var(--input-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
+    --body-secondary-text: var(--heading-text);
+    --animated-text: var(--heading-text);
+    --input-text: black;
+    --input-text-focus: var(--input-text);
+    --placeholder-text: slategray;
+    --hyperlink-static: yellow;
+    --hyperlink-hover: gold;
+    --hyperlink-active: aqua;
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #120b2ccd;
-    --button-hover: #120b2c67;
-    --button-active: #fefbf8;
-    --button-text: var(--heading-text);
+    --button-background: lightgoldenrodyellow;
+    --button-hover: yellow;
+    --button-active: aqua;
+    --button-text: black;
 
     /* Input */
-    --input-background: #120b2c7e;
-    --input-background-focus: #120b2ccc;
-    --input-accent-color: #f0393e;
-    --input-border: #1584d8;
+    --input-background:white;
+    --input-background-focus: lightgoldenrodyellow;
+    --input-accent-color: yellow;
+    --input-border: black;
     --input-border-focus: var(--header-background);
 }
 
@@ -220,6 +183,42 @@
     --input-accent-color: #0075ff;
     --input-border: #7b9ebd;
     --input-border-focus: #0073bf;
+}
+
+[data-theme='pac-man'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: #2020e06c;
+    --footer-background: var(--header-background);
+    --body-primary-color: var(--main-background);
+    --body-secondary-color: #2020e042;
+    --body-border-color: #2020e0;
+    --body-gradient: var(--main-background);
+    
+    /* Text */
+    --heading-text: #fffe02;
+    --body-text: #fbb999;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--heading-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #fbba998e;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: black;
+    --button-hover: #ffe5d4;
+    --button-active: #ffd1ab;
+    --button-text: #fffd03;
+
+    /* Input */
+    --input-background: var(--main-background);
+    --input-background-focus: var(--main-background);
+    --input-accent-color: #fd0000;
+    --input-border: var(--body-border-color);
+    --input-border-focus: var(--body-border-color);
 }
 
 
@@ -1164,7 +1163,7 @@
     --main-background: #364c50;
     --header-background: #b59484;
     --footer-background: #b59484;
-    --body-primary-color: #f1fdfd;
+    --body-primary-color: white;
     --body-secondary-color: #edd1c4;
     --body-border-color: #e0b9a2;
     --body-gradient: white;

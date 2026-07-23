@@ -29,6 +29,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     },
+    pacMan: {
+        name: 'pac-man', 
+        title: 'Pac-Man', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    }, 
     PAHub: {
         name: 'pahub', 
         title: 'PAHub', 
