@@ -208,10 +208,10 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #ffbadf; /* Pinky */
-    --button-hover: #ffbadfe0;
-    --button-active: #ffbadfa9;
-    --button-text: black;
+    --button-background: black; /* Pinky */
+    --button-hover: #ffbadf31;
+    --button-active: #ffbadf;
+    --button-text: #fffe02;
 
     /* Input */
     --input-background: var(--main-background);
