@@ -196,29 +196,29 @@
     --body-gradient: var(--main-background);
     
     /* Text */
-    --heading-text: #fffe02;
-    --body-text: #fbb999;
+    --heading-text: #fffe02; /* Pac man, Ready */
+    --body-text: #fbb999; /* pellets */
     --body-secondary-text: var(--body-text);
-    --animated-text: var(--heading-text);
+    --animated-text: #ffb749; /* Clyde */
     --input-text: var(--body-text);
-    --placeholder-text: #fbba998e;
+    --placeholder-text: #fbba998f;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: black;
-    --button-hover: #ffe5d4;
-    --button-active: #ffd1ab;
-    --button-text: #fffd03;
+    --button-background: #ffbadf; /* Pinky */
+    --button-hover: #ffbadfe0;
+    --button-active: #ffbadfa9;
+    --button-text: black;
 
     /* Input */
     --input-background: var(--main-background);
     --input-background-focus: var(--main-background);
-    --input-accent-color: #fd0000;
+    --input-accent-color: #fd0000; /* Blinky */
     --input-border: var(--body-border-color);
-    --input-border-focus: var(--body-border-color);
+    --input-border-focus: #00ffdf; /* Inky */
 }
 
 
