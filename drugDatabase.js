@@ -41,8 +41,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Anzupgo cream",
+        quantity: "30/30",
+        diagnosis: "atopic dermatitis", 
+        formulary: false, 
+    },  
+    {
         drug: "albendazole tablet",
-        quantity: "",
         diagnosis: "migraine prophylaxis", 
     },  
     {
@@ -67,6 +72,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "50/30",
         diagnosis: "rosacea", 
         altDiagnosis: "acne vulgaris",
+    },  
+    {
+        drug: "Azstarys capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+        formulary: false,
     },  
     {
         drug: "Belsomra tablet",
@@ -103,6 +114,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "60/30",
         diagnosis: "psoriasis vulgaris", 
         altDiagnosis: "acne vulgaris",
+        formulary: false,
+    },  
+    {
+        drug: "Cequa solution",
+        quantity: "60/30",
+        diagnosis: "dry eye syndrome", 
         formulary: false,
     },  
     {
@@ -282,6 +299,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "partial (focal) seizures", 
         altDiagnosis: "generalized tonic-clonic seizures",
+    },  
+    {
+        drug: "gabapentin 200 mg capsule", 
+        quantity: "60/30",
+        diagnosis: "radiculopathy", 
+        formulary: false, 
     },  
     {
         drug: "Gemtesa tablet", 
@@ -635,7 +658,6 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "insomnia",
         formulary: false,
     },
-
     {
         drug: "Relistor tablet", 
         quantity: "30/30",
@@ -660,10 +682,21 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Rhopressa eye drops", 
+        quantity: "2.5/30",
+        diagnosis: "glaucoma",
+        formulary: false,
+    }, 
+    {
         drug: "rivastigmine capsule", 
         quantity: "60/30",
         diagnosis: "dementia",
         altDiagnosis: "memory loss",
+    }, 
+    {
+        drug: "roflumilast tablet", 
+        quantity: "30/30",
+        diagnosis: "asthma",
     }, 
     {
         drug: "Rybelsus tablet", 

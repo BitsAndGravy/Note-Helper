@@ -11,7 +11,7 @@
     --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
     --body-secondary-color: #cae2df;
-    --body-border-color: #0b0062;
+    --body-border-color: #1c1839;
     --body-gradient: var(--main-background);
     
     /* Text */
@@ -19,8 +19,8 @@
     --body-text: var(--heading-text);
     --body-secondary-text: var(--heading-text);
     --animated-text: var(--heading-text);
-    --input-text: #07003b;
-    --placeholder-text: #07003b8d;
+    --input-text: #120f24;
+    --placeholder-text: #120f248d;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);

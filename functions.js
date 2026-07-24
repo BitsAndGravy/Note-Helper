@@ -181,7 +181,8 @@ const fullDiagnosisList = [
 
     'enterobiasis',
     'erosive esophagitis',
-    'esphageal candidiasis',
+    'esophageal candidiasis',
+    'essential hypertension',
 
     'fatigue',
     'fatigue related to multiple sclerosis',
@@ -193,6 +194,7 @@ const fullDiagnosisList = [
     'histoplasmosis',
     'hyperglyceridemia',
     'hypersomnia',
+    'hypertension',
     'hypoactive sexual desire disorder',
     'hypoglycemia',
 
