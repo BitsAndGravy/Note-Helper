@@ -458,6 +458,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "ADHD", 
     },  
     {
+        drug: "lisdexamfetamine chewable tablet",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+    },  
+    {
         drug: "Lokelma powder packet",
         quantity: "30/30",
         diagnosis: "hyperkalemia",

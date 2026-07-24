@@ -197,11 +197,11 @@
     
     /* Text */
     --heading-text: #fffe02; /* Pac man, Ready */
-    --body-text: #fbb999; /* pellets */
+    --body-text: #ffc7ab; /* pellets */
     --body-secondary-text: var(--body-text);
     --animated-text: #ffb749; /* Clyde */
     --input-text: var(--body-text);
-    --placeholder-text: #fbba998f;
+    --placeholder-text: #fbba99cb;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
