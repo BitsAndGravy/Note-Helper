@@ -1151,7 +1151,7 @@ function reopeningChecked() {
         };
 
         if(conc.value == '') {
-            conc.value = 'Previously ';
+            conc.value = 'Previously \n\nOn reopening, ';
         };
     }
 }
