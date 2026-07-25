@@ -41,6 +41,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Aklief cream",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris", 
+        formulary: false, 
+    },  
+    {
         drug: "Anzupgo cream",
         quantity: "30/30",
         diagnosis: "atopic dermatitis", 
@@ -78,6 +84,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "ADHD", 
         formulary: false,
+    },  
+    {
+        drug: "Baqsimi nasal spray",
+        quantity: "1/30",
+        diagnosis: "T2DM",
+        formulary: false, 
     },  
     {
         drug: "Belsomra tablet",
@@ -574,6 +586,13 @@ const drugDatabase = [ // for getQuantity()
     }, 
     {
         drug: "Nexletol tablet",
+        quantity: "30/30",
+        diagnosis: "hyperlipidemia",
+        altDiagnosis: "hypercholesterolemia", 
+        formulary: false, 
+    }, 
+    {
+        drug: "Nexlizet tablet",
         quantity: "30/30",
         diagnosis: "hyperlipidemia",
         altDiagnosis: "hypercholesterolemia", 
