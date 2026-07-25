@@ -218,6 +218,25 @@ a:link {color: var(--heading-text);}
     padding: 5px;
 }
 
+.error {
+    background-color: red;
+    color: black;
+    padding: 0px;
+}
+
+.hideError {
+    opacity: 0;
+    padding: 0;
+    transition: 750ms;
+}
+
+.showError {
+    max-height: auto;
+    opacity: 1;
+    padding: 10px;
+    transition: 1500ms;
+}
+
 
 /* || Animations */
 /* ||| Text animations */    

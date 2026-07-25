@@ -21,13 +21,13 @@
     <div class="container">
         <div class="heading">
             <H3>Note helper</H3>
-                <nav>
-                    <ul>
-                        <li><a href="index.html" target="_blank">Note helper</a></li> <!-- added <a> for consistent formatting -->
-                        <li><a href="settings.html" target="_blank">Settings</a></li>
-                        <li><a href="themePreview.html" target="_blank">Themes</a></li>
-                    </ul>
-                </nav>
+            <nav>
+                <ul>
+                    <li><a href="index.html" target="_blank">Note helper</a></li> <!-- added <a> for consistent formatting -->
+                    <li><a href="settings.html" target="_blank">Settings</a></li>
+                    <li><a href="themePreview.html" target="_blank">Themes</a></li>
+                </ul>
+            </nav>
         </div>
 
         <div>
@@ -166,20 +166,19 @@
                                 name="reject" 
                                 onclick="showQuantity()">
                                 <label for="nonFormulary">70 </label>
-                            <br>
-                            
-                            <div id="quantityDiv">
-                                <label for="quantity">08.</label>
-                                <input 
-                                    type="text" 
-                                    class="qtyTextbox" 
-                                    id="quantity" 
-                                    name="quantity" 
-                                    placeholder="qty/days"
-                                    >
                         <br>
+                        
+                        <div id="quantityDiv">
+                            <label for="quantity">08.</label>
+                            <input 
+                                type="text" 
+                                class="qtyTextbox" 
+                                id="quantity" 
+                                name="quantity" 
+                                placeholder="qty/days">
+                            <br>
 
-                        <label for="falseQL">09.</label>
+                            <label for="falseQL">09.</label>
                             <input 
                                 type="checkbox" 
                                 id="falseQL" 
@@ -362,10 +361,17 @@
                 </div>
             </div>
 
+            <div id="errorBar" class="error hideError" style="display: none;">
+                <div id="overCharacterLimitError">Cat ate the food</div>
+                <div id="ageBlankError">Dog wants a treat</div>
+            </div>
+
+
             <div class="footing">
             <!--left-aligned options-->
                 <button type="button" onclick="saveButton()">Save</button>
                 <span id="textCopied" class="hideStart">Copied to clipboard</span>
+                <button type="button" onclick="triggerError()" style="display: none;">Error!!!</button>
 
             <!--right-aligned options-->
                 <button type="button" onclick="resetForm()" style="float: right;">Reset</button>

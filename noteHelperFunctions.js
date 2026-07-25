@@ -113,3 +113,8 @@ function createThemeOptions () {
             destination.appendChild(option);
     };
 }
+
+function triggerError() {
+    document.getElementById('errorBar').classList.toggle('hideError');
+    document.getElementById('errorBar').classList.toggle('showError');
+}
