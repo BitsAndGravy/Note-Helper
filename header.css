@@ -27,6 +27,7 @@ ul li a { /* Color for links defined elsewhere */
 
 ul li a:hover {
     background-color: orange;
+    color: black;
     transition: 200ms;
 }
 

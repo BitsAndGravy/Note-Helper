@@ -166,6 +166,7 @@ function createStateSelectOptions () {
 }
 
 const fullDiagnosisList = [
+    'abnormal blood chemistry',
     'actinic keratosis',
     'aspergillosis', 
 
@@ -189,6 +190,7 @@ const fullDiagnosisList = [
     'fatty liver',
 
     'gastritis',
+    'gender identity disorder',
 
     'hepatic encephalopathy',
     'histoplasmosis',
@@ -200,6 +202,7 @@ const fullDiagnosisList = [
 
     'idiopathic hypersomnia',
 
+    'male hypogonadism',
     'melanin hyperpigmentation',
     'mild persistent asthma',
 

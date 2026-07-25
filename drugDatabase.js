@@ -320,6 +320,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Hemangeol oral solution",
+        quantity: "120/30",
+        diagnosis: "hemangioma", 
+        formulary: false, 
+    },  
+    {
         drug: "Ibsrela tablet",
         quantity: "60/30",
         diagnosis: "IBS-C", 
@@ -778,34 +784,35 @@ const drugDatabase = [ // for getQuantity()
         drug: "testosterone 1% gel packet",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
     },   
     {
         drug: "testosterone 1.62% gel pump",
         quantity: "75/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "male hypogonadism",
         formulary: false, 
     },   
     {
         drug: "testosterone 1.62% gel packet",
         quantity: "75/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "abnormal blood chemistry",
         formulary: false, 
     },  
     {
         drug: "testosterone 10 mg gel pump",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
     },  
     {
         drug: "testosterone cypionate vial", 
         quantity: "6/84",
         diagnosis: "testicular hypofunction",
-        altDiagnosis: "gender identity disorder", 
     },   
+    {
+        drug: "Tirosint capsule",
+        quantity: "30/30",
+        diagnosis: "hypothyroidism",
+        formulary: false,     
+    }, 
     {
         drug: "tretinoin cream",
         quantity: "45/30",
