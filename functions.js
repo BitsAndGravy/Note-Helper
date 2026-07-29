@@ -204,6 +204,7 @@ const fullDiagnosisList = [
 
     'male hypogonadism',
     'melanin hyperpigmentation',
+    'mild intermittent asthma',
     'mild persistent asthma',
 
     'narcolepsy',

@@ -178,6 +178,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Crexont ER capsule",
+        quantity: "60/30",
+        diagnosis: "parkinsonism",
+        formulary: false, 
+    },  
+    {
         drug: "cromolyn oral concentrate",
         quantity: "270/30",
         diagnosis: "mastocystitis",
@@ -266,6 +272,11 @@ const drugDatabase = [ // for getQuantity()
         quantity: "10/30",
         diagnosis: "eosinophilic esophagitis", 
         formulary: false, 
+    },  
+    {
+        drug: "Eucrisa ointment",
+        quantity: "60/30",
+        diagnosis: "dermatitis", 
     },  
     {
         drug: "exemestane tablet",
@@ -528,6 +539,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Lyumjev KwikPen",
+        quantity: "15/30",
+        diagnosis: "T1DM",
+        altDiagnosis: "T2DM",  
+        formulary: false, 
+    },  
+    {
         drug: "metformin ER 1,000 mg osm-tab", 
         quantity: "60/30",
         diagnosis: "T2DM",
@@ -688,6 +706,7 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "drug-induced constipation",
         altDiagnosis: "opioid-induced constipation",
+        formulary: false,
     }, 
     {
         drug: "Restasis eye drops",
