@@ -94,6 +94,13 @@ window.onload = function() {
             preSaveFunctions();       
         }
     });
+
+    /* Error message animation listener */
+    const alertAnimation = document.getElementById('alert');
+
+    alertAnimation.addEventListener('animationend', () => {
+        alertAnimation.classList.remove('shake');
+    });
 };
 
 function createThemeOptions () {
@@ -114,7 +121,7 @@ function createThemeOptions () {
     };
 }
 
+// || Alert trigger, intended as temporary for testing with alert/error button
 function triggerError() {
-    document.getElementById('errorBar').classList.toggle('hideError');
-    document.getElementById('errorBar').classList.toggle('showError');
+    document.getElementById('alert').classList.add('shake');
 }

@@ -297,12 +297,14 @@ a:link {color: var(--heading-text);}
     --alert-background-color: #eeeeee;
 
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;
-    width: 100%;
+    margin: 20px;
     background-color: var(--alert-background-color);
+
 }
 
 .alert-icon {
@@ -318,4 +320,17 @@ a:link {color: var(--heading-text);}
 
 .alert-icon .material-symbols-outlined, .alert-text {
     color: var(--alert-foreground-color);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-10px); }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.5s 1;
 }

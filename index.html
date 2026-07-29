@@ -19,16 +19,8 @@
 </head>
 <body>
 <!--Input field-->
-    <div class="alert" style="display: none;">
-        <div class="alert-icon">
-            <span class="material-symbols-outlined">
-            error
-            </span>
-        </div>
-        <div class="alert-text">
-            Character count over limit of 2000!
-        </div>
-    </div>
+    
+
     <div class="container">
         <div class="heading">
             <H3>Note helper</H3>
@@ -370,13 +362,30 @@
                     </div>
 
                 </div>
+
+                
+
             </div>
+
+            <div class="justify-center">
+                <div class="alert" id="alert">
+                    <div class="alert-icon">
+                        <span class="material-symbols-outlined">
+                        error
+                        </span>
+                    </div>
+                    <div class="alert-text">
+                        Character count over limit of 2000!
+                    </div>
+                </div>
+            </div>
+            
 
             <div class="footing">
             <!--left-aligned options-->
                 <button type="button" onclick="saveButton()">Save</button>
                 <span id="textCopied" class="hideStart">Copied to clipboard</span>
-                <button type="button" onclick="triggerError()" style="display: none;">Error!!!</button>
+                <button type="button" onclick="triggerError()">Error!!!</button>
 
             <!--right-aligned options-->
                 <button type="button" onclick="resetForm()" style="float: right;">Reset</button>
