@@ -14,10 +14,21 @@
 
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="themeStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=error" />
 
 </head>
 <body>
 <!--Input field-->
+    <div class="alert" style="display: none;">
+        <div class="alert-icon">
+            <span class="material-symbols-outlined">
+            error
+            </span>
+        </div>
+        <div class="alert-text">
+            Character count over limit of 2000!
+        </div>
+    </div>
     <div class="container">
         <div class="heading">
             <H3>Note helper</H3>
@@ -360,12 +371,6 @@
 
                 </div>
             </div>
-
-            <div id="errorBar" class="error hideError" style="display: none;">
-                <div id="overCharacterLimitError">Cat ate the food</div>
-                <div id="ageBlankError">Dog wants a treat</div>
-            </div>
-
 
             <div class="footing">
             <!--left-aligned options-->
