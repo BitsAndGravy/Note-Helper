@@ -214,6 +214,7 @@ const fullDiagnosisList = [
     'oropharyngeal candidiasis',
     'OSA and obesity',
 
+    "Parkinson's disease",
     'post-inflammatory hyperpigmentation',
     'prediabetes',
     'psoriasis vulgaris',

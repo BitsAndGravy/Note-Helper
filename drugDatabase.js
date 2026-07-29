@@ -53,8 +53,10 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "albendazole tablet",
-        diagnosis: "migraine prophylaxis", 
+        drug: "Arazlo lotion",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris", 
+        formulary: false, 
     },  
     {
         drug: "armodafinil tablet",
@@ -429,6 +431,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Jatenzo capsule",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",
+        formulary: false,  
+    },  
+    {
+        drug: "Jentadueto tablet",
+        quantity: "30/30",
+        diagnosis: "T2DM",
         formulary: false,  
     },  
     {
@@ -902,6 +910,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "hepatitis B",
         altDiagnosis: "HIV", 
+    }, 
+    {
+        drug: "Venofer vial",
+        quantity: "",
+        diagnosis: "iron deficiency",
+        formulary: false, 
     }, 
     {
         drug: "Veozah tablet", 
