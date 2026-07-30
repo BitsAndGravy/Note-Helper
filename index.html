@@ -35,7 +35,7 @@
 
         <div>
             <div class="gradientColor" oninput="preSaveFunctions()">
-                <div class="inputDiv suggestContainer">   
+                <div class="inputDiv">   
                     <!-- For select options, see createThemeOptions() -->
                     <select
                         id="themeSelect" 
@@ -70,19 +70,20 @@
                                 <label for="appealInternalQuestion"></label>
                         </div>
 
-                        <label for="drug">01.</label>
-                        <input 
-                            type="text" 
-                            id="drug" 
-                            name="drug" 
-                            placeholder="drug name" 
-                            onchange="getQuantity()"
-                            oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
+                        <div class="suggestContainer">
+                            <label for="drug">01.</label>
+                            <input 
+                                type="text" 
+                                id="drug" 
+                                name="drug" 
+                                placeholder="drug name" 
+                                onchange="getQuantity()"
+                                oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
 
-                        <span id="drugSuggestion" class="drugSuggestionClass"></span>
+                            <span id="drugSuggestion" class="drugSuggestionClass"></span>
+                        </div>
                             
                         <span id="time" style="float: right;">0:00</span>
-                        <br>
                         
                         <label for="source">02.</label>
                         <select name="source" id="source">
@@ -110,24 +111,24 @@
                         <label for="isExpedited">Expedited</label>
                         <br>
 
-                        <label for="diagnosis">04.</label>
-                        <input 
-                            type="text" 
-                            id='diagnosis' 
-                            placeholder="diagnosis"
-                            oninput="predictWords(this.value, noDuplicatesCombinedDiagnosisList, 'diagnosis', 'diagnosisSuggestion')">
+                        <div class="suggestContainer">
+                            <label for="diagnosis">04.</label>
+                            <input 
+                                type="text" 
+                                id='diagnosis' 
+                                placeholder="diagnosis"
+                                oninput="predictWords(this.value, noDuplicatesCombinedDiagnosisList, 'diagnosis', 'diagnosisSuggestion')">
 
-                            <span id="diagnosisSuggestion" class="diagnosisSuggestionClass"></span>
+                                <span id="diagnosisSuggestion" class="drugSuggestionClass"></span>
+
+                            <button 
+                                type="button"
+                                id="alternativeDiagnosisSpan"
+                                class="altButton hideInput"
+                                onclick="changeDiagnosis()"
+                                tabindex="-1"></button>
+                        </div>
                         
-                        <button 
-                            type="button"
-                            id="alternativeDiagnosisSpan"
-                            class="altButton hideInput"
-                            onclick="changeDiagnosis()"
-                            tabindex="-1"></button>
-
-                        <br>
-
                         <label for="state">05.</label>
                         <select name="state" id="state" onchange="checkState();">
                             <!-- for list see stateClientList -->
@@ -355,6 +356,14 @@
                             </select>
                             <span id="showProperQuantity"></span></span>
                         </div>
+
+                        <label for="appealDenial">22.</label>
+                        <textarea
+                            id="appealDenial" 
+                            name="appealDenial" 
+                            class="bigTextarea"
+                            placeholder="denial language for appeal"></textarea>
+
                     </form>
 
                     <div class="stateRegAndCharacterCountBox">

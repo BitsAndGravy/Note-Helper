@@ -122,8 +122,8 @@ a:link {color: var(--heading-text);}
         font-size: 13px;
         color: var(--placeholder-text);
         position: absolute;
-        left: 45px;
-        top: 13px;
+        left: 35px;
+        top: 8px;
         pointer-events: none;
     }
 
@@ -131,7 +131,7 @@ a:link {color: var(--heading-text);}
         font-size: 13px;
         color: var(--placeholder-text);
         position: absolute;
-        left: 45px;
+        left: 48px;
         top: 102px;
         pointer-events: none;
     }
@@ -304,7 +304,6 @@ a:link {color: var(--heading-text);}
     border-radius: 5px;
     margin: 20px;
     background-color: var(--alert-background-color);
-
 }
 
 .alert-icon {
