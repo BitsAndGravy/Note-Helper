@@ -37,10 +37,10 @@ const checkboxBook = {
         isChecked: 'No relevant paid claims. ',
         notChecked:''
     },
-    type: {
+    /*type: { // Updating to use per function.
         isChecked: 'Reauthorization',
         notChecked:'Initial'
-    },
+    },*/
     urgent: {
         isChecked: 'Urgent ',
         notChecked:''
@@ -289,7 +289,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
-        getChecked();       // Used for input type="checkbox"
+        getChecked();       // Used for input type="checkbox", not case type.
+        getType();          // Used fot case type specifically
         getReject();        // Used to interpret the three checkboxes from 7-reject code    
         getOption();        // Used for input type="select", "text"
         getText();          // Used for textarea, could also be used for input type='text'
@@ -307,7 +308,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 "qset",
                 "records",
                 "snapshot", 
-                "type", 
                 "urgent", 
             ];
             
@@ -322,6 +322,22 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                         answer[item] = checkboxBook[item].notChecked;
                     }
                 }
+            }
+        }
+
+        function getType() {
+            let reauth = document.getElementById('reauthorization');
+            let reopen = document.getElementById('reopening');
+            let appeal = document.getElementById('appealType');
+
+            if (reauth.checked) {
+                answer.type = 'Reauthorization';
+            } else if (reopen.checked) {
+                answer.type = 'Reopening';
+            } else if (appeal.checked) {
+                answer.type = 'Appeal';
+            } else {
+                answer.type = 'Initial';
             }
         }
 
@@ -441,7 +457,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     answer.claims = '';
                 }
             }
-
 
             function checkSettings() {
                 let result = localStorage.getItem('appealInternal');
@@ -1171,6 +1186,26 @@ function reopeningChecked() {
         };
     }
 }
+
+// When appeal is checked, add text to previous authorizations box and conclusions box (only if they are empty).
+function appealTypeChecked() {
+    let check = document.getElementById('appeal');
+    let info = document.getElementById('information');
+    let drugName = document.getElementById('drug').value;
+    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+    let conc = document.getElementById('conclusion');
+
+    if (check.checked) {
+        if(info.value === '') {
+            info.value = drug + ' denied ';
+        };
+
+        if(conc.value == '') {
+            conc.value = 'Previously \n\nOn appeal, ';
+        };
+    }
+}
+
 
 // When New Member checked. Uncertain if I want this left as adding to textbox (serves as good reminder) vs adding to buildNote() (takes up less space, works more consistently with less coding)
 function addNewMember() {
