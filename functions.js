@@ -246,9 +246,15 @@ function saveButton() { // After clicking the Save button
 
 function checkForm() { // Used for the Save button. checks if age input is filled out. If so, proceed to process results and save.
     let requirement = document.getElementById("age");
-    if (requirement.value == '') {
-        alert("Please enter the member's age");
+    let char = document.getElementById('characterCount');
+    let alert = document.getElementById('alert');
+
+    if (requirement.value == '' || char.classList.contains('characterLimitRed')) {
+    //    alert("Please enter the member's age");
+        alert.classList.remove('hideElement');
+        alert.classList.add('shake');
     } else {
+        alert.classList.add('hideElement');
         preSaveFunctions();
         saveNote();
     }
@@ -574,6 +580,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
 
+    hideAlert();
     resetStateOptionSelected();
     preSaveFunctions();
     resetAlts(); // Hides alternative diagnosis box
@@ -585,6 +592,11 @@ function resetForm() { // After clicking the Reset button
     resetTimer();
 }
 
+    // Hides error message if requirements not met after clicking save button (i.e. age or character limit)
+    function hideAlert() {
+        document.getElementById('alert').classList.add('hideElement');
+    }
+    
     // Use state selected in settings, otherwise reset to FL as default.
     function resetStateOptionSelected() {
         let selectedState = localStorage.getItem('selectedState');
