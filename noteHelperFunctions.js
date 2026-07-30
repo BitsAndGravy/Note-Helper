@@ -120,8 +120,3 @@ function createThemeOptions () {
             destination.appendChild(option);
     };
 }
-
-// || Alert trigger, intended as temporary for testing with alert/error button
-function triggerError() {
-    document.getElementById('alert').classList.add('shake');
-}
