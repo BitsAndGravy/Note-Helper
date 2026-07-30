@@ -47,6 +47,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "alprazolam tablet",
+        quantity: "180/30",
+        diagnosis: "anxiety", 
+        quantityLimitCriteria: true, 
+    },  
+    {
         drug: "Anzupgo cream",
         quantity: "30/30",
         diagnosis: "atopic dermatitis", 
@@ -405,6 +411,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "iron sucrose vial",
+        quantity: "50/30",
+        diagnosis: "iron deficiency anemia", 
+    },  
+    {
         drug: "itraconazole capsule",
         quantity: "20/10",
         diagnosis: "aspergillosis",
@@ -684,6 +695,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "aspergillosis",
         altDiagnosis: "transplant", 
+        formulary: false,
+    },
+    {
+        drug: "ProAir RespiClick inhaler",
+        quantity: "1/30",
+        diagnosis: "asthma",
         formulary: false,
     },
     {

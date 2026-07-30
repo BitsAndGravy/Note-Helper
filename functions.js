@@ -176,8 +176,10 @@ const fullDiagnosisList = [
 
     'coccidioidomycosis',
     'colonoscopy',
+    'constipation',
 
     'dermatophytosis',
+    'diarrhea',
     'dysphagia',
 
     'enterobiasis',
@@ -596,7 +598,7 @@ function resetForm() { // After clicking the Reset button
     function hideAlert() {
         document.getElementById('alert').classList.add('hideElement');
     }
-    
+
     // Use state selected in settings, otherwise reset to FL as default.
     function resetStateOptionSelected() {
         let selectedState = localStorage.getItem('selectedState');
