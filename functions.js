@@ -1189,7 +1189,7 @@ function reopeningChecked() {
 
 // When appeal is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function appealTypeChecked() {
-    let check = document.getElementById('appeal');
+    let check = document.getElementById('appealType');
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
