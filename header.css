@@ -213,6 +213,15 @@ a:link {color: var(--heading-text);}
     justify-content: space-between;
 }
 
+.caseTypeInputBox {
+    display: flex;
+    align-items: center;
+}
+
+.align-center {
+    padding-right: 5px;
+}
+
 .characterCount {
     opacity: 0.5;
     font-size: 13px;

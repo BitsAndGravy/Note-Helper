@@ -4,6 +4,23 @@ window.onload = function() {
     checkState();
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
 
+    // Check setting for appeal type
+        let appealType = localStorage.getItem('showAppealType');
+        let appealTypeDiv = document.getElementById('appealTypeDiv');
+
+        if (appealType == false) {
+            localStorage.setItem(appealType, 'yes');
+        }
+
+        if (appealType == 'yes') {
+            appealTypeDiv.classList.add("showInput");
+        } else {
+            appealTypeDiv.classList.add("hideInput");
+        }
+
+    /* commenting out in favor of only allowing option for appealType checkbox. 
+    These options will be hidden until appealType is checked, no reason to have settings for them.
+
     // Check setting for INternal appeal
         let appealInternal = localStorage.getItem('appealInternal');
         let appealInternalDiv = document.getElementById('appealInternalDiv');
@@ -23,6 +40,7 @@ window.onload = function() {
         } else {
             appealExternalDiv.classList.add("hideInput");
         }
+            */
 
     // Check setting for always show quantity
         let showQuantity = localStorage.getItem('alwaysShowQuantity');

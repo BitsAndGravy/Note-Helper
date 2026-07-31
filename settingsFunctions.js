@@ -1,6 +1,7 @@
 const settingsList = [
-    'appealExternal',
-    'appealInternal', 
+    //'appealExternal',
+    //'appealInternal', 
+    'showAppealType',
     'showTimer', 
     'showTheme',
     'showPreview',

@@ -50,25 +50,7 @@
                     
 
                     <form id="form1">
-                        <div id="appealExternalDiv">
-                            <label for="appealExternalQuestion">A1.</label>
-                            <input
-                                type="checkbox"
-                                id="appealExternalQuestion"
-                                name="appealExternalQuestion"
-                                >
-                            <label for="appealExternalQuestion">Send to IRO</label>
-                        </div>
-
-                        <div id="appealInternalDiv">
-                            <label for="appealInternalQuestion">A2.</label>
-                            <input 
-                                type="text"
-                                id="appealInternalQuestion"
-                                name="appealInternalQuestion"
-                                placeholder="MD specialty">
-                                <label for="appealInternalQuestion"></label>
-                        </div>
+                        
 
                         <div class="suggestContainer">
                             <label for="drug">01.</label>
@@ -209,29 +191,36 @@
                             <br id="properQuantityBreak">
                         </div>
 
-                        <label for="type">10.</label> 
+                        <div class="caseTypeInputBox">
+                            <label for="type" class="align-center">10.</label> 
 
-                            <input 
-                                type="checkbox" 
-                                id="reauthorization" 
-                                name="type"
-                                onclick="reauthorizationChecked()">
-                                <label for="reauthorization">Reauthorizaiton </label>
-                            
-                            <input
-                                type="checkbox"
-                                id="reopening"
-                                name="type"
-                                onclick="reopeningChecked()">
-                                <label for="reopening">Reopening </label>
+                                <div id="reauthorizationTypeDiv" class="align-center">
+                                    <input 
+                                        type="checkbox" 
+                                        id="reauthorization" 
+                                        name="type"
+                                        onclick="reauthorizationChecked()">
+                                        <label for="reauthorization">Reauthorizaiton</label>
+                                </div>
+                                    
+                                <div id="reopeningTypeDiv" class="align-center">
+                                    <input
+                                        type="checkbox"
+                                        id="reopening"
+                                        name="type"
+                                        onclick="reopeningChecked()">
+                                        <label for="reopening">Reopening</label>
+                                </div>
 
-                            <input
-                                type="checkbox"
-                                id="appealType"
-                                name="type"
-                                onclick="appealTypeChecked()">
-                                <label for="appealType">Appeal</label>
-                        <br>
+                                <div id="appealTypeDiv" class="align-center">
+                                    <input
+                                        type="checkbox"
+                                        id="appealType"
+                                        name="type"
+                                        onclick="appealTypeChecked()">
+                                        <label for="appealType">Appeal</label>
+                                </div>
+                        </div>
 
                         <label for="information">11.</label>
                         <textarea 
@@ -239,7 +228,6 @@
                             name="information" 
                             class="bigTextarea"
                             placeholder="previous authorizations"></textarea>
-                        <br>
                     </form>
                 </div>
 
@@ -357,13 +345,26 @@
                             <span id="showProperQuantity"></span></span>
                         </div>
 
-                        <div id="appealDenialDiv" class="hideInput">
-                            <label for="appealDenial">22.</label> <!-- Hide until appeals checked -->
-                            <textarea
-                                id="appealDenial" 
-                                name="appealDenial" 
-                                class="bigTextarea"
-                                placeholder="denial language for appeal"></textarea>
+                        <div id="appealDenialInputsDiv" class="hideInput">
+                            <div id="appealExternalDiv">
+                                <label for="appealExternalQuestion">A1.</label>
+                                <input
+                                    type="checkbox"
+                                    id="appealExternalQuestion"
+                                    name="appealExternalQuestion"
+                                    >
+                                <label for="appealExternalQuestion">Send to IRO</label>
+                            </div>
+
+                            <div id="appealInternalDiv">
+                                <label for="appealInternalQuestion">A2.</label>
+                                <input 
+                                    type="text"
+                                    id="appealInternalQuestion"
+                                    name="appealInternalQuestion"
+                                    placeholder="MD specialty">
+                                    <label for="appealInternalQuestion"></label>
+                            </div>
                         </div>
 
                     </form>
@@ -379,7 +380,18 @@
                         
                     </div>
 
+                    <div id="appealDenialLanguageDiv" class="hideInput">
+                        <label for="appealDenial">22.</label> <!-- Hide until appeals checked -->
+                        <textarea
+                            id="appealDenial" 
+                            name="appealDenial" 
+                            class="bigTextarea"
+                            placeholder="denial language for appeal"></textarea>
+                    </div>
+
                 </div>
+
+
 
                 
 

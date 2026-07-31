@@ -1195,11 +1195,16 @@ function appealTypeChecked() {
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let conc = document.getElementById('conclusion');
-    let app = document.getElementById('appealDenialDiv');
+    let appinputs = document.getElementById('appealDenialInputsDiv');
+    let applanguage = document.getElementById('appealDenialLanguageDiv');
 
     if (check.checked) {
-        app.classList.remove('hideInput');
-        app.classList.add('showInput');
+        applanguage.classList.remove('hideInput');
+        applanguage.classList.add('showInput');
+
+        appinputs.classList.remove('hideInput');
+        appinputs.classList.add('showInput');
+
 
         if(info.value === '') {
             info.value = drug + ' denied ';
@@ -1209,8 +1214,11 @@ function appealTypeChecked() {
             conc.value = 'Previously \n\nOn appeal, ';
         };
     } else {
-        app.classList.remove('showInput');
-        app.classList.add('hideInput');
+        applanguage.classList.remove('showInput');
+        applanguage.classList.add('hideInput');
+
+        appinputs.classList.remove('showInput');
+        appinputs.classList.add('hideInput');
     }
 
 }
