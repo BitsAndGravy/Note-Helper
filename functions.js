@@ -690,6 +690,7 @@ function resetForm() { // After clicking the Reset button
                 comment.tabIndex = -1;
         }
         showProperQuantity();
+        appealTypeChecked();
     }
 
         // Shows if falseQL selected, default hidden.
@@ -1187,15 +1188,19 @@ function reopeningChecked() {
     }
 }
 
-// When appeal is checked, add text to previous authorizations box and conclusions box (only if they are empty).
+// When appealType is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function appealTypeChecked() {
     let check = document.getElementById('appealType');
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let conc = document.getElementById('conclusion');
+    let app = document.getElementById('appealDenialDiv');
 
     if (check.checked) {
+        app.classList.remove('hideInput');
+        app.classList.add('showInput');
+
         if(info.value === '') {
             info.value = drug + ' denied ';
         };
@@ -1203,7 +1208,11 @@ function appealTypeChecked() {
         if(conc.value == '') {
             conc.value = 'Previously \n\nOn appeal, ';
         };
+    } else {
+        app.classList.remove('showInput');
+        app.classList.add('hideInput');
     }
+
 }
 
 

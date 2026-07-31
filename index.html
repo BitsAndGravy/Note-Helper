@@ -340,7 +340,7 @@
                             placeholder="conclusion"></textarea>
                         <br>
 
-                        <div id="commentDiv" class="hideInput"> <!--Hide when falseQL not selected; start hidden-->
+                        <div id="commentDiv" class="hideInput"> <!--Hide until falseQL checked-->
                             <label 
                                 for="comment" 
                                 id="commentLabel" 
@@ -357,12 +357,14 @@
                             <span id="showProperQuantity"></span></span>
                         </div>
 
-                        <label for="appealDenial">22.</label>
-                        <textarea
-                            id="appealDenial" 
-                            name="appealDenial" 
-                            class="bigTextarea"
-                            placeholder="denial language for appeal"></textarea>
+                        <div id="appealDenialDiv" class="hideInput">
+                            <label for="appealDenial">22.</label> <!-- Hide until appeals checked -->
+                            <textarea
+                                id="appealDenial" 
+                                name="appealDenial" 
+                                class="bigTextarea"
+                                placeholder="denial language for appeal"></textarea>
+                        </div>
 
                     </form>
 
