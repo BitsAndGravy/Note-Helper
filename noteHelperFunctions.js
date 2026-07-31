@@ -127,7 +127,6 @@ function createThemeOptions () {
             let name = themeBook[theme].name;
             let title = themeBook[theme].title;
             let group = themeBook[theme].group;
-            //let style = themeBook[theme].style;
             let optGroup = themeBook[theme].optGroup;
 
             let option = document.createElement('option');

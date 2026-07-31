@@ -281,7 +281,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             let focus = document.activeElement;
             if(char.classList.contains('characterLimitRed')) {
                 focus.style.backgroundColor = 'red';
-                focus.style.color = 'black';
+                focus.style.color = 'white';
             } else {
                 focus.style.backgroundColor = '';
                 focus.style.color = '';
