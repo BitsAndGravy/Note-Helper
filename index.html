@@ -352,7 +352,7 @@
                                     type="checkbox"
                                     id="appealExternalQuestion"
                                     name="appealExternalQuestion"
-                                    >
+                                    onchange="iroChecked()">
                                 <label for="appealExternalQuestion">Send to IRO</label>
                             </div>
 
@@ -377,17 +377,30 @@
                         </div>
 
                         <span id="characterCount" class="characterLimitGreen">-/2000</span>
-                        
                     </div>
 
-                    <div id="appealDenialLanguageDiv" class="hideInput">
-                        <label for="appealDenial">22.</label> <!-- Hide until appeals checked -->
-                        <textarea
-                            id="appealDenial" 
-                            name="appealDenial" 
-                            class="bigTextarea"
-                            placeholder="denial language for appeal"></textarea>
-                    </div>
+                    <form id="form4"></form>
+                        <div class="secondaryColor">
+                            <div id="appealDenialLanguageDiv" class="hideInput">
+                                <label for="appealDenial">A3.</label> <!-- Hide until appeals checked -->
+                                <textarea
+                                    id="appealDenial" 
+                                    name="appealDenial" 
+                                    class="bigTextarea"
+                                    placeholder="denial language for appeal"></textarea>
+                            </div>
+
+                            <div id="iroNoteDiv" class="hideInput">
+                                <label for="iroNote">A4.</label> <!-- Hide until 'send to IRO' checked -->
+                                <textarea
+                                    id="iroNote" 
+                                    name="iroNote" 
+                                    class="bigTextarea"
+                                    placeholder="note for IRO">Type of Request: &#10;Board-Certified Specialty Requested: &#10;IRO Due Date:</textarea>
+
+                            </div>
+                        </div>
+                    </form>
 
                 </div>
 

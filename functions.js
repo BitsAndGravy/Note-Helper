@@ -1243,6 +1243,19 @@ function changeDiagnosis() {
     preSaveFunctions();
 }
 
+// When 'send to IRO' is checked:
+function iroChecked() {
+    let check = document.getElementById('appealExternalQuestion');
+    let div = document.getElementById('iroNoteDiv');
+    if (check.checked) {
+        div.classList.remove('showInput');
+        div.classList.add('showInput');
+    } else {
+        div.classList.add('showInput');
+        div.classList.remove('showInput');
+    }
+}
+
 // Triggers when properQuantity field is changed.
 // see showProperQuantity() defined above
 
