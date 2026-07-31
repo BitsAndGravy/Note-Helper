@@ -277,7 +277,7 @@ a:link {color: var(--heading-text);}
     }
 
     .showInput {
-        max-height: 500px;
+        max-height: none;
         opacity: 1;
         transition: opacity 1.5s, max-height 1.5s;
     }

@@ -1196,7 +1196,7 @@ function appealTypeChecked() {
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let conc = document.getElementById('conclusion');
     let appinputs = document.getElementById('appealDenialInputsDiv');
-    let applanguage = document.getElementById('appealDenialLanguageDiv');
+    let applanguage = document.getElementById('appealDenialAdditionalNotes');
 
     if (check.checked) {
         applanguage.classList.remove('hideInput');

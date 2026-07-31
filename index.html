@@ -19,8 +19,6 @@
 </head>
 <body>
 <!--Input field-->
-    
-
     <div class="container">
         <div class="heading">
             <H3>Note helper</H3>
@@ -47,11 +45,7 @@
                         <optgroup label="Silksong" id="silksong"></optgroup>
                     </select>
 
-                    
-
                     <form id="form1">
-                        
-
                         <div class="suggestContainer">
                             <label for="drug">01.</label>
                             <input 
@@ -78,19 +72,19 @@
                         <br>
 
                         <label for="urgent">03.</label> 
+
                         <input 
                             type="checkbox" 
                             id="isUrgent" 
-                            name="urgent" 
-                            >
-                        <label for="isUrgent">Urgent </label>
+                            name="urgent">
+                            <label for="isUrgent">Urgent </label>
 
                         <input 
                             type="checkbox"
                             id="isExpedited"
-                            name="expedited"
-                            >
-                        <label for="isExpedited">Expedited</label>
+                            name="expedited">
+                            <label for="isExpedited">Expedited</label>
+
                         <br>
 
                         <div class="suggestContainer">
@@ -121,12 +115,13 @@
                         <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
                         <div id="qsetDiv" style="display: none;"> 
                             <label for="qset">06.</label> 
-                            <input 
-                                type="checkbox" 
-                                id="approval" 
-                                name="qset"
-                                checked>
-                            <label for="approval">Q-set approval</label>
+
+                                <input 
+                                    type="checkbox" 
+                                    id="approval" 
+                                    name="qset"
+                                    checked>
+                                <label for="approval">Q-set approval</label>
                             <br>
                         </div>
 
@@ -223,11 +218,11 @@
                         </div>
 
                         <label for="information">11.</label>
-                        <textarea 
-                            id="information" 
-                            name="information" 
-                            class="bigTextarea"
-                            placeholder="previous authorizations"></textarea>
+                            <textarea 
+                                id="information" 
+                                name="information" 
+                                class="bigTextarea"
+                                placeholder="previous authorizations"></textarea>
                     </form>
                 </div>
 
@@ -342,7 +337,7 @@
                                 <option value="reviewed as #">reviewed as</option>
                                 <option value="please approve as #">please approve as</option>
                             </select>
-                            <span id="showProperQuantity"></span></span>
+                            <span id="showProperQuantity"></span>
                         </div>
 
                         <div id="appealDenialInputsDiv" class="hideInput">
@@ -378,36 +373,31 @@
 
                         <span id="characterCount" class="characterLimitGreen">-/2000</span>
                     </div>
-
-                    <form id="form4"></form>
-                        <div class="secondaryColor">
-                            <div id="appealDenialLanguageDiv" class="hideInput">
-                                <label for="appealDenial">A3.</label> <!-- Hide until appeals checked -->
-                                <textarea
-                                    id="appealDenial" 
-                                    name="appealDenial" 
-                                    class="bigTextarea"
-                                    placeholder="denial language for appeal"></textarea>
-                            </div>
-
-                            <div id="iroNoteDiv" class="hideInput">
-                                <label for="iroNote">A4.</label> <!-- Hide until 'send to IRO' checked -->
-                                <textarea
-                                    id="iroNote" 
-                                    name="iroNote" 
-                                    class="bigTextarea"
-                                    placeholder="note for IRO">Type of Request: &#10;Board-Certified Specialty Requested: &#10;IRO Due Date:</textarea>
-
-                            </div>
-                        </div>
-                    </form>
-
                 </div>
+            </div>
 
+            <div id="appealDenialAdditionalNotes" class="hideInput">
 
+                <div class="secondaryColor inputDiv" style="overflow-y: auto;">
+                    <div id="appealDenialLanguageDiv">
+                        <label for="appealDenial">A3.</label> <!-- Hide until appeals checked -->
+                        <textarea
+                            id="appealDenial" 
+                            name="appealDenial" 
+                            class="bigTextarea"
+                            placeholder="denial language for appeal"></textarea>
+                    </div>
 
-                
+                    <div id="iroNoteDiv" class="hideInput">
+                        <label for="iroNote">A4.</label> <!-- Hide until 'send to IRO' checked -->
+                        <textarea
+                            id="iroNote" 
+                            name="iroNote" 
+                            class="bigTextarea"
+                            placeholder="note for IRO">Type of Request: Board-Certified Specialty Requested: IRO Due Date:</textarea>
 
+                    </div>
+                </div>
             </div>
 
             <div class="hideElement" id="alert">
