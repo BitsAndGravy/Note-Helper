@@ -222,6 +222,10 @@ a:link {color: var(--heading-text);}
     padding-right: 5px;
 }
 
+.justify-split {
+    justify-content: space-between;
+}
+
 .characterCount {
     opacity: 0.5;
     font-size: 13px;

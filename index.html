@@ -34,42 +34,48 @@
         <div>
             <div class="gradientColor" oninput="preSaveFunctions()">
                 <div class="inputDiv">   
-                    <!-- For select options, see createThemeOptions() -->
-                    <select
-                        id="themeSelect" 
-                        onchange="changeTheme(this.value)" 
-                        style="float: right;">
-                        <optgroup label="Generic" id="generic"></optgroup>
-                        <optgroup label="Hollow Knight" id="hollow-knight"></optgroup>
-                        <optgroup label="Harry Potter" id="harry-potter"></optgroup>
-                        <optgroup label="Silksong" id="silksong"></optgroup>
-                    </select>
-
                     <form id="form1">
-                        <div class="suggestContainer">
-                            <label for="drug">01.</label>
-                            <input 
-                                type="text" 
-                                id="drug" 
-                                name="drug" 
-                                placeholder="drug name" 
-                                onchange="getQuantity()"
-                                oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
+                        <div class="caseTypeInputBox justify-split">
+                            <div class="suggestContainer">
+                                <label for="drug">01.</label>
+                                <input 
+                                    type="text" 
+                                    id="drug" 
+                                    name="drug" 
+                                    placeholder="drug name" 
+                                    onchange="getQuantity()"
+                                    oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
 
-                            <span id="drugSuggestion" class="drugSuggestionClass"></span>
+                                <span id="drugSuggestion" class="drugSuggestionClass"></span>
+                            </div>
+
+                            <div>
+                                <!-- For select options, see createThemeOptions() -->
+                                <select
+                                    id="themeSelect" 
+                                    onchange="changeTheme(this.value)">
+                                    <optgroup label="Generic" id="generic"></optgroup>
+                                    <optgroup label="Hollow Knight" id="hollow-knight"></optgroup>
+                                    <optgroup label="Harry Potter" id="harry-potter"></optgroup>
+                                    <optgroup label="Silksong" id="silksong"></optgroup>
+                                </select>
+                            </div>
                         </div>
-                            
-                        <span id="time" style="float: right;">0:00</span>
-                        
-                        <label for="source">02.</label>
-                        <select name="source" id="source">
-                            <option value="PAHub (fax)">Fax</option>
-                            <option value="PAHub (mail)">Mail</option>
-                            <option value="PAHub (phone)">Phone</option>
-                            <option value="ePA (web)" selected>Web</option>
-                            <option value="PAHub (other)">Other</option>
-                        </select>
-                        <br>
+                                
+                        <div class="caseTypeInputBox justify-split">
+                            <div>
+                                <label for="source">02.</label>
+                                <select name="source" id="source">
+                                    <option value="PAHub (fax)">Fax</option>
+                                    <option value="PAHub (mail)">Mail</option>
+                                    <option value="PAHub (phone)">Phone</option>
+                                    <option value="ePA (web)" selected>Web</option>
+                                    <option value="PAHub (other)">Other</option>
+                                </select>
+                            </div>
+
+                            <span id="time">0:00</span>
+                        </div>
 
                         <label for="urgent">03.</label> 
 
