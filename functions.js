@@ -1,7 +1,7 @@
 /* || Dictionaries and constants */
 const checkboxBook = {
-    appealExternal: {
-        isChecked: '-- SEND TO IRO --',
+    sendToIRO: {
+        isChecked: '-- SEND TO IRO --\n\n',
         notChecked: '',
     },
     
@@ -49,7 +49,7 @@ const checkboxBook = {
 
 const answer = {
     age: "[age]",
-    appealExternal: "[appealExternal]",
+    sendToIRO: "[sendToIRO]",
     appealInternal: "[appealInternal]", 
     chart: "[chart]", 
     claims: "[claims]", 
@@ -224,6 +224,7 @@ const fullDiagnosisList = [
 
     'radiculopathy',
 
+    'schizoaffective disorder',
     'seborrheic dermatitis',
     'shift work sleep disorder',
 
@@ -299,7 +300,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         function getChecked() { // Used for input type="checkbox"
             const checkboxList = [
-                "appealExternal",
+                "sendToIRO",
                 "chart", 
                 "expedited", 
                 "falseQL", 
@@ -438,7 +439,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let clinical = clinicalHeader + clinicalBody;
         let conclusion = conclusionHeader + conclusionBody + techNote;
 
-        let fullNote = appealInternalText + conspectus + history + clinical + conclusion;
+        let fullNote = answer.sendToIRO + appealInternalText + conspectus + history + clinical + conclusion;
 
         notePreviewText = fullNote;
     }
@@ -1245,7 +1246,7 @@ function changeDiagnosis() {
 
 // When 'send to IRO' is checked:
 function iroChecked() {
-    let check = document.getElementById('appealExternalQuestion');
+    let check = document.getElementById('sendToIRO');
     let div = document.getElementById('iroNoteDiv');
     if (check.checked) {
         div.classList.remove('showInput');
