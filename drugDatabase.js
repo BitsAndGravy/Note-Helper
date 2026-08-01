@@ -666,6 +666,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "endometriosis",
     },
     {
+        drug: "Osphena tablet", 
+        quantity: "30/30",
+        diagnosis: "menopausal and female climacteric states",
+    },
+    {
         drug: "Ozempic pen", 
         quantity: "3/28",
         diagnosis: "T2DM",

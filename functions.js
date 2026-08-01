@@ -268,7 +268,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         buildNote();     
         showNotePreview(); // Unique to this function
         characterCount();
-        characterLimitWarning(); // Unique to this function
+        //characterLimitWarning(); // Unclear if I want this funciton, as it's messy and hard to clean up, not worth the work. 
     }
 
         function showNotePreview() {
@@ -276,7 +276,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             notePreview.innerText = notePreviewText;
         }
 
-        function characterLimitWarning() {
+        function characterLimitWarning() { // Highlight current input box with red background.
             let char = document.getElementById('characterCount');
             let focus = document.activeElement;
             if(char.classList.contains('characterLimitRed')) {
