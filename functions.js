@@ -418,7 +418,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         let historyHeader = "\n\n" + "HISTORY " + "\n";
         let historyBody = 
-            "Member since " + answer.member + ". \n" + 
+            "Joined plan " + answer.member + ". \n" + 
             answer.information + snapNewLine +
             answer.snapshot + answer.medicalAuthorizations + claimsNewLine + answer.claims;
 
