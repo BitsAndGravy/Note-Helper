@@ -56,6 +56,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Anzupgo cream",
         quantity: "30/30",
         diagnosis: "atopic dermatitis", 
+        altDiagnosis: "chronic hand eczema",
         formulary: false, 
     },  
     {

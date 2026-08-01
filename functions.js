@@ -171,6 +171,7 @@ const fullDiagnosisList = [
     'aspergillosis', 
 
     'bacterial intestinal infection',
+    "Barrett's esophagus",
     'binge eating disorder',
     'blastomycosis', 
 
