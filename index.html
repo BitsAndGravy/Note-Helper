@@ -53,6 +53,7 @@
                                 <!-- For select options, see createThemeOptions() -->
                                 <select
                                     id="themeSelect" 
+                                    tabindex="-1"
                                     onchange="changeTheme(this.value)">
                                     <optgroup label="Generic" id="generic"></optgroup>
                                     <optgroup label="Hollow Knight" id="hollow-knight"></optgroup>
@@ -383,27 +384,32 @@
             </div>
 
             <div id="appealDenialAdditionalNotes" class="hideInput">
+                <form id="form4">    
+                    <div class="secondaryColor inputDiv" style="overflow-y: auto;">
+                        <div id="appealDenialLanguageDiv">
+                            <label for="appealDenial">A3</label> <!-- Hide until appeals checked -->
+                            <textarea
+                                id="appealDenial" 
+                                name="appealDenial" 
+                                class="bigTextarea"
+                                placeholder="denial language for appeal"></textarea>
+                        </div>
 
-                <div class="secondaryColor inputDiv" style="overflow-y: auto;">
-                    <div id="appealDenialLanguageDiv">
-                        <label for="appealDenial">A3</label> <!-- Hide until appeals checked -->
-                        <textarea
-                            id="appealDenial" 
-                            name="appealDenial" 
-                            class="bigTextarea"
-                            placeholder="denial language for appeal"></textarea>
+                        <div 
+                            id="iroNoteDiv" 
+                            class="hideInput">
+                            <label for="iroNote">A4</label> <!-- Hide until 'send to IRO' checked -->
+                            <textarea
+                                id="iroNote" 
+                                name="iroNote" 
+                                class="bigTextarea"
+                                oninput="iroCharacterCountCheck()"
+                                placeholder="note for IRO">Type of Request: &#13;Board-Certified Specialty Requested: &#13;IRO Due Date: &#13;&#13;</textarea>
+                            <br>
+                            <span id="iroCharacterCount" class="characterLimitGreen">-/1000</span>
+                        </div>
                     </div>
-
-                    <div id="iroNoteDiv" class="hideInput">
-                        <label for="iroNote">A4</label> <!-- Hide until 'send to IRO' checked -->
-                        <textarea
-                            id="iroNote" 
-                            name="iroNote" 
-                            class="bigTextarea"
-                            placeholder="note for IRO">Type of Request: Board-Certified Specialty Requested: IRO Due Date:</textarea>
-
-                    </div>
-                </div>
+                </form>
             </div>
 
             <div class="hideElement" id="alert">

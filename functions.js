@@ -575,7 +575,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let char = document.getElementById('characterCount');
 
         // Shows character count
-        char.innerText = notePreviewText.length + "/2000";
+        char.innerText = text.length + "/2000";
 
         // Styles based on count length.
         if(text.length < 1700) {
@@ -593,18 +593,45 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         }
     }
 
+// Character count for send to iro message
+function iroCharacterCountCheck() {
+    let text = document.getElementById('iroNote').value;
+    let charCount = document.getElementById('iroCharacterCount');
+
+    // Shows character count
+    charCount.innerText = text.length + "/1000";
+
+        if(text.length < 800) {
+            charCount.className = 'characterLimitGreen';
+
+        } else if (text.length < 900) {
+            charCount.className = 'characterLimitYellow';
+
+        } else if (text.length < 1001) {
+            charCount.className = 'characterLimitOrange';
+
+        // Opacity = 1 for best visibility
+        } else if (text.length >= 1001) {
+            charCount.className = 'characterLimitRed';
+        }
+}
+
+
 /* ||| Reset button */
 function resetForm() { // After clicking the Reset button        
     document.getElementById('form1').reset();
     document.getElementById('form2').reset();
     document.getElementById('form3').reset();
+    document.getElementById('form4').reset();
 
+
+    iroCharacterCountCheck(); // Resets character count for IRO note
     hideAlert();
     resetStateOptionSelected();
     preSaveFunctions();
     resetAlts(); // Hides alternative diagnosis box
     resetTextareaSize(); // Resets textarea if manually adjusted
-    hideExtras(); // Hides quantity (per settings), false QL, etc.
+    hideExtras(); // Hides quantity (per settings), false QL, iroNote etc.
     resetStateNote();
     animateText('resetForm');
     gotoFirstField();
@@ -673,6 +700,8 @@ function resetForm() { // After clicking the Reset button
         let quantityDiv = document.getElementById('properQuantityDiv');
         let comment = document.getElementById('comment');
         let commentDiv = document.getElementById('commentDiv');
+        let iro = document.getElementById('iroNote');
+        let iroDiv = document.getElementById('iroNoteDiv');
         
         if(showQuantitySettingChecked === 'no') {
             // Hide the quantity, falseQL, and comment input    
@@ -685,11 +714,15 @@ function resetForm() { // After clicking the Reset button
                 commentDiv.classList.add('hideInput');
                 commentDiv.classList.remove('showInput');
 
+                iroDiv.classList.add('hideInput');
+                iroDiv.classList.remove('showInput');
+
             // Skip when tabbing through
                 document.getElementById('quantity').tabIndex = -1;
                 document.getElementById('falseQL').tabIndex = -1;
                 quantity.tabIndex = -1;
                 comment.tabIndex = -1;
+                iro.tabIndex = -1;
         }
         showProperQuantity();
         appealTypeChecked();
@@ -1248,13 +1281,16 @@ function changeDiagnosis() {
 // When 'send to IRO' is checked:
 function iroChecked() {
     let check = document.getElementById('sendToIRO');
+    let iro = document.getElementById('iroNote');
     let div = document.getElementById('iroNoteDiv');
     if (check.checked) {
         div.classList.remove('showInput');
         div.classList.add('showInput');
+        iro.tabIndex = 0;
     } else {
         div.classList.add('showInput');
         div.classList.remove('showInput');
+        iro.tabIndex = -1
     }
 }
 
