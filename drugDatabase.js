@@ -798,6 +798,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Sucraid solution", 
+        quantity: "360/30",
+        diagnosis: "sucrase-isomaltase deficiency",
+        formulary: false,
+    }, 
+    {
         drug: "sucralfate oral suspension", 
         quantity: "300/30",
         diagnosis: "GERD",

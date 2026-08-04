@@ -216,6 +216,7 @@ const fullDiagnosisList = [
     'onychomycosis',
     'oropharyngeal candidiasis',
     'OSA and obesity',
+    'osteoarthritis',
 
     "Parkinson's disease",
     'post-inflammatory hyperpigmentation',
