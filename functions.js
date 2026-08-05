@@ -447,14 +447,31 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     }
 
         function checkModifiers() {
+            checkAppealIsChecked();
             checkClaimsHistory(); // If text not edited, change to blank.
-            checkSettings(); // Adds appropriate text for options selected
             addQL(); // If 'False QL' is checked, add a tech note at the bottom of the note.
             checkInfo(); // If field for previous authorizations is blank, replace it with this text.
             checkBoxes(); // Formats the note so there is one new line between each heading.
             checkQuantity(); // If hidden, make blank; if quantity field blank, do not add 'for #qty/days' to note.
         }
 
+            function checkAppealIsChecked() {
+                let app = document.getElementById('appealType');
+                let mdSpecialty = document.getElementById('appealInternalQuestion').value;
+                answer.appealInternal = mdSpecialty;
+                
+                if (!app.checked) {
+                    answer.sendToIRO = '';
+                    answer.appealInternal = '';
+                }
+
+                if(answer.appealInternal == '') {
+                    appealInternalText = '';
+                } else {
+                    appealInternalText = "-- TO BE REVIEWED BY " + answer.appealInternal + " SPECIALTY --" + "\n\n";
+                }
+            }
+        
             function checkClaimsHistory() {
                 if(answer.claims === 'Paid claims in Snapshot for ') {
                     answer.claims = '';
@@ -462,18 +479,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
 
             function checkSettings() {
-                let result = localStorage.getItem('appealInternal');
-                if(result === 'yes') {
-                    let mdSpecialty = document.getElementById('appealInternalQuestion').value;
-                    if(mdSpecialty == "") {
-                        appealInternalText = '';
-                    } else {
-                        answer.appealInternal = mdSpecialty;
-                        appealInternalText = "-- TO BE REVIEWED BY " + answer.appealInternal + " SPECIALTY --" + "\n\n";
-                    }
-                } else {
-                    appealInternalText = "";
-                }
+                
             }
 
             function addQL() { // If 'False QL' is checked, add a tech note at the bottom of the note.
