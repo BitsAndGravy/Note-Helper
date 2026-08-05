@@ -384,43 +384,45 @@
                     </div>
                 </div>
 
-                <div id="appealDenialAdditionalNotes" class="hideInput inputDiv secondaryColor">
+                <div id="appealDenialAdditionalNotes" class="hideInput secondaryColor">
                     <form id="form4">    
-                        <div class="container">
-                            <div class="heading">
-                                <H3>Appeal denial language</H3>
-                            </div>                
-                        
-                            <div class="primaryColor inputDiv">
-                                <div id="appealDenialLanguageDiv">
-                                    <label for="appealDenial">A3</label> <!-- Hide until appeals checked -->
-                                    <textarea
-                                        id="appealDenial" 
-                                        name="appealDenial" 
-                                        style="width: 100%;"
-                                        placeholder="denial language for appeal"></textarea>
-                                    <button type="button" onclick="simpleCopy('appealDenial')">Copy</button>
-                                </div>
+                        <div class="inputDiv">
+                            <div class="container">
+                                <div class="heading">
+                                    <H3>Appeal denial language</H3>
+                                </div>                
+                            
+                                <div class="primaryColor inputDiv">
+                                    <div id="appealDenialLanguageDiv">
+                                        <label for="appealDenial">A3</label> <!-- Hide until appeals checked -->
+                                        <textarea
+                                            id="appealDenial" 
+                                            name="appealDenial" 
+                                            style="width: 100%;"
+                                            placeholder="denial language for appeal"></textarea>
+                                        <button type="button" onclick="simpleCopy('appealDenial')">Copy</button>
+                                    </div>
 
-                                <div 
-                                    id="iroNoteDiv" 
-                                    class="hideInput">
-                                    <label for="iroNote">A4</label> <!-- Hide until 'send to IRO' checked -->
-                                    <textarea
-                                        id="iroNote" 
-                                        name="iroNote" 
-                                        style="width: 100%;"
-                                        oninput="iroCharacterCountCheck()"
-                                        placeholder="note for IRO">Type of Request: &#13;Board-Certified Specialty Requested: &#13;IRO Due Date: &#13;&#13;</textarea>
-                                    <br>
-                                    <span id="iroCharacterCount" class="characterLimitGreen">-/1000</span>
-                                    <button type="button" onclick="simpleCopy('iroNote')">Copy</button>
+                                    <div 
+                                        id="iroNoteDiv" 
+                                        class="hideInput">
+                                        <label for="iroNote">A4</label> <!-- Hide until 'send to IRO' checked -->
+                                        <textarea
+                                            id="iroNote" 
+                                            name="iroNote" 
+                                            style="width: 100%;"
+                                            oninput="iroCharacterCountCheck()"
+                                            placeholder="note for IRO">Type of Request: &#13;Board-Certified Specialty Requested: &#13;IRO Due Date: &#13;&#13;</textarea>
+                                        <br>
+                                        <span id="iroCharacterCount" class="characterLimitGreen">-/1000</span>
+                                        <button type="button" onclick="simpleCopy('iroNote')">Copy</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="footing">
-                                <span id="appealDenialCopied" class="hideStart">Appeal denial language copied to clipboard</span>
-                                <span id="iroNoteCopied" class="hideStart">IRO note copied to clipboard</span>
+                                <div class="footing">
+                                    <span id="appealDenialCopied" class="hideStart">Appeal denial language copied to clipboard</span>
+                                    <span id="iroNoteCopied" class="hideStart">IRO note copied to clipboard</span>
 
+                                </div>
                             </div>
                         </div>
                     </form>
