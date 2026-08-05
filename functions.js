@@ -1295,8 +1295,14 @@ function iroChecked() {
     }
 }
 
-// Triggers when properQuantity field is changed.
-// see showProperQuantity() defined above
+// When 'Copy' clicked for appeal and iro notes
+function simpleCopy(element) {
+    let textToCopy = document.getElementById(element).value;
+    navigator.clipboard.writeText(textToCopy);
+
+    let spanName = element + 'Copied';
+    animateText(spanName);
+}
 
 
 

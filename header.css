@@ -189,6 +189,14 @@ a:link {color: var(--heading-text);}
     color: var(--heading-text);
 }
 
+/*
+.input-spacer {
+    min-height: 29px;
+    display: flex;
+    align-items: center;
+}
+*/
+
 .footing {
     background-color: var(--footer-background);
     padding: 8px 10px 8px 10px;
