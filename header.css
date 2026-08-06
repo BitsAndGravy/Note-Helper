@@ -171,12 +171,17 @@ a:link {color: var(--heading-text);}
 
 /* Div paddings */
 .inputDiv {
-    padding: 5px 20px 10px 10px; /* Top, right, bottom, left */
+    padding: 5px 10px 10px 10px; /* Top, right, bottom, left */
 }
 
 /* Adjust size of the large textarea inputs, i.e. authorizations, claims, clinicals, conclusion. */
 .bigTextarea {
     width: 450px;
+}
+
+.appealTextarea {
+    width: 408px;
+    margin-bottom: 5px;
 }
 
 .heading {
@@ -238,6 +243,10 @@ a:link {color: var(--heading-text);}
     opacity: 0.5;
     font-size: 13px;
     padding: 5px;
+}
+
+.appealCopyButtons {
+    margin-left: 26px;
 }
 
 .error {
