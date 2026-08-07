@@ -1286,7 +1286,7 @@ function appealTypeChecked() {
         };
 
         if(conc.value == '') {
-            conc.value = 'Previously \n\nOn appeal, ';
+            conc.value = 'Previously \n\nNo P2P or reopening. \n\nOn appeal, ';
         };
     } else {
         applanguage.classList.remove('showInput');
