@@ -631,7 +631,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form3').reset();
     document.getElementById('form4').reset();
 
-
+    resetThemeSelectSelection(); // Sets themeSelect to current theme (resets when form clears)
     iroCharacterCountCheck(); // Resets character count for IRO note
     hideAlert();
     resetStateOptionSelected();
@@ -644,6 +644,13 @@ function resetForm() { // After clicking the Reset button
     gotoFirstField();
     resetTimer();
 }
+
+    // Sets themeSelect to current theme (resets when form clears)
+    function resetThemeSelectSelection() {
+        let theme = localStorage.getItem('theme');
+        let themeSelectElement = document.getElementById('themeSelect');
+        themeSelectElement.value = theme;
+    }
 
     // Hides error message if requirements not met after clicking save button (i.e. age or character limit)
     function hideAlert() {
