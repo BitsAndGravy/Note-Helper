@@ -790,11 +790,28 @@ function editButton(noteID) { // Used with Edit button to show the textarea and 
     }
 
 /* ||| Save button */
+/* version 1.0
 function savedNoteButton (noteID) { // Used with the 'Save' button on each of the saved notes.
     showThis(noteID, 'Text'); // Defined above
     resaveNote(noteID);
     hideThis(noteID, 'Edit'); // Defined above
     copyTextDuplicate(noteID);
+}
+    */
+
+/* ||| Note save button */
+function saveThis(noteID) {
+    if(detectNoteOrEdit === 'Note') {
+        copyTextDuplicate(noteID);
+
+    } else if(detectNoteOrEdit === 'Edit') {
+        showThis(noteID, 'Text');
+        resaveNote(noteID);
+        hideThis(noteID, 'Edit');
+        copyTextDuplicate(noteID);
+        showButtons(noteID);
+        detectNoteOrEdit = 'Note';
+    }
 }
 
     function resaveNote(note) { // Copies textarea contents into the saved note.
@@ -812,19 +829,7 @@ function savedNoteButton (noteID) { // Used with the 'Save' button on each of th
     }
 
 
-/* ||| Note 2 save button */
-function saveThis(noteID) {
-    if(detectNoteOrEdit === 'Note') {
-        copyTextDuplicate(noteID);
 
-    } else if(detectNoteOrEdit === 'Edit') {
-        showThis(noteID, 'Text');
-        resaveNote(noteID);
-        hideThis(noteID, 'Edit');
-        copyTextDuplicate(noteID);
-        showButtons(noteID);
-    }
-}
 
     function showButtons(noteID) {
         let edit = noteID + 'EditButton';
@@ -853,6 +858,9 @@ function cancelButton (noteID) {
 
 
 
+
+
+
 /* || Animations */
 /* ||| Animate text when button clicked */
 function animateText(spanToAnimate) { // Text briefly displays message in the <span>. Activates after clicking a button.
@@ -868,6 +876,8 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
         }, 2000);
     });
 }
+
+
 
 
 
