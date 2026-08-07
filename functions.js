@@ -636,7 +636,7 @@ function resetForm() { // After clicking the Reset button
     hideAlert();
     resetStateOptionSelected();
     preSaveFunctions();
-    resetAlts(); // Hides alternative diagnosis box
+    resetAlts(); // Hides alternative diagnosis box, clear suggestions
     resetTextareaSize(); // Resets textarea if manually adjusted
     hideExtras(); // Hides quantity (per settings), false QL, iroNote etc.
     resetStateNote();
@@ -677,10 +677,13 @@ function resetForm() { // After clicking the Reset button
 
     // Hide alternative fields i.e. for now just diagnosis.
     function resetAlts() {
-        let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
-        altDiagSpan.classList.add('hideInput');
-        altDiagSpan.classList.remove('showInput');
-        altDiagSpan.tabIndex = -1;
+        let altDiagButton = document.getElementById('alternativeDiagnosisButton');
+        altDiagButton.classList.add('hideInput');
+        altDiagButton.classList.remove('showInput');
+        altDiagButton.tabIndex = -1;
+
+        let diagSuggest = document.getElementById('diagnosisSuggestion');
+        diagSuggest.innerText = '';
     }
 
     // If textarea was manually adjusted, return it to default size.
@@ -919,8 +922,8 @@ function getQuantity() {
             
             // Suggest alternative diagnosis
             let altDiag = drugDatabase[i].altDiagnosis;
-            let altDiagSpan = document.getElementById('alternativeDiagnosisSpan');
-            let diagnosisButton = document.getElementById('alternativeDiagnosisSpan');
+            let altDiagSpan = document.getElementById('alternativeDiagnosisButton');
+            let diagnosisButton = document.getElementById('alternativeDiagnosisButton');
             
                 // If there is an alt diagnosis, show button with diagnosis.
                 if(drugDatabase[i].altDiagnosis) {
@@ -1290,7 +1293,7 @@ function addNewMember() {
 // When alternative diagnosis is clicked:
 function changeDiagnosis() {
     let input = document.getElementById('diagnosis');
-    let diagnosis = document.getElementById('alternativeDiagnosisSpan');
+    let diagnosis = document.getElementById('alternativeDiagnosisButton');
     input.value = diagnosis.innerText;
     preSaveFunctions();
 }
