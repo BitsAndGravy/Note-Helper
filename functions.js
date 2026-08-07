@@ -890,6 +890,7 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
 // Triggers when drug name changed. Checks if the drug name is in the database, returns diagnosis and qty/days.
 function getQuantity() { 
     startTimer();
+    checkAutoselectAppeals();
 
     // Erase color if previously a specialty drug.
     document.getElementById('drug').style.backgroundColor = ''; 
@@ -978,6 +979,16 @@ function getQuantity() {
     }
     preSaveFunctions();
 }
+
+    function checkAutoselectAppeals() {
+        let auto = localStorage.getItem('autoselectAppeal');
+        let app = document.getElementById('appealType');
+
+        if (auto === 'yes') {
+            app.checked = true;
+            appealTypeChecked();
+        }
+    }
 
 // Triggered when state is changed.
 function checkState() {
