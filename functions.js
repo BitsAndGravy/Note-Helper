@@ -175,6 +175,7 @@ const fullDiagnosisList = [
     'binge eating disorder',
     'blastomycosis', 
 
+    'chronic rhinitis',
     'coccidioidomycosis',
     'colonoscopy',
     'constipation',
@@ -225,6 +226,7 @@ const fullDiagnosisList = [
     'pulmonary embolism',
 
     'radiculopathy',
+    'rhinitis',
 
     'schizoaffective disorder',
     'seborrheic dermatitis',

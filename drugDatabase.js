@@ -1054,6 +1054,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "infestation by Demodex mites",
     }, 
     {
+        drug: "Xhance nasal spray",
+        quantity: "16/30",
+        diagnosis: "allergic rhinitis",
+        formulary: false,
+    }, 
+    {
         drug: "Xifaxan tablet",
         quantity: "42/14",
         diagnosis: "irritable bowel syndrome-diarrhea",
