@@ -594,6 +594,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "dry eye syndrome",
     }, 
     {
+        drug: "Monoferric vial",
+        quantity: "",
+        diagnosis: "iron deficiency anemia",
+        formulary: false,
+    }, 
+    {
         drug: "Mounjaro pen",
         quantity: "2/28",
         diagnosis: "T2DM",
@@ -1014,6 +1020,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Vyvanse capsule",
         quantity: "30/30",
         diagnosis: "ADHD",
+        formulary: false,
+    },  
+    {
+        drug: "Vyzulta eye drops",
+        quantity: "2.5/30",
+        diagnosis: "open-angle glaucoma",
         formulary: false,
     },  
     {
