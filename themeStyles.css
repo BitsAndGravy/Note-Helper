@@ -77,7 +77,7 @@
     --input-border-focus: var(--header-background);
 }
 
-[data-theme='nightmare-grim'] {
+[data-theme='nightmare-grimm'] {
     /* Main features */
     --main-background: #110509;
     --header-background: #640f2b;

@@ -129,9 +129,9 @@ const themeBook = {
         group: 'Hollow Knight',
         optGroup: 'hollow-knight'
     }, 
-    nightmareGrim: {
-        name: 'nightmare-grim',
-        title: 'Nightmare Grim',
+    nightmareGrimm: {
+        name: 'nightmare-grimm',
+        title: 'Nightmare Grimm',
         style: 'dark',
         group: 'Hollow Knight',
         optGroup: 'hollow-knight',
