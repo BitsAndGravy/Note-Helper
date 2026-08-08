@@ -5,17 +5,20 @@ window.onload = function() {
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
 
     // Check setting for appeal type
-        let appealType = localStorage.getItem('showAppealType');
-        let appealTypeDiv = document.getElementById('appealTypeDiv');
+        let app = document.getElementById('appealType');
+        let appSetting = localStorage.getItem('showAppealType');
+        let appDiv = document.getElementById('appealTypeDiv');
 
-        if (appealType == false) {
-            localStorage.setItem(appealType, 'yes');
+        if (appSetting == false) {
+            localStorage.setItem(appSetting, 'yes');
         }
 
-        if (appealType == 'yes') {
-            appealTypeDiv.classList.add("showInput");
+        if (appSetting == 'yes') {
+            appDiv.classList.add("showInput");
+            app.tabIndex = 0;
         } else {
-            appealTypeDiv.classList.add("hideInput");
+            appDiv.classList.add("hideInput");
+            app.tabIndex = -1;
         }
 
     /* commenting out in favor of only allowing option for appealType checkbox. 
