@@ -22,6 +22,22 @@ window.onload = function() {
     }
 
     createStateSelectOptions();
+
+    let showApp = document.getElementById('showAppealType');
+    let autoApp = document.getElementById('autoselectAppeal')
+    showApp.addEventListener('change', (event) => {
+        // If showAppeal is checked, enable ability to check Appeal Autoselect
+        if (event.target.checked) {
+            autoApp.disabled = false;
+
+        // If showAppeal is NOT checked, disable ability to check Appeal Autoselect and uncheck it, adjust settings.
+        } else {
+            autoApp.checked = false;
+            autoApp.disabled = true;
+            localStorage.setItem('autoselectAppeal', 'no');
+        }
+        });
+
 };
 
 function changeSettings(element) {
@@ -37,3 +53,4 @@ function changeSettings(element) {
 function updateSelectedState(update) {
     localStorage.setItem('selectedState', update);
 }
+
