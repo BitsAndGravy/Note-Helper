@@ -77,6 +77,40 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='nightmare-grim'] {
+    /* Main features */
+    --main-background: #110509;
+    --header-background: #640f2b;
+    --footer-background: var(--header-background);
+    --body-primary-color: #250815;
+    --body-secondary-color: #7b1231;
+    --body-border-color: #eb5c68;
+    --body-gradient: #250815, #791330;
+    
+    /* Text */
+    --heading-text: #c1a0ad;
+    --body-text: #cccccc;
+    --input-text: var(--body-text);
+    --placeholder-text: #cbc7c0A6;
+    --hyperlink-static: var(--input-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #f17291;
+    --button-hover: #df2c49;
+    --button-active: #e43c6a;
+    --button-text: var(--main-background);
+
+    /* Input */
+    --input-background: #1105099d;
+    --input-background-focus: #110509d7;
+    --input-accent-color: var(--button-background);
+    --input-border: #5d5d5d;
+    --input-border-focus: var(--header-background);
+}
+
 [data-theme='dark'] {
     /* Main features */
     --main-background: black;

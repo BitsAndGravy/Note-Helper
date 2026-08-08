@@ -129,7 +129,13 @@ const themeBook = {
         group: 'Hollow Knight',
         optGroup: 'hollow-knight'
     }, 
-    
+    nightmareGrim: {
+        name: 'nightmare-grim',
+        title: 'Nightmare Grim',
+        style: 'dark',
+        group: 'Hollow Knight',
+        optGroup: 'hollow-knight',
+    },
     queensGardens: {
         name: 'queens-gardens', 
         title: "Queen's Gardens", 
