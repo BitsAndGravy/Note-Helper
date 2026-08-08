@@ -88,10 +88,11 @@
     --body-gradient: #250815, #791330;
     
     /* Text */
-    --heading-text: #c1a0ad;
-    --body-text: #cccccc;
+    --heading-text: #e1ced6;
+    --body-text: #dfdfdf;
+    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
-    --placeholder-text: #cbc7c0A6;
+    --placeholder-text: #dfdfdfc7;
     --hyperlink-static: var(--input-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -108,7 +109,7 @@
     --input-background-focus: #110509d7;
     --input-accent-color: var(--button-background);
     --input-border: #5d5d5d;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #eb5c68d6;
 }
 
 [data-theme='dark'] {
