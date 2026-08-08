@@ -895,6 +895,12 @@ const drugDatabase = [ // for getQuantity()
         quantityLimitCriteria: true,     
     }, 
     {
+        drug: "Trintellix tablet",
+        quantity: "30/30",
+        diagnosis: "major depressive disorder",
+        formulary: false,     
+    }, 
+    {
         drug: "Trulance tablet", 
         quantity: "30/30", 
         diagnosis: "IBS-C", 
