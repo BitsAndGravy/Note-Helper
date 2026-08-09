@@ -910,6 +910,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Trulance tablet", 
         quantity: "30/30", 
         diagnosis: "IBS-C", 
+        altDiagnosis: 'chronic idiopathic constipation',
         formulary: false, 
     }, 
     {
@@ -1081,7 +1082,14 @@ const drugDatabase = [ // for getQuantity()
         drug: "Xifaxan tablet",
         quantity: "42/14",
         diagnosis: "irritable bowel syndrome-diarrhea",
-        altDiagnosis: "SIBO"
+        altDiagnosis: "SIBO",
+    }, 
+    {
+        drug: "Xphozah tablet",
+        quantity: "60/30",
+        diagnosis: "hyperphosphatemia",
+        altDiagnosis: "end-stage renal disease",
+        formulary: false,
     }, 
     {
         drug: "Xyosted inj",

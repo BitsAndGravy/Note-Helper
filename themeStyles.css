@@ -77,41 +77,6 @@
     --input-border-focus: var(--header-background);
 }
 
-[data-theme='nightmare-grimm'] {
-    /* Main features */
-    --main-background: #110509;
-    --header-background: #640f2b;
-    --footer-background: var(--header-background);
-    --body-primary-color: #250815;
-    --body-secondary-color: #7b1231;
-    --body-border-color: #eb5c68;
-    --body-gradient: #250815, #791330;
-    
-    /* Text */
-    --heading-text: #e1ced6;
-    --body-text: #dfdfdf;
-    --body-secondary-text: var(--body-text);
-    --input-text: var(--body-text);
-    --placeholder-text: #dfdfdfc7;
-    --hyperlink-static: var(--input-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #f17291;
-    --button-hover: #df2c49;
-    --button-active: #e43c6a;
-    --button-text: var(--main-background);
-
-    /* Input */
-    --input-background: #1105099d;
-    --input-background-focus: #110509d7;
-    --input-accent-color: var(--button-background);
-    --input-border: #5d5d5d;
-    --input-border-focus: #eb5c68d6;
-}
-
 [data-theme='dark'] {
     /* Main features */
     --main-background: black;
@@ -682,6 +647,41 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='nightmare-grimm'] {
+    /* Main features */
+    --main-background: #110509;
+    --header-background: #640f2b;
+    --footer-background: var(--header-background);
+    --body-primary-color: #250815;
+    --body-secondary-color: #7b1231;
+    --body-border-color: #eb5c68;
+    --body-gradient: #250815, #791330;
+    
+    /* Text */
+    --heading-text: #e1ced6;
+    --body-text: #dfdfdf;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #dfdfdfc7;
+    --hyperlink-static: var(--input-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #f17291;
+    --button-hover: #df2c49;
+    --button-active: #e43c6a;
+    --button-text: var(--main-background);
+
+    /* Input */
+    --input-background: #1105099d;
+    --input-background-focus: #110509d7;
+    --input-accent-color: var(--button-background);
+    --input-border: #5d5d5d;
+    --input-border-focus: #eb5c68d6;
+}
+
 [data-theme='queens-gardens'] {
     /* Main features */
     --main-background: #112837;
@@ -974,40 +974,39 @@
 
 
 [data-theme='hufflepuff'] {
-    /* Main features */
-    --main-background: #362e28;
-    --header-background: #efb935;
+    /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
+    --main-background: #c09950;
+    --header-background: #362e28;
     --footer-background: var(--header-background);
     --body-primary-color: #ffd260;
-    --body-secondary-color: var(--main-background);
+    --body-secondary-color: #efb935;
     --body-border-color: var(--header-background);
     --body-gradient: var(--body-primary-color);
-
     
     /* Text */
-    --heading-text: black;
-    --body-text: var(--heading-text);
-    --body-secondary-text: var(--input-background-focus);
-    --input-text: var(--heading-text);
+    --heading-text: white;
+    --body-text: black;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --placeholder-text: #000000ac;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: var(--main-background);
-    --button-hover: #7d6b5c;
-    --button-active: aqua;
+    --button-background: #7d6b5c;
+    --button-hover: #362e28;
+    --button-active: black;
     --button-text: white;
 
     /* Input */
-    --input-background: white;
-    --input-background-focus: #ede3da;
+    --input-background: #ffe8af;
+    --input-background-focus: #fff3d6;
     --input-accent-color: black;
     --input-border: black;
-    --input-border-focus: var(--main-background);
+    --input-border-focus: var(--header-background);
 }
 
 
