@@ -713,33 +713,33 @@ function resetForm() { // After clicking the Reset button
 
     // Hide features that are hidden by default or by settings.
     function hideExtras() {
-        let showQuantity = document.getElementById('quantityDiv');
-        let showQuantitySettingChecked = localStorage.getItem('alwaysShowQuantity');
-        let quantity = document.getElementById('properQuantity');
-        let quantityDiv = document.getElementById('properQuantityDiv');
+        let quantityDiv = document.getElementById('quantityDiv');
+        let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
+        let properQuantity = document.getElementById('properQuantity');
+        let properQuantityDiv = document.getElementById('properQuantityDiv');
         let comment = document.getElementById('comment');
         let commentDiv = document.getElementById('commentDiv');
         let iro = document.getElementById('iroNote');
         let iroDiv = document.getElementById('iroNoteDiv');
         
-        if(showQuantitySettingChecked === 'no') {
+        if(alwaysShowQuantity === 'no') {
             // Hide the quantity, falseQL, and comment input    
-                showQuantity.classList.add('hideInput');
-                showQuantity.classList.remove('showInput');
+                quantityDiv.classList.add('hideContent');
+                quantityDiv.classList.remove('showContent');
 
-                quantityDiv.classList.add('hideInput');
-                quantityDiv.classList.remove('showInput');
+                properQuantityDiv.classList.add('hideContent');
+                properQuantityDiv.classList.remove('showContent');
 
-                commentDiv.classList.add('hideInput');
-                commentDiv.classList.remove('showInput');
+                commentDiv.classList.add('hideContent');
+                commentDiv.classList.remove('showContent');
 
-                iroDiv.classList.add('hideInput');
-                iroDiv.classList.remove('showInput');
+                iroDiv.classList.add('hideContent');
+                iroDiv.classList.remove('showContent');
 
             // Skip when tabbing through
                 document.getElementById('quantity').tabIndex = -1;
                 document.getElementById('falseQL').tabIndex = -1;
-                quantity.tabIndex = -1;
+                properQuantity.tabIndex = -1;
                 comment.tabIndex = -1;
                 iro.tabIndex = -1;
         }
@@ -972,8 +972,15 @@ function getQuantity() {
             // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
             function checkAlwaysShowQuantitySetting() {
                 if(alwaysShowQuantity == 'no') {
+                    const quantityDiv = document.getElementById('quantityDiv');
+                    quantityDiv.classList.add('showContent');
+                    quantityDiv.classList.remove('hideContent');
+                    
+                    
+                    /*
                     document.getElementById('quantityDiv').classList.add('showInput');
                     document.getElementById('quantityDiv').classList.remove('hideInput');
+                    */
                     
                     // Input index was -1 (skip), now as 0 let computer handle (should act normal).
                     document.getElementById('quantity').tabIndex = 0; 
@@ -1161,27 +1168,27 @@ function clearTextarea(
 // Triggers when 'falseQL' is checked. Shows inputs for proper quantity and comment.
 function showQL() {
     let check = document.getElementById('falseQL');
-    let quantity = document.getElementById('properQuantity');
-    let quantityDiv = document.getElementById('properQuantityDiv');
+    let qt = document.getElementById('properQuantity');
+    let qtDiv = document.getElementById('properQuantityDiv');
     let comment = document.getElementById('comment');
     let commentDiv = document.getElementById('commentDiv');
 
     if (check.checked) {
-        quantityDiv.classList.add('showInput');
-        quantityDiv.classList.remove('hideInput');
-        quantity.tabIndex = 0;
+        qtDiv.classList.add('showContent');
+        qtDiv.classList.remove('hideContent');
+        qt.tabIndex = 0;
 
-        commentDiv.classList.add('showInput');
-        commentDiv.classList.remove('hideInput');
+        commentDiv.classList.add('showContent');
+        commentDiv.classList.remove('hideContent');
         comment.tabIndex = 0;
     } 
     else {
-        quantityDiv.classList.add('hideInput');
-        quantityDiv.classList.remove('showInput');
-        quantity.tabIndex = -1;
+        qtDiv.classList.add('hideContent');
+        qtDiv.classList.remove('showContent');
+        qt.tabIndex = -1;
 
-        commentDiv.classList.add('hideInput');
-        commentDiv.classList.remove('showInput');
+        commentDiv.classList.add('hideContent');
+        commentDiv.classList.remove('showContent');
         comment.tabIndex = -1;
     }
 }
@@ -1195,10 +1202,11 @@ function showQuantity() {
         let nonFormulary = document.getElementById('nonFormulary');
         let quantity = document.getElementById('quantityDiv');
 
-        if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) { //If 70 and/or 76 is checked:
+        // If 70 and/or 76 is checked:
+        if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) { 
             // Add class to make it visible, remove class that hides it
-            quantity.classList.add('showInput');
-            quantity.classList.remove('hideInput');
+            quantity.classList.add('showContent');
+            quantity.classList.remove('hideContent');
 
             // Adjust tabIndex so you can tab to the input
             document.getElementById('quantity').tabIndex = 0;
@@ -1209,8 +1217,8 @@ function showQuantity() {
             }
         } 
         else { // If neither 70 nor 76 are selected:
-            quantity.classList.add('hideInput');
-            quantity.classList.remove('showInput');
+            quantity.classList.add('hideContent');
+            quantity.classList.remove('showContent');
 
             // Skip the input when tabbing because it's hidden now
             document.getElementById('quantity').tabIndex = -1;
@@ -1274,11 +1282,11 @@ function appealTypeChecked() {
     let applanguage = document.getElementById('appealDenialAdditionalNotes');
 
     if (check.checked) {
-        applanguage.classList.remove('hideInput');
-        applanguage.classList.add('showInput');
+        applanguage.classList.remove('hideContent');
+        applanguage.classList.add('showContent');
 
-        appinputs.classList.remove('hideInput');
-        appinputs.classList.add('showInput');
+        appinputs.classList.remove('hideContent');
+        appinputs.classList.add('showContent');
 
 
         if(info.value === '') {
@@ -1289,11 +1297,11 @@ function appealTypeChecked() {
             conc.value = 'Previously \n\nNo P2P or reopening. \n\nOn appeal, ';
         };
     } else {
-        applanguage.classList.remove('showInput');
-        applanguage.classList.add('hideInput');
+        applanguage.classList.remove('showContent');
+        applanguage.classList.add('hideContent');
 
-        appinputs.classList.remove('showInput');
-        appinputs.classList.add('hideInput');
+        appinputs.classList.remove('showContent');
+        appinputs.classList.add('hideContent');
     }
 
 }
@@ -1324,12 +1332,12 @@ function iroChecked() {
     let iro = document.getElementById('iroNote');
     let div = document.getElementById('iroNoteDiv');
     if (check.checked) {
-        div.classList.remove('showInput');
-        div.classList.add('showInput');
+        div.classList.remove('hideContent');
+        div.classList.add('showContent');
         iro.tabIndex = 0;
     } else {
-        div.classList.add('showInput');
-        div.classList.remove('showInput');
+        div.classList.add('hideContent');
+        div.classList.remove('showContent');
         iro.tabIndex = -1
     }
 }

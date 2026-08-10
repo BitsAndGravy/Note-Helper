@@ -298,10 +298,38 @@ a:link {color: var(--heading-text);}
     }
 
     .showInput {
-        max-height: none;
+        max-height: 200px;
         opacity: 1;
         transition: opacity 1.5s, max-height 1.5s;
     }
+
+    .hideContent {
+        display: block;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition-property: height;
+        transition: 0.5s;
+        transition-behavior: allow-discrete;
+    }
+
+    /* fallbak for not supported browsers */
+    .showContent {
+        height: auto; 
+        opacity: 1;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+    /* for modern browsers */
+    @supports (height: calc-size(auto, size)) {
+    .showContent {
+        height: calc-size(auto, size);
+    }
+    }
+
+
+
 
     .showTimer {
         opacity: 0.5;

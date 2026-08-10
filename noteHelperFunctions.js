@@ -21,41 +21,19 @@ window.onload = function() {
             app.tabIndex = -1;
         }
 
-    /* commenting out in favor of only allowing option for appealType checkbox. 
-    These options will be hidden until appealType is checked, no reason to have settings for them.
-
-    // Check setting for INternal appeal
-        let appealInternal = localStorage.getItem('appealInternal');
-        let appealInternalDiv = document.getElementById('appealInternalDiv');
-
-        if (appealInternal == 'yes') {
-            appealInternalDiv.classList.add("showInput");
-        } else {
-            appealInternalDiv.classList.add("hideInput");
-        }
-
-    // Check setting for EXternal appeal
-        let appealExternal = localStorage.getItem('appealExternal');
-        let appealExternalDiv = document.getElementById('appealExternalDiv');
-
-        if (appealExternal == 'yes') {
-            appealExternalDiv.classList.add("showInput");
-        } else {
-            appealExternalDiv.classList.add("hideInput");
-        }
-            */
-
+        
     // Check setting for always show quantity
         let showQuantity = localStorage.getItem('alwaysShowQuantity');
         let showQuantityDiv = document.getElementById('quantityDiv');
 
         if (showQuantity == 'yes') {
-            showQuantityDiv.classList.add("showInput");
+            showQuantityDiv.classList.add("showContent");
         } else {
-            showQuantityDiv.classList.add("hideInput");
+            showQuantityDiv.classList.add("hideContent");
             document.getElementById('quantity').tabIndex = -1;
             document.getElementById('falseQL').tabIndex = -1;
         }
+            
 
     // Chech setting for show theme
         let showTheme = localStorage.getItem('showTheme');
