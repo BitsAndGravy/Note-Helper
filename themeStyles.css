@@ -948,7 +948,7 @@
     
     /* Text */
     --heading-text: black;
-    --body-text: white;
+    --body-text: #fff2d0;
     --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
@@ -959,15 +959,15 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #dead19;
-    --button-hover: #cfa21b;
-    --button-active: #ba9524;
-    --button-text: black;
+    --button-background: #3d1415;
+    --button-hover: #7a0002;
+    --button-active: #8c0002;
+    --button-text: white;
 
     /* Input */
     --input-background: #0000002d;
     --input-background-focus: #0000005d;
-    --input-accent-color: #ffc72d;
+    --input-accent-color: #ffd52d;
     --input-border: #740001;
     --input-border-focus: var(--input-accent-color);
 }
