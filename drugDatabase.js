@@ -710,6 +710,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "Prevymis tablet",
+        quantity: "28/28",
+        diagnosis: "CMV prevention",
+        altDiagnosis: "transplant status", 
+        formulary: false,
+    },
+    {
         drug: "ProAir RespiClick inhaler",
         quantity: "1/30",
         diagnosis: "asthma",
