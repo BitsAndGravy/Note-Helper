@@ -243,6 +243,38 @@ const fullDiagnosisList = [
     'vitiligo',
 ]
 
+const mdSpecialtyList = [
+    'anesthesia',
+    'behavioral health',
+    'cardiology',
+    'critical care',
+    'emergency medicine',
+    'ENT',
+    'family medicine',
+    'GI',
+    'hematology',
+    'hospice/palliative',
+    'ICU',
+    'infectious diseases',
+    'internal medicine',
+    'nephrology',
+    'neurology',
+    'OB/GYN',
+    'oncology',
+    'ophthalmology',
+    'ortho',
+    'pain',
+    'pediatrics',
+    'pharmacy',
+    'post-acute',
+    'pulmonology',
+    'rheumatology',
+    'sleep medicine',
+    'surgery',
+    'urology',
+    'wound care',
+]
+
 var notePreviewText = '';
 
 /* || Buttons */

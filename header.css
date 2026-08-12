@@ -118,7 +118,7 @@ a:link {color: var(--heading-text);}
         position: relative;
     }
 
-    .drugSuggestionClass {
+    .suggestion {
         font-size: 13px;
         color: var(--placeholder-text);
         position: absolute;
@@ -126,7 +126,7 @@ a:link {color: var(--heading-text);}
         top: 8px;
         pointer-events: none;
     }
-
+/*
     .diagnosisSuggestionClass {
         font-size: 13px;
         color: var(--placeholder-text);
@@ -135,6 +135,7 @@ a:link {color: var(--heading-text);}
         top: 102px;
         pointer-events: none;
     }
+        */
 
 /* Character count styles */
     .characterLimitGreen {

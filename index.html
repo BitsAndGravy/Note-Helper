@@ -50,7 +50,7 @@
                                         onchange="getQuantity()"
                                         oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
 
-                                    <span id="drugSuggestion" class="drugSuggestionClass"></span>
+                                    <span id="drugSuggestion" class="suggestion"></span>
                                 </div>
 
                                 <div>
@@ -106,7 +106,7 @@
                                     placeholder="diagnosis"
                                     oninput="predictWords(this.value, noDuplicatesCombinedDiagnosisList, 'diagnosis', 'diagnosisSuggestion')">
 
-                                    <span id="diagnosisSuggestion" class="drugSuggestionClass"></span>
+                                    <span id="diagnosisSuggestion" class="suggestion"></span>
 
                                 <button 
                                     type="button"
@@ -362,14 +362,15 @@
                                     <label for="sendToIRO">Send to IRO</label>
                                 </div>
 
-                                <div id="appealInternalDiv">
+                                <div id="appealInternalDiv suggestContainer">
                                     <label for="appealInternalQuestion">A2</label>
                                     <input 
                                         type="text"
                                         id="appealInternalQuestion"
                                         name="appealInternalQuestion"
                                         placeholder="MD specialty">
-                                        <label for="appealInternalQuestion"></label>
+
+                                    <span id="mdSpecialtySuggestion" class="suggestion"></span>
                                 </div>
                             </div>
 
