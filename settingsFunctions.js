@@ -1,6 +1,7 @@
 const settingsList = [
     'autoselectAppeal',
     'showAppealType',
+    'requireAge',
     'showTimer', 
     'showTheme',
     'showPreview',
@@ -24,7 +25,7 @@ window.onload = function() {
     createStateSelectOptions();
 
     let showApp = document.getElementById('showAppealType');
-    let autoApp = document.getElementById('autoselectAppeal')
+    let autoApp = document.getElementById('autoselectAppeal');
     showApp.addEventListener('change', (event) => {
         // If showAppeal is checked, enable ability to check Appeal Autoselect
         if (event.target.checked) {

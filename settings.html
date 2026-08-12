@@ -55,6 +55,15 @@
                         
                         <input
                             type="checkbox"
+                            id="requireAge"
+                            name="requireAge"
+                            onclick="changeSettings(this.id)">
+                        <label for="requireAge">Require age. </label>
+                        <span> - If age is blank when clicking save, an error will show and prevent saving.</span>
+                        <br>
+
+                        <input
+                            type="checkbox"
                             id="showTimer"
                             name="showTimer"
                             onclick="changeSettings(this.id)">

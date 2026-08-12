@@ -209,7 +209,7 @@ a:link {color: var(--heading-text);}
     border-radius: 0px 0px 18px 18px;
 }
 
-.container {/* Used to create a border around Note Helper and Saved Notes */
+.container {/* Used to create a border around Note Helper, Preview, and Saved Notes */
     border: 2px solid var(--body-border-color);
     border-radius: 20px;
     margin: 10px;

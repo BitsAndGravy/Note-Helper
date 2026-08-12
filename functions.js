@@ -17,10 +17,12 @@ const checkboxBook = {
         isChecked: 'Not a true QL request; ', 
         notChecked:''
     },
+    /* Replacing simple binary response with option for male/female/blank, i.e. no automatic default.
     gender: {
         isChecked: 'Female', 
         notChecked:'Male'
     },
+    */
     medicalAuthorizations: {
         isChecked: 'No relevant medical authorizations.',
         notChecked: '',
@@ -202,7 +204,7 @@ const fullDiagnosisList = [
     'hypersomnia',
     'hypertension',
     'hyperuricemia',
-    
+
     'hypoactive sexual desire disorder',
     'hypoglycemia',
 
@@ -286,12 +288,31 @@ function saveButton() { // After clicking the Save button
 }
 
 function checkForm() { // Used for the Save button. checks if age input is filled out. If so, proceed to process results and save.
-    let requirement = document.getElementById("age");
+    let requireAge = localStorage.getItem('requireAge');
+    let ageRequirement = document.getElementById('age');
     let char = document.getElementById('characterCount');
     let alert = document.getElementById('alert');
+    let alertText = document.getElementById('alert-text');
+    let ageAlertText = '';
+    let characterAlertText = '';
 
-    if (requirement.value == '' || char.classList.contains('characterLimitRed')) {
-    //    alert("Please enter the member's age");
+    if (requireAge == 'yes') {
+        if (ageRequirement.value == '') {
+            ageAlertText = 'Age field is blank! ';
+
+        } else {
+            ageAlertText = '';
+        }
+    }
+
+    if (char.classList.contains('characterLimitRed')) {
+        characterAlertText = 'Over character limit of 2,000! ';
+    } else {
+        characterAlertText = '';
+    }
+
+    if ((ageAlertText !== '') || (characterAlertText !== '')) {
+        alertText.innerText = ageAlertText + characterAlertText;
         alert.classList.remove('hideElement');
         alert.classList.add('shake');
     } else {
@@ -329,6 +350,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     function processResults() { // takes all of the inputs and places them into the finished note.
         getChecked();       // Used for input type="checkbox", not case type.
+        getGender();        // Used to get male, female, blank.
         getType();          // Used fot case type specifically
         getReject();        // Used to interpret the three checkboxes from 7-reject code    
         getOption();        // Used for input type="select", "text"
@@ -342,7 +364,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 "chart", 
                 "expedited", 
                 "falseQL", 
-                "gender", 
+                //"gender", now using getGender()
                 "medicalAuthorizations",
                 "qset",
                 "records",
@@ -363,6 +385,28 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 }
             }
         }
+
+        function getGender() {
+            let male = document.getElementById('male');
+            let female = document.getElementById('female');
+
+            if (male.checked) {
+                answer.gender = 'Male';
+            } else if (female.checked) {
+                answer.gender = 'Female';
+            } else {
+                answer.gender = '';
+            }
+        }
+
+            // Triggers when gender selected. Ensures only one option selected.
+            function genderControl(checkbox) {
+                var checkboxes = document.getElementsByName(checkbox.name);
+                checkboxes.forEach((item) => {
+                    if (item !== checkbox) item.checked = false
+                });
+            }
+
 
         function getType() {
             let reauth = document.getElementById('reauthorization');
@@ -448,11 +492,11 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         
         checkModifiers();
 
-        let conspectusHeeader = "SUMMARY " + "\n";
+        let conspectusHeader = "SUMMARY " + "\n";
         let conspectusBody = 
             answer.urgent + answer.expedited + answer.state + " " + answer.source + ". " + 
-            answer.gender + " age " + answer.age + ". " +
-            answer.type + " for " + answer.drug + quantityText + answer.quantity + " for " + answer.diagnosis + ". " + answer.reject + ". " // + "Provider response led to " + answer.qset + ". "
+            answer.gender + ageText +
+            answer.type + " for " + answer.drug + quantityText + answer.quantity + " for " + answer.diagnosis + ". " + answer.reject + ". "; // + "Provider response led to " + answer.qset + ". "
 
 
         let historyHeader = "\n\n" + "HISTORY " + "\n";
@@ -472,7 +516,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let conclusionBody = answer.conclusion;
         
 
-        let conspectus = conspectusHeeader + conspectusBody;
+        let conspectus = conspectusHeader + conspectusBody;
         let history = historyHeader + historyBody;
         let clinical = clinicalHeader + clinicalBody;
         let conclusion = conclusionHeader + conclusionBody + techNote;
@@ -483,6 +527,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     }
 
         function checkModifiers() {
+            checkAge();
             checkAppealIsChecked();
             checkClaimsHistory(); // If text not edited, change to blank.
             addQL(); // If 'False QL' is checked, add a tech note at the bottom of the note.
@@ -491,6 +536,28 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             checkQuantity(); // If hidden, make blank; if quantity field blank, do not add 'for #qty/days' to note.
         }
 
+            function checkAge() {
+                if (answer.age == '') {
+                    if (answer.gender == '') { 
+                        // Age blank, gender blank
+                        ageText = '';
+                    } else {
+                        // Age blank, gender filled
+                        ageText = '. ';
+                    }
+
+                } else {
+                    if (answer.gender == '') { 
+                        // Age filled, gender blank
+                        ageText = 'Age ' + answer.age + '. ';
+                    
+                    } else { 
+                        // Age filled, gender filled
+                        ageText = ' age ' + answer.age + '. ';
+                    }
+                }
+            }
+        
             function checkAppealIsChecked() {
                 let app = document.getElementById('appealType');
                 let mdSpecialty = document.getElementById('appealInternalQuestion').value;
@@ -1182,6 +1249,7 @@ function checkState() {
             } 
         }
     }
+
 
 // Triggers when either 'No drug claims' or 'Records not sent' are checked.
 function clearTextarea(

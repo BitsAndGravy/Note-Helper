@@ -240,11 +240,19 @@
                     <div class="secondaryColor inputDiv">
                         <form id="form2">
                             <label for="gender">12.</label> 
-                            <input 
-                                type="checkbox" 
-                                id="female" 
-                                name="gender">
-                            <label for="female">Female</label>
+                                <input 
+                                    type="checkbox" 
+                                    id="female" 
+                                    name="gender"
+                                    onclick="genderControl(this)">
+                                <label for="female">Female</label>
+
+                                <input 
+                                    type="checkbox" 
+                                    id="male" 
+                                    name="gender"
+                                    onclick="genderControl(this)">
+                                <label for="male">Male</label>
                             <br>
 
                             <label for="age">13.</label>
@@ -452,7 +460,7 @@
                         error
                         </span>
                     </div>
-                    <div class="alert-text">
+                    <div class="alert-text" id="alert-text">
                         Age field is blank or character count over 2,000!
                     </div>
                 </div>
@@ -480,12 +488,12 @@
             </div>
 
             <div class="primaryColor inputDiv">
-                <div id="notePreview">Start note to see preview.<br><br></div>
+                <div id="notePreview">Start note to see preview.<br><br><br><br><br></div>
             </div>
             <div class="footing"></div>
         </div>
     </div>
-<br>
+    <br>
 
 
 
