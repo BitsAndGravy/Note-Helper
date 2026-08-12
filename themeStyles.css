@@ -7,37 +7,37 @@
 :root, [data-theme='light'] {
     /* Main features */
     --main-background: white;
-    --header-background: #81beb6;
+    --header-background: #e3e8ef;
     --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
-    --body-secondary-color: #cae2df;
-    --body-border-color: #1c1839;
+    --body-secondary-color: #f6f6f6;
+    --body-border-color: #525257;
     --body-gradient: var(--main-background);
     
     /* Text */
-    --heading-text: #050410;
+    --heading-text: black;
     --body-text: var(--heading-text);
     --body-secondary-text: var(--heading-text);
     --animated-text: var(--heading-text);
-    --input-text: #120f24;
-    --placeholder-text: #120f248d;
+    --input-text: var(--heading-text);
+    --placeholder-text: #000000a7;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #fff7f0;
-    --button-hover: #ffe5d4;
-    --button-active: #ffd1ab;
+    --button-background: white;
+    --button-hover: #e6e6e6;
+    --button-active: #d2d2d2;
     --button-text: black;
 
     /* Input */
     --input-background:white;
-    --input-background-focus: #fff7f0a9;
-    --input-accent-color: #ca6a1c;
+    --input-background-focus: white;
+    --input-accent-color: #324ef0;
     --input-border: var(--body-border-color);
-    --input-border-focus: #4d2400;
+    --input-border-focus: var(--input-accent-color);
 }
 
 /* || Generic themes */

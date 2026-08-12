@@ -201,6 +201,8 @@ const fullDiagnosisList = [
     'hyperglyceridemia',
     'hypersomnia',
     'hypertension',
+    'hyperuricemia',
+    
     'hypoactive sexual desire disorder',
     'hypoglycemia',
 

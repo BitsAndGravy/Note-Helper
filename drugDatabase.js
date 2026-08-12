@@ -244,6 +244,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "T1DM", 
     },   
     {
+        drug: "difluprednate eye drops",
+        quantity: "5/30",
+        diagnosis: "dry eye syndrome", 
+    },   
+    {
         drug: "dulaglutide pen",
         quantity: "2/28",
         diagnosis: "T2DM", 
