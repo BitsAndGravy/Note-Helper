@@ -1110,6 +1110,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Xywav oral solution",
+        quantity: "540/30",
+        diagnosis: "narcolepsy",
+        formulary: false, 
+    }, 
+    {
         drug: "Ycanth solution",
         quantity: "2/21",
         diagnosis: "molluscum contagiosum",

@@ -198,6 +198,7 @@ const fullDiagnosisList = [
     'gastritis',
     'gender identity disorder',
 
+    'homorrhoids',
     'hepatic encephalopathy',
     'histoplasmosis',
     'hyperglyceridemia',
@@ -209,6 +210,7 @@ const fullDiagnosisList = [
     'hypoglycemia',
 
     'idiopathic hypersomnia',
+    'irritable bowel disease',
 
     'male hypogonadism',
     'melanin hyperpigmentation',
@@ -216,6 +218,7 @@ const fullDiagnosisList = [
     'mild persistent asthma',
 
     'narcolepsy',
+    'necrotizing fasciitis',
 
     'obstructive sleep apnea',
     'onychomycosis',
@@ -224,6 +227,7 @@ const fullDiagnosisList = [
     'osteoarthritis',
 
     "Parkinson's disease",
+    'psychophysiologic insomnia',
     'post-inflammatory hyperpigmentation',
     'prediabetes',
     'psoriasis vulgaris',
