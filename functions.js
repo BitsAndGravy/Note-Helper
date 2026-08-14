@@ -230,6 +230,7 @@ const fullDiagnosisList = [
     "Parkinson's disease",
     'psychophysiologic insomnia',
     'post-inflammatory hyperpigmentation',
+    'postmenopausal atrophic vaginitis',
     'prediabetes',
     'psoriasis vulgaris',
     'pulmonary embolism',
@@ -1397,11 +1398,11 @@ function appealTypeChecked() {
 
 
         if(info.value === '') {
-            info.value = drug + ' denied ';
+            info.value = drug + ' denied \n\nNo P2P or reopening. ';
         };
 
         if(conc.value == '') {
-            conc.value = 'Previously \n\nNo P2P or reopening. \n\nOn appeal, ';
+            conc.value = 'On appeal, ';
         };
     } else {
         applanguage.classList.remove('showContent');

@@ -128,7 +128,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Caplyta capsule",
         quantity: "270/30",
         diagnosis: "bipolar disorder", 
-        altDiagnosis: "schizophrenia",
+        altDiagnosis: "major depressive disorder",
     },  
     {
         drug: "calcipotriene ointment",
