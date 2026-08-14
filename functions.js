@@ -226,6 +226,7 @@ const fullDiagnosisList = [
     'OSA and obesity',
     'osteoarthritis',
 
+    'paranoid schizophrenia',
     "Parkinson's disease",
     'psychophysiologic insomnia',
     'post-inflammatory hyperpigmentation',

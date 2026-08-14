@@ -168,6 +168,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Cobenfy capsule",
+        quantity: "60/30",
+        diagnosis: "schizophrenia",
+    },  
+    {
         drug: "Combipatch patch",
         quantity: "8/28",
         diagnosis: "menopausal and female climacteric states",
@@ -208,6 +213,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Dapsone 7.5% gel",
         quantity: "90/90",
         diagnosis: "acne vulgaris", 
+    },  
+    {
+        drug: "Dayvigo tablet",
+        quantity: "30/30",
+        diagnosis: "insomnia",
+        formulary: false, 
     },  
     {
         drug: "Dexcom G6 sensor",
