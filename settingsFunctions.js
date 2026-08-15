@@ -9,19 +9,20 @@ const settingsList = [
     'alwaysShowQuantity', 
 ]
 
+settingDefault = {
+    alwaysShowQuantity: 'yes',
+    autoselectAppeal: 'no',
+    prefillQuantity: 'no',
+    requireAge: 'no',  
+    showAppealType: 'yes',
+    showPreview: 'no',
+    showTimer: 'yes',
+    showTheme: 'yes',
+}
+
 window.onload = function() {
-    for(p = 0; p < settingsList.length; p++) {
-        let setting = settingsList[p];
-        let check = localStorage.getItem(setting);
-        let checkBox = document.getElementById(setting);
-
-        if (check == 'yes') {
-            checkBox.checked = true;
-        } else {
-            checkBox.checked = false;
-        }
-    }
-
+    setDefaults();
+    loadSettings();
     createStateSelectOptions();
 
     let showApp = document.getElementById('showAppealType');
@@ -37,9 +38,32 @@ window.onload = function() {
             autoApp.disabled = true;
             localStorage.setItem('autoselectAppeal', 'no');
         }
-        });
+    });
 
 };
+
+function setDefaults() {
+    for (setting in settingDefault) {
+        let item = localStorage.getItem(settingDefault[setting]);
+        if (item == '') {
+            localStorage.setItem(setting, settingDefault[setting]);
+        }
+    }
+}
+
+function loadSettings() {
+    for(p = 0; p < settingsList.length; p++) {
+        let setting = settingsList[p];
+        let check = localStorage.getItem(setting);
+        let checkBox = document.getElementById(setting);
+
+        if (check == 'yes') {
+            checkBox.checked = true;
+        } else {
+            checkBox.checked = false;
+        }
+    }
+}
 
 function changeSettings(element) {
     let check = document.getElementById(element);
