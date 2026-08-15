@@ -1473,6 +1473,17 @@ function changeTheme(theme) {
 }
 
 /* || Settings */
+const settingDefault = {
+    alwaysShowQuantity: 'yes',
+    autoselectAppeal: 'no',
+    prefillQuantity: 'no',
+    requireAge: 'no',  
+    showAppealType: 'yes',
+    showPreview: 'no',
+    showTimer: 'yes',
+    showTheme: 'yes',
+}
+
 const savedTheme = localStorage.getItem('theme');
 document.getElementsByTagName("html")[0].setAttribute("data-theme", savedTheme); // Add previously saved theme
 

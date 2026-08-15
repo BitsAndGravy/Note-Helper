@@ -9,20 +9,10 @@ const settingsList = [
     'alwaysShowQuantity', 
 ]
 
-settingDefault = {
-    alwaysShowQuantity: 'yes',
-    autoselectAppeal: 'no',
-    prefillQuantity: 'no',
-    requireAge: 'no',  
-    showAppealType: 'yes',
-    showPreview: 'no',
-    showTimer: 'yes',
-    showTheme: 'yes',
-}
-
 window.onload = function() {
     setDefaults();
     loadSettings();
+    disableCheckboxes();
     createStateSelectOptions();
 
     let showApp = document.getElementById('showAppealType');
@@ -53,6 +43,19 @@ function loadSettings() {
         } else {
             checkBox.checked = false;
         }
+    }
+}
+
+function disableCheckboxes() {
+    let showApp = document.getElementById('showAppealType');
+    let autoApp = document.getElementById('autoselectAppeal');
+    if (showApp.checked) {
+        // If checked, leave it not disabled
+        autoApp.disabled = false;
+
+        // If NOT checked, disable ability to check Appeal Autoselect and uncheck it, adjust settings.
+    } else {
+        autoApp.disabled = true;
     }
 }
 
