@@ -1472,9 +1472,18 @@ function changeTheme(theme) {
     localStorage.setItem('theme', theme); // Save theme
 }
 
+/* || Settings */
 const savedTheme = localStorage.getItem('theme');
 document.getElementsByTagName("html")[0].setAttribute("data-theme", savedTheme); // Add previously saved theme
 
+function setDefaults() {
+    for (setting in settingDefault) {
+        let item = localStorage.getItem(settingDefault[setting]);
+        if (item == '') {
+            localStorage.setItem(setting, settingDefault[setting]);
+        }
+    }
+}
 
 /* || Timer */
 var timeElapsed = 0;

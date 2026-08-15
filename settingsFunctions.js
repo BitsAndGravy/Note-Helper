@@ -42,15 +42,6 @@ window.onload = function() {
 
 };
 
-function setDefaults() {
-    for (setting in settingDefault) {
-        let item = localStorage.getItem(settingDefault[setting]);
-        if (item == '') {
-            localStorage.setItem(setting, settingDefault[setting]);
-        }
-    }
-}
-
 function loadSettings() {
     for(p = 0; p < settingsList.length; p++) {
         let setting = settingsList[p];

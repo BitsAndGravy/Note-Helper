@@ -1,4 +1,5 @@
 window.onload = function() {
+    setDefaults();
     createThemeOptions();
     createStateSelectOptions();
     checkState();
@@ -35,7 +36,7 @@ window.onload = function() {
         }
             
 
-    // Chech setting for show theme
+    // Chech setting for show theme select
         let showTheme = localStorage.getItem('showTheme');
         let themeElement = document.getElementById('themeSelect');
 
