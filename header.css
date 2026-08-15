@@ -291,6 +291,7 @@ a:link {color: var(--heading-text);}
         }
 
 /* || Add or remove settings */
+/* Previous method that relied on max height, ineffective for my needs
     .hideInput {
         transition: .75s;
         max-height: 0;
@@ -303,9 +304,10 @@ a:link {color: var(--heading-text);}
         opacity: 1;
         transition: opacity 1.5s, max-height 1.5s;
     }
+        */
 
     .hideContent {
-        display: block;
+        /*display: block;*/
         height: 0;
         opacity: 0;
         overflow: hidden;

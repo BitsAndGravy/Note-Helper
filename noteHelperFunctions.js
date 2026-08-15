@@ -15,10 +15,10 @@ window.onload = function() {
         }
 
         if (appSetting == 'yes') {
-            appDiv.classList.add("showInput");
+            appDiv.classList.add("showContent");
             app.tabIndex = 0;
         } else {
-            appDiv.classList.add("hideInput");
+            appDiv.classList.add("hideContent");
             app.tabIndex = -1;
         }
 
@@ -51,7 +51,7 @@ window.onload = function() {
         if (showTimer == 'yes') {
             showTimerSpan.classList.add('showTimer');
         } else {
-            showTimerSpan.classList.add('hideInput');
+            showTimerSpan.classList.add('hideContent');
         }
     
     // Check setting for show preview
@@ -59,9 +59,9 @@ window.onload = function() {
         let showPreviewDiv = document.getElementById('showPreviewDiv');
 
         if (showPreview == 'yes') {
-            showPreviewDiv.classList.add("showInput");
+            showPreviewDiv.classList.add("showContent");
         } else {
-            showPreviewDiv.classList.add("hideInput");
+            showPreviewDiv.classList.add("hideContent");
         }
         
 

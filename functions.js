@@ -645,7 +645,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             function checkQuantity() {
                 // Check if quantity is shown. If not, make it blank.
                 let isShown = document.getElementById('quantityDiv').className;
-                if(isShown === 'hideInput') {
+                if(isShown === 'hideContent') {
                     answer.quantity = "";
                 }
                 
@@ -794,8 +794,8 @@ function resetForm() { // After clicking the Reset button
     // Hide alternative fields i.e. for now just diagnosis.
     function resetAlts() {
         let altDiagButton = document.getElementById('alternativeDiagnosisButton');
-        altDiagButton.classList.add('hideInput');
-        altDiagButton.classList.remove('showInput');
+        altDiagButton.classList.add('hideContent');
+        altDiagButton.classList.remove('showContent');
         altDiagButton.tabIndex = -1;
 
         let diagSuggest = document.getElementById('diagnosisSuggestion');
@@ -864,8 +864,8 @@ function resetForm() { // After clicking the Reset button
     // Hide the div that contains notes on state regulations (authorization duration exceptions, continuation of care, step therapy)
     function resetStateNote() { // Hide the div.
         let note = document.getElementById('stateNote');
-        note.classList.add('hideInput');
-        note.classList.remove('showInput');
+        note.classList.add('hideContent');
+        note.classList.remove('showContent');
     }
 
     function gotoFirstField() {
@@ -1045,8 +1045,8 @@ function getQuantity() {
                 // If there is an alt diagnosis, show button with diagnosis.
                 if(drugDatabase[i].altDiagnosis) {
                     altDiagSpan.innerText = altDiag;
-                    altDiagSpan.classList.add('showInput');
-                    altDiagSpan.classList.remove('hideInput');
+                    altDiagSpan.classList.add('showContent');
+                    altDiagSpan.classList.remove('hideContent');
                     diagnosisButton.tabIndex = 0;
 
 
@@ -1057,8 +1057,8 @@ function getQuantity() {
                         altDiagSpan.innerText = '';
                     }, 1100)
 
-                    altDiagSpan.classList.add('hideInput');
-                    altDiagSpan.classList.remove('showInput');
+                    altDiagSpan.classList.add('hideContent');
+                    altDiagSpan.classList.remove('showContent');
                     diagnosisButton.tabIndex = -1;
                 }
 
@@ -1083,11 +1083,6 @@ function getQuantity() {
                     quantityDiv.classList.add('showContent');
                     quantityDiv.classList.remove('hideContent');
                     
-                    
-                    /*
-                    document.getElementById('quantityDiv').classList.add('showInput');
-                    document.getElementById('quantityDiv').classList.remove('hideInput');
-                    */
                     
                     // Input index was -1 (skip), now as 0 let computer handle (should act normal).
                     document.getElementById('quantity').tabIndex = 0; 
@@ -1219,14 +1214,14 @@ function checkState() {
                 note.innerText = regNote;
 
                 // Add class so it expands/animates
-                note.classList.add('showInput');
-                note.classList.remove('hideInput');
+                note.classList.add('showContent');
+                note.classList.remove('hideContent');
 
                 // Stop for loop, otherwise it will continue and use the else statement below.
                 break; 
             } else { // If state is not in the list, keep the div hidden.
-                note.classList.add('hideInput');
-                note.classList.remove('showInput');
+                note.classList.add('hideContent');
+                note.classList.remove('showContent');
                 
             }
         }
