@@ -287,6 +287,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "migraine prophylaxis", 
     },  
     {
+        drug: "Emrosi ER capsule",
+        quantity: "30/30",
+        diagnosis: "rosacea", 
+        formulary: false, 
+    },  
+    {
         drug: "Emverm chewable tablet",
         quantity: "12/30",
         diagnosis: "roundworm",
@@ -821,6 +827,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "sodium sulfate-potassium sulfate-magnesium sulfate solution", 
+        quantity: "354/2",
+        diagnosis: "colonoscopy preparation",
+        formulary: false,
+    }, 
+    {
         drug: "Spravato dose pack", 
         quantity: "8/14",
         diagnosis: "major depressive disorder",
@@ -917,6 +929,14 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "hypothyroidism",
         formulary: false,     
     }, 
+    {
+        drug: "Tonmya SL tablet",
+        quantity: "60/30",
+        diagnosis: "fibromyalgia",
+        altDiagnosis: "chronic pain",
+        formulary: false,     
+    }, 
+    
     {
         drug: "tretinoin cream",
         quantity: "45/30",
@@ -1131,6 +1151,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "2/21",
         diagnosis: "molluscum contagiosum",
         formulary: false, 
+    }, 
+    {
+        drug: "Yeztugo tablet",
+        quantity: "8/180",
+        diagnosis: "HIV pre-exposure prophylaxis",
+        quantityLimitCriteria: true, 
     }, 
     {
         drug: "Zavzpret",

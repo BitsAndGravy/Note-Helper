@@ -216,6 +216,7 @@ const fullDiagnosisList = [
     'melanin hyperpigmentation',
     'mild intermittent asthma',
     'mild persistent asthma',
+    'muscle spasm',
 
     'narcolepsy',
     'necrotizing fasciitis',
@@ -240,6 +241,7 @@ const fullDiagnosisList = [
 
     'schizoaffective disorder',
     'seborrheic dermatitis',
+    'sexual dysfunction',
     'shift work sleep disorder',
 
     'T2DM and obesity',
