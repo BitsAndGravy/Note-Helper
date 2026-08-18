@@ -24,6 +24,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Advair Diskus",
+        quantity: "30/30",
+        diagnosis: "asthma",
+        altDiagnosis: "COPD", 
+        formulary: false, 
+    },  
+    {
         drug: "Aimovig pen",
         quantity: "1/25",
         diagnosis: "migraine prophylaxis", 
@@ -332,6 +339,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "fluticasone nasal spray",
         quantity: "16/30",
         diagnosis: "allergic rhinitis", 
+        formulary: false, 
+    },  
+    {
+        drug: "Focalin Xr capsule",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
         formulary: false, 
     },  
     {
@@ -742,6 +755,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "ProAir RespiClick inhaler",
         quantity: "1/30",
         diagnosis: "asthma",
+        formulary: false,
+    },
+    {
+        drug: "prucalopride tablet",
+        quantity: "30/30",
+        diagnosis: "constipation",
         formulary: false,
     },
     {

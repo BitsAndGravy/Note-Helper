@@ -198,7 +198,7 @@ const fullDiagnosisList = [
     'gastritis',
     'gender identity disorder',
 
-    'homorrhoids',
+    'hemorrhoids',
     'hepatic encephalopathy',
     'histoplasmosis',
     'hyperglyceridemia',
@@ -214,6 +214,7 @@ const fullDiagnosisList = [
 
     'male hypogonadism',
     'melanin hyperpigmentation',
+    'migraine',
     'mild intermittent asthma',
     'mild persistent asthma',
     'muscle spasm',
