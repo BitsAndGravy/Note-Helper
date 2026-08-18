@@ -188,7 +188,7 @@ const themeBook = {
     
 
 
-
+// Harry Potter themes
     gryffindor: {
         name: 'gryffindor', 
         title: 'Gryffindor', 
@@ -229,8 +229,22 @@ const themeBook = {
         optGroup: 'harry-potter'
     }, 
 
+// Minecraft themes
+    warpedForest: {
+        name: 'warped-forest', 
+        title: 'Warped Forest', 
+        style: 'dark',
+        group: 'Minecraft',
+        optGroup: 'minecraft',
+    }, 
 
 
+
+
+
+
+
+// Silksong themes
     coralTower: {
         name: 'coral-tower', 
         title: 'Coral Tower', 
