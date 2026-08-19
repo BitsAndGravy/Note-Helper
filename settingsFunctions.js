@@ -103,8 +103,6 @@ function displayDrugDatabase() {
             newDiv.className = 'secondaryColor inputDiv';
         }
             
-        //newDiv.className = 'primaryColor';
-
         // Div contents
         let nameNode = document.createTextNode(name);
         newDiv.appendChild(nameNode);
@@ -114,6 +112,45 @@ function displayDrugDatabase() {
 
         let diagnosisNode = document.createTextNode(diagnosis);
         newDiv.appendChild(diagnosisNode);
+
+        let break2 = document.createElement('br');
+        newDiv.appendChild(break2);
+
+        let altDiagnosisNode = document.createTextNode('cat');
+        newDiv.appendChild(altDiagnosisNode);
+
+        let break3 = document.createElement('br');
+        newDiv.appendChild(break3);
+
+        /*
+
+        if (formulary == false) {
+            let formularyNode = 'Non-formulary';
+        } else {
+            let formularyNode = 'Formulary';
+        }
+        newDiv.appendChild(formularyNode);
+
+        let break5 = document.createElement('br');
+        newDiv.appendChild(break5);
+
+        if (specialty) {
+            let specialtyNode = 'Specialty';
+        } else {
+            let specialtyNode = 'Non-specialty';
+        }
+        newDiv.appendChild(specialtyNode);
+
+        let break6 = document.createElement('br');
+        newDiv.appendChild(break6);
+
+        if (qt) {
+            let qtNode = 'Quantity limit';
+        } else {
+            let qtNode = '';
+        }
+        newDiv.appendChild(qtNode);
+        */
 
         // Add to target
         let databaseDiv = document.getElementById('drugDatabaseDisplayDiv');
