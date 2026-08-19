@@ -504,13 +504,12 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let conspectusHeader = "SUMMARY " + "\n";
         let conspectusBody = 
             answer.urgent + answer.expedited + answer.state + " " + answer.source + ". " + 
-            answer.gender + ageText +
+            answer.gender + ageText + "Joined plan " + answer.member + ". \n" +
             answer.type + " for " + answer.drug + quantityText + answer.quantity + " for " + answer.diagnosis + ". " + answer.reject + ". "; // + "Provider response led to " + answer.qset + ". "
 
 
         let historyHeader = "\n\n" + "HISTORY " + "\n";
         let historyBody = 
-            "Joined plan " + answer.member + ". \n" + 
             answer.information + snapNewLine +
             answer.snapshot + answer.medicalAuthorizations + claimsNewLine + answer.claims;
 
