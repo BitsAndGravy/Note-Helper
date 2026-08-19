@@ -221,6 +221,7 @@ const fullDiagnosisList = [
 
     'narcolepsy',
     'necrotizing fasciitis',
+    'neuralgia',
 
     'obstructive sleep apnea',
     'onychomycosis',

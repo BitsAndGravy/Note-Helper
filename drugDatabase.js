@@ -858,6 +858,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Stiolto Respimat", 
+        quantity: "4/30",
+        diagnosis: "COPD",
+        formulary: false,
+    }, 
+    {
         drug: "Sucraid solution", 
         quantity: "360/30",
         diagnosis: "sucrase-isomaltase deficiency",
@@ -1008,6 +1014,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "150/30",
         diagnosis: "phosphorus metabolism",
         altDiagnosis: "hyperphosphatemia", 
+    }, 
+    {
+        drug: "Veltassa powder packet",
+        quantity: "8/24",
+        diagnosis: "hyperkalemia",
+        altDiagnosis: "chronic kidney disease", 
     }, 
     {
         drug: "Vemlidy tablet",

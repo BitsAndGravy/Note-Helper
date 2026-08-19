@@ -34,6 +34,7 @@ window.onload = function() {
 
 };
 
+
 function loadSettings() {
     for(p = 0; p < settingsList.length; p++) {
         let setting = settingsList[p];
@@ -77,13 +78,6 @@ function updateSelectedState(update) {
 
 function displayDrugDatabase() {
     let i = 0;
-    //document.getElementById('drugTestDiv').innerText = drugDatabase[1].drug;
-    /*
-    for (i = 0; i < drugDatabase.length; i++) {
-                        document.getElementById('settingsTest').style.backgroundColor = 'red';
-
-    }
-                        */
 
     for (thisDrug in drugDatabase) {
         let name = drugDatabase[thisDrug].drug;
@@ -95,62 +89,81 @@ function displayDrugDatabase() {
         let quantityLimit = drugDatabase[thisDrug].quantityLimitCriteria;
 
         // Set div name and background color
-        const newDiv = document.createElement('div');
-        
-        if (i % 2 === 0) {
-            newDiv.className = 'primaryColor inputDiv';
-        } else {
-            newDiv.className = 'secondaryColor inputDiv';
-        }
+            const newDiv = document.createElement('div');
+            
+            if (i % 2 === 0) {
+                newDiv.className = 'primaryColor inputDiv';
+            } else {
+                newDiv.className = 'secondaryColor inputDiv';
+            }
             
         // Div contents
-        let nameNode = document.createTextNode(name);
-        newDiv.appendChild(nameNode);
+            // Drug name
+            let nameNode = document.createTextNode(name);
+            newDiv.appendChild(nameNode);
 
-        let break1 = document.createElement('br');
-        newDiv.appendChild(break1);
+            let break1 = document.createElement('br');
+            newDiv.appendChild(break1);
 
-        let diagnosisNode = document.createTextNode(diagnosis);
-        newDiv.appendChild(diagnosisNode);
+            // Primary diagnosis
+            let diagnosisNode = document.createTextNode(diagnosis);
+            newDiv.appendChild(diagnosisNode);
 
-        let break2 = document.createElement('br');
-        newDiv.appendChild(break2);
+            let break2 = document.createElement('br');
+            newDiv.appendChild(break2);
 
-        let altDiagnosisNode = document.createTextNode('cat');
-        newDiv.appendChild(altDiagnosisNode);
+            // Alternate diagnosis
+            let altDiagnosisWrapper = document.createElement('span');
+            if (altDiagnosis === undefined) {
+                altDiagnosisNode = document.createTextNode('No alt diagnosis');
+                altDiagnosisWrapper.classList.add('showTimer');
+            } else {
+                altDiagnosisNode = document.createTextNode(altDiagnosis);
+            }
+            altDiagnosisWrapper.appendChild(altDiagnosisNode);
+            newDiv.appendChild(altDiagnosisWrapper);
 
-        let break3 = document.createElement('br');
-        newDiv.appendChild(break3);
+            let break3 = document.createElement('br');
+            newDiv.appendChild(break3);
 
-        /*
+            // Formulary status
+            let formularyWrapper = document.createElement('span');
+            if (formulary === false) {
+                formularyNode = document.createTextNode('Non-formulary');
+            } else {
+                formularyNode = document.createTextNode('Formulary');
+                formularyWrapper.classList.add('showTimer');
+            }
+            formularyWrapper.appendChild(formularyNode);
+            newDiv.appendChild(formularyWrapper);
 
-        if (formulary == false) {
-            let formularyNode = 'Non-formulary';
-        } else {
-            let formularyNode = 'Formulary';
-        }
-        newDiv.appendChild(formularyNode);
+            let break5 = document.createElement('br');
+            newDiv.appendChild(break5);
 
-        let break5 = document.createElement('br');
-        newDiv.appendChild(break5);
+            // Specialty status
+            let specialtyWrapper = document.createElement('span');
+            if (specialty) {
+                specialtyNode = document.createTextNode('Specialty');
+            } else {
+                specialtyNode = document.createTextNode('Non-specialty');
+                specialtyWrapper.classList.add('showTimer');
+            }
+            specialtyWrapper.appendChild(specialtyNode);
+            newDiv.appendChild(specialtyWrapper);
 
-        if (specialty) {
-            let specialtyNode = 'Specialty';
-        } else {
-            let specialtyNode = 'Non-specialty';
-        }
-        newDiv.appendChild(specialtyNode);
+            let break6 = document.createElement('br');
+            newDiv.appendChild(break6);
 
-        let break6 = document.createElement('br');
-        newDiv.appendChild(break6);
-
-        if (qt) {
-            let qtNode = 'Quantity limit';
-        } else {
-            let qtNode = '';
-        }
-        newDiv.appendChild(qtNode);
-        */
+            // Quantity limit only
+            let qLimitWrapper = document.createElement('span');
+            if (quantityLimit) {
+                qLimitNode = document.createTextNode('Quantity limit only, no PA');
+            } else {
+                qLimitNode = document.createTextNode('Not QL only');
+                qLimitWrapper.classList.add('showTimer');
+            }
+            qLimitWrapper.appendChild(qLimitNode);
+            newDiv.appendChild(qLimitWrapper);
 
         // Add to target
         let databaseDiv = document.getElementById('drugDatabaseDisplayDiv');
