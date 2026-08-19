@@ -1019,7 +1019,8 @@ const drugDatabase = [ // for getQuantity()
         drug: "Veltassa powder packet",
         quantity: "8/24",
         diagnosis: "hyperkalemia",
-        altDiagnosis: "chronic kidney disease", 
+        altDiagnosis: "chronic kidney disease",
+        formulary: false, 
     }, 
     {
         drug: "Vemlidy tablet",
