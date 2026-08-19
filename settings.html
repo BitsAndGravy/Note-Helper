@@ -11,6 +11,8 @@
 
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="themeStyles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove" />
 
 </head>
 <body>
@@ -139,13 +141,22 @@
     <br>
 
     <!-- Drug database section -->
+
     <div class="container">
-        <div class="heading">
+        <div class="heading" onclick="showList('drugDatabaseDisplayDiv')">
+            <span id="drugDatabaseDisplayDivAdd" class="material-symbols-outlined showContent">
+            add
+            </span>
+
+            <span id="drugDatabaseDisplayDivRemove" class="material-symbols-outlined hideContent">
+            remove
+            </span> 
+
             <H3>Drug database</H3>
         </div>
 
         <div class="gradientColor">
-            <div id="drugDatabaseDisplayDiv"></div>
+            <div id="drugDatabaseDisplayDiv" class="hideContent"></div>
         </div>
 
         <div class="footing"></div>
@@ -155,11 +166,19 @@
 
     <!-- Diagnosis list section -->
     <div class="container">
-        <div class="heading">
+        <div class="heading" onclick="showList('diagnosisListDisplayContainer')">
+            <span id="diagnosisListDisplayContainerAdd" class="material-symbols-outlined showContent">
+            add
+            </span>
+
+            <span id="diagnosisListDisplayContainerRemove" class="material-symbols-outlined hideContent">
+            remove
+            </span> 
+
             <H3>Diagnosis list</H3>
         </div>
 
-        <div class="gradientColor">
+        <div id="diagnosisListDisplayContainer" class="gradientColor hideContent">
             <div id="diagnosisListDisplayDiv" class="inputDiv"></div>
         </div>
 

@@ -291,21 +291,6 @@ a:link {color: var(--heading-text);}
         }
 
 /* || Add or remove settings */
-/* Previous method that relied on max height, ineffective for my needs
-    .hideInput {
-        transition: .75s;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-    }
-
-    .showInput {
-        max-height: 200px;
-        opacity: 1;
-        transition: opacity 1.5s, max-height 1.5s;
-    }
-        */
-
     .hideContent {
         /*display: block;*/
         height: 0;
@@ -331,9 +316,6 @@ a:link {color: var(--heading-text);}
     }
     }
 
-
-
-
     .showTimer {
         opacity: 0.5;
     }
@@ -342,7 +324,6 @@ a:link {color: var(--heading-text);}
     .hideElement {
         display: none;
     }
-
 
 /* Error message */
 .material-symbols-outlined {
@@ -394,3 +375,4 @@ a:link {color: var(--heading-text);}
 .shake {
   animation: shake 0.5s 1;
 }
+

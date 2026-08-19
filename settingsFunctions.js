@@ -202,3 +202,22 @@ function displayDiagnosisList() {
             target.appendChild(newDiagDiv);
     }
 }
+
+function showList(target) {
+    let div = document.getElementById(target);
+
+    let add = target + 'Add';
+    let addSpan = document.getElementById(add);
+    
+    let remove = target + 'Remove'
+    let removeSpan = document.getElementById(remove);
+
+    div.classList.toggle('hideContent');
+    div.classList.toggle('showContent');
+
+    addSpan.classList.toggle('hideContent');
+    addSpan.classList.toggle('showContent');
+
+    removeSpan.classList.toggle('hideContent');
+    removeSpan.classList.toggle('showContent');
+}
