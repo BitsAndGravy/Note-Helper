@@ -931,6 +931,41 @@
 
 
 /* Minecraft themes */
+[data-theme='deep-dark'] {
+    /* Main features a1b684 tawny 3b5a79 gree*/
+    --main-background: #151e25;
+    --header-background: #0d3b45;
+    --footer-background: #0d3b45;
+    --body-primary-color: #19262f;
+    --body-secondary-color: #07495c;
+    --body-border-color: #03b7c4;
+    --body-gradient: #19262f;
+    
+    /* Text */
+    --heading-text: #b8dcdf;
+    --body-text: #cdd6b2;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #cdd6b2b7;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #cdd6b2;
+    --button-hover: #a1b684;
+    --button-active: #80a08b;
+    --button-text: #151e25;
+
+    /* Input */
+    --input-background: #151e25;
+    --input-background-focus: black;
+    --input-accent-color: #1ff9ff;
+    --input-border: #03b4c178;
+    --input-border-focus: #03b5c1;
+}
 [data-theme='warped-forest'] {
     /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
     --main-background: #45212d;

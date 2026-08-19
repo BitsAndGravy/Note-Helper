@@ -230,6 +230,13 @@ const themeBook = {
     }, 
 
 // Minecraft themes
+    deepDark: {
+        name: 'deep-dark', 
+        title: 'Deep Dark', 
+        style: 'dark',
+        group: 'Minecraft',
+        optGroup: 'minecraft',
+    }, 
     warpedForest: {
         name: 'warped-forest', 
         title: 'Warped Forest', 
@@ -237,7 +244,6 @@ const themeBook = {
         group: 'Minecraft',
         optGroup: 'minecraft',
     }, 
-
 
 
 
