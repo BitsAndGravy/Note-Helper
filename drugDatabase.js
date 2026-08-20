@@ -629,6 +629,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "dry eye syndrome",
     }, 
     {
+        drug: "modafinil tablet",
+        quantity: "30/30",
+        diagnosis: "narcolepsy",
+        quantityLimitCriteria: true,
+    }, 
+    {
         drug: "Monoferric vial",
         quantity: "",
         diagnosis: "iron deficiency anemia",
@@ -862,6 +868,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "4/30",
         diagnosis: "COPD",
         formulary: false,
+    }, 
+    {
+        drug: "buprenorphine-naloxone film", 
+        quantity: "60/30",
+        diagnosis: "opioid dependence",
+        quantityLimitCriteria: true,
     }, 
     {
         drug: "Sucraid solution", 
@@ -1151,6 +1163,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Xhance nasal spray",
         quantity: "16/30",
         diagnosis: "allergic rhinitis",
+        altDiagnosis: "chronic pansinusitis",
         formulary: false,
     }, 
     {

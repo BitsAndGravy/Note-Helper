@@ -187,6 +187,7 @@ const fullDiagnosisList = [
     'dysphagia',
 
     'enterobiasis',
+    'epigastric pain',
     'erosive esophagitis',
     'esophageal candidiasis',
     'essential hypertension',
