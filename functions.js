@@ -1,7 +1,7 @@
 /* || Dictionaries and constants */
 const checkboxBook = {
     sendToIRO: {
-        isChecked: '-- SEND TO IRO --\n\n',
+        isChecked: '', // Leaving blank for now, adding to IRO note instead of general note
         notChecked: '',
     },
     
