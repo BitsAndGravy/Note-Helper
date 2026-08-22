@@ -228,6 +228,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "desvenlafaxine ER tablet",
+        quantity: "30/30",
+        diagnosis: "major depressive disorder",
+        quantityLimitCriteria: true,
+    },  
+    {
         drug: "Dexcom G6 sensor",
         quantity: "3/30",
         altQuantity: "",
@@ -1104,6 +1110,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "psoriasis", 
         formulary: false, 
     }, 
+    {
+        drug: "Vyepti vial",
+        quantity: "1/84",
+        diagnosis: "migraine prophylaxis",
+        formulary: false,
+    },  
     {
         drug: "Vyvanse capsule",
         quantity: "30/30",

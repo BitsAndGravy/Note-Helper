@@ -199,6 +199,7 @@ const fullDiagnosisList = [
     'gastritis',
     'gender identity disorder',
 
+    'headache',
     'hemorrhoids',
     'hepatic encephalopathy',
     'histoplasmosis',
