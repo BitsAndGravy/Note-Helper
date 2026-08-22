@@ -230,6 +230,13 @@ const themeBook = {
     }, 
 
 // Minecraft themes
+    creeper: {
+        name: 'creeper', 
+        title: 'Creeper', 
+        style: 'light',
+        group: 'Minecraft',
+        optGroup: 'minecraft',
+    }, 
     deepDark: {
         name: 'deep-dark', 
         title: 'Deep Dark', 

@@ -931,6 +931,43 @@
 
 
 /* Minecraft themes */
+
+[data-theme='creeper'] {
+    /* Main features */
+    --main-background: #3c5538;
+    --header-background: #039c04;
+    --footer-background: #039c04;
+    --body-primary-color: #95cc8f;
+    --body-secondary-color: #55ad439f;
+    --body-border-color: #b2cdb1;
+    --body-gradient: #95cc8f;
+    
+    /* Text */
+    --heading-text: black;
+    --body-text: black;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #14380fc9;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: black;
+    --button-hover: #a1b684;
+    --button-active: #80a08b;
+    --button-text: white;
+
+    /* Input */
+    --input-background: #b2cdb1;
+    --input-background-focus: #d7ccd8;
+    --input-accent-color: #df74e9;
+    --input-border: black;
+    --input-border-focus: #039c04;
+}
+
 [data-theme='deep-dark'] {
     /* Main features a1b684 tawny 3b5a79 gree*/
     --main-background: #151e25;
@@ -966,6 +1003,7 @@
     --input-border: #03b4c178;
     --input-border-focus: #03b5c1;
 }
+
 [data-theme='warped-forest'] {
     /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
     --main-background: #45212d;
@@ -973,7 +1011,7 @@
     --footer-background: var(--header-background);
     --body-primary-color: #164845;
     --body-secondary-color: #158b6898;
-    --body-border-color: #d55709;
+    --body-border-color: #664185;
     --body-gradient: #0f6f6d, #06575a;
     
     /* Text */
