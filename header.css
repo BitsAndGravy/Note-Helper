@@ -126,16 +126,6 @@ a:link {color: var(--heading-text);}
         top: 8px;
         pointer-events: none;
     }
-/*
-    .diagnosisSuggestionClass {
-        font-size: 13px;
-        color: var(--placeholder-text);
-        position: absolute;
-        left: 48px;
-        top: 102px;
-        pointer-events: none;
-    }
-        */
 
 /* Character count styles */
     .characterLimitGreen {
@@ -194,14 +184,6 @@ a:link {color: var(--heading-text);}
     align-items: center;
     color: var(--heading-text);
 }
-
-/*
-.input-spacer {
-    min-height: 29px;
-    display: flex;
-    align-items: center;
-}
-*/
 
 .footing {
     background-color: var(--footer-background);
@@ -292,7 +274,6 @@ a:link {color: var(--heading-text);}
 
 /* || Add or remove settings */
     .hideContent {
-        /*display: block;*/
         height: 0;
         opacity: 0;
         overflow: hidden;
@@ -311,9 +292,9 @@ a:link {color: var(--heading-text);}
 
     /* for modern browsers */
     @supports (height: calc-size(auto, size)) {
-    .showContent {
-        height: calc-size(auto, size);
-    }
+        .showContent {
+            height: calc-size(auto, size);
+        }
     }
 
     .showTimer {
@@ -325,7 +306,7 @@ a:link {color: var(--heading-text);}
         display: none;
     }
 
-/* Error message */
+/* Google symbols reference */
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,

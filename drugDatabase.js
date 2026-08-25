@@ -6,6 +6,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "adapalene gel",
+        quantity: "45/30",
+        diagnosis: "acne vulgaris", 
+        quantityLimitCriteria: true, 
+    },  
+    {
         drug: "adapalene-benzoyl peroxide gel",
         quantity: "45/30",
         diagnosis: "acne vulgaris", 
@@ -697,6 +703,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     }, 
     {
+        drug: "Ohtuvayre inhalation suspension", 
+        quantity: "60/30",
+        diagnosis: "COPD",
+        formulary: false, 
+    },  
+    {
         drug: "omega-3 ethyl esters capsule",
         quantity: "120/30",
         diagnosis: "hyperlipidemia", 
@@ -735,6 +747,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "T2DM",
         altDiagnosis: "obesity",
+    }, 
+    {
+        drug: "Pancreaze DR capsule",
+        quantity: "360/30",
+        diagnosis: "exocrine pancreatic insufficiency",
+        formulary: false,
     }, 
     {
         drug: "PEG-3350 and electrolytes solution",
@@ -870,6 +888,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Steglatro tablet", 
+        quantity: "60/30",
+        diagnosis: "T2DM",
+        formulary: false,
+    }, 
+    {
         drug: "Stiolto Respimat", 
         quantity: "4/30",
         diagnosis: "COPD",
@@ -979,7 +1003,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "chronic pain",
         formulary: false,     
     }, 
-    
+    {
+        drug: "Tradjenta tablet",
+        quantity: "30/30",
+        diagnosis: "T2DM",
+        formulary: false,     
+    }, 
     {
         drug: "tretinoin cream",
         quantity: "45/30",
@@ -1216,7 +1245,7 @@ const drugDatabase = [ // for getQuantity()
         quantityLimitCriteria: true, 
     }, 
     {
-        drug: "Zavzpret",
+        drug: "Zavzpret nasal spray",
         quantity: "6/30",
         diagnosis: "acute migraine treatment",
         formulary: false, 
