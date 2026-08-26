@@ -244,6 +244,13 @@ const themeBook = {
         group: 'Minecraft',
         optGroup: 'minecraft',
     }, 
+    enderman: {
+        name: 'enderman', 
+        title: 'Enderman', 
+        style: 'dark',
+        group: 'Minecraft',
+        optGroup: 'minecraft',
+    }, 
     warpedForest: {
         name: 'warped-forest', 
         title: 'Warped Forest', 
@@ -252,10 +259,7 @@ const themeBook = {
         optGroup: 'minecraft',
     }, 
 
-
-
-
-
+    
 
 // Silksong themes
     coralTower: {

@@ -1004,6 +1004,43 @@
     --input-border-focus: #03b5c1;
 }
 
+[data-theme='enderman'] {
+    /* Main features */
+    --main-background: black;
+    --header-background: #ff83ff;
+    --footer-background: #ff83ff78;
+    --body-primary-color: #191919;
+    --body-secondary-color: #000000;
+    --body-border-color: #f7b5f7;
+    --body-gradient: #191919;
+    
+    /* Text */
+    --heading-text: black;
+    --body-text: #f7e4f7;
+    --body-secondary-text: var(--body-text);
+    --input-text: var(--body-text);
+    --input-text-focus: var(--input-text);
+    --placeholder-text: #f7e4f7b1;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #f7b5f7;
+    --button-hover: #ff83ff;
+    --button-active: #f7e4f7;
+    --button-text: black;
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: black;
+    --input-accent-color: #eb01ff;
+    --input-border: #ff83ff78;
+    --input-border-focus: #ff83ffc9;
+}
+
+
 [data-theme='warped-forest'] {
     /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
     --main-background: #45212d;
