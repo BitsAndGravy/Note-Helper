@@ -201,7 +201,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Cresemba capsule",
         quantity: "30/30",
         diagnosis: "aspergillosis",
-        altDiagnosis: "fungal infection prevention during chemotherapy",  
+        altDiagnosis: "transplant status",  
         formulary: false, 
     },  
     {
