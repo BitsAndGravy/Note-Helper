@@ -252,6 +252,7 @@ const fullDiagnosisList = [
     'tinea capitis',
     'tinea pedis',
     'tinea unguium',
+    'transsexualism',
 
     'ulcerative colitis',
     'unspecified dermatitis',
@@ -1066,23 +1067,24 @@ function getQuantity() {
                 checkAlwaysShowQuantitySetting();
             }
 
-            // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
-            function checkAlwaysShowQuantitySetting() {
-                if(alwaysShowQuantity == 'no') {
-                    const quantityDiv = document.getElementById('quantityDiv');
-                    quantityDiv.classList.add('showContent');
-                    quantityDiv.classList.remove('hideContent');
-                    
-                    
-                    // Input index was -1 (skip), now as 0 let computer handle (should act normal).
-                    document.getElementById('quantity').tabIndex = 0; 
-                    document.getElementById('falseQL').tabIndex = 0;
+
+                // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
+                function checkAlwaysShowQuantitySetting() {
+                    if(alwaysShowQuantity == 'no') {
+                        const quantityDiv = document.getElementById('quantityDiv');
+                        quantityDiv.classList.add('showContent');
+                        quantityDiv.classList.remove('hideContent');
+                        
+                        // Input index was -1 (skip), now as 0 let computer handle (should act normal).
+                        document.getElementById('quantity').tabIndex = 0; 
+                        document.getElementById('falseQL').tabIndex = 0;
+                    }
                 }
-            }
             break;
         } else {
             // Uncheck box for 70-non-formulary
             document.getElementById('nonFormulary').checked = false;
+            showQuantity();
         }
     }
     preSaveFunctions();
