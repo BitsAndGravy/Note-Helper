@@ -828,7 +828,7 @@
     --body-primary-color: #3a1f3f;
     --body-secondary-color: #ffffff17;
     --body-border-color: #c02f39;
-    --body-gradient: #010101, #1e1121, #3a1f3f;
+    --body-gradient: #1e1121, #3a1f3f;
     
     /* Text */
     --heading-text: #ccc5b6;
