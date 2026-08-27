@@ -1042,8 +1042,8 @@
 
 
 [data-theme='warped-forest'] {
-    /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
-    --main-background: #45212d;
+    /* Main features 45212d */
+    --main-background: #362247;
     --header-background: #158b68;
     --footer-background: var(--header-background);
     --body-primary-color: #164845;
@@ -1064,7 +1064,7 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #19957c;
+    --button-background: #45212d;
     --button-hover: #362e2893;
     --button-active: black;
     --button-text: white;
@@ -1073,7 +1073,7 @@
     --input-background: #362247;
     --input-background-focus: #180f20;
     --input-accent-color: #ff6200;
-    --input-border: #184643;
+    --input-border: black;
     --input-border-focus: #3d1f27;
 }
 
