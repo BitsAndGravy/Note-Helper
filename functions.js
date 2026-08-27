@@ -714,28 +714,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         }
     }
 
-// Character count for send to iro message
-function iroCharacterCountCheck() {
-    let text = document.getElementById('iroNote').value;
-    let charCount = document.getElementById('iroCharacterCount');
 
-    // Shows character count
-    charCount.innerText = text.length + "/1000";
-
-        if(text.length < 800) {
-            charCount.className = 'characterLimitGreen';
-
-        } else if (text.length < 900) {
-            charCount.className = 'characterLimitYellow';
-
-        } else if (text.length < 1001) {
-            charCount.className = 'characterLimitOrange';
-
-        // Opacity = 1 for best visibility
-        } else if (text.length >= 1001) {
-            charCount.className = 'characterLimitRed';
-        }
-}
 
 
 /* ||| Reset button */
@@ -746,6 +725,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form4').reset();
 
     resetThemeSelectSelection(); // Sets themeSelect to current theme (resets when form clears)
+    buildIROnote(); // Reset variable, reset preview text
     iroCharacterCountCheck(); // Resets character count for IRO note
     hideAlert();
     resetStateOptionSelected();
@@ -765,6 +745,8 @@ function resetForm() { // After clicking the Reset button
         let themeSelectElement = document.getElementById('themeSelect');
         themeSelectElement.value = theme;
     }
+
+    // Resets IRO note variable and 
 
     // Hides error message if requirements not met after clicking save button (i.e. age or character limit)
     function hideAlert() {
@@ -831,7 +813,10 @@ function resetForm() { // After clicking the Reset button
         let properQuantityDiv = document.getElementById('properQuantityDiv');
         let comment = document.getElementById('comment');
         let commentDiv = document.getElementById('commentDiv');
-        let iro = document.getElementById('iroNote');
+        //let iro = document.getElementById('iroNote');
+        // update tabIndexes
+        //
+        //
         let iroDiv = document.getElementById('iroNoteDiv');
         
         if(alwaysShowQuantity === 'no') {
@@ -853,7 +838,7 @@ function resetForm() { // After clicking the Reset button
                 document.getElementById('falseQL').tabIndex = -1;
                 properQuantity.tabIndex = -1;
                 comment.tabIndex = -1;
-                iro.tabIndex = -1;
+                //iro.tabIndex = -1;
         }
         showProperQuantity();
         appealTypeChecked();
@@ -1437,22 +1422,46 @@ function changeDiagnosis() {
 // When 'send to IRO' is checked:
 function iroChecked() {
     let check = document.getElementById('sendToIRO');
-    let iro = document.getElementById('iroNote');
+    //let iro = document.getElementById('iroNote');
+        // Will need to add other elements for tabIndex
+        //
+        //
+        //
+        //
     let div = document.getElementById('iroNoteDiv');
+    let mdPaste = document.getElementById('specialtyRequested');
+
     if (check.checked) {
         div.classList.remove('hideContent');
         div.classList.add('showContent');
-        iro.tabIndex = 0;
+        //iro.tabIndex = 0;
+
+        if (mdPaste.value == '') {
+            let mdCopy = document.getElementById('appealInternalQuestion').value;
+            let mdCopyCapitalized = mdCopy.charAt(0).toUpperCase() + mdCopy.slice(1); 
+            mdPaste.value = mdCopyCapitalized;
+        }
+        
     } else {
         div.classList.add('hideContent');
         div.classList.remove('showContent');
-        iro.tabIndex = -1
+        //iro.tabIndex = -1
     }
 }
 
 // When 'Copy' clicked for appeal and iro notes
-function simpleCopy(element) {
+function copyAppealText() {
+    let element = 'appealDenial';
     let textToCopy = document.getElementById(element).value;
+    navigator.clipboard.writeText(textToCopy);
+
+    let spanName = element + 'Copied';
+    animateText(spanName);
+}
+
+function copyIROtext() {
+    let element = 'iroCompleteNote';
+    let textToCopy = document.getElementById(element).innerText;
     navigator.clipboard.writeText(textToCopy);
 
     let spanName = element + 'Copied';

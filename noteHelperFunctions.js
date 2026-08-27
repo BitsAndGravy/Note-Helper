@@ -119,3 +119,47 @@ function createThemeOptions () {
             destination.appendChild(option);
     };
 }
+
+
+/* || Appeals and IRO stuff */
+
+// Creates note from text and textarea inputs
+function buildIROnote() {
+    let type = document.getElementById('typeOfRequest').value;
+    let md = document.getElementById('specialtyRequested').value;
+    let due = document.getElementById('iroDueDate').value;
+    let summary = document.getElementById('iroClinicalSummary').value;
+    let questions = document.getElementById('iroQuestions').value;
+
+    let iroNote = '-- SEND TO IRO --' + '\n\n' + 
+        'Type of Request: ' + type + '\n' +
+        'Board-Certified Specialty Requested: ' + md + '\n' + 
+        'IRO Due Date: ' + due + '\n\n' +
+        summary + '\n\n' + 
+        questions;
+
+    document.getElementById('iroCompleteNote').innerText = iroNote;
+}
+
+// Character count for send to iro message
+function iroCharacterCountCheck() {
+    let text = document.getElementById('iroClinicalSummary').value;
+    let charCount = document.getElementById('iroCharacterCount');
+
+    // Shows character count
+    charCount.innerText = text.length + "/1000";
+
+        if(text.length < 800) {
+            charCount.className = 'characterLimitGreen';
+
+        } else if (text.length < 900) {
+            charCount.className = 'characterLimitYellow';
+
+        } else if (text.length < 1001) {
+            charCount.className = 'characterLimitOrange';
+
+        // Opacity = 1 for best visibility
+        } else if (text.length >= 1001) {
+            charCount.className = 'characterLimitRed';
+        }
+}
