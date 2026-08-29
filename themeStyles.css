@@ -1100,7 +1100,7 @@
     --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
-    --placeholder-text: #ffffffb8;
+    --placeholder-text: #fff2d0b8;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);

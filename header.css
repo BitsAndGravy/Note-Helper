@@ -251,6 +251,10 @@ a:link {color: var(--heading-text);}
     transition: 1500ms;
 }
 
+.iroNoteSpacer {
+    margin-top: 2rem;
+}
+
 
 /* || Animations */
 /* ||| Text animations */    
@@ -280,6 +284,7 @@ a:link {color: var(--heading-text);}
         transition-property: height;
         transition: 0.5s;
         transition-behavior: allow-discrete;
+        margin: 0;
     }
 
     /* fallbak for not supported browsers */
