@@ -196,6 +196,14 @@ a:link {color: var(--heading-text);}
     border-radius: 20px;
     margin: 10px;
     box-shadow: 5px 10px 15px #00000086;
+    min-width: 513px;
+}
+
+.mini-container {
+    border: 2px solid var(--body-border-color);
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 5px 10px 15px #00000086;
 }
 
 .themeBookBackgroundColor {
@@ -228,9 +236,11 @@ a:link {color: var(--heading-text);}
     padding: 5px;
 }
 
+/* buttons now in footer, no special formatting needed.
 .appealCopyButtons {
     margin-left: 26px;
 }
+    */
 
 .error {
     background-color: red;

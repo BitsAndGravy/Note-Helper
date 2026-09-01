@@ -402,7 +402,7 @@
                 <div id="appealDenialAdditionalNotes" class="hideContent secondaryColor">
                     <form id="form4">    
                         <div class="inputDiv">
-                            <div class="container">
+                            <div class="mini-container">
                                 <div class="heading">
                                     <H3>Appeal denial language</H3>
                                 </div>                
@@ -414,22 +414,21 @@
                                             id="appealDenial" 
                                             name="appealDenial" 
                                             class="appealTextarea"
-                                            placeholder="denial language for appeal"></textarea>
-                                        <br>
-                                        <button 
-                                            type="button" 
-                                            onclick="copyAppealText()"
-                                            class="appealCopyButtons"
-                                            >Copy</button>
-                                        <span id="appealDenialCopied" class="hideStart">Copied to clipboard</span>
+                                            placeholder="denial language for appeal"></textarea>                                        
                                     </div>
                                 </div>
+
                                 <div class="footing">
-                                    <span id="placeholderSpanAppealFooter" class="hideStart">I love my cat</span>
+                                    <button 
+                                        type="button" 
+                                        onclick="copyAppealText()"
+                                        >Copy</button>
+                                    <span id="appealDenialCopied" class="hideStart">Copied to clipboard</span>
                                 </div>
                             </div>
 
-                            <div id="iroNoteDiv" class="container hideContent iroNoteSpacer" oninput="buildIROnote()">
+                            <!-- IRO note builder-->
+                            <div id="iroNoteDiv" class="mini-container hideContent iroNoteSpacer" oninput="buildIROnote()">
                             
                                 <div class="heading">
                                     <h3>IRO note</h3>
@@ -478,22 +477,17 @@
                                                 placeholder="iro questions"></textarea>
 
                                             <br>
-                                            <div id="iroCompleteNote">'summary here'</div>
-                                            <br>
+                                            <div id="iroCompleteNote">start typing to see preview</div>
 
-                                            <div>
-                                                <button 
-                                                    type="button" 
-                                                    class="appealCopyButtons"
-                                                    onclick="copyIROtext()"
-                                                    >Copy</button>
-                                                <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footing">
-                                    <span id="placeholderSpanIROFooter" class="hideStart">I love my cat</span>
+                                    <button 
+                                        type="button" 
+                                        onclick="copyIROtext()"
+                                        >Copy</button>
+                                    <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
                                 </div>
                             </div>
                         </div>
