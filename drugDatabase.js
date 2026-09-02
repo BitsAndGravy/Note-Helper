@@ -1094,6 +1094,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "Viberzi tablet", 
+        quantity: "60/30",
+        diagnosis: "irritable bowel syndrome-diarrhea",
+        formulary: false,
+    },
+    {
         drug: "Victoza pen", 
         quantity: "9/30",
         diagnosis: "T2DM",

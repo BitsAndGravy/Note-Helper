@@ -1,10 +1,11 @@
 /* || Dictionaries and constants */
 const checkboxBook = {
+    /* no longer using as input, more as a button to display IRO options.
     sendToIRO: {
         isChecked: '', // Leaving blank for now, adding to IRO note instead of general note
         notChecked: '',
     },
-    
+    */
     chart: {
         isChecked: 'No relevant documents in Chart View. ', 
         notChecked: ''
@@ -17,12 +18,6 @@ const checkboxBook = {
         isChecked: 'Not a true QL request; ', 
         notChecked:''
     },
-    /* Replacing simple binary response with option for male/female/blank, i.e. no automatic default.
-    gender: {
-        isChecked: 'Female', 
-        notChecked:'Male'
-    },
-    */
     medicalAuthorizations: {
         isChecked: 'No relevant medical authorizations.',
         notChecked: '',
@@ -51,7 +46,9 @@ const checkboxBook = {
 
 const answer = {
     age: "[age]",
+    /* see checkboxBook comment for rationale
     sendToIRO: "[sendToIRO]",
+    */
     appealInternal: "[appealInternal]", 
     chart: "[chart]", 
     claims: "[claims]", 
@@ -140,33 +137,6 @@ const stateClientList = [ // for use with createStateSelectOptions()
     //'WY',   // Wyoming
 ]
 
-function createStateSelectOptions () {
-
-    // Create list of states
-    for(i = 0; i < stateClientList.length; i++) {
-            
-        // Create option, assign attributes.
-            let option = document.createElement('option');
-            option.value = stateClientList[i];
-            option.innerHTML = stateClientList[i];
-            option.id = stateClientList[i];
-            
-        // Add option to state select element.
-            let destination = document.getElementById('state');
-            destination.appendChild(option);
-    };
-
-    let selectedState = localStorage.getItem('selectedState');
-    let stateSelect = document.getElementById('state');
-
-    // Use state selected in settings, otherwise use FL as default.
-    if (selectedState) {
-        stateSelect.options[selectedState].selected = true;
-    } else {
-        stateSelect.options['FL'].selected = true;
-    }
-}
-
 const fullDiagnosisList = [
     'abnormal blood chemistry',
     'actinic keratosis',
@@ -176,6 +146,7 @@ const fullDiagnosisList = [
     "Barrett's esophagus",
     'binge eating disorder',
     'blastomycosis', 
+    'blepharitis',
 
     'chronic rhinitis',
     'coccidioidomycosis',
@@ -256,6 +227,7 @@ const fullDiagnosisList = [
 
     'ulcerative colitis',
     'unspecified dermatitis',
+    'urge incontinence',
     
     'vitiligo',
 ]
@@ -291,6 +263,33 @@ const mdSpecialtyList = [
     'urology',
     'wound care',
 ]
+
+function createStateSelectOptions () {
+
+    // Create list of states
+    for(i = 0; i < stateClientList.length; i++) {
+            
+        // Create option, assign attributes.
+            let option = document.createElement('option');
+            option.value = stateClientList[i];
+            option.innerHTML = stateClientList[i];
+            option.id = stateClientList[i];
+            
+        // Add option to state select element.
+            let destination = document.getElementById('state');
+            destination.appendChild(option);
+    };
+
+    let selectedState = localStorage.getItem('selectedState');
+    let stateSelect = document.getElementById('state');
+
+    // Use state selected in settings, otherwise use FL as default.
+    if (selectedState) {
+        stateSelect.options[selectedState].selected = true;
+    } else {
+        stateSelect.options['FL'].selected = true;
+    }
+}
 
 var notePreviewText = '';
 
@@ -373,7 +372,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         function getChecked() { // Used for input type="checkbox"
             const checkboxList = [
-                "sendToIRO",
+                //"sendToIRO",
                 "chart", 
                 "expedited", 
                 "falseQL", 
