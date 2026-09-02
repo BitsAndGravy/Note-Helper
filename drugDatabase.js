@@ -138,6 +138,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "colitis", 
     },  
     {
+        drug: "Cabtreo gel",
+        quantity: "50/30",
+        diagnosis: "acne vulgaris", 
+        formulary: false,
+    },  
+    {
         drug: "Caplyta capsule",
         quantity: "270/30",
         diagnosis: "bipolar disorder", 
@@ -735,6 +741,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "Osphena tablet", 
         quantity: "30/30",
         diagnosis: "menopausal and female climacteric states",
+        altDiagnosis: "postmenopausal atrophic vaginitis",
     },
     {
         drug: "Ozempic pen", 
