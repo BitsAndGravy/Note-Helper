@@ -96,6 +96,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "major depressive disorder", 
     },  
     {
+        drug: "Auvi-Q auto-injector",
+        quantity: "2/30",
+        diagnosis: "anaphylaxis", 
+        formulary: false, 
+    },  
+    {
         drug: "azelaic acid gel",
         quantity: "50/30",
         diagnosis: "rosacea", 

@@ -175,6 +175,13 @@ a:link {color: var(--heading-text);}
     margin-bottom: 5px;
 }
 
+.iroPreviewHeader {
+    padding-left: 10px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
 .heading {
     background-color: var(--header-background);
     padding-left: 10px;
@@ -228,6 +235,10 @@ a:link {color: var(--heading-text);}
 
 .justify-split {
     justify-content: space-between;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }
 
 .characterCount {

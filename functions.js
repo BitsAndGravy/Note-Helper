@@ -1450,6 +1450,26 @@ function iroChecked() {
     }
 }
 
+// Show or hide additional content (used for IRO preview, settings page diagnosis list and drug list)
+function showList(target) {
+    let div = document.getElementById(target);
+
+    let add = target + 'Add';
+    let addSpan = document.getElementById(add);
+    
+    let remove = target + 'Remove'
+    let removeSpan = document.getElementById(remove);
+
+    div.classList.toggle('hideContent');
+    div.classList.toggle('showContent');
+
+    addSpan.classList.toggle('hideContent');
+    addSpan.classList.toggle('showContent');
+
+    removeSpan.classList.toggle('hideContent');
+    removeSpan.classList.toggle('showContent');
+}
+
 // When 'Copy' clicked for appeal and iro notes
 function copyAppealText() {
     let element = 'appealDenial';
@@ -1535,6 +1555,7 @@ function resetTimer() {
     clearInterval(myTimer);
     document.getElementById('time').innerText = "0:00";
 }
+
 
 
 
