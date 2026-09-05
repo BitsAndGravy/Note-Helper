@@ -830,6 +830,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "rasagiline 1 mg tablet",
+        quantity: "30/30",
+        diagnosis: "Parkinson's disease",
+    },
+    {
         drug: "Relistor tablet", 
         quantity: "30/30",
         diagnosis: "drug-induced constipation",
