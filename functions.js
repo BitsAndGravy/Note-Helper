@@ -1307,6 +1307,93 @@ function showQuantity() {
     checkNFStates();
 }
 
+// When label for case type selected, show date table (help determine eligibility for reopening, appeal, etc)
+function showDates() {
+    //
+    //
+    // Add stuff to show/hide when clicked
+    let datesDiv = document.getElementById('dates');
+    datesDiv.classList.toggle('hideContent');
+    datesDiv.classList.toggle('showContent');
+    processDates();
+    
+}
+
+    // Subtract days from today
+    function processDates() {
+        const todayDate = new Date();
+
+        let reopeningDate = todayDate.subtractBusinessDays(7);
+        let reopeningText = 'Reopening if denied on ' + reopeningDate;
+
+        let appealDate = todayDate.subtractDays(60);
+        let appealText = 'Appeal if denied on ' + appealDate;
+
+        let datesText = reopeningText + '\n' + appealText;
+
+        document.getElementById('dates').innerText = datesText;
+    }
+
+    // Format date for readability for case type determination
+    function formatDateClean(date) {
+    return new Date(date).toLocaleDateString("en-US", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        weekday: "long",
+    });
+    }
+
+    // Add non-business days (not using?)
+    Date.prototype.addDays = function(days) {
+        let date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return formatDateClean(date);
+    }
+
+    // Subtract non-business days (e.g. 60 days ago)
+    Date.prototype.subtractDays = function(days) {
+        let date = new Date(this.valueOf());
+        date.setDate(date.getDate() - days);
+        return formatDateClean(date);
+    }
+
+    // Add business days (e.g. add three days for IRO report due)
+    Date.prototype.addBusinessDays = function(days) {
+        // Create a copy of the date to avoid mutating the original object
+        let result = new Date(this.valueOf());
+        let addedDays = 0;
+
+        while (addedDays < days) {
+            // Add exactly 1 day
+            result.setDate(result.getDate() + 1);
+
+            // If it's not Sunday (0) and not Saturday (6), count it as a business day
+            if (result.getDay() !== 0 && result.getDay() !== 6) {
+                addedDays++;
+            }
+        }
+        return formatDateClean(result);
+    }
+
+    // Subtract business days (i.e. for reopening window)
+    Date.prototype.subtractBusinessDays = function(days) {
+        // Create a copy of the date to avoid mutating the original object
+        let result = new Date(this.valueOf());
+        let subtractedDays = 0;
+
+        while (subtractedDays < days) {
+            // Add exactly 1 day
+            result.setDate(result.getDate() - 1);
+
+            // If it's not Sunday (0) and not Saturday (6), count it as a business day
+            if (result.getDay() !== 0 && result.getDay() !== 6) {
+                subtractedDays++;
+            }
+        }
+        return formatDateClean(result);
+    }
+
 
 // When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reauthorizationChecked() {
