@@ -362,11 +362,11 @@ a:link {color: var(--heading-text);}
 
 .alert-text {
     margin-left:  1em;
-    font-size: 1.15 em;
+    font-size: 1.15em;
     font-weight: 500;
 }
 
-.alert-icon .material-symbols-outlined, .alert-text {
+.alert-icon, .alert-text {
     color: var(--alert-foreground-color);
 }
 

@@ -1,11 +1,5 @@
 /* || Dictionaries and constants */
 const checkboxBook = {
-    /* no longer using as input, more as a button to display IRO options.
-    sendToIRO: {
-        isChecked: '', // Leaving blank for now, adding to IRO note instead of general note
-        notChecked: '',
-    },
-    */
     chart: {
         isChecked: 'No relevant documents in Chart View. ', 
         notChecked: ''
@@ -34,10 +28,6 @@ const checkboxBook = {
         isChecked: 'No relevant paid claims. ',
         notChecked:''
     },
-    /*type: { // Updating to use per function.
-        isChecked: 'Reauthorization',
-        notChecked:'Initial'
-    },*/
     urgent: {
         isChecked: 'Urgent ',
         notChecked:''
@@ -310,7 +300,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     if (requireAge == 'yes') {
         if (ageRequirement.value == '') {
-            ageAlertText = 'Age field is blank! ';
+            ageAlertText = 'Age field is blank. ';
 
         } else {
             ageAlertText = '';
@@ -318,7 +308,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     }
 
     if (char.classList.contains('characterLimitRed')) {
-        characterAlertText = 'Over character limit of 2,000! ';
+        characterAlertText = 'Over character limit of 2,000. ';
     } else {
         characterAlertText = '';
     }
@@ -340,24 +330,11 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         buildNote();     
         showNotePreview(); // Unique to this function
         characterCount();
-        //characterLimitWarning(); // Unclear if I want this funciton, as it's messy and hard to clean up, not worth the work. 
     }
 
         function showNotePreview() {
             let notePreview = document.getElementById('notePreview');
             notePreview.innerText = notePreviewText;
-        }
-
-        function characterLimitWarning() { // Highlight current input box with red background.
-            let char = document.getElementById('characterCount');
-            let focus = document.activeElement;
-            if(char.classList.contains('characterLimitRed')) {
-                focus.style.backgroundColor = 'red';
-                focus.style.color = 'white';
-            } else {
-                focus.style.backgroundColor = '';
-                focus.style.color = '';
-            }
         }
 
     function processResults() { // takes all of the inputs and places them into the finished note.
@@ -372,11 +349,9 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         function getChecked() { // Used for input type="checkbox"
             const checkboxList = [
-                //"sendToIRO",
                 "chart", 
                 "expedited", 
                 "falseQL", 
-                //"gender", now using getGender()
                 "medicalAuthorizations",
                 "qset",
                 "records",
@@ -423,14 +398,17 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         function getType() {
             let reauth = document.getElementById('reauthorization');
             let reopen = document.getElementById('reopening');
-            let appeal = document.getElementById('appealType');
+            let appeal1 = document.getElementById('appealType');
+            //let appeal2 = document.getElementById('appeal2Type');
 
             if (reauth.checked) {
                 answer.type = 'Reauthorization';
             } else if (reopen.checked) {
                 answer.type = 'Reopening';
-            } else if (appeal.checked) {
-                answer.type = 'Appeal';
+            } else if (appeal1.checked) {
+                answer.type = 'First-level appeal';
+            //} else if (appeal2.checked) {
+            //    answer.type = 'Second-level appeal';
             } else {
                 answer.type = 'Initial';
             }
