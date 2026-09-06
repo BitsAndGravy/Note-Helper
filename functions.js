@@ -1309,9 +1309,6 @@ function showQuantity() {
 
 // When label for case type selected, show date table (help determine eligibility for reopening, appeal, etc)
 function showDates() {
-    //
-    //
-    // Add stuff to show/hide when clicked
     let datesDiv = document.getElementById('datesDiv');
     datesDiv.classList.toggle('hideContent');
     datesDiv.classList.toggle('showContent');
@@ -1319,14 +1316,23 @@ function showDates() {
     
 }
 
+function fillDate(days) {
+    let todayDate = new Date();
+    let iroDueDate = todayDate.addBusinessDays(days);
+    let formattedIROdate = formatDateIRO(iroDueDate) + ' at 5 pm EST';
+
+    let iroDateElement = document.getElementById('iroDueDate');
+    iroDateElement.value = formattedIROdate;
+}
+
     // Subtract days from today
     function processDates() {
-        const todayDate = new Date();
+        let todayDate = new Date();
 
-        let reopeningDate = todayDate.subtractBusinessDays(7);
+        let reopeningDate = formatDateClean(todayDate.subtractBusinessDays(7));
         let reopeningText = 'Reopening if denied on/after ' + reopeningDate;
 
-        let appealDate = todayDate.subtractDays(60);
+        let appealDate = formatDateClean(todayDate.subtractDays(60));
         let appealText = 'Appeal eligible if denied on/after ' + appealDate;
 
         let datesText = reopeningText + '\n' + appealText;
@@ -1336,26 +1342,34 @@ function showDates() {
 
     // Format date for readability for case type determination
     function formatDateClean(date) {
-    return new Date(date).toLocaleDateString("en-US", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-        weekday: "long",
-    });
+        return new Date(date).toLocaleDateString("en-US", {
+            day: "numeric",
+            month: "long",
+            year: "numeric",
+            weekday: "long",
+        });
+    }
+
+    function formatDateIRO(date) {
+        return new Date(date).toLocaleDateString("en-US", {
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric',
+        });
     }
 
     // Add non-business days (not using?)
     Date.prototype.addDays = function(days) {
-        let date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
-        return formatDateClean(date);
+        let result = new Date(this.valueOf());
+        result.setDate(result.getDate() + days);
+        return result;
     }
 
     // Subtract non-business days (e.g. 60 days ago)
     Date.prototype.subtractDays = function(days) {
-        let date = new Date(this.valueOf());
-        date.setDate(date.getDate() - days);
-        return formatDateClean(date);
+        let result = new Date(this.valueOf());
+        result.setDate(result.getDate() - days);
+        return result;
     }
 
     // Add business days (e.g. add three days for IRO report due)
@@ -1373,7 +1387,7 @@ function showDates() {
                 addedDays++;
             }
         }
-        return formatDateClean(result);
+        return result;
     }
 
     // Subtract business days (i.e. for reopening window)
@@ -1391,7 +1405,7 @@ function showDates() {
                 subtractedDays++;
             }
         }
-        return formatDateClean(result);
+        return result;
     }
 
 
@@ -1502,10 +1516,17 @@ function iroChecked() {
         div.classList.add('showContent');
         //iro.tabIndex = 0;
 
+        // If IRO-MD specialty blank, prefill it with MD specialty from above field
         if (mdPaste.value == '') {
             let mdCopy = document.getElementById('appealInternalQuestion').value;
             let mdCopyCapitalized = mdCopy.charAt(0).toUpperCase() + mdCopy.slice(1); 
             mdPaste.value = mdCopyCapitalized;
+        }
+
+        // If IRO due date is blank, prefill with 3 business days out.
+        let iroDateElement = document.getElementById('iroDueDate');
+        if (iroDateElement.value == '') {
+            fillDate(3);
         }
         
     } else {

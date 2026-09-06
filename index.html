@@ -351,7 +351,8 @@
                                 placeholder="conclusion"></textarea>
                             <br>
 
-                            <div id="commentDiv" class="hideContent"> <!--Hide until falseQL checked-->
+                            <!--Hide until falseQL checked-->
+                            <div id="commentDiv" class="hideContent"> 
                                 <label 
                                     for="comment" 
                                     id="commentLabel" 
@@ -368,6 +369,7 @@
                                 <span id="showProperQuantity"></span>
                             </div>
 
+                            <!-- Hide until Appeals case type checked -->
                             <div id="appealDenialInputsDiv" class="hideContent">
                     
                                 <div id="appealInternalDiv suggestContainer">
@@ -464,6 +466,8 @@
                                             type="text"
                                             id="iroDueDate"
                                             placeholder="iro due date and time">
+                                        <button type="button" onclick="fillDate(3)">3 days*</button>
+                                        
 
                                         <br>
                                         <label for="iroClinicalSummary">A7</label>
@@ -542,6 +546,9 @@
         </div>
     </div>
 
+
+
+    
 <!--Preview -->
     <div id="showPreviewDiv">
         <br>
