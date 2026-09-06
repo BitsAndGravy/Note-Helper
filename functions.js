@@ -1312,7 +1312,7 @@ function showDates() {
     //
     //
     // Add stuff to show/hide when clicked
-    let datesDiv = document.getElementById('dates');
+    let datesDiv = document.getElementById('datesDiv');
     datesDiv.classList.toggle('hideContent');
     datesDiv.classList.toggle('showContent');
     processDates();
@@ -1324,10 +1324,10 @@ function showDates() {
         const todayDate = new Date();
 
         let reopeningDate = todayDate.subtractBusinessDays(7);
-        let reopeningText = 'Reopening if denied on ' + reopeningDate;
+        let reopeningText = 'Reopening if denied on/after ' + reopeningDate;
 
         let appealDate = todayDate.subtractDays(60);
-        let appealText = 'Appeal if denied on ' + appealDate;
+        let appealText = 'Appeal eligible if denied on/after ' + appealDate;
 
         let datesText = reopeningText + '\n' + appealText;
 
