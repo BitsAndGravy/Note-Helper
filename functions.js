@@ -230,7 +230,7 @@ const mdSpecialtyList = [
     'emergency medicine',
     'ENT',
     'family medicine',
-    'GI',
+    'gastroenterology',
     'hematology',
     'hospice/palliative',
     'ICU',
@@ -1677,7 +1677,13 @@ const diagnosisNameList = [];
     });
 
 // Text prediction, currently used for drug name and diagnosis.
-function predictWords(inputLetters, wordList, source, destination) {
+function predictWords(
+        inputLetters, // Value of the element being typed
+        wordList, // Word bank 
+        source, // ID of the element being typed
+        destination // ID of the element the result will show up in
+        ) {
+            
     // Add event listenter is on window.onload function for when suggestion is accepted (i.e. press enter or tab)
     let suggestion = document.getElementById(destination);
     let wordName = document.getElementById(source);
@@ -1688,11 +1694,11 @@ function predictWords(inputLetters, wordList, source, destination) {
         
     } else {
         // Case-insensitive regex that anchors to the beginning of the word
-            let regex = new RegExp("^" + inputLetters, "i");
+        let regex = new RegExp("^" + inputLetters, "i");
             
         // Filter the array and return top match. Change slice second number to include additional results.
-            suggest = wordList.filter(word => regex.test(word)).slice(0, 1); 
-            suggestion.innerText = suggest;    
+        suggest = wordList.filter(word => regex.test(word)).slice(0, 1); 
+        suggestion.innerText = suggest;    
     }
 }
 

@@ -372,15 +372,18 @@
                             <!-- Hide until Appeals case type checked -->
                             <div id="appealDenialInputsDiv" class="hideContent">
                     
-                                <div id="appealInternalDiv suggestContainer">
-                                    <label for="appealInternalQuestion">A1</label>
-                                    <input 
-                                        type="text"
-                                        id="appealInternalQuestion"
-                                        name="appealInternalQuestion"
-                                        placeholder="MD specialty">
+                                <div id="appealInternalDiv">
+                                    <div class="suggestContainer">
+                                        <label for="appealInternalQuestion">A1</label>
+                                        <input 
+                                            type="text"
+                                            id="appealInternalQuestion"
+                                            name="appealInternalQuestion"
+                                            placeholder="MD specialty"
+                                            oninput="predictWords(this.value, mdSpecialtyList, 'appealInternalQuestion', 'mdSpecialtySuggestion')">
 
-                                    <span id="mdSpecialtySuggestion" class="suggestion"></span>
+                                        <span id="mdSpecialtySuggestion" class="suggestion"></span>
+                                    </div>
                                 </div>
 
                                 <div id="appealExternalDiv">
@@ -548,7 +551,7 @@
 
 
 
-    
+
 <!--Preview -->
     <div id="showPreviewDiv">
         <br>

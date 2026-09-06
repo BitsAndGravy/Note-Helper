@@ -67,33 +67,47 @@ window.onload = function() {
 
     /* || Word prediction, see predictWords() in functions */
     
-    // Start typing in the drug name field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
-    const drugInput = document.getElementById('drug');
-    const drugSuggestion = document.getElementById('drugSuggestion');
+        // Drug name: Start typing in the drug name field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
+        const drugInput = document.getElementById('drug');
+        const drugSuggestion = document.getElementById('drugSuggestion');
 
-    drugInput.addEventListener('keydown', function(e) {
-        
-        // Check if the pressed key is "Enter"
-        if (((e.key === 'Enter') || (e.key === 'Tab')) && drugSuggestion.innerText != '') {
-            drugInput.value = drugSuggestion.innerText;
-            drugSuggestion.innerText = '';
-            getQuantity();
-        }
-    });
+        drugInput.addEventListener('keydown', function(e) {
+            
+            // Check if the pressed key is "Enter"
+            if (((e.key === 'Enter') || (e.key === 'Tab')) && drugSuggestion.innerText != '') {
+                drugInput.value = drugSuggestion.innerText;
+                drugSuggestion.innerText = '';
+                getQuantity();
+            }
+        });
 
-    // Start typing in diagnosis field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
-    const diagnosisInput = document.getElementById('diagnosis');
-    const diagnosisSuggestion = document.getElementById('diagnosisSuggestion');
+        // Diagnosis: Start typing in diagnosis field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
+        const diagnosisInput = document.getElementById('diagnosis');
+        const diagnosisSuggestion = document.getElementById('diagnosisSuggestion');
 
-    diagnosisInput.addEventListener('keydown', function(e) {
-        
-        // Check if the pressed key is "Enter"
-        if (((e.key === 'Enter') || (e.key === 'Tab')) && diagnosisSuggestion.innerText != '') {
-            diagnosisInput.value = diagnosisSuggestion.innerText;
-            diagnosisSuggestion.innerText = '';     
-            preSaveFunctions();       
-        }
-    });
+        diagnosisInput.addEventListener('keydown', function(e) {
+            
+            // Check if the pressed key is "Enter"
+            if (((e.key === 'Enter') || (e.key === 'Tab')) && diagnosisSuggestion.innerText != '') {
+                diagnosisInput.value = diagnosisSuggestion.innerText;
+                diagnosisSuggestion.innerText = '';     
+                preSaveFunctions();       
+            }
+        });
+
+        // MD Specialty: Start typing in first MD specialty field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
+        const mdInput = document.getElementById('appealInternalQuestion');
+        const mdSuggestion = document.getElementById('mdSpecialtySuggestion');
+
+        mdInput.addEventListener('keydown', function(e) {
+            
+            // Check if the pressed key is "Enter"
+            if (((e.key === 'Enter') || (e.key === 'Tab')) && mdSuggestion.innerText != '') {
+                mdInput.value = mdSuggestion.innerText;
+                mdSuggestion.innerText = '';     
+                preSaveFunctions();       
+            }
+        });
 
     /* Error message animation listener */
     const alertAnimation = document.getElementById('alert');
