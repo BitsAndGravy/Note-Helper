@@ -1,8 +1,29 @@
-/* || General styles */
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--body-text);
     background-color: var(--main-background);
+}
+
+button {
+    border-radius: 5px;
+    width: 80px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    padding: 5px;
+    box-shadow: -2px -2px 2px #00000086 inset;
+    transition: 100ms;
+}
+
+button:hover {background-color: var(--button-hover);}
+
+button:active {
+    background-color: var(--button-active);
+    box-shadow: 2x 2px 2px #00000086 inset;
+}
+
+/* Alternative diagnosis suggestion button */
+.altButton {
+    width: auto;
 }
 
 h3 {
@@ -74,25 +95,8 @@ input[type=checkbox] {
     height: 15px;
 }
 
-/* Buttons */
-button {
-    border-radius: 5px;
-    width: 80px;
-    background-color: var(--button-background);
-    color: var(--button-text);
-    padding: 5px;
-    box-shadow: -2px -2px 2px #00000086 inset;
-    transition: 100ms;
-}
-    button:hover {background-color: var(--button-hover);}
-    button:active {
-        background-color: var(--button-active);
-        box-shadow: 2x 2px 2px #00000086 inset;
-    }
-
-/* Alternative diagnosis suggestion button */
-.altButton {
-    width: auto;
+.text-sm {
+    font-size: 1rem !important;
 }
 
 
@@ -184,8 +188,6 @@ a:link {color: var(--heading-text);}
 .iroPreviewHeader {
     padding-left: 10px;
     height: 45px;
-    display: flex;
-    align-items: center;
 }
 
 .heading {
@@ -193,8 +195,6 @@ a:link {color: var(--heading-text);}
     padding-left: 10px;
     height: 45px;
     border-radius: 18px 18px 0px 0px; /* Rounded on top to match border, flat on bottom */
-    display: flex;
-    align-items: center;
     color: var(--heading-text);
 }
 
@@ -231,26 +231,25 @@ a:link {color: var(--heading-text);}
     background-color: var(--main-background);
 }
 
-.stateRegAndCharacterCountBox {
-    display: flex;
-    justify-content: space-between;
+.cursor-pointer {
+    cursor: pointer;
 }
 
-.caseTypeInputBox {
+.flex {
     display: flex;
-    align-items: center;
 }
 
 .align-center {
-    padding-right: 5px;
+    align-items: center;
 }
+
 
 .justify-space-between {
     justify-content: space-between;
 }
 
-.cursor-pointer {
-    cursor: pointer;
+.pad-right-5 {
+    padding-right: 5px;
 }
 
 .characterCount {
@@ -258,12 +257,6 @@ a:link {color: var(--heading-text);}
     font-size: 13px;
     padding: 5px;
 }
-
-/* buttons now in footer, no special formatting needed.
-.appealCopyButtons {
-    margin-left: 26px;
-}
-    */
 
 .error {
     background-color: red;
@@ -357,9 +350,7 @@ a:link {color: var(--heading-text);}
     --alert-foreground-color: #222222;
     --alert-background-color: #eeeeee;
 
-    display: flex;
     justify-content: center;
-    align-items: center;
     padding: 1em;
     box-sizing: border-box;
     border-radius: 5px;

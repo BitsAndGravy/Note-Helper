@@ -23,7 +23,7 @@
 <body>
 <!--Input field-->
     <div class="container">
-        <div class="heading">
+        <div class="heading align-center flex">
             <H3>Note helper</H3>
             <nav>
                 <ul>
@@ -40,7 +40,7 @@
                     <!-- Part 1: Above middle bar -->
                     <div class="inputDiv">   
                         <form id="form1">
-                            <div class="caseTypeInputBox justify-space-between">
+                            <div class="flex align-center justify-space-between">
                                 <div class="suggestContainer input-spacer">
                                     <label for="drug">01.</label>
                                     <input 
@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                                     
-                            <div class="caseTypeInputBox justify-space-between input-spacer">
+                            <div class="flex align-center justify-space-between input-spacer">
                                 <div>
                                     <label for="source">02.</label>
                                     <select name="source" id="source">
@@ -200,10 +200,10 @@
                                 <br id="properQuantityBreak">
                             </div>
 
-                            <div class="caseTypeInputBox">
-                                <label for="type" class="align-center">10.</label> 
+                            <div class="flex align-center">
+                                <label for="type" class="pad-right-5">10.</label> 
 
-                                    <div id="reauthorizationTypeDiv" class="align-center">
+                                    <div id="reauthorizationTypeDiv" class="pad-right-5">
                                         <input 
                                             type="checkbox" 
                                             id="reauthorization" 
@@ -212,7 +212,7 @@
                                             <label for="reauthorization">Reauthorizaiton</label>
                                     </div>
                                         
-                                    <div id="reopeningTypeDiv" class="align-center">
+                                    <div id="reopeningTypeDiv" class="pad-right-5">
                                         <input
                                             type="checkbox"
                                             id="reopening"
@@ -221,7 +221,7 @@
                                             <label for="reopening">Reopening</label>
                                     </div>
 
-                                    <div id="appealTypeDiv" class="align-center">
+                                    <div id="appealTypeDiv" class="pad-right-5">
                                         <input
                                             type="checkbox"
                                             id="appealType"
@@ -232,7 +232,7 @@
                                        
                                     </div>
 
-                                     <span class="material-symbols-outlined cursor-pointer align-center" onclick="showDates()">
+                                     <span class="material-symbols-outlined cursor-pointer pad-right-5 text-sm" onclick="showDates()">
                                     info
                                     </span>
                             </div>
@@ -410,7 +410,7 @@
                         </form>
 
                         <!-- State regulations and character count -->
-                        <div class="stateRegAndCharacterCountBox">
+                        <div class="flex justify-space-between">
                             <div 
                                 id="stateNote" 
                                 class="hideContent"
@@ -427,7 +427,7 @@
                     <form id="form4">    
                         <div class="inputDiv">
                             <div class="mini-container">
-                                <div class="heading">
+                                <div class="heading align-center flex">
                                     <H3>Appeal denial language</H3>
                                 </div>                
                             
@@ -454,7 +454,7 @@
                             <!-- IRO note builder-->
                             <div id="iroNoteDiv" class="mini-container hideContent iroNoteSpacer" oninput="buildIROnote()">
                             
-                                <div class="heading">
+                                <div class="heading align-center flex">
                                     <h3>IRO note</h3>
                                 </div>
 
@@ -502,7 +502,7 @@
                                             placeholder="iro questions"></textarea>
 
                                         <br>
-                                        <div class="iroPreviewHeader cursor-pointer"  onclick="showList('iroNotePreview')">
+                                        <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
                                             <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
                                             add
                                             </span>
@@ -534,7 +534,7 @@
 
             <!-- error -->
             <div class="hideElement" id="alert">
-                <div class="alert">
+                <div class="alert align-center flex">
                     <div class="alert-icon">
                         <span class="material-symbols-outlined">
                         error
@@ -566,7 +566,7 @@
     <div id="showPreviewDiv">
         <br>
         <div class="container">
-            <div class="heading">
+            <div class="heading flex align-center">
                 <H3>Preview</H3>
             </div>
 
@@ -589,7 +589,7 @@
 
 <!-- Note 1 -->
     <div class="container" id="noteOneBody">
-        <div class="heading">
+        <div class="heading align-center flex">
             <H3>Saved note #1</H3>
         </div>
 
@@ -641,7 +641,7 @@
 
 <!--Note 2-->
     <div class="container" id="noteTwoBody">
-        <div class="heading">
+        <div class="heading align-center flex">
             <H3>Saved note #2</H3>
         </div>
 
@@ -693,7 +693,7 @@
 
 <!--Note 3 new-->
     <div class="container" id="noteThreeBody">
-        <div class="heading">
+        <div class="heading align-center flex">
             <H3>Saved note #3</H3>
         </div>
 
