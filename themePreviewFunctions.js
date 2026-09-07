@@ -23,7 +23,7 @@ function previewBuilder() {
         
         // Header div and heading
             const headingDiv = document.createElement('div');
-                headingDiv.className = 'heading';
+                headingDiv.className = 'heading align-center flex';
 
             containerDiv.appendChild(headingDiv); //
 
