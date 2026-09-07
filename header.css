@@ -95,6 +95,8 @@ button {
     width: auto;
 }
 
+
+
 /* ||| Links */
 a:link {color: var(--heading-text);}
     a:hover {color: var(--hyperlink-hover);}
@@ -165,6 +167,10 @@ a:link {color: var(--heading-text);}
     padding: 5px 10px 10px 10px; /* Top, right, bottom, left */
 }
 
+.datesDivPadding {
+    padding: 10px;
+}
+
 /* Adjust size of the large textarea inputs, i.e. authorizations, claims, clinicals, conclusion. */
 .bigTextarea {
     width: 450px;
@@ -213,6 +219,12 @@ a:link {color: var(--heading-text);}
     box-shadow: 5px 10px 15px #00000086;
 }
 
+.border-only {/* Used to create a border around Note Helper, Preview, and Saved Notes */
+    border: 2px solid var(--body-border-color);
+    border-radius: 20px;
+    margin: 10px;
+}
+
 .themeBookBackgroundColor {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--body-text);
@@ -233,7 +245,7 @@ a:link {color: var(--heading-text);}
     padding-right: 5px;
 }
 
-.justify-split {
+.justify-space-between {
     justify-content: space-between;
 }
 

@@ -37,9 +37,10 @@
         <div>
             <div class="gradientColor">
                 <div  oninput="preSaveFunctions()">
+                    <!-- Part 1: Above middle bar -->
                     <div class="inputDiv">   
                         <form id="form1">
-                            <div class="caseTypeInputBox justify-split">
+                            <div class="caseTypeInputBox justify-space-between">
                                 <div class="suggestContainer input-spacer">
                                     <label for="drug">01.</label>
                                     <input 
@@ -68,7 +69,7 @@
                                 </div>
                             </div>
                                     
-                            <div class="caseTypeInputBox justify-split input-spacer">
+                            <div class="caseTypeInputBox justify-space-between input-spacer">
                                 <div>
                                     <label for="source">02.</label>
                                     <select name="source" id="source">
@@ -181,7 +182,8 @@
                                 <br>
                             </div>
 
-                            <div id="properQuantityDiv" class="hideContent"> <!--Hide when falseQL not selected; start hidden-->
+                            <!--Hide when falseQL not selected; start hidden-->
+                            <div id="properQuantityDiv" class="hideContent"> 
                                 <label 
                                     for="properQuantity" 
                                     id="properQuantityLabel">09.a</label>
@@ -199,7 +201,7 @@
                             </div>
 
                             <div class="caseTypeInputBox">
-                                <label for="type" class="align-center cursor-pointer" onclick="showDates()">10.</label> 
+                                <label for="type" class="align-center">10.</label> 
 
                                     <div id="reauthorizationTypeDiv" class="align-center">
                                         <input 
@@ -226,12 +228,18 @@
                                             name="type"
                                             onclick="appealTypeChecked()">
                                             <label for="appealType">Appeal</label>
+
+                                       
                                     </div>
+
+                                     <span class="material-symbols-outlined cursor-pointer align-center" onclick="showDates()">
+                                    info
+                                    </span>
                             </div>
 
                             <!-- Dates show when label for 10 clicked -->
-                            <div id="datesDiv" class="hideContent inputDiv">
-                                <div class="container secondaryColor inputDiv">
+                            <div id="datesDiv" class="hideContent">
+                                <div class="border-only secondaryColor datesDivPadding">
                                     <div id="dates" >
                                     </div>
                                 </div>
@@ -246,6 +254,7 @@
                         </form>
                     </div>
 
+                    <!-- Part 2: The middle bar-->
                     <div class="secondaryColor inputDiv">
                         <form id="form2">
                             <label for="gender">12.</label> 
@@ -291,6 +300,7 @@
                         </form>
                     </div>
 
+                    <!-- Part 3 (below the middle bar) -->
                     <div class="inputDiv">
                         <form id="form3">
                             <label for="chart">15.</label>
@@ -351,7 +361,7 @@
                                 placeholder="conclusion"></textarea>
                             <br>
 
-                            <!--Hide until falseQL checked-->
+                            <!--True QL comment: Hide until falseQL checked-->
                             <div id="commentDiv" class="hideContent"> 
                                 <label 
                                     for="comment" 
@@ -369,7 +379,7 @@
                                 <span id="showProperQuantity"></span>
                             </div>
 
-                            <!-- Hide until Appeals case type checked -->
+                            <!-- Appeals options: Hide until Appeals case type checked -->
                             <div id="appealDenialInputsDiv" class="hideContent">
                     
                                 <div id="appealInternalDiv">
@@ -399,6 +409,7 @@
 
                         </form>
 
+                        <!-- State regulations and character count -->
                         <div class="stateRegAndCharacterCountBox">
                             <div 
                                 id="stateNote" 
@@ -411,7 +422,7 @@
                     </div>
                 </div>
 
-                <!-- Appeals inputs-->
+                <!-- Appeals inputs: Hide until appeals checked -->
                 <div id="appealDenialAdditionalNotes" class="hideContent secondaryColor">
                     <form id="form4">    
                         <div class="inputDiv">
@@ -422,7 +433,7 @@
                             
                                 <div class="primaryColor inputDiv">
                                     <div id="appealDenialLanguageDiv">
-                                        <label for="appealDenial">A3</label> <!-- Hide until appeals checked -->
+                                        <label for="appealDenial">A3</label>
                                         <textarea
                                             id="appealDenial" 
                                             name="appealDenial" 
@@ -519,7 +530,6 @@
                         </div>
                     </form>
                 </div>
-
             </div>
 
             <!-- error -->
