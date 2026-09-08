@@ -1415,12 +1415,16 @@ function reauthorizationChecked() {
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let conc = document.getElementById('conclusion');
+    let clin = document.getElementById('clinical');
 
     if (check.checked) {
         if(info.value === '') {
             info.value = drug + ' approved ';
         };
+
+        if(clin.value == 'Chart note dated ') {
+            clin.value = "Per previous approval \n\n" + clin.value;
+        }
     }
 }
 
