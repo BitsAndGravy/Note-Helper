@@ -13,7 +13,7 @@ function previewBuilder() {
         // 'document' div - for background color
             const docDiv = document.createElement('div');
                 docDiv.setAttribute("data-theme", name);
-                docDiv.className = 'themeBookBackgroundColor inputDiv';
+                docDiv.className = 'themeBookBackgroundColor padding-5-10-10-10';
 
 
         // Container div - mainly just the border
@@ -36,7 +36,7 @@ function previewBuilder() {
 
         // Body div
             const bodyDiv = document.createElement('div');
-            bodyDiv.className = 'gradientColor inputDiv';
+            bodyDiv.className = 'gradientColor padding-5-10-10-10';
             
 
         // Text and inputs for bodyDiv

@@ -546,14 +546,18 @@
                 </div>
             </div>
 
-            <div class="footing">
-            <!--left-aligned options-->
-                <button type="button" onclick="saveButton()">Save</button>
-                <span id="textCopied" class="hideStart">Copied to clipboard</span>
+            <div class="footing flex justify-space-between align-center">
+                <!--left-aligned options-->
+                <div class="justify-flex-start">
+                    <button type="button" onclick="saveButton()">Save</button>
+                    <span id="textCopied" class="hideStart">Copied to clipboard</span>  
+                </div>
 
-            <!--right-aligned options-->
-                <button type="button" onclick="resetForm()" style="float: right;">Reset</button>
-                <span id="resetForm" style="float: right; transform: translate(-10%) translateY(25%);" class="hideStart">Form reset</span>
+                <!--right-aligned options-->
+                <div class="justify-flex-end">
+                    <span id="resetForm" class="hideStart">Form reset</span>    
+                    <button type="button" onclick="resetForm()">Reset</button>
+                </div>
             </div>
 
         </div>

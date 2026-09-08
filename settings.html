@@ -28,7 +28,7 @@
 
         <div>
             <div class="gradientColor">
-                <div class="inputDiv">  
+                <div class="padding-5-10-10-10">  
                     <h1>Settings</h1>
                     <p>All settings save automatically. Refresh Note Helper or open a new window for changes to take effect.</p>
                     <div id="settingsTest">
@@ -127,14 +127,18 @@
             </div>
 
 
-            <div class="footing">
+            <div class="footing flex justify-space-between align-center">
                 <!--left-aligned options-->
+                <div class="justify-flex-start">
                     <button type="button" onclick="saveButton()">Save</button>
-                    <span id="textCopied" class="hideStart">This button does nothing</span>
+                    <span id="textCopied" class="hideStart">This button does nothing</span>  
+                </div>
 
                 <!--right-aligned options-->
-                    <button type="button" onclick="resetForm()" style="float: right;">Reset</button>
-                    <span id="resetForm" style="float: right; transform: translate(-10%) translateY(25%);" class="hideStart">Form reset</span>
+                <div class="justify-flex-end">
+                    <span id="resetForm" class="hideStart">Form reset</span>    
+                    <button type="button" onclick="resetForm()">Reset</button>
+                </div>
             </div>
         </div>
     </div>
@@ -142,9 +146,8 @@
     <br>
 
     <!-- Drug database section -->
-
     <div class="container">
-        <div class="heading cursor-pointer" onclick="showList('drugDatabaseDisplayDiv')">
+        <div class="align-center flex heading cursor-pointer" onclick="showList('drugDatabaseDisplayDiv')">
             <span id="drugDatabaseDisplayDivAdd" class="material-symbols-outlined showContent">
             add
             </span>
@@ -167,7 +170,7 @@
 
     <!-- Diagnosis list section -->
     <div class="container">
-        <div class="heading cursor-pointer" onclick="showList('diagnosisListDisplayContainer')">
+        <div class="align-center flex heading cursor-pointer" onclick="showList('diagnosisListDisplayContainer')">
             <span id="diagnosisListDisplayContainerAdd" class="material-symbols-outlined showContent">
             add
             </span>
@@ -180,7 +183,7 @@
         </div>
 
         <div id="diagnosisListDisplayContainer" class="gradientColor hideContent">
-            <div id="diagnosisListDisplayDiv" class="inputDiv"></div>
+            <div id="diagnosisListDisplayDiv" class="padding-5-10-10-10"></div>
         </div>
 
         <div class="footing"></div>

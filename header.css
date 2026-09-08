@@ -238,6 +238,13 @@ input[type=text] {
     height: 45px;
 }
 
+.justify-flex-end {
+    justify-content: flex-end;
+}
+
+.justify-flex-start {
+    justify-content: flex-start;
+}
 
 .justify-space-between {
     justify-content: space-between;

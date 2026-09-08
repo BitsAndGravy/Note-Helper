@@ -76,6 +76,8 @@ function updateSelectedState(update) {
     localStorage.setItem('selectedState', update);
 }
 
+
+// Dynamically create list of drugs
 function displayDrugDatabase() {
     let i = 0;
 
@@ -92,9 +94,9 @@ function displayDrugDatabase() {
             const newDiv = document.createElement('div');
             
             if (i % 2 === 0) {
-                newDiv.className = 'primaryColor inputDiv';
+                newDiv.className = 'background-color-primary padding-5-10-10-10';
             } else {
-                newDiv.className = 'secondaryColor inputDiv';
+                newDiv.className = 'background-color-secondary padding-5-10-10-10';
             }
             
         // Div contents
@@ -113,6 +115,7 @@ function displayDrugDatabase() {
             newDiv.appendChild(break2);
 
             // Alternate diagnosis
+            let altDiagnosisNode = '';
             let altDiagnosisWrapper = document.createElement('span');
             if (altDiagnosis === undefined) {
                 altDiagnosisNode = document.createTextNode('No alt diagnosis');
@@ -172,10 +175,10 @@ function displayDrugDatabase() {
     }
 }
 
+// Dynamically create a list of diagnoses.
 function displayDiagnosisList() {
     const diagnosisNameList = [];
 
-    // Build list of diagnoses
     // Pull from drug database
     for(i = 0; i < drugDatabase.length; i++) {
         diagnosisNameList.push(drugDatabase[i].diagnosis);
