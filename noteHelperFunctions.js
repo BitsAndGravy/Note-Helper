@@ -53,6 +53,7 @@ window.onload = function() {
             showTimerSpan.classList.add('display-none');
         }
     
+        /*
     // Check setting for show preview
         let showPreview = localStorage.getItem('showPreview');
         let showPreviewDiv = document.getElementById('showPreviewDiv');
@@ -62,6 +63,7 @@ window.onload = function() {
         } else {
             showPreviewDiv.classList.add("hideContent");
         }
+            */
         
 
     /* || Word prediction, see predictWords() in functions */

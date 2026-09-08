@@ -502,6 +502,7 @@
                                             placeholder="iro questions"></textarea>
 
                                         <br>
+                                        <!-- IRO preview, click to show/hide -->
                                         <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
                                             <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
                                             add
@@ -563,19 +564,26 @@
         </div>
     </div>
 
-
-
+    <br>
 
 <!--Preview -->
     <div id="showPreviewDiv">
         <br>
         <div class="container">
-            <div class="heading flex align-center">
+            <div class="heading flex align-center cursor-pointer" onclick="showList('notePreviewDiv')">
+                <span id="notePreviewDivAdd" class="material-symbols-outlined showContent">
+                add
+                </span>
+
+                <span id="notePreviewDivRemove" class="material-symbols-outlined hideContent">
+                remove
+                </span> 
+                
                 <H3>Preview</H3>
             </div>
 
-            <div class="background-color-primary padding-5-10-10-10">
-                <div id="notePreview">Start note to see preview.<br><br></div>
+            <div id="notePreviewDiv" class="background-color-primary hideContent">
+                <div id="notePreview" class="padding-5-10-10-10">Start note to see preview.<br><br></div>
             </div>
             <div class="footing"></div>
         </div>

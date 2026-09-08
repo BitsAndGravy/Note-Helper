@@ -1599,7 +1599,7 @@ const settingDefault = {
     prefillQuantity: 'no',
     requireAge: 'no',  
     showAppealType: 'yes',
-    showPreview: 'no',
+    // showPreview: 'no',
     showTimer: 'yes',
     showTheme: 'yes',
 }
