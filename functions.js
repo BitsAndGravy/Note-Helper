@@ -1330,10 +1330,10 @@ function fillDate(days) {
         let todayDate = new Date();
 
         let reopeningDate = formatDateClean(todayDate.subtractBusinessDays(7));
-        let reopeningText = 'Reopening if denied on/after ' + reopeningDate;
+        let reopeningText = 'Seven business days ago: ' + reopeningDate;
 
         let appealDate = formatDateClean(todayDate.subtractDays(60));
-        let appealText = 'Appeal eligible if denied on/after ' + appealDate;
+        let appealText = 'Sixty days ago: ' + appealDate;
 
         let datesText = reopeningText + '\n' + appealText;
 

@@ -18,8 +18,7 @@ window.onload = function() {
             appDiv.classList.add("showContent");
             app.tabIndex = 0;
         } else {
-            appDiv.classList.add("hideContent");
-            app.tabIndex = -1;
+            appDiv.classList.add("display-none");
         }
 
         
@@ -41,7 +40,7 @@ window.onload = function() {
         let themeElement = document.getElementById('themeSelect');
 
         if(showTheme == 'no') {
-            themeElement.classList.add("hideEnd");
+            themeElement.classList.add("opacity-0");
         }
 
     // Check setting for show timer
@@ -51,7 +50,7 @@ window.onload = function() {
         if (showTimer == 'yes') {
             showTimerSpan.classList.add('showTimer');
         } else {
-            showTimerSpan.classList.add('hideContent');
+            showTimerSpan.classList.add('display-none');
         }
     
     // Check setting for show preview

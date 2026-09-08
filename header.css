@@ -259,6 +259,10 @@ input[type=text] {
   'opsz' 24
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 .padding-10 {
     padding: 10px;
 }
