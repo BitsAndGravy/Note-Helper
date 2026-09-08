@@ -315,10 +315,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     if ((ageAlertText !== '') || (characterAlertText !== '')) {
         alertText.innerText = ageAlertText + characterAlertText;
-        alert.classList.remove('hideElement');
+        alert.classList.remove('display-none');
         alert.classList.add('shake');
     } else {
-        alert.classList.add('hideElement');
+        alert.classList.add('display-none');
         preSaveFunctions();
         saveNote();
     }
@@ -728,7 +728,7 @@ function resetForm() { // After clicking the Reset button
 
     // Hides error message if requirements not met after clicking save button (i.e. age or character limit)
     function hideAlert() {
-        document.getElementById('alert').classList.add('hideElement');
+        document.getElementById('alert').classList.add('display-none');
     }
 
     // Use state selected in settings, otherwise reset to FL as default.
@@ -921,8 +921,8 @@ function saveThis(noteID) {
     function showButtons(noteID) {
         let edit = noteID + 'EditButton';
         let cancel = noteID + 'CancelButton';
-        document.getElementById(edit).classList.toggle('hideElement');
-        document.getElementById(cancel).classList.toggle('hideElement');
+        document.getElementById(edit).classList.toggle('display-none');
+        document.getElementById(cancel).classList.toggle('display-none');
     }
 
 

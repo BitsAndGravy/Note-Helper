@@ -38,10 +38,10 @@
             <div class="gradientColor">
                 <div  oninput="preSaveFunctions()">
                     <!-- Part 1: Above middle bar -->
-                    <div class="inputDiv">   
+                    <div class="padding-5-10-10-10">   
                         <form id="form1">
                             <div class="flex align-center justify-space-between">
-                                <div class="suggestContainer input-spacer">
+                                <div class="suggest-container input-spacer">
                                     <label for="drug">01.</label>
                                     <input 
                                         type="text" 
@@ -100,7 +100,7 @@
                                     <label for="isExpedited">Expedited</label>
                             </div>
 
-                            <div class="suggestContainer">
+                            <div class="suggest-container">
                                 <label for="diagnosis">04.</label>
                                 <input 
                                     type="text" 
@@ -201,9 +201,9 @@
                             </div>
 
                             <div class="flex align-center">
-                                <label for="type" class="pad-right-5">10.</label> 
+                                <label for="type" class="padding-right-5">10.</label> 
 
-                                    <div id="reauthorizationTypeDiv" class="pad-right-5">
+                                    <div id="reauthorizationTypeDiv" class="padding-right-5">
                                         <input 
                                             type="checkbox" 
                                             id="reauthorization" 
@@ -212,7 +212,7 @@
                                             <label for="reauthorization">Reauthorizaiton</label>
                                     </div>
                                         
-                                    <div id="reopeningTypeDiv" class="pad-right-5">
+                                    <div id="reopeningTypeDiv" class="padding-right-5">
                                         <input
                                             type="checkbox"
                                             id="reopening"
@@ -221,7 +221,7 @@
                                             <label for="reopening">Reopening</label>
                                     </div>
 
-                                    <div id="appealTypeDiv" class="pad-right-5">
+                                    <div id="appealTypeDiv" class="padding-right-5">
                                         <input
                                             type="checkbox"
                                             id="appealType"
@@ -232,14 +232,14 @@
                                        
                                     </div>
 
-                                     <span class="material-symbols-outlined cursor-pointer pad-right-5 text-sm" onclick="showDates()">
+                                     <span class="material-symbols-outlined cursor-pointer padding-right-5 text-sm" onclick="showDates()">
                                     info
                                     </span>
                             </div>
 
                             <!-- Dates show when label for 10 clicked -->
                             <div id="datesDiv" class="hideContent">
-                                <div class="border-only secondaryColor datesDivPadding">
+                                <div class="border-only background-color-secondary padding-10">
                                     <div id="dates" >
                                     </div>
                                 </div>
@@ -255,7 +255,7 @@
                     </div>
 
                     <!-- Part 2: The middle bar-->
-                    <div class="secondaryColor inputDiv">
+                    <div class="background-color-secondary padding-5-10-10-10">
                         <form id="form2">
                             <label for="gender">12.</label> 
                                 <input 
@@ -301,7 +301,7 @@
                     </div>
 
                     <!-- Part 3 (below the middle bar) -->
-                    <div class="inputDiv">
+                    <div class="padding-5-10-10-10">
                         <form id="form3">
                             <label for="chart">15.</label>
                             <input 
@@ -383,7 +383,7 @@
                             <div id="appealDenialInputsDiv" class="hideContent">
                     
                                 <div id="appealInternalDiv">
-                                    <div class="suggestContainer">
+                                    <div class="suggest-container">
                                         <label for="appealInternalQuestion">A1</label>
                                         <input 
                                             type="text"
@@ -423,15 +423,15 @@
                 </div>
 
                 <!-- Appeals inputs: Hide until appeals checked -->
-                <div id="appealDenialAdditionalNotes" class="hideContent secondaryColor">
+                <div id="appealDenialAdditionalNotes" class="hideContent background-color-secondary">
                     <form id="form4">    
-                        <div class="inputDiv">
-                            <div class="mini-container">
+                        <div class="padding-5-10-10-10">
+                            <div class="container-mini">
                                 <div class="heading align-center flex">
                                     <H3>Appeal denial language</H3>
                                 </div>                
                             
-                                <div class="primaryColor inputDiv">
+                                <div class="background-color-primary padding-5-10-10-10">
                                     <div id="appealDenialLanguageDiv">
                                         <label for="appealDenial">A3</label>
                                         <textarea
@@ -452,13 +452,13 @@
                             </div>
 
                             <!-- IRO note builder-->
-                            <div id="iroNoteDiv" class="mini-container hideContent iroNoteSpacer" oninput="buildIROnote()">
+                            <div id="iroNoteDiv" class="container-mini hideContent iroNoteSpacer" oninput="buildIROnote()">
                             
                                 <div class="heading align-center flex">
                                     <h3>IRO note</h3>
                                 </div>
 
-                                <div class="primaryColor inputDiv">
+                                <div class="background-color-primary padding-5-10-10-10">
                                     <div>
                                         <label for="typeOfRequest">A4</label>
                                         <input
@@ -532,8 +532,8 @@
                 </div>
             </div>
 
-            <!-- error -->
-            <div class="hideElement" id="alert">
+            <!-- alert div -->
+            <div class="display-none" id="alert">
                 <div class="alert align-center flex">
                     <div class="alert-icon">
                         <span class="material-symbols-outlined">
@@ -570,7 +570,7 @@
                 <H3>Preview</H3>
             </div>
 
-            <div class="primaryColor inputDiv">
+            <div class="background-color-primary padding-5-10-10-10">
                 <div id="notePreview">Start note to see preview.<br><br></div>
             </div>
             <div class="footing"></div>
@@ -594,7 +594,7 @@
         </div>
 
         <!--un-editable span shown by default. Hides when Edit button clicked. Reappears with Cancel or Save button. -->
-        <div id="noteOneText" class="primaryColor inputDiv">
+        <div id="noteOneText" class="background-color-primary padding-5-10-10-10">
             <span id="noteOne">
                 Note will appear here once saved.
                 <br>
@@ -603,7 +603,7 @@
         </div>
 
         <!--Textarea hidden initially. Shon when Edit clicked.-->
-        <div id="noteOneEdit" class="primaryColor inputDiv hideElement">
+        <div id="noteOneEdit" class="background-color-primary padding-5-10-10-10 display-none">
             <textarea 
                 id="editnoteOne"
                 class="bigTextarea editTextarea"
@@ -627,7 +627,7 @@
             <button 
                 type="button" 
                 id="noteOneCancelButton"
-                class="hideElement" 
+                class="display-none" 
                 onclick="cancelButton('noteOne')"
                 >Cancel</button>
 
@@ -646,7 +646,7 @@
         </div>
 
         <!--un-editable span shown by default. Hides when Edit button clicked. Reappears with Cancel or Save button. -->
-        <div id="noteTwoText" class="primaryColor inputDiv">
+        <div id="noteTwoText" class="background-color-primary padding-5-10-10-10">
             <span id="noteTwo">
                 Note will appear here once saved.
                 <br>
@@ -655,7 +655,7 @@
         </div>
 
         <!--Textarea hidden initially. Shon when Edit clicked.-->
-        <div id="noteTwoEdit" class="primaryColor inputDiv hideElement">
+        <div id="noteTwoEdit" class="background-color-primary padding-5-10-10-10 display-none">
             <textarea 
                 id="editnoteTwo"
                 class="bigTextarea editTextarea"
@@ -679,7 +679,7 @@
             <button 
                 type="button" 
                 id="noteTwoCancelButton"
-                class="hideElement" 
+                class="display-none" 
                 onclick="cancelButton('noteTwo')"
                 >Cancel</button>
 
@@ -698,7 +698,7 @@
         </div>
 
         <!--un-editable span shown by default. Hides when Edit button clicked. Reappears with Cancel or Save button. -->
-        <div id="noteThreeText" class="primaryColor inputDiv">
+        <div id="noteThreeText" class="background-color-primary padding-5-10-10-10">
             <span id="noteThree">
                 Note will appear here once saved.
                 <br>
@@ -707,7 +707,7 @@
         </div>
 
         <!--Textarea hidden initially. Shon when Edit clicked.-->
-        <div id="noteThreeEdit" class="primaryColor inputDiv hideElement">
+        <div id="noteThreeEdit" class="background-color-primary padding-5-10-10-10 display-none">
             <textarea 
                 id="editnoteThree"
                 class="bigTextarea editTextarea"
@@ -731,7 +731,7 @@
             <button 
                 type="button" 
                 id="noteThreeCancelButton"
-                class="hideElement" 
+                class="display-none" 
                 onclick="cancelButton('noteThree')"
                 >Cancel</button>
 
