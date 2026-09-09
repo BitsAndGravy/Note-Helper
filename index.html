@@ -228,8 +228,6 @@
                                             name="type"
                                             onclick="appealTypeChecked()">
                                             <label for="appealType">Appeal</label>
-
-                                       
                                     </div>
 
                                      <span class="material-symbols-outlined cursor-pointer padding-right-5 text-sm" onclick="showDates()">
@@ -390,6 +388,7 @@
                                             id="appealInternalQuestion"
                                             name="appealInternalQuestion"
                                             placeholder="MD specialty"
+                                            tabindex="-1"
                                             oninput="predictWords(this.value, mdSpecialtyList, 'appealInternalQuestion', 'mdSpecialtySuggestion')">
 
                                         <span id="mdSpecialtySuggestion" class="suggestion"></span>
@@ -402,6 +401,7 @@
                                         type="checkbox"
                                         id="sendToIRO"
                                         name="sendToIRO"
+                                        tabindex="-1"
                                         onchange="iroChecked()">
                                     <label for="sendToIRO">Send to IRO</label>
                                 </div>
@@ -438,20 +438,23 @@
                                             id="appealDenial" 
                                             name="appealDenial" 
                                             class="appealTextarea"
+                                            tabindex="-1"
                                             placeholder="denial language for appeal"></textarea>                                        
                                     </div>
                                 </div>
 
                                 <div class="footing">
                                     <button 
+                                        id="A3copyButton"
                                         type="button" 
                                         onclick="copyAppealText()"
+                                        tabindex="-1"
                                         >Copy</button>
                                     <span id="appealDenialCopied" class="hideStart">Copied to clipboard</span>
                                 </div>
                             </div>
 
-                            <!-- IRO note builder-->
+                            <!-- IRO note builder; hidden until 'send to IRO' checked -->
                             <div id="iroNoteDiv" class="container-mini hideContent iroNoteSpacer" oninput="buildIROnote()">
                             
                                 <div class="heading align-center flex">
@@ -465,6 +468,7 @@
                                             type="text"
                                             id="typeOfRequest"
                                             placeholder="type of request"
+                                            tabindex="-1"
                                             value="First-Level Appeal">
                                         
                                         <br>
@@ -472,6 +476,7 @@
                                         <input
                                             type="text"
                                             id="specialtyRequested"
+                                            tabindex="-1"
                                             placeholder="specialty">
 
                                         <br>
@@ -479,8 +484,9 @@
                                         <input
                                             type="text"
                                             id="iroDueDate"
+                                            tabindex="-1"
                                             placeholder="iro due date and time">
-                                        <button type="button" onclick="fillDate(3)">3 days*</button>
+                                        <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
                                         
 
                                         <br>
@@ -489,6 +495,7 @@
                                             id="iroClinicalSummary"
                                             class="appealTextarea"
                                             oninput="iroCharacterCountCheck()"
+                                            tabindex="-1"
                                             placeholder="clinical summary"></textarea>
 
                                         <div>
@@ -499,6 +506,7 @@
                                         <textarea
                                             id="iroQuestions"
                                             class="appealTextarea"
+                                            tabindex="-1"
                                             placeholder="iro questions"></textarea>
 
                                         <br>
@@ -522,8 +530,10 @@
                                 </div>
                                 <div class="footing">
                                     <button 
+                                        id="iroCopyButton"
                                         type="button" 
                                         onclick="copyIROtext()"
+                                        tabindex="-1"
                                         >Copy</button>
                                     <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
                                 </div>

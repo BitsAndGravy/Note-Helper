@@ -787,39 +787,40 @@ function resetForm() { // After clicking the Reset button
     function hideExtras() {
         let quantityDiv = document.getElementById('quantityDiv');
         let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
-        let properQuantity = document.getElementById('properQuantity');
         let properQuantityDiv = document.getElementById('properQuantityDiv');
-        let comment = document.getElementById('comment');
         let commentDiv = document.getElementById('commentDiv');
-        //let iro = document.getElementById('iroNote');
-        // update tabIndexes
-        //
-        //
         let iroDiv = document.getElementById('iroNoteDiv');
+
+        let extrasList = [
+            'properQuantity',   
+            'comment',          
+            'quantity',
+            'falseQL',
+        ];
+
         
         if(alwaysShowQuantity === 'no') {
             // Hide the quantity, falseQL, and comment input    
-                quantityDiv.classList.add('hideContent');
-                quantityDiv.classList.remove('showContent');
+            quantityDiv.classList.add('hideContent');
+            quantityDiv.classList.remove('showContent');
 
-                properQuantityDiv.classList.add('hideContent');
-                properQuantityDiv.classList.remove('showContent');
+            properQuantityDiv.classList.add('hideContent');
+            properQuantityDiv.classList.remove('showContent');
 
-                commentDiv.classList.add('hideContent');
-                commentDiv.classList.remove('showContent');
+            commentDiv.classList.add('hideContent');
+            commentDiv.classList.remove('showContent');
 
-                iroDiv.classList.add('hideContent');
-                iroDiv.classList.remove('showContent');
+            iroDiv.classList.add('hideContent');
+            iroDiv.classList.remove('showContent');
 
             // Skip when tabbing through
-                document.getElementById('quantity').tabIndex = -1;
-                document.getElementById('falseQL').tabIndex = -1;
-                properQuantity.tabIndex = -1;
-                comment.tabIndex = -1;
-                //iro.tabIndex = -1;
+            changeTabIndex(extrasList, -1);
         }
+
+        // Running these functions effectively hides and makes tabIndex -1, as they are not selected anymore
         showProperQuantity();
         appealTypeChecked();
+        iroChecked();
     }
 
         // Shows if falseQL selected, default hidden.
@@ -1458,6 +1459,14 @@ function appealTypeChecked() {
     let appinputs = document.getElementById('appealDenialInputsDiv');
     let applanguage = document.getElementById('appealDenialAdditionalNotes');
 
+    let appealOptionsList = [
+        'appealInternalQuestion',   // A1
+        'sendToIRO',                // A2
+        'appealDenial',             // A3
+        'A3copyButton',             // A3 copy button
+
+    ]
+
     if (check.checked) {
         applanguage.classList.remove('hideContent');
         applanguage.classList.add('showContent');
@@ -1465,6 +1474,7 @@ function appealTypeChecked() {
         appinputs.classList.remove('hideContent');
         appinputs.classList.add('showContent');
 
+        changeTabIndex(appealOptionsList, 0);
 
         if(info.value === '') {
             info.value = drug + ' denied \n\nNo P2P or reopening. ';
@@ -1479,6 +1489,8 @@ function appealTypeChecked() {
 
         appinputs.classList.remove('showContent');
         appinputs.classList.add('hideContent');
+
+        changeTabIndex(appealOptionsList, -1);
     }
 
 }
@@ -1505,22 +1517,30 @@ function changeDiagnosis() {
 
 // When 'send to IRO' is checked:
 function iroChecked() {
-    let check = document.getElementById('sendToIRO');
-    //let iro = document.getElementById('iroNote');
-        // Will need to add other elements for tabIndex
-        //
-        //
-        //
-        //
-    let div = document.getElementById('iroNoteDiv');
-    let mdPaste = document.getElementById('specialtyRequested');
+    iroInputList = [
+        'typeOfRequest',        // A4
+        'specialtyRequested',   // A5
+        'iroDueDate',           // A6
+        'A6copyButton',         // A6 Copy Button
+        'iroClinicalSummary',   // A7
+        'iroQuestions',         // A8
+        'iroCopyButton',        // IRO copy button
+    ]
 
+    let check = document.getElementById('sendToIRO');
+    let div = document.getElementById('iroNoteDiv');
+
+    // If 'send to iro' checked, show inputs for IRO and do some calculations. 
     if (check.checked) {
+        // Show IRO divs
         div.classList.remove('hideContent');
         div.classList.add('showContent');
-        //iro.tabIndex = 0;
+
+        // Update tabIndex to 0 for relevant elements
+        changeTabIndex(iroInputList, 0);
 
         // If IRO-MD specialty blank, prefill it with MD specialty from above field
+        let mdPaste = document.getElementById('specialtyRequested'); // Also A5
         if (mdPaste.value == '') {
             let mdCopy = document.getElementById('appealInternalQuestion').value;
             let mdCopyCapitalized = mdCopy.charAt(0).toUpperCase() + mdCopy.slice(1); 
@@ -1528,17 +1548,26 @@ function iroChecked() {
         }
 
         // If IRO due date is blank, prefill with 3 business days out.
-        let iroDateElement = document.getElementById('iroDueDate');
+        let iroDateElement = document.getElementById('iroDueDate'); // Also A6
         if (iroDateElement.value == '') {
             fillDate(3);
         }
         
     } else {
+        // Hide IRO divs
         div.classList.add('hideContent');
         div.classList.remove('showContent');
-        //iro.tabIndex = -1
+
+        // Update input tabIndex to -1
+        changeTabIndex(iroInputList, -1);
     }
 }
+
+    function changeTabIndex(list, newIndex) {
+        for (i = 0; i < list.length; i++) {
+            document.getElementById(list[i]).tabIndex = newIndex;
+        }
+    }
 
 // Show or hide additional content (used for IRO preview, settings page diagnosis list and drug list)
 function showList(target) {
