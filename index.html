@@ -163,36 +163,34 @@
                                     <label for="nonFormulary">70 </label>
                         -->
 
-                            <label for="reject">07.</label>
+                            <div onchange="showQuantity()">
+                                <label for="reject">07.</label>
 
-                                <input
-                                    type="radio"
-                                    id="standardPA"
-                                    name="reject"
-                                    checked>
-                                    <label for="standardPA">75 </label>
+                                    <input
+                                        type="radio"
+                                        id="standardPA"
+                                        name="reject"
+                                        checked>
+                                        <label for="standardPA">75 </label>
 
-                                <input 
-                                    type="radio" 
-                                    id="nonFormulary" 
-                                    name="reject" 
-                                    onclick="showQuantity()">
-                                    <label for="nonFormulary">70 </label>
+                                    <input 
+                                        type="radio" 
+                                        id="nonFormulary" 
+                                        name="reject">
+                                        <label for="nonFormulary">70 </label>
 
-                                <input 
-                                    type="checkbox" 
-                                    id="quantityLimit" 
-                                    name="reject" 
-                                    onclick="showQuantity()">
-                                    <label for="quantityLimit">and/or 76 </label>
+                                    <input 
+                                        type="checkbox" 
+                                        id="quantityLimit" 
+                                        name="reject">
+                                        <label for="quantityLimit">and/or 76 </label>
 
-                                <button type="button" class="button-reset" onclick="removeSelection('reject')">
-                                    <span class="material-symbols-outlined text-sm">
-                                    refresh
-                                    </span>
-                                </button>
-
-                            <br>
+                                    <button type="button" class="button-reset" onclick="removeSelection('reject')">
+                                        <span class="material-symbols-outlined text-sm">
+                                        refresh
+                                        </span>
+                                    </button>
+                            </div>
                             
                             <div id="quantityDiv">
                                 <label for="quantity">08.</label>
@@ -310,15 +308,13 @@
                                     type="radio" 
                                     id="female" 
                                     name="gender"
-                                    onclick="genderControl(this)"
                                     checked>
                                 <label for="female">Female</label>
 
                                 <input 
                                     type="radio" 
                                     id="male" 
-                                    name="gender"
-                                    onclick="genderControl(this)">
+                                    name="gender">
                                 <label for="male">Male</label>
                             
                             
