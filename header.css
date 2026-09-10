@@ -222,6 +222,14 @@ input[type=checkbox] {
     height: 15px;
 }
 
+input[type=radio] {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 15px;
+    height: 15px;
+    box-shadow: none;
+}
+
 input[type=text] {
     min-width: 150px;
     max-width: 450px;

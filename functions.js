@@ -386,6 +386,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
+        /*
             // Triggers when gender selected. Ensures only one option selected.
             function genderControl(checkbox) {
                 var checkboxes = document.getElementsByName(checkbox.name);
@@ -393,6 +394,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     if (item !== checkbox) item.checked = false
                 });
             }
+                */
 
 
         function getType() {
