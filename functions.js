@@ -1335,6 +1335,23 @@ function showQuantity() {
     checkNFStates();
 }
 
+function removeSelection(name) {
+    let list = [];
+
+    if (name === 'reject') {
+        list = [
+            'standardPA', 
+            'nonFormulary',
+            'quantityLimit',
+        ];
+    }
+
+    for (i = 0; i < list.length; i++) {
+        document.getElementById(list[i]).checked = false;
+    } 
+    showQuantity();
+}
+
 // When label for case type selected, show date table (help determine eligibility for reopening, appeal, etc)
 function showDates() {
     let datesDiv = document.getElementById('datesDiv');

@@ -78,6 +78,12 @@ button:active {
     box-shadow: 2x 2px 2px #00000086 inset;
 }
 
+.button-reset {
+    margin: 0;
+    padding: 2px;
+    width: auto;
+}
+
 .background-color-primary {
     background-color: var(--body-primary-color);
 }
