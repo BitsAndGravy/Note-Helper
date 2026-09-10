@@ -138,6 +138,7 @@
                                 <br>
                             </div>
 
+                            <!-- trialing mix of radio and checkbox
                             <label for="reject">07.</label>
 
                                 <input
@@ -160,6 +161,31 @@
                                     name="reject" 
                                     onclick="showQuantity()">
                                     <label for="nonFormulary">70 </label>
+                        -->
+
+                            <label for="reject">07.</label>
+
+                                <input
+                                    type="radio"
+                                    id="standardPA"
+                                    name="reject"
+                                    checked>
+                                    <label for="standardPA">75 </label>
+
+                                <input 
+                                    type="radio" 
+                                    id="nonFormulary" 
+                                    name="reject" 
+                                    onclick="showQuantity()">
+                                    <label for="nonFormulary">70 </label>
+
+                                <input 
+                                    type="checkbox" 
+                                    id="quantityLimit" 
+                                    name="reject" 
+                                    onclick="showQuantity()">
+                                    <label for="quantityLimit">and/or 76 </label>
+
                             <br>
                             
                             <div id="quantityDiv">

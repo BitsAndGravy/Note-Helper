@@ -416,6 +416,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
+        /* Trialing mix of radio and checkbox
         function getReject() {
             let checks = document.getElementsByName('reject');
             if(checks[0].checked) {
@@ -432,6 +433,28 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.reject = "70-Non-formulary";
             }
         }
+            */
+
+        function getReject() {
+            let reject75 = document.getElementById('standardPA');
+            let reject70 = document.getElementById('nonFormulary');
+            let reject76 = document.getElementById('quantityLimit');
+
+            if(reject75.checked) {
+                answer.reject = "75-Standard PA";
+            }
+            if (reject75.checked && reject76.checked) {
+                answer.reject = "75 and 76-Standard PA with QL";
+            } else if (reject76.checked) {
+                answer.reject = "76-Quantity Limit";
+            }
+            if (reject76.checked && reject70.checked) {
+                answer.reject = "70 and 76-Non-formulary with QL";
+            } else if (reject70.checked) {
+                answer.reject = "70-Non-formulary";
+            }
+        }
+
 
         function getOption() {// Used for input type="select", "text"
             const options = [
@@ -1287,9 +1310,11 @@ function showQuantity() {
             document.getElementById('quantity').tabIndex = 0;
             document.getElementById('falseQL').tabIndex = 0;
 
+            /* Trialing mix of checkbox and radio, this part of function not necessary
             if(nonFormulary.checked) { // If 70 is selected, unselect 75.
                 document.getElementById('standardPA').checked = false;
             }
+            */
         } 
         else { // If neither 70 nor 76 are selected:
             quantity.classList.add('hideContent');
