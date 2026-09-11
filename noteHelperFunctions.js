@@ -33,7 +33,6 @@ window.onload = function() {
             document.getElementById('quantity').tabIndex = -1;
             document.getElementById('falseQL').tabIndex = -1;
         }
-            
 
     // Chech setting for show theme select
         let showTheme = localStorage.getItem('showTheme');
@@ -177,4 +176,45 @@ function iroCharacterCountCheck() {
         } else if (text.length >= 1001) {
             charCount.className = 'characterLimitRed';
         }
+}
+
+const appeal = {
+    appealCondition: '[appealCondition]', 
+    appealDenialReasons: '[appealDenialReasons]',
+    appealReasonText: '[appealReasonText]', 
+    criteriaName: '[criteriaName]',
+    reasonCheckbox: '[reasonCheckbox]',
+    selectedAppealReason: '[selectedAppealReason]',
+    selectedNewInformation: '[selectedNewInformation]',
+};
+
+function createDenialLanguage() {
+    let dlCreateListText = [
+        'appealCondition',
+        'appealReasonText',
+        'appealDenialReasons',
+        'criteriaName',
+    ];
+
+    let divAdded = document.getElementById('appealDenial2');
+
+    for (i = 0; i < dlCreateListText.length; i++) {
+        appeal[dlCreateListText[i]] = document.getElementById(dlCreateListText[i]).value;
+        divAdded.value = divAdded.value + appeal[dlCreateListText[i]] + '\n';
+    }
+
+    appeal.selectedAppealReason = document.querySelector('input[name="appealReasonCheckbox"]:checked').value;
+    appeal.selectedNewInformation = document.querySelector('input[name="newInformationCheckbox"]:checked').value;
+    
+    let dlLine1 = "We have received a request for the treatment of " + appeal.appealCondition + '. ';
+    let dlLine2 = "Based on the information provided, this request was not approved. " + appeal.selectedAppealReason + appeal.appealReasonText + '. ';
+    let dlLine3 = appeal.selectedNewInformation + '.\n\n';
+    let dlLine4formulary = "Your current records with us and the information submitted by your doctor do not meet the following criteria:\n\n";
+    let dlLine5 = appeal.appealDenialReasons + '\n\n';
+    let dlLine6 = "We recommend you reach out to your doctor to discuss this information and treatment alternatives.\n\n";
+    let dlLine7 = "Reference: Oscar Approved Criteria: " + appeal.criteriaName;
+
+    let dlFinal = dlLine1 + dlLine2 + dlLine3 + dlLine4formulary + dlLine5 + dlLine6 + dlLine7;
+
+    divAdded.value = dlFinal;
 }

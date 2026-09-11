@@ -502,6 +502,7 @@
                                                 id="appealReasonNo"
                                                 name="appealReasonCheckbox"
                                                 type="radio"
+                                                value="Your doctor did not provide a reason why the requested medication is being appealed"
                                                 tabindex="-1">
                                                 <label for="appealReasonNo">No appeal reason </label>
 
@@ -509,6 +510,7 @@
                                                 id="appealReasonYes"
                                                 name="appealReasonCheckbox"
                                                 type="radio"
+                                                value="Your appeal states that the denial is being appealed because "
                                                 tabindex="-1">
                                                 <label for="appealReasonYes">Appeal reason </label>
                                         </div>
@@ -529,6 +531,7 @@
                                                 id="newInformationNo"
                                                 name="newInformationCheckbox"
                                                 type="radio"
+                                                value="No new information was submitted with this request"
                                                 tabindex="-1">
                                                 <label for="newInformationNo">No new information </label>
 
@@ -536,6 +539,7 @@
                                                 id="newInformationYes"
                                                 name="newInformationCheckbox"
                                                 type="radio"
+                                                value="We have reviewed the new information submitted with this request"
                                                 tabindex="-1">
                                                 <label for="newInformationYes">New information </label>
                                         </div>
@@ -574,17 +578,17 @@
                                                 placeholder="denial language for appeal"></textarea>  
                                         </div>                                      
                                     </div>
-                                </form>
 
-                                <div class="footing">
-                                    <button 
-                                        id=""
-                                        type="button" 
-                                        onclick=""
-                                        tabindex=""
-                                        >Copy (needs JS)</button>
-                                    <span id="" class="hideStart">Copied to clipboard</span>
-                                </div>
+                                    <div class="footing">
+                                        <button 
+                                            id="createDenialLanguageButton"
+                                            type="button" 
+                                            onclick="createDenialLanguage()"
+                                            tabindex="-1"
+                                            >Copy (needs JS)</button>
+                                        <span id="createDenialLanguageTextAnimation" class="hideStart">Copied to clipboard</span>
+                                    </div>
+                                </form>
                             </div>
 
                             <!-- IRO note builder; hidden until 'send to IRO' checked -->
