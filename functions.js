@@ -386,7 +386,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
-        /*
+        /* commented out due to switch to radios, function no longer required.
             // Triggers when gender selected. Ensures only one option selected.
             function genderControl(checkbox) {
                 var checkboxes = document.getElementsByName(checkbox.name);
@@ -416,7 +416,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
-        /* Trialing mix of radio and checkbox
         function getReject() {
             let checks = document.getElementsByName('reject');
             if(checks[0].checked) {
@@ -433,8 +432,9 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.reject = "70-Non-formulary";
             }
         }
-            */
+            
 
+        /* Used for mix of checkboxes and radio, no longer used since switching back to all checkboxes
         function getReject() {
             let reject75 = document.getElementById('standardPA');
             let reject70 = document.getElementById('nonFormulary');
@@ -454,6 +454,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.reject = "70-Non-formulary";
             }
         }
+            */
 
 
         function getOption() {// Used for input type="select", "text"
@@ -718,8 +719,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     }
 
 
-
-
 /* ||| Reset button */
 function resetForm() { // After clicking the Reset button        
     document.getElementById('form1').reset();
@@ -903,15 +902,6 @@ function editButton(noteID) { // Used with Edit button to show the textarea and 
     }
 
 /* ||| Save button */
-/* version 1.0
-function savedNoteButton (noteID) { // Used with the 'Save' button on each of the saved notes.
-    showThis(noteID, 'Text'); // Defined above
-    resaveNote(noteID);
-    hideThis(noteID, 'Edit'); // Defined above
-    copyTextDuplicate(noteID);
-}
-    */
-
 /* ||| Note save button */
 function saveThis(noteID) {
     if(detectNoteOrEdit === 'Note') {
@@ -1291,6 +1281,25 @@ function showQL() {
     }
 }
 
+
+
+
+function rejectControl(checkbox) {
+    let reject70 = document.getElementById('nonFormulary');
+    let reject75 = document.getElementById('standardPA');
+    var checkboxes = [reject70, reject75];
+    
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    });
+
+    showQuantity();
+}
+
+
+
+
+
 // When 70 or 76 is checked/unchecked.
 function showQuantity() {
     let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity'); // Check settings
@@ -1310,11 +1319,6 @@ function showQuantity() {
             document.getElementById('quantity').tabIndex = 0;
             document.getElementById('falseQL').tabIndex = 0;
 
-            /* Trialing mix of checkbox and radio, this part of function not necessary
-            if(nonFormulary.checked) { // If 70 is selected, unselect 75.
-                document.getElementById('standardPA').checked = false;
-            }
-            */
         } 
         else { // If neither 70 nor 76 are selected:
             quantity.classList.add('hideContent');

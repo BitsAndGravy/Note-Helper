@@ -138,63 +138,30 @@
                                 <br>
                             </div>
 
-                            <!-- trialing mix of radio and checkbox
-                            <label for="reject">07.</label>
-
-                                <input
-                                    type="checkbox"
-                                    id="standardPA"
-                                    name="reject"
-                                    checked>
-                                    <label for="standardPA">75 </label>
-
-                                <input 
-                                    type="checkbox" 
-                                    id="quantityLimit" 
-                                    name="reject" 
-                                    onclick="showQuantity()">
-                                    <label for="quantityLimit">76 </label>
-
-                                <input 
-                                    type="checkbox" 
-                                    id="nonFormulary" 
-                                    name="reject" 
-                                    onclick="showQuantity()">
-                                    <label for="nonFormulary">70 </label>
-                        -->
-
-                            <div onchange="showQuantity()">
+                            <div>
                                 <label for="reject">07.</label>
 
                                     <input
-                                        type="radio"
+                                        type="checkbox"
                                         id="standardPA"
                                         name="reject"
+                                        onchange="rejectControl(this)"
                                         checked>
                                         <label for="standardPA">75 </label>
 
                                     <input 
-                                        type="radio" 
-                                        id="nonFormulary" 
-                                        name="reject">
-                                        <label for="nonFormulary">70 </label>
-
-                                    
-
-                                    <button type="button" class="button-reset" onclick="removeSelection('reject')">
-                                        <span class="material-symbols-outlined text-sm">
-                                        refresh
-                                        </span>
-                                    </button>
-
-                                    <br>
-
-                                    <label for="QLreject">07.</label>
-                                    <input 
                                         type="checkbox" 
                                         id="quantityLimit" 
-                                        name="QLreject">
+                                        onchange="showQuantity()"
+                                        name="reject">
                                         <label for="quantityLimit">76 </label>
+
+                                    <input 
+                                        type="checkbox" 
+                                        id="nonFormulary" 
+                                        onchange="rejectControl(this)"
+                                        name="reject">
+                                        <label for="nonFormulary">70 </label>
                             </div>
                             
                             <div id="quantityDiv">
