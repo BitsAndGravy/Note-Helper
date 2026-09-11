@@ -205,6 +205,8 @@ const fullDiagnosisList = [
     'rhinitis',
 
     'schizoaffective disorder',
+    'schizoaffective disorder, bipolar type',
+    'schizoaffective disorder, depressive type',
     'seborrheic dermatitis',
     'sexual dysfunction',
     'shift work sleep disorder',

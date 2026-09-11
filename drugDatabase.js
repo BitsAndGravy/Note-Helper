@@ -435,6 +435,12 @@ const drugDatabase = [ // for getQuantity()
         specialty: true,
     },  
     {
+        drug: "Ilet starter kit", // Insulin pump plus CGM
+        quantity: "1/30",
+        diagnosis: "T1DM", 
+        formulary: false, 
+    },  
+    {
         drug: "Ingrezza capsule",
         quantity: "30/30",
         diagnosis: "Huntington's disease", 
