@@ -1521,7 +1521,7 @@ function appealTypeChecked() {
         changeTabIndex(appealOptionsList, 0);
 
         if(info.value === '') {
-            info.value = drug + ' denied \n\nNo P2P or reopening. ';
+            info.value = drug + ' denied \n\nNo reopening or peer-to-peer. ';
         };
 
         if(conc.value == '') {
