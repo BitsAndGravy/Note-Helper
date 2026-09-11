@@ -1509,14 +1509,6 @@ function appealTypeChecked() {
     let appinputs = document.getElementById('appealDenialInputsDiv');
     let applanguage = document.getElementById('appealDenialAdditionalNotes');
 
-    let appealOptionsList = [
-        'appealInternalQuestion',   // A1
-        'sendToIRO',                // A2
-        'appealDenial',             // A3
-        'A3copyButton',             // A3 copy button
-
-    ]
-
     if (check.checked) {
         applanguage.classList.remove('hideContent');
         applanguage.classList.add('showContent');
@@ -1524,7 +1516,7 @@ function appealTypeChecked() {
         appinputs.classList.remove('hideContent');
         appinputs.classList.add('showContent');
 
-        changeTabIndex(appealOptionsList, 0);
+        changeTabIndex(appealBuilderList, 0);
 
         if(info.value === '') {
             info.value = drug + ' denied \n\nNo reopening or peer-to-peer. ';
@@ -1533,6 +1525,8 @@ function appealTypeChecked() {
         if(conc.value == '') {
             conc.value = 'On appeal, ';
         };
+
+        formularyStatusReport();
     } else {
         applanguage.classList.remove('showContent');
         applanguage.classList.add('hideContent');
@@ -1540,10 +1534,21 @@ function appealTypeChecked() {
         appinputs.classList.remove('showContent');
         appinputs.classList.add('hideContent');
 
-        changeTabIndex(appealOptionsList, -1);
+        changeTabIndex(appealBuilderList, -1);
     }
-
 }
+
+    function formularyStatusReport() {
+        let reject70 = document.getElementById('nonFormulary');
+        let formularyStatusResult = document.getElementById('formularyStatus');
+
+        if (reject70.checked) {
+            formularyStatusResult.innerText = 'Non-formulary';
+        } else {
+            formularyStatusResult.innerText = 'Formulary';
+        }
+
+    }
 
 
 // When New Member checked. Uncertain if I want this left as adding to textbox (serves as good reminder) vs adding to buildNote() (takes up less space, works more consistently with less coding)
@@ -1612,6 +1617,29 @@ function iroChecked() {
         changeTabIndex(iroInputList, -1);
     }
 }
+
+    const appealOptionsList = [
+        'appealInternalQuestion',   // A1
+        'sendToIRO',                // A2
+        'appealDenial',             // A3
+        'A3copyButton',             // A3 copy button
+    ]
+
+    const appealBuilderList = [
+        'appealInternalQuestion',   // A1
+        'sendToIRO',   
+        'specialtyAppealsTrackerLink',
+        'appealCondition',
+        'appealReasonNo',
+        'appealReasonYes',
+        'appealReasonText',
+        'newInformationNo',
+        'newInformationYes',
+        'appealDenialReasons',
+        'criteriaName',
+        'appealDenial2',
+        'createDenialLanguageButton',
+    ]
 
     function changeTabIndex(list, newIndex) {
         for (i = 0; i < list.length; i++) {

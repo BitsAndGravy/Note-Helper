@@ -426,7 +426,12 @@
                                         onchange="iroChecked()">
                                     <label for="sendToIRO">Send to IRO</label>
                                 </div>
-                                <a href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" class="color-body-text" target="_blank">Specialty Appeals Tracker</a>
+                                <a 
+                                    href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" 
+                                    class="color-body-text" 
+                                    id="specialtyAppealsTrackerLink"
+                                    tabindex="-1"
+                                    target="_blank">Specialty Appeals Tracker</a>
                             </div>
 
                         </form>
@@ -449,8 +454,8 @@
                     <form id="form4">    
                         <div class="padding-5-10-10-10">
 
-                            <!-- Appeal denial language, plain textarea (v1.0)-->
-                            <div class="container-mini">
+                            <!-- Appeal denial language, plain textarea, hidden (v1.0)-->
+                            <div class="container-mini display-none">
                                 <div class="heading align-center flex">
                                     <H3>Appeal denial language</H3>
                                 </div>                
@@ -486,6 +491,9 @@
                             
                                 <form id="form5">
                                     <div class="background-color-primary padding-5-10-10-10">
+                                        <div>
+                                            <div>Formulary status: <span id="formularyStatus"></span></div>
+                                        </div>
                                         <div>
                                             <label for="appealCondition">A3</label>
                                             <input
