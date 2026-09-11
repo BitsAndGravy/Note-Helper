@@ -448,6 +448,8 @@
                 <div id="appealDenialAdditionalNotes" class="hideContent background-color-secondary">
                     <form id="form4">    
                         <div class="padding-5-10-10-10">
+
+                            <!-- Appeal denial language, plain textarea (v1.0)-->
                             <div class="container-mini">
                                 <div class="heading align-center flex">
                                     <H3>Appeal denial language</H3>
@@ -473,6 +475,115 @@
                                         tabindex="-1"
                                         >Copy</button>
                                     <span id="appealDenialCopied" class="hideStart">Copied to clipboard</span>
+                                </div>
+                            </div>
+
+                            <!-- Appeal denial language (v2.0) -->
+                            <div class="container-mini">
+                                <div class="heading align-center flex">
+                                    <h3>Appeal denial language builder</h3>
+                                </div>                
+                            
+                                <form id="form5">
+                                    <div class="background-color-primary padding-5-10-10-10">
+                                        <div>
+                                            <label for="appealCondition">A3</label>
+                                            <input
+                                                id="appealCondition"
+                                                type="text"
+                                                name="appealCondition"
+                                                placeholder="condition"
+                                                tabindex="-1">
+                                        </div>
+
+                                        <div>
+                                            <label for="appealReasonCheckbox">A4</label>
+                                            <input
+                                                id="appealReasonNo"
+                                                name="appealReasonCheckbox"
+                                                type="radio"
+                                                tabindex="-1">
+                                                <label for="appealReasonNo">No appeal reason </label>
+
+                                            <input
+                                                id="appealReasonYes"
+                                                name="appealReasonCheckbox"
+                                                type="radio"
+                                                tabindex="-1">
+                                                <label for="appealReasonYes">Appeal reason </label>
+                                        </div>
+                                            
+                                        <div>
+                                            <label for="appealReasonText">A5</label>
+                                            <textarea
+                                                id="appealReasonText"
+                                                name="appealReasonText"
+                                                class="appealTextarea"
+                                                tabindex="-1"
+                                                placeholder="appeal reason"></textarea>
+                                        </div>
+
+                                        <div>
+                                            <label for="newInformationCheckbox">A6</label>
+                                            <input
+                                                id="newInformationNo"
+                                                name="newInformationCheckbox"
+                                                type="radio"
+                                                tabindex="-1">
+                                                <label for="newInformationNo">No new information </label>
+
+                                            <input
+                                                id="newInformationYes"
+                                                name="newInformationCheckbox"
+                                                type="radio"
+                                                tabindex="-1">
+                                                <label for="newInformationYes">New information </label>
+                                        </div>
+
+                                        <div>
+                                            <label for="appealDenialReasons">A7</label>
+                                            <textarea
+                                                id="appealDenialReasons" 
+                                                name="appealDenialReasons" 
+                                                class="appealTextarea"
+                                                tabindex="-1"
+                                                placeholder="denial reasons"></textarea>    
+                                        </div>
+
+                                        <div>
+                                            <label for="criteriaName">A8</label>
+                                            <input
+                                                id="criteriaName"
+                                                type="text"
+                                                name="criteriaName"
+                                                placeholder="insert name of criteria at top of guideline"
+                                                tabindex="-1">
+                                        </div>
+
+                                        <div>
+                                            <p>Alternatively, use the box below to manually build the denial language.</p>
+                                        </div>
+
+                                        <div>
+                                            <label for="appealDenial2">A9</label>
+                                            <textarea
+                                                id="appealDenial2" 
+                                                name="appealDenial2" 
+                                                class="appealTextarea"
+                                                tabindex="-1"
+                                                placeholder="denial language for appeal"></textarea>  
+                                        </div>                                      
+                                    </div>
+                                </form>
+
+                                <div class="footing">
+                                    <button 
+                                        id=""
+                                        type="button" 
+                                        onclick=""
+                                        tabindex=""
+                                        >Copy (needs JS)</button>
+                                    <span id="" class="hideStart">Copied to clipboard</span>
                                 </div>
                             </div>
 
