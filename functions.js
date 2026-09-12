@@ -1460,6 +1460,12 @@ function fillDate(days) {
         return result;
     }
 
+function caseTypeSelection() {
+    reauthorizationChecked();
+    reopeningChecked();
+    appealTypeChecked();
+}
+
 
 // When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reauthorizationChecked() {

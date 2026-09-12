@@ -202,33 +202,39 @@
                                 <br id="properQuantityBreak">
                             </div>
 
-                            <div class="flex align-center">
+                            <div class="flex align-center" onchange="caseTypeSelection()">
                                 <label for="type" class="padding-right-5">10.</label> 
 
+                                    <div id="initialTypeDiv" class="padding-right-5">
+                                        <input 
+                                            type="radio" 
+                                            id="initial" 
+                                            checked
+                                            name="type">
+                                            <label for="initial">Initial</label>
+                                    </div>    
+                                
                                     <div id="reauthorizationTypeDiv" class="padding-right-5">
                                         <input 
-                                            type="checkbox" 
+                                            type="radio" 
                                             id="reauthorization" 
-                                            name="type"
-                                            onclick="reauthorizationChecked()">
+                                            name="type">
                                             <label for="reauthorization">Reauthorizaiton</label>
                                     </div>
                                         
                                     <div id="reopeningTypeDiv" class="padding-right-5">
                                         <input
-                                            type="checkbox"
+                                            type="radio"
                                             id="reopening"
-                                            name="type"
-                                            onclick="reopeningChecked()">
+                                            name="type">
                                             <label for="reopening">Reopening</label>
                                     </div>
 
                                     <div id="appealTypeDiv" class="padding-right-5">
                                         <input
-                                            type="checkbox"
+                                            type="radio"
                                             id="appealType"
-                                            name="type"
-                                            onclick="appealTypeChecked()">
+                                            name="type">
                                             <label for="appealType">Appeal</label>
                                     </div>
 
