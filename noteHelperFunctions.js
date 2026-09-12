@@ -178,6 +178,18 @@ function iroCharacterCountCheck() {
         }
 }
 
+function disableAppealReason() {
+    let noReason = document.getElementById('appealReasonNo');
+    let reasonText = document.getElementById('appealReasonText');
+
+    if (noReason.checked) {
+        reasonText.disabled = true;
+        reasonText.style.backgroundColor = 'var(--body-secodary-color)';
+    } else {
+        reasonText.disabled = false;
+    }
+}
+
 const appeal = {
     appealCondition: '[appealCondition]', 
     appealDenialReasons: '[appealDenialReasons]',
