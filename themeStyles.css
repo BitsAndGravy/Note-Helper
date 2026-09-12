@@ -16,8 +16,8 @@
     
     /* Text */
     --heading-text: black;
-    --body-text: var(--heading-text);
-    --body-secondary-text: var(--heading-text);
+    --body-text: black;
+    --body-secondary-text: var(--body-text);
     --animated-text: var(--heading-text);
     --input-text: var(--heading-text);
     --placeholder-text: #000000a7;
@@ -42,6 +42,71 @@
 
 /* || Generic themes */
 
+[data-theme='ravenclaw-bronze'] {
+    /* Main features */
+    --main-background: #111624;
+    --header-background: #946b2d;
+    --footer-background: var(--header-background);
+    --body-primary-color: #203366;
+    --body-secondary-color: #0d1f4b;
+    --body-border-color: #c2973a;
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: #fff6de;
+    --body-text: #ccd4ed;
+    --input-text: azure;
+    --placeholder-text: #f0ffff94;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #d6ac6c;
+    --button-hover: #bf9453;
+    --button-active: #ab7b40;
+
+    /* Input */
+    --input-background: #00000049;
+    --input-background-focus: #0000007f;
+    --input-accent-color: #ffc163;
+    --input-border: #c2973aa8;
+    --input-border-focus: var(--body-border-color);
+}
+
+[data-theme='ravenclaw-silver'] {
+    /* Main features */
+    --main-background: #111624;
+    --header-background: #946b2d;
+    --footer-background: var(--header-background);
+    --body-primary-color: #203366;
+    --body-secondary-color: #0d1f4b;
+    --body-border-color: #98999c;
+    --body-gradient: var(--body-primary-color);
+    
+    /* Text */
+    --heading-text: #fffbf0;
+    --body-text: #cbdbdb;
+    --input-text: azure;
+    --placeholder-text: #f0ffff94;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #e0e0e0;
+    --button-hover: #aaaaaa;
+    --button-active: var(--input-accent-color);
+
+    /* Input */
+    --input-background: #24242474;
+    --input-background-focus: #0000007f;
+    --input-accent-color: #ffe263;
+    --input-border: #98999c80;
+    --input-border-focus: var(--header-background);
+}
 
 [data-theme='beat-saber'] {
     /* Main features */
@@ -1159,14 +1224,14 @@
 
 
 
-[data-theme='ravenclaw'] {
+[data-theme='ravenclaws'] {
     /* Main features */
-    --main-background: #000000;
-    --header-background: #0d1f4b;
+    --main-background: #111624;
+    --header-background: #946b2d;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
-    --body-secondary-color: #5d5d5d;
-    --body-border-color: var(--body-secondary-color);
+    --body-secondary-color: #0d1f4b;
+    --body-border-color: #98999c;
     --body-gradient: var(--body-primary-color);
     
     /* Text */

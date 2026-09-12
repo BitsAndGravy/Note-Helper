@@ -205,9 +205,17 @@ const themeBook = {
         optGroup: 'harry-potter'
     }, 
     
-    ravenclaw: {
-        name: 'ravenclaw', 
-        title: 'Ravenclaw', 
+    ravenclawBronze: {
+        name: 'ravenclaw-bronze', 
+        title: 'Ravenclaw (Bronze)', 
+        style: 'dark',
+        group: 'Harry Potter',
+        optGroup: 'harry-potter'
+    }, 
+
+    ravenclawSilver: {
+        name: 'ravenclaw-silver', 
+        title: 'Ravenclaw (Silver)', 
         style: 'dark',
         group: 'Harry Potter',
         optGroup: 'harry-potter'
