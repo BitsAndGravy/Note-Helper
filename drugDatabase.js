@@ -417,6 +417,18 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Humalog KwikPen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        formulary: false, 
+    },  
+    {
+        drug: "Humalog 200 unit/mL KwikPen",
+        quantity: "15/30",
+        diagnosis: "T2DM", 
+        formulary: false, 
+    },  
+    {
         drug: "Ibsrela tablet",
         quantity: "60/30",
         diagnosis: "IBS-C", 

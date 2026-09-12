@@ -144,6 +144,7 @@ const fullDiagnosisList = [
     'constipation',
 
     'dermatophytosis',
+    'diabetes',
     'diarrhea',
     'dysphagia',
 
