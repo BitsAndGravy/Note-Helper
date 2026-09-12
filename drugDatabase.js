@@ -591,6 +591,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "chronic pain",
     }, 
     {
+        drug: "lidocaine-prilocaine cream",
+        quantity: "30/30", 
+        diagnosis: "anesthesia of skin",
+        formulary: false,
+    }, 
+    {
         drug: "liraglutide pen, Saxenda generic",
         quantity: "9/30",
         diagnosis: "obesity",
@@ -892,6 +898,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "roflumilast tablet", 
         quantity: "30/30",
         diagnosis: "asthma",
+    }, 
+    {
+        drug: "Roxybond tablet", 
+        quantity: "60/30",
+        diagnosis: "pain",
+        formulary: false,
     }, 
     {
         drug: "Rybelsus tablet", 
