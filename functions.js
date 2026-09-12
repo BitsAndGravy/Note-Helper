@@ -1537,6 +1537,7 @@ function appealTypeChecked() {
 
         changeTabIndex(appealBuilderList, -1);
     }
+    disableAppealReason();
 }
 
     function formularyStatusReport() {
