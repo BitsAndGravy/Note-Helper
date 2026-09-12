@@ -246,3 +246,9 @@ function createDenialLanguage() {
     navigator.clipboard.writeText(dlFinal);
     animateText("createDenialLanguageTextAnimation");
 }
+
+function copyDenialLanguage() {
+    let textToCopy = document.getElementById('appealDenial2').value;
+    navigator.clipboard.writeText(textToCopy);
+    animateText('copyDenialLanguageTextAnimation');
+}
