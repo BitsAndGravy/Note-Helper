@@ -4,7 +4,6 @@ const settingsList = [
     'requireAge',
     'showTimer', 
     'showTheme',
-    'showPreview',
     'prefillQuantity', 
     'alwaysShowQuantity', 
 ]
@@ -33,6 +32,23 @@ window.onload = function() {
     });
 
 };
+
+function saveSettings() {
+    saveCheckboxes();
+}
+
+    function saveCheckboxes() {
+        for(i = 0; i < settingsList.length; i++) {
+            let check = document.getElementById(settingsList[i]);
+
+            if (check.checked) {
+                localStorage.setItem(settingsList[i], 'yes');
+            } else {
+                localStorage.setItem(settingsList[i], 'no');
+            }
+        }
+        animateText('settingsSavedText');
+    }
 
 
 function loadSettings() {
@@ -204,4 +220,13 @@ function displayDiagnosisList() {
         let target = document.getElementById('diagnosisListDisplayDiv');
             target.appendChild(newDiagDiv);
     }
+}
+
+function resetDefaults() {
+    for (setting in settingDefault) {
+        localStorage.setItem(setting, settingDefault[setting]);
+    }
+    loadSettings();
+    disableCheckboxes();
+    animateText('resetDefaultsText');
 }

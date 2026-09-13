@@ -38,20 +38,18 @@
                         <input 
                             type="checkbox"
                             id="showAppealType"
-                            name="showAppealType"
-                            onclick="changeSettings(this.id)">
+                            name="showAppealType">
                         <label for="showAppealType">Show appeal (case type)</label>
-                        <span> - Show/hide checkbox for appeals.</span>
+                        <span class="text-sm"> - Show/hide checkbox for appeals.</span>
 
                         <br>
 
                         <input 
                             type="checkbox"
                             id="autoselectAppeal"
-                            name="autoselectAppeal"
-                            onclick="changeSettings(this.id)">
+                            name="autoselectAppeal">
                         <label for="autoselectAppeal">Automatically select appeal</label>
-                        <span> - Once drug name entered, automatically check the box for appeal case type.</span>
+                        <span class="text-sm"> - Once drug name entered, automatically check the box for appeal case type.</span>
 
                     </div>
 
@@ -61,27 +59,24 @@
                         <input
                             type="checkbox"
                             id="requireAge"
-                            name="requireAge"
-                            onclick="changeSettings(this.id)">
-                        <label for="requireAge">Require age. </label>
-                        <span> - If age is blank when clicking save, an error will show and prevent saving.</span>
+                            name="requireAge">
+                        <label for="requireAge">Require age</label>
+                        <span class="text-sm"> - If age is blank when clicking save, an error will show and prevent saving.</span>
                         <br>
 
                         <input
                             type="checkbox"
                             id="showTimer"
-                            name="showTimer"
-                            onclick="changeSettings(this.id)">
+                            name="showTimer">
                         <label for="showTimer">Show timer</label>
-                        <span> - Timer starts/restarts after entering the drug name. Resets when the reset button clicked.</span>
+                        <span class="text-sm"> - Timer starts/restarts after entering the drug name. Resets when the reset button clicked.</span>
                         <br>
                         
                         <input
                             type="checkbox"
-                            id="showTheme"
-                            onclick="changeSettings(this.id)">
+                            id="showTheme">
                         <label for="showTheme">Show theme select</label>
-                        <span> - Theme select is always in the top right, even if you can't see it.</span>
+                        <span class="text-sm"> - Theme select is always in the top right, even if you can't see it.</span>
                         <br>
 
                         <select name="state" id="state" onchange="updateSelectedState(this.value);">
@@ -91,14 +86,6 @@
                         <label for="state">Choose default state</label>
                         <br>
 
-                        <input
-                            type="checkbox"
-                            id="showPreview"
-                            onclick="changeSettings(this.id)">
-                        <label for="showPreview">Show note preview</label>
-                        <span> - Preview updates as you go, so no guessing how your responses will affect the note.</span>
-                        <br>
-
                     </div>
                     <div>
                         <H2>Quantity</H2>
@@ -106,40 +93,39 @@
                         <input
                             type="checkbox"
                             id="prefillQuantity"
-                            name="prefillQuantity"
-                            onclick="changeSettings(this.id)">
+                            name="prefillQuantity">
                         <label for="prefillQuantity">Pre-fill quantity</label>
-                        <span> - Based on the drug name, Note helper will predict the quantity and day supply.</span>
+                        <span class="text-sm"> - Based on the drug name, Note helper will predict the quantity and day supply.</span>
                         
                         <br>
 
                         <input 
                             type="checkbox"
                             id="alwaysShowQuantity"
-                            name="alwaysShowQuantity"
-                            onclick="changeSettings(this.id)">
+                            name="alwaysShowQuantity">
                         <label for="alwaysShowQuantity">Always show quantity</label>
-                        <span> - If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
+                        <span class="text-sm"> - If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
                     
                     </div>
                 </div>
                 <div id="showSettings"></div>
             </div>
 
-
+            <!-- footer with save and reset buttons -->
             <div class="footing flex justify-space-between align-center">
                 <!--left-aligned options-->
                 <div class="justify-flex-start">
-                    <button type="button" onclick="saveButton()">Save</button>
-                    <span id="textCopied" class="hideStart">This button does nothing</span>  
+                    <button type="button" onclick="saveSettings()">Save</button>
+                    <span id="settingsSavedText" class="hideStart">Settings saved</span>  
                 </div>
 
                 <!--right-aligned options-->
                 <div class="justify-flex-end">
-                    <span id="resetForm" class="hideStart">Form reset</span>    
-                    <button type="button" onclick="resetForm()">Reset</button>
+                    <span id="resetDefaultsText" class="hideStart">Settings reset to defaults</span>    
+                    <button type="button" onclick="resetDefaults()">Reset</button>
                 </div>
             </div>
+
         </div>
     </div>
 

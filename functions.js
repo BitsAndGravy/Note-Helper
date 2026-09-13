@@ -1681,7 +1681,6 @@ const settingDefault = {
     prefillQuantity: 'no',
     requireAge: 'no',  
     showAppealType: 'yes',
-    // showPreview: 'no',
     showTimer: 'yes',
     showTheme: 'yes',
 }
