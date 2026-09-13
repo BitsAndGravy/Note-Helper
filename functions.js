@@ -389,17 +389,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
-        /* commented out due to switch to radios, function no longer required.
-            // Triggers when gender selected. Ensures only one option selected.
-            function genderControl(checkbox) {
-                var checkboxes = document.getElementsByName(checkbox.name);
-                checkboxes.forEach((item) => {
-                    if (item !== checkbox) item.checked = false
-                });
-            }
-                */
-
-
         function getType() {
             let reauth = document.getElementById('reauthorization');
             let reopen = document.getElementById('reopening');
@@ -435,30 +424,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.reject = "70-Non-formulary";
             }
         }
-            
-
-        /* Used for mix of checkboxes and radio, no longer used since switching back to all checkboxes
-        function getReject() {
-            let reject75 = document.getElementById('standardPA');
-            let reject70 = document.getElementById('nonFormulary');
-            let reject76 = document.getElementById('quantityLimit');
-
-            if(reject75.checked) {
-                answer.reject = "75-Standard PA";
-            }
-            if (reject75.checked && reject76.checked) {
-                answer.reject = "75 and 76-Standard PA with QL";
-            } else if (reject76.checked) {
-                answer.reject = "76-Quantity Limit";
-            }
-            if (reject76.checked && reject70.checked) {
-                answer.reject = "70 and 76-Non-formulary with QL";
-            } else if (reject70.checked) {
-                answer.reject = "70-Non-formulary";
-            }
-        }
-            */
-
 
         function getOption() {// Used for input type="select", "text"
             const options = [
@@ -477,7 +442,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 let elf = document.querySelector(options[k]).value;
                 let obj = options[k].slice(1);
                 answer[obj] = elf;
-
             }
         }
 
@@ -493,6 +457,9 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 let item = textareaList[r];
                 let textName = document.getElementById(item).value;
                 answer[item] = textName;
+            }
+            if(answer.clinical === 'Chart note dated ') {
+                answer.clinical = '';
             }
         }  
 
