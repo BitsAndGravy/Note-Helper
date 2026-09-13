@@ -55,8 +55,8 @@
     /* Text */
     --heading-text: #fff6de;
     --body-text: #ccd4ed;
-    --input-text: azure;
-    --placeholder-text: #f0ffff94;
+    --input-text: #e2e6f1;
+    --placeholder-text: #dbe0efa0;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -71,22 +71,22 @@
     --input-background: #00000049;
     --input-background-focus: #0000007f;
     --input-accent-color: #ffc163;
-    --input-border: #c2973aa8;
+    --input-border: black;
     --input-border-focus: var(--body-border-color);
 }
 
 [data-theme='ravenclaw-silver'] {
     /* Main features */
-    --main-background: #111624;
-    --header-background: #946b2d;
+    --main-background: #2c395b;
+    --header-background: #C0C0C0;
     --footer-background: var(--header-background);
-    --body-primary-color: #203366;
-    --body-secondary-color: #0d1f4b;
-    --body-border-color: #98999c;
+    --body-primary-color: #0d1f4b;
+    --body-secondary-color: #203366;
+    --body-border-color: #cecece;
     --body-gradient: var(--body-primary-color);
     
     /* Text */
-    --heading-text: #fffbf0;
+    --heading-text: #111220;
     --body-text: #cbdbdb;
     --input-text: azure;
     --placeholder-text: #f0ffff94;
@@ -101,11 +101,11 @@
     --button-active: var(--input-accent-color);
 
     /* Input */
-    --input-background: #24242474;
+    --input-background: #00000049;
     --input-background-focus: #0000007f;
     --input-accent-color: #ffe263;
-    --input-border: #98999c80;
-    --input-border-focus: var(--header-background);
+    --input-border: #cecece6a;
+    --input-border-focus: #878787;
 }
 
 [data-theme='beat-saber'] {
