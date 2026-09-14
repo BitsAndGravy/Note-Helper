@@ -918,6 +918,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "burn",
     }, 
     {
+        drug: "Seysara tablet", 
+        quantity: "30/30",
+        diagnosis: "acne vulgaris",
+        formulary: false,
+    }, 
+    {
         drug: "sitagliptin tablet", 
         quantity: "30/30",
         diagnosis: "T2DM",
@@ -1344,5 +1350,10 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "atopic dermatitis",
         altDiagnosis: "seborrheic dermatitis",
         formulary: false,
+    }, 
+    {
+        drug: "Zurzuvae capsule",
+        quantity: "28/14",
+        diagnosis: "postpartum depression",
     }, 
 ]
