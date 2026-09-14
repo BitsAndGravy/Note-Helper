@@ -63,9 +63,9 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #d6ac6c;
-    --button-hover: #bf9453;
-    --button-active: #ab7b40;
+    --button-background: #ddd1b0;
+    --button-hover: #d8b581;
+    --button-active: #bf9453;
 
     /* Input */
     --input-background: #00000049;

@@ -163,11 +163,18 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },  
     {
+        drug: "Carbatrol ER capsule",
+        quantity: "120/30",
+        diagnosis: "epilepsy", 
+        formulary: false,
+    },  
+    {
         drug: "Cequa solution",
         quantity: "60/30",
         diagnosis: "dry eye syndrome", 
         formulary: false,
     },  
+    
     {
         drug: "cinacalcet tablet",
         quantity: "30/30",

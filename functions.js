@@ -214,8 +214,10 @@ const fullDiagnosisList = [
 
     'T2DM and obesity',
     'tinea capitis',
+    'tinea corporis',
     'tinea pedis',
     'tinea unguium',
+    'tinea versicolor',
     'transsexualism',
 
     'ulcerative colitis',
