@@ -178,19 +178,18 @@ function iroCharacterCountCheck() {
         }
 }
 
-function disableAppealReason() {
-    let noReason = document.getElementById('appealReasonNo');
-    let reasonText = document.getElementById('appealReasonText');
+function showAppealReason() {
+    let reasonDiv = document.getElementById('appealReasonDiv');
+    let reasonNo = document.getElementById('appealReasonNo');
 
-    if (noReason.checked) {
-        reasonText.disabled = true;
-        reasonText.style.backgroundColor = 'var(--body-secondary-color)';
-        reasonText.style.color = 'var(--placeholder-text)';
+    if (reasonNo.checked) {
+        reasonDiv.classList.remove('showContent');
+        reasonDiv.classList.add('hideContent');
     } else {
-        reasonText.disabled = false;
-        reasonText.style.backgroundColor = '';
-        reasonText.style.color = '';
+        reasonDiv.classList.add('showContent');
+        reasonDiv.classList.remove('hideContent');
     }
+
 }
 
 const appeal = {

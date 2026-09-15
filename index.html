@@ -140,7 +140,6 @@
 
                             <div>
                                 <label for="reject">07.</label>
-
                                     <input
                                         type="checkbox"
                                         id="standardPA"
@@ -148,20 +147,28 @@
                                         onchange="rejectControl(this)"
                                         checked>
                                         <label for="standardPA">75 </label>
-
-                                    <input 
-                                        type="checkbox" 
-                                        id="quantityLimit" 
-                                        onchange="showQuantity()"
-                                        name="reject">
-                                        <label for="quantityLimit">76 </label>
-
                                     <input 
                                         type="checkbox" 
                                         id="nonFormulary" 
                                         onchange="rejectControl(this)"
                                         name="reject">
                                         <label for="nonFormulary">70 </label>
+
+                                    <input 
+                                        type="checkbox" 
+                                        id="stepTherapy" 
+                                        onchange="rejectControl(this)"
+                                        name="reject">
+                                        <label for="stepTherapy">608 and/or </label>
+
+                                    <input 
+                                        type="checkbox" 
+                                        id="quantityLimit" 
+                                        onchange="showQuantity()"
+                                        name="reject">
+                                        <label for="quantityLimit">76</label>
+
+                                    
                             </div>
                             
                             <div id="quantityDiv">
@@ -493,7 +500,7 @@
                                                 tabindex="-1">
                                         </div>
 
-                                        <div onchange="disableAppealReason()">
+                                        <div onchange="showAppealReason()">
                                             <label for="appealReasonCheckbox">A4</label>
                                             <input
                                                 id="appealReasonNo"
@@ -513,7 +520,7 @@
                                                 <label for="appealReasonYes">Appeal reason </label>
                                         </div>
                                             
-                                        <div>
+                                        <div id="appealReasonDiv" class="hideContent">
                                             <label for="appealReasonText">A5</label>
                                             <textarea
                                                 id="appealReasonText"

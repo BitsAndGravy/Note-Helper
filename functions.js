@@ -1259,7 +1259,8 @@ function showQL() {
 function rejectControl(checkbox) {
     let reject70 = document.getElementById('nonFormulary');
     let reject75 = document.getElementById('standardPA');
-    var checkboxes = [reject70, reject75];
+    let reject608 = document.getElementById('stepTherapy');
+    var checkboxes = [reject70, reject75, reject608];
     
     checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false
@@ -1279,10 +1280,11 @@ function showQuantity() {
     if(alwaysShowQuantity == 'no') {    // If 'always show quantity' is not selected in settings:
         let quantityLimit = document.getElementById('quantityLimit');
         let nonFormulary = document.getElementById('nonFormulary');
+        let stepTherapy = document.getElementById('stepTherapy');
         let quantity = document.getElementById('quantityDiv');
 
         // If 70 and/or 76 is checked:
-        if ((quantityLimit.checked || nonFormulary.checked) || (quantityLimit.checked && nonFormulary.checked)) { 
+        if ((quantityLimit.checked) || (nonFormulary.checked) || (stepTherapy.checked)) { 
             // Add class to make it visible, remove class that hides it
             quantity.classList.add('showContent');
             quantity.classList.remove('hideContent');
@@ -1512,7 +1514,7 @@ function appealTypeChecked() {
 
         changeTabIndex(appealBuilderList, -1);
     }
-    disableAppealReason();
+    showAppealReason();
 }
 
     function formularyStatusReport() {

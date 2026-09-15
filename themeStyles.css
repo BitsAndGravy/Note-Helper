@@ -44,7 +44,7 @@
 
 [data-theme='ravenclaw-bronze'] {
     /* Main features */
-    --main-background: #111624;
+    --main-background: #2c395b;
     --header-background: #946b2d;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
