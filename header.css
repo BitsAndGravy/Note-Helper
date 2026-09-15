@@ -384,3 +384,7 @@ ul li a:hover {
     color: black;
     transition: 200ms;
 }
+
+.underline-text {
+    text-decoration: underline;
+}

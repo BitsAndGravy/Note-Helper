@@ -69,7 +69,7 @@
                                 </div>
                             </div>
                                     
-                            <div class="flex align-center justify-space-between input-spacer">
+                            <div class="flex align-center justify-space-between">
                                 <div>
                                     <label for="source">02.</label>
                                     <select name="source" id="source">
@@ -84,7 +84,7 @@
                                 <span id="time">0:00</span>
                             </div>
 
-                            <div class="input-spacer">
+                            <div>
                                 <label for="urgent">03.</label> 
 
                                 <input 
@@ -138,40 +138,52 @@
                                 <br>
                             </div>
 
-                            <div>
-                                <label for="reject">07.</label>
-                                    <input
-                                        type="radio"
-                                        id="standardPA"
-                                        name="reject"
-                                        onchange="rejectControl(this)"
-                                        checked>
-                                        <label for="standardPA">75 </label>
+                            <div class="align-center flex">
+                                <label for="reject" class="padding-right-5">07.</label>
+                                    <div class="padding-right-5">
+                                        <input
+                                            type="radio"
+                                            id="standardPA"
+                                            name="reject"
+                                            onchange="rejectControl(this)"
+                                            checked>
+                                            <label for="standardPA">75 </label>
+                                    </div>
 
-                                    <input 
+                                    <div class="padding-right-5">
+                                        <input 
                                         type="radio" 
                                         id="nonFormulary" 
                                         onchange="rejectControl(this)"
                                         name="reject">
                                         <label for="nonFormulary">70 </label>
+                                    </div>
 
-                                    <input 
+                                    <div class="padding-right-5">
+                                        <input 
                                         type="radio" 
                                         id="stepTherapy" 
                                         onchange="rejectControl(this)"
                                         name="reject">
                                         <label for="stepTherapy">608 and/or </label>
+                                    </div>
 
-                                    <input 
+                                    <div class="padding-right-5">
+                                        <input 
                                         type="checkbox" 
                                         id="quantityLimit" 
                                         onchange="showQuantity()"
                                         name="reject">
                                         <label for="quantityLimit">76</label>
+                                    </div>
 
-                                    <span class="material-symbols-outlined" onclick="resetReject()">
-                                    reset_focus
+                                    <div class="padding-right-5">
+                                        <span title="Clear 75, 70, and 608" class="cursor-pointer underline-text" onclick="resetReject()">
+                                        <span class="material-symbols-outlined underline-text">
+                                        refresh
+                                        </span>
                                     </span>
+                                    </div>
                                     
                             </div>
                             
