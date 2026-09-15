@@ -205,6 +205,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "schizophrenia",
     },  
     {
+        drug: "Combigan eye drops",
+        quantity: "5/25",
+        diagnosis: "ocular hypertension",
+        formulary: false, 
+    },  
+    {
         drug: "Combipatch patch",
         quantity: "8/28",
         diagnosis: "menopausal and female climacteric states",
@@ -807,6 +813,12 @@ const drugDatabase = [ // for getQuantity()
     }, 
     {
         drug: "PEG-3350 and electrolytes solution",
+        quantity: "4000/1",
+        diagnosis: "colonoscopy",
+        formulary: false,
+    }, 
+    {
+        drug: "PEG-3350 electrolyte solution",
         quantity: "4000/1",
         diagnosis: "colonoscopy",
         formulary: false,
