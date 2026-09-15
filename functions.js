@@ -211,6 +211,7 @@ const fullDiagnosisList = [
     'seborrheic dermatitis',
     'sexual dysfunction',
     'shift work sleep disorder',
+    'Sjogren syndrome',
 
     'T2DM and obesity',
     'tinea capitis',

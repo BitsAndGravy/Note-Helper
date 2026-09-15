@@ -293,6 +293,13 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "T1DM", 
     },   
     {
+        drug: "dextromethorphan-quinidine capsule",
+        quantity: "60/30",
+        diagnosis: "pseudobulbar affect", 
+        // Formulary
+        // Non-specialty
+    },   
+    {
         drug: "difluprednate eye drops",
         quantity: "5/30",
         diagnosis: "dry eye syndrome", 
@@ -1279,6 +1286,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "42/14",
         diagnosis: "irritable bowel syndrome-diarrhea",
         altDiagnosis: "SIBO",
+    }, 
+    {
+        drug: "Xiidra eye drops",
+        quantity: "60/30",
+        diagnosis: "dry eye syndrome",
+        altDiagnosis: "keratoconjunctivitis sicca",
     }, 
     {
         drug: "Xphozah tablet",
