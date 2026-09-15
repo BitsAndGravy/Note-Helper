@@ -410,6 +410,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
+        /* currently based on position of the questions, will change to based on id. adding 608
         function getReject() {
             let checks = document.getElementsByName('reject');
             if(checks[0].checked) {
@@ -424,6 +425,43 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.reject = "70 and 76-Non-formulary with QL";
             } else if (checks[2].checked) {
                 answer.reject = "70-Non-formulary";
+            }
+        }
+            */
+
+        function getReject() {
+            let reject70 = document.getElementById('nonFormulary');
+            let reject75 = document.getElementById('standardPA');
+            let reject76 = document.getElementById('quantityLimit');
+            let reject608 = document.getElementById('stepTherapy');
+
+            // 75 and/or 76
+            if (reject75.checked) {
+                if (reject76.checked) {
+                    answer.reject = "75 and 76-Standard PA with QL";
+                } else {
+                    answer.reject = "75-Standard PA";
+                }
+            }
+            else if (reject70.checked) {
+                if (reject76.checked) {
+                    answer.reject = "70 and 76-Non-formulary with QL";
+                } else {
+                    answer.reject = "70-Non-formulary";
+                }
+            }
+            else if (reject608.checked) {
+                if (reject76.checked) {
+                    answer.reject = "608 and 76-Step therapy with QL";
+                } else {
+                    answer.reject = "608-Step therapy";
+                }
+            }
+            else if (reject76.checked) {
+                answer.reject = "76-Quantity limit";
+            }
+            else {
+                answer.reject = '';
             }
         }
 
@@ -1253,9 +1291,6 @@ function showQL() {
     }
 }
 
-
-
-
 function rejectControl(checkbox) {
     let reject70 = document.getElementById('nonFormulary');
     let reject75 = document.getElementById('standardPA');
@@ -1268,10 +1303,6 @@ function rejectControl(checkbox) {
 
     showQuantity();
 }
-
-
-
-
 
 // When 70 or 76 is checked/unchecked.
 function showQuantity() {

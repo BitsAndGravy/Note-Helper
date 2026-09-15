@@ -141,21 +141,22 @@
                             <div>
                                 <label for="reject">07.</label>
                                     <input
-                                        type="checkbox"
+                                        type="radio"
                                         id="standardPA"
                                         name="reject"
                                         onchange="rejectControl(this)"
                                         checked>
                                         <label for="standardPA">75 </label>
+
                                     <input 
-                                        type="checkbox" 
+                                        type="radio" 
                                         id="nonFormulary" 
                                         onchange="rejectControl(this)"
                                         name="reject">
                                         <label for="nonFormulary">70 </label>
 
                                     <input 
-                                        type="checkbox" 
+                                        type="radio" 
                                         id="stepTherapy" 
                                         onchange="rejectControl(this)"
                                         name="reject">
@@ -168,6 +169,9 @@
                                         name="reject">
                                         <label for="quantityLimit">76</label>
 
+                                    <span class="material-symbols-outlined" onclick="resetReject()">
+                                    reset_focus
+                                    </span>
                                     
                             </div>
                             

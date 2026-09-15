@@ -192,6 +192,19 @@ function showAppealReason() {
 
 }
 
+function resetReject() {
+    let rejects = [
+        'standardPA',
+        'nonFormulary',
+        'stepTherapy',
+    ]
+
+    for (let reject of rejects) {
+        document.getElementById(reject).checked = false;
+    }
+    preSaveFunctions();
+}
+
 const appeal = {
     appealCondition: '[appealCondition]', 
     appealDenialReasons: '[appealDenialReasons]',
