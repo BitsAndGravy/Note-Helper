@@ -77,6 +77,18 @@ button:active {
     box-shadow: 2x 2px 2px #00000086 inset;
 }
 
+.button-false {
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    transition: 0.2s;
+}
+
+.button-false:hover {
+    background-color: var(--input-accent-color);
+    color: var(--body-primary-color);
+}
+
 .button-reset {
     margin: 0;
     padding: 2px;
@@ -253,6 +265,10 @@ input[type=text] {
 .iroPreviewHeader {
     padding-left: 10px;
     height: 45px;
+}
+
+.justify-center {
+    justify-content: center;
 }
 
 .justify-flex-end {
