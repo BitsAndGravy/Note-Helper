@@ -89,6 +89,10 @@ button:active {
     color: var(--body-primary-color);
 }
 
+.button-false:active {
+    color: var(--input-accent-color);
+}
+
 .button-reset {
     margin: 0;
     padding: 2px;
