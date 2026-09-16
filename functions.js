@@ -143,6 +143,7 @@ const fullDiagnosisList = [
     'colonoscopy',
     'constipation',
 
+    'depression',
     'dermatophytosis',
     'diabetes',
     'diarrhea',

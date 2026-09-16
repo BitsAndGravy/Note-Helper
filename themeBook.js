@@ -22,9 +22,9 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
-    light: {
-        name: 'light', 
-        title: 'Light', 
+    oscarBlue: {
+        name: 'oscar-blue', 
+        title: 'Oscar Blue', 
         style: 'light',
         group: 'Generic',
         optGroup: 'generic'

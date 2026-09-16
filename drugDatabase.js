@@ -248,6 +248,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "dalfampridine ER tablet",
+        quantity: "30/30",
+        diagnosis: "MS", 
+        specialty: true,
+    },  
+    {
         drug: "Dapsone 7.5% gel",
         quantity: "90/90",
         diagnosis: "acne vulgaris", 

@@ -1,113 +1,41 @@
-/* || Midnight theme */
-.gradientColor {
-    background-image: linear-gradient(to bottom, var(--body-gradient));
-    /*, var(--body-gradient-middle), var(--body-gradient-bottom));*/
-}
-
-:root, [data-theme='light'] {
+:root, [data-theme='oscar-blue'] {
     /* Main features */
-    --main-background: white;
-    --header-background: #e3e8ef;
-    --footer-background: var(--header-background);
-    --body-primary-color: var(--main-background);
-    --body-secondary-color: #f6f6f6;
-    --body-border-color: #525257;
-    --body-gradient: var(--main-background);
+    --main-background: #f7f5eb;
+    --header-background: #4f50ff;
+    --footer-background: #f7f5eb;
+    --body-primary-color: #f7f5eb;
+    --body-secondary-color: white;
+    --body-border-color: #b9baff;
+    --body-gradient: #f7f5eb;
+    --shadow: transparent;
     
     /* Text */
-    --heading-text: black;
-    --body-text: black;
+    --heading-text: white;
+    --body-text: #1f0d05;
     --body-secondary-text: var(--body-text);
     --animated-text: var(--heading-text);
-    --input-text: var(--heading-text);
-    --placeholder-text: #000000a7;
+    --input-text: var(--body-text);
+    --placeholder-text: #4a3b33;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: white;
-    --button-hover: #e6e6e6;
-    --button-active: #d2d2d2;
-    --button-text: black;
+    --button-background: #f7f5eb;
+    --button-hover: #eeece2;
+    --button-active: #e6e3d9;
+    --button-text: #1f0d05;
 
     /* Input */
     --input-background:white;
     --input-background-focus: white;
-    --input-accent-color: #324ef0;
-    --input-border: var(--body-border-color);
-    --input-border-focus: var(--input-accent-color);
+    --input-accent-color: #4f50ff;
+    --input-border: #92887f;
+    --input-border-focus: #4a3b33;
 }
 
 /* || Generic themes */
-
-[data-theme='ravenclaw-bronze'] {
-    /* Main features */
-    --main-background: #2c395b;
-    --header-background: #946b2d;
-    --footer-background: var(--header-background);
-    --body-primary-color: #203366;
-    --body-secondary-color: #0d1f4b;
-    --body-border-color: #c2973a;
-    --body-gradient: var(--body-primary-color);
-    
-    /* Text */
-    --heading-text: #fff6de;
-    --body-text: #ccd4ed;
-    --input-text: #e2e6f1;
-    --placeholder-text: #dbe0efa0;
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #ddd1b0;
-    --button-hover: #d8b581;
-    --button-active: #bf9453;
-
-    /* Input */
-    --input-background: #00000049;
-    --input-background-focus: #0000007f;
-    --input-accent-color: #ffc163;
-    --input-border: black;
-    --input-border-focus: var(--body-border-color);
-}
-
-[data-theme='ravenclaw-silver'] {
-    /* Main features */
-    --main-background: #2c395b;
-    --header-background: #C0C0C0;
-    --footer-background: var(--header-background);
-    --body-primary-color: #0d1f4b;
-    --body-secondary-color: #203366;
-    --body-border-color: #cecece;
-    --body-gradient: var(--body-primary-color);
-    
-    /* Text */
-    --heading-text: #111220;
-    --body-text: #cbdbdb;
-    --input-text: azure;
-    --placeholder-text: #f0ffff94;
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #e0e0e0;
-    --button-hover: #aaaaaa;
-    --button-active: var(--input-accent-color);
-
-    /* Input */
-    --input-background: #00000049;
-    --input-background-focus: #0000007f;
-    --input-accent-color: #ffe263;
-    --input-border: #cecece6a;
-    --input-border-focus: #878787;
-}
-
 [data-theme='beat-saber'] {
     /* Main features */
     --main-background: #120b2c;
@@ -222,6 +150,7 @@
     --body-secondary-color: #dfe6f9;
     --body-border-color: #0073bf;
     --body-gradient: #f6f7fd;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: white;
@@ -286,7 +215,6 @@
     --input-border-focus: #00ffdf; /* Inky */
 }
 
-
 [data-theme='scantron'] {
     /* Main features */
     --main-background: white;
@@ -296,6 +224,7 @@
     --body-secondary-color: #daece7;
     --body-border-color: var(--input-accent-color);
     --body-gradient: white;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: white;
@@ -324,13 +253,7 @@
     --input-border-focus: var(--input-accent-color);
 }
 
-
-
-
 /* || Hollow Knight themes */
-
-
-
 [data-theme='abyss'] {
     /* Main features */
     --main-background: black;
@@ -365,7 +288,6 @@
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
-
 
 [data-theme='broken-vessel'] {
     /* Main features */
@@ -411,6 +333,7 @@
     --body-secondary-color: #3c78b985;
     --body-border-color: #4087d6;
     --body-gradient: #265286, #336aa4;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #e2e3f6;
@@ -436,7 +359,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='confessor-jiji'] {
     /* Main features */
     --main-background: #11112c;
@@ -446,6 +368,7 @@
     --body-secondary-color: #b483b52f;
     --body-border-color: #be9582;
     --body-gradient: #212048, #34325a, #34325a, #a47889;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #f9e1a1;
@@ -472,7 +395,6 @@
     --input-border-focus: var(--main-background);
 }
 
-
 [data-theme='crystal-peaks'] {
     /* Main features */
     --main-background: #22134c;
@@ -482,6 +404,7 @@
     --body-secondary-color: #ffffff33;
     --body-border-color: #e29dee;
     --body-gradient: #4e4dad, #954ac9, #d399fa;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
@@ -516,6 +439,7 @@
     --body-secondary-color: #ffffff33;
     --body-border-color: var(--button-hover);
     --body-gradient: #6b65a3, var(--body-primary-color), #ab84cf;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
@@ -540,7 +464,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='fungal-wastes'] {
     /* Main features */
     --main-background: #0d2237;
@@ -550,6 +473,7 @@
     --body-secondary-color: #ffffff33;
     --body-border-color: #3d988b;
     --body-gradient: #0b2b47, #3d988b;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #fffcba;
@@ -574,7 +498,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='greenpath-I'] {
     /* Main features */
     --main-background: #0f2031;
@@ -584,6 +507,7 @@
     --body-secondary-color: #ffffff33;
     --body-border-color: #2ca45a;
     --body-gradient:  #183064, #1b4d68, #134150;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #daf0ec;
@@ -617,6 +541,7 @@
     --body-secondary-color: #352c4e;
     --body-border-color: #398d57;
     --body-gradient: #2f7c5b, #235c52, #123542;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #e7f0cc;
@@ -651,6 +576,7 @@
     --body-secondary-color: #2366555e;
     --body-border-color: #79fbc5;
     --body-gradient: #0b1927, #184848;
+    
     
     /* Text */
     --heading-text: black;
@@ -721,6 +647,7 @@
     --body-secondary-color: #7b1231;
     --body-border-color: #eb5c68;
     --body-gradient: #250815, #500d20;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #e1ced6;
@@ -756,6 +683,7 @@
     --body-secondary-color: #ffffff40;
     --body-border-color: #ccd4a1;
     --body-gradient: #3b9d80, #32817a;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
@@ -825,6 +753,7 @@
     --body-secondary-color: #653d54;
     --body-border-color: #81495e;
     --body-gradient: #3a445c, #24344c;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #e4d3d9;
@@ -860,6 +789,7 @@
     --body-secondary-color: #ffffff33;
     --body-border-color: #dad1fc;
     --body-gradient: #142251, #3d487a, #504676;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #f1eaff;
@@ -884,7 +814,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='the-grimm-troupe'] {
     /* Main features */
     --main-background: #362e28;
@@ -894,6 +823,7 @@
     --body-secondary-color: #ffffff17;
     --body-border-color: #c02f39;
     --body-gradient: #1e1121, #3a1f3f;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #ccc5b6;
@@ -921,7 +851,6 @@
     --input-border-focus: #c02f39;
 }
 
-
 [data-theme='the-hive'] {
     /* Main features */
     --main-background: #655769;
@@ -931,6 +860,7 @@
     --body-secondary-color: #ffffff78;
     --body-border-color: var(--button-hover);
     --body-gradient: #f0c18d, #fafec3;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #fbfae5;
@@ -966,6 +896,7 @@
     --body-secondary-color: #f5d398;
     --body-border-color: #846456;
     --body-gradient: #b56240, /*#c58154, #e2a76e,*/ #ecba58, #fffdc2;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: white;
@@ -993,10 +924,7 @@
     --input-border-focus: var(--header-background);
 }
 
-
-
 /* Minecraft themes */
-
 [data-theme='creeper'] {
     /* Main features */
     --main-background: #3c5538;
@@ -1042,6 +970,7 @@
     --body-secondary-color: #07495c;
     --body-border-color: #03b7c4;
     --body-gradient: #19262f;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #b8dcdf;
@@ -1105,7 +1034,6 @@
     --input-border-focus: #ff83ffc9;
 }
 
-
 [data-theme='warped-forest'] {
     /* Main features 45212d */
     --main-background: #362247;
@@ -1115,6 +1043,7 @@
     --body-secondary-color: #158b6898;
     --body-border-color: #664185;
     --body-gradient: #0f6f6d, #06575a;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #fcfbfb;
@@ -1142,13 +1071,7 @@
     --input-border-focus: #3d1f27;
 }
 
-
-
-
-
 /* || Harry Potter themes */
-
-
 [data-theme='gryffindor'] {
     /* Main features */
     --main-background: #664646;
@@ -1158,6 +1081,7 @@
     --body-secondary-color: #960003;
     --body-border-color: #cda225;
     --body-gradient: var(--body-primary-color);
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: black;
@@ -1185,7 +1109,6 @@
     --input-border-focus: var(--input-accent-color);
 }
 
-
 [data-theme='hufflepuff'] {
     /* Main features black 362e28 dyellow efb935 lyellow ffd260*/
     --main-background: #c09950;
@@ -1195,6 +1118,7 @@
     --body-secondary-color: #efb935;
     --body-border-color: var(--header-background);
     --body-gradient: var(--body-primary-color);
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: white;
@@ -1223,23 +1147,56 @@
 }
 
 
-
-[data-theme='ravenclaws'] {
+[data-theme='ravenclaw-bronze'] {
     /* Main features */
-    --main-background: #111624;
+    --main-background: #2c395b;
     --header-background: #946b2d;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
     --body-secondary-color: #0d1f4b;
-    --body-border-color: #98999c;
+    --body-border-color: #c2973a;
     --body-gradient: var(--body-primary-color);
+    --shadow: #00000086;
     
     /* Text */
-    --heading-text: azure;
-    --body-text: azure;
-    --input-text: black;
-    --input-text-focus: var(--input-text);
-    --placeholder-text: slategray;
+    --heading-text: #fff6de;
+    --body-text: #ccd4ed;
+    --input-text: #e2e6f1;
+    --placeholder-text: #dbe0efa0;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #ddd1b0;
+    --button-hover: #d8b581;
+    --button-active: #bf9453;
+
+    /* Input */
+    --input-background: #00000049;
+    --input-background-focus: #0000007f;
+    --input-accent-color: #ffc163;
+    --input-border: black;
+    --input-border-focus: var(--body-border-color);
+}
+
+[data-theme='ravenclaw-silver'] {
+    /* Main features */
+    --main-background: #2c395b;
+    --header-background: #C0C0C0;
+    --footer-background: var(--header-background);
+    --body-primary-color: #0d1f4b;
+    --body-secondary-color: #203366;
+    --body-border-color: #cecece;
+    --body-gradient: var(--body-primary-color);
+    --shadow: #00000086;
+    
+    /* Text */
+    --heading-text: #111220;
+    --body-text: #cbdbdb;
+    --input-text: azure;
+    --placeholder-text: #f0ffff94;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -1251,11 +1208,11 @@
     --button-active: var(--input-accent-color);
 
     /* Input */
-    --input-background: #e0e0e0;
-    --input-background-focus: white;
+    --input-background: #00000049;
+    --input-background-focus: #0000007f;
     --input-accent-color: #ffe263;
-    --input-border: black;
-    --input-border-focus: var(--header-background);
+    --input-border: #cecece6a;
+    --input-border-focus: #878787;
 }
 
 [data-theme='slytherin'] {
@@ -1267,6 +1224,7 @@
     --body-secondary-color: #1a472a;
     --body-border-color: var(--button-background);
     --body-gradient: var(--body-primary-color);
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: #eaeaea;
@@ -1302,6 +1260,7 @@
     --body-secondary-color: #4a2962;
     --body-border-color: gray;
     --body-gradient: #533279, #60357c, #6b3780;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: lightgray;
@@ -1328,9 +1287,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
-
-
 /* ||| Holow Knight: Silksong Themes */
 
 [data-theme='coral-tower'] {
@@ -1342,6 +1298,7 @@
     --body-secondary-color: #ffffff41;
     --body-border-color: #d3c0a9;
     --body-gradient: #4abada, #6ee3f5, #6fe9fd, #31b3bd;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: white;
@@ -1368,7 +1325,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='deep-docks'] {
     /* Main features */
     --main-background: #6c2d0b;
@@ -1378,6 +1334,7 @@
     --body-secondary-color: #fb8e0071;
     --body-border-color: #fb8e00;
     --body-gradient: #660700, #e33112, #db5800;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
@@ -1414,6 +1371,7 @@
     --body-secondary-color: #edd1c4;
     --body-border-color: #e0b9a2;
     --body-gradient: white;
+    --shadow: #00000086;
 
     /* Text */
     --heading-text: white;
@@ -1451,6 +1409,7 @@
     --body-secondary-color: #817788;
     --body-border-color: #ca8a5f;
     --body-gradient: #eadac9;
+    --shadow: #00000086;
 
     /* Text */
     --heading-text: white;
@@ -1486,6 +1445,7 @@
     --body-secondary-color: #9d6934;
     --body-border-color: #c3aa8c;
     --body-gradient: #bf8540;
+    --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
