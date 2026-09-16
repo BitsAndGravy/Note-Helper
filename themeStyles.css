@@ -720,7 +720,7 @@
     --body-primary-color: #250815;
     --body-secondary-color: #7b1231;
     --body-border-color: #eb5c68;
-    --body-gradient: #250815, #791330;
+    --body-gradient: #250815, #500d20;
     
     /* Text */
     --heading-text: #e1ced6;
@@ -734,15 +734,15 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #f17291;
-    --button-hover: #df2c49;
-    --button-active: #e43c6a;
+    --button-background: #ebcad2;
+    --button-hover: #e9b1ba;
+    --button-active: #e195a9;
     --button-text: var(--main-background);
 
     /* Input */
     --input-background: #1105099d;
     --input-background-focus: #110509d7;
-    --input-accent-color: var(--button-background);
+    --input-accent-color: #f17291;
     --input-border: #5d5d5d;
     --input-border-focus: #eb5c68d6;
 }
