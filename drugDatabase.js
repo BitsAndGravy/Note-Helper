@@ -144,6 +144,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "colitis", 
     },  
     {
+        drug: "buprenorphine-naloxone film", 
+        quantity: "60/30",
+        diagnosis: "opioid dependence",
+        quantityLimitCriteria: true,
+    }, 
+    {
         drug: "Cabtreo gel",
         quantity: "50/30",
         diagnosis: "acne vulgaris", 
@@ -989,12 +995,7 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "COPD",
         formulary: false,
     }, 
-    {
-        drug: "buprenorphine-naloxone film", 
-        quantity: "60/30",
-        diagnosis: "opioid dependence",
-        quantityLimitCriteria: true,
-    }, 
+    
     {
         drug: "Sucraid solution", 
         quantity: "360/30",
@@ -1013,6 +1014,13 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "narcolepsy",
         altDiagnosis: "OSA",
+    }, 
+    {
+        drug: "Symbravo tablet", 
+        quantity: "9/30",
+        diagnosis: "GERD",
+        altDiagnosis: "migraine",
+        formulary: false,
     }, 
     {
         drug: "Synjardy XR tablet", 
