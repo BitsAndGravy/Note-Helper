@@ -130,6 +130,7 @@ const stateClientList = [ // for use with createStateSelectOptions()
 const fullDiagnosisList = [
     'abnormal blood chemistry',
     'actinic keratosis',
+    'acute upper respiratory infection',
     'aspergillosis', 
 
     'bacterial intestinal infection',

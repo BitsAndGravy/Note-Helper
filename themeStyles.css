@@ -13,9 +13,9 @@
     --heading-text: white;
     --body-text: #1f0d05;
     --body-secondary-text: var(--body-text);
-    --animated-text: var(--heading-text);
+    --animated-text: var(--body-text);
     --input-text: var(--body-text);
-    --placeholder-text: #4a3b33;
+    --placeholder-text: #4a3b3392;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -173,7 +173,7 @@
 
     /* Input */
     --input-background: var(--button-background);
-    --input-background-focus: #fcf7e3;
+    --input-background-focus: #fcfaee;
     --input-accent-color: #0075ff;
     --input-border: #7b9ebd;
     --input-border-focus: #0073bf;

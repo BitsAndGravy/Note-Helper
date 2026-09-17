@@ -174,7 +174,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "dry eye syndrome", 
         formulary: false,
     },  
-    
+    {
+        drug: "CeQur Simplicity Inserter",
+        quantity: "1/90",
+        diagnosis: "T1DM", 
+    },  
     {
         drug: "cinacalcet tablet",
         quantity: "30/30",
