@@ -1001,15 +1001,15 @@
 [data-theme='enderman'] {
     /* Main features */
     --main-background: black;
-    --header-background: #ff83ff;
-    --footer-background: #ff83ff78;
+    --header-background: #eb01ff;
+    --footer-background: #eb01ff78;
     --body-primary-color: #191919;
     --body-secondary-color: #000000;
     --body-border-color: #f7b5f7;
     --body-gradient: #191919;
     
     /* Text */
-    --heading-text: black;
+    --heading-text: white;
     --body-text: #f7e4f7;
     --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
@@ -1029,7 +1029,7 @@
     /* Input */
     --input-background: black;
     --input-background-focus: black;
-    --input-accent-color: #eb01ff;
+    --input-accent-color: #ff83ff;
     --input-border: #ff83ff78;
     --input-border-focus: #ff83ffc9;
 }

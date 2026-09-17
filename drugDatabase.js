@@ -685,6 +685,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Lyumjev vial",
+        quantity: "10/30",
+        diagnosis: "T1DM",
+        altDiagnosis: "T2DM",  
+        formulary: false, 
+    },  
+    {
         drug: "metformin ER 1,000 mg osm-tab", 
         quantity: "60/30",
         diagnosis: "T2DM",
