@@ -888,14 +888,14 @@
 }
 
 [data-theme='the-radiance'] {
-    /* Main features */
-    --main-background: #2d3048;
+    /* Main features  red-orange dark #b56240, gray orange #c58154,dark blue 2d3048*/
+    --main-background: #b1744c;
     --header-background: #543d43;
     --footer-background: #90504f;
     --body-primary-color: #fffdc2;
     --body-secondary-color: #f5d398;
-    --body-border-color: #846456;
-    --body-gradient: #b56240, /*#c58154, #e2a76e,*/ #ecba58, #fffdc2;
+    --body-border-color: #2d3048;
+    --body-gradient:   #e2a76e, #ecba58, #fffdc2;
     --shadow: #00000086;
     
     /* Text */
@@ -917,11 +917,11 @@
     --button-active: #fef7bd;
 
     /* Input */
-    --input-background:var(--button-background);
+    --input-background: #f8f1ede7;
     --input-background-focus: white;
     --input-accent-color: #2740ff;
     --input-border: black;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: var(--body-border-color);
 }
 
 /* Minecraft themes */
