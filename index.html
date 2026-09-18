@@ -23,7 +23,7 @@
 <body>
 <!--Input field-->
     <div class="container">
-        <div class="heading align-center flex">
+        <div class="heading align-center flex sticky-heading">
             <H3>Note helper</H3>
             <nav>
                 <ul>
@@ -466,38 +466,9 @@
                     <form id="form4">    
                         <div class="padding-5-10-10-10">
 
-                            <!-- Appeal denial language, plain textarea, hidden (v1.0)-->
-                            <div class="container-mini display-none">
-                                <div class="heading align-center flex">
-                                    <H3>Appeal denial language</H3>
-                                </div>                
-                            
-                                <div class="background-color-primary padding-5-10-10-10">
-                                    <div id="appealDenialLanguageDiv">
-                                        <label for="appealDenial">A3</label>
-                                        <textarea
-                                            id="appealDenial" 
-                                            name="appealDenial" 
-                                            class="appealTextarea"
-                                            tabindex="-1"
-                                            placeholder="denial language for appeal"></textarea>                                        
-                                    </div>
-                                </div>
-
-                                <div class="footing">
-                                    <button 
-                                        id="A3copyButton"
-                                        type="button" 
-                                        onclick="copyAppealText()"
-                                        tabindex="-1"
-                                        >Copy</button>
-                                    <span id="appealDenialCopied" class="hideStart">Copied to clipboard</span>
-                                </div>
-                            </div>
-
                             <!-- Appeal denial language (v2.0) -->
                             <div class="container-mini">
-                                <div class="heading align-center flex">
+                                <div class="heading align-center flex sticky-sub-heading">
                                     <h3>Appeal denial language builder</h3>
                                 </div>                
                             
@@ -627,7 +598,7 @@
                             <!-- IRO note builder; hidden until 'send to IRO' checked -->
                             <div id="iroNoteDiv" class="container-mini hideContent iroNoteSpacer" oninput="buildIROnote()">
                             
-                                <div class="heading align-center flex">
+                                <div class="heading align-center flex sticky-sub-heading">
                                     <h3>IRO note</h3>
                                 </div>
 
@@ -748,7 +719,7 @@
     <div id="showPreviewDiv">
         <br>
         <div class="container">
-            <div class="heading flex align-center cursor-pointer false-button" onclick="showList('notePreviewDiv')">
+            <div class="heading flex align-center cursor-pointer false-button sticky-heading" onclick="showList('notePreviewDiv')">
                 <span id="notePreviewDivAdd" class="material-symbols-outlined showContent">
                 add
                 </span>
@@ -771,7 +742,7 @@
 
 <!-- Note 1 -->
     <div class="container" id="noteOneBody">
-        <div class="heading align-center flex">
+        <div class="heading align-center flex sticky-heading">
             <H3>Saved note #1</H3>
         </div>
 
@@ -823,7 +794,7 @@
 
 <!--Note 2-->
     <div class="container" id="noteTwoBody">
-        <div class="heading align-center flex">
+        <div class="heading align-center flex sticky-heading">
             <H3>Saved note #2</H3>
         </div>
 
@@ -875,7 +846,7 @@
 
 <!--Note 3 new-->
     <div class="container" id="noteThreeBody">
-        <div class="heading align-center flex">
+        <div class="heading align-center flex sticky-heading">
             <H3>Saved note #3</H3>
         </div>
 

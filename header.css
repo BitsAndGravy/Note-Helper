@@ -202,14 +202,16 @@ h3 {
     padding-left: 10px;
     height: 45px;
     border-radius: 18px 18px 0px 0px; /* Rounded on top to match border, flat on bottom */
-    color: var(--heading-text);
+    color: var(--heading-text); 
 }
 
 /* Used for smooth transition when showing/hiding a div. Also see .showContent */
 .hideContent {
     height: 0;
     opacity: 0;
+    /* commented out to allow sticky headings
     overflow: hidden;
+    */
     transition-property: height;
     transition: 0.5s;
     transition-behavior: allow-discrete;
@@ -347,7 +349,9 @@ input[type=text] {
     height: auto; 
     opacity: 1;
     transition: 0.5s;
+    /*
     overflow: hidden;
+    */
 }
 
 /* for modern browsers */
@@ -359,6 +363,18 @@ input[type=text] {
 
 .showTimer {
     opacity: 0.5;
+}
+
+.sticky-heading {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sticky-sub-heading {
+    position: sticky;
+    top: 45px;
+    z-index: 90;
 }
 
 .suggest-container {
