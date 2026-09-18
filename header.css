@@ -209,9 +209,7 @@ h3 {
 .hideContent {
     height: 0;
     opacity: 0;
-    /* commented out to allow sticky headings
     overflow: hidden;
-    */
     transition-property: height;
     transition: 0.5s;
     transition-behavior: allow-discrete;
@@ -349,9 +347,7 @@ input[type=text] {
     height: auto; 
     opacity: 1;
     transition: 0.5s;
-    /*
-    overflow: hidden;
-    */
+    overflow: visible;
 }
 
 /* for modern browsers */
