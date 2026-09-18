@@ -259,7 +259,7 @@
                                             <label for="appealType">Appeal</label>
                                     </div>
 
-                                    <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showDates()">
+                                    <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
                                         <span title="Show relevant dates" class="material-symbols-outlined symbol-med">
                                         info
                                         </span>
@@ -428,24 +428,38 @@
                                     </div>
                                 </div>
 
-                                <div id="appealExternalDiv">
-                                    <label for="sendToIRO">A2</label>
-                                    <input
-                                        type="checkbox"
-                                        id="sendToIRO"
-                                        name="sendToIRO"
-                                        tabindex="-1"
-                                        onchange="iroChecked()">
-                                    <label for="sendToIRO">Send to IRO</label>
+                                <div class="flex align-center">
+                                    <div id="appealExternalDiv">
+                                        <label for="sendToIRO">A2</label>
+                                        <input
+                                            type="checkbox"
+                                            id="sendToIRO"
+                                            name="sendToIRO"
+                                            tabindex="-1"
+                                            onchange="iroChecked()">
+                                        <label for="sendToIRO">Send to IRO</label>
+                                    </div>
                                 </div>
-                                <a 
-                                    href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" 
-                                    class="color-body-text" 
-                                    id="specialtyAppealsTrackerLink"
-                                    tabindex="-1"
-                                    target="_blank">Specialty Appeals Tracker</a>
-                            </div>
 
+                                <div>
+                                    <div class="border-only background-color-secondary padding-10">
+                                        <a 
+                                        href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" 
+                                        class="color-body-text" 
+                                        id="specialtyAppealsTrackerLink"
+                                        tabindex="-1"
+                                        target="_blank">Specialty Appeals Tracker</a>
+                                        <br>
+                                        <a 
+                                        href="https://docs.google.com/document/d/1F9KpFtaryHsaGyWoGDMyqO4-YtS5MGL6SwHpDGyrz48/edit?tab=t.0#heading=h.ksbbug4plg4" 
+                                        class="color-body-text" 
+                                        id="AppealsJobAidLink"
+                                        tabindex="-1"
+                                        target="_blank">Job Aid - Appeals</a>
+                                    </div>
+                                </div>
+
+                            </div>
                         </form>
 
                         <!-- State regulations and character count -->

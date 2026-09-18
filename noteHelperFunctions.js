@@ -4,6 +4,7 @@ window.onload = function() {
     createStateSelectOptions();
     checkState();
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
+    processDates();
 
     // Check setting for appeal type
         let app = document.getElementById('appealType');

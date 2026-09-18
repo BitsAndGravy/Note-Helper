@@ -1366,11 +1366,7 @@ function removeSelection(name) {
 
 // When label for case type selected, show date table (help determine eligibility for reopening, appeal, etc)
 function showDates() {
-    let datesDiv = document.getElementById('datesDiv');
-    datesDiv.classList.toggle('hideContent');
-    datesDiv.classList.toggle('showContent');
-    processDates();
-    
+  
 }
 
 function fillDate(days) {
@@ -1678,6 +1674,12 @@ function showList(target) {
 
     removeSpan.classList.toggle('hideContent');
     removeSpan.classList.toggle('showContent');
+}
+
+function showInfo(info) {
+    let div = document.getElementById(info);
+    div.classList.toggle('hideContent');
+    div.classList.toggle('showContent');  
 }
 
 // When 'Copy' clicked for appeal and iro notes
