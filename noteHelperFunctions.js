@@ -250,7 +250,7 @@ function createDenialLanguage() {
 
     let dlLine5 = appeal.appealDenialReasons + '\n\n';
     let dlLine6 = "We recommend you reach out to your doctor to discuss this information and treatment alternatives.\n\n";
-    let dlLine7 = "Reference: Oscar Approved Criteria: " + appeal.criteriaName;
+    let dlLine7 = appeal.criteriaName;
 
     let dlFinal = dlLine1 + dlLine2 + dlLine3 + dlLine4 + dlLine5 + dlLine6 + dlLine7;
 
