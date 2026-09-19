@@ -327,6 +327,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "dry eye syndrome", 
     },   
     {
+        drug: "doxylampine-pyridoxine tablet",
+        quantity: "60/30",
+        diagnosis: "nausea", 
+        formulary: false, 
+    },  
+    {
         drug: "dulaglutide pen",
         quantity: "2/28",
         diagnosis: "T2DM", 
