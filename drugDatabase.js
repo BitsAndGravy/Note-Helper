@@ -1031,8 +1031,7 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Symbravo tablet", 
         quantity: "9/30",
-        diagnosis: "GERD",
-        altDiagnosis: "migraine",
+        diagnosis: "migraine",
         formulary: false,
     }, 
     {
