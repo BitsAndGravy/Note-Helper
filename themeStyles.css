@@ -584,6 +584,7 @@
     --body-secondary-text: var(--body-text);
     --input-text: #d1ffec;
     --placeholder-text: #79fbc5ae;
+    --animated-text: black;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -619,6 +620,7 @@
     --body-secondary-text: #d0fefd;
     --input-text: #e7fefe;
     --placeholder-text: #d0fefdab;
+    --animated-text: black;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
@@ -869,6 +871,7 @@
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000086;
+    --animated-text: var(--heading-text);
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
