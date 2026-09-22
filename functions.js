@@ -212,6 +212,7 @@ const fullDiagnosisList = [
     'schizoaffective disorder, bipolar type',
     'schizoaffective disorder, depressive type',
     'seborrheic dermatitis',
+    'severe persistent asthma',
     'sexual dysfunction',
     'shift work sleep disorder',
     'Sjogren syndrome',
