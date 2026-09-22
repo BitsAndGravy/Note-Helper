@@ -427,3 +427,94 @@ ul li a:hover {
 .underline-text {
     text-decoration: underline;
 }
+
+        .calendar {
+            width: 350px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .calendar-general {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+        }
+
+        /* Calendar Header */
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .calendar-header button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .calendar-header button:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* Calendar Body Grid */
+        .calendar-body {
+            padding: 5px;
+        }
+
+        .calendar-button {
+            width: 35px;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .days span {
+            padding: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .days span:hover:not(.empty) {
+            background-color: #e9ecef;
+        }
+
+        /* Special States */
+        .days .empty {
+            cursor: default;
+        }
+
+        .days .today {
+            background-color: #007bff;
+            color: white !important;
+            font-weight: bold;
+        }
