@@ -131,6 +131,7 @@ const fullDiagnosisList = [
     'abnormal blood chemistry',
     'actinic keratosis',
     'acute upper respiratory infection',
+    'acute vaginitis',
     'aspergillosis', 
 
     'bacterial intestinal infection',

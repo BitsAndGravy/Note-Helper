@@ -210,6 +210,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "clonazepam ODT",
+        quantity: "60/30",
+        diagnosis: "generalized anxiety disorder",
+        formulary: false, 
+    }, 
+    {
         drug: "Cobenfy capsule",
         quantity: "60/30",
         diagnosis: "schizophrenia",
