@@ -621,10 +621,16 @@ const drugDatabase = [ // for getQuantity()
     }, 
     {
         drug: "Lantus Solostar pen",
-        dosageForm: "pen", 
         quantity: "15/30",
         diagnosis: "T2DM", 
         formulary: false, 
+    },  
+    {
+        drug: "Lasix ONYU kit",
+        quantity: "1/365",
+        diagnosis: "heart failure", 
+        quantityLimitCriteria: true,
+        stepTherapy: true, 
     },  
     {
         drug: "levothyroxine capsule",

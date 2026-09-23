@@ -179,6 +179,8 @@ const fullDiagnosisList = [
 
     'idiopathic hypersomnia',
     'irritable bowel disease',
+    'irritable bowel syndrome',
+    'irritable bowel syndrome-constipation',
 
     'male hypogonadism',
     'melanin hyperpigmentation',
