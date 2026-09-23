@@ -1367,33 +1367,54 @@ function removeSelection(name) {
     showQuantity();
 }
 
-// When label for case type selected, show date table (help determine eligibility for reopening, appeal, etc)
-function showDates() {
-  
-}
-
-function fillDate(days) {
-    let todayDate = new Date();
-    let iroDueDate = todayDate.addBusinessDays(days);
-    let formattedIROdate = formatDateIRO(iroDueDate) + ' at 5 pm EST';
-
-    let iroDateElement = document.getElementById('iroDueDate');
-    iroDateElement.value = formattedIROdate;
-}
-
-    // Subtract days from today
+    // When info button for case type selected, show date table (help determine eligibility for reopening, appeal, etc). Not sure how to make it work with showDates.
     function processDates() {
         let todayDate = new Date();
 
-        let reopeningDate = formatDateClean(todayDate.subtractBusinessDays(7));
-        let reopeningText = 'Seven business days ago: ' + reopeningDate;
+        let reopeningDatePast = formatDateClean(todayDate.subtractBusinessDays(7));
+        document.getElementById('sevenBusinessDaysAgo').innerText = reopeningDatePast;
 
-        let appealDate = formatDateClean(todayDate.subtractDays(60));
-        let appealText = 'Sixty days ago: ' + appealDate;
+        let appealDatePast = formatDateClean(todayDate.subtractDays(60));
+        document.getElementById('sixtyDaysAgo').innerText = appealDatePast;
 
-        let datesText = reopeningText + '\n' + appealText;
+        // Days after
+        let reopeningDateFuture = formatDateClean(todayDate.addBusinessDays(7));
+        document.getElementById('sevenBusinessDaysAfter').innerText = reopeningDateFuture;
 
-        document.getElementById('dates').innerText = datesText;
+        let appealDateFuture = formatDateClean(todayDate.addDays(60));
+        document.getElementById('sixtyDaysAfter').innerText = appealDateFuture;
+    }
+
+    // When date on calendar selected, recalculate days.
+    function showDates(calendarDate) {
+        
+        let selectedDate = new Date(calendarDate);
+
+        // Days ago
+        let reopeningDatePast = formatDateClean(selectedDate.subtractBusinessDays(7));
+        document.getElementById('sevenBusinessDaysAgo').innerText = reopeningDatePast;
+
+        let appealDatePast = formatDateClean(selectedDate.subtractDays(60));
+        document.getElementById('sixtyDaysAgo').innerText = appealDatePast;
+
+        // Days after
+        let reopeningDateFuture = formatDateClean(selectedDate.addBusinessDays(7));
+        document.getElementById('sevenBusinessDaysAfter').innerText = reopeningDateFuture;
+
+        let appealDateFuture = formatDateClean(selectedDate.addDays(60));
+        document.getElementById('sixtyDaysAfter').innerText = appealDateFuture;
+    }
+
+
+
+    // Prefill IRO due date with 3 business days from today at 5pm EST.
+    function fillDate(days) {
+        let todayDate = new Date();
+        let iroDueDate = todayDate.addBusinessDays(days);
+        let formattedIROdate = formatDateIRO(iroDueDate) + ' at 5 pm EST';
+
+        let iroDateElement = document.getElementById('iroDueDate');
+        iroDateElement.value = formattedIROdate;
     }
 
     // Format date for readability for case type determination

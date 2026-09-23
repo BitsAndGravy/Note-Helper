@@ -270,38 +270,62 @@
                             <!-- Dates show when label for 10 clicked -->
                             <div id="datesDiv" class="hideContent">
                                 <div class="border-only background-color-secondary padding-10">
-                                    <div id="dates" >
-                                    </div>
-                                </div>
-
-
-
-                                <div class="calendar-general">
-
-                                    <div class="calendar">
-                                        <div class="calendar-header">
-                                            <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
-                                            <h2 id="month-year-display"></h2>
-                                            <button type="button" id="next-btn" class="calendar-button">&gt;</button>
-                                        </div>
-                                        <div class="calendar-body">
-                                            <div class="weekdays">
-                                                <span>Su</span>
-                                                <span>Mo</span>
-                                                <span>Tu</span>
-                                                <span>We</span>
-                                                <span>Th</span>
-                                                <span>Fr</span>
-                                                <span>Sa</span>
+                                    <!-- Dates -->
+                                    <div>
+                                        <div id="daysAgo">
+                                            <strong>Days Ago:</strong>
+                                            <div class="flex">
+                                                <div class="width-40">
+                                                    <div>Seven business days:</div>
+                                                    <div>Sixty days:</div>
+                                                </div>
+                                                <div class="width-60">
+                                                    <div id="sevenBusinessDaysAgo">tuesday</div>
+                                                    <div id="sixtyDaysAgo">wednesday</div>
+                                                </div>
                                             </div>
-                                            <div class="days" id="days-container"></div>
+                                        </div>
+                                        <br>
+
+                                        <div id="daysAfter">
+                                            <strong>Days After:</strong>
+                                            <div class="flex">
+                                                <div class="width-40">
+                                                    <div>Seven business days: </div>
+                                                    <div>Sixty days: </div>
+                                                </div>
+                                                <div class="width-60">
+                                                    <div id="sevenBusinessDaysAfter">Thursday</div>
+                                                    <div id="sixtyDaysAfter">Friday</div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
+                                    <!-- Calendar -->
+                                    <div class="calendar-general">
+                                        <div class="calendar">
+                                            <div class="calendar-header">
+                                                <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
+                                                <h2 id="month-year-display"></h2>
+                                                <button type="button" id="next-btn" class="calendar-button">&gt;</button>
+                                            </div>
+                                            <div class="calendar-body">
+                                                <div class="weekdays">
+                                                    <span>Su</span>
+                                                    <span>Mo</span>
+                                                    <span>Tu</span>
+                                                    <span>We</span>
+                                                    <span>Th</span>
+                                                    <span>Fr</span>
+                                                    <span>Sa</span>
+                                                </div>
+                                                <div class="days" id="days-container"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-
-
-
                             </div>
 
                             <label for="information">11.</label>
@@ -987,9 +1011,13 @@
                 }
 
                 // Make dates clickable
-                daySpan.addEventListener('click', () => alert(`You clicked ${months[currentMonth]} ${day}, ${currentYear}`));
+                daySpan.addEventListener('click', () => showDates([months[currentMonth], day, currentYear])
+                /*
+                alert(`You clicked ${months[currentMonth]} ${day}, ${currentYear}`));
+                */
 
-                daysContainer.appendChild(daySpan);
+            );
+            daysContainer.appendChild(daySpan);
             }
         }
 
