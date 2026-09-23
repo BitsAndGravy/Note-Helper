@@ -140,6 +140,7 @@ const fullDiagnosisList = [
     'blastomycosis', 
     'blepharitis',
 
+    'candidiasis',
     'chronic rhinitis',
     'coccidioidomycosis',
     'colonoscopy',
