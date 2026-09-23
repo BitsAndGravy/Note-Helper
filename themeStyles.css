@@ -1130,6 +1130,7 @@
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #000000ac;
+    --animated-text: var(--heading-text);
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: aqua;
