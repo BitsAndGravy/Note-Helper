@@ -565,6 +565,12 @@ const drugDatabase = [ // for getQuantity()
         specialty: true,  
     },  
     {
+        drug: "Januvia tablet",
+        quantity: "30/30",
+        diagnosis: "T2DM",
+        formulary: false,  
+    }, 
+    {
         drug: "Jatenzo capsule",
         quantity: "60/30",
         diagnosis: "testicular hypofunction",

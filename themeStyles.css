@@ -643,10 +643,10 @@
 [data-theme='nightmare-grimm'] {
     /* Main features */
     --main-background: #110509;
-    --header-background: #640f2b;
+    --header-background: #7b1231;
     --footer-background: var(--header-background);
     --body-primary-color: #250815;
-    --body-secondary-color: #7b1231;
+    --body-secondary-color: #640f2b;
     --body-border-color: #eb5c68;
     --body-gradient: #250815, #500d20;
     --shadow: #00000086;
@@ -671,7 +671,7 @@
     /* Input */
     --input-background: #1105099d;
     --input-background-focus: #110509d7;
-    --input-accent-color: #f17291;
+    --input-accent-color: #ffcd2a;
     --input-border: #5d5d5d;
     --input-border-focus: #eb5c68d6;
 }
