@@ -261,8 +261,8 @@
     --footer-background: var(--header-background);
     --body-primary-color: #2c2e2e;
     --body-secondary-color: #ffffff17;
-    --body-border-color: #4a4846;
-    --body-gradient: #181717, #222120, #4a4846;
+    --body-border-color: #4a4846; 
+    --body-gradient: #222120, #4a4846;
     
     /* Text */
     --heading-text: lightgray;

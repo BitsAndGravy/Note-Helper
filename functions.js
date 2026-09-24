@@ -231,6 +231,7 @@ const fullDiagnosisList = [
     'ulcerative colitis',
     'unspecified dermatitis',
     'urge incontinence',
+    'urinary incontinence',
     
     'vitiligo',
 ]
