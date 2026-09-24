@@ -480,7 +480,7 @@ ul li a:hover {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 5px 20px 5px 20px;
             background-color: var(--header-background);
             color: var(--heading-text);
         }
@@ -534,6 +534,7 @@ ul li a:hover {
 
         .days span:hover:not(.empty) {
             background-color: var(--input-background);
+            color: var(--input-text) !important;
         }
 
         /* Special States */
