@@ -306,9 +306,15 @@
                                     <div class="calendar-general">
                                         <div class="calendar">
                                             <div class="calendar-header">
-                                                <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
-                                                <h2 id="month-year-display"></h2>
-                                                <button type="button" id="next-btn" class="calendar-button">&gt;</button>
+                                                <div class="flex justify-center">
+                                                    <h2 id="month-year-display"></h2>
+                                                </div>
+                                                
+                                                <div class="flex justify-center">
+                                                    <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
+                                                    <button type="button" id="today-btn">Today</button>
+                                                    <button type="button" id="next-btn" class="calendar-button">&gt;</button>
+                                                </div>
                                             </div>
                                             <div class="calendar-body">
                                                 <div class="weekdays">
@@ -968,6 +974,7 @@
         const monthYearDisplay = document.getElementById('month-year-display');
         const daysContainer = document.getElementById('days-container');
         const prevBtn = document.getElementById('prev-btn');
+        const todayBtn = document.getElementById('today-btn')
         const nextBtn = document.getElementById('next-btn');
 
         const months = [
@@ -1021,6 +1028,14 @@
             }
         }
 
+        function resetCalendar() {
+            currentDate = new Date(); // Reset to today's date
+            currentMonth = currentDate.getMonth();
+            currentYear = currentDate.getFullYear();
+            renderCalendar(); // Function that redraws your calendar UI
+            processDates(); // Reset calculated dates for 7 business days and 60 days
+        }
+
         // Navigation controls
         prevBtn.addEventListener('click', () => {
             currentMonth--;
@@ -1031,6 +1046,9 @@
             renderCalendar();
         });
 
+        todayBtn.addEventListener('click', () => {
+            resetCalendar();
+        });
         
         nextBtn.addEventListener('click', () => {
             currentMonth++;
@@ -1040,6 +1058,8 @@
             }
             renderCalendar();
         });
+
+
 
         // Initialize calendar on load
         renderCalendar();

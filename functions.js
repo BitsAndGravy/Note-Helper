@@ -745,6 +745,7 @@ function resetForm() { // After clicking the Reset button
     document.getElementById('form3').reset();
     document.getElementById('form4').reset();
 
+    resetCalendar();
     resetThemeSelectSelection(); // Sets themeSelect to current theme (resets when form clears)
     buildIROnote(); // Reset variable, reset preview text
     iroCharacterCountCheck(); // Resets character count for IRO note
@@ -829,23 +830,19 @@ function resetForm() { // After clicking the Reset button
     // Hide features that are hidden by default or by settings.
     function hideExtras() {
         let quantityDiv = document.getElementById('quantityDiv');
-        let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
+        let datesDiv = document.getElementById('datesDiv');
         let properQuantityDiv = document.getElementById('properQuantityDiv');
         let commentDiv = document.getElementById('commentDiv');
-        let iroDiv = document.getElementById('iroNoteDiv');
+        let iroDiv = document.getElementById('iroNoteDiv');       
 
-        let extrasList = [
-            'properQuantity',   
-            'comment',          
-            'quantity',
-            'falseQL',
-        ];
-
-        
+        let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
         if(alwaysShowQuantity === 'no') {
             // Hide the quantity, falseQL, and comment input    
             quantityDiv.classList.add('hideContent');
             quantityDiv.classList.remove('showContent');
+
+            datesDiv.classList.add('hideContent');
+            datesDiv.classList.remove('showContent');
 
             properQuantityDiv.classList.add('hideContent');
             properQuantityDiv.classList.remove('showContent');
@@ -857,6 +854,12 @@ function resetForm() { // After clicking the Reset button
             iroDiv.classList.remove('showContent');
 
             // Skip when tabbing through
+            let extrasList = [
+                'properQuantity',  
+                'comment',          
+                'quantity',
+                'falseQL',
+            ];
             changeTabIndex(extrasList, -1);
         }
 
