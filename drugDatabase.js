@@ -1087,7 +1087,6 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "temazepam capsule",
         quantity: "30/30",
-        altQuantity: "60/30",
         diagnosis: "insomnia",
         quantityLimitCriteria: true, 
     }, 

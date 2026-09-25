@@ -755,7 +755,7 @@ function resetForm() { // After clicking the Reset button
     resetAlts(); // Hides alternative diagnosis box, clear suggestions
     resetTextareaSize(); // Resets textarea if manually adjusted
     hideExtras(); // Hides quantity (per settings), false QL, iroNote etc.
-    resetStateNote();
+    checkState();
     animateText('resetForm');
     gotoFirstField();
     resetTimer();
@@ -803,8 +803,9 @@ function resetForm() { // After clicking the Reset button
     // Hide alternative fields i.e. for now just diagnosis.
     function resetAlts() {
         let altDiagButton = document.getElementById('alternativeDiagnosisButton');
-        altDiagButton.classList.add('hideContent');
-        altDiagButton.classList.remove('showContent');
+        hideContent('alternativeDiagnosisButton')        
+        //altDiagButton.classList.add('hideContent');
+        //altDiagButton.classList.remove('showContent');
         altDiagButton.tabIndex = -1;
 
         let diagSuggest = document.getElementById('diagnosisSuggestion');
@@ -829,29 +830,34 @@ function resetForm() { // After clicking the Reset button
 
     // Hide features that are hidden by default or by settings.
     function hideExtras() {
-        let quantityDiv = document.getElementById('quantityDiv');
-        let datesDiv = document.getElementById('datesDiv');
-        let properQuantityDiv = document.getElementById('properQuantityDiv');
-        let commentDiv = document.getElementById('commentDiv');
-        let iroDiv = document.getElementById('iroNoteDiv');       
+        //let quantityDiv = document.getElementById('quantityDiv');
+        //let datesDiv = document.getElementById('datesDiv');
+        //let properQuantityDiv = document.getElementById('properQuantityDiv');
+        //let commentDiv = document.getElementById('commentDiv');
+        //let iroDiv = document.getElementById('iroNoteDiv');       
 
         let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
         if(alwaysShowQuantity === 'no') {
             // Hide the quantity, falseQL, and comment input    
-            quantityDiv.classList.add('hideContent');
-            quantityDiv.classList.remove('showContent');
+            hideContent('quantityDiv');
+            //quantityDiv.classList.add('hideContent');
+            //quantityDiv.classList.remove('showContent');
 
-            datesDiv.classList.add('hideContent');
-            datesDiv.classList.remove('showContent');
+            hideContent('datesDiv');
+            //datesDiv.classList.add('hideContent');
+            //datesDiv.classList.remove('showContent');
 
-            properQuantityDiv.classList.add('hideContent');
-            properQuantityDiv.classList.remove('showContent');
+            hideContent('properQuantityDiv');
+            //properQuantityDiv.classList.add('hideContent');
+            //properQuantityDiv.classList.remove('showContent');
 
-            commentDiv.classList.add('hideContent');
-            commentDiv.classList.remove('showContent');
+            hideContent('commentDiv');
+            //commentDiv.classList.add('hideContent');
+            //commentDiv.classList.remove('showContent');
 
-            iroDiv.classList.add('hideContent');
-            iroDiv.classList.remove('showContent');
+            hideContent('iroNoteDiv');
+            //iroDiv.classList.add('hideContent');
+            //iroDiv.classList.remove('showContent');
 
             // Skip when tabbing through
             let extrasList = [
@@ -875,13 +881,6 @@ function resetForm() { // After clicking the Reset button
             let source = document.getElementById('properQuantity');
             destination.innerText = "#" + source.value + ".";
         }
-
-    // Hide the div that contains notes on state regulations (authorization duration exceptions, continuation of care, step therapy)
-    function resetStateNote() { // Hide the div.
-        let note = document.getElementById('stateNote');
-        note.classList.add('hideContent');
-        note.classList.remove('showContent');
-    }
 
     function gotoFirstField() {
         document.getElementById('drug').focus();
@@ -1035,7 +1034,7 @@ function getQuantity() {
 
             // Check settings for prefill quantity. Fill in if selected.
             if(prefillQuantity == 'yes') {
-                document.getElementById('quantity').value = drugDatabase[i].quantity; // Yes - refill the quantity field.
+                document.getElementById('quantity').value = drugDatabase[i].quantity; // Yes - prefill the quantity field.
             } else {
                 document.getElementById('quantity').value = ""; // No - leave the quantity field blank.
             }
@@ -1046,14 +1045,18 @@ function getQuantity() {
             // Suggest alternative diagnosis
             let altDiag = drugDatabase[i].altDiagnosis;
             let altDiagSpan = document.getElementById('alternativeDiagnosisButton');
-            let diagnosisButton = document.getElementById('alternativeDiagnosisButton');
+            //let diagnosisButton = document.getElementById('alternativeDiagnosisButton');
             
                 // If there is an alt diagnosis, show button with diagnosis.
                 if(drugDatabase[i].altDiagnosis) {
                     altDiagSpan.innerText = altDiag;
-                    altDiagSpan.classList.add('showContent');
-                    altDiagSpan.classList.remove('hideContent');
-                    diagnosisButton.tabIndex = 0;
+                    
+                    showContent('alternativeDiagnosisButton');
+                    //changeTabIndex(['alternativeDiagnosisButton'], 0);
+                    
+                    //altDiagSpan.classList.add('showContent');
+                    //altDiagSpan.classList.remove('hideContent');
+                    altDiagSpan.tabIndex = 0;
 
 
                 // If no alt diagnosis, hide button and delete text.
@@ -1063,34 +1066,40 @@ function getQuantity() {
                         altDiagSpan.innerText = '';
                     }, 1100)
 
-                    altDiagSpan.classList.add('hideContent');
-                    altDiagSpan.classList.remove('showContent');
-                    diagnosisButton.tabIndex = -1;
-                }
+                    hideContent('alternativeDiagnosisButton');
+                    //changeTabIndex(['alternativeDiagnosisButton'], -1);
+                    
+                    //altDiagSpan.classList.add('hideContent');
+                    //altDiagSpan.classList.remove('showContent');
+                    altDiagSpan.tabIndex = -1;
+                };
 
             // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
             if(drugDatabase[i].quantityLimitCriteria) {    
                 standardPA.checked = false;
                 quantityLimit.checked = true;
                 checkAlwaysShowQuantitySetting();
-            }
+            };
 
             // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75.
             if(drugDatabase[i].formulary == false) {
                 nonFormulary.checked = true; 
                 standardPA.checked = false;
                 checkAlwaysShowQuantitySetting();
-            }
+            };
 
 
                 // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
                 function checkAlwaysShowQuantitySetting() {
                     if(alwaysShowQuantity == 'no') {
-                        const quantityDiv = document.getElementById('quantityDiv');
-                        quantityDiv.classList.add('showContent');
-                        quantityDiv.classList.remove('hideContent');
+                        
+                        showContent('quantityDiv');
+                        //const quantityDiv = document.getElementById('quantityDiv');
+                        //quantityDiv.classList.add('showContent');
+                        //quantityDiv.classList.remove('hideContent');
                         
                         // Input index was -1 (skip), now as 0 let computer handle (should act normal).
+                        //changeTabIndex(['quantity', 'falseQL'], 0);
                         document.getElementById('quantity').tabIndex = 0; 
                         document.getElementById('falseQL').tabIndex = 0;
                     }
@@ -1221,14 +1230,17 @@ function checkState() {
                 note.innerText = regNote;
 
                 // Add class so it expands/animates
-                note.classList.add('showContent');
-                note.classList.remove('hideContent');
+                showContent('stateNote');
+                //note.classList.add('showContent');
+                //note.classList.remove('hideContent');
 
                 // Stop for loop, otherwise it will continue and use the else statement below.
                 break; 
-            } else { // If state is not in the list, keep the div hidden.
-                note.classList.add('hideContent');
-                note.classList.remove('showContent');
+            } else { 
+                // If state is not in the list, keep the div hidden.
+                hideContent('stateNote');
+                //note.classList.add('hideContent');
+                //note.classList.remove('showContent');
                 
             }
         }
@@ -1279,26 +1291,30 @@ function clearTextarea(
 function showQL() {
     let check = document.getElementById('falseQL');
     let qt = document.getElementById('properQuantity');
-    let qtDiv = document.getElementById('properQuantityDiv');
+    //let qtDiv = document.getElementById('properQuantityDiv');
     let comment = document.getElementById('comment');
-    let commentDiv = document.getElementById('commentDiv');
+    //let commentDiv = document.getElementById('commentDiv');
 
     if (check.checked) {
-        qtDiv.classList.add('showContent');
-        qtDiv.classList.remove('hideContent');
+        showContent('properQuantityDiv');
+        //qtDiv.classList.add('showContent');
+        //qtDiv.classList.remove('hideContent');
         qt.tabIndex = 0;
 
-        commentDiv.classList.add('showContent');
-        commentDiv.classList.remove('hideContent');
+        showContent('commentDiv');
+        //commentDiv.classList.add('showContent');
+        //commentDiv.classList.remove('hideContent');
         comment.tabIndex = 0;
     } 
     else {
-        qtDiv.classList.add('hideContent');
-        qtDiv.classList.remove('showContent');
+        hideContent('properQuantityDiv');
+        //qtDiv.classList.add('hideContent');
+        //qtDiv.classList.remove('showContent');
         qt.tabIndex = -1;
 
-        commentDiv.classList.add('hideContent');
-        commentDiv.classList.remove('showContent');
+        hideContent('commentDiv');
+        //commentDiv.classList.add('hideContent');
+        //commentDiv.classList.remove('showContent');
         comment.tabIndex = -1;
     }
 }
@@ -1324,13 +1340,14 @@ function showQuantity() {
         let quantityLimit = document.getElementById('quantityLimit');
         let nonFormulary = document.getElementById('nonFormulary');
         let stepTherapy = document.getElementById('stepTherapy');
-        let quantity = document.getElementById('quantityDiv');
+        //let quantity = document.getElementById('quantityDiv');
 
         // If 70 and/or 76 is checked:
         if ((quantityLimit.checked) || (nonFormulary.checked) || (stepTherapy.checked)) { 
             // Add class to make it visible, remove class that hides it
-            quantity.classList.add('showContent');
-            quantity.classList.remove('hideContent');
+            showContent('quantityDiv');
+            //quantity.classList.add('showContent');
+            //quantity.classList.remove('hideContent');
 
             // Adjust tabIndex so you can tab to the input
             document.getElementById('quantity').tabIndex = 0;
@@ -1338,8 +1355,9 @@ function showQuantity() {
 
         } 
         else { // If neither 70 nor 76 are selected:
-            quantity.classList.add('hideContent');
-            quantity.classList.remove('showContent');
+            hideContent('quantityDiv');
+            //quantity.classList.add('hideContent');
+            //quantity.classList.remove('showContent');
 
             // Skip the input when tabbing because it's hidden now
             document.getElementById('quantity').tabIndex = -1;
@@ -1539,39 +1557,51 @@ function reopeningChecked() {
 
 // When appealType is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function appealTypeChecked() {
+    
+    //let appinputs = document.getElementById('appealDenialInputsDiv');
+    //let applanguage = document.getElementById('appealDenialAdditionalNotes');
+
     let check = document.getElementById('appealType');
-    let info = document.getElementById('information');
-    let drugName = document.getElementById('drug').value;
-    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let conc = document.getElementById('conclusion');
-    let appinputs = document.getElementById('appealDenialInputsDiv');
-    let applanguage = document.getElementById('appealDenialAdditionalNotes');
-
     if (check.checked) {
-        applanguage.classList.remove('hideContent');
-        applanguage.classList.add('showContent');
+        showContent('appealDenialAdditionalNotes');
+        //applanguage.classList.remove('hideContent');
+        //applanguage.classList.add('showContent');
 
-        appinputs.classList.remove('hideContent');
-        appinputs.classList.add('showContent');
+        showContent('appealDenialInputsDiv');
+        //appinputs.classList.remove('hideContent');
+        //appinputs.classList.add('showContent');
+
+        showOverflow('appealDenialAdditionalNotes');
+        //applanguage.classList.remove('overflow-hidden');
+        //applanguage.classList.add('overflow-visible');
 
         changeTabIndex(appealBuilderList, 0);
 
+        let info = document.getElementById('information');
         if(info.value === '') {
+            let drugName = document.getElementById('drug').value;
+            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
             info.value = drug + ' denied \n\nNo reopening or peer-to-peer. ';
         };
 
+        let conc = document.getElementById('conclusion');   
         if(conc.value == '') {
             conc.value = 'On appeal, ';
         };
 
         formularyStatusReport();
     } else {
-        applanguage.classList.remove('showContent');
-        applanguage.classList.add('hideContent');
+        hideContent('appealDenialAdditionalNotes');
+        //applanguage.classList.remove('showContent');
+        //applanguage.classList.add('hideContent');
 
-        appinputs.classList.remove('showContent');
-        appinputs.classList.add('hideContent');
+        hideContent('appealDenialInputsDiv');
+        //appinputs.classList.remove('showContent');
+        //appinputs.classList.add('hideContent');
 
+        hideOverflow('appealDenialAdditionalNotes');
+
+        document.getElementById('appealReasonText').tabIndex = -1; // Doesn't work for some reason?!?!?!?!
         changeTabIndex(appealBuilderList, -1);
     }
     showAppealReason();
@@ -1627,8 +1657,14 @@ function iroChecked() {
     // If 'send to iro' checked, show inputs for IRO and do some calculations. 
     if (check.checked) {
         // Show IRO divs
-        div.classList.remove('hideContent');
-        div.classList.add('showContent');
+        showContent('iroNoteDiv');
+        //div.classList.add('showContent');
+        //div.classList.remove('hideContent');
+
+
+        showOverflow('iroNoteDiv');
+        //div.classList.add('overflow-visible');
+        //div.classList.remove('overflow-hidden');
 
         // Update tabIndex to 0 for relevant elements
         changeTabIndex(iroInputList, 0);
@@ -1649,8 +1685,11 @@ function iroChecked() {
         
     } else {
         // Hide IRO divs
-        div.classList.add('hideContent');
-        div.classList.remove('showContent');
+        hideContent('iroNoteDiv');
+        //div.classList.add('hideContent');
+        //div.classList.remove('showContent');
+
+        hideOverflow('iroNoteDiv');
 
         // Update input tabIndex to -1
         changeTabIndex(iroInputList, -1);
@@ -1671,15 +1710,16 @@ function iroChecked() {
         'appealCondition',
         'appealReasonNo',
         'appealReasonYes',
-        'appealReasonText',
         'newInformationNo',
         'newInformationYes',
         'appealDenialReasons',
         'criteriaName',
         'appealDenial2',
         'createDenialLanguageButton',
+        'copyDenialLanguageButton',
     ]
 
+    // Change tabIndex, typically to 0 or -1 in response to when content hidden or shown
     function changeTabIndex(list, newIndex) {
         for (i = 0; i < list.length; i++) {
             document.getElementById(list[i]).tabIndex = newIndex;
@@ -1688,20 +1728,22 @@ function iroChecked() {
 
 // Show or hide additional content (used for IRO preview, settings page diagnosis list and drug list)
 function showList(target) {
+    // Hide/show the entire div
     let div = document.getElementById(target);
-
-    let add = target + 'Add';
-    let addSpan = document.getElementById(add);
-    
-    let remove = target + 'Remove'
-    let removeSpan = document.getElementById(remove);
-
     div.classList.toggle('hideContent');
     div.classList.toggle('showContent');
+    div.classList.toggle('overflow-hidden');
+    div.classList.toggle('overflow-visible');
 
+    // Hide/show the Add symbol
+    let add = target + 'Add';
+    let addSpan = document.getElementById(add);
     addSpan.classList.toggle('hideContent');
     addSpan.classList.toggle('showContent');
 
+    // Hide/show the Remove symbol
+    let remove = target + 'Remove'
+    let removeSpan = document.getElementById(remove);
     removeSpan.classList.toggle('hideContent');
     removeSpan.classList.toggle('showContent');
 }
@@ -1729,6 +1771,27 @@ function copyIROtext() {
 
     let spanName = element + 'Copied';
     animateText(spanName);
+}
+
+// show content
+function showContent(element) {
+    document.getElementById(element).classList.add('showContent');
+    document.getElementById(element).classList.remove('hideContent');
+}
+
+function hideContent(element) {
+    document.getElementById(element).classList.add('hideContent');
+    document.getElementById(element).classList.remove('showContent');
+}
+
+function showOverflow(element) {
+    document.getElementById(element).classList.add('overflow-visible');
+    document.getElementById(element).classList.remove('overflow-hidden');
+}
+
+function hideOverflow(element) {
+    document.getElementById(element).classList.add('overflow-hidden');
+    document.getElementById(element).classList.remove('overflow-visible');
 }
 
 

@@ -180,15 +180,22 @@ function iroCharacterCountCheck() {
 }
 
 function showAppealReason() {
-    let reasonDiv = document.getElementById('appealReasonDiv');
+    //let reasonDiv = document.getElementById('appealReasonDiv');
     let reasonNo = document.getElementById('appealReasonNo');
+    let reasonText = document.getElementById('appealReasonText');
 
     if (reasonNo.checked) {
-        reasonDiv.classList.remove('showContent');
-        reasonDiv.classList.add('hideContent');
+        hideContent('appealReasonDiv');
+        //reasonDiv.classList.remove('showContent');
+        //reasonDiv.classList.add('hideContent');
+
+        reasonText.tabIndex = -1;
     } else {
-        reasonDiv.classList.add('showContent');
-        reasonDiv.classList.remove('hideContent');
+        showContent('appealReasonDiv');
+        //reasonDiv.classList.add('showContent');
+        //reasonDiv.classList.remove('hideContent');
+
+        reasonText.tabIndex = 0;
     }
 
 }
@@ -264,4 +271,25 @@ function copyDenialLanguage() {
     let textToCopy = document.getElementById('appealDenial2').value;
     navigator.clipboard.writeText(textToCopy);
     animateText('copyDenialLanguageTextAnimation');
+}
+
+function updateShownDates() {
+    let deniedOn = document.getElementById('deniedOn');
+    let daysAgo = document.getElementById('daysAgo');
+    let daysAfter = document.getElementById('daysAfter');
+    // let reopenedOn = document.getElementById('reopenedOn');
+
+    if (deniedOn.checked) {
+        daysAfter.classList.add('showContent');
+        daysAfter.classList.remove('hideContent');
+
+        daysAgo.classList.add('hideContent');
+        daysAgo.classList.remove('showContent');
+    } else {
+        daysAgo.classList.add('showContent');
+        daysAgo.classList.remove('hideContent');
+
+        daysAfter.classList.add('hideContent');
+        daysAfter.classList.remove('showContent');
+    }
 }

@@ -186,7 +186,7 @@
                                     
                             </div>
                             
-                            <div id="quantityDiv">
+                            <div id="quantityDiv" class="overflow-hidden">
                                 <label for="quantity">08.</label>
                                 <input 
                                     type="text" 
@@ -207,7 +207,7 @@
                             </div>
 
                             <!--Hide when falseQL not selected; start hidden-->
-                            <div id="properQuantityDiv" class="hideContent"> 
+                            <div id="properQuantityDiv" class="hideContent overflow-hidden"> 
                                 <label 
                                     for="properQuantity" 
                                     id="properQuantityLabel">09.a</label>
@@ -268,11 +268,26 @@
                             </div>
 
                             <!-- Dates show when label for 10 clicked -->
-                            <div id="datesDiv" class="hideContent">
+                            <div id="datesDiv" class="hideContent overflow-hidden">
                                 <div class="border-only background-color-secondary padding-10">
                                     <!-- Dates -->
                                     <div>
-                                        <div id="daysAgo">
+                                        <div id="dateTypeSelection" class="button-group" onchange="updateShownDates()">
+                                            <input
+                                                type="radio"
+                                                id="deniedOn"
+                                                name="dateDeniedType"
+                                                checked>
+                                                <label for="deniedOn">Denied on</label>
+
+                                            <input
+                                                type="radio"
+                                                id="reopenedOn"
+                                                name="dateDeniedType">
+                                                <label for="reopenedOn">Reopened on</label>
+
+                                        </div>
+                                        <div id="daysAgo" class="hideContent overflow-hidden">
                                             <strong>Days Ago:</strong>
                                             <div class="flex">
                                                 <div class="width-40">
@@ -287,7 +302,7 @@
                                         </div>
                                         <br>
 
-                                        <div id="daysAfter">
+                                        <div id="daysAfter" class="overflow-hidden">
                                             <strong>Days After:</strong>
                                             <div class="flex">
                                                 <div class="width-40">
@@ -453,7 +468,7 @@
                             <br>
 
                             <!--True QL comment: Hide until falseQL checked-->
-                            <div id="commentDiv" class="hideContent"> 
+                            <div id="commentDiv" class="hideContent overflow-hidden"> 
                                 <label 
                                     for="comment" 
                                     id="commentLabel" 
@@ -471,7 +486,7 @@
                             </div>
 
                             <!-- Appeals options: Hide until Appeals case type checked -->
-                            <div id="appealDenialInputsDiv" class="hideContent">
+                            <div id="appealDenialInputsDiv" class="hideContent overflow-hidden">
                     
                                 <div id="appealInternalDiv">
                                     <div class="suggest-container">
@@ -526,7 +541,7 @@
                         <div class="flex justify-space-between">
                             <div 
                                 id="stateNote" 
-                                class="hideContent"
+                                class="hideContent overflow-hidden"
                                 style="padding-top: 10px;">
                             </div>
 
@@ -536,7 +551,7 @@
                 </div>
 
                 <!-- Appeals inputs: Hide until appeals checked -->
-                <div id="appealDenialAdditionalNotes" class="hideContent background-color-secondary">
+                <div id="appealDenialAdditionalNotes" class="hideContent overflow-hidden background-color-secondary">
                     <form id="form4">    
                         <div class="padding-5-10-10-10">
 
@@ -670,7 +685,7 @@
                             </div>
 
                             <!-- IRO note builder; hidden until 'send to IRO' checked -->
-                            <div id="iroNoteDiv" class="container-mini hideContent iroNoteSpacer" oninput="buildIROnote()">
+                            <div id="iroNoteDiv" class="container-mini hideContent overflow-hidden iroNoteSpacer" oninput="buildIROnote()">
                             
                                 <div class="heading align-center flex sticky-sub-heading">
                                     <h3>IRO note</h3>
@@ -738,7 +753,7 @@
                                             <H3 style="color: var(--body-text);">IRO note preview</H3>
                                         </div>
 
-                                        <div id="iroNotePreview" class="hideContent">
+                                        <div id="iroNotePreview" class="hideContent overflow-hidden">
                                             <div id="iroCompleteNote">start typing to see preview</div>
                                         </div>
                                     </div>
