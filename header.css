@@ -510,13 +510,11 @@ ul li a:hover {
 
         .calendar-general {
             box-sizing: border-box;
-            margin: 0;
+            margin: 10px;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 50vh;
         }
 
         /* Calendar Header */

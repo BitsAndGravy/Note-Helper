@@ -741,7 +741,7 @@
     /* Input */
     --input-background: #00000082;
     --input-background-focus: #0e2323f3;
-    --input-accent-color: var(--button-hover);
+    --input-accent-color: #ffb7b0;
     --input-border: var(--header-background);
     --input-border-focus: #4bbaa5;
 }
