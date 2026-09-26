@@ -787,7 +787,7 @@
     --main-background: #0b0f32;
     --header-background: #475282;
     --footer-background: #676d94;
-    --body-primary-color: #0b2b47;
+    --body-primary-color: #142251;
     --body-secondary-color: #ffffff33;
     --body-border-color: #dad1fc;
     --body-gradient: #142251, #3d487a, #414779;
@@ -1201,6 +1201,7 @@
     --body-text: #cbdbdb;
     --input-text: azure;
     --placeholder-text: #f0ffff94;
+    --animated-text: #111220;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
