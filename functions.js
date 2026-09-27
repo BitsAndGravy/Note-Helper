@@ -1395,6 +1395,12 @@ function removeSelection(name) {
     function processDates() {
         let todayDate = new Date();
 
+        // Today's date
+        let todayDateClean = formatDateClean(todayDate);
+        document.getElementById('selected-day-ago').innerText = todayDateClean;
+
+
+        // Days ago
         let reopeningDatePast = formatDateClean(todayDate.subtractBusinessDays(7));
         document.getElementById('sevenBusinessDaysAgo').innerText = reopeningDatePast;
 
@@ -1412,7 +1418,19 @@ function removeSelection(name) {
     // When date on calendar selected, recalculate days.
     function showDates(calendarDate) {
         
+        // Selected day
         let selectedDate = new Date(calendarDate);
+
+        
+        let selectedDateClean = formatDateClean(selectedDate);
+        /*
+        let selectedDateSpans = document.querySelectorAll('.selected-day');
+        selectedDateSpans.forEach(span => {
+                span.value = selectedDateClean;
+        });
+        */
+        
+        document.getElementById('selected-day-ago').innerText = selectedDateClean;
 
         // Days ago
         let reopeningDatePast = formatDateClean(selectedDate.subtractBusinessDays(7));

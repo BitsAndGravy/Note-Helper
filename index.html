@@ -293,10 +293,12 @@
                                             
                                             <div class="flex">
                                                 <div class="margin-r-10">
+                                                    <div><strong>Denied*: </strong></div>
                                                     <div><strong>Reopening: </strong></div>
                                                     <div><strong>Appeal**: </strong></div>
                                                 </div>
                                                 <div>
+                                                    <div class="selected-day" id="selected-day-ago"></div>
                                                     <div id="sevenBusinessDaysAfter"></div>
                                                     <div id="sixtyDaysAfter"></div>
                                                 </div>
@@ -311,10 +313,12 @@
                                         <div id="daysAgo" class="hideContent overflow-hidden">
                                             <div class="flex">
                                                 <div class="width-40">
+                                                    <div><strong>Case received*: </strong></div>
                                                     <div><strong>Reopening: </strong></div>
-                                                    <div><strong>Appeal: </strong></div>
+                                                    <div><strong>Appeal**: </strong></div>
                                                 </div>
                                                 <div class="width-60">
+                                                    <div class="selected-day" ></div>
                                                     <div id="sevenBusinessDaysAgo"></div>
                                                     <div id="sixtyDaysAgo"></div>
                                                 </div>
@@ -322,6 +326,7 @@
                                             <br>
                                             <div class="text-sm">
                                                 *Select the day the second request (reopening/appeal) was received to see the earliest day the initial needed to be denied on to be eligible for respective review.
+                                                <br>
                                                 ** Appeal with no new information within 60 days.
                                             </div>
                                         </div>
@@ -1086,8 +1091,6 @@
             }
             renderCalendar();
         });
-
-
 
         // Initialize calendar on load
         renderCalendar();
