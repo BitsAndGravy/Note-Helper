@@ -1443,12 +1443,13 @@ function removeSelection(name) {
 
     // Format date for readability for case type determination
     function formatDateClean(date) {
-        return new Date(date).toLocaleDateString("en-US", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-            weekday: "long",
-        });
+        let today = new Date(date);
+        let year = today.getFullYear();
+        let month = String(today.getMonth() + 1).padStart(2, '0');
+        let day = String(today.getDate()).padStart(2, '0');
+
+        let hyphenDate = `${month}-${day}-${year}`;
+        return hyphenDate;
     }
 
     function formatDateIRO(date) {
