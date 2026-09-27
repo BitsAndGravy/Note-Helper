@@ -285,36 +285,45 @@
                                                 id="reopenedOn"
                                                 name="dateDeniedType">
                                                 <label for="reopenedOn">Reopened on</label>
+                                        </div>
 
-                                        </div>
-                                        <div id="daysAgo" class="hideContent overflow-hidden">
-                                            <strong>Days Ago:</strong>
-                                            <div class="flex">
-                                                <div class="width-40">
-                                                    <div>Seven business days:</div>
-                                                    <div>Sixty days:</div>
-                                                </div>
-                                                <div class="width-60">
-                                                    <div id="sevenBusinessDaysAgo">tuesday</div>
-                                                    <div id="sixtyDaysAgo">wednesday</div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <br>
 
                                         <div id="daysAfter" class="overflow-hidden">
-                                            <strong>Days After:</strong>
+                                            
                                             <div class="flex">
-                                                <div class="width-40">
-                                                    <div>Seven business days: </div>
-                                                    <div>Sixty days: </div>
+                                                <div class="margin-r-10">
+                                                    <div><strong>Reopening: </strong></div>
+                                                    <div><strong>Appeal: </strong></div>
                                                 </div>
-                                                <div class="width-60">
-                                                    <div id="sevenBusinessDaysAfter">Thursday</div>
-                                                    <div id="sixtyDaysAfter">Friday</div>
+                                                <div>
+                                                    <div id="sevenBusinessDaysAfter"></div>
+                                                    <div id="sixtyDaysAfter"></div>
                                                 </div>
                                             </div>
+                                            <br>
+                                            <div class="text-sm">
+                                                *Select the day the initial case was denied on to see last day eligible for respective review.
+                                            </div>
                                         </div>
+
+                                        <div id="daysAgo" class="hideContent overflow-hidden">
+                                            <div class="flex">
+                                                <div class="width-40">
+                                                    <div><strong>Reopening: </strong></div>
+                                                    <div><strong>Appeal: </strong></div>
+                                                </div>
+                                                <div class="width-60">
+                                                    <div id="sevenBusinessDaysAgo"></div>
+                                                    <div id="sixtyDaysAgo"></div>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="text-sm">
+                                                *Select the day the second request (reopening/appeal) was received to see the earliest day the initial needed to be denied on to be eligible for respective review.
+                                            </div>
+                                        </div>
+                                        
                                     </div>
 
                                     <!-- Calendar -->

@@ -84,24 +84,25 @@ button:active {
   pointer-events: none;
 }
 
-/* Style the label as a normal button */
-.button-group label {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 8px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
-}
+    /* Style the label as a normal button */
+    .button-group label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 8px;
+    background-color: var(--button-background);
+    color: var(--button-text);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    }
 
-/* Change style when the radio button is checked */
-.button-group input[type="radio"]:checked + label {
-  background-color: #007bff;
-  color: white;
-  border-color: #0056b3;
-}
+    /* Change style when the radio button is checked */
+    .button-group input[type="radio"]:checked + label {
+    background-color: var(--input-accent-color);
+    color: var(--body-primary-color);
+    border-color: var(--body-border-color);
+    }
 
 .button-reset {
     margin: 0;
@@ -219,7 +220,7 @@ button:active {
 h2 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: var(--body-text);
+    color: var(--heading-text);
 }
 
 h3 {
@@ -336,6 +337,10 @@ input[type=text] {
     justify-content: space-evenly;
 }
 
+.margin-r-10 {
+    margin-right: 10px;
+}
+
 /* Google symbols reference */
 .material-symbols-outlined {
   font-variation-settings:
@@ -443,7 +448,7 @@ input[type=text] {
 }
 
 .text-sm {
-    font-size: .85rem;
+    font-size: .8rem;
 }
 
 textarea {
