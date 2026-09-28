@@ -201,7 +201,9 @@ const fullDiagnosisList = [
 
     'paranoid schizophrenia',
     "Parkinson's disease",
+    'PCOS',
     'psychophysiologic insomnia',
+    'polycystic ovarian syndrome',
     'post-inflammatory hyperpigmentation',
     'postmenopausal atrophic vaginitis',
     'prediabetes',
