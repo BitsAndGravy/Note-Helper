@@ -186,6 +186,11 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "T1DM", 
     },  
     {
+        drug: "CeQur Simplicity 1U kit",
+        quantity: "1/30",
+        diagnosis: "T1DM", 
+    },  
+    {
         drug: "cinacalcet tablet",
         quantity: "30/30",
         diagnosis: "hyperparathyroidism", 

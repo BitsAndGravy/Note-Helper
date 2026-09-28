@@ -200,6 +200,7 @@ function showAppealReason() {
 
 }
 
+// When refresh symbol clicked next to reject code.
 function resetReject() {
     let rejects = [
         'standardPA',

@@ -804,12 +804,13 @@ function resetForm() { // After clicking the Reset button
     function resetAlts() {
         let altDiagButton = document.getElementById('alternativeDiagnosisButton');
         hideContent('alternativeDiagnosisButton')        
-        //altDiagButton.classList.add('hideContent');
-        //altDiagButton.classList.remove('showContent');
         altDiagButton.tabIndex = -1;
 
         let diagSuggest = document.getElementById('diagnosisSuggestion');
         diagSuggest.innerText = '';
+
+        let drugSuggest = document.getElementById('drugSuggestion');
+        drugSuggest.innerText = '';
     }
 
     // If textarea was manually adjusted, return it to default size.
