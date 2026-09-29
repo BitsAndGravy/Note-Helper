@@ -506,6 +506,13 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Infed vial",
+        quantity: "10/30",
+        diagnosis: "iron deficiency anemia", 
+        altDiagnosis: 'iron deficiency',
+        formulary: false, 
+    },  
+    {
         drug: "Ingrezza capsule",
         quantity: "30/30",
         diagnosis: "Huntington's disease", 
@@ -994,6 +1001,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "30/30",
         diagnosis: "ulcer",
         altDiagnosis: "burn",
+    }, 
+    {
+        drug: "Savella tablet", 
+        quantity: "30/30",
+        diagnosis: "major depressive disorder",
+        altDiagnosis: "fibromyalgia",
     }, 
     {
         drug: "Seysara tablet", 
