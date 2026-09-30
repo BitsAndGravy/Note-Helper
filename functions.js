@@ -503,6 +503,75 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             }
         }
 
+    function noteBuilder() {
+        let form = document.getElementById('mainForm');
+        
+        // SUMMARY heading
+        let textOutput = 'SUMMARY\n';
+
+            textOutput += form.urgent.checked ? 'Urgent ' : '';
+            textOutput += form.expedited.checked ? 'Expedited ' : '';
+            textOutput += (form.state.value || '(no state selected)') + ' ';
+            textOutput += form.source.value + '. ';
+
+            let gender = form.elements.gender.value;
+            textOutput += gender || '';
+            textOutput += form.age.value ? 
+                (gender ? 
+                    // If gender and age, "Gender age xx."
+                    ` age ${form.age.value}. `  
+                    // If age only, "Age xx."
+                    : `Age ${form.age.value}.`  
+                )
+                : gender ? 
+                    // If gender only, "Gender."
+                    '. '    
+                    // If none, blank.
+                    : '';   
+
+            textOutput += `Joined plan ${form.member.value}.\n`;
+
+            textOutput += form.type.value;
+            textOutput += ` for ${form.drug.value}`;
+
+            let quantityClass = document.getElementById('quantityDiv').className;
+            textOutput += form.quantity.value ? 
+                (quantityClass !== 'hideContent' ? 
+                    // If quantity filled and shown, show quantity
+                    ` for #${form.quantity.value}`  
+
+                    // If quantity filled but hidden, do not show quantity
+                    : '')  
+                                             
+                // If quantity blank, do not show quantity
+                : ''; 
+            textOutput += ` for ${form.diagnosis.value}. `;
+
+            textOutput += form.reject.value + '. ';
+
+            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n\n`
+
+            
+        // HISTORY heading
+        textOutput += 'HISTORY\n';
+            textOutput += `Authorizations: ${form.information.value || 'None relevant'}\n\n`;
+            textOutput += `Claims: ${form.claims.value ? (form.claims.value !== 'Paid claims in Snapshot for ' ? form.claims.value : 'None relevant') : 'None relevant'}\n`;
+            textOutput += form.noMedicalAuthorizations.checked ? `${form.noMedicalAuthorizations.value}\n\n` : '\n';
+
+        // CLINICAL heading
+        textOutput += 'CLINICAL\n';
+            textOutput += form.records.checked ? `${form.records.value}\n` : '';
+            textOutput += form.chart.checked ? `${form.chart.value}\n` : '';
+            textOutput += form.clinical.value + '\n\n';
+
+        // RECOMMENDATION heading
+        textOutput += 'RECOMMENDATION\n';
+        //textOutput += form.conclusion.value;
+
+        // Final output
+        document.getElementById('conclusion').innerHTML = textOutput;
+    }
+
     function buildNote() {
         
         checkModifiers();
@@ -538,6 +607,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let fullNote = answer.sendToIRO + appealInternalText + conspectus + history + clinical + conclusion;
 
         notePreviewText = fullNote;
+        //noteBuilder();
     }
 
         function checkModifiers() {
@@ -593,10 +663,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 if(answer.claims === 'Paid claims in Snapshot for ') {
                     answer.claims = '';
                 }
-            }
-
-            function checkSettings() {
-                
             }
 
             function addQL() { // If 'False QL' is checked, add a tech note at the bottom of the note.

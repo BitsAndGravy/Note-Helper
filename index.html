@@ -135,6 +135,7 @@
                                             type="checkbox" 
                                             id="approval" 
                                             name="qset"
+                                            value="approval"
                                             checked>
                                         <label for="approval">Q-set approval</label>
                                     <br>
@@ -146,6 +147,7 @@
                                             <input
                                                 type="radio"
                                                 id="standardPA"
+                                                value="75-Standard PA"
                                                 name="reject"
                                                 onchange="rejectControl(this)"
                                                 checked>
@@ -155,7 +157,8 @@
                                         <div class="padding-right-5">
                                             <input 
                                             type="radio" 
-                                            id="nonFormulary" 
+                                            id="nonFormulary"
+                                            value="70-Non-formulary" 
                                             onchange="rejectControl(this)"
                                             name="reject">
                                             <label for="nonFormulary">70 </label>
@@ -165,6 +168,7 @@
                                             <input 
                                             type="radio" 
                                             id="stepTherapy" 
+                                            value="608-Step therapy"
                                             onchange="rejectControl(this)"
                                             name="reject">
                                             <label for="stepTherapy">608 and/or </label>
@@ -174,6 +178,7 @@
                                             <input 
                                             type="checkbox" 
                                             id="quantityLimit" 
+                                            value="76-Quantity limit"
                                             onchange="showQuantity()"
                                             name="reject">
                                             <label for="quantityLimit">76</label>
@@ -232,6 +237,7 @@
                                             <input 
                                                 type="radio" 
                                                 id="initial" 
+                                                value="Initial"
                                                 checked
                                                 name="type">
                                                 <label for="initial">Initial</label>
@@ -241,6 +247,7 @@
                                             <input 
                                                 type="radio" 
                                                 id="reauthorization" 
+                                                value="Reauthorization"
                                                 name="type">
                                                 <label for="reauthorization">Reauthorizaiton</label>
                                         </div>
@@ -249,6 +256,7 @@
                                             <input
                                                 type="radio"
                                                 id="reopening"
+                                                value="Reopening"
                                                 name="type">
                                                 <label for="reopening">Reopening</label>
                                         </div>
@@ -257,8 +265,9 @@
                                             <input
                                                 type="radio"
                                                 id="appealType"
+                                                value="1st level appeal"
                                                 name="type">
-                                                <label for="appealType">Appeal</label>
+                                                <label for="appealType">1st Appeal</label>
                                         </div>
 
                                         <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
@@ -384,12 +393,14 @@
                                         type="radio" 
                                         id="female" 
                                         name="gender"
+                                        value="Female"
                                         checked>
                                     <label for="female">Female</label>
 
                                     <input 
                                         type="radio" 
                                         id="male" 
+                                        value="Male"
                                         name="gender">
                                     <label for="male">Male</label>
                                 
@@ -430,6 +441,7 @@
                                 <input 
                                     type="checkbox" 
                                     id="noCharts" 
+                                    value="No relevant documents in Chart View. "
                                     name="chart">
                                 <label for="noCharts">No items in Chart View</label>
                                 <br>     
@@ -439,6 +451,7 @@
                                     type="checkbox" 
                                     id="noClaims" 
                                     name="snapshot" 
+                                    value="No relevant paid claims"
                                     onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
                                 <label for="noClaims">No drug claims </label>
 
@@ -446,6 +459,7 @@
                                     type="checkbox"
                                     id="noMedicalAuthorizations"
                                     name="medicalAuthorizations"
+                                    value="No relevant medical authorizations"
                                     onclick="clearTextarea('noMedicalAuthorizations', 'claims', 'Paid claims in Snapshot for ')">
                                 <label for="noMedicalAuthorizations">No medical authorizations </label>
                             
