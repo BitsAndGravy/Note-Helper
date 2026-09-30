@@ -37,538 +37,540 @@
 
         <div>
             <div class="gradientColor">
-                <div  oninput="preSaveFunctions()">
-                    <!-- Part 1: Above middle bar -->
-                    <div class="padding-5-10-10-10">   
-                        <form id="form1">
-                            <div class="flex align-center justify-space-between">
-                                <div class="suggest-container input-spacer">
-                                    <label for="drug">01.</label>
+                <form id="mainForm">
+                    <div  oninput="preSaveFunctions()">
+                        <!-- Part 1: Above middle bar -->
+                        <div class="padding-5-10-10-10">   
+                            <!--<form id="form1">-->
+                                <div class="flex align-center justify-space-between">
+                                    <div class="suggest-container input-spacer">
+                                        <label for="drug">01.</label>
+                                        <input 
+                                            type="text" 
+                                            id="drug" 
+                                            name="drug" 
+                                            placeholder="drug name" 
+                                            onchange="getQuantity()"
+                                            oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
+
+                                        <span id="drugSuggestion" class="suggestion"></span>
+                                    </div>
+
+                                    <div>
+                                        <!-- For select options, see createThemeOptions() -->
+                                        <select
+                                            id="themeSelect" 
+                                            tabindex="-1"
+                                            onchange="changeTheme(this.value)">
+                                            <optgroup label="Generic" id="generic"></optgroup>
+                                            <optgroup label="Hollow Knight" id="hollow-knight"></optgroup>
+                                            <optgroup label="Harry Potter" id="harry-potter"></optgroup>
+                                            <optgroup label="Minecraft" id="minecraft"></optgroup>
+                                            <optgroup label="Silksong" id="silksong"></optgroup>
+                                        </select>
+                                    </div>
+                                </div>
+                                        
+                                <div class="flex align-center justify-space-between">
+                                    <div>
+                                        <label for="source">02.</label>
+                                        <select name="source" id="source">
+                                            <option value="PAHub (fax)">Fax</option>
+                                            <option value="PAHub (mail)">Mail</option>
+                                            <option value="PAHub (phone)">Phone</option>
+                                            <option value="ePA (web)" selected>Web</option>
+                                            <option value="PAHub (other)">Other</option>
+                                        </select>
+                                    </div>
+
+                                    <span id="time">0:00</span>
+                                </div>
+
+                                <div>
+                                    <label for="urgent">03.</label> 
+
+                                    <input 
+                                        type="checkbox" 
+                                        id="isUrgent" 
+                                        name="urgent">
+                                        <label for="isUrgent">Urgent </label>
+
+                                    <input 
+                                        type="checkbox"
+                                        id="isExpedited"
+                                        name="expedited">
+                                        <label for="isExpedited">Expedited</label>
+                                </div>
+
+                                <div class="suggest-container">
+                                    <label for="diagnosis">04.</label>
                                     <input 
                                         type="text" 
-                                        id="drug" 
-                                        name="drug" 
-                                        placeholder="drug name" 
-                                        onchange="getQuantity()"
-                                        oninput="predictWords(this.value, drugNameList, 'drug', 'drugSuggestion')">
+                                        id='diagnosis' 
+                                        placeholder="diagnosis"
+                                        oninput="predictWords(this.value, noDuplicatesCombinedDiagnosisList, 'diagnosis', 'diagnosisSuggestion')">
 
-                                    <span id="drugSuggestion" class="suggestion"></span>
+                                        <span id="diagnosisSuggestion" class="suggestion"></span>
+
+                                    <button 
+                                        type="button"
+                                        id="alternativeDiagnosisButton"
+                                        class="altButton hideContent"
+                                        onclick="changeDiagnosis()"
+                                        tabindex="-1"></button>
+                                </div>
+                                
+                                <label for="state">05.</label>
+                                <select name="state" id="state" onchange="checkState();">
+                                    <!-- for list see stateClientList -->
+                                    <!-- for function that builds select options see createStateSelectOptions() -->
+                                </select>
+                                <br>
+
+                                <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
+                                <div id="qsetDiv"> 
+                                    <label for="qset">06.</label> 
+
+                                        <input 
+                                            type="checkbox" 
+                                            id="approval" 
+                                            name="qset"
+                                            checked>
+                                        <label for="approval">Q-set approval</label>
+                                    <br>
                                 </div>
 
-                                <div>
-                                    <!-- For select options, see createThemeOptions() -->
-                                    <select
-                                        id="themeSelect" 
-                                        tabindex="-1"
-                                        onchange="changeTheme(this.value)">
-                                        <optgroup label="Generic" id="generic"></optgroup>
-                                        <optgroup label="Hollow Knight" id="hollow-knight"></optgroup>
-                                        <optgroup label="Harry Potter" id="harry-potter"></optgroup>
-                                        <optgroup label="Minecraft" id="minecraft"></optgroup>
-                                        <optgroup label="Silksong" id="silksong"></optgroup>
-                                    </select>
+                                <div class="align-center flex" onchange="formularyStatusReport()">
+                                    <label for="reject" class="padding-right-5">07.</label>
+                                        <div class="padding-right-5">
+                                            <input
+                                                type="radio"
+                                                id="standardPA"
+                                                name="reject"
+                                                onchange="rejectControl(this)"
+                                                checked>
+                                                <label for="standardPA">75 </label>
+                                        </div>
+
+                                        <div class="padding-right-5">
+                                            <input 
+                                            type="radio" 
+                                            id="nonFormulary" 
+                                            onchange="rejectControl(this)"
+                                            name="reject">
+                                            <label for="nonFormulary">70 </label>
+                                        </div>
+
+                                        <div class="padding-right-5">
+                                            <input 
+                                            type="radio" 
+                                            id="stepTherapy" 
+                                            onchange="rejectControl(this)"
+                                            name="reject">
+                                            <label for="stepTherapy">608 and/or </label>
+                                        </div>
+
+                                        <div class="padding-right-5">
+                                            <input 
+                                            type="checkbox" 
+                                            id="quantityLimit" 
+                                            onchange="showQuantity()"
+                                            name="reject">
+                                            <label for="quantityLimit">76</label>
+                                        </div>
+
+                                        <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="resetReject()">
+                                            <span title="Clear 75, 70, and 608" class="material-symbols-outlined symbol-med">
+                                            refresh
+                                            </span>
+                                        </div>
+                                        
                                 </div>
-                            </div>
+                                
+                                <div id="quantityDiv" class="overflow-hidden">
+                                    <label for="quantity">08.</label>
+                                    <input 
+                                        type="text" 
+                                        class="qtyTextbox" 
+                                        id="quantity" 
+                                        name="quantity" 
+                                        placeholder="qty/days">
+                                    <br>
+
+                                    <label for="falseQL">09.</label>
+                                    <input 
+                                        type="checkbox" 
+                                        id="falseQL" 
+                                        name="falseQL" 
+                                        onclick="showQL();">
+                                    <label for="falseQL">False QL</label>
+                                    <br>
+                                </div>
+
+                                <!--Hide when falseQL not selected; start hidden-->
+                                <div id="properQuantityDiv" class="hideContent overflow-hidden"> 
+                                    <label 
+                                        for="properQuantity" 
+                                        id="properQuantityLabel">09.a</label>
+
+                                    <input 
+                                        type="text" 
+                                        class="qtyTextbox" 
+                                        id="properQuantity" 
+                                        name="properQuantity" 
+                                        placeholder="true qty"
+                                        onchange="showProperQuantity()"
+                                        tabindex="-1">
+
+                                    <br id="properQuantityBreak">
+                                </div>
+
+                                <div class="flex align-center" onchange="caseTypeSelection()">
+                                    <label for="type" class="padding-right-5">10.</label> 
+
+                                        <div id="initialTypeDiv" class="padding-right-5">
+                                            <input 
+                                                type="radio" 
+                                                id="initial" 
+                                                checked
+                                                name="type">
+                                                <label for="initial">Initial</label>
+                                        </div>    
                                     
-                            <div class="flex align-center justify-space-between">
-                                <div>
-                                    <label for="source">02.</label>
-                                    <select name="source" id="source">
-                                        <option value="PAHub (fax)">Fax</option>
-                                        <option value="PAHub (mail)">Mail</option>
-                                        <option value="PAHub (phone)">Phone</option>
-                                        <option value="ePA (web)" selected>Web</option>
-                                        <option value="PAHub (other)">Other</option>
-                                    </select>
+                                        <div id="reauthorizationTypeDiv" class="padding-right-5">
+                                            <input 
+                                                type="radio" 
+                                                id="reauthorization" 
+                                                name="type">
+                                                <label for="reauthorization">Reauthorizaiton</label>
+                                        </div>
+                                            
+                                        <div id="reopeningTypeDiv" class="padding-right-5">
+                                            <input
+                                                type="radio"
+                                                id="reopening"
+                                                name="type">
+                                                <label for="reopening">Reopening</label>
+                                        </div>
+
+                                        <div id="appealTypeDiv" class="padding-right-5">
+                                            <input
+                                                type="radio"
+                                                id="appealType"
+                                                name="type">
+                                                <label for="appealType">Appeal</label>
+                                        </div>
+
+                                        <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
+                                            <span title="Show relevant dates" class="material-symbols-outlined symbol-med">
+                                            info
+                                            </span>
+                                        </div>
                                 </div>
 
-                                <span id="time">0:00</span>
-                            </div>
+                                <!-- Dates show when label for 10 clicked -->
+                                <div id="datesDiv" class="hideContent overflow-hidden">
+                                    <div class="border-only background-color-secondary padding-10">
+                                        <!-- Dates -->
+                                        <div>
+                                            <div id="dateTypeSelection" class="button-group" onchange="updateShownDates()">
+                                                <input
+                                                    type="radio"
+                                                    id="deniedOn"
+                                                    name="dateDeniedType"
+                                                    checked>
+                                                    <label for="deniedOn">Denied on</label>
 
-                            <div>
-                                <label for="urgent">03.</label> 
+                                                <input
+                                                    type="radio"
+                                                    id="reopenedOn"
+                                                    name="dateDeniedType">
+                                                    <label for="reopenedOn">Reopened on</label>
+                                            </div>
 
+                                            <br>
+
+                                            <div id="daysAfter" class="overflow-hidden">
+                                                
+                                                <div class="flex">
+                                                    <div class="margin-r-10">
+                                                        <div><strong>Denied*: </strong></div>
+                                                        <div><strong>Reopening: </strong></div>
+                                                        <div><strong>Appeal**: </strong></div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="selected-day" id="selected-day-ago"></div>
+                                                        <div id="sevenBusinessDaysAfter"></div>
+                                                        <div id="sixtyDaysAfter"></div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="text-sm">
+                                                    * Select the day the initial case was denied on to see last day eligible for respective review.<br>
+                                                    ** Appeal with no new information within 60 days.
+                                                </div>
+                                            </div>
+
+                                            <div id="daysAgo" class="hideContent overflow-hidden">
+                                                <div class="flex">
+                                                    <div class="width-40">
+                                                        <div><strong>Case received*: </strong></div>
+                                                        <div><strong>Reopening: </strong></div>
+                                                        <div><strong>Appeal**: </strong></div>
+                                                    </div>
+                                                    <div class="width-60">
+                                                        <div class="selected-day" ></div>
+                                                        <div id="sevenBusinessDaysAgo"></div>
+                                                        <div id="sixtyDaysAgo"></div>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="text-sm">
+                                                    *Select the day the second request (reopening/appeal) was received to see the earliest day the initial needed to be denied on to be eligible for respective review.
+                                                    <br>
+                                                    ** Appeal with no new information within 60 days.
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+
+                                        <!-- Calendar -->
+                                        <div class="calendar-general">
+                                            <div class="calendar">
+                                                <div class="calendar-header">
+                                                    <div class="flex justify-center">
+                                                        <h2 id="month-year-display"></h2>
+                                                    </div>
+                                                    
+                                                    <div class="flex justify-center">
+                                                        <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
+                                                        <button type="button" id="today-btn">Today</button>
+                                                        <button type="button" id="next-btn" class="calendar-button">&gt;</button>
+                                                    </div>
+                                                </div>
+                                                <div class="calendar-body">
+                                                    <div class="weekdays">
+                                                        <span>Su</span>
+                                                        <span>Mo</span>
+                                                        <span>Tu</span>
+                                                        <span>We</span>
+                                                        <span>Th</span>
+                                                        <span>Fr</span>
+                                                        <span>Sa</span>
+                                                    </div>
+                                                    <div class="days" id="days-container"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                <label for="information">11.</label>
+                                    <textarea 
+                                        id="information" 
+                                        name="information" 
+                                        class="bigTextarea"
+                                        placeholder="previous authorizations"></textarea>
+                            <!--</form>-->
+                        </div>
+
+                        <!-- Part 2: The middle bar-->
+                        <div class="background-color-secondary padding-5-10-10-10">
+                            <!--<form id="form2">-->
+                                
+                                <label for="gender">12.</label> 
+                                    <input 
+                                        type="radio" 
+                                        id="female" 
+                                        name="gender"
+                                        checked>
+                                    <label for="female">Female</label>
+
+                                    <input 
+                                        type="radio" 
+                                        id="male" 
+                                        name="gender">
+                                    <label for="male">Male</label>
+                                
+                                
+                                <br>
+
+                                <label for="age">13.</label>
                                 <input 
-                                    type="checkbox" 
-                                    id="isUrgent" 
-                                    name="urgent">
-                                    <label for="isUrgent">Urgent </label>
+                                    type="text" 
+                                    class="ageTextbox" 
+                                    id="age" 
+                                    name="age" 
+                                    placeholder="age">
+                                <br>
+
+                                <label for="member">14.</label>
+                                <input 
+                                    type="text" 
+                                    id="member" 
+                                    name="member" 
+                                    placeholder="joined plan" 
+                                    value="1-2026"
+                                    class="memberWidth">
 
                                 <input 
                                     type="checkbox"
-                                    id="isExpedited"
-                                    name="expedited">
-                                    <label for="isExpedited">Expedited</label>
-                            </div>
-
-                            <div class="suggest-container">
-                                <label for="diagnosis">04.</label>
-                                <input 
-                                    type="text" 
-                                    id='diagnosis' 
-                                    placeholder="diagnosis"
-                                    oninput="predictWords(this.value, noDuplicatesCombinedDiagnosisList, 'diagnosis', 'diagnosisSuggestion')">
-
-                                    <span id="diagnosisSuggestion" class="suggestion"></span>
-
-                                <button 
-                                    type="button"
-                                    id="alternativeDiagnosisButton"
-                                    class="altButton hideContent"
-                                    onclick="changeDiagnosis()"
-                                    tabindex="-1"></button>
-                            </div>
-                            
-                            <label for="state">05.</label>
-                            <select name="state" id="state" onchange="checkState();">
-                                <!-- for list see stateClientList -->
-                                <!-- for function that builds select options see createStateSelectOptions() -->
-                            </select>
-                            <br>
-
-                            <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
-                            <div id="qsetDiv"> 
-                                <label for="qset">06.</label> 
-
-                                    <input 
-                                        type="checkbox" 
-                                        id="approval" 
-                                        name="qset"
-                                        checked>
-                                    <label for="approval">Q-set approval</label>
+                                    id="newMember"
+                                    onclick="addNewMember()">
+                                <label for="newMember">New member</label>
                                 <br>
-                            </div>
+                            <!--</form>-->
+                        </div>
 
-                            <div class="align-center flex" onchange="formularyStatusReport()">
-                                <label for="reject" class="padding-right-5">07.</label>
-                                    <div class="padding-right-5">
-                                        <input
-                                            type="radio"
-                                            id="standardPA"
-                                            name="reject"
-                                            onchange="rejectControl(this)"
-                                            checked>
-                                            <label for="standardPA">75 </label>
-                                    </div>
-
-                                    <div class="padding-right-5">
-                                        <input 
-                                        type="radio" 
-                                        id="nonFormulary" 
-                                        onchange="rejectControl(this)"
-                                        name="reject">
-                                        <label for="nonFormulary">70 </label>
-                                    </div>
-
-                                    <div class="padding-right-5">
-                                        <input 
-                                        type="radio" 
-                                        id="stepTherapy" 
-                                        onchange="rejectControl(this)"
-                                        name="reject">
-                                        <label for="stepTherapy">608 and/or </label>
-                                    </div>
-
-                                    <div class="padding-right-5">
-                                        <input 
-                                        type="checkbox" 
-                                        id="quantityLimit" 
-                                        onchange="showQuantity()"
-                                        name="reject">
-                                        <label for="quantityLimit">76</label>
-                                    </div>
-
-                                    <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="resetReject()">
-                                        <span title="Clear 75, 70, and 608" class="material-symbols-outlined symbol-med">
-                                        refresh
-                                        </span>
-                                    </div>
-                                    
-                            </div>
-                            
-                            <div id="quantityDiv" class="overflow-hidden">
-                                <label for="quantity">08.</label>
-                                <input 
-                                    type="text" 
-                                    class="qtyTextbox" 
-                                    id="quantity" 
-                                    name="quantity" 
-                                    placeholder="qty/days">
-                                <br>
-
-                                <label for="falseQL">09.</label>
+                        <!-- Part 3 (below the middle bar) -->
+                        <div class="padding-5-10-10-10">
+                            <!--<form id="form3">-->
+                                <label for="chart">15.</label>
                                 <input 
                                     type="checkbox" 
-                                    id="falseQL" 
-                                    name="falseQL" 
-                                    onclick="showQL();">
-                                <label for="falseQL">False QL</label>
-                                <br>
-                            </div>
+                                    id="noCharts" 
+                                    name="chart">
+                                <label for="noCharts">No items in Chart View</label>
+                                <br>     
 
-                            <!--Hide when falseQL not selected; start hidden-->
-                            <div id="properQuantityDiv" class="hideContent overflow-hidden"> 
-                                <label 
-                                    for="properQuantity" 
-                                    id="properQuantityLabel">09.a</label>
+                                <label for="snapshot">16.</label>
+                                <input 
+                                    type="checkbox" 
+                                    id="noClaims" 
+                                    name="snapshot" 
+                                    onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
+                                <label for="noClaims">No drug claims </label>
 
                                 <input 
-                                    type="text" 
-                                    class="qtyTextbox" 
-                                    id="properQuantity" 
-                                    name="properQuantity" 
-                                    placeholder="true qty"
-                                    onchange="showProperQuantity()"
-                                    tabindex="-1">
+                                    type="checkbox"
+                                    id="noMedicalAuthorizations"
+                                    name="medicalAuthorizations"
+                                    onclick="clearTextarea('noMedicalAuthorizations', 'claims', 'Paid claims in Snapshot for ')">
+                                <label for="noMedicalAuthorizations">No medical authorizations </label>
+                            
 
-                                <br id="properQuantityBreak">
-                            </div>
-
-                            <div class="flex align-center" onchange="caseTypeSelection()">
-                                <label for="type" class="padding-right-5">10.</label> 
-
-                                    <div id="initialTypeDiv" class="padding-right-5">
-                                        <input 
-                                            type="radio" 
-                                            id="initial" 
-                                            checked
-                                            name="type">
-                                            <label for="initial">Initial</label>
-                                    </div>    
-                                
-                                    <div id="reauthorizationTypeDiv" class="padding-right-5">
-                                        <input 
-                                            type="radio" 
-                                            id="reauthorization" 
-                                            name="type">
-                                            <label for="reauthorization">Reauthorizaiton</label>
-                                    </div>
-                                        
-                                    <div id="reopeningTypeDiv" class="padding-right-5">
-                                        <input
-                                            type="radio"
-                                            id="reopening"
-                                            name="type">
-                                            <label for="reopening">Reopening</label>
-                                    </div>
-
-                                    <div id="appealTypeDiv" class="padding-right-5">
-                                        <input
-                                            type="radio"
-                                            id="appealType"
-                                            name="type">
-                                            <label for="appealType">Appeal</label>
-                                    </div>
-
-                                    <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
-                                        <span title="Show relevant dates" class="material-symbols-outlined symbol-med">
-                                        info
-                                        </span>
-                                    </div>
-                            </div>
-
-                            <!-- Dates show when label for 10 clicked -->
-                            <div id="datesDiv" class="hideContent overflow-hidden">
-                                <div class="border-only background-color-secondary padding-10">
-                                    <!-- Dates -->
-                                    <div>
-                                        <div id="dateTypeSelection" class="button-group" onchange="updateShownDates()">
-                                            <input
-                                                type="radio"
-                                                id="deniedOn"
-                                                name="dateDeniedType"
-                                                checked>
-                                                <label for="deniedOn">Denied on</label>
-
-                                            <input
-                                                type="radio"
-                                                id="reopenedOn"
-                                                name="dateDeniedType">
-                                                <label for="reopenedOn">Reopened on</label>
-                                        </div>
-
-                                        <br>
-
-                                        <div id="daysAfter" class="overflow-hidden">
-                                            
-                                            <div class="flex">
-                                                <div class="margin-r-10">
-                                                    <div><strong>Denied*: </strong></div>
-                                                    <div><strong>Reopening: </strong></div>
-                                                    <div><strong>Appeal**: </strong></div>
-                                                </div>
-                                                <div>
-                                                    <div class="selected-day" id="selected-day-ago"></div>
-                                                    <div id="sevenBusinessDaysAfter"></div>
-                                                    <div id="sixtyDaysAfter"></div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="text-sm">
-                                                * Select the day the initial case was denied on to see last day eligible for respective review.<br>
-                                                ** Appeal with no new information within 60 days.
-                                            </div>
-                                        </div>
-
-                                        <div id="daysAgo" class="hideContent overflow-hidden">
-                                            <div class="flex">
-                                                <div class="width-40">
-                                                    <div><strong>Case received*: </strong></div>
-                                                    <div><strong>Reopening: </strong></div>
-                                                    <div><strong>Appeal**: </strong></div>
-                                                </div>
-                                                <div class="width-60">
-                                                    <div class="selected-day" ></div>
-                                                    <div id="sevenBusinessDaysAgo"></div>
-                                                    <div id="sixtyDaysAgo"></div>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="text-sm">
-                                                *Select the day the second request (reopening/appeal) was received to see the earliest day the initial needed to be denied on to be eligible for respective review.
-                                                <br>
-                                                ** Appeal with no new information within 60 days.
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-
-                                    <!-- Calendar -->
-                                    <div class="calendar-general">
-                                        <div class="calendar">
-                                            <div class="calendar-header">
-                                                <div class="flex justify-center">
-                                                    <h2 id="month-year-display"></h2>
-                                                </div>
-                                                
-                                                <div class="flex justify-center">
-                                                    <button type="button" id="prev-btn" class="calendar-button">&lt;</button>
-                                                    <button type="button" id="today-btn">Today</button>
-                                                    <button type="button" id="next-btn" class="calendar-button">&gt;</button>
-                                                </div>
-                                            </div>
-                                            <div class="calendar-body">
-                                                <div class="weekdays">
-                                                    <span>Su</span>
-                                                    <span>Mo</span>
-                                                    <span>Tu</span>
-                                                    <span>We</span>
-                                                    <span>Th</span>
-                                                    <span>Fr</span>
-                                                    <span>Sa</span>
-                                                </div>
-                                                <div class="days" id="days-container"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-
-                            <label for="information">11.</label>
+                                <label for="claims" id="claimsLabel"><br>17.</label>
                                 <textarea 
-                                    id="information" 
-                                    name="information" 
+                                    id="claims" 
+                                    name="claims" 
                                     class="bigTextarea"
-                                    placeholder="previous authorizations"></textarea>
-                        </form>
-                    </div>
+                                    placeholder="claims history">Paid claims in Snapshot for </textarea>
+                                <br>
 
-                    <!-- Part 2: The middle bar-->
-                    <div class="background-color-secondary padding-5-10-10-10">
-                        <form id="form2">
-                            
-                            <label for="gender">12.</label> 
+                                <label for="records">18.</label>
                                 <input 
-                                    type="radio" 
-                                    id="female" 
-                                    name="gender"
-                                    checked>
-                                <label for="female">Female</label>
+                                    type="checkbox" 
+                                    id="noRecords" 
+                                    name="records" 
+                                    value="Records not submitted with request. " 
+                                    onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
+                                <label for="noRecords">Records not sent</label>
+                                <br>
 
-                                <input 
-                                    type="radio" 
-                                    id="male" 
-                                    name="gender">
-                                <label for="male">Male</label>
-                            
-                            
-                            <br>
+                                <label for="clinical">19.</label>
+                                <textarea
+                                    id="clinical" 
+                                    name="clinical" 
+                                    class="bigTextarea"
+                                    placeholder="clinicals">Chart note dated </textarea>
+                                <br>
 
-                            <label for="age">13.</label>
-                            <input 
-                                type="text" 
-                                class="ageTextbox" 
-                                id="age" 
-                                name="age" 
-                                placeholder="age">
-                            <br>
+                                <label for="conclusion">20.</label>
+                                <textarea
+                                    id="conclusion" 
+                                    name="conclusion" 
+                                    class="bigTextarea"
+                                    placeholder="conclusion"></textarea>
+                                <br>
 
-                            <label for="member">14.</label>
-                            <input 
-                                type="text" 
-                                id="member" 
-                                name="member" 
-                                placeholder="joined plan" 
-                                value="1-2026"
-                                class="memberWidth">
+                                <!--True QL comment: Hide until falseQL checked-->
+                                <div id="commentDiv" class="hideContent overflow-hidden"> 
+                                    <label 
+                                        for="comment" 
+                                        id="commentLabel" 
+                                        >21. Not a true QL; </label>
+                                        
+                                    <select
+                                        id="comment" 
+                                        name="comment"
+                                        tabindex="-1">
 
-                            <input 
-                                type="checkbox"
-                                id="newMember"
-                                onclick="addNewMember()">
-                            <label for="newMember">New member</label>
-                            <br>
-                        </form>
-                    </div>
+                                        <option value="reviewed as #">reviewed as</option>
+                                        <option value="please approve as #">please approve as</option>
+                                    </select>
+                                    <span id="showProperQuantity"></span>
+                                </div>
 
-                    <!-- Part 3 (below the middle bar) -->
-                    <div class="padding-5-10-10-10">
-                        <form id="form3">
-                            <label for="chart">15.</label>
-                            <input 
-                                type="checkbox" 
-                                id="noCharts" 
-                                name="chart">
-                            <label for="noCharts">No items in Chart View</label>
-                            <br>     
-
-                            <label for="snapshot">16.</label>
-                            <input 
-                                type="checkbox" 
-                                id="noClaims" 
-                                name="snapshot" 
-                                onclick="clearTextarea('noClaims', 'claims', 'Paid claims in Snapshot for ')">
-                            <label for="noClaims">No drug claims </label>
-
-                            <input 
-                                type="checkbox"
-                                id="noMedicalAuthorizations"
-                                name="medicalAuthorizations"
-                                onclick="clearTextarea('noMedicalAuthorizations', 'claims', 'Paid claims in Snapshot for ')">
-                            <label for="noMedicalAuthorizations">No medical authorizations </label>
+                                <!-- Appeals options: Hide until Appeals case type checked -->
+                                <div id="appealDenialInputsDiv" class="hideContent overflow-hidden">
                         
+                                    <div id="appealInternalDiv">
+                                        <div class="suggest-container">
+                                            <label for="appealInternalQuestion">A1</label>
+                                            <input 
+                                                type="text"
+                                                id="appealInternalQuestion"
+                                                name="appealInternalQuestion"
+                                                placeholder="MD specialty"
+                                                tabindex="-1"
+                                                oninput="predictWords(this.value, mdSpecialtyList, 'appealInternalQuestion', 'mdSpecialtySuggestion')">
 
-                            <label for="claims" id="claimsLabel"><br>17.</label>
-                            <textarea 
-                                id="claims" 
-                                name="claims" 
-                                class="bigTextarea"
-                                placeholder="claims history">Paid claims in Snapshot for </textarea>
-                            <br>
+                                            <span id="mdSpecialtySuggestion" class="suggestion"></span>
+                                        </div>
+                                    </div>
 
-                            <label for="records">18.</label>
-                            <input 
-                                type="checkbox" 
-                                id="noRecords" 
-                                name="records" 
-                                value="Records not submitted with request. " 
-                                onclick="clearTextarea('noRecords', 'clinical', 'Chart note dated ')">
-                            <label for="noRecords">Records not sent</label>
-                            <br>
+                                    <div class="flex align-center">
+                                        <div id="appealExternalDiv">
+                                            <label for="sendToIRO">A2</label>
+                                            <input
+                                                type="checkbox"
+                                                id="sendToIRO"
+                                                name="sendToIRO"
+                                                tabindex="-1"
+                                                onchange="iroChecked()">
+                                            <label for="sendToIRO">Send to IRO</label>
+                                        </div>
+                                    </div>
 
-                            <label for="clinical">19.</label>
-                            <textarea
-                                id="clinical" 
-                                name="clinical" 
-                                class="bigTextarea"
-                                placeholder="clinicals">Chart note dated </textarea>
-                            <br>
-
-                            <label for="conclusion">20.</label>
-                            <textarea
-                                id="conclusion" 
-                                name="conclusion" 
-                                class="bigTextarea"
-                                placeholder="conclusion"></textarea>
-                            <br>
-
-                            <!--True QL comment: Hide until falseQL checked-->
-                            <div id="commentDiv" class="hideContent overflow-hidden"> 
-                                <label 
-                                    for="comment" 
-                                    id="commentLabel" 
-                                    >21. Not a true QL; </label>
-                                    
-                                <select
-                                    id="comment" 
-                                    name="comment"
-                                    tabindex="-1">
-
-                                    <option value="reviewed as #">reviewed as</option>
-                                    <option value="please approve as #">please approve as</option>
-                                </select>
-                                <span id="showProperQuantity"></span>
-                            </div>
-
-                            <!-- Appeals options: Hide until Appeals case type checked -->
-                            <div id="appealDenialInputsDiv" class="hideContent overflow-hidden">
-                    
-                                <div id="appealInternalDiv">
-                                    <div class="suggest-container">
-                                        <label for="appealInternalQuestion">A1</label>
-                                        <input 
-                                            type="text"
-                                            id="appealInternalQuestion"
-                                            name="appealInternalQuestion"
-                                            placeholder="MD specialty"
+                                    <div>
+                                        <div class="border-only background-color-secondary padding-10">
+                                            <a 
+                                            href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" 
+                                            class="color-body-text" 
+                                            id="specialtyAppealsTrackerLink"
                                             tabindex="-1"
-                                            oninput="predictWords(this.value, mdSpecialtyList, 'appealInternalQuestion', 'mdSpecialtySuggestion')">
-
-                                        <span id="mdSpecialtySuggestion" class="suggestion"></span>
-                                    </div>
-                                </div>
-
-                                <div class="flex align-center">
-                                    <div id="appealExternalDiv">
-                                        <label for="sendToIRO">A2</label>
-                                        <input
-                                            type="checkbox"
-                                            id="sendToIRO"
-                                            name="sendToIRO"
+                                            target="_blank">Specialty Appeals Tracker</a>
+                                            <br>
+                                            <a 
+                                            href="https://docs.google.com/document/d/1F9KpFtaryHsaGyWoGDMyqO4-YtS5MGL6SwHpDGyrz48/edit?tab=t.0#heading=h.ksbbug4plg4" 
+                                            class="color-body-text" 
+                                            id="AppealsJobAidLink"
                                             tabindex="-1"
-                                            onchange="iroChecked()">
-                                        <label for="sendToIRO">Send to IRO</label>
+                                            target="_blank">Job Aid - Appeals</a>
+                                        </div>
                                     </div>
+
+                                </div>
+                            <!--</form>-->
+
+                            <!-- State regulations and character count -->
+                            <div class="flex justify-space-between">
+                                <div 
+                                    id="stateNote" 
+                                    class="hideContent overflow-hidden"
+                                    style="padding-top: 10px;">
                                 </div>
 
-                                <div>
-                                    <div class="border-only background-color-secondary padding-10">
-                                        <a 
-                                        href="https://docs.google.com/spreadsheets/d/1yr9v5mWFzBSUTjjZFYCIJik1LKRnY2mxqMUvO4AMqpI/edit?gid=0#gid=0" 
-                                        class="color-body-text" 
-                                        id="specialtyAppealsTrackerLink"
-                                        tabindex="-1"
-                                        target="_blank">Specialty Appeals Tracker</a>
-                                        <br>
-                                        <a 
-                                        href="https://docs.google.com/document/d/1F9KpFtaryHsaGyWoGDMyqO4-YtS5MGL6SwHpDGyrz48/edit?tab=t.0#heading=h.ksbbug4plg4" 
-                                        class="color-body-text" 
-                                        id="AppealsJobAidLink"
-                                        tabindex="-1"
-                                        target="_blank">Job Aid - Appeals</a>
-                                    </div>
-                                </div>
-
+                                <span id="characterCount" class="characterLimitGreen">-/2000</span>
                             </div>
-                        </form>
-
-                        <!-- State regulations and character count -->
-                        <div class="flex justify-space-between">
-                            <div 
-                                id="stateNote" 
-                                class="hideContent overflow-hidden"
-                                style="padding-top: 10px;">
-                            </div>
-
-                            <span id="characterCount" class="characterLimitGreen">-/2000</span>
                         </div>
                     </div>
-                </div>
+                </form>
 
                 <!-- Appeals inputs: Hide until appeals checked -->
                 <div id="appealDenialAdditionalNotes" class="hideContent overflow-hidden background-color-secondary">
-                    <form id="form4">    
+                    <!--<form id="form4">-->    
                         <div class="padding-5-10-10-10">
 
                             <!-- Appeal denial language (v2.0) -->
@@ -577,7 +579,7 @@
                                     <h3>Appeal denial language builder</h3>
                                 </div>                
                             
-                                <form id="form5">
+                                <form id="appealForm">
                                     <div class="background-color-primary padding-5-10-10-10">
                                         <div>
                                             <div>Formulary status: <span id="formularyStatus"></span></div>
@@ -702,92 +704,93 @@
 
                             <!-- IRO note builder; hidden until 'send to IRO' checked -->
                             <div id="iroNoteDiv" class="container-mini hideContent overflow-hidden iroNoteSpacer" oninput="buildIROnote()">
-                            
-                                <div class="heading align-center flex sticky-sub-heading">
-                                    <h3>IRO note</h3>
-                                </div>
+                                <form id="iroForm">
+                                    <div class="heading align-center flex sticky-sub-heading">
+                                        <h3>IRO note</h3>
+                                    </div>
 
-                                <div class="background-color-primary padding-5-10-10-10">
-                                    <div>
-                                        <label for="typeOfRequest">B1</label>
-                                        <input
-                                            type="text"
-                                            id="typeOfRequest"
-                                            placeholder="type of request"
-                                            tabindex="-1"
-                                            value="First-Level Appeal">
-                                        
-                                        <br>
-                                        <label for="specialtyRequested">B2</label>
-                                        <input
-                                            type="text"
-                                            id="specialtyRequested"
-                                            tabindex="-1"
-                                            placeholder="specialty">
-
-                                        <br>
-                                        <label for="iroDueDate">B3</label>
-                                        <input
-                                            type="text"
-                                            id="iroDueDate"
-                                            tabindex="-1"
-                                            placeholder="iro due date and time">
-                                        <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
-                                        
-
-                                        <br>
-                                        <label for="iroClinicalSummary">B4</label>
-                                        <textarea
-                                            id="iroClinicalSummary"
-                                            class="appealTextarea"
-                                            oninput="iroCharacterCountCheck()"
-                                            tabindex="-1"
-                                            placeholder="clinical summary"></textarea>
-
+                                    <div class="background-color-primary padding-5-10-10-10">
                                         <div>
-                                            <span id="iroCharacterCount" class="characterLimitGreen">0/1000</span>
-                                        </div>
+                                            <label for="typeOfRequest">B1</label>
+                                            <input
+                                                type="text"
+                                                id="typeOfRequest"
+                                                placeholder="type of request"
+                                                tabindex="-1"
+                                                value="First-Level Appeal">
+                                            
+                                            <br>
+                                            <label for="specialtyRequested">B2</label>
+                                            <input
+                                                type="text"
+                                                id="specialtyRequested"
+                                                tabindex="-1"
+                                                placeholder="specialty">
 
-                                        <label for="iroQuestions">B5</label>
-                                        <textarea
-                                            id="iroQuestions"
-                                            class="appealTextarea"
-                                            tabindex="-1"
-                                            placeholder="iro questions"></textarea>
+                                            <br>
+                                            <label for="iroDueDate">B3</label>
+                                            <input
+                                                type="text"
+                                                id="iroDueDate"
+                                                tabindex="-1"
+                                                placeholder="iro due date and time">
+                                            <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
+                                            
 
-                                        <a href="https://docs.google.com/spreadsheets/d/1kdpV-JfrHLCFgcZo6ny40mA8KO2WLCoLQ7B2dgv_Er8/edit?gid=1819508638#gid=1819508638" target="_blank">IRO Questions Templates</a>
+                                            <br>
+                                            <label for="iroClinicalSummary">B4</label>
+                                            <textarea
+                                                id="iroClinicalSummary"
+                                                class="appealTextarea"
+                                                oninput="iroCharacterCountCheck()"
+                                                tabindex="-1"
+                                                placeholder="clinical summary"></textarea>
 
-                                        <br>
-                                        <!-- IRO preview, click to show/hide -->
-                                        <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
-                                            <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
-                                            add
-                                            </span>
+                                            <div>
+                                                <span id="iroCharacterCount" class="characterLimitGreen">0/1000</span>
+                                            </div>
 
-                                            <span id="iroNotePreviewRemove" class="material-symbols-outlined hideContent">
-                                            remove
-                                            </span> 
+                                            <label for="iroQuestions">B5</label>
+                                            <textarea
+                                                id="iroQuestions"
+                                                class="appealTextarea"
+                                                tabindex="-1"
+                                                placeholder="iro questions"></textarea>
+                                            <br>
+                                            <a href="https://docs.google.com/spreadsheets/d/1kdpV-JfrHLCFgcZo6ny40mA8KO2WLCoLQ7B2dgv_Er8/edit?gid=1819508638#gid=1819508638" target="_blank">IRO Questions Templates</a>
 
-                                            <H3 style="color: var(--body-text);">IRO note preview</H3>
-                                        </div>
+                                            <br>
+                                            <!-- IRO preview, click to show/hide -->
+                                            <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
+                                                <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
+                                                add
+                                                </span>
 
-                                        <div id="iroNotePreview" class="hideContent overflow-hidden">
-                                            <div id="iroCompleteNote">start typing to see preview</div>
+                                                <span id="iroNotePreviewRemove" class="material-symbols-outlined hideContent">
+                                                remove
+                                                </span> 
+
+                                                <H3 style="color: var(--body-text);">IRO note preview</H3>
+                                            </div>
+
+                                            <div id="iroNotePreview" class="hideContent overflow-hidden">
+                                                <div id="iroCompleteNote">start typing to see preview</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="footing">
-                                    <button 
-                                        id="iroCopyButton"
-                                        type="button" 
-                                        onclick="copyIROtext()"
-                                        tabindex="-1"
-                                        >Copy</button>
-                                    <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
-                                </div>
+                                    <div class="footing">
+                                        <button 
+                                            id="iroCopyButton"
+                                            type="button" 
+                                            onclick="copyIROtext()"
+                                            tabindex="-1"
+                                            >Copy</button>
+                                        <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    <!--</form>-->
                 </div>
             </div>
 

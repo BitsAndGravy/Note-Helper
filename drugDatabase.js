@@ -506,7 +506,7 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
-        drug: "Infed vial",
+        drug: "INFeD vial",
         quantity: "10/30",
         diagnosis: "iron deficiency anemia", 
         altDiagnosis: 'iron deficiency',
