@@ -780,6 +780,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "Myrbetriq ER tablet",
+        quantity: "30/30",
+        diagnosis: "overactive bladder",
+        formulary: false,
+    }, 
+    {
         drug: "Natesto nasal spray", 
         quantity: "7.320/30",
         diagnosis: "testicular hypofunction",
