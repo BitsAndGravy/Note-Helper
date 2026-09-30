@@ -1,4 +1,5 @@
 /* || Dictionaries and constants */
+/* no longer needed with noteBuilder()
 const checkboxBook = {
     chart: {
         isChecked: 'No relevant documents in Chart View. ', 
@@ -33,7 +34,9 @@ const checkboxBook = {
         notChecked:''
     },
 }
+    */
 
+/* No longer needed with noteBuilder()
 const answer = {
     age: "[age]",
     appealInternal: "[appealInternal]", 
@@ -61,6 +64,7 @@ const answer = {
     type: "[type]", 
     urgent: "[urgent]",     
 }
+    */
 
 const saveNames = [ // Used for saveText()
     'noteOne',  // Most recent note
@@ -339,10 +343,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     // Activates on input from certain fields, shows preview but does not save to clipboard.
     function preSaveFunctions() {
-        processResults();
+        //processResults();
         //buildNote();     
         noteBuilder();
-        showNotePreview(); // Unique to this function
+        showNotePreview(); 
         characterCount();
     }
 
@@ -351,6 +355,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             notePreview.innerText = notePreviewText;
         }
 
+        /* no longer needed with note builder
     function processResults() { // takes all of the inputs and places them into the finished note.
         getChecked();       // Used for input type="checkbox", not case type.
         getGender();        // Used to get male, female, blank.
@@ -503,6 +508,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                 answer.properQuantity = '';
             }
         }
+            */
 
     function noteBuilder() {
         let form = document.getElementById('mainForm');
@@ -588,6 +594,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         notePreviewText = textOutput;
     }
 
+    /* Not needed with noteBuilder()
     function buildNote() {
         
         checkModifiers();
@@ -746,6 +753,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     quantityText = ' #';
                 }
             }
+                */
 
     // Copies note to clipboard and outputs preview at the bottom of the page.
     function saveNote() { 
@@ -822,7 +830,7 @@ function resetForm() { // After clicking the Reset button
     resetAlts(); // Hides alternative diagnosis box, clear suggestions
     resetTextareaSize(); // Resets textarea if manually adjusted
     hideExtras(); // Hides quantity (per settings), false QL, iroNote etc.
-    checkState();
+    checkState(); // If default state has a comment, show comment
     animateText('resetForm');
     gotoFirstField();
     resetTimer();

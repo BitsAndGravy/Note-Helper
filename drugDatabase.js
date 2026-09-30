@@ -690,6 +690,13 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "ADHD", 
     },  
     {
+        drug: "Livtencity tablet",
+        quantity: "120/30",
+        diagnosis: "cytomegalovirus", 
+        formulary: false,
+        specialty: true,
+    },  
+    {
         drug: "Lokelma powder packet",
         quantity: "30/30",
         diagnosis: "hyperkalemia",
