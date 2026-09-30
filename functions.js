@@ -340,7 +340,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     // Activates on input from certain fields, shows preview but does not save to clipboard.
     function preSaveFunctions() {
         processResults();
-        buildNote();     
+        //buildNote();     
+        noteBuilder();
         showNotePreview(); // Unique to this function
         characterCount();
     }
@@ -511,7 +512,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
             textOutput += form.urgent.checked ? 'Urgent ' : '';
             textOutput += form.expedited.checked ? 'Expedited ' : '';
-            textOutput += (form.state.value || '(no state selected)') + ' ';
+            textOutput += (form.state.value || '[state]') + ' ';
             textOutput += form.source.value + '. ';
 
             let gender = form.elements.gender.value;
@@ -529,10 +530,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     // If none, blank.
                     : '';   
 
-            textOutput += `Joined plan ${form.member.value}.\n`;
+            textOutput += `Joined plan ${form.member.value || '[member date]'}.\n`;
 
-            textOutput += form.type.value;
-            textOutput += ` for ${form.drug.value}`;
+            textOutput += form.type.value || '[case type]';
+            textOutput += ` for ${form.drug.value || '[drug name]'}`;
 
             let quantityClass = document.getElementById('quantityDiv').className;
             textOutput += form.quantity.value ? 
@@ -545,11 +546,24 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                                              
                 // If quantity blank, do not show quantity
                 : ''; 
-            textOutput += ` for ${form.diagnosis.value}. `;
+            textOutput += ` for ${form.diagnosis.value || '[diagnosis]'}. `;
 
-            textOutput += form.reject.value + '. ';
+            textOutput += form.elements.reject.value;
 
-            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n\n`
+            textOutput += form.elements.reject.value ? 
+                (form.rejectQL.checked ? 
+                    // Reject and 76
+                    ` and ${form.rejectQL.value}. ` 
+                    // Reject, no 76
+                    : '. ')
+
+                : form.rejectQL.checked ? 
+                    // 76 only
+                    `${form.rejectQL.value}. `
+                    // No selection (should throw error)
+                    : '[reject blank] ';
+
+            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n\n`;
 
             
         // HISTORY heading
@@ -560,16 +574,18 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // CLINICAL heading
         textOutput += 'CLINICAL\n';
-            textOutput += form.records.checked ? `${form.records.value}\n` : '';
+            textOutput += form.noRecords.checked ? `${form.noRecords.value}\n` : '';
             textOutput += form.chart.checked ? `${form.chart.value}\n` : '';
-            textOutput += form.clinical.value + '\n\n';
+            textOutput += (form.clinical.value ? `${form.clinical.value}\n\n` : '\n');
 
         // RECOMMENDATION heading
         textOutput += 'RECOMMENDATION\n';
         //textOutput += form.conclusion.value;
+        textOutput += form.falseQL.checked ? `\n\nNot a true QL; ${form.comment.value} #${form.properQuantity.value}` : '';
 
         // Final output
-        document.getElementById('conclusion').innerHTML = textOutput;
+        // document.getElementById('conclusion').innerHTML = textOutput;
+        notePreviewText = textOutput;
     }
 
     function buildNote() {
