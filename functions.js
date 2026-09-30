@@ -580,11 +580,11 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // RECOMMENDATION heading
         textOutput += 'RECOMMENDATION\n';
-        //textOutput += form.conclusion.value;
+        textOutput += form.conclusion.value;
         textOutput += form.falseQL.checked ? `\n\nNot a true QL; ${form.comment.value} #${form.properQuantity.value}` : '';
 
         // Final output
-        // document.getElementById('conclusion').innerHTML = textOutput;
+        //document.getElementById('conclusion').innerHTML = textOutput;
         notePreviewText = textOutput;
     }
 
