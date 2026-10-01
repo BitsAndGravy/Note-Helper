@@ -308,38 +308,58 @@ function saveButton() { // After clicking the Save button
 }
 
 function checkForm() { // Used for the Save button. checks if age input is filled out. If so, proceed to process results and save.
-    let requireAge = localStorage.getItem('requireAge');
-    let age = document.getElementById('age');
-    let char = document.getElementById('characterCount');
-    let alert = document.getElementById('alert');
-    let alertText = document.getElementById('alert-text');
-    let ageAlertText = '';
-    let characterAlertText = '';
+    let form = document.getElementById('mainForm');
+    let alertMessage = '';
+    //let age = document.getElementById('age');
+    //let char = document.getElementById('characterCount');
+    
+    //let ageAlertText = '';
+    //let characterAlertText = '';
 
+    let requireAge = localStorage.getItem('requireAge');
     if (requireAge == 'yes') {
+        /*
         if (age.value == '') {
             ageAlertText = 'Age field is blank. ';
 
         } else {
             ageAlertText = '';
         }
+            */
+        alertMessage += form.age.value ? '' : 'Age field is blank. ';
     }
 
+    alertMessage += form.characterCount.classList.contains('characterLimitRed') ? 'Over character limit of 2,000. ' : '';
+    /*
     if (char.classList.contains('characterLimitRed')) {
         characterAlertText = 'Over character limit of 2,000. ';
     } else {
         characterAlertText = '';
     }
+        */
 
-    if ((ageAlertText !== '') || (characterAlertText !== '')) {
-        alertText.innerText = ageAlertText + characterAlertText;
+    let alert = document.getElementById('alert');
+    let alertText = document.getElementById('alert-text');
+
+    if (alertMessage) {
+        alertText.innerText = alertMessage;
         alert.classList.remove('display-none');
-        alert.classList.add('shake');
+        alert.classList.add('shake');   
     } else {
         alert.classList.add('display-none');
         preSaveFunctions();
         saveNote();
     }
+
+    /*
+    if ((ageAlertText !== '') || (characterAlertText !== '')) {
+       
+    } else {
+        alert.classList.add('display-none');
+        preSaveFunctions();
+        saveNote();
+    }
+        */
 }
 
     // Activates on input from certain fields, shows preview but does not save to clipboard.
@@ -1331,21 +1351,6 @@ function showQL() {
         comment.tabIndex = -1;
     }
 }
-
-/*
-function rejectControl(checkbox) {
-    let reject70 = document.getElementById('nonFormulary');
-    let reject75 = document.getElementById('standardPA');
-    let reject608 = document.getElementById('stepTherapy');
-    var checkboxes = [reject70, reject75, reject608];
-    
-    checkboxes.forEach((item) => {
-        if (item !== checkbox) item.checked = false
-    });
-
-    showQuantity();
-}
-    */
 
 // When 70 or 76 is checked/unchecked.
 function showQuantity() {

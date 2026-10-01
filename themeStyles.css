@@ -533,14 +533,14 @@
 }
 
 [data-theme='greenpath-II'] {
-    /* Main features */
+    /* Main features blue-ish 123542*/
     --main-background: #132641;
     --header-background: #212242;
-    --footer-background: #212242;
-    --body-primary-color: #123542;
+    --footer-background: #352c4e;
+    --body-primary-color: #235c52;
     --body-secondary-color: #352c4e;
     --body-border-color: #398d57;
-    --body-gradient: #2f7c5b, #235c52, #123542;
+    --body-gradient: #2f7c5b, #235c52;
     --shadow: #00000086;
     
     /* Text */
@@ -550,7 +550,7 @@
     --placeholder-text: #e7f0ccb5;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: aqua;
+    --hyperlink-active: var(--button-active);
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
@@ -562,7 +562,7 @@
     /* Input */
     --input-background: #0f203180;
     --input-background-focus: var(--main-background);
-    --input-accent-color: #a2c9ff;
+    --input-accent-color: #ffbf47;
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
