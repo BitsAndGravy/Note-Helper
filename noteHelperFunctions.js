@@ -52,19 +52,6 @@ window.onload = function() {
         } else {
             showTimerSpan.classList.add('display-none');
         }
-    
-        /*
-    // Check setting for show preview
-        let showPreview = localStorage.getItem('showPreview');
-        let showPreviewDiv = document.getElementById('showPreviewDiv');
-
-        if (showPreview == 'yes') {
-            showPreviewDiv.classList.add("showContent");
-        } else {
-            showPreviewDiv.classList.add("hideContent");
-        }
-            */
-        
 
     /* || Word prediction, see predictWords() in functions */
     
@@ -135,6 +122,19 @@ function createThemeOptions () {
     };
 }
 
+// When refresh symbol clicked next to reject code.
+function resetReject() {
+    let rejects = [
+        'standardPA',
+        'nonFormulary',
+        'stepTherapy',
+    ]
+
+    for (let reject of rejects) {
+        document.getElementById(reject).checked = false;
+    }
+    preSaveFunctions();
+}
 
 /* || Appeals and IRO stuff */
 
@@ -180,38 +180,16 @@ function iroCharacterCountCheck() {
 }
 
 function showAppealReason() {
-    //let reasonDiv = document.getElementById('appealReasonDiv');
     let reasonNo = document.getElementById('appealReasonNo');
     let reasonText = document.getElementById('appealReasonText');
 
     if (reasonNo.checked) {
         hideContent('appealReasonDiv');
-        //reasonDiv.classList.remove('showContent');
-        //reasonDiv.classList.add('hideContent');
-
         reasonText.tabIndex = -1;
     } else {
         showContent('appealReasonDiv');
-        //reasonDiv.classList.add('showContent');
-        //reasonDiv.classList.remove('hideContent');
-
         reasonText.tabIndex = 0;
     }
-
-}
-
-// When refresh symbol clicked next to reject code.
-function resetReject() {
-    let rejects = [
-        'standardPA',
-        'nonFormulary',
-        'stepTherapy',
-    ]
-
-    for (let reject of rejects) {
-        document.getElementById(reject).checked = false;
-    }
-    preSaveFunctions();
 }
 
 const appeal = {
@@ -268,17 +246,18 @@ function createDenialLanguage() {
     animateText("createDenialLanguageTextAnimation");
 }
 
+// When copy button clicked in appeal denial language section
 function copyDenialLanguage() {
     let textToCopy = document.getElementById('appealDenial2').value;
     navigator.clipboard.writeText(textToCopy);
     animateText('copyDenialLanguageTextAnimation');
 }
 
+// When calendar open, change dates shown based on whether 'denied on' checked or 'reopened on' checked
 function updateShownDates() {
     let deniedOn = document.getElementById('deniedOn');
     let daysAgo = document.getElementById('daysAgo');
     let daysAfter = document.getElementById('daysAfter');
-    // let reopenedOn = document.getElementById('reopenedOn');
 
     if (deniedOn.checked) {
         daysAfter.classList.add('showContent');

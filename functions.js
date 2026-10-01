@@ -1141,6 +1141,7 @@ function getQuantity() {
     preSaveFunctions();
 }
 
+    // Check setting for auto-select appeals. If checked, check option for appeal.
     function checkAutoselectAppeals() {
         let auto = localStorage.getItem('autoselectAppeal');
         let app = document.getElementById('appealType');
@@ -1313,9 +1314,7 @@ function clearTextarea(
 function showQL() {
     let check = document.getElementById('falseQL');
     let qt = document.getElementById('properQuantity');
-    //let qtDiv = document.getElementById('properQuantityDiv');
     let comment = document.getElementById('comment');
-    //let commentDiv = document.getElementById('commentDiv');
 
     if (check.checked) {
         showContent('properQuantityDiv');
@@ -1333,6 +1332,7 @@ function showQL() {
     }
 }
 
+/*
 function rejectControl(checkbox) {
     let reject70 = document.getElementById('nonFormulary');
     let reject75 = document.getElementById('standardPA');
@@ -1345,6 +1345,7 @@ function rejectControl(checkbox) {
 
     showQuantity();
 }
+    */
 
 // When 70 or 76 is checked/unchecked.
 function showQuantity() {
@@ -1381,6 +1382,7 @@ function showQuantity() {
         }
     } // If setting is 'yes' to always show quantity, do nothing 
     checkNFStates();
+    formularyStatusReport();
 }
 
 function removeSelection(name) {
@@ -1601,7 +1603,7 @@ function appealTypeChecked() {
             conc.value = 'On appeal, ';
         };
 
-        formularyStatusReport();
+        //formularyStatusReport();
     } else {
         hideContent('appealDenialAdditionalNotes');
         hideContent('appealDenialInputsDiv');
@@ -1622,7 +1624,6 @@ function appealTypeChecked() {
         } else {
             formularyStatusResult.innerText = 'Formulary';
         }
-
     }
 
 
