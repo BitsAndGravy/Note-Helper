@@ -311,7 +311,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     let form = document.getElementById('mainForm');
     let alertMessage = '';
     //let age = document.getElementById('age');
-    //let char = document.getElementById('characterCount');
+    let char = document.getElementById('characterCount');
     
     //let ageAlertText = '';
     //let characterAlertText = '';
@@ -327,9 +327,11 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         }
             */
         alertMessage += form.age.value ? '' : 'Age field is blank. ';
+
     }
 
-    alertMessage += form.characterCount.classList.contains('characterLimitRed') ? 'Over character limit of 2,000. ' : '';
+    alertMessage += char.classList.contains('characterLimitRed') ? 'Over character limit of 2,000. ' : '';
+
     /*
     if (char.classList.contains('characterLimitRed')) {
         characterAlertText = 'Over character limit of 2,000. ';
@@ -341,7 +343,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     let alert = document.getElementById('alert');
     let alertText = document.getElementById('alert-text');
 
-    if (alertMessage) {
+    if (alertMessage !== '') {
         alertText.innerText = alertMessage;
         alert.classList.remove('display-none');
         alert.classList.add('shake');   
