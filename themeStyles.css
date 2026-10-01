@@ -533,14 +533,14 @@
 }
 
 [data-theme='greenpath-II'] {
-    /* Main features blue-ish 123542*/
+    /* Main features greens - light 2f7c5b light-med 276855 med 235c52 dark 123542*/
     --main-background: #132641;
     --header-background: #212242;
     --footer-background: #352c4e;
     --body-primary-color: #235c52;
     --body-secondary-color: #352c4e;
     --body-border-color: #398d57;
-    --body-gradient: #2f7c5b, #235c52;
+    --body-gradient: #2f7c5b, #276855;
     --shadow: #00000086;
     
     /* Text */

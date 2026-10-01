@@ -206,6 +206,7 @@ const fullDiagnosisList = [
     'PCOS',
     'psychophysiologic insomnia',
     'polycystic ovarian syndrome',
+    'polyphagia',
     'post-inflammatory hyperpigmentation',
     'postmenopausal atrophic vaginitis',
     'prediabetes',
@@ -539,11 +540,45 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         // SUMMARY heading
         let textOutput = 'SUMMARY\n';
 
+            // Urgent, expedited, state, source.
             textOutput += form.urgent.checked ? 'Urgent ' : '';
             textOutput += form.expedited.checked ? 'Expedited ' : '';
             textOutput += (form.state.value || '[state]') + ' ';
-            textOutput += form.source.value + '. ';
+            textOutput += `${form.source.value || '[source]'}. `;
 
+            // Drug, qty, diagnosis.
+            textOutput += form.type.value || '[case type]';
+            textOutput += ` for ${form.drug.value || '[drug name]'}`;
+            let quantityClass = document.getElementById('quantityDiv').className;
+            textOutput += form.quantity.value ? 
+                (quantityClass !== 'hideContent' ? 
+                    // If quantity filled and shown, show quantity
+                    ` for #${form.quantity.value}`  
+
+                    // If quantity filled but hidden, do not show quantity
+                    : '')  
+                                             
+                // If quantity blank, do not show quantity
+                : ''; 
+            textOutput += ` for ${form.diagnosis.value || '[diagnosis]'}. `;
+
+            // Reject codes. Qset response. 
+            textOutput += form.elements.reject.value;
+            textOutput += form.elements.reject.value ? 
+                (form.rejectQL.checked ? 
+                    // Reject and 76
+                    ` and ${form.rejectQL.value}. ` 
+                    // Reject, no 76
+                    : '. ')
+
+                : form.rejectQL.checked ? 
+                    // 76 only
+                    `${form.rejectQL.value}. `
+                    // No selection (should throw error)
+                    : '[reject blank] ';
+            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n`;
+            
+            // Gender, age, date joined.
             let gender = form.elements.gender.value;
             textOutput += gender || '';
             textOutput += form.age.value ? 
@@ -559,42 +594,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     // If none, blank.
                     : '';   
 
-            textOutput += `Joined plan ${form.member.value || '[member date]'}.\n`;
+            textOutput += `Joined plan ${form.member.value || '[member date]'}.\n\n`;
 
-            textOutput += form.type.value || '[case type]';
-            textOutput += ` for ${form.drug.value || '[drug name]'}`;
-
-            let quantityClass = document.getElementById('quantityDiv').className;
-            textOutput += form.quantity.value ? 
-                (quantityClass !== 'hideContent' ? 
-                    // If quantity filled and shown, show quantity
-                    ` for #${form.quantity.value}`  
-
-                    // If quantity filled but hidden, do not show quantity
-                    : '')  
-                                             
-                // If quantity blank, do not show quantity
-                : ''; 
-            textOutput += ` for ${form.diagnosis.value || '[diagnosis]'}. `;
-
-            textOutput += form.elements.reject.value;
-
-            textOutput += form.elements.reject.value ? 
-                (form.rejectQL.checked ? 
-                    // Reject and 76
-                    ` and ${form.rejectQL.value}. ` 
-                    // Reject, no 76
-                    : '. ')
-
-                : form.rejectQL.checked ? 
-                    // 76 only
-                    `${form.rejectQL.value}. `
-                    // No selection (should throw error)
-                    : '[reject blank] ';
-
-            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n\n`;
-
-            
         // HISTORY heading
         textOutput += 'HISTORY\n';
             textOutput += `Authorizations: ${form.information.value || 'None relevant'}\n`;
