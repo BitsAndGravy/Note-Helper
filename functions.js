@@ -133,6 +133,7 @@ const fullDiagnosisList = [
     'actinic keratosis',
     'acute upper respiratory infection',
     'acute vaginitis',
+    'anemia',
     'aspergillosis', 
 
     'bacterial intestinal infection',
@@ -308,7 +309,7 @@ function saveButton() { // After clicking the Save button
 
 function checkForm() { // Used for the Save button. checks if age input is filled out. If so, proceed to process results and save.
     let requireAge = localStorage.getItem('requireAge');
-    let ageRequirement = document.getElementById('age');
+    let age = document.getElementById('age');
     let char = document.getElementById('characterCount');
     let alert = document.getElementById('alert');
     let alertText = document.getElementById('alert-text');
@@ -316,7 +317,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
     let characterAlertText = '';
 
     if (requireAge == 'yes') {
-        if (ageRequirement.value == '') {
+        if (age.value == '') {
             ageAlertText = 'Age field is blank. ';
 
         } else {
@@ -574,7 +575,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             
         // HISTORY heading
         textOutput += 'HISTORY\n';
-            textOutput += `Authorizations: ${form.information.value || 'None relevant'}\n\n`;
+            textOutput += `Authorizations: ${form.information.value || 'None relevant'}\n`;
             textOutput += `Claims: ${form.claims.value ? (form.claims.value !== 'Paid claims in Snapshot for ' ? form.claims.value : 'None relevant') : 'None relevant'}\n`;
             textOutput += form.noMedicalAuthorizations.checked ? `${form.noMedicalAuthorizations.value}\n\n` : '\n';
 
@@ -778,8 +779,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Copies text to clipboard.
         function copyText() { 
-            let textToCopy = notePreviewText;
-            navigator.clipboard.writeText(textToCopy);
+            //let textToCopy = notePreviewText;
+            navigator.clipboard.writeText(notePreviewText);
             animateText("textCopied");
         }
 
@@ -810,12 +811,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
 /* ||| Reset button */
 function resetForm() { // After clicking the Reset button        
-    /*
-    document.getElementById('form1').reset();
-    document.getElementById('form2').reset();
-    document.getElementById('form3').reset();
-    document.getElementById('form4').reset();
-    */
     document.getElementById('mainForm').reset();
     document.getElementById('appealForm').reset();
     document.getElementById('iroForm').reset();
