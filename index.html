@@ -516,6 +516,7 @@
                                 <!-- Appeals options: Hide until Appeals case type checked -->
                                 <div id="appealDenialInputsDiv" class="hideContent overflow-hidden">
                         
+                                    <!-- changing variable names
                                     <div id="appealInternalDiv">
                                         <div class="suggest-container">
                                             <label for="appealInternalQuestion">A1</label>
@@ -530,9 +531,43 @@
                                             <span id="mdSpecialtySuggestion" class="suggestion"></span>
                                         </div>
                                     </div>
+                                    -->
 
+                                    <div id="mdSpecialtyDiv">
+                                        <div class="suggest-container">
+                                            <label for="mdSpecialty">A1</label>
+                                            <input 
+                                                type="text"
+                                                id="mdSpecialty"
+                                                name="mdSpecialty"
+                                                placeholder="MD specialty"
+                                                tabindex="-1"
+                                                oninput="predictWords(this.value, mdSpecialtyList, 'mdSpecialty', 'mdSpecialtySuggestion')">
+
+                                            <span id="mdSpecialtySuggestion" class="suggestion"></span>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <!-- Updating variable names
                                     <div class="flex align-center">
                                         <div id="appealExternalDiv">
+                                            <label for="sendToIRO">A2</label>
+                                            <input
+                                                type="checkbox"
+                                                id="sendToIRO"
+                                                name="sendToIRO"
+                                                value="-- SEND TO IRO --\n\n"
+                                                tabindex="-1"
+                                                onchange="iroChecked()">
+                                            <label for="sendToIRO">Send to IRO</label>
+                                        </div>
+                                    </div>
+                                -->
+                                    <div class="flex align-center">
+                                        <div id="sendToIROdiv">
                                             <label for="sendToIRO">A2</label>
                                             <input
                                                 type="checkbox"

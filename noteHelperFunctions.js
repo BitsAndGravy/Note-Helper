@@ -84,7 +84,7 @@ window.onload = function() {
         });
 
         // MD Specialty: Start typing in first MD specialty field for suggestion to appear. Hit Enter or Tab to accept drug name suggestion.
-        const mdInput = document.getElementById('appealInternalQuestion');
+        const mdInput = document.getElementById('mdSpecialty');
         const mdSuggestion = document.getElementById('mdSpecialtySuggestion');
 
         mdInput.addEventListener('keydown', function(e) {

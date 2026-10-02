@@ -288,7 +288,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Appeal headings
         //let textOutput = form.sendToIRO.checked ? '-- SEND TO IRO --\n\n' : '';
-        let textOutput = form.appealInternalQuestion.value ? `-- TO BE REVIEWED BY ${form.appealInternalQuestion.value} SPECIALTY --\n\n` : '';
+        let textOutput = form.mdSpecialty.value ? `-- TO BE REVIEWED BY ${form.mdSpecialty.value} SPECIALTY --\n\n` : '';
         
         // SUMMARY heading
             textOutput += 'SUMMARY\n';
@@ -1253,7 +1253,7 @@ function iroChecked() {
         // If IRO-MD specialty blank, prefill it with MD specialty from above field
         let mdPaste = document.getElementById('specialtyRequested'); // Also A5
         if (mdPaste.value == '') {
-            let mdCopy = document.getElementById('appealInternalQuestion').value;
+            let mdCopy = document.getElementById('mdSpecialty').value;
             let mdCopyCapitalized = mdCopy.charAt(0).toUpperCase() + mdCopy.slice(1); 
             mdPaste.value = mdCopyCapitalized;
         }
@@ -1273,14 +1273,14 @@ function iroChecked() {
 }
 
     const appealOptionsList = [
-        'appealInternalQuestion',   // A1
+        'mdSpecialty',   // A1
         'sendToIRO',                // A2
         'appealDenial',             // A3
         'A3copyButton',             // A3 copy button
     ]
 
     const appealBuilderList = [
-        'appealInternalQuestion',   // A1
+        'mdSpecialty',   // A1
         'sendToIRO',   
         'specialtyAppealsTrackerLink',
         'appealCondition',
