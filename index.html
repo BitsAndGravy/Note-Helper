@@ -829,13 +829,14 @@
                                     <textarea
                                         id="iroClinicalSummary"
                                         class="appealTextarea"
-                                        oninput="iroCharacterCountCheck()"
+                                        oninput="iroClinicalCharacterCountCheck()"
                                         tabindex="-1"
                                         placeholder="clinical summary"></textarea>
 
                                     <div>
-                                        <span id="iroCharacterCount" class="characterLimitGreen">0/1000</span>
+                                        <span class="characterLimitGreen">Character limit for clinical summary: </span><span id="iroClinicalCharacterCount" class="characterLimitGreen">0/1000</span>
                                     </div>
+                                    <br>
 
                                     <label for="iroQuestions">B5</label>
                                     <textarea
@@ -843,7 +844,10 @@
                                         class="appealTextarea"
                                         tabindex="-1"
                                         placeholder="iro questions"></textarea>
-                                    <br>
+
+                                    <div>
+                                        <span class="characterLimitGreen">Character limit for IRO request: </span><span id="iroTotalCharacterCount" class="characterLimitGreen">0/2000</span>
+                                    </div>
 
                                     <br>
                                     <!-- IRO preview, click to show/hide -->

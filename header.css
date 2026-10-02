@@ -173,7 +173,7 @@ button:active {
     border: 2px solid var(--body-border-color);
     border-radius: 20px;
     box-shadow: 5px 10px 15px var(--shadow);
-    width: fit-content;
+    width: 470px;
     justify-content: center;
 }
 

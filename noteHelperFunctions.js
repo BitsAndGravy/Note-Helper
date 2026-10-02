@@ -154,12 +154,13 @@ function buildIROnote() {
         questions;
 
     document.getElementById('iroCompleteNote').innerText = iroNote;
+    iroTotalCharacterCountCheck(iroNote);
 }
 
-// Character count for send to iro message
-function iroCharacterCountCheck() {
+// Character count for IRO clinical summary
+function iroClinicalCharacterCountCheck() {
     let text = document.getElementById('iroClinicalSummary').value;
-    let charCount = document.getElementById('iroCharacterCount');
+    let charCount = document.getElementById('iroClinicalCharacterCount');
 
     // Shows character count
     charCount.innerText = text.length + "/1000";
@@ -175,6 +176,29 @@ function iroCharacterCountCheck() {
 
         // Opacity = 1 for best visibility
         } else if (text.length >= 1001) {
+            charCount.className = 'characterLimitRed';
+        }
+}
+
+// Character count for IRO request
+function iroTotalCharacterCountCheck(text) {
+    // let text = document.getElementById('iroCompleteNote').value;
+    let charCount = document.getElementById('iroTotalCharacterCount');
+
+    // Shows character count
+    charCount.innerText = text.length + "/2000";
+
+        if(text.length < 1500) {
+            charCount.className = 'characterLimitGreen';
+
+        } else if (text.length < 1750) {
+            charCount.className = 'characterLimitYellow';
+
+        } else if (text.length < 2001) {
+            charCount.className = 'characterLimitOrange';
+
+        // Opacity = 1 for best visibility
+        } else if (text.length >= 2001) {
             charCount.className = 'characterLimitRed';
         }
 }
