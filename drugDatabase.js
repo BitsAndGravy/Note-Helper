@@ -85,6 +85,12 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "hypersomnia",
     },  
     {
+        drug: "asenapine sublingual tablet",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder", 
+        altDiagnosis: "schizophrenia",
+    },  
+    {
         drug: "Austedo capsule",
         quantity: "30/30",
         diagnosis: "tardive dyskinesia", 
@@ -397,6 +403,13 @@ const drugDatabase = [ // for getQuantity()
         drug: "exemestane tablet",
         quantity: "30/30",
         diagnosis: "breast cancer", 
+        formulary: false, 
+    },  
+    {
+        drug: "Fanapt tablet",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder",
+        altDiagnosis: "schizophrenia", 
         formulary: false, 
     },  
     {
