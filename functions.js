@@ -1,71 +1,4 @@
 /* || Dictionaries and constants */
-/* no longer needed with noteBuilder()
-const checkboxBook = {
-    chart: {
-        isChecked: 'No relevant documents in Chart View. ', 
-        notChecked: ''
-    },
-    expedited: {
-        isChecked: 'Expedited ',
-        notChecked: ''
-    },
-    falseQL: {
-        isChecked: 'Not a true QL request; ', 
-        notChecked:''
-    },
-    medicalAuthorizations: {
-        isChecked: 'No relevant medical authorizations.',
-        notChecked: '',
-    },
-    qset: {
-        isChecked: 'approval', 
-        notChecked:'denial'
-    },
-    records: {
-        isChecked: 'Records were not submitted with request. ',
-        notChecked: '',
-    },
-    snapshot: {
-        isChecked: 'No relevant paid claims. ',
-        notChecked:''
-    },
-    urgent: {
-        isChecked: 'Urgent ',
-        notChecked:''
-    },
-}
-    */
-
-/* No longer needed with noteBuilder()
-const answer = {
-    age: "[age]",
-    appealInternal: "[appealInternal]", 
-    chart: "[chart]", 
-    claims: "[claims]", 
-    clinical: "[clinical]", 
-    comment: "[comment]", 
-    conclusion: "[conclusion]", 
-    diagnosis: "[diagnosis]",
-    drug: "[drug]",
-    expedited: "[expedited]", 
-    falseQL: "[falseQL]", 
-    gender: "[gender]", 
-    information: "[information]", 
-    medicalAuthorizations: "[medicalAuthorizations]",
-    member: "[member]", 
-    properQuantity: "[properQuantity]", 
-    qset: "[qset]", 
-    quantity: "[quantity]",
-    records: "[records]", 
-    reject: "[reject]", 
-    snapshot: "[snapshot]", 
-    source: "[source]",
-    state: "[state]", 
-    type: "[type]", 
-    urgent: "[urgent]",     
-}
-    */
-
 const saveNames = [ // Used for saveText()
     'noteOne',  // Most recent note
     'noteTwo', // Note previously worked on
@@ -319,27 +252,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     let requireAge = localStorage.getItem('requireAge');
     if (requireAge == 'yes') {
-        /*
-        if (age.value == '') {
-            ageAlertText = 'Age field is blank. ';
-
-        } else {
-            ageAlertText = '';
-        }
-            */
         alertMessage += form.age.value ? '' : 'Age field is blank. ';
-
     }
 
     alertMessage += char.classList.contains('characterLimitRed') ? 'Over character limit of 2,000. ' : '';
-
-    /*
-    if (char.classList.contains('characterLimitRed')) {
-        characterAlertText = 'Over character limit of 2,000. ';
-    } else {
-        characterAlertText = '';
-    }
-        */
 
     let alert = document.getElementById('alert');
     let alertText = document.getElementById('alert-text');
@@ -353,22 +269,10 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         preSaveFunctions();
         saveNote();
     }
-
-    /*
-    if ((ageAlertText !== '') || (characterAlertText !== '')) {
-       
-    } else {
-        alert.classList.add('display-none');
-        preSaveFunctions();
-        saveNote();
-    }
-        */
 }
 
     // Activates on input from certain fields, shows preview but does not save to clipboard.
-    function preSaveFunctions() {
-        //processResults();
-        //buildNote();     
+    function preSaveFunctions() {    
         noteBuilder();
         showNotePreview(); 
         characterCount();
@@ -378,161 +282,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             let notePreview = document.getElementById('notePreview');
             notePreview.innerText = notePreviewText;
         }
-
-        /* no longer needed with note builder
-    function processResults() { // takes all of the inputs and places them into the finished note.
-        getChecked();       // Used for input type="checkbox", not case type.
-        getGender();        // Used to get male, female, blank.
-        getType();          // Used fot case type specifically
-        getReject();        // Used to interpret the three checkboxes from 7-reject code    
-        getOption();        // Used for input type="select", "text"
-        getText();          // Used for textarea, could also be used for input type='text'
-        checkQL();          // Checks if the 'false QL' box was selected
-    }
-
-        function getChecked() { // Used for input type="checkbox"
-            const checkboxList = [
-                "chart", 
-                "expedited", 
-                "falseQL", 
-                "medicalAuthorizations",
-                "qset",
-                "records",
-                "snapshot", 
-                "urgent", 
-            ];
-            
-            for (k = 0; k < checkboxList.length; k++) {
-                let item = checkboxList[k]
-                let ele = document.getElementsByName(item);
-                for (i = 0; i < ele.length; i++) {
-                    if (ele[i].checked) {
-                        answer[checkboxList[k]] = checkboxBook[item].isChecked;
-                        break;
-                    } else { // What to do if the checkbox is not selected - helpful for 'resetting' inputs.
-                        answer[item] = checkboxBook[item].notChecked;
-                    }
-                }
-            }
-        }
-
-        function getGender() {
-            let male = document.getElementById('male');
-            let female = document.getElementById('female');
-
-            if (male.checked) {
-                answer.gender = 'Male';
-            } else if (female.checked) {
-                answer.gender = 'Female';
-            } else {
-                answer.gender = '';
-            }
-        }
-
-        function getType() {
-            let reauth = document.getElementById('reauthorization');
-            let reopen = document.getElementById('reopening');
-            let appeal1 = document.getElementById('appealType');
-            //let appeal2 = document.getElementById('appeal2Type');
-
-            if (reauth.checked) {
-                answer.type = 'Reauthorization';
-            } else if (reopen.checked) {
-                answer.type = 'Reopening';
-            } else if (appeal1.checked) {
-                answer.type = 'First-level appeal';
-            //} else if (appeal2.checked) {
-            //    answer.type = 'Second-level appeal';
-            } else {
-                answer.type = 'Initial';
-            }
-        }
-
-        function getReject() {
-            let reject70 = document.getElementById('nonFormulary');
-            let reject75 = document.getElementById('standardPA');
-            let reject76 = document.getElementById('quantityLimit');
-            let reject608 = document.getElementById('stepTherapy');
-
-            // 75 and/or 76
-            if (reject75.checked) {
-                if (reject76.checked) {
-                    answer.reject = "75 and 76-Standard PA with QL";
-                } else {
-                    answer.reject = "75-Standard PA";
-                }
-            }
-            else if (reject70.checked) {
-                if (reject76.checked) {
-                    answer.reject = "70 and 76-Non-formulary with QL";
-                } else {
-                    answer.reject = "70-Non-formulary";
-                }
-            }
-            else if (reject608.checked) {
-                if (reject76.checked) {
-                    answer.reject = "608 and 76-Step therapy with QL";
-                } else {
-                    answer.reject = "608-Step therapy";
-                }
-            }
-            else if (reject76.checked) {
-                answer.reject = "76-Quantity limit";
-            }
-            else {
-                answer.reject = '';
-            }
-        }
-
-        function getOption() {// Used for input type="select", "text"
-            const options = [
-                "#source", 
-                "#state", 
-                "#drug", 
-                "#diagnosis", 
-                "#quantity", 
-                "#age", 
-                "#member", 
-                "#properQuantity",
-                "#comment", 
-            ]
-
-            for (k = 0; k < options.length; k++) {
-                let elf = document.querySelector(options[k]).value;
-                let obj = options[k].slice(1);
-                answer[obj] = elf;
-            }
-        }
-
-        function getText() { // Used for textarea, could also be used for input type='text'
-            textareaList = [
-                "information", 
-                "claims", 
-                "clinical", 
-                "conclusion"
-            ]
-
-            for (r = 0; r < textareaList.length; r++) {
-                let item = textareaList[r];
-                let textName = document.getElementById(item).value;
-                answer[item] = textName;
-            }
-            if(answer.clinical === 'Chart note dated ') {
-                answer.clinical = '';
-            }
-        }  
-
-        function checkQL() { // Checks if the 'false QL' box was selected
-            let check = document.getElementById('falseQL');
-            let quantity = document.getElementById('properQuantity');
-
-            if(check.checked) {
-                answer.properQuantity = quantity.value;
-            } else {
-                answer.properQuantity = '';
-            }
-        }
-            */
 
     function noteBuilder() {
         let form = document.getElementById('mainForm');
@@ -617,167 +366,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         //document.getElementById('conclusion').innerHTML = textOutput;
         notePreviewText = textOutput;
     }
-
-    /* Not needed with noteBuilder()
-    function buildNote() {
-        
-        checkModifiers();
-
-        let conspectusHeader = "SUMMARY " + "\n";
-        let conspectusBody = 
-            answer.urgent + answer.expedited + answer.state + " " + answer.source + ". " + 
-            answer.gender + ageText + "Joined plan " + answer.member + ". \n" +
-            answer.type + " for " + answer.drug + quantityText + answer.quantity + " for " + answer.diagnosis + ". " + answer.reject + ". " + "Provider response led to " + answer.qset + ". ";
-
-
-        let historyHeader = "\n\n" + "HISTORY " + "\n";
-        let historyBody = 
-            answer.information + snapNewLine +
-            answer.snapshot + answer.medicalAuthorizations + claimsNewLine + answer.claims;
-
-
-        let clinicalHeader = "\n\n" + "CLINICAL " + "\n";
-        let clinicalBody = 
-            answer.records + answer.chart + clinicalNewLine + 
-            answer.clinical + clinicalExtraLine;
-        
-
-        let conclusionHeader = "\n" + "RECOMMENDATION " + "\n";
-        let conclusionBody = answer.conclusion;
-        
-
-        let conspectus = conspectusHeader + conspectusBody;
-        let history = historyHeader + historyBody;
-        let clinical = clinicalHeader + clinicalBody;
-        let conclusion = conclusionHeader + conclusionBody + techNote;
-
-        let fullNote = answer.sendToIRO + appealInternalText + conspectus + history + clinical + conclusion;
-
-        notePreviewText = fullNote;
-        //noteBuilder();
-    }
-
-        function checkModifiers() {
-            checkAge();
-            checkAppealIsChecked();
-            checkClaimsHistory(); // If text not edited, change to blank.
-            addQL(); // If 'False QL' is checked, add a tech note at the bottom of the note.
-            checkInfo(); // If field for previous authorizations is blank, replace it with this text.
-            checkBoxes(); // Formats the note so there is one new line between each heading.
-            checkQuantity(); // If hidden, make blank; if quantity field blank, do not add 'for #qty/days' to note.
-        }
-
-            function checkAge() {
-                if (answer.age == '') {
-                    if (answer.gender == '') { 
-                        // Age blank, gender blank
-                        ageText = '';
-                    } else {
-                        // Age blank, gender filled
-                        ageText = '. ';
-                    }
-
-                } else {
-                    if (answer.gender == '') { 
-                        // Age filled, gender blank
-                        ageText = 'Age ' + answer.age + '. ';
-                    
-                    } else { 
-                        // Age filled, gender filled
-                        ageText = ' age ' + answer.age + '. ';
-                    }
-                }
-            }
-        
-            function checkAppealIsChecked() {
-                let app = document.getElementById('appealType');
-                let mdSpecialty = document.getElementById('appealInternalQuestion').value;
-                answer.appealInternal = mdSpecialty;
-                
-                if (!app.checked) {
-                    answer.sendToIRO = '';
-                    answer.appealInternal = '';
-                }
-
-                if(answer.appealInternal == '') {
-                    appealInternalText = '';
-                } else {
-                    appealInternalText = "-- TO BE REVIEWED BY " + answer.appealInternal + " SPECIALTY --" + "\n\n";
-                }
-            }
-        
-            function checkClaimsHistory() {
-                if(answer.claims === 'Paid claims in Snapshot for ') {
-                    answer.claims = '';
-                }
-            }
-
-            function addQL() { // If 'False QL' is checked, add a tech note at the bottom of the note.
-                let check = document.getElementById('falseQL');
-                if(check.checked) {
-                    techNote = "\n\n" + answer.falseQL + answer.comment + answer.properQuantity + ".";
-                } else {
-                    techNote = "";
-                };
-            }
-
-            function checkInfo() { // If field for previous authorizations is blank, replace it with this text.
-                if(answer.information == "") {
-                    answer.information = "No previous authorizations. "
-                };
-            }
-
-            function checkBoxes() {
-                
-                // If both snapshot (claims) and medicalAuthorizations are unselected, do not add a new line.
-                let snap = answer.snapshot;
-                let med = answer.medicalAuthorizations;
-                if (snap == "" && med == "") {
-                    snapNewLine = "";
-                } else {
-                    snapNewLine = "\n";
-                }
-
-                let claims = answer.claims;
-                if (claims == "") {
-                    claimsNewLine = "";
-                } else {
-                    claimsNewLine = "\n";
-                }
-
-                // If both Chart and Records are unselected, do not add a new line.
-                let rec = answer.records;
-                let chart = answer.chart;
-                if (rec == "" && chart == "") {
-                    clinicalNewLine = "";
-                } else {
-                    clinicalNewLine = "\n";
-                }
-
-                // If Clinicals is empty, do not add a new line.
-                let clin = answer.clinical;
-                if (clin == "") {
-                    clinicalExtraLine = "";
-                } else {
-                    clinicalExtraLine = "\n";
-                }
-            }
-
-            function checkQuantity() {
-                // Check if quantity is shown. If not, make it blank.
-                let isShown = document.getElementById('quantityDiv').className;
-                if(isShown === 'hideContent') {
-                    answer.quantity = "";
-                }
-                
-                // If quantity is blank, do not show it in the note.
-                if(answer.quantity == "") {
-                    quantityText = "";
-                } else {
-                    quantityText = ' #';
-                }
-            }
-                */
 
     // Copies note to clipboard and outputs preview at the bottom of the page.
     function saveNote() { 
@@ -952,13 +540,7 @@ function resetForm() { // After clicking the Reset button
         document.getElementById('drug').focus();
     }
 
-
-
-
-
-
 /* || Saved notes */
-
 // In the functions below, consider the Note to be the <div>, and the Edit to be the <textarea>.
 
 var detectNoteOrEdit = 'Note';
@@ -1042,12 +624,6 @@ function cancelButton (noteID) {
         textToCancel.value = originalText.innerText;
     }
 
-
-
-
-
-
-
 /* || Animations */
 /* ||| Animate text when button clicked */
 function animateText(spanToAnimate) { // Text briefly displays message in the <span>. Activates after clicking a button.
@@ -1064,13 +640,7 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
     });
 }
 
-
-
-
-
-
 /* || Input responses */
-
 // Triggers when drug name changed. Checks if the drug name is in the database, returns diagnosis and qty/days.
 function getQuantity() { 
     startTimer();
