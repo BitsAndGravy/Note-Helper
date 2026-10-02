@@ -470,7 +470,7 @@
     --header-background: #1b4b5f;
     --footer-background: var(--header-background);
     --body-primary-color: #0b2b47;
-    --body-secondary-color: #ffffff33;
+    --body-secondary-color: #0d2237af;
     --body-border-color: #3d988b;
     --body-gradient: #0b2b47, #3d988b;
     --shadow: #00000086;
@@ -478,8 +478,8 @@
     /* Text */
     --heading-text: #fffcba;
     --body-text: var(--heading-text);
-    --input-text: black;
-    --placeholder-text: slategray;
+    --input-text: var(--heading-text);
+    --placeholder-text: #fffcba9b;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: gold;
     --hyperlink-active: aqua;
@@ -491,8 +491,8 @@
     --button-active: aqua;
 
     /* Input */
-    --input-background: #f9f9d6e2;
-    --input-background-focus: #f9f9d6;
+    --input-background: #0d223795;
+    --input-background-focus: #06111bcf;
     --input-accent-color: #e1b0fb;
     --input-border: black;
     --input-border-focus: var(--header-background);
