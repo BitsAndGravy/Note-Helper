@@ -285,9 +285,13 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
     function noteBuilder() {
         let form = document.getElementById('mainForm');
+
+        // Appeal headings
+        //let textOutput = form.sendToIRO.checked ? '-- SEND TO IRO --\n\n' : '';
+        let textOutput = form.appealInternalQuestion.value ? `-- TO BE REVIEWED BY ${form.appealInternalQuestion.value} SPECIALTY --\n\n` : '';
         
         // SUMMARY heading
-        let textOutput = 'SUMMARY\n';
+            textOutput += 'SUMMARY\n';
 
             // Urgent, expedited, state, source.
             textOutput += form.urgent.checked ? 'Urgent ' : '';
