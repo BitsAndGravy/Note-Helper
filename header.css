@@ -172,8 +172,9 @@ button:active {
 .container-mini { /* Used for appeals add-ons */
     border: 2px solid var(--body-border-color);
     border-radius: 20px;
-    margin: 10px;
     box-shadow: 5px 10px 15px var(--shadow);
+    width: fit-content;
+    justify-content: center;
 }
 
 .cursor-pointer {
@@ -205,6 +206,10 @@ button:active {
 
 .flex {
     display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
 }
 
 .footing {

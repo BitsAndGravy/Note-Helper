@@ -615,230 +615,9 @@
                     </div>
                 </form>
 
-                <!-- Appeals inputs: Hide until appeals checked -->
-                <div id="appealDenialAdditionalNotes" class="hideContent overflow-hidden background-color-secondary">
-                    <!--<form id="form4">-->    
-                        <div class="padding-5-10-10-10">
+                <!-- Appeals unputs original location -->
 
-                            <!-- Appeal denial language (v2.0) -->
-                            <div class="container-mini">
-                                <div class="heading align-center flex sticky-sub-heading">
-                                    <h3>Appeal denial language builder</h3>
-                                </div>                
-                            
-                                <form id="appealForm">
-                                    <div class="background-color-primary padding-5-10-10-10">
-                                        <div>
-                                            <div>Formulary status: <span id="formularyStatus"></span></div>
-                                        </div>
-                                        <div>
-                                            <label for="appealCondition">A3</label>
-                                            <input
-                                                id="appealCondition"
-                                                type="text"
-                                                name="appealCondition"
-                                                placeholder="condition"
-                                                tabindex="-1">
-                                        </div>
-
-                                        <div onchange="showAppealReason()">
-                                            <label for="appealReasonCheckbox">A4</label>
-                                            <input
-                                                id="appealReasonNo"
-                                                name="appealReasonCheckbox"
-                                                type="radio"
-                                                value="Your doctor did not provide a reason why the requested medication is being appealed"
-                                                checked
-                                                tabindex="-1">
-                                                <label for="appealReasonNo">No appeal reason </label>
-
-                                            <input
-                                                id="appealReasonYes"
-                                                name="appealReasonCheckbox"
-                                                type="radio"
-                                                value="Your appeal states that the denial is being appealed because "
-                                                tabindex="-1">
-                                                <label for="appealReasonYes">Appeal reason </label>
-                                        </div>
-                                            
-                                        <div id="appealReasonDiv" class="hideContent overflow-hidden">
-                                            <label for="appealReasonText">A5</label>
-                                            <textarea
-                                                id="appealReasonText"
-                                                name="appealReasonText"
-                                                class="appealTextarea"
-                                                tabindex="-1"
-                                                placeholder="appeal reason"></textarea>
-                                        </div>
-
-                                        <div>
-                                            <label for="newInformationCheckbox">A6</label>
-                                            <input
-                                                id="newInformationNo"
-                                                name="newInformationCheckbox"
-                                                type="radio"
-                                                value="No new information was submitted with this request"
-                                                checked
-                                                tabindex="-1">
-                                                <label for="newInformationNo">No new information </label>
-
-                                            <input
-                                                id="newInformationYes"
-                                                name="newInformationCheckbox"
-                                                type="radio"
-                                                value="We have reviewed the new information submitted with this request"
-                                                tabindex="-1">
-                                                <label for="newInformationYes">New information </label>
-                                        </div>
-
-                                        <div>
-                                            <label for="appealDenialReasons">A7</label>
-                                            <textarea
-                                                id="appealDenialReasons" 
-                                                name="appealDenialReasons" 
-                                                class="appealTextarea"
-                                                tabindex="-1"
-                                                placeholder="denial reasons"></textarea>    
-                                        </div>
-
-                                        <div>
-                                            <label for="criteriaName">A8</label>
-                                            <textarea
-                                                id="criteriaName"
-                                                class="appealTextarea"
-                                                name="criteriaName"
-                                                placeholder="full reference"
-                                                tabindex="-1"></textarea>
-                                            
-                                        </div>
-
-                                        <div>
-                                            <button 
-                                                id="createDenialLanguageButton"
-                                                type="button" 
-                                                onclick="createDenialLanguage()"
-                                                tabindex="-1"
-                                                >Create</button>
-                                            <span id="createDenialLanguageTextAnimation" class="hideStart">Copied to clipboard</span>
-                                        </div>
-
-                                        <div>
-                                            <p>Alternatively, use the box below to manually build the denial language.</p>
-                                        </div>
-
-                                        <div>
-                                            <label for="appealDenial2">A9</label>
-                                            <textarea
-                                                id="appealDenial2" 
-                                                name="appealDenial2" 
-                                                class="appealTextarea"
-                                                tabindex="-1"
-                                                placeholder="denial language for appeal"></textarea>  
-                                        </div>                                      
-                                    </div>
-
-                                    <div class="footing">
-                                        <button 
-                                            id="copyDenialLanguageButton"
-                                            type="button" 
-                                            onclick="copyDenialLanguage()"
-                                            tabindex="-1"
-                                            >Copy</button>
-                                        <span id="copyDenialLanguageTextAnimation" class="hideStart">Copied to clipboard</span>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <!-- IRO note builder; hidden until 'send to IRO' checked -->
-                            <div id="iroNoteDiv" class="container-mini hideContent overflow-hidden iroNoteSpacer" oninput="buildIROnote()">
-                                <form id="iroForm">
-                                    <div class="heading align-center flex sticky-sub-heading">
-                                        <h3>IRO note</h3>
-                                    </div>
-
-                                    <div class="background-color-primary padding-5-10-10-10">
-                                        <div>
-                                            <label for="typeOfRequest">B1</label>
-                                            <input
-                                                type="text"
-                                                id="typeOfRequest"
-                                                placeholder="type of request"
-                                                tabindex="-1"
-                                                value="First-Level Appeal">
-                                            
-                                            <br>
-                                            <label for="specialtyRequested">B2</label>
-                                            <input
-                                                type="text"
-                                                id="specialtyRequested"
-                                                tabindex="-1"
-                                                placeholder="specialty">
-
-                                            <br>
-                                            <label for="iroDueDate">B3</label>
-                                            <input
-                                                type="text"
-                                                id="iroDueDate"
-                                                tabindex="-1"
-                                                placeholder="iro due date and time">
-                                            <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
-                                            
-
-                                            <br>
-                                            <label for="iroClinicalSummary">B4</label>
-                                            <textarea
-                                                id="iroClinicalSummary"
-                                                class="appealTextarea"
-                                                oninput="iroCharacterCountCheck()"
-                                                tabindex="-1"
-                                                placeholder="clinical summary"></textarea>
-
-                                            <div>
-                                                <span id="iroCharacterCount" class="characterLimitGreen">0/1000</span>
-                                            </div>
-
-                                            <label for="iroQuestions">B5</label>
-                                            <textarea
-                                                id="iroQuestions"
-                                                class="appealTextarea"
-                                                tabindex="-1"
-                                                placeholder="iro questions"></textarea>
-                                            <br>
-                                            <a href="https://docs.google.com/spreadsheets/d/1kdpV-JfrHLCFgcZo6ny40mA8KO2WLCoLQ7B2dgv_Er8/edit?gid=1819508638#gid=1819508638" target="_blank">IRO Questions Templates</a>
-
-                                            <br>
-                                            <!-- IRO preview, click to show/hide -->
-                                            <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
-                                                <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
-                                                add
-                                                </span>
-
-                                                <span id="iroNotePreviewRemove" class="material-symbols-outlined hideContent">
-                                                remove
-                                                </span> 
-
-                                                <H3 style="color: var(--body-text);">IRO note preview</H3>
-                                            </div>
-
-                                            <div id="iroNotePreview" class="hideContent overflow-hidden">
-                                                <div id="iroCompleteNote">start typing to see preview</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="footing">
-                                        <button 
-                                            id="iroCopyButton"
-                                            type="button" 
-                                            onclick="copyIROtext()"
-                                            tabindex="-1"
-                                            >Copy</button>
-                                        <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    <!--</form>-->
-                </div>
+                
             </div>
 
             <!-- alert div -->
@@ -870,6 +649,236 @@
             </div>
 
         </div>
+    </div>
+
+    <!-- Appeals inputs: Hide until appeals checked -->
+    <div id="appealDenialAdditionalNotes" class="hideContent overflow-hidden">
+        <!--<form id="form4">-->    
+            <div class="padding-5-10-10-10">
+
+                <!-- Appeal denial language (v2.0) -->
+                <div class="flex justify-center">
+                    <div class="container-mini">
+                        <div class="heading align-center flex sticky-heading">
+                            <h3>Appeal denial language builder</h3>
+                        </div>                
+                    
+                        <form id="appealForm">
+                            <div class="background-color-primary padding-5-10-10-10">
+                                <div>
+                                    <div>Formulary status: <span id="formularyStatus"></span></div>
+                                </div>
+                                <div>
+                                    <label for="appealCondition">A3</label>
+                                    <input
+                                        id="appealCondition"
+                                        type="text"
+                                        name="appealCondition"
+                                        placeholder="condition"
+                                        tabindex="-1">
+                                </div>
+
+                                <div onchange="showAppealReason()">
+                                    <label for="appealReasonCheckbox">A4</label>
+                                    <input
+                                        id="appealReasonNo"
+                                        name="appealReasonCheckbox"
+                                        type="radio"
+                                        value="Your doctor did not provide a reason why the requested medication is being appealed"
+                                        checked
+                                        tabindex="-1">
+                                        <label for="appealReasonNo">No appeal reason </label>
+
+                                    <input
+                                        id="appealReasonYes"
+                                        name="appealReasonCheckbox"
+                                        type="radio"
+                                        value="Your appeal states that the denial is being appealed because "
+                                        tabindex="-1">
+                                        <label for="appealReasonYes">Appeal reason </label>
+                                </div>
+                                    
+                                <div id="appealReasonDiv" class="hideContent overflow-hidden">
+                                    <label for="appealReasonText">A5</label>
+                                    <textarea
+                                        id="appealReasonText"
+                                        name="appealReasonText"
+                                        class="appealTextarea"
+                                        tabindex="-1"
+                                        placeholder="appeal reason"></textarea>
+                                </div>
+
+                                <div>
+                                    <label for="newInformationCheckbox">A6</label>
+                                    <input
+                                        id="newInformationNo"
+                                        name="newInformationCheckbox"
+                                        type="radio"
+                                        value="No new information was submitted with this request"
+                                        checked
+                                        tabindex="-1">
+                                        <label for="newInformationNo">No new information </label>
+
+                                    <input
+                                        id="newInformationYes"
+                                        name="newInformationCheckbox"
+                                        type="radio"
+                                        value="We have reviewed the new information submitted with this request"
+                                        tabindex="-1">
+                                        <label for="newInformationYes">New information </label>
+                                </div>
+
+                                <div>
+                                    <label for="appealDenialReasons">A7</label>
+                                    <textarea
+                                        id="appealDenialReasons" 
+                                        name="appealDenialReasons" 
+                                        class="appealTextarea"
+                                        tabindex="-1"
+                                        placeholder="denial reasons"></textarea>    
+                                </div>
+
+                                <div>
+                                    <label for="criteriaName">A8</label>
+                                    <textarea
+                                        id="criteriaName"
+                                        class="appealTextarea"
+                                        name="criteriaName"
+                                        placeholder="full reference"
+                                        tabindex="-1"></textarea>
+                                    
+                                </div>
+
+                                <div>
+                                    <button 
+                                        id="createDenialLanguageButton"
+                                        type="button" 
+                                        onclick="createDenialLanguage()"
+                                        tabindex="-1"
+                                        >Create</button>
+                                    <span id="createDenialLanguageTextAnimation" class="hideStart">Copied to clipboard</span>
+                                </div>
+
+                                <div>
+                                    <p>Or, manually build the denial language in box below.</p>
+                                </div>
+
+                                <div>
+                                    <label for="appealDenial2">A9</label>
+                                    <textarea
+                                        id="appealDenial2" 
+                                        name="appealDenial2" 
+                                        class="appealTextarea"
+                                        tabindex="-1"
+                                        placeholder="denial language for appeal"></textarea>  
+                                </div>                                      
+                            </div>
+
+                            <div class="footing">
+                                <button 
+                                    id="copyDenialLanguageButton"
+                                    type="button" 
+                                    onclick="copyDenialLanguage()"
+                                    tabindex="-1"
+                                    >Copy</button>
+                                <span id="copyDenialLanguageTextAnimation" class="hideStart">Copied to clipboard</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+
+                <!-- IRO note builder; hidden until 'send to IRO' checked -->
+                <div class="flex justify-center">
+                    <div id="iroNoteDiv" class="container-mini hideContent overflow-hidden iroNoteSpacer" oninput="buildIROnote()">
+                        <form id="iroForm">
+                            <div class="heading align-center flex sticky-heading">
+                                <h3>IRO note</h3>
+                            </div>
+
+                            <div class="background-color-primary padding-5-10-10-10">
+                                <div>
+                                    <label for="typeOfRequest">B1</label>
+                                    <input
+                                        type="text"
+                                        id="typeOfRequest"
+                                        placeholder="type of request"
+                                        tabindex="-1"
+                                        value="First-Level Appeal">
+                                    
+                                    <br>
+                                    <label for="specialtyRequested">B2</label>
+                                    <input
+                                        type="text"
+                                        id="specialtyRequested"
+                                        tabindex="-1"
+                                        placeholder="specialty">
+
+                                    <br>
+                                    <label for="iroDueDate">B3</label>
+                                    <input
+                                        type="text"
+                                        id="iroDueDate"
+                                        tabindex="-1"
+                                        placeholder="iro due date and time">
+                                    <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
+                                    
+
+                                    <br>
+                                    <label for="iroClinicalSummary">B4</label>
+                                    <textarea
+                                        id="iroClinicalSummary"
+                                        class="appealTextarea"
+                                        oninput="iroCharacterCountCheck()"
+                                        tabindex="-1"
+                                        placeholder="clinical summary"></textarea>
+
+                                    <div>
+                                        <span id="iroCharacterCount" class="characterLimitGreen">0/1000</span>
+                                    </div>
+
+                                    <label for="iroQuestions">B5</label>
+                                    <textarea
+                                        id="iroQuestions"
+                                        class="appealTextarea"
+                                        tabindex="-1"
+                                        placeholder="iro questions"></textarea>
+                                    <br>
+                                    <a href="https://docs.google.com/spreadsheets/d/1kdpV-JfrHLCFgcZo6ny40mA8KO2WLCoLQ7B2dgv_Er8/edit?gid=1819508638#gid=1819508638" target="_blank">IRO Questions Templates</a>
+
+                                    <br>
+                                    <!-- IRO preview, click to show/hide -->
+                                    <div class="iroPreviewHeader flex align-center cursor-pointer"  onclick="showList('iroNotePreview')">
+                                        <span id="iroNotePreviewAdd" class="material-symbols-outlined showContent">
+                                        add
+                                        </span>
+
+                                        <span id="iroNotePreviewRemove" class="material-symbols-outlined hideContent">
+                                        remove
+                                        </span> 
+
+                                        <H3 style="color: var(--body-text);">IRO note preview</H3>
+                                    </div>
+
+                                    <div id="iroNotePreview" class="hideContent overflow-hidden">
+                                        <div id="iroCompleteNote">start typing to see preview</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footing">
+                                <button 
+                                    id="iroCopyButton"
+                                    type="button" 
+                                    onclick="copyIROtext()"
+                                    tabindex="-1"
+                                    >Copy</button>
+                                <span id="iroCompleteNoteCopied" class="hideStart">Copied to clipboard</span>                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <!--</form>-->
     </div>
 
 <!--Preview -->
