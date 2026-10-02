@@ -736,6 +736,7 @@ function getQuantity() {
         }
     }
     preSaveFunctions();
+    formularyStatusReport();
 }
 
     // Check setting for auto-select appeals. If checked, check option for appeal.
