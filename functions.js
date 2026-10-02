@@ -1166,6 +1166,7 @@ function reopeningChecked() {
 
 // When appealType is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function appealTypeChecked() {
+    let form = document.getElementById('mainForm');
     let check = document.getElementById('appealType');
     if (check.checked) {
         showContent('appealDenialAdditionalNotes');
@@ -1173,16 +1174,16 @@ function appealTypeChecked() {
         showOverflow('appealDenialAdditionalNotes');
         changeTabIndex(appealBuilderList, 0);
 
-        let info = document.getElementById('information');
-        if(info.value === '') {
+        //let info = document.getElementById('information');
+        if(form.information.value === '') {
             let drugName = document.getElementById('drug').value;
             let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-            info.value = drug + ' denied \n\nNo reopening or peer-to-peer. ';
+            form.information.value = drug + ' denied ';
         };
 
-        let conc = document.getElementById('conclusion');   
-        if(conc.value == '') {
-            conc.value = 'On appeal, ';
+        //let conc = document.getElementById('conclusion');   
+        if(form.conclusion.value == '') {
+            form.conclusion.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
         };
 
         //formularyStatusReport();
