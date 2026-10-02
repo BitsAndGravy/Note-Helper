@@ -493,7 +493,7 @@
     /* Input */
     --input-background: #0d223795;
     --input-background-focus: #06111bcf;
-    --input-accent-color: #e1b0fb;
+    --input-accent-color: #fe8ded;
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
