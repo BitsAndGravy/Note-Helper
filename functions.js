@@ -352,7 +352,15 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         // HISTORY heading
         textOutput += 'HISTORY\n';
             textOutput += `Authorizations: ${form.information.value || 'None relevant'}\n`;
-            textOutput += `Claims: ${form.claims.value ? (form.claims.value !== 'Paid claims in Snapshot for ' ? form.claims.value : 'None relevant') : 'None relevant'}\n`;
+            textOutput += (form.claims.value ? 
+                // Field not empty and
+                (form.claims.value !== 'Paid claims in Snapshot for ' ? 
+                    // Field was edited (value is not the default text)
+                    `Claims: ${form.claims.value}\n`
+                    // Field was not edited (value === default text)
+                    : '') 
+                // Field empty
+                : 'Claims: None relevant');
             textOutput += form.noMedicalAuthorizations.checked ? `${form.noMedicalAuthorizations.value}\n\n` : '\n';
 
         // CLINICAL heading
