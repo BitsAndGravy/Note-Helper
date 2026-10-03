@@ -319,9 +319,9 @@
     /* Input */
     --input-background:#29241ed7;
     --input-background-focus: #2e1e16b3;
-    --input-accent-color: #d77a5f;
+    --input-accent-color: #78e6b4;
     --input-border: #764737e5;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #78e6b5cd;
 }
 
 [data-theme='city-of-tears'] {
