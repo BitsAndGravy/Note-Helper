@@ -1,7 +1,15 @@
-a:link {color: var(--heading-text);}
-    a:hover {color: var(--hyperlink-hover);}
-    a:active {color: var(--hyperlink-active);}
-    a:visited {color: var(--hyperling-static);}
+
+a:link {color: var(--input-accent-color)}
+    /*    
+    a:hover {color: green}
+    a:active {color: yellow}
+    */
+    a:visited .heading-color {color: var(--input-accent-color)}
+
+
+
+
+    
 
 .alert {
     --alert-foreground-color: #222222;
@@ -157,8 +165,16 @@ button:active {
     padding: 5px;
 }
 
+.color-accent {
+    color: var(--input-accent-color);
+}
+
 .color-body-text {
-    color: var(--body-text) !important;
+    color: var(--body-text);
+}
+
+.color-heading-text {
+    color: var(--heading-text)
 }
 
 .container {/* Used to create a border around Note Helper, Preview, and Saved Notes */
@@ -242,6 +258,12 @@ h3 {
     border-radius: 18px 18px 0px 0px; /* Rounded on top to match border, flat on bottom */
     color: var(--heading-text); 
 }
+
+/*
+.heading-color {
+    color: var(--heading-text); 
+}
+    */
 
 /* Used for smooth transition when showing/hiding a div. Also see .showContent */
 .hideContent {

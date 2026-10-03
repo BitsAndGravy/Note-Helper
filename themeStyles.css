@@ -582,13 +582,13 @@
     --heading-text: black;
     --body-text: #7ee5ba;
     --body-secondary-text: var(--body-text);
-    --input-text: #d1ffec;
-    --placeholder-text: #79fbc5ae;
+    --input-text: #caeddf;
+    --placeholder-text: #caeddfa1;
     --animated-text: black;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
-    --hyperling-visited: var(--hyperlink-static);
+    --hyperling-visited: var(--input-accent-color);
     
     /* Buttons */
     --button-background: #184848;
