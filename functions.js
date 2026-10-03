@@ -360,7 +360,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     // Field was not edited (value === default text)
                     : '') 
                 // Field empty
-                : 'Claims: None relevant');
+                : 'Claims: None relevant\n');
             textOutput += form.noMedicalAuthorizations.checked ? `${form.noMedicalAuthorizations.value}\n\n` : '\n';
 
         // CLINICAL heading
