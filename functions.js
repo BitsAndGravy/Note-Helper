@@ -433,7 +433,8 @@ function resetForm() { // After clicking the Reset button
     resetCalendar();
     resetThemeSelectSelection(); // Sets themeSelect to current theme (resets when form clears)
     buildIROnote(); // Reset preview text
-    iroCharacterCountCheck(); // Resets character count for IRO note
+    iroClinicalCharacterCountCheck(); // Resets character count for IRO clinical summary
+    iroTotalCharacterCountCheck(''); // Resets character count for IRO note
     hideAlert();
     resetStateOptionSelected();
     preSaveFunctions();
