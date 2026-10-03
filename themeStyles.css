@@ -580,7 +580,7 @@
     
     /* Text */
     --heading-text: black;
-    --body-text: #79fbc5;
+    --body-text: #7ee5ba;
     --body-secondary-text: var(--body-text);
     --input-text: #d1ffec;
     --placeholder-text: #79fbc5ae;
@@ -599,9 +599,9 @@
     /* Input */
     --input-background: #08131f;
     --input-background-focus: rgba(0, 0, 0, 0.723);
-    --input-accent-color: #fbc579;
+    --input-accent-color: #ffb956;
     --input-border: #a8ffdb7b;
-    --input-border-focus: var(--main-background);
+    --input-border-focus: #ffb956b0;
 }
 
 [data-theme='joni-blessing'] {
