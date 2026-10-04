@@ -168,9 +168,31 @@
                                             id="stepTherapy" 
                                             value="608-Step therapy"
                                             name="reject">
-                                            <label for="stepTherapy">608 and/or </label>
+                                            <label for="stepTherapy">608</label>
                                         </div>
 
+                                        <div class="padding-right-5">
+                                            <input 
+                                            type="radio" 
+                                            id="noReject" 
+                                            value=""
+                                            name="reject">
+                                            <label for="noReject">None</label>
+                                        </div>
+
+                                        
+                                        <!-- hiding in favor of 'none' as an option, moving 76 to new line
+                                        <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="resetReject()">
+                                            <span title="Clear 75, 70, and 608" class="material-symbols-outlined symbol-med">
+                                            refresh
+                                            </span>
+                                        </div>
+                                    -->
+                                        
+                                </div>
+
+                                <div class="align-center flex" onchange="showQuantity()">
+                                    <label for="rejectQL" class="padding-right-5">07.</label>
                                         <div class="padding-right-5">
                                             <input 
                                             type="checkbox" 
@@ -180,13 +202,6 @@
                                             name="rejectQL">
                                             <label for="quantityLimit">76</label>
                                         </div>
-
-                                        <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="resetReject()">
-                                            <span title="Clear 75, 70, and 608" class="material-symbols-outlined symbol-med">
-                                            refresh
-                                            </span>
-                                        </div>
-                                        
                                 </div>
                                 
                                 <div id="quantityDiv" class="overflow-hidden">
@@ -230,6 +245,7 @@
                                 <div class="flex align-center" onchange="caseTypeSelection()">
                                     <label for="type" class="padding-right-5">10.</label> 
 
+                                    <div class="flex">
                                         <div id="initialTypeDiv" class="padding-right-5">
                                             <input 
                                                 type="radio" 
@@ -272,6 +288,7 @@
                                             info
                                             </span>
                                         </div>
+                                    </div>
                                 </div>
 
                                 <!-- Dates show when label for 10 clicked -->
