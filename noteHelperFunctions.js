@@ -6,6 +6,7 @@ window.onload = function() {
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
     processDates();
 
+    /*
     // Check setting for appeal type
         let app = document.getElementById('appealType');
         let appSetting = localStorage.getItem('showAppealType');
@@ -21,6 +22,7 @@ window.onload = function() {
         } else {
             appDiv.classList.add("display-none");
         }
+            */
 
         
     // Check setting for always show quantity

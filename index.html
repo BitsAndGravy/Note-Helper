@@ -212,30 +212,37 @@
                                 </div>-->
                         
 
-                                <div>
-                                    <label for="rejectCode">07.</label>
-                                    <select name="rejectCode" onchange="showQuantity()">
-                                        <option value="75-Standard PA">75-Standard PA</option>
-                                        <option value="70-Non-formulary">70-Non-formulary</option>
-                                        <option value="608-Step therapy">608-Step therapy</option>
-                                        <option value="">None</option>
-                                    </select>
-                                </div>
+                                <div class="flex align-center">
+                                    <div class="padding-right-5">
+                                        <label for="rejectCode">07.</label>
+                                        <select name="rejectCode" onchange="showQuantity()">
+                                            <option value="75-Standard PA">75-Standard PA</option>
+                                            <option value="70-Non-formulary">70-Non-formulary</option>
+                                            <option value="608-Step therapy">608-Step therapy</option>
+                                            <option value="">None</option>
+                                        </select>
+                                    </div>
 
-                                <div class="align-center flex">
-                                    <label for="rejectQL" class="padding-right-5">08.</label>
-                                        <div class="padding-right-5">
-                                            <input 
+                                    <div class="padding-right-5">
+                                        <label for="rejectQL" class="padding-right-5">08.</label>
+                                        <input 
                                             type="checkbox" 
                                             id="quantityLimit" 
                                             value="76-Quantity limit"
                                             onchange="showQuantity()"
                                             name="rejectQL">
                                             <label for="quantityLimit">76-Quantity limit</label>
-                                        </div>
-                                </div>
+                                    </div>
+
+                                </div>       
+
+                                <!--
+                                <div class="align-center flex">
+                                    
+                                        
+                                </div>-->
                                 
-                                <div id="quantityDiv" class="overflow-hidden">
+                                <div id="quantityDiv" class="hideContent overflow-hidden">
                                     <label for="quantity">09.</label>
                                     <input 
                                         type="text" 
@@ -243,7 +250,7 @@
                                         id="quantity" 
                                         name="quantity" 
                                         placeholder="qty/days">
-                                    <br>
+                                    
 
                                     <label for="falseQL">10.</label>
                                     <input 
@@ -273,6 +280,7 @@
                                     <br id="properQuantityBreak">
                                 </div>
 
+                                <!--
                                 <div class="flex align-center" onchange="caseTypeSelection()">
                                     <label for="type" class="padding-right-5">12.</label> 
 
@@ -314,28 +322,31 @@
                                                 <label for="appealType">1st Appeal</label>
                                         </div>
 
-                                        <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
-                                            <span title="Show relevant dates" class="material-symbols-outlined symbol-med">
-                                            info
-                                            </span>
-                                        </div>
+                                        
                                     </div>
-                                </div>
+                                </div>-->
 
-                                <div>
-                                    <label for="caseType">12.</label>
-                                    <select
-                                        id="caseType"
-                                        name="caseType"
-                                        onchange="caseTypeSelection()">
+                                <div class="flex align-center">
+                                    <div class="padding-right-5">
+                                        <label for="caseType">12.</label>
+                                        <select
+                                            id="caseType"
+                                            name="caseType"
+                                            onchange="caseTypeSelection()">
 
-                                        <option value="Initial">Initial</option>
-                                        <option value="Reauthorization">Reauthorization</option>
-                                        <option value="Reopening">Reopening</option>
-                                        <option value="Peer-to-peer">Peer-to-peer</option>
-                                        <option value="First-level appeal">First-level appeal</option>
-                                        <option value="Second-level appeal">Second-level appeal</option>
-                                    </select>
+                                            <option value="Initial">Initial</option>
+                                            <option value="Reauthorization">Reauthorization</option>
+                                            <option value="Reopening">Reopening</option>
+                                            <option value="Peer-to-peer">Peer-to-peer</option>
+                                            <option value="First-level appeal">First-level appeal</option>
+                                            <option value="Second-level appeal">Second-level appeal</option>
+                                        </select>
+                                    </div>    
+                                    <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
+                                        <span title="Show relevant dates" class="material-symbols-outlined symbol-med">
+                                        info
+                                        </span>
+                                    </div>
                                 </div>
 
                                 <!-- Dates show when label for 10 clicked -->

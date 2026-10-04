@@ -300,7 +300,7 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             textOutput += `${form.source.value || '[source]'}. `;
 
             // Drug, qty, diagnosis.
-            textOutput += form.type.value || '[case type]';
+            textOutput += form.caseType.value || '[case type]';
             textOutput += ` for ${form.drug.value || '[drug name]'}`;
             let quantityClass = document.getElementById('quantityDiv').className;
             textOutput += form.quantity.value ? 
@@ -334,7 +334,15 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
                     */
 
-            textOutput += form.rejectCode.value && form.rejectQL.checked ? 'both' : 'one';
+            textOutput += form.rejectCode.value && form.rejectQL.checked ? 
+                // Both checked
+                `${form.rejectCode.value} and ${form.rejectQL.value}. ` : 
+                // One selected
+                form.rejectCode.value ?
+                    // No 76
+                    `${form.rejectCode.value}. ` :
+                    // Only 76
+                    `${form.rejectQL.value}`;
 
 
             // textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n`;
@@ -985,8 +993,6 @@ function showQuantity() {
         
         // If 70 and/or 76 is checked:
         if(form.rejectQL.checked || form.rejectCode.value === '70-Non-formulary') {
-            document.getElementById('drug').style.backgroundColor = 'green';
-
             // Add class to make it visible, remove class that hides it
             showContent('quantityDiv');
 
@@ -1168,21 +1174,74 @@ function removeSelection(name) {
     }
 
 function caseTypeSelection() {
-    reauthorizationChecked();
-    reopeningChecked();
-    appealTypeChecked();
+    // reauthorizationChecked();
+    // reopeningChecked();
+    // appealTypeChecked();
+    let caseType = document.getElementById('caseType').value;
+    let info = document.getElementById('information');
+    let clin = document.getElementById('clinical');
+    let conc = document.getElementById('conclusion');
+
+    if (caseType === 'Reauthorization') {
+        if(info.value === '') {
+            let drugName = document.getElementById('drug').value;
+            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+            info.value = drug + ' approved ';
+        };
+
+        if(clin.value == 'Chart note dated ') {
+            clin.value = "Per previous approval \n\n" + clin.value;
+        }
+    } else if (caseType === 'Reopening') {
+        if(info.value === '') {
+            info.value = drug + ' denied ';
+        };
+
+        if(conc.value == '') {
+            conc.value = 'Previously \n\nOn reopening, ';
+        };
+    } 
+
+    if (caseType === ('First-level appeal' || 'Second-level appeal')) {
+        showContent('appealDenialAdditionalNotes');
+        showContent('appealDenialInputsDiv');
+        showOverflow('appealDenialAdditionalNotes');
+        changeTabIndex(appealBuilderList, 0);
+
+        if(form.information.value === '') {
+            let drugName = document.getElementById('drug').value;
+            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+            form.information.value = drug + ' denied ';
+        };
+
+        //let conc = document.getElementById('conclusion');   
+        if(form.conclusion.value == '') {
+            form.conclusion.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
+        };
+
+        //formularyStatusReport();
+    } else {
+        hideContent('appealDenialAdditionalNotes');
+        hideContent('appealDenialInputsDiv');
+        hideOverflow('appealDenialAdditionalNotes');
+
+        document.getElementById('appealReasonText').tabIndex = -1; // Doesn't work for some reason?!?!?!?!
+        changeTabIndex(appealBuilderList, -1);
+    }
+    showAppealReason();
 }
 
 
 // When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reauthorizationChecked() {
-    let check = document.getElementById('reauthorization');
+    let form = document.getElementById('mainForm')
+    // let check = document.getElementById('reauthorization');
     let info = document.getElementById('information');
     let drugName = document.getElementById('drug').value;
     let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
     let clin = document.getElementById('clinical');
 
-    if (check.checked) {
+    if (form.caseType.value === 'Reauthorization') {
         if(info.value === '') {
             info.value = drug + ' approved ';
         };
