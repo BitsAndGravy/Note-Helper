@@ -316,6 +316,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             textOutput += ` for ${form.diagnosis.value || '[diagnosis]'}. `;
 
             // Reject codes. Qset response. 
+
+            /*
             textOutput += form.elements.reject.value;
             textOutput += form.elements.reject.value ? 
                 (form.rejectQL.checked ? 
@@ -329,7 +331,14 @@ function checkForm() { // Used for the Save button. checks if age input is fille
                     `${form.rejectQL.value}. `
                     // No selection (should throw error)
                     : '[reject blank] ';
-            textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n`;
+
+                    */
+
+            textOutput += form.rejectCode.value && form.rejectQL.checked ? 'both' : 'one';
+
+
+            // textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n`;
+            textOutput += `Qset ${form.qsetResult.value}.\n`
             
             // Gender, age, date joined.
             let gender = form.elements.gender.value;
@@ -664,11 +673,15 @@ function getQuantity() {
 
     let drugName = document.getElementById('drug').value;
     let prefillQuantity = localStorage.getItem('prefillQuantity');
-    let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
+    //let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
     
-    let standardPA = document.getElementById('standardPA');
-    let quantityLimit = document.getElementById('quantityLimit');
-    let nonFormulary = document.getElementById('nonFormulary');
+    let form = document.getElementById('mainForm');
+    //let rejectCode = form.rejectCode.value;
+    //let rejectQL = form.rejectQL.value;
+
+    //let standardPA = document.getElementById('standardPA');
+    //let quantityLimit = document.getElementById('quantityLimit');
+    //let nonFormulary = document.getElementById('nonFormulary');
 
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
         if(drugDatabase[i].drug.toLowerCase() == drugName.toLowerCase()) { // If drug found in database, then:
@@ -710,42 +723,49 @@ function getQuantity() {
                     altDiagSpan.tabIndex = -1;
                 };
 
-            // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
-            if(drugDatabase[i].quantityLimitCriteria) {    
-                standardPA.checked = false;
-                quantityLimit.checked = true;
-                checkAlwaysShowQuantitySetting();
-            };
-
             // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75.
             if(drugDatabase[i].formulary == false) {
-                nonFormulary.checked = true; 
-                standardPA.checked = false;
-                checkAlwaysShowQuantitySetting();
-            };
+                form.rejectCode.value = '70-Non-formulary';
+                //nonFormulary.checked = true; 
+                //standardPA.checked = false;
+                
+                //checkAlwaysShowQuantitySetting();
+            } else {
+                form.rejectCode.value = '75-Standard PA';
+            }      
 
-
-                // If 76 and / or 70 are selected, show quantity. Check settings for alwaysShowQuantity. 'No' means quantity fields are hidden, and need to be shown.
-                function checkAlwaysShowQuantitySetting() {
-                    if(alwaysShowQuantity == 'no') {
-                        
-                        showContent('quantityDiv');
-                        
-                        // Input index was -1 (skip), now as 0 let computer handle (should act normal).
-                        //changeTabIndex(['quantity', 'falseQL'], 0);
-                        document.getElementById('quantity').tabIndex = 0; 
-                        document.getElementById('falseQL').tabIndex = 0;
-                    }
-                }
+            // If quantity limit, select checkbox for 76, unselect checkbox for 75. i.e. for QL-only drugs like temazepam.
+            if(drugDatabase[i].quantityLimitCriteria) {    
+                form.rejectCode.value = '';
+                form.rejectQL.checked = true;
+                //standardPA.checked = false;
+                //quantityLimit.checked = true;
+                
+                //checkAlwaysShowQuantitySetting();
+            } else {
+                form.rejectQL.checked = false;
+            }         
             break;
-        } else {
-            // Uncheck box for 70-non-formulary
-            document.getElementById('nonFormulary').checked = false;
-            showQuantity();
         }
+        form.rejectCode.value = '75-Standard PA';
+        form.rejectQL.checked = false;
     }
+    showQuantity();
     preSaveFunctions();
-    formularyStatusReport();
+    //formularyStatusReport();
+}
+
+/////// delete?
+function checkAlwaysShowQuantitySetting() {
+    if(alwaysShowQuantity == 'no') {
+        
+        showContent('quantityDiv');
+        
+        // Input index was -1 (skip), now as 0 let computer handle (should act normal).
+        //changeTabIndex(['quantity', 'falseQL'], 0);
+        document.getElementById('quantity').tabIndex = 0; 
+        document.getElementById('falseQL').tabIndex = 0;
+    }
 }
 
     // Check setting for auto-select appeals. If checked, check option for appeal.
@@ -878,11 +898,13 @@ function checkState() {
 
     // If 70 and IL or NY selected, add note to conclusion.
     function checkNFStates() { 
-        let nfCheck = document.getElementById('nonFormulary');
+        //let nfCheck = document.getElementById('nonFormulary');
+        let form = document.getElementById('mainForm');
         let state = document.getElementById('state');
         let conc = document.getElementById('conclusion');
         
-        if(nfCheck.checked && (state.value == 'NY' || state.value == 'IL')) {
+        //if(nfCheck.checked && (state.value == 'NY' || state.value == 'IL')) {
+        if(form.rejectCode.value === '70-Non-formulary' && (state.value == 'NY' || state.value == 'IL')) {
             if(state.value == 'NY') {
                 conc.value = 'NY - require T/F with no more than two alternatives. \n' + conc.value;
             }
@@ -944,6 +966,7 @@ function showQuantity() {
     let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity'); // Check settings
 
     if(alwaysShowQuantity == 'no') {    // If 'always show quantity' is not selected in settings:
+        /*
         let quantityLimit = document.getElementById('quantityLimit');
         let nonFormulary = document.getElementById('nonFormulary');
         let stepTherapy = document.getElementById('stepTherapy');
@@ -956,9 +979,24 @@ function showQuantity() {
             // Adjust tabIndex so you can tab to the input
             document.getElementById('quantity').tabIndex = 0;
             document.getElementById('falseQL').tabIndex = 0;
+            */
+
+        let form = document.getElementById('mainForm');
+        
+        // If 70 and/or 76 is checked:
+        if(form.rejectQL.checked || form.rejectCode.value === '70-Non-formulary') {
+            document.getElementById('drug').style.backgroundColor = 'green';
+
+            // Add class to make it visible, remove class that hides it
+            showContent('quantityDiv');
+
+            // Adjust tabIndex so you can tab to the input
+            document.getElementById('quantity').tabIndex = 0;
+            document.getElementById('falseQL').tabIndex = 0;
 
         } 
         else { // If neither 70 nor 76 are selected:
+            
             hideContent('quantityDiv');
 
             // Skip the input when tabbing because it's hidden now
@@ -972,9 +1010,10 @@ function showQuantity() {
             showQL();
 
         }
-    } // If setting is 'yes' to always show quantity, do nothing 
+    } 
+    // If setting is 'yes' to always show quantity, do nothing 
     checkNFStates();
-    formularyStatusReport();
+    //formularyStatusReport();
 }
 
 function removeSelection(name) {

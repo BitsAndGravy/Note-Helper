@@ -127,7 +127,7 @@
                                 </select>
                                 <br>
 
-                                <!-- due to new process, almost all cases are denied, typically false denials. No sense reporting. -->
+                                <!-- in favor of qsetResult
                                 <div id="qsetDiv"> 
                                     <label for="qset">06.</label> 
 
@@ -138,9 +138,29 @@
                                             value="approval"
                                             checked>
                                         <label for="approval">Q-set approval</label>
-                                    <br>
+                                </div>
+                            -->
+
+                                <div>
+
+                                    <label for="qsetResult">06.</label> 
+                                        <input
+                                            type="radio"
+                                            id="qsetApproval"
+                                            name="qsetResult"
+                                            value="approved"
+                                            checked>
+                                            <label for="qsetApproval">Approved</label>
+
+                                        <input
+                                            type="radio"
+                                            id="qsetDenial"
+                                            name="qsetResult"
+                                            value="denied">
+                                            <label for="qsetDenial">Denied</label>
                                 </div>
 
+                                <!-- hiding in favor of select instead of radio
                                 <div class="align-center flex" onchange="showQuantity()">
                                     <label for="reject" class="padding-right-5">07.</label>
                                         <div class="padding-right-5">
@@ -181,17 +201,28 @@
                                         </div>
 
                                         
-                                        <!-- hiding in favor of 'none' as an option, moving 76 to new line
+                                        // hiding in favor of 'none' as an option, moving 76 to new line
                                         <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="resetReject()">
                                             <span title="Clear 75, 70, and 608" class="material-symbols-outlined symbol-med">
                                             refresh
                                             </span>
                                         </div>
-                                    -->
+                                    
                                         
+                                </div>-->
+                        
+
+                                <div>
+                                    <label for="rejectCode">07.</label>
+                                    <select name="rejectCode" onchange="showQuantity()">
+                                        <option value="75-Standard PA">75-Standard PA</option>
+                                        <option value="70-Non-formulary">70-Non-formulary</option>
+                                        <option value="608-Step therapy">608-Step therapy</option>
+                                        <option value="">None</option>
+                                    </select>
                                 </div>
 
-                                <div class="align-center flex" onchange="showQuantity()">
+                                <div class="align-center flex">
                                     <label for="rejectQL" class="padding-right-5">07.</label>
                                         <div class="padding-right-5">
                                             <input 
@@ -200,7 +231,7 @@
                                             value="76-Quantity limit"
                                             onchange="showQuantity()"
                                             name="rejectQL">
-                                            <label for="quantityLimit">76</label>
+                                            <label for="quantityLimit">76-Quantity limit</label>
                                         </div>
                                 </div>
                                 
@@ -262,7 +293,7 @@
                                                 id="reauthorization" 
                                                 value="Reauthorization"
                                                 name="type">
-                                                <label for="reauthorization">Reauthorizaiton</label>
+                                                <label for="reauthorization">Reauthorization</label>
                                         </div>
                                             
                                         <div id="reopeningTypeDiv" class="padding-right-5">
@@ -289,6 +320,22 @@
                                             </span>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div>
+                                    <label for="caseType">10.</label>
+                                    <select
+                                        id="caseType"
+                                        name="caseType"
+                                        onchange="caseTypeSelection()">
+
+                                        <option value="Initial">Initial</option>
+                                        <option value="Reauthorization">Reauthorization</option>
+                                        <option value="Reopening">Reopening</option>
+                                        <option value="Peer-to-peer">Peer-to-peer</option>
+                                        <option value="First-level appeal">First-level appeal</option>
+                                        <option value="Second-level appeal">Second-level appeal</option>
+                                    </select>
                                 </div>
 
                                 <!-- Dates show when label for 10 clicked -->

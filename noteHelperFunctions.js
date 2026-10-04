@@ -61,7 +61,7 @@ window.onload = function() {
 
         drugInput.addEventListener('keydown', function(e) {
             
-            // Check if the pressed key is "Enter"
+            // Check if the pressed key is "Enter" or "tab"
             if (((e.key === 'Enter') || (e.key === 'Tab')) && drugSuggestion.innerText != '') {
                 drugInput.value = drugSuggestion.innerText;
                 drugSuggestion.innerText = '';
@@ -254,10 +254,12 @@ function createDenialLanguage() {
     
     
     let dlLine4 = "Your current records with us and the information submitted by your doctor do not meet the following criteria:\n\n";
+    /*
     let reject70 = document.getElementById('nonFormulary');
     if (reject70.checked) {
         dlLine4 = 'Your current records with us and the information submitted by your doctor do not show you meet the following criteria for non-formulary drugs:\n\n';
     }
+        */
 
     let dlLine5 = appeal.appealDenialReasons + '\n\n';
     let dlLine6 = "We recommend you reach out to your doctor to discuss this information and treatment alternatives.\n\n";
