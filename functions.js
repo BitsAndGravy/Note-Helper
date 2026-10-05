@@ -244,18 +244,18 @@ function saveButton() { // After clicking the Save button
 function checkForm() { // Used for the Save button. checks if age input is filled out. If so, proceed to process results and save.
     let form = document.getElementById('mainForm');
     let alertMessage = '';
-    //let age = document.getElementById('age');
     let char = document.getElementById('characterCount');
-    
-    //let ageAlertText = '';
-    //let characterAlertText = '';
-
     let requireAge = localStorage.getItem('requireAge');
+
     if (requireAge == 'yes') {
         alertMessage += form.age.value ? '' : 'Age field is blank. ';
     }
 
     alertMessage += char.classList.contains('characterLimitRed') ? 'Over character limit of 2,000. ' : '';
+
+    if ((form.rejectCode.value === '') && (!form.rejectQL.checked)) {
+        alertMessage += 'Please select a reject code (70/75/608 and/or 76).'
+    }
 
     let alert = document.getElementById('alert');
     let alertText = document.getElementById('alert-text');
@@ -316,33 +316,19 @@ function checkForm() { // Used for the Save button. checks if age input is fille
             textOutput += ` for ${form.diagnosis.value || '[diagnosis]'}. `;
 
             // Reject codes. Qset response. 
-
-            /*
-            textOutput += form.elements.reject.value;
-            textOutput += form.elements.reject.value ? 
-                (form.rejectQL.checked ? 
-                    // Reject and 76
-                    ` and ${form.rejectQL.value}. ` 
-                    // Reject, no 76
-                    : '. ')
-
-                : form.rejectQL.checked ? 
-                    // 76 only
-                    `${form.rejectQL.value}. `
-                    // No selection (should throw error)
-                    : '[reject blank] ';
-
-                    */
-
             textOutput += form.rejectCode.value && form.rejectQL.checked ? 
                 // Both checked
                 `${form.rejectCode.value} and ${form.rejectQL.value}. ` : 
                 // One selected
                 form.rejectCode.value ?
-                    // No 76
+                    // Only 70/75/608
                     `${form.rejectCode.value}. ` :
-                    // Only 76
-                    `${form.rejectQL.value}`;
+                    // Check if 76 checked
+                    form.rejectQL.checked ? 
+                        // Only 76
+                        `${form.rejectQL.value}. ` :
+                        // Nothing selected
+                        '[no reject selected]. ';
 
 
             // textOutput += `Provider response led to ${form.qset.checked ? 'approval' : 'denial'}. \n`;
@@ -392,7 +378,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         textOutput += form.falseQL.checked ? `\n\nNot a true QL; ${form.comment.value} #${form.properQuantity.value}` : '';
 
         // Final output
-        //document.getElementById('conclusion').innerHTML = textOutput;
         notePreviewText = textOutput;
     }
 
@@ -496,10 +481,6 @@ function resetForm() { // After clicking the Reset button
         }
     }
 
-    function resetPreview() {
-        document.getElementById('notePreview').innerText = 'Start note to see preview.\n\n';
-    }
-
     // Hide alternative fields i.e. for now just diagnosis.
     function resetAlts() {
         let altDiagButton = document.getElementById('alternativeDiagnosisButton');
@@ -531,31 +512,9 @@ function resetForm() { // After clicking the Reset button
 
     // Hide features that are hidden by default or by settings.
     function hideExtras() {
-     
-
-        let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
-        if(alwaysShowQuantity === 'no') {
-            // Hide the quantity, falseQL, and comment input    
-            hideContent('quantityDiv');
-            hideContent('datesDiv');
-            hideContent('properQuantityDiv');
-            hideContent('commentDiv');
-            hideContent('iroNoteDiv');
-
-
-            // Skip when tabbing through
-            let extrasList = [
-                'properQuantity',  
-                'comment',          
-                'quantity',
-                'falseQL',
-            ];
-            changeTabIndex(extrasList, -1);
-        }
-
         // Running these functions effectively hides and makes tabIndex -1, as they are not selected anymore
-        showProperQuantity();
-        appealTypeChecked();
+        showQuantity();
+        caseTypeSelection();
         iroChecked();
     }
 
@@ -1181,11 +1140,12 @@ function caseTypeSelection() {
     let info = document.getElementById('information');
     let clin = document.getElementById('clinical');
     let conc = document.getElementById('conclusion');
+    let drugName = document.getElementById('drug').value;
+    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
 
     if (caseType === 'Reauthorization') {
         if(info.value === '') {
-            let drugName = document.getElementById('drug').value;
-            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
+            
             info.value = drug + ' approved ';
         };
 
@@ -1202,21 +1162,19 @@ function caseTypeSelection() {
         };
     } 
 
-    if (caseType === ('First-level appeal' || 'Second-level appeal')) {
+    if (caseType === 'First-level appeal' || caseType === 'Second-level appeal') {
         showContent('appealDenialAdditionalNotes');
         showContent('appealDenialInputsDiv');
         showOverflow('appealDenialAdditionalNotes');
         changeTabIndex(appealBuilderList, 0);
 
-        if(form.information.value === '') {
-            let drugName = document.getElementById('drug').value;
-            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-            form.information.value = drug + ' denied ';
+        if(info.value === '') {
+            info.value = drug + ' denied ';
         };
 
         //let conc = document.getElementById('conclusion');   
-        if(form.conclusion.value == '') {
-            form.conclusion.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
+        if(conc.value == '') {
+            conc.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
         };
 
         //formularyStatusReport();
