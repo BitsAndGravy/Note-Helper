@@ -231,7 +231,7 @@ button:active {
 .footing {
     background-color: var(--footer-background);
     padding: 8px 10px 8px 10px;
-    border-radius: 0px 0px 18px 18px;
+    border-radius: 0 0 18px 18px;
 }
 
 .gradientColor {
@@ -255,15 +255,9 @@ h3 {
     background-color: var(--header-background);
     padding-left: 10px;
     height: 45px;
-    border-radius: 18px 18px 0px 0px; /* Rounded on top to match border, flat on bottom */
+    border-radius: 18px 18px 0 0; /* Rounded on top to match border, flat on bottom */
     color: var(--heading-text); 
 }
-
-/*
-.heading-color {
-    color: var(--heading-text); 
-}
-    */
 
 /* Used for smooth transition when showing/hiding a div. Also see .showContent */
 .hideContent {
