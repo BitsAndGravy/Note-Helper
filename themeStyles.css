@@ -726,8 +726,8 @@
     /* Text */
     --heading-text: white;
     --body-text: #99e3de;
-    --input-text: #99e3de;
-    --placeholder-text: #99e3de96;
+    --input-text: #b7e7e5;
+    --placeholder-text: #99e3dec5;
     --hyperlink-static: var(--input-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -740,7 +740,7 @@
 
     /* Input */
     --input-background: #00000082;
-    --input-background-focus: #000000c5;
+    --input-background-focus: black;
     --input-accent-color: #ffb7b0;
     --input-border: var(--header-background);
     --input-border-focus: #ffb7b0aa;
