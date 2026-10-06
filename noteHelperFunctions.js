@@ -6,6 +6,28 @@ window.onload = function() {
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
     processDates();
 
+
+
+
+    // CaseType only changes when you leave the field. Using onChange still ran the function for each result when typing to find an object.
+    let isFocused = false;
+    const caseType = document.getElementById('caseType');
+
+    caseType.addEventListener('focus', () => {
+        isFocused = true;
+    });
+
+    // Run when element loses focus
+    caseType.addEventListener('blur', () => {
+        isFocused = false;
+        runMyFunction();
+    });
+
+    function runMyFunction() {
+        if (isFocused) return;
+        caseTypeSelection();
+    }
+
     /*
     // Check setting for appeal type
         let app = document.getElementById('appealType');
