@@ -714,20 +714,20 @@
 }
 
 [data-theme='royal-waterways'] {
-    /* Main features */
-    --main-background: #0e1e3d;
+    /* Main features init background 0e1e3d*/
+    --main-background: #090c23;
     --header-background: #255c67;
     --footer-background: var(--header-background);
     --body-primary-color: var(--main-background);
-    --body-secondary-color: var(--header-background);
+    --body-secondary-color: #193b51;
     --body-border-color: #4bbaa5;
-    --body-gradient: var(--main-background);
+    --body-gradient: #090c23, #0e1e3d;
     
     /* Text */
     --heading-text: white;
-    --body-text: azure;
-    --input-text: azure;
-    --placeholder-text: slategray;
+    --body-text: #99e3de;
+    --input-text: #99e3de;
+    --placeholder-text: #99e3de96;
     --hyperlink-static: var(--input-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -740,10 +740,10 @@
 
     /* Input */
     --input-background: #00000082;
-    --input-background-focus: #0e2323f3;
+    --input-background-focus: #000000c5;
     --input-accent-color: #ffb7b0;
     --input-border: var(--header-background);
-    --input-border-focus: #4bbaa5;
+    --input-border-focus: #ffb7b0aa;
 }
 
 [data-theme='soul-master'] {
