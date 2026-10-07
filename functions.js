@@ -146,6 +146,7 @@ const fullDiagnosisList = [
     'prediabetes',
     'psoriasis vulgaris',
     'pulmonary embolism',
+    'pure hypercholesterolemia',
 
     'radiculopathy',
     'rhinitis',
