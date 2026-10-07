@@ -1405,13 +1405,13 @@
     --input-border-focus: #9f8173;
 }
 
-[data-theme='needle-master'] {
+[data-theme='pinmaster-plinney'] {
     /* Main features */
-    --main-background: #282634;
+    --main-background: #4A4751;
     --header-background: #996949;
     --footer-background: #996949;
     --body-primary-color: #eadac9;
-    --body-secondary-color: #817788;
+    --body-secondary-color: #DBC9BC;
     --body-border-color: #ca8a5f;
     --body-gradient: #eadac9;
     --shadow: #00000086;
@@ -1419,7 +1419,7 @@
     /* Text */
     --heading-text: white;
     --body-text: black;
-    --body-secondary-text: white;
+    --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000099;
@@ -1436,7 +1436,7 @@
     /* Input */
     --input-background: #ffffff60;
     --input-background-focus: #ffffff99;
-    --input-accent-color: #4d311f;
+    --input-accent-color: #0956d2;
     --input-border: black;
     --input-border-focus: var(--main-background);
 }

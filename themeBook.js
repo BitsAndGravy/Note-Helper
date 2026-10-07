@@ -293,9 +293,9 @@ const themeBook = {
         optGroup: 'silksong'
     }, 
 
-    needleMaster: {
-        name: 'needle-master', 
-        title: 'Needle Master', 
+    pinmasterPlinney: {
+        name: 'pinmaster-plinney', 
+        title: 'Pinmaster Plinney', 
         style: 'light',
         group: 'Silksong',
         optGroup: 'silksong'
