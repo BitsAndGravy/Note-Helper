@@ -508,6 +508,14 @@ ul li a:hover {
     text-decoration: underline;
 }
 
+.width-162 {
+    width: 162px;
+}
+
+.width-full {
+    width: 100%;
+}
+
 .width-40 {
     width: 40%;
 }

@@ -213,14 +213,18 @@
                         
 
                                 <div class="flex align-center">
-                                    <div class="padding-right-5">
-                                        <label for="rejectCode">07.</label>
-                                        <select name="rejectCode" onchange="showQuantity()">
-                                            <option value="75-Standard PA">75-Standard PA</option>
-                                            <option value="70-Non-formulary">70-Non-formulary</option>
-                                            <option value="608-Step therapy">608-Step therapy</option>
-                                            <option value="">None</option>
-                                        </select>
+                                    <div class="align-center flex padding-right-5">
+                                        <div class="padding-right-5">
+                                            <label for="rejectCode">07.</label>
+                                        </div>
+                                        <div class="width-162 padding-right-5">
+                                            <select name="rejectCode" class="width-full" onchange="showQuantity()">
+                                                <option value="75-Standard PA">75-Standard PA</option>
+                                                <option value="70-Non-formulary">70-Non-formulary</option>
+                                                <option value="608-Step therapy">608-Step therapy</option>
+                                                <option value="">None</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div class="padding-right-5">
@@ -327,20 +331,25 @@
                                 </div>-->
 
                                 <div class="flex align-center">
-                                    <div class="padding-right-5">
-                                        <label for="caseType">10.</label>
-                                        <select
-                                            id="caseType"
-                                            name="caseType"
-                                            >
+                                    <div class="flex align-center padding-right-5">
+                                        <div class="padding-right-5">
+                                            <label for="caseType">10.</label>
+                                        </div>
+                                        <div class="width-162 padding-right-5">
+                                            <select
+                                                id="caseType"
+                                                name="caseType"
+                                                class="width-full"
+                                                >
 
-                                            <option value="Initial">Initial</option>
-                                            <option value="Reauthorization">Reauthorization</option>
-                                            <option value="Reopening">Reopening</option>
-                                            <option value="Peer-to-peer">Peer-to-peer</option>
-                                            <option value="First-level appeal">First-level appeal</option>
-                                            <option value="Second-level appeal">Second-level appeal</option>
-                                        </select>
+                                                <option value="Initial">Initial</option>
+                                                <option value="Reauthorization">Reauthorization</option>
+                                                <option value="Reopening">Reopening</option>
+                                                <option value="Peer-to-peer">Peer-to-peer</option>
+                                                <option value="First-level appeal">First-level appeal</option>
+                                                <option value="Second-level appeal">Second-level appeal</option>
+                                            </select>
+                                        </div>
                                     </div>    
                                     <div class="cursor-pointer false-button false-button-round align-center justify-center flex" onclick="showInfo('datesDiv')">
                                         <span title="Show relevant dates" class="material-symbols-outlined">
