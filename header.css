@@ -211,13 +211,13 @@ button:active {
 }
 
 .false-button:active {
-    color: var(--input-accent-color);
+    background-color: var(--body-text);
+    color: var(--body-secondary-color);
 }
 
 .false-button-round {
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 25%;
+    padding: 3px;
+    border-radius: 6px;
 }
 
 .flex {
@@ -383,6 +383,10 @@ input[type=text] {
     overflow: visible;
 }
 
+.padding-2 {
+    padding: 2px;
+}
+
 .padding-10 {
     padding: 10px;
 }
@@ -499,9 +503,14 @@ ul li a { /* Color for links defined elsewhere */
 }
 
 ul li a:hover {
-    background-color: orange;
-    color: black;
+    background-color: var(--input-accent-color);
+    color: var(--body-primary-color);
     transition: 200ms;
+}
+
+ul li a:active {
+    background-color: var(--body-text);
+    color: var(--body-secondary-color);
 }
 
 .underline-text {
