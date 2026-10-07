@@ -218,6 +218,7 @@ button:active {
 .false-button-round {
     padding: 3px;
     border-radius: 6px;
+    background-color: var(--body-secondary-color);
 }
 
 .flex {
