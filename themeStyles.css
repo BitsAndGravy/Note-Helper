@@ -1439,7 +1439,7 @@
     --input-background-focus: #ffffff99;
     --input-accent-color: #0956d2;
     --input-border: black;
-    --input-border-focus: var(--main-background);
+    --input-border-focus: var(--input-accent-color);
 }
 
 [data-theme='shakra'] {
