@@ -63,6 +63,7 @@ const stateClientList = [ // for use with createStateSelectOptions()
 
 const fullDiagnosisList = [
     'abnormal blood chemistry',
+    'acne',
     'actinic keratosis',
     'acute upper respiratory infection',
     'acute vaginitis',
