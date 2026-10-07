@@ -1423,6 +1423,7 @@
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000099;
+    --animated-text: white;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-hover);
