@@ -396,14 +396,14 @@
 }
 
 [data-theme='crystal-peaks'] {
-    /* Main features */
+    /* Main features gradient lightest d399fa */
     --main-background: #22134c;
     --header-background: #262a77;
     --footer-background: var(--header-background);
     --body-primary-color: #4e4dad;
     --body-secondary-color: #ffffff33;
     --body-border-color: #e29dee;
-    --body-gradient: #4e4dad, #954ac9, #d399fa;
+    --body-gradient: #4e4dad, #954ac9, #A964D9;
     --shadow: #00000086;
     
     /* Text */
@@ -425,7 +425,7 @@
     /* Input */
     --input-background: #22134c80;
     --input-background-focus: #22134cCC;
-    --input-accent-color: #fba466; /*infection*/
+    --input-accent-color: #f1ff74;
     --input-border: black;
     --input-border-focus: var(--header-background);
 }
