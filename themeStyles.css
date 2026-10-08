@@ -400,17 +400,17 @@
     --main-background: #22134c;
     --header-background: #262a77;
     --footer-background: var(--header-background);
-    --body-primary-color: #4e4dad;
-    --body-secondary-color: #ffffff33;
+    --body-primary-color: #944ac9d6;
+    --body-secondary-color: #22134c49;
     --body-border-color: #e29dee;
     --body-gradient: #4e4dad, #954ac9, #A964D9;
     --shadow: #00000086;
     
     /* Text */
     --heading-text: azure;
-    --body-text: azure;
-    --input-text: azure;
-    --placeholder-text: #f9d9ffa9;
+    --body-text: #fcefff;
+    --input-text: #fdf6fe;
+    --placeholder-text: #fcefffa8;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -419,15 +419,15 @@
     /* Buttons */
     --button-background: #4e4dad;
     --button-hover: #954ac9;
-    --button-active: #d68e5b;
+    --button-active: #A964D9;
     --button-text: azure;
 
     /* Input */
     --input-background: #22134c80;
     --input-background-focus: #22134cCC;
-    --input-accent-color: #f1ff74;
+    --input-accent-color: #e5ff00;
     --input-border: black;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #f1ff748b;
 }
 
 [data-theme='fog-canyon'] {
