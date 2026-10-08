@@ -85,6 +85,16 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "hypersomnia",
     },  
     {
+        drug: "aripiprazole ODT",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder", 
+    },  
+    {
+        drug: "aripiprazole oral solution",
+        quantity: "30/30",
+        diagnosis: "bipolar disorder", 
+    },  
+    {
         drug: "asenapine sublingual tablet",
         quantity: "30/30",
         diagnosis: "bipolar disorder", 
