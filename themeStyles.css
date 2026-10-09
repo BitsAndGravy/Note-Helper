@@ -908,7 +908,7 @@
     --input-text: black;
     --input-text-focus: var(--input-text);
     --animated-text: white;
-    --placeholder-text: slategray;
+    --placeholder-text: #0000009c;
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-hover);
