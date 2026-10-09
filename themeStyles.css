@@ -1288,7 +1288,7 @@
     --input-background-focus: black;
     --input-accent-color: #ffae34;
     --input-border: black;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #ffae349d;
 }
 
 /* ||| Holow Knight: Silksong Themes */
