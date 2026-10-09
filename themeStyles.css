@@ -1258,7 +1258,7 @@
 
 [data-theme='knight-bus'] {
     /* Main features */
-    --main-background: #392347;
+    --main-background: #352A3C;
     --header-background: black;
     --footer-background: black;
     --body-primary-color:#60357c;
@@ -1270,8 +1270,7 @@
     /* Text */
     --heading-text: lightgray;
     --body-text: lightgray;
-    --body-secondary-text: lightgray;
-    --input-text: lightgray;
+    --input-text: #E8E8E8;
     --input-text-focus: var(--input-text);
     --placeholder-text: #d3d3d39e;
     --hyperlink-static: var(--button-background);
