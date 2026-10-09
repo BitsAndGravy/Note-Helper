@@ -740,11 +740,11 @@ function checkAlwaysShowQuantitySetting() {
     // Check setting for auto-select appeals. If checked, check option for appeal.
     function checkAutoselectAppeals() {
         let auto = localStorage.getItem('autoselectAppeal');
-        let app = document.getElementById('appealType');
+        let app = document.getElementById('caseType');
 
         if (auto === 'yes') {
-            app.checked = true;
-            appealTypeChecked();
+            app.value = 'First-level appeal';
+            caseTypeSelection();
         }
     }
 
@@ -1235,8 +1235,8 @@ function reopeningChecked() {
 // When appealType is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function appealTypeChecked() {
     let form = document.getElementById('mainForm');
-    let check = document.getElementById('appealType');
-    if (check.checked) {
+    //let check = document.getElementById('appealType');
+    if (form.caseType.value === 'First-level appeal') {
         showContent('appealDenialAdditionalNotes');
         showContent('appealDenialInputsDiv');
         showOverflow('appealDenialAdditionalNotes');
