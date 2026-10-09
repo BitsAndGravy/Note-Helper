@@ -251,6 +251,7 @@ const appeal = {
 };
 
 function createDenialLanguage() {
+    /*
     let dlCreateListText = [
         'appealCondition',
         'appealReasonText',
@@ -278,12 +279,13 @@ function createDenialLanguage() {
     
     
     let dlLine4 = "Your current records with us and the information submitted by your doctor do not meet the following criteria:\n\n";
-    /*
+    
+    //section below commented out
     let reject70 = document.getElementById('nonFormulary');
     if (reject70.checked) {
         dlLine4 = 'Your current records with us and the information submitted by your doctor do not show you meet the following criteria for non-formulary drugs:\n\n';
-    }
-        */
+    }//
+        
 
     let dlLine5 = appeal.appealDenialReasons + '\n\n';
     let dlLine6 = "We recommend you reach out to your doctor to discuss this information and treatment alternatives.\n\n";
@@ -292,9 +294,125 @@ function createDenialLanguage() {
     let dlFinal = dlLine1 + dlLine2 + dlLine3 + dlLine4 + dlLine5 + dlLine6 + dlLine7;
 
     divAdded.value = dlFinal;
-    navigator.clipboard.writeText(dlFinal);
+    */
+
+    let form = document.getElementById('appealForm');
+    let template = form.appealDLtype.value;
+    let BE = 'benefitExclusion';
+    let NF = 'nonFormulary';
+    let NFO = 'nonFormularyOffLabel';
+    let PA = 'standardPA';
+    let QL = 'quantityLimit';
+
+    let denialLanguageText = '';
+
+    // Heading 
+        // Condition
+        if ((template === PA) || 
+        (template === NF) || 
+        (template === NFO) || 
+        (template === QL)) {
+            denialLanguageText += `We have received a request for the treatment of ${form.appealCondition.value}. Based on the information provided, this request was not approved. `
+        } else if (template === BE) {
+            denialLanguageText += `We have received a request for the treatment of ${form.appealCondition.value}. Based on the information provided, this request was not approved since ${form.BEreason.value} is not covered by your current plan. `
+        }
+
+        // Appeal reason
+        if (form.appealReasonYes.checked) {
+            denialLanguageText += `Your appeal states that the denial is being appealed because ${form.appealReasonText.value}. `;
+        } else if (form.appealReasonNo.checked && 
+        ((template === PA) || 
+        (template === BE) || 
+        (template === QL))) {
+            denialLanguageText += 'Your doctor did not provide a reason why the denial is being appealed. ';
+        } else if (form.appealReasonNo.checked && 
+        ((template === NF) || 
+        (template === NFO))) {
+            denialLanguageText += 'Your doctor did not provide a reason why the requested medication is being appealed. ';
+        }
+
+        // New information
+        //let newInfoSelection = document.querySelector('input[name="newInformationCheckbox"]:checked');
+        //denialLanguageText += newInfoSelection.value;
+        denialLanguageText += form.newInformationCheckbox.value;
+        denialLanguageText += '\n\n';
+
+    // Denial reason
+        // Standard PA
+        if (template === PA) {
+            denialLanguageText += 'Your current records with us and the information submitted by your doctor do not meet the following criteria: ';
+            denialLanguageText += '\n\n';
+            denialLanguageText += appealDenialReasons.value;
+            denialLanguageText += '\n\n';
+        } else
+
+        // Quantity limit
+        if (template === QL) {
+            denialLanguageText += 'This medication has a quantity limit which means only a certain amount of medication is allowed per month. ';
+            denialLanguageText += `This medication is limited to _____ per _____ days. `;
+            denialLanguageText += `Your doctor requested a quantity of _____ per _____ days which is above this limit. `;
+            denialLanguageText += 'Your current records with us and the information submitted by your doctor do not show you meet the following criteria: ';
+            denialLanguageText += '\n\n';
+            denialLanguageText += appealDenialReasons.value;
+            denialLanguageText += '\n\n';
+        } else
+
+        // Non-formulary
+        if ((template === NF) || (template === NFO)) {
+            denialLanguageText += 'Your current records with us and the information submitted by your doctor do not show you meet the following criteria for non-formulary drugs: ';
+            denialLanguageText += '\n\n';
+            denialLanguageText += appealDenialReasons.value;
+            denialLanguageText += '\n\n';
+        }
+
+        // Benefit exclusion: None
+
+    // Ending statement
+        denialLanguageText += 'We recommend you reach out to your doctor to discuss this information and treatment alternatives. ';
+        denialLanguageText += '\n\n';
+
+    // Reference
+        // Benefit exclusion 
+        if (template === BE) {
+            let stateFullName = getStateName();
+            denialLanguageText += `Reference: Oscar Certificate of Coverage, ${stateFullName} 2026, ${form.exchangeStatus.value} Exchange, ${form.planName.value}, ${form.section.value} `
+        } else {
+            denialLanguageText += form.criteriaName.value;
+        }
+
+
+
+    // Finishing touches
+    document.getElementById('appealDenial2').value = denialLanguageText;
+    navigator.clipboard.writeText(denialLanguageText);
     animateText("createDenialLanguageTextAnimation");
+
 }
+
+    function getStateName() {
+        let state = document.getElementById('state').value;
+        if (state === 'AL') {return 'Alabama'}
+        else if (state === 'AZ') {return 'Arizona'}
+        else if (state === 'FL') {return 'Florida'}
+        else if (state === 'GA') {return 'Georgia'}
+        else if (state === 'IA') {return 'Iowa'}
+        else if (state === 'IL') {return 'Illinois'}
+        else if (state === 'KS') {return 'Kansas'}
+        else if (state === 'MI') {return 'Michigan'}
+        else if (state === 'MO') {return 'Missouri'}
+        else if (state === 'MS') {return 'Mississippi'}
+        else if (state === 'NC') {return 'North Carolina'}
+        else if (state === 'NE') {return 'Nebraska'}
+        else if (state === 'NJ') {return 'New Jersey'}
+        else if (state === 'NY') {return 'New York'}
+        else if (state === 'OH') {return 'Ohio'}
+        else if (state === 'OK') {return 'Oklahoma'}
+        else if (state === 'PA') {return 'Pennsylvania'}
+        else if (state === 'TN') {return 'Tennessee'}
+        else if (state === 'TX') {return 'Texas'}
+        else if (state === 'VA') {return 'Virginia'}
+        else {'[state]'};
+    }
 
 // When copy button clicked in appeal denial language section
 function copyDenialLanguage() {

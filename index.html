@@ -218,7 +218,7 @@
                                             <label for="rejectCode">07.</label>
                                         </div>
                                         <div class="width-162 padding-right-5">
-                                            <select name="rejectCode" class="width-full" onchange="showQuantity()">
+                                            <select id="rejectCode" name="rejectCode" class="width-full" onchange="showQuantity()">
                                                 <option value="75-Standard PA">75-Standard PA</option>
                                                 <option value="70-Non-formulary">70-Non-formulary</option>
                                                 <option value="608-Step therapy">608-Step therapy</option>
@@ -625,7 +625,7 @@
 
                                     <div id="mdSpecialtyDiv">
                                         <div class="suggest-container">
-                                            <label for="mdSpecialty">A1</label>
+                                            <label for="mdSpecialty">22.</label>
                                             <input 
                                                 type="text"
                                                 id="mdSpecialty"
@@ -658,7 +658,7 @@
                                 -->
                                     <div class="flex align-center">
                                         <div id="sendToIROdiv">
-                                            <label for="sendToIRO">A2</label>
+                                            <label for="sendToIRO">23.</label>
                                             <input
                                                 type="checkbox"
                                                 id="sendToIRO"
@@ -723,6 +723,12 @@
         </div>
     </div>
 
+
+
+
+
+
+
     <!-- Appeals inputs: Hide until appeals checked -->
     <div id="appealDenialAdditionalNotes" class="hideContent overflow-hidden">
         <!--<form id="form4">-->    
@@ -738,10 +744,19 @@
                         <form id="appealForm">
                             <div class="background-color-primary padding-5-10-10-10">
                                 <div>
-                                    <div>Formulary status: <span id="formularyStatus"></span></div>
+                                    <label for="appealDLtype">A1</label>
+                                    <select id="appealDLtype" tabindex="-1">
+                                        <option value="benefitExclusion">Benefit Exclusion</option>
+                                        <option value="nonFormulary">Non-formulary</option>
+                                        <option value="nonFormularyOffLabel">Non-formulary (off-label)</option>
+                                        <option value="quantityLimit">Quantity Limit</option>
+                                        <option value="standardPA" selected>Standard PA</option>
+                                    </select>
                                 </div>
+
+                                <!-- Condition; applies to all templates -->
                                 <div>
-                                    <label for="appealCondition">A3</label>
+                                    <label for="appealCondition">A2</label>
                                     <input
                                         id="appealCondition"
                                         type="text"
@@ -750,8 +765,9 @@
                                         tabindex="-1">
                                 </div>
 
+                                <!-- Has reason y/n; applies to all templates -->
                                 <div onchange="showAppealReason()">
-                                    <label for="appealReasonCheckbox">A4</label>
+                                    <label for="appealReasonCheckbox">A3</label>
                                     <input
                                         id="appealReasonNo"
                                         name="appealReasonCheckbox"
@@ -770,8 +786,9 @@
                                         <label for="appealReasonYes">Appeal reason </label>
                                 </div>
                                     
+                                <!-- Reason text; applies to all templates -->
                                 <div id="appealReasonDiv" class="hideContent overflow-hidden">
-                                    <label for="appealReasonText">A5</label>
+                                    <label for="appealReasonText">A4</label>
                                     <textarea
                                         id="appealReasonText"
                                         name="appealReasonText"
@@ -780,13 +797,14 @@
                                         placeholder="appeal reason"></textarea>
                                 </div>
 
+                                <!-- New information; applies to all templates -->
                                 <div>
-                                    <label for="newInformationCheckbox">A6</label>
+                                    <label for="newInformationCheckbox">A5</label>
                                     <input
                                         id="newInformationNo"
                                         name="newInformationCheckbox"
                                         type="radio"
-                                        value="No new information was submitted with this request"
+                                        value="No new information was submitted with this request. "
                                         checked
                                         tabindex="-1">
                                         <label for="newInformationNo">No new information </label>
@@ -795,11 +813,16 @@
                                         id="newInformationYes"
                                         name="newInformationCheckbox"
                                         type="radio"
-                                        value="We have reviewed the new information submitted with this request"
+                                        value="We have reviewed the new information submitted with this request. "
                                         tabindex="-1">
                                         <label for="newInformationYes">New information </label>
                                 </div>
 
+                                <!-- Quantity; only applies to QL template -->
+                                <div>
+                                </div>
+
+                                <!-- Denial reasons; applies to Standard PA, Non-formulary, Quantity limit; does NOT apply to NF-off-label or benefit exclusion -->
                                 <div>
                                     <label for="appealDenialReasons">A7</label>
                                     <textarea
@@ -810,6 +833,7 @@
                                         placeholder="denial reasons"></textarea>    
                                 </div>
 
+                                <!-- Criteria name; applies to all except benefit exclusion -->
                                 <div>
                                     <label for="criteriaName">A8</label>
                                     <textarea
@@ -818,7 +842,44 @@
                                         name="criteriaName"
                                         placeholder="full reference"
                                         tabindex="-1"></textarea>
-                                    
+                                </div>
+
+                                <!-- Benefit exclusion section -->
+                                <div id="benefitExclusionInputs">
+                                    <!-- Drug vs condition; for BE only -->
+                                    <div>
+                                        <label for="BEreason">BE1</label>
+                                        <select id="BEreason" name="BEreason" tabindex="-1">
+                                            <option value="it">it</option>
+                                            <option value="the condition">the condition</option>
+                                        </select>
+                                        <span> is not covered by your current plan. </span>
+                                    </div>
+
+                                    <div>
+                                        <label for="exchangeStatus">BE2</label>
+                                        <select id="exchangeStatus" name="exchangeStatus" tabindex="-1">
+                                            <option value="On" selected>On exchange</option>
+                                            <option value="Off">Off exchange</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label for="planName">BE3</label>
+                                        <input 
+                                            type="text" 
+                                            id="planName" 
+                                            placeholder="plan name" 
+                                            tabindex="-1">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="section">BE4</label>
+                                    <select id="section" name="section" tabindex="-1">
+                                        <option value="Exclusions">Exclusions</option>
+                                        <option value="Pharmacy Benefits" selected>Pharmacy Benefits</option>
+                                    </select>
                                 </div>
 
                                 <div>

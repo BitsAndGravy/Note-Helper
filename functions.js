@@ -635,7 +635,6 @@ function animateText(spanToAnimate) { // Text briefly displays message in the <s
 // Triggers when drug name changed. Checks if the drug name is in the database, returns diagnosis and qty/days.
 function getQuantity() { 
     startTimer();
-    checkAutoselectAppeals();
 
     // Erase color if previously a specialty drug.
     document.getElementById('drug').style.backgroundColor = ''; 
@@ -721,7 +720,7 @@ function getQuantity() {
     }
     showQuantity();
     preSaveFunctions();
-    //formularyStatusReport();
+    checkAutoselectAppeals();
 }
 
 /////// delete?
@@ -752,6 +751,7 @@ function checkAlwaysShowQuantitySetting() {
 function checkState() {
     checkRegulations();
     checkNFStates();
+    updateSection();
 }
 
     const stateRegulations = [
@@ -980,7 +980,7 @@ function showQuantity() {
     } 
     // If setting is 'yes' to always show quantity, do nothing 
     checkNFStates();
-    //formularyStatusReport();
+    appealDenialLanguageTypeUpdate();
 }
 
 function removeSelection(name) {
@@ -1179,7 +1179,7 @@ function caseTypeSelection() {
             conc.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
         };
 
-        //formularyStatusReport();
+        appealDenialLanguageTypeUpdate();
     } else {
         hideContent('appealDenialAdditionalNotes');
         hideContent('appealDenialInputsDiv');
@@ -1188,10 +1188,11 @@ function caseTypeSelection() {
         document.getElementById('appealReasonText').tabIndex = -1; // Doesn't work for some reason?!?!?!?!
         changeTabIndex(appealBuilderList, -1);
     }
+    
     showAppealReason();
 }
 
-
+/*
 // When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
 function reauthorizationChecked() {
     let form = document.getElementById('mainForm')
@@ -1253,8 +1254,8 @@ function appealTypeChecked() {
         if(form.conclusion.value == '') {
             form.conclusion.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
         };
-
-        //formularyStatusReport();
+        
+        appealDenialLanguageTypeUpdate();
     } else {
         hideContent('appealDenialAdditionalNotes');
         hideContent('appealDenialInputsDiv');
@@ -1265,15 +1266,31 @@ function appealTypeChecked() {
     }
     showAppealReason();
 }
+*/
 
-    function formularyStatusReport() {
-        let reject70 = document.getElementById('nonFormulary');
-        let formularyStatusResult = document.getElementById('formularyStatus');
+    function appealDenialLanguageTypeUpdate() {
 
-        if (reject70.checked) {
-            formularyStatusResult.innerText = 'Non-formulary';
+        let rejectCode = document.getElementById('rejectCode').value;
+        let rejectQL = document.getElementById('quantityLimit').checked;
+        let appealDLtype = document.getElementById('appealDLtype');
+
+        if (rejectCode === '75-Standard PA') {
+            appealDLtype.value = 'standardPA';
+        } else if (rejectCode === '70-Non-formulary') {
+            appealDLtype.value = 'nonFormulary';
+        } else if (rejectQL) {
+            appealDLtype.value = 'quantityLimit';
+        }
+
+        updateSection();
+    }
+
+    // For appeal denial language
+    function updateSection() {
+        if (document.getElementById('state').value === 'NJ') {
+            document.getElementById('section').value = 'Exclusions';
         } else {
-            formularyStatusResult.innerText = 'Formulary';
+            document.getElementById('section').value = 'Pharmacy Benefits';
         }
     }
 
@@ -1310,7 +1327,7 @@ function iroChecked() {
     ]
 
     let check = document.getElementById('sendToIRO');
-    let div = document.getElementById('iroNoteDiv');
+    //let div = document.getElementById('iroNoteDiv');
 
     // If 'send to iro' checked, show inputs for IRO and do some calculations. 
     if (check.checked) {
@@ -1342,16 +1359,17 @@ function iroChecked() {
 }
 
     const appealOptionsList = [
-        'mdSpecialty',   // A1
-        'sendToIRO',                // A2
-        'appealDenial',             // A3
-        'A3copyButton',             // A3 copy button
+        'mdSpecialty',   
+        'sendToIRO',               
+        'appealDenial',            
+        'A3copyButton',             
     ]
 
     const appealBuilderList = [
-        'mdSpecialty',   // A1
+        'mdSpecialty', 
         'sendToIRO',   
         'specialtyAppealsTrackerLink',
+        'appealDLtype',
         'appealCondition',
         'appealReasonNo',
         'appealReasonYes',
