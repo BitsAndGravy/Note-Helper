@@ -1324,7 +1324,7 @@
     /* Input */
     --input-background: rgba(255, 255, 255, 0.555);
     --input-background-focus: #ffffffc4;
-    --input-accent-color: #711a55;
+    --input-accent-color: #D6005D;
     --input-border: #186276;
     --input-border-focus: var(--header-background);
 }
