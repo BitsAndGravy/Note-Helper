@@ -1152,14 +1152,14 @@
 
 
 [data-theme='ravenclaw-bronze'] {
-    /* Main features */
+    /* Main features old secondary 0d1f4b*/
     --main-background: #2c395b;
     --header-background: #946b2d;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
-    --body-secondary-color: #0d1f4b;
+    --body-secondary-color: #0C2564;
     --body-border-color: #c2973a;
-    --body-gradient: var(--body-primary-color);
+    --body-gradient: #1F377A;
     --shadow: #00000086;
     
     /* Text */
@@ -1167,6 +1167,7 @@
     --body-text: #ccd4ed;
     --input-text: #e2e6f1;
     --placeholder-text: #dbe0efa0;
+    --animated-text: var(--heading-text);
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
@@ -1191,9 +1192,9 @@
     --header-background: #C0C0C0;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
-    --body-secondary-color: #0d1f4b;
+    --body-secondary-color: #0C2564;
     --body-border-color: #D6D6D6;
-    --body-gradient: var(--body-primary-color);
+    --body-gradient: #1F377A;
     --shadow: #00000086;
     
     /* Text */
