@@ -127,6 +127,7 @@ const fullDiagnosisList = [
 
     'narcolepsy',
     'necrotizing fasciitis',
+    'neoplasm-related pain',
     'neuralgia',
 
     'obstructive sleep apnea',
@@ -136,6 +137,7 @@ const fullDiagnosisList = [
     'osteoarthritis',
 
     'paranoid schizophrenia',
+    'paresthesia of skin',
     "Parkinson's disease",
     'PCOS',
     'psychophysiologic insomnia',
