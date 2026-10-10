@@ -1190,14 +1190,14 @@
     --main-background: #2c395b;
     --header-background: #C0C0C0;
     --footer-background: var(--header-background);
-    --body-primary-color: #0d1f4b;
-    --body-secondary-color: #203366;
-    --body-border-color: #cecece;
+    --body-primary-color: #203366;
+    --body-secondary-color: #0d1f4b;
+    --body-border-color: #D6D6D6;
     --body-gradient: var(--body-primary-color);
     --shadow: #00000086;
     
     /* Text */
-    --heading-text: #111220;
+    --heading-text: black;
     --body-text: #cbdbdb;
     --input-text: azure;
     --placeholder-text: #f0ffff94;
@@ -1216,8 +1216,8 @@
     --input-background: #00000049;
     --input-background-focus: #0000007f;
     --input-accent-color: #ffe263;
-    --input-border: #cecece6a;
-    --input-border-focus: #878787;
+    --input-border: black;
+    --input-border-focus: #ffe26380;
 }
 
 [data-theme='slytherin'] {
@@ -1311,6 +1311,7 @@
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: rgb(95, 110, 126);
+    --animated-text: var(--heading-text);
     --hyperlink-static: var(--button-background);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-hover);
