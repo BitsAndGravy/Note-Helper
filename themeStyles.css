@@ -1157,9 +1157,9 @@
     --header-background: #946b2d;
     --footer-background: var(--header-background);
     --body-primary-color: #203366;
-    --body-secondary-color: #0C2564;
+    --body-secondary-color: #172449;
     --body-border-color: #c2973a;
-    --body-gradient: #1F377A;
+    --body-gradient: #203366;
     --shadow: #00000086;
     
     /* Text */
@@ -1175,8 +1175,8 @@
     
     /* Buttons */
     --button-background: #ddd1b0;
-    --button-hover: #d8b581;
-    --button-active: #bf9453;
+    --button-hover: #CEBD8D;
+    --button-active: #BFA96B;
 
     /* Input */
     --input-background: #00000049;
