@@ -408,7 +408,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
 
         // Copies text to clipboard.
         function copyText() { 
-            //let textToCopy = notePreviewText;
             navigator.clipboard.writeText(notePreviewText);
             animateText("textCopied");
         }
@@ -431,7 +430,6 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         } else if (text.length < 2001) {
             char.className = 'characterLimitOrange';
 
-        // Opacity = 1 for best visibility
         } else if (text.length >= 2001) {
             char.className = 'characterLimitRed';
         }
@@ -642,39 +640,30 @@ function getQuantity() {
     document.getElementById('drug').style.backgroundColor = ''; 
 
     let drugName = document.getElementById('drug').value;
-    let prefillQuantity = localStorage.getItem('prefillQuantity');
-    //let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity');
-    
+    let prefillQuantity = localStorage.getItem('prefillQuantity');    
     let form = document.getElementById('mainForm');
-    //let rejectCode = form.rejectCode.value;
-    //let rejectQL = form.rejectQL.value;
-
-    //let standardPA = document.getElementById('standardPA');
-    //let quantityLimit = document.getElementById('quantityLimit');
-    //let nonFormulary = document.getElementById('nonFormulary');
 
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
         if(drugDatabase[i].drug.toLowerCase() == drugName.toLowerCase()) { // If drug found in database, then:
             
             // If a specialty drug, highlight in red.
             if(drugDatabase[i].specialty) { 
-                document.getElementById('drug').style.backgroundColor = 'red';
+                form.drug.style.backgroundColor = 'red';
             } 
 
             // Check settings for prefill quantity. Fill in if selected.
             if(prefillQuantity == 'yes') {
-                document.getElementById('quantity').value = drugDatabase[i].quantity; // Yes - prefill the quantity field.
+                form.quantity.value = drugDatabase[i].quantity; // Yes - prefill the quantity field.
             } else {
-                document.getElementById('quantity').value = ""; // No - leave the quantity field blank.
+                form.quantity.value = ""; // No - leave the quantity field blank.
             }
 
             // Prefill the diagnosis field. 
-            document.getElementById('diagnosis').value = drugDatabase[i].diagnosis;
+            form.diagnosis.value = drugDatabase[i].diagnosis;
             
             // Suggest alternative diagnosis
             let altDiag = drugDatabase[i].altDiagnosis;
             let altDiagSpan = document.getElementById('alternativeDiagnosisButton');
-            //let diagnosisButton = document.getElementById('alternativeDiagnosisButton');
             
                 // If there is an alt diagnosis, show button with diagnosis.
                 if(drugDatabase[i].altDiagnosis) {
@@ -696,10 +685,7 @@ function getQuantity() {
             // If non-formulary, 1-select the checkbox for 70, 2-unselect the checkbox for 75.
             if(drugDatabase[i].formulary == false) {
                 form.rejectCode.value = '70-Non-formulary';
-                //nonFormulary.checked = true; 
-                //standardPA.checked = false;
-                
-                //checkAlwaysShowQuantitySetting();
+ 
             } else {
                 form.rejectCode.value = '75-Standard PA';
             }      
@@ -708,10 +694,7 @@ function getQuantity() {
             if(drugDatabase[i].quantityLimitCriteria) {    
                 form.rejectCode.value = '';
                 form.rejectQL.checked = true;
-                //standardPA.checked = false;
-                //quantityLimit.checked = true;
-                
-                //checkAlwaysShowQuantitySetting();
+  
             } else {
                 form.rejectQL.checked = false;
             }         
@@ -732,7 +715,6 @@ function checkAlwaysShowQuantitySetting() {
         showContent('quantityDiv');
         
         // Input index was -1 (skip), now as 0 let computer handle (should act normal).
-        //changeTabIndex(['quantity', 'falseQL'], 0);
         document.getElementById('quantity').tabIndex = 0; 
         document.getElementById('falseQL').tabIndex = 0;
     }
@@ -820,7 +802,6 @@ function checkState() {
             stepTherapyException: false,
             cocTemporaryApproval: '90 days',
         }, 
-
     ]
 
     // Check for state regulations, add a reminder note at bottom of page.
@@ -937,21 +918,6 @@ function showQuantity() {
     let alwaysShowQuantity = localStorage.getItem('alwaysShowQuantity'); // Check settings
 
     if(alwaysShowQuantity == 'no') {    // If 'always show quantity' is not selected in settings:
-        /*
-        let quantityLimit = document.getElementById('quantityLimit');
-        let nonFormulary = document.getElementById('nonFormulary');
-        let stepTherapy = document.getElementById('stepTherapy');
-
-        // If 70 and/or 76 is checked:
-        if ((quantityLimit.checked) || (nonFormulary.checked) || (stepTherapy.checked)) { 
-            // Add class to make it visible, remove class that hides it
-            showContent('quantityDiv');
-
-            // Adjust tabIndex so you can tab to the input
-            document.getElementById('quantity').tabIndex = 0;
-            document.getElementById('falseQL').tabIndex = 0;
-            */
-
         let form = document.getElementById('mainForm');
         
         // If 70 and/or 76 is checked:
@@ -1137,9 +1103,6 @@ function removeSelection(name) {
     }
 
 function caseTypeSelection() {
-    // reauthorizationChecked();
-    // reopeningChecked();
-    // appealTypeChecked();
     let caseType = document.getElementById('caseType').value;
     let info = document.getElementById('information');
     let clin = document.getElementById('clinical');
@@ -1193,82 +1156,6 @@ function caseTypeSelection() {
     
     showAppealReason();
 }
-
-/*
-// When reauthorization is checked, add text to previous authorizations box and conclusions box (only if they are empty).
-function reauthorizationChecked() {
-    let form = document.getElementById('mainForm')
-    // let check = document.getElementById('reauthorization');
-    let info = document.getElementById('information');
-    let drugName = document.getElementById('drug').value;
-    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let clin = document.getElementById('clinical');
-
-    if (form.caseType.value === 'Reauthorization') {
-        if(info.value === '') {
-            info.value = drug + ' approved ';
-        };
-
-        if(clin.value == 'Chart note dated ') {
-            clin.value = "Per previous approval \n\n" + clin.value;
-        }
-    }
-}
-
-
-// When reopening is checked, add text to previous authorizations box and conclusions box (only if they are empty).
-function reopeningChecked() {
-    let check = document.getElementById('reopening');
-    let info = document.getElementById('information');
-    let drugName = document.getElementById('drug').value;
-    let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-    let conc = document.getElementById('conclusion');
-
-    if (check.checked) {
-        if(info.value === '') {
-            info.value = drug + ' denied ';
-        };
-
-        if(conc.value == '') {
-            conc.value = 'Previously \n\nOn reopening, ';
-        };
-    }
-}
-
-// When appealType is checked, add text to previous authorizations box and conclusions box (only if they are empty).
-function appealTypeChecked() {
-    let form = document.getElementById('mainForm');
-    //let check = document.getElementById('appealType');
-    if (form.caseType.value === 'First-level appeal') {
-        showContent('appealDenialAdditionalNotes');
-        showContent('appealDenialInputsDiv');
-        showOverflow('appealDenialAdditionalNotes');
-        changeTabIndex(appealBuilderList, 0);
-
-        //let info = document.getElementById('information');
-        if(form.information.value === '') {
-            let drugName = document.getElementById('drug').value;
-            let drug = drugName.charAt(0).toUpperCase() + drugName.slice(1);
-            form.information.value = drug + ' denied ';
-        };
-
-        //let conc = document.getElementById('conclusion');   
-        if(form.conclusion.value == '') {
-            form.conclusion.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
-        };
-        
-        appealDenialLanguageTypeUpdate();
-    } else {
-        hideContent('appealDenialAdditionalNotes');
-        hideContent('appealDenialInputsDiv');
-        hideOverflow('appealDenialAdditionalNotes');
-
-        document.getElementById('appealReasonText').tabIndex = -1; // Doesn't work for some reason?!?!?!?!
-        changeTabIndex(appealBuilderList, -1);
-    }
-    showAppealReason();
-}
-*/
 
     function appealDenialLanguageTypeUpdate() {
 
