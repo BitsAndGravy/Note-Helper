@@ -1145,6 +1145,7 @@ function caseTypeSelection() {
         };
 
         appealDenialLanguageTypeUpdate();
+        appealDLtypeChanged();
     } else {
         hideContent('appealDenialAdditionalNotes');
         hideContent('appealDenialInputsDiv');

@@ -590,7 +590,7 @@
                             <div class="background-color-primary padding-5-10-10-10">
                                 <div>
                                     <label for="appealDLtype">A1</label>
-                                    <select id="appealDLtype" tabindex="-1">
+                                    <select id="appealDLtype" tabindex="-1" onchange="appealDLtypeChanged()">
                                         <option value="benefitExclusion">Benefit Exclusion</option>
                                         <option value="nonFormulary">Non-formulary</option>
                                         <option value="nonFormularyOffLabel">Non-formulary (off-label)</option>
@@ -668,8 +668,8 @@
                                 </div>
 
                                 <!-- Denial reasons; applies to Standard PA, Non-formulary, Quantity limit; does NOT apply to NF-off-label or benefit exclusion -->
-                                <div>
-                                    <label for="appealDenialReasons">A7</label>
+                                <div id="appealDenialReasonsDiv">
+                                    <label for="appealDenialReasons">A6</label>
                                     <textarea
                                         id="appealDenialReasons" 
                                         name="appealDenialReasons" 
@@ -679,8 +679,8 @@
                                 </div>
 
                                 <!-- Criteria name; applies to all except benefit exclusion -->
-                                <div>
-                                    <label for="criteriaName">A8</label>
+                                <div id="criteriaNameDiv">
+                                    <label for="criteriaName">A7</label>
                                     <textarea
                                         id="criteriaName"
                                         class="appealTextarea"
@@ -717,14 +717,14 @@
                                             placeholder="plan name" 
                                             tabindex="-1">
                                     </div>
-                                </div>
 
-                                <div>
-                                    <label for="section">BE4</label>
-                                    <select id="section" name="section" tabindex="-1">
-                                        <option value="Exclusions">Exclusions</option>
-                                        <option value="Pharmacy Benefits" selected>Pharmacy Benefits</option>
-                                    </select>
+                                    <div>
+                                        <label for="section">BE4</label>
+                                        <select id="section" name="section" tabindex="-1">
+                                            <option value="Exclusions">Exclusions</option>
+                                            <option value="Pharmacy Benefits" selected>Pharmacy Benefits</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                                 <div>

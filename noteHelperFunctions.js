@@ -250,51 +250,39 @@ const appeal = {
     selectedNewInformation: '[selectedNewInformation]',
 };
 
+function appealDLtypeChanged() {
+    let form = document.getElementById('appealForm');
+    let template = form.appealDLtype.value;
+    let BE = 'benefitExclusion';
+    let NF = 'nonFormulary';
+    let NFO = 'nonFormularyOffLabel';
+    let PA = 'standardPA';
+    let QL = 'quantityLimit';
+
+    let hideList = [];
+
+    let showList = []
+
+    if (template === BE) {
+        showContent('benefitExclusionInputs');
+
+        hideContent('appealDenialReasonsDiv');
+        hideContent('criteriaNameDiv');
+
+    } else if (template === NFO) {
+        showContent('criteriaNameDiv');
+
+        hideContent('appealDenialReasonsDiv');
+        hideContent('benefitExclusionInputs');
+    } else {
+        showContent('appealDenialReasonsDiv')
+        showContent('criteriaNameDiv');
+
+        hideContent('benefitExclusionInputs');
+    }
+}
+
 function createDenialLanguage() {
-    /*
-    let dlCreateListText = [
-        'appealCondition',
-        'appealReasonText',
-        'appealDenialReasons',
-        'criteriaName',
-    ];
-
-    let divAdded = document.getElementById('appealDenial2');
-
-    for (i = 0; i < dlCreateListText.length; i++) {
-        appeal[dlCreateListText[i]] = document.getElementById(dlCreateListText[i]).value;
-    }
-
-    let appealReasonNo = document.getElementById('appealReasonNo');
-    if (appealReasonNo.checked) {
-        appeal.appealReasonText = '';
-    }
-
-    appeal.selectedAppealReason = document.querySelector('input[name="appealReasonCheckbox"]:checked').value;
-    appeal.selectedNewInformation = document.querySelector('input[name="newInformationCheckbox"]:checked').value;
-    
-    let dlLine1 = "We have received a request for the treatment of " + appeal.appealCondition + '. ';
-    let dlLine2 = "Based on the information provided, this request was not approved. " + appeal.selectedAppealReason + appeal.appealReasonText + '. ';
-    let dlLine3 = appeal.selectedNewInformation + '.\n\n';
-    
-    
-    let dlLine4 = "Your current records with us and the information submitted by your doctor do not meet the following criteria:\n\n";
-    
-    //section below commented out
-    let reject70 = document.getElementById('nonFormulary');
-    if (reject70.checked) {
-        dlLine4 = 'Your current records with us and the information submitted by your doctor do not show you meet the following criteria for non-formulary drugs:\n\n';
-    }//
-        
-
-    let dlLine5 = appeal.appealDenialReasons + '\n\n';
-    let dlLine6 = "We recommend you reach out to your doctor to discuss this information and treatment alternatives.\n\n";
-    let dlLine7 = appeal.criteriaName;
-
-    let dlFinal = dlLine1 + dlLine2 + dlLine3 + dlLine4 + dlLine5 + dlLine6 + dlLine7;
-
-    divAdded.value = dlFinal;
-    */
 
     let form = document.getElementById('appealForm');
     let template = form.appealDLtype.value;
