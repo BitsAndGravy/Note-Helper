@@ -575,6 +575,7 @@ const drugDatabase = [ // for getQuantity()
         drug: "iron sucrose vial",
         quantity: "50/30",
         diagnosis: "iron deficiency anemia", 
+        formulary: false,
     },  
     {
         drug: "itraconazole capsule",
