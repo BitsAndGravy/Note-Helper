@@ -62,9 +62,11 @@ body {
     background-color: var(--main-background);
 }
 
+/*
 .border-color-1 {
     border: solid var(--body-border-color) 1px;
 }
+    */
 
 .border-only {/* Used to create a border around Note Helper, Preview, and Saved Notes */
     border: 2px solid var(--body-border-color);
