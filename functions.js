@@ -146,6 +146,7 @@ const fullDiagnosisList = [
     'post-inflammatory hyperpigmentation',
     'postmenopausal atrophic vaginitis',
     'prediabetes',
+    'premenstrual dysphoric disorder',
     'psoriasis vulgaris',
     'pulmonary embolism',
     'pure hypercholesterolemia',
