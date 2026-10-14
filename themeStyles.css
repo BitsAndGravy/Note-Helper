@@ -35,43 +35,6 @@
     --input-border-focus: #4a3b33;
 }
 
-[data-theme='coral-tower'] {
-    /* Main features */
-    --main-background: #164c78;
-    --header-background: #a1124f;
-    --footer-background: #c65579;
-    --body-primary-color: #93EEFE;
-    --body-secondary-color: #ffffff41;
-    --body-border-color: #d3c0a9;
-    --body-gradient: #77CBE4, #93EEFE, #79D5DC;
-    --shadow: #00000086;
-    
-    /* Text */
-    --heading-text: white;
-    --body-text: #231936;
-    --body-secondary-text: var(--body-text);
-    --input-text: var(--body-text);
-    --input-text-focus: var(--input-text);
-    --placeholder-text: rgb(95, 110, 126);
-    --animated-text: var(--heading-text);
-    --hyperlink-static: var(--button-background);
-    --hyperlink-hover: var(--button-hover);
-    --hyperlink-active: var(--button-hover);
-    --hyperling-visited: var(--hyperlink-static);
-    
-    /* Buttons */
-    --button-background: #e7ddd9;
-    --button-hover: #D1BEB7;
-    --button-active: #BCA094;
-
-    /* Input */
-    --input-background: rgba(255, 255, 255, 0.555);
-    --input-background-focus: #ffffffc4;
-    --input-accent-color: #D6005D;
-    --input-border: #186276;
-    --input-border-focus: var(--header-background);
-}
-
 /* || Generic themes */
 [data-theme='beat-saber'] {
     /* Main features */
@@ -700,9 +663,9 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #ebcad2;
-    --button-hover: #e9b1ba;
-    --button-active: #e195a9;
+    --button-background: #E0CCD2;
+    --button-hover: #CCABB5;
+    --button-active: #B88997;
     --button-text: var(--main-background);
 
     /* Input */
@@ -1331,15 +1294,15 @@
 
 /* ||| Holow Knight: Silksong Themes */
 
-[data-theme='coral-tower2'] {
+[data-theme='coral-tower'] {
     /* Main features */
     --main-background: #164c78;
     --header-background: #a1124f;
     --footer-background: #c65579;
-    --body-primary-color: #6fe9fd;
+    --body-primary-color: #93EEFE;
     --body-secondary-color: #ffffff41;
     --body-border-color: #d3c0a9;
-    --body-gradient: #4abada, #6ee3f5, #6fe9fd, #31b3bd;
+    --body-gradient: #77CBE4, #93EEFE, #79D5DC;
     --shadow: #00000086;
     
     /* Text */
@@ -1357,8 +1320,8 @@
     
     /* Buttons */
     --button-background: #e7ddd9;
-    --button-hover: #d3c0a9;
-    --button-active: #78687a;
+    --button-hover: #D1BEB7;
+    --button-active: #BCA094;
 
     /* Input */
     --input-background: rgba(255, 255, 255, 0.555);
