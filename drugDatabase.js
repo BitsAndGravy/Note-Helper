@@ -377,6 +377,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "Dyanavel XR tablet",
+        quantity: "30/30",
+        diagnosis: "ADHD", 
+        formulary: false, 
+    },  
+    {
         drug: "Emgality 100 mg pen",
         quantity: "3/28",
         diagnosis: "migraine prophylaxis", 
