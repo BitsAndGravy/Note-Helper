@@ -970,6 +970,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },
     {
+        drug: "Pylera capsule",
+        quantity: "120/10",
+        diagnosis: "H. pylori infection",
+        formulary: false,
+    },
+    {
         drug: "Qbrexza cloth",
         quantity: "30/30",
         diagnosis: "primary hyperhidrosis",
