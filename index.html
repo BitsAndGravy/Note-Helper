@@ -41,7 +41,6 @@
                     <div  oninput="preSaveFunctions()">
                         <!-- Part 1: Above middle bar -->
                         <div class="padding-5-10-10-10">   
-                            <!--<form id="form1">-->
                                 <div class="flex align-center justify-space-between">
                                     <div class="suggest-container input-spacer">
                                         <label for="drug">01.</label>
@@ -347,12 +346,10 @@
                                         name="information" 
                                         class="bigTextarea"
                                         placeholder="previous authorizations"></textarea>
-                            <!--</form>-->
                         </div>
 
                         <!-- Part 2: The middle bar-->
                         <div class="background-color-secondary border-color-1 padding-5-10-10-10">
-                            <!--<form id="form2">-->
                                 
                                 <label for="gender">12.</label> 
                                     <input 
@@ -400,7 +397,6 @@
                                     onclick="addNewMember()">
                                 <label for="newMember">New member</label>
                                 <br>
-                            <!--</form>-->
                         </div>
 
                         <!-- Part 3 (below the middle bar) -->
@@ -587,7 +583,7 @@
                         </div>                
                     
                         <form id="appealForm">
-                            <div class="background-color-primary padding-5-10-10-10">
+                            <div class="background-color-primary padding-5-10-10-10 overflow-hidden">
                                 <div>
                                     <label for="appealDLtype">A1</label>
                                     <select id="appealDLtype" tabindex="-1" onchange="appealDLtypeChanged()">
@@ -668,7 +664,7 @@
                                 </div>
 
                                 <!-- Denial reasons; applies to Standard PA, Non-formulary, Quantity limit; does NOT apply to NF-off-label or benefit exclusion -->
-                                <div id="appealDenialReasonsDiv">
+                                <div id="appealDenialReasonsDiv" class="overflow-hidden">
                                     <label for="appealDenialReasons">A6</label>
                                     <textarea
                                         id="appealDenialReasons" 
@@ -679,7 +675,7 @@
                                 </div>
 
                                 <!-- Criteria name; applies to all except benefit exclusion -->
-                                <div id="criteriaNameDiv">
+                                <div id="criteriaNameDiv" class="overflow-hidden">
                                     <label for="criteriaName">A7</label>
                                     <textarea
                                         id="criteriaName"
@@ -690,7 +686,7 @@
                                 </div>
 
                                 <!-- Benefit exclusion section -->
-                                <div id="benefitExclusionInputs">
+                                <div id="benefitExclusionInputs" class="overflow-hidden">
                                     <!-- Drug vs condition; for BE only -->
                                     <div>
                                         <label for="BEreason">BE1</label>

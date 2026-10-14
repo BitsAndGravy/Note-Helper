@@ -254,14 +254,10 @@ function appealDLtypeChanged() {
     let form = document.getElementById('appealForm');
     let template = form.appealDLtype.value;
     let BE = 'benefitExclusion';
-    let NF = 'nonFormulary';
+    // let NF = 'nonFormulary';
     let NFO = 'nonFormularyOffLabel';
-    let PA = 'standardPA';
-    let QL = 'quantityLimit';
-
-    let hideList = [];
-
-    let showList = []
+    // let PA = 'standardPA';
+    // let QL = 'quantityLimit';
 
     if (template === BE) {
         showContent('benefitExclusionInputs');
