@@ -148,6 +148,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },  
     {
+        drug: "brimonidine-timolol eye drops",
+        quantity: "2.5/30",
+        diagnosis: "primary open-angle glaucoma",
+    },  
+    {
         drug: "brivaracetam tablet",
         quantity: "60/30",
         diagnosis: "epilepsy",
@@ -277,6 +282,12 @@ const drugDatabase = [ // for getQuantity()
         quantity: "270/30",
         diagnosis: "mastocystitis",
     },  
+    {
+        drug: "cyclosporine eye drops",
+        quantity: "60/30",
+        diagnosis: "dry eye syndrome",
+        formulary: false, 
+    }, 
     {
         drug: "dabigatran capsule",
         quantity: "60/90",
