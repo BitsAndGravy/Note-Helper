@@ -8,13 +8,7 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     },
-    midnightBlue: {
-        name: 'midnight-blue', 
-        title: 'Midnight Blue', 
-        style: 'dark',
-        group: 'Generic',
-        optGroup: 'generic'
-    },
+    
     dark: {
         name: 'dark', 
         title: 'Dark', 
@@ -22,6 +16,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+    midnightBlue: {
+        name: 'midnight-blue', 
+        title: 'Midnight Blue', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     oscarBlue: {
         name: 'oscar-blue', 
         title: 'Oscar Blue', 
@@ -43,6 +44,20 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+    proStreet: {
+        name: 'prostreet', 
+        title: 'NFS: ProStreet', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
+    proStreetII: {
+        name: 'prostreetII', 
+        title: 'NFS: ProStreet II', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     scantron: {
         name: 'scantron', 
         title: 'Scantron', 

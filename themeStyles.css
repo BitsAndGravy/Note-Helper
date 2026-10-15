@@ -141,6 +141,80 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='prostreet'] {
+    /* Main features */
+    --main-background: #F9F3DD;
+    --header-background: #010101;
+    --footer-background: #130E08;
+    --body-primary-color: #f7f5eb;
+    --body-secondary-color: white;
+    --body-border-color: #958875;
+    --body-gradient: #F8E4BD, #f7f5eb #F2E9DF;
+    --shadow: #00000086;
+    
+    /* Text */
+    --heading-text: #E7DECD;
+    --body-text: #010101;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--body-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #4a3b3392;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: white;
+    --button-hover: #DD1C11;
+    --button-active: #C31B15;
+    --button-text: #1f0d05;
+
+    /* Input */
+    --input-background:white;
+    --input-background-focus: white;
+    --input-accent-color: #6a8100;
+    --input-border: #92887f;
+    --input-border-focus: #6a8100;
+}
+
+[data-theme='prostreetII'] {
+    /* Main features F9F3DD*/
+    --main-background: #F8E4BD;
+    --header-background: black;
+    --footer-background: black;
+    --body-primary-color: #1E2013;
+    --body-secondary-color: black;
+    --body-border-color: #958875;
+    --body-gradient: #40432F, #1E2013;
+    --shadow: #00000086;
+    
+    /* Text */
+    --heading-text: #F9F3DD;
+    --body-text: #F9F3DD;
+    --body-secondary-text: var(--body-text);
+    --animated-text: var(--body-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #f9f3dd9c;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: white;
+    --button-hover: #DD1C11;
+    --button-active: #C31B15;
+    --button-text: #1f0d05;
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: black;
+    --input-accent-color: #b2db00;
+    --input-border: #92887fa6;
+    --input-border-focus: #b2db00;
+}
+
 [data-theme='pahub'] {
     /* Main features */
     --main-background: var(--body-primary-color);
