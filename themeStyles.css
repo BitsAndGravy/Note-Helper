@@ -180,12 +180,12 @@
 
 [data-theme='prostreetII'] {
     /* Main features F9F3DD*/
-    --main-background: #F8E4BD;
+    --main-background: #F0E0C9;
     --header-background: black;
     --footer-background: black;
     --body-primary-color: #1E2013;
-    --body-secondary-color: black;
-    --body-border-color: #958875;
+    --body-secondary-color: #5b5640a6;
+    --body-border-color: black;
     --body-gradient: #40432F, #1E2013;
     --shadow: #00000086;
     
@@ -202,9 +202,9 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: white;
-    --button-hover: #DD1C11;
-    --button-active: #C31B15;
+    --button-background: #FFFCF0;
+    --button-hover: #e3e2c7;
+    --button-active: #b0b09b;
     --button-text: #1f0d05;
 
     /* Input */
