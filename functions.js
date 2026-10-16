@@ -152,6 +152,7 @@ const fullDiagnosisList = [
     'pure hypercholesterolemia',
 
     'radiculopathy',
+    'restless legs syndrome',
     'rhinitis',
 
     'schizoaffective disorder',

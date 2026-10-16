@@ -598,12 +598,12 @@
                                 <!-- Condition; applies to all templates -->
                                 <div>
                                     <label for="appealCondition">A2</label>
-                                    <input
+                                    <textarea
                                         id="appealCondition"
-                                        type="text"
                                         name="appealCondition"
                                         placeholder="condition"
-                                        tabindex="-1">
+                                        tabindex="-1"
+                                        class="appealTextarea appeal-textarea-single-line"></textarea>
                                 </div>
 
                                 <!-- Has reason y/n; applies to all templates -->
@@ -679,7 +679,7 @@
                                     <label for="criteriaName">A7</label>
                                     <textarea
                                         id="criteriaName"
-                                        class="appealTextarea"
+                                        class="appealTextarea appeal-textarea-single-line"
                                         name="criteriaName"
                                         placeholder="full reference"
                                         tabindex="-1"></textarea>
@@ -707,11 +707,19 @@
 
                                     <div>
                                         <label for="planName">BE3</label>
+                                        <textarea
+                                            id="planName"
+                                            name="planName"
+                                            placeholder="plan name"
+                                            tabindex="-1"
+                                            class="appealTextarea appeal-textarea-single-line"></textarea>
+
+                                            <!--
                                         <input 
                                             type="text" 
                                             id="planName" 
                                             placeholder="plan name" 
-                                            tabindex="-1">
+                                            tabindex="-1">-->
                                     </div>
 
                                     <div>
