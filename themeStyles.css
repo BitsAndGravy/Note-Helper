@@ -156,7 +156,7 @@
     --heading-text: #E7DECD;
     --body-text: #010101;
     --body-secondary-text: var(--body-text);
-    --animated-text: var(--body-text);
+    --animated-text: var(--heading-text);
     --input-text: var(--body-text);
     --placeholder-text: #4a3b3392;
     --hyperlink-static: var(--button-background);
@@ -173,7 +173,7 @@
     /* Input */
     --input-background:white;
     --input-background-focus: white;
-    --input-accent-color: #6a8100;
+    --input-accent-color: #DD1C11;
     --input-border: #92887f;
     --input-border-focus: #6a8100;
 }
