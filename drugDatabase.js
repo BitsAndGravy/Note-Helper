@@ -1081,6 +1081,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "sitagliptin-metformin tablet", 
+        quantity: "30/30",
+        diagnosis: "T2DM",
+        formulary: false,
+    }, 
+    {
         drug: "sodium sulfate-potassium sulfate-magnesium sulfate solution", 
         quantity: "354/2",
         diagnosis: "colonoscopy preparation",
@@ -1242,6 +1248,12 @@ const drugDatabase = [ // for getQuantity()
         drug: "Tryptyr eye drops", 
         quantity: "60/30", 
         diagnosis: "keratoconjunctivitis sicca", 
+        formulary: false, 
+    }, 
+    {
+        drug: "Twiist starter kit", 
+        quantity: "1/30", 
+        diagnosis: "T1DM", 
         formulary: false, 
     }, 
     {
