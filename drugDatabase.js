@@ -776,6 +776,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "mesalamine 800 mg DR tablet", 
+        quantity: "90/30",
+        diagnosis: "ulcerative colitis",
+    },  
+    {
         drug: "metformin ER 1,000 mg osm-tab", 
         quantity: "60/30",
         diagnosis: "T2DM",
