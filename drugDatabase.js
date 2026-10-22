@@ -210,7 +210,17 @@ const drugDatabase = [ // for getQuantity()
         drug: "CeQur Simplicity 1U kit",
         quantity: "1/30",
         diagnosis: "T1DM", 
-    },  
+    },
+    {
+        drug: "CeQur Simplicity 2U (2.4 mL)",
+        quantity: "5/30",
+        diagnosis: "T1DM", 
+    },    
+    {
+        drug: "CeQur Simplicity 2U 4-day patch",
+        quantity: "10/30",
+        diagnosis: "T1DM", 
+    },    
     {
         drug: "cinacalcet tablet",
         quantity: "30/30",
