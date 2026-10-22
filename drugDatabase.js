@@ -1384,6 +1384,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },  
     {
+        drug: "Vyleesi autoinjector",
+        quantity: "2.4/30",
+        diagnosis: "hypoactive sexual desire disorder",
+        formulary: false,
+    },  
+    {
         drug: "Vyvanse capsule",
         quantity: "30/30",
         diagnosis: "ADHD",

@@ -107,6 +107,7 @@ const fullDiagnosisList = [
     'histoplasmosis',
     'hyperglyceridemia',
     'hyperhidrosis',
+    'hypopituitarism',
     'hypersomnia',
     'hypertension',
     'hyperuricemia',
