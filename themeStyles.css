@@ -12,7 +12,6 @@
     /* Text */
     --heading-text: white;
     --body-text: #1f0d05;
-    --body-secondary-text: var(--body-text);
     --animated-text: var(--body-text);
     --input-text: var(--body-text);
     --placeholder-text: #4a3b3392;
@@ -117,7 +116,6 @@
     /* Text */
     --heading-text: azure;
     --body-text: var(--heading-text);
-    --body-secondary-text: var(--heading-text);
     --animated-text: var(--heading-text);
     --input-text: black;
     --input-text-focus: var(--input-text);
@@ -134,8 +132,8 @@
     --button-text: black;
 
     /* Input */
-    --input-background:white;
-    --input-background-focus: lightgoldenrodyellow;
+    --input-background:black;
+    --input-background-focus: rgb(39, 39, 19);
     --input-accent-color: yellow;
     --input-border: black;
     --input-border-focus: var(--header-background);
@@ -155,7 +153,6 @@
     /* Text */
     --heading-text: #E7DECD;
     --body-text: #010101;
-    --body-secondary-text: var(--body-text);
     --animated-text: var(--heading-text);
     --input-text: var(--body-text);
     --placeholder-text: #4a3b3392;
@@ -192,7 +189,6 @@
     /* Text */
     --heading-text: #F9F3DD;
     --body-text: #F9F3DD;
-    --body-secondary-text: var(--body-text);
     --animated-text: var(--body-text);
     --input-text: var(--body-text);
     --placeholder-text: #f9f3dd9c;
@@ -229,7 +225,6 @@
     /* Text */
     --heading-text: white;
     --body-text: black;
-    --body-secondary-text: black;
     --input-text: black;
     --animated-text: black;
     --placeholder-text: slategray;
@@ -266,7 +261,6 @@
     /* Text */
     --heading-text: #fffe02; /* Pac man, Ready */
     --body-text: #ffc7ab; /* pellets */
-    --body-secondary-text: var(--body-text);
     --animated-text: #ffb749; /* Clyde */
     --input-text: var(--body-text);
     --placeholder-text: #fbba99cb;
@@ -304,7 +298,6 @@
     --heading-text: white;
     --animated-text: var(--input-accent-color);
     --body-text: black;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --placeholder-text: slategray;
     --hyperlink-static: var(--heading-text);
@@ -341,7 +334,6 @@
     /* Text */
     --heading-text: lightgray;
     --body-text: var(--heading-text);
-    --body-secondary-text: var(--heading-text);
     --input-text: rgb(243, 243, 243);
     --placeholder-text: rgba(211, 211, 211, 0.774);
     --hyperlink-static: var(--button-background);
@@ -376,7 +368,6 @@
     /* Text */
     --heading-text: #29241e;
     --body-text: #eecd91;
-    --body-secondary-text: var(--body-text);
     --animated-text: var(--heading-text);
     --input-text: #f7dfb3;
     --placeholder-text: #eecd919e;
@@ -447,7 +438,6 @@
     /* Text */
     --heading-text: #f9e1a1;
     --body-text: #f1cd9c;
-    --body-secondary-text: var(--body-text);
     --input-text: #f9e1a1;
     --placeholder-text: #f1ce9cae;
     --hyperlink-static: var(--input-accent-color);
@@ -655,7 +645,6 @@
     /* Text */
     --heading-text: black;
     --body-text: #7ee5ba;
-    --body-secondary-text: var(--body-text);
     --input-text: #caeddf;
     --placeholder-text: #caeddfa1;
     --animated-text: black;
@@ -691,7 +680,6 @@
     /* Text */
     --heading-text: black;
     --body-text: #d0fefd;
-    --body-secondary-text: #d0fefd;
     --input-text: #e7fefe;
     --placeholder-text: #d0fefdab;
     --animated-text: black;
@@ -728,7 +716,6 @@
     /* Text */
     --heading-text: #e1ced6;
     --body-text: #dfdfdf;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --placeholder-text: #dfdfdfc7;
     --hyperlink-static: var(--input-background);
@@ -764,7 +751,6 @@
     /* Text */
     --heading-text: azure;
     --body-text: azure;
-    --body-secondary-text: var(--body-text);
     --animated-text: var(--heading-text);
     --input-text: black;
     --placeholder-text: slategray;
@@ -834,7 +820,6 @@
     /* Text */
     --heading-text: #e4d3d9;
     --body-text: #e4d3d9;
-    --body-secondary-text: #e4d3d9;
     --input-text: #fffeff;
     --placeholder-text: gray;
     --hyperlink-static: var(--input-accent-color);
@@ -904,7 +889,6 @@
     /* Text */
     --heading-text: #ccc5b6;
     --body-text: var(--heading-text);
-    --body-secondary-text: var(--heading-text);
     --input-text: #ebe7e0;
     --input-text-focus: var(--input-text);
     --placeholder-text: #ebe7e099;
@@ -935,13 +919,12 @@
     --body-primary-color: #fbd8a2;
     --body-secondary-color: #ffffff78;
     --body-border-color: var(--button-hover);
-    --body-gradient: #f0c18d, #fafec3;
+    --body-gradient: #f5d7b5, #fafec3;
     --shadow: #00000086;
     
     /* Text */
     --heading-text: #fbfae5;
     --body-text: black;
-    --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000086;
@@ -957,11 +940,11 @@
     --button-active: #f0c18d;
 
     /* Input */
-    --input-background:#ffffff35;
-    --input-background-focus: #fbfae59c;
-    --input-accent-color: #494f6c;
-    --input-border: var(--input-accent-color);
-    --input-border-focus: var(--main-background);
+    --input-background:#ffffff50;
+    --input-background-focus: #fbfae599;
+    --input-accent-color: #2A48DF;
+    --input-border: #494f6c;
+    --input-border-focus: var(--input-accent-color);
 }
 
 [data-theme='the-radiance'] {
@@ -978,7 +961,6 @@
     /* Text */
     --heading-text: white;
     --body-text: black;
-    --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
     --animated-text: white;
@@ -1015,7 +997,6 @@
     /* Text */
     --heading-text: black;
     --body-text: black;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #14380fc9;
@@ -1052,7 +1033,6 @@
     /* Text */
     --heading-text: #b8dcdf;
     --body-text: #cdd6b2;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #cdd6b2b7;
@@ -1088,7 +1068,6 @@
     /* Text */
     --heading-text: white;
     --body-text: #f7e4f7;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #f7e4f7b1;
@@ -1125,7 +1104,6 @@
     /* Text */
     --heading-text: #fcfbfb;
     --body-text: #e5e2ca;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #cdc692ba;
@@ -1163,7 +1141,6 @@
     /* Text */
     --heading-text: black;
     --body-text: #fff2d0;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #fff2d0b8;
@@ -1200,7 +1177,6 @@
     /* Text */
     --heading-text: white;
     --body-text: black;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: #000000ac;
@@ -1309,7 +1285,6 @@
     /* Text */
     --heading-text: #eaeaea;
     --body-text: #eaeaea;
-    --body-secondary-text: #eaeaea;
     --input-text: white;
     --input-text-focus: var(--input-text);
     --placeholder-text: #ffffff98;
@@ -1382,7 +1357,6 @@
     /* Text */
     --heading-text: white;
     --body-text: #231936;
-    --body-secondary-text: var(--body-text);
     --input-text: var(--body-text);
     --input-text-focus: var(--input-text);
     --placeholder-text: rgb(95, 110, 126);
@@ -1457,7 +1431,6 @@
     --heading-text: white;
     --animated-text: white;
     --body-text: black;
-    --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000080;
@@ -1494,7 +1467,6 @@
     /* Text */
     --heading-text: white;
     --body-text: black;
-    --body-secondary-text: black;
     --input-text: black;
     --input-text-focus: var(--input-text);
     --placeholder-text: #00000099;
