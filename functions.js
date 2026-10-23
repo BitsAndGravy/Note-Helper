@@ -105,6 +105,7 @@ const fullDiagnosisList = [
     'hemorrhoids',
     'hepatic encephalopathy',
     'histoplasmosis',
+    'human immunodeficiency virus disease',
     'hyperglyceridemia',
     'hyperhidrosis',
     'hypopituitarism',
