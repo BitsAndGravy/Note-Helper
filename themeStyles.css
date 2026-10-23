@@ -936,13 +936,13 @@
     
     /* Buttons */
     --button-background: #fbfae5;
-    --button-hover: #fafec3;
-    --button-active: #f0c18d;
+    --button-hover: #e2e1ce;
+    --button-active: #c9c8b7;
 
     /* Input */
     --input-background:#ffffff50;
     --input-background-focus: #fbfae599;
-    --input-accent-color: #2A48DF;
+    --input-accent-color: #3800C7;
     --input-border: #494f6c;
     --input-border-focus: var(--input-accent-color);
 }
