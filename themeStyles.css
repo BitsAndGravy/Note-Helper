@@ -1200,7 +1200,6 @@
     --input-border-focus: var(--header-background);
 }
 
-
 [data-theme='ravenclaw-bronze'] {
     /* Main features old secondary 0d1f4b*/
     --main-background: #2c395b;
@@ -1274,8 +1273,8 @@
 [data-theme='slytherin'] {
     /* Main features */
     --main-background: #626262;
-    --header-background: #1a472a;
-    --footer-background: #1a472a;
+    --header-background: black;
+    --footer-background: black;
     --body-primary-color: #2a623d;
     --body-secondary-color: #1a472a;
     --body-border-color: var(--button-background);
