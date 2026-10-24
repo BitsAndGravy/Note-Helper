@@ -1524,7 +1524,7 @@ const drugDatabase = [ // for getQuantity()
     {
         drug: "Zelsuvmi 10.3% gel",
         quantity: "31/30",
-        diagnosis: "molloscum contagiosum",
+        diagnosis: "molluscum contagiosum",
         formulary: false,
     }, 
     {
