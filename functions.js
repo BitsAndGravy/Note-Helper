@@ -155,6 +155,7 @@ const fullDiagnosisList = [
 
     'radiculopathy',
     'restless legs syndrome',
+    'rhinophyma',
     'rhinitis',
 
     'schizoaffective disorder',

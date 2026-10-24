@@ -141,6 +141,12 @@ const drugDatabase = [ // for getQuantity()
         diagnosis: "insomnia", 
     },  
     {
+        drug: "Bijuva capsule",
+        quantity: "30/30",
+        diagnosis: "menopausal and female climacteric states",
+        formulary: false, 
+    },  
+    {
         drug: "bismuth-metronidazole-tetracycline capsule",
         quantity: "120/10",
         diagnosis: "H. pylori infection",
