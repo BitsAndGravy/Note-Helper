@@ -126,6 +126,8 @@ const fullDiagnosisList = [
     'migraine',
     'mild intermittent asthma',
     'mild persistent asthma',
+    'moderate intermittent asthma',
+    'moderate persistent asthma',
     'muscle spasm',
 
     'narcolepsy',
