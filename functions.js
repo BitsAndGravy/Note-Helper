@@ -67,6 +67,7 @@ const fullDiagnosisList = [
     'actinic keratosis',
     'acute upper respiratory infection',
     'acute vaginitis',
+    'alopecia areata',
     'anemia',
     'aspergillosis', 
 
