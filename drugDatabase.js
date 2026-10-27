@@ -1108,6 +1108,12 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
+        drug: "sodium sulfacetamide cleanser", 
+        quantity: "170.3/30",
+        diagnosis: "acne vulgaris",
+        formulary: false,
+    }, 
+    {
         drug: "sodium sulfate-potassium sulfate-magnesium sulfate solution", 
         quantity: "354/2",
         diagnosis: "colonoscopy preparation",
