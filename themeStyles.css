@@ -1197,7 +1197,7 @@
     --input-background-focus: #fff3d6;
     --input-accent-color: black;
     --input-border: black;
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #2E69FF;
 }
 
 [data-theme='ravenclaw-bronze'] {
