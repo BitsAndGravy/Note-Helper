@@ -122,6 +122,7 @@ const fullDiagnosisList = [
     'irritable bowel syndrome-constipation',
 
     'male hypogonadism',
+    'mast cell activation',
     'melanin hyperpigmentation',
     'migraine',
     'mild intermittent asthma',
