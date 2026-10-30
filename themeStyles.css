@@ -768,9 +768,9 @@
     /* Input */
     --input-background: #e3e4d8E6;
     --input-background-focus: #fefff2e6;
-    --input-accent-color: #ffad7e; /* Pink on Marmu's head */
+    --input-accent-color: #ffad7e;
     --input-border: var(--main-background);
-    --input-border-focus: var(--header-background);
+    --input-border-focus: #6551d6;
 }
 
 [data-theme='royal-waterways'] {

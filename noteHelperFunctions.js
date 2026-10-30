@@ -164,18 +164,20 @@ function resetReject() {
 
 // Creates note from text and textarea inputs
 function buildIROnote() {
+    let iro = document.getElementById('iroForm');
+    /*
     let type = document.getElementById('typeOfRequest').value;
     let md = document.getElementById('specialtyRequested').value;
     let due = document.getElementById('iroDueDate').value;
     let summary = document.getElementById('iroClinicalSummary').value;
     let questions = document.getElementById('iroQuestions').value;
+    */
 
-    let iroNote = '-- SEND TO IRO --' + '\n\n' + 
-        'Type of Request: ' + type + '\n' +
-        'Board-Certified Specialty Requested: ' + md + '\n' + 
-        'IRO Due Date: ' + due + '\n\n' +
-        summary + '\n\n' + 
-        questions;
+    let iroNote = `Type of Request: ${iro.typeOfRequest.value}\n`;
+        iroNote += `Board-Certified Specialty Requested: ${iro.specialtyRequested.value}\n`; 
+        iroNote += `IRO Due Date: ${iro.iroDueDate.value}\n\n`;
+        iroNote += iro.iroClinicalSummary.value + '\n\n';
+        iroNote += iro.iroQuestions.value;
 
     document.getElementById('iroCompleteNote').innerText = iroNote;
     iroTotalCharacterCountCheck(iroNote);

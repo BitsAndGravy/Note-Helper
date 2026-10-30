@@ -300,8 +300,8 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         let form = document.getElementById('mainForm');
 
         // Appeal headings
-        //let textOutput = form.sendToIRO.checked ? '-- SEND TO IRO --\n\n' : '';
-        let textOutput = form.mdSpecialty.value ? `-- TO BE REVIEWED BY ${form.mdSpecialty.value} SPECIALTY --\n\n` : '';
+        let textOutput = form.sendToIRO.checked ? '-- SEND TO IRO --\n\n' : '';
+        textOutput += form.mdSpecialty.value ? `-- TO BE REVIEWED BY ${form.mdSpecialty.value} SPECIALTY --\n\n` : '';
         
         // SUMMARY heading
             textOutput += 'SUMMARY\n';
