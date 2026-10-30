@@ -9,7 +9,6 @@ const settingsList = [
 window.onload = function() {
     setDefaults();
     loadSettings();
-    disableCheckboxes();
     createStateSelectOptions();
     displayDrugDatabase();
     displayDiagnosisList();
@@ -190,6 +189,5 @@ function resetDefaults() {
         localStorage.setItem(setting, settingDefault[setting]);
     }
     loadSettings();
-    disableCheckboxes();
     animateText('resetDefaultsText');
 }

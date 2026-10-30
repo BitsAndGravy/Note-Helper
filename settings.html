@@ -42,23 +42,18 @@
                         <span class="text-sm"> - Once drug name entered, automatically check the box for appeal case type.</span>
 
                     </fieldset>
-                    <br>
-                    <fieldset>
-                        <legend>Miscellaneous</legend>
-                        <input
-                            type="checkbox"
-                            id="requireAge"
-                            name="requireAge">
-                        <label for="requireAge">Require age</label>
-                        <span class="text-sm"> - If age is blank when clicking save, an error will show and prevent saving.</span>
-                        <br>
 
+                    <br>
+
+                    <fieldset>
+                        <legend>Show/hide</legend>
                         <input
                             type="checkbox"
                             id="showTimer"
                             name="showTimer">
                         <label for="showTimer">Show timer</label>
                         <span class="text-sm"> - Timer starts/restarts after entering the drug name. Resets when the reset button clicked.</span>
+                        
                         <br>
                         
                         <input
@@ -66,19 +61,9 @@
                             id="showTheme">
                         <label for="showTheme">Show theme select</label>
                         <span class="text-sm"> - Theme select is always in the top right, even if you can't see it.</span>
+                        
                         <br>
-
-                        <select name="state" id="state" onchange="updateSelectedState(this.value);">
-                            <!-- for list see stateClientList -->
-                            <!-- for function that builds select options see createStateSelectOptions() -->
-                        </select>
-                        <label for="state">Choose default state</label>
-                        <br>
-
-                    </fieldset>
-                    <br>
-                    <fieldset>
-                        <legend>Quantity</legend>
+                        
                         <input 
                             type="checkbox"
                             id="alwaysShowQuantity"
@@ -87,6 +72,29 @@
                         <span class="text-sm"> - If unchecked, quantity will be hidden unless 70 and/or 76 are checked.</span>
                     
                     </fieldset>
+
+                    <br>
+
+                    <fieldset>
+                        <legend>Miscellaneous</legend>
+                        <input
+                            type="checkbox"
+                            id="requireAge"
+                            name="requireAge">
+                        <label for="requireAge">Require age</label>
+                        <span class="text-sm"> - If age is blank when clicking save, an error will show and prevent saving.</span>
+                        
+                        <br>
+
+                        <select name="state" id="state" onchange="updateSelectedState(this.value)">
+                            <!-- for list see stateClientList -->
+                            <!-- for function that builds select options see createStateSelectOptions() -->
+                        </select>
+                        <label for="state">Choose default state</label>
+                        <br>
+
+                    </fieldset>
+                    
                 </div>
                 <div id="showSettings"></div>
             </div>
