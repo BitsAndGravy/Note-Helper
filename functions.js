@@ -851,12 +851,10 @@ function checkState() {
 
     // If 70 and IL or NY selected, add note to conclusion.
     function checkNFStates() { 
-        //let nfCheck = document.getElementById('nonFormulary');
         let form = document.getElementById('mainForm');
         let state = document.getElementById('state');
         let conc = document.getElementById('conclusion');
         
-        //if(nfCheck.checked && (state.value == 'NY' || state.value == 'IL')) {
         if(form.rejectCode.value === '70-Non-formulary' && (state.value == 'NY' || state.value == 'IL')) {
             if(state.value == 'NY') {
                 conc.value = 'NY - require T/F with no more than two alternatives. \n' + conc.value;
@@ -1000,7 +998,7 @@ function removeSelection(name) {
 
         
         let selectedDateClean = formatDateClean(selectedDate);
-        /*
+        /* waiting to try out for 'reopened on' section of calendar
         let selectedDateSpans = document.querySelectorAll('.selected-day');
         selectedDateSpans.forEach(span => {
                 span.value = selectedDateClean;
@@ -1140,7 +1138,6 @@ function caseTypeSelection() {
             info.value = drug + ' denied ';
         };
 
-        //let conc = document.getElementById('conclusion');   
         if(conc.value == '') {
             conc.value = 'Previously \n\nNo reopening or peer-to-peer. \n\nOn appeal, ';
         };
@@ -1152,7 +1149,7 @@ function caseTypeSelection() {
         hideContent('appealDenialInputsDiv');
         hideOverflow('appealDenialAdditionalNotes');
 
-        document.getElementById('appealReasonText').tabIndex = -1; // Doesn't work for some reason?!?!?!?!
+        document.getElementById('appealReasonText').tabIndex = -1; 
         changeTabIndex(appealBuilderList, -1);
     }
     
@@ -1208,17 +1205,16 @@ function changeDiagnosis() {
 // When 'send to IRO' is checked:
 function iroChecked() {
     iroInputList = [
-        'typeOfRequest',        // A4
-        'specialtyRequested',   // A5
-        'iroDueDate',           // A6
-        'A6copyButton',         // A6 Copy Button
-        'iroClinicalSummary',   // A7
-        'iroQuestions',         // A8
-        'iroCopyButton',        // IRO copy button
+        'typeOfRequest',        
+        'specialtyRequested',  
+        'iroDueDate',          
+        'A6copyButton',        
+        'iroClinicalSummary',   
+        'iroQuestions',         
+        'iroCopyButton',  
     ]
 
     let check = document.getElementById('sendToIRO');
-    //let div = document.getElementById('iroNoteDiv');
 
     // If 'send to iro' checked, show inputs for IRO and do some calculations. 
     if (check.checked) {
@@ -1421,7 +1417,6 @@ const drugNameList = [];
     for(i = 0; i < drugDatabase.length; i++) {
         drugNameList.push(drugDatabase[i].drug);
     }
-    //drugNameList.toLowerCase();
     drugNameList.sort(function (a, b) {
         return a.localeCompare(b);
     });
