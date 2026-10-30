@@ -6,9 +6,6 @@ window.onload = function() {
     document.getElementById('themeSelect').value = localStorage.getItem('theme');
     processDates();
 
-
-
-
     // CaseType only changes when you leave the field. Using onChange still ran the function for each result when typing to find an object.
     let isFocused = false;
     const caseType = document.getElementById('caseType');
@@ -27,25 +24,6 @@ window.onload = function() {
         if (isFocused) return;
         caseTypeSelection();
     }
-
-    /*
-    // Check setting for appeal type
-        let app = document.getElementById('appealType');
-        let appSetting = localStorage.getItem('showAppealType');
-        let appDiv = document.getElementById('appealTypeDiv');
-
-        if (appSetting == false) {
-            localStorage.setItem(appSetting, 'yes');
-        }
-
-        if (appSetting == 'yes') {
-            appDiv.classList.add("showContent");
-            app.tabIndex = 0;
-        } else {
-            appDiv.classList.add("display-none");
-        }
-            */
-
         
     // Check setting for always show quantity
         let showQuantity = localStorage.getItem('alwaysShowQuantity');
@@ -165,13 +143,6 @@ function resetReject() {
 // Creates note from text and textarea inputs
 function buildIROnote() {
     let iro = document.getElementById('iroForm');
-    /*
-    let type = document.getElementById('typeOfRequest').value;
-    let md = document.getElementById('specialtyRequested').value;
-    let due = document.getElementById('iroDueDate').value;
-    let summary = document.getElementById('iroClinicalSummary').value;
-    let questions = document.getElementById('iroQuestions').value;
-    */
 
     let iroNote = `Type of Request: ${iro.typeOfRequest.value}\n`;
         iroNote += `Board-Certified Specialty Requested: ${iro.specialtyRequested.value}\n`; 
@@ -200,7 +171,6 @@ function iroClinicalCharacterCountCheck() {
         } else if (text.length < 1001) {
             charCount.className = 'characterLimitOrange';
 
-        // Opacity = 1 for best visibility
         } else if (text.length >= 1001) {
             charCount.className = 'characterLimitRed';
         }
@@ -208,7 +178,6 @@ function iroClinicalCharacterCountCheck() {
 
 // Character count for IRO request
 function iroTotalCharacterCountCheck(text) {
-    // let text = document.getElementById('iroCompleteNote').value;
     let charCount = document.getElementById('iroTotalCharacterCount');
 
     // Shows character count
@@ -223,7 +192,6 @@ function iroTotalCharacterCountCheck(text) {
         } else if (text.length < 2001) {
             charCount.className = 'characterLimitOrange';
 
-        // Opacity = 1 for best visibility
         } else if (text.length >= 2001) {
             charCount.className = 'characterLimitRed';
         }
@@ -256,10 +224,7 @@ function appealDLtypeChanged() {
     let form = document.getElementById('appealForm');
     let template = form.appealDLtype.value;
     let BE = 'benefitExclusion';
-    // let NF = 'nonFormulary';
     let NFO = 'nonFormularyOffLabel';
-    // let PA = 'standardPA';
-    // let QL = 'quantityLimit';
 
     if (template === BE) {
         showContent('benefitExclusionInputs');
@@ -320,8 +285,6 @@ function createDenialLanguage() {
         }
 
         // New information
-        //let newInfoSelection = document.querySelector('input[name="newInformationCheckbox"]:checked');
-        //denialLanguageText += newInfoSelection.value;
         denialLanguageText += form.newInformationCheckbox.value;
         denialLanguageText += '\n\n';
 

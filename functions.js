@@ -1366,7 +1366,6 @@ const settingDefault = {
     alwaysShowQuantity: 'yes',
     autoselectAppeal: 'no',
     requireAge: 'no',  
-    showAppealType: 'yes',
     showTimer: 'yes',
     showTheme: 'yes',
 }
