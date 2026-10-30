@@ -4,7 +4,6 @@ const settingsList = [
     'requireAge',
     'showTimer', 
     'showTheme',
-    'prefillQuantity', 
     'alwaysShowQuantity', 
 ]
 
@@ -34,11 +33,7 @@ window.onload = function() {
 };
 
 function saveSettings() {
-    saveCheckboxes();
-}
-
-    function saveCheckboxes() {
-        for(i = 0; i < settingsList.length; i++) {
+    for(i = 0; i < settingsList.length; i++) {
             let check = document.getElementById(settingsList[i]);
 
             if (check.checked) {
@@ -48,8 +43,7 @@ function saveSettings() {
             }
         }
         animateText('settingsSavedText');
-    }
-
+}
 
 function loadSettings() {
     for(p = 0; p < settingsList.length; p++) {
@@ -99,7 +93,6 @@ function displayDrugDatabase() {
 
     for (thisDrug in drugDatabase) {
         let name = drugDatabase[thisDrug].drug;
-        let qt = drugDatabase[thisDrug].quantity;
         let diagnosis = drugDatabase[thisDrug].diagnosis;
         let altDiagnosis = drugDatabase[thisDrug].altDiagnosis;
         let formulary = drugDatabase[thisDrug].formulary;

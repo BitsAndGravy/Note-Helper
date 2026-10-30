@@ -649,7 +649,6 @@ function getQuantity() {
     document.getElementById('drug').style.backgroundColor = ''; 
 
     let drugName = document.getElementById('drug').value;
-    let prefillQuantity = localStorage.getItem('prefillQuantity');    
     let form = document.getElementById('mainForm');
 
     for(i = 0; i < drugDatabase.length; i++) { // iterate through all drugs in the database
@@ -659,13 +658,6 @@ function getQuantity() {
             if(drugDatabase[i].specialty) { 
                 form.drug.style.backgroundColor = 'red';
             } 
-
-            // Check settings for prefill quantity. Fill in if selected.
-            if(prefillQuantity == 'yes') {
-                form.quantity.value = drugDatabase[i].quantity; // Yes - prefill the quantity field.
-            } else {
-                form.quantity.value = ""; // No - leave the quantity field blank.
-            }
 
             // Prefill the diagnosis field. 
             form.diagnosis.value = drugDatabase[i].diagnosis;
@@ -1373,7 +1365,6 @@ function changeTheme(theme) {
 const settingDefault = {
     alwaysShowQuantity: 'yes',
     autoselectAppeal: 'no',
-    prefillQuantity: 'no',
     requireAge: 'no',  
     showAppealType: 'yes',
     showTimer: 'yes',
