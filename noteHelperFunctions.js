@@ -267,6 +267,8 @@ function appealDLtypeChanged() {
         hideContent('appealDenialReasonsDiv');
         hideContent('criteriaNameDiv');
 
+        document.getElementById('fullState').innerText = getStateName();
+
     } else if (template === NFO) {
         showContent('criteriaNameDiv');
 
@@ -361,7 +363,7 @@ function createDenialLanguage() {
         // Benefit exclusion 
         if (template === BE) {
             let stateFullName = getStateName();
-            denialLanguageText += `Reference: Oscar Certificate of Coverage, ${stateFullName} 2026, ${form.exchangeStatus.value} Exchange, ${form.planName.value}, ${form.section.value} `
+            denialLanguageText += `Reference: Oscar Certificate of Coverage, ${stateFullName} 2026, ${form.exchangeStatus.value} Exchange, ${form.planName.value}, ${form.section.value} `;
         } else {
             denialLanguageText += form.criteriaName.value;
         }
