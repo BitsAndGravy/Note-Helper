@@ -16,6 +16,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     }, 
+    hadesII: {
+        name: 'hadesII', 
+        title: 'Hades II', 
+        style: 'dark',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     midnightBlue: {
         name: 'midnight-blue', 
         title: 'Midnight Blue', 

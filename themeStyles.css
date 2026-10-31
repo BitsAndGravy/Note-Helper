@@ -103,6 +103,42 @@
     --input-border-focus: var(--header-background);
 }
 
+[data-theme='hadesII'] {
+    /* Main features */
+    --main-background: #000201;
+    --header-background: #363C4C;
+    --footer-background: #363C4C;
+    --body-primary-color: #1E2013;
+    --body-secondary-color: #363c4cab;
+    --body-border-color: #6FD18B;
+    --body-gradient: #17141B;
+    --shadow: black;
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: #D0CCC3;
+    --animated-text: var(--heading-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #d0ccc3a6;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #97FFC1;
+    --button-hover: #74D08F;
+    --button-active: #53A871;
+    --button-text: #000201;
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: black;
+    --input-accent-color: #ff9a48;
+    --input-border: #30323E;
+    --input-border-focus: #71db91da;
+}
+
 [data-theme='midnight-blue'] {
     /* Main features */
     --main-background: midnightblue;
