@@ -1145,6 +1145,11 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "febrile neutropenia",
     },
     {
+        drug: "Vowst capsule", 
+        diagnosis: "enterocolitis due to Clostridium difficile, recurrent",
+        formulary: false,
+    },
+    {
         drug: "Vraylar capsule",
         diagnosis: "bipolar disorder",
         altDiagnosis: "major depressive disorder", 
