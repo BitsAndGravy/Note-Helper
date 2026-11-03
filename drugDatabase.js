@@ -1288,8 +1288,7 @@ const drugDatabase = [ // for getQuantity()
     }, 
     {
         drug: "Zoryve foam",
-        diagnosis: "atopic dermatitis",
-        altDiagnosis: "seborrheic dermatitis",
+        diagnosis: "seborrheic dermatitis",
         formulary: false,
     }, 
     {
