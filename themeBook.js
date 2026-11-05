@@ -65,6 +65,13 @@ const themeBook = {
         group: 'Generic',
         optGroup: 'generic'
     },
+    recRoom: {
+        name: 'rec-room', 
+        title: 'Rec Room', 
+        style: 'light',
+        group: 'Generic',
+        optGroup: 'generic'
+    },
     scantron: {
         name: 'scantron', 
         title: 'Scantron', 

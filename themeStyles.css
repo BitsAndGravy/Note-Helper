@@ -319,6 +319,42 @@
     --input-border-focus: #00ffdf; /* Inky */
 }
 
+[data-theme='rec-room'] {
+    /* Main features */
+    --main-background: #EE985C;
+    --header-background: #DA6E55;
+    --footer-background: #EEE1DA;
+    --body-primary-color: #EEE1DA;
+    --body-secondary-color: #d6cbc4;
+    --body-border-color: transparent;
+    --body-gradient: #EEE1DA;
+    --shadow: black;
+    
+    /* Text */
+    --heading-text: #FEFEFC;
+    --body-text: #1B1210;
+    --animated-text: var(--heading-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #1b121086;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #D14D25;
+    --button-hover: #bc4521;
+    --button-active: #a73e1e;
+    --button-text: #FEFEFC;
+
+    /* Input */
+    --input-background: #FEFEFC;
+    --input-background-focus: white;
+    --input-accent-color: #3429d1;
+    --input-border: #30323E;
+    --input-border-focus: #696481;
+}
+
 [data-theme='scantron'] {
     /* Main features */
     --main-background: white;
