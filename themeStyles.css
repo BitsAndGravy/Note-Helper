@@ -322,18 +322,18 @@
 [data-theme='rec-room'] {
     /* Main features */
     --main-background: #EE985C;
-    --header-background: #DA6E55;
+    --header-background: #D14D25;
     --footer-background: #EEE1DA;
     --body-primary-color: #EEE1DA;
-    --body-secondary-color: #d6cbc4;
-    --body-border-color: transparent;
+    --body-secondary-color: #f8f3f0;
+    --body-border-color: none;
     --body-gradient: #EEE1DA;
-    --shadow: black;
+    --shadow: rgba(0, 0, 0, 0.349);
     
     /* Text */
     --heading-text: #FEFEFC;
     --body-text: #1B1210;
-    --animated-text: var(--heading-text);
+    --animated-text: var(--body-text);
     --input-text: var(--body-text);
     --placeholder-text: #1b121086;
     --hyperlink-static: var(--button-background);
