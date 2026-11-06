@@ -1209,8 +1209,9 @@ function iroChecked() {
     iroInputList = [
         'typeOfRequest',        
         'specialtyRequested',  
+        'tatDueDate',
+        'calculateIRObutton',
         'iroDueDate',          
-        'A6copyButton',        
         'iroClinicalSummary',   
         'iroQuestions',         
         'iroCopyButton',  
