@@ -342,7 +342,7 @@
     --hyperling-visited: var(--hyperlink-static);
     
     /* Buttons */
-    --button-background: #D14D25;
+    --button-background: #DA6E55;
     --button-hover: #bc4521;
     --button-active: #a73e1e;
     --button-text: #FEFEFC;
@@ -350,9 +350,9 @@
     /* Input */
     --input-background: #FEFEFC;
     --input-background-focus: white;
-    --input-accent-color: #3429d1;
+    --input-accent-color: #4c3fff;
     --input-border: #30323E;
-    --input-border-focus: #696481;
+    --input-border-focus: #3429d1;
 }
 
 [data-theme='scantron'] {
