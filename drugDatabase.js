@@ -240,7 +240,8 @@ const drugDatabase = [ // for getQuantity()
     },  
     {
         drug: "Crexont ER capsule",
-        diagnosis: "parkinsonism",
+        diagnosis: "Parkinson's disease",
+        altDiagnosis: "parkinsonism",
         formulary: false, 
     },  
     {
