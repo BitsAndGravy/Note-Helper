@@ -999,6 +999,7 @@ function removeSelection(name) {
         
         let selectedDateClean = formatDateClean(selectedDate);
         /* waiting to try out for 'reopened on' section of calendar
+
         let selectedDateSpans = document.querySelectorAll('.selected-day');
         selectedDateSpans.forEach(span => {
                 span.value = selectedDateClean;
@@ -1023,6 +1024,7 @@ function removeSelection(name) {
     }
 
     // Prefill IRO due date with 3 business days from today at 5pm EST.
+    // Callled in iroChecked() for fillDate(3) as an auto-populate.
     function fillDate(days) {
         let todayDate = new Date();
         let iroDueDate = todayDate.addBusinessDays(days);
@@ -1229,13 +1231,7 @@ function iroChecked() {
             let mdCopy = document.getElementById('mdSpecialty').value;
             let mdCopyCapitalized = mdCopy.charAt(0).toUpperCase() + mdCopy.slice(1); 
             mdPaste.value = mdCopyCapitalized;
-        }
-
-        // If IRO due date is blank, prefill with 3 business days out.
-        let iroDateElement = document.getElementById('iroDueDate'); // Also A6
-        if (iroDateElement.value == '') {
-            fillDate(3);
-        }
+        }      
         
     } else {
         // Hide IRO divs
@@ -1244,6 +1240,152 @@ function iroChecked() {
         changeTabIndex(iroInputList, -1);
     }
 }
+
+function calculateIROdueDate() {
+    // Calculate IRO due date
+        let tat = new Date(document.getElementById('tatDueDate').value);
+
+        let today = new Date();
+        let threeBusinessDays = today.addBusinessDays(3);
+
+        let iro = document.getElementById('iroDueDate');
+        let iroSpan = document.getElementById('iroSubmissionType');
+        let iroDue = new Date(tat);
+
+        // Condition 1: More than 3 business days remaining
+        if (tat > threeBusinessDays) {
+            iroSpan.innerText = 'Three or more business days remaining:\n' + 'One business day in advance of the actual due date';
+            iroDue = tat.subtractBusinessDays(1);
+
+            // If due on a weekend, give an extra day to review
+            if(tat.getDay() == 0 || tat.getDay() == 6) {
+                iroDue = iroDue.subtractBusinessDays(1);
+            }
+            let formattedIROdate = formatDateIRO(iroDue) + ' at 5 pm EST';
+            iro.value = formattedIROdate;
+
+            
+        // Condition 2: Due on business day 3
+        } else if(between48hoursAnd3days(tat, threeBusinessDays, today)) {
+            iroSpan.innerText = 'Between 48 hours and 3 business days remaining:\n' + 'Twenty-four hours in advance of the actual due date';
+
+            
+            // If Monday, make due on Friday, else due 24 hours prior
+            if(tat.getDay() == 1) {
+                iroDue.setHours(tat.getHours() - 72);
+            } else {
+                iroDue.setHours(tat.getHours() - 24);
+            }
+
+            let formattedIROdue = new Date(iroDue).toLocaleDateString("en-US", {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true, // Set to false for 24-hour format
+                timeZoneName: 'short'
+            });
+
+            iro.value = formattedIROdue;
+            
+
+        // Condition 3: Less than 48 hours remaining
+        } else if(tat > today) {
+            iroSpan.innerText = 'Less than 48 hours remaining:\n' + 'Three business days from today\n' + 'Escalate from IRO Sign-Off to MD Queue';
+            iroDue = today.addBusinessDays(3);
+
+            let formattedIROdate = formatDateIRO(iroDue) + ' at 5 pm EST';
+            iro.value = formattedIROdate;
+
+        // Condition 4: Elapsed cases
+        } else if(tat < today) {
+            iroSpan.innerText = 'Elapsed:\n' + '24 hours from now';
+
+            if(today.getDay() == 5) {
+                iroDue = iroDue.setHours(iroDue.getHours() + 96);
+            } else if(today.getDay() == 6) {
+                iroDue = iroDue.setHours(iroDue.getHours() + 72);
+            } else if(today.getDay() == 0) {
+                iroDue = iroDue.setHours(iroDue.getHours() + 48);
+            } else {
+                iroDue = iroDue.setHours(iroDue.getHours() + 24);
+            }
+
+            let formattedIROdue = new Date(iroDue).toLocaleDateString("en-US", {
+                month: '2-digit',
+                day: '2-digit',
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true, // Set to false for 24-hour format
+                timeZoneName: 'short'
+            });
+
+            iro.value = formattedIROdue;
+
+        // Invalid date
+        } else {
+            iro.value = 'Error. MM-DD-YYYY, HH:MM'
+        }
+}
+
+    function between48hoursAnd3days(tat, threeDays, today) {
+        // Condition 1: Check if TAT is on business day 3
+        if(isSameDay(tat, threeDays)) {
+            return true;
+
+        // Condition 2: Check if more than 48 hours remain
+        } else if(hoursApartExcludingWeekends(today, tat)) {
+            return true;
+
+        // Neither condition is true
+        } else {
+            return false;
+        }    
+    }
+
+        function isSameDay(date1, date2) {
+            return date1.getFullYear() === date2.getFullYear() &&
+            date1.getMonth() === date2.getMonth() &&
+            date1.getDate() === date2.getDate();
+        }
+
+        function hoursApartExcludingWeekends(date1, date2) {
+            let d1 = new Date(date1);
+            let d2 = new Date(date2);
+
+            // Ensure d1 is always the earlier date
+            if (d1 > d2) {
+                [d1, d2] = [d2, d1];
+            }
+
+            let totalMsWithoutWeekends = 0;
+            let current = new Date(d1);
+
+            while (current < d2) {
+                const dayOfWeek = current.getDay(); // 0 = Sunday, 6 = Saturday
+                
+                // Find the end of the current day or the final target time
+                const endOfDay = new Date(current);
+                endOfDay.setHours(24, 0, 0, 0); // Sets to midnight of the next day
+                const nextCheckpoint = endOfDay < d2 ? endOfDay : d2;
+
+                // Only add time if it's a weekday (not Sunday and not Saturday)
+                if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+                totalMsWithoutWeekends += (nextCheckpoint - current);
+                }
+
+                // Move the pointer forward
+                current = nextCheckpoint;
+            }
+
+            // Convert total valid milliseconds to hours
+            const hoursApart = totalMsWithoutWeekends / (1000 * 60 * 60);
+            
+            // Return true if the business time gap is strictly more than 48 hours
+            return hoursApart > 48;
+        }
 
     const appealOptionsList = [
         'mdSpecialty',   

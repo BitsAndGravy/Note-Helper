@@ -807,17 +807,32 @@
                                         placeholder="specialty">
 
                                     <br>
-                                    <label for="iroDueDate">B3</label>
+                                    <label for="tatDueDate">B3</label>
+                                    <input 
+                                        type="text"
+                                        id="tatDueDate"
+                                        tabindex="-1"
+                                        placeholder="tat due date">
+                                    <button id="calculateIRObutton" type="button" tabindex="-1" onclick="calculateIROdueDate()">Get IRO due date</button>
+
+                                    <br>
+
+                                    <span id="iroSubmissionType">IRO Submission Type</span>
+
+                                    <br>
+                                    <label for="iroDueDate">B4</label>
                                     <input
                                         type="text"
                                         id="iroDueDate"
                                         tabindex="-1"
                                         placeholder="iro due date and time">
-                                    <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
+                                    <!-- Hiding in favor of calculateIRObutton above
+                                        <button id="A6copyButton" type="button" tabindex="-1" onclick="fillDate(3)">3 days*</button>
+                                        -->
                                     
 
                                     <br>
-                                    <label for="iroClinicalSummary">B4</label>
+                                    <label for="iroClinicalSummary">B5</label>
                                     <textarea
                                         id="iroClinicalSummary"
                                         class="appealTextarea"
@@ -830,7 +845,7 @@
                                     </div>
                                     <br>
 
-                                    <label for="iroQuestions">B5</label>
+                                    <label for="iroQuestions">B6</label>
                                     <textarea
                                         id="iroQuestions"
                                         class="appealTextarea"
