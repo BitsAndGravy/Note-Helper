@@ -117,6 +117,7 @@ const fullDiagnosisList = [
     'hypoglycemia',
 
     'idiopathic hypersomnia',
+    'intestinal methanogen overgrowth (IMO)',
     'irritable bowel disease',
     'irritable bowel syndrome',
     'irritable bowel syndrome-constipation',
