@@ -76,6 +76,7 @@ const fullDiagnosisList = [
     'binge eating disorder',
     'blastomycosis', 
     'blepharitis',
+    'borderline personality disorder',
 
     'candidiasis',
     'chronic rhinitis',
