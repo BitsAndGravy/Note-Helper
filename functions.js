@@ -102,6 +102,7 @@ const fullDiagnosisList = [
 
     'gastritis',
     'gender identity disorder',
+    'gestational diabetes',
 
     'headache',
     'hemorrhoids',
@@ -186,6 +187,7 @@ const fullDiagnosisList = [
     'urge incontinence',
     'urinary incontinence',
     
+    'vitamin D deficiency',
     'vitiligo',
 ]
 
