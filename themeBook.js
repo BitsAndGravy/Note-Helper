@@ -336,4 +336,11 @@ const themeBook = {
         group: 'Silksong',
         optGroup: 'silksong'
     }, 
+    verdania: {
+        name: 'verdania', 
+        title: 'Verdania', 
+        style: 'dark',
+        group: 'Silksong',
+        optGroup: 'silksong'
+    }, 
 }

@@ -139,6 +139,42 @@
     --input-border-focus: #71db91da;
 }
 
+[data-theme='verdania'] {
+    /* Main features */
+    --main-background: #0A1517;
+    --header-background: #408559;
+    --footer-background: #;
+    --body-primary-color: #17141B;
+    --body-secondary-color: #295743;
+    --body-border-color: #68903D;
+    --body-gradient: #13322D, #204A3C;
+    --shadow: #bce01e29;
+    
+    /* Text */
+    --heading-text: white;
+    --body-text: #ECE4E4;
+    --animated-text: var(--heading-text);
+    --input-text: var(--body-text);
+    --placeholder-text: #d0ccc3a6;
+    --hyperlink-static: var(--button-background);
+    --hyperlink-hover: var(--button-hover);
+    --hyperlink-active: var(--button-active);
+    --hyperling-visited: var(--hyperlink-static);
+    
+    /* Buttons */
+    --button-background: #752250;
+    --button-hover: #5e1b40;
+    --button-active: #833862;
+    --button-text: white;
+
+    /* Input */
+    --input-background: black;
+    --input-background-focus: black;
+    --input-accent-color: #CAE625;
+    --input-border: #565c4f96;
+    --input-border-focus: #9E4A4E;
+}
+
 [data-theme='midnight-blue'] {
     /* Main features */
     --main-background: midnightblue;
