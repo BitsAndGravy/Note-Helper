@@ -1,5 +1,6 @@
 const settingsList = [
     'autoselectAppeal',
+    'addNoMDspecialty',
     'requireAge',
     'showTimer', 
     'showTheme',

@@ -40,7 +40,15 @@
                             name="autoselectAppeal">
                         <label for="autoselectAppeal">Automatically select appeal</label>
                         <span class="text-sm"> - Once drug name entered, automatically check the box for appeal case type.</span>
+                        
+                        <br>
 
+                        <input 
+                            type="checkbox"
+                            id="addNoMDspecialty"
+                            name="addNoMDspecialty">
+                        <label for="addNoMDspecialty">Add tag for no MD specialty, push to MD queue</label>
+                        <span class="text-sm"> - Adds ;noMDsp snippet to end of note if first- or second-level appeal chosen and MD specialty is blank.</span>
                     </fieldset>
 
                     <br>

@@ -395,7 +395,12 @@ function checkForm() { // Used for the Save button. checks if age input is fille
         textOutput += form.falseQL.checked ? `\n\nNot a true QL; ${form.comment.value} #${form.properQuantity.value}` : '';
 
         // No MD specialty tag (optional for appeals)
-        textOutput += form.noMDspecialty.checked ? '\n\nSpecialist review not required, pending for MD sign off.' : '';
+        let addNoMDspecialtySetting =  localStorage.getItem('addNoMDspecialty');
+        if(addNoMDspecialtySetting == 'yes') {
+            if((form.caseType.value == 'First-level appeal' || form.caseType.value == 'Second-level appeal') && form.mdSpecialty.value == '') {
+                textOutput += '\n\nSpecialist review not required, pending for MD sign off.';
+            }
+        }
 
         // Final output
         notePreviewText = textOutput;
@@ -1510,6 +1515,7 @@ function changeTheme(theme) {
 /* || Settings */
 const settingDefault = {
     alwaysShowQuantity: 'yes',
+    addNoMDspecialty: 'no',
     autoselectAppeal: 'no',
     requireAge: 'no',  
     showTimer: 'yes',
