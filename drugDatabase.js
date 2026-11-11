@@ -368,6 +368,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false, 
     },  
     {
+        drug: "EpiCeram skin barrier emulsion",
+        diagnosis: "atopic dermatitis", 
+        formulary: false, 
+    }, 
+    {
         drug: "Eucrisa ointment",
         diagnosis: "dermatitis", 
     },  
