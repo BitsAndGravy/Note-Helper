@@ -139,8 +139,6 @@
     --input-border-focus: #71db91da;
 }
 
-
-
 [data-theme='midnight-blue'] {
     /* Main features */
     --main-background: midnightblue;
@@ -512,7 +510,7 @@
     /* Text */
     --heading-text: #f9e1a1;
     --body-text: #f1cd9c;
-    --input-text: #f4dbb8;
+    --input-text: #eecfa3;
     --placeholder-text: #f1ce9cb5;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
