@@ -168,6 +168,11 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     },  
     {
+        drug: "Cardamyst nasal spray",
+        diagnosis: "supraventricular tachycardia", 
+        formulary: false,
+    },  
+    {
         drug: "Cequa solution",
         diagnosis: "dry eye syndrome", 
         formulary: false,
