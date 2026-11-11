@@ -1,10 +1,10 @@
+a.color-accent {
+    color: var(--input-accent-color);
+}
 
-a:link {color: var(--input-accent-color)}
-    /*    
-    a:hover {color: green}
-    a:active {color: yellow}
-    */
-    a:visited .heading-color {color: var(--input-accent-color)}
+a.color-heading-text {
+    color: var(--heading-text)
+}
 
 .alert {
     --alert-foreground-color: #222222;
@@ -171,16 +171,8 @@ button:active {
     padding: 5px;
 }
 
-.color-accent {
-    color: var(--input-accent-color);
-}
-
 .color-body-text {
     color: var(--body-text);
-}
-
-.color-heading-text {
-    color: var(--heading-text)
 }
 
 .container {/* Used to create a border around Note Helper, Preview, and Saved Notes */
