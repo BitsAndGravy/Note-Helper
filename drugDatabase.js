@@ -923,13 +923,18 @@ const drugDatabase = [ // for getQuantity()
         formulary: false,
     }, 
     {
-        drug: "sodium sulfacetamide cleanser", 
+        drug: "sodium sulfacetamide-sulfur cleanser", 
         diagnosis: "acne vulgaris",
         formulary: false,
     }, 
     {
         drug: "sodium sulfate-potassium sulfate-magnesium sulfate solution", 
         diagnosis: "colonoscopy preparation",
+        formulary: false,
+    }, 
+    {
+        drug: "Sofdra gel", 
+        diagnosis: "primary focal hyperhidrosis",
         formulary: false,
     }, 
     {
