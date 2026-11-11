@@ -309,6 +309,10 @@ const drugDatabase = [ // for getQuantity()
         altDiagnosis: "T1DM", 
     },   
     {
+        drug: "dexlansoprazole DR capsule",
+        diagnosis: "gastro-esophageal reflux disease", 
+    },   
+    {
         drug: "dextromethorphan-quinidine capsule",
         diagnosis: "pseudobulbar affect", 
     },   
