@@ -1267,7 +1267,7 @@ function calculateIROdueDate() {
 
         // Condition 1: More than 3 business days remaining
         if (tat > threeBusinessDays) {
-            iroSpan.innerText = 'Three or more business days remaining:\n' + 'One business day in advance of the actual due date';
+            iroSpan.innerText = 'Three or more business days remaining:\n' + 'One business day in advance of the actual due date.\n' + 'Leave in IRO queue.';
             iroDue = tat.subtractBusinessDays(1);
 
             // If due on a weekend, give an extra day to review
@@ -1280,7 +1280,7 @@ function calculateIROdueDate() {
             
         // Condition 2: Due on business day 3
         } else if(between48hoursAnd3days(tat, threeBusinessDays, today)) {
-            iroSpan.innerText = 'Between 48 hours and 3 business days remaining:\n' + 'Twenty-four hours in advance of the actual due date';
+            iroSpan.innerText = 'Between 48 hours and 3 business days remaining:\n' + 'Twenty-four hours in advance of the actual due date\n' + 'Leave in IRO queue.';
 
             
             // If Monday, make due on Friday, else due 24 hours prior
@@ -1305,7 +1305,7 @@ function calculateIROdueDate() {
 
         // Condition 3: Less than 48 hours remaining
         } else if(tat > today) {
-            iroSpan.innerText = 'Less than 48 hours remaining:\n' + 'Three business days from today\n' + 'Escalate from IRO Sign-Off to MD Queue';
+            iroSpan.innerText = 'Less than 48 hours remaining:\n' + 'Three business days from today\n' + 'Escalate from IRO Sign-Off to MD Queue.';
             iroDue = today.addBusinessDays(3);
 
             let formattedIROdate = formatDateIRO(iroDue) + ' at 5 pm EST';
@@ -1313,7 +1313,7 @@ function calculateIROdueDate() {
 
         // Condition 4: Elapsed cases
         } else if(tat < today) {
-            iroSpan.innerText = 'Elapsed:\n' + '24 hours from now';
+            iroSpan.innerText = 'Elapsed:\n' + '24 hours from now\n' + 'Leave in IRO queue.';
 
             if(today.getDay() == 5) {
                 iroDue = iroDue.setHours(iroDue.getHours() + 96);
