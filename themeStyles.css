@@ -507,11 +507,11 @@
     --body-gradient: #212048, #34325a, #34325a, #a47889;
     --shadow: #00000086;
     
-    /* Text */
+    /* Text #f1cd9c*/
     --heading-text: #f9e1a1;
-    --body-text: #f1cd9c;
-    --input-text: #eecfa3;
-    --placeholder-text: #f1ce9cb5;
+    --body-text: #f4d7b0;
+    --input-text: #f4d7b0;
+    --placeholder-text: #f4d7b09a;
     --hyperlink-static: var(--input-accent-color);
     --hyperlink-hover: var(--button-hover);
     --hyperlink-active: var(--button-active);
