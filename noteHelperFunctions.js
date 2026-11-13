@@ -247,6 +247,16 @@ function appealDLtypeChanged() {
     }
 }
 
+function appealReasonTextCheck() {
+    let ele = document.getElementById('appealReasonText');
+    let text = ele.value;
+    if(text.slice(-1) === '.' || text.slice(-2) === '. ') {
+        ele.style.backgroundColor = 'red';
+    } else {
+        ele.style.backgroundColor = '';
+    }
+}
+
 function createDenialLanguage() {
 
     let form = document.getElementById('appealForm');

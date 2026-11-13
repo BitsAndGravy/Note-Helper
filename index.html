@@ -629,7 +629,12 @@
                                         name="appealReasonText"
                                         class="appealTextarea"
                                         tabindex="-1"
+                                        onchange="appealReasonTextCheck()"
                                         placeholder="appeal reason"></textarea>
+                                    <br>
+                                    <span id="appealReasonTextCheckDiv" class="characterLimitGreen">
+                                        Do not include a period; will be added in the template. Box will turn red, delete period to return to normal.
+                                    </span>
                                 </div>
 
                                 <!-- New information; applies to all templates -->

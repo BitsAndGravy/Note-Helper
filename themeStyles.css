@@ -942,7 +942,7 @@
     /* Input */
     --input-background: #0b0f32c4;
     --input-background-focus: #0b0f32e0;
-    --input-accent-color: #ff952c;
+    --input-accent-color: #FFE252;
     --input-border: #dad1fc87;
     --input-border-focus: var(--header-background);
 }
