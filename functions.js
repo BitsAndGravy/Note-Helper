@@ -1520,7 +1520,7 @@ function changeTheme(theme) {
 /* || Settings */
 const settingDefault = {
     alwaysShowQuantity: 'yes',
-    addNoMDspecialty: 'no',
+    //addNoMDspecialty: 'no',
     autoselectAppeal: 'no',
     requireAge: 'no',  
     showTimer: 'yes',
